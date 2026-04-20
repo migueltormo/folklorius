@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       SEO: Personaliza title y description para cada ciudad
+       ============================================================ -->
+  <title>Sevilla — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Sevilla es la más famosa del mundo: 60 hermandades, pasos de oro, costaleros y saetas llenan las calles entre el Domingo de Ramos y el Domingo de Resurrección. Guía completa con historia, hermandades y consejos." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-sevilla.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Sevilla — Folklorius" />
+  <meta property="og:description" content="La Semana Santa más famosa del mundo: costaleros, saetas y pasos de oro en Sevilla." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-sevilla.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================================================
+       CSS LOCAL: Componentes específicos de esta plantilla
+       (cofradias-grid, must-see-cards, procesiones-timeline)
+       ============================================================ -->
+  <style>
+
+    /* --- Cuadrícula de cofradías por día --- */
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* --- Tarjetas "No te lo puedes perder" --- */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+    .must-see-card details {
+      margin-top: 10px;
+    }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after {
+      content: " ↓";
+      font-size: 0.8rem;
+    }
+    .must-see-card details[open] summary::after {
+      content: " ↑";
+    }
+    .must-see-card details p {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted, #666);
+    }
+
+    /* --- Timeline de procesiones por día --- */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child {
+      padding-bottom: 0;
+    }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <!-- ============================================================
+       JSON-LD: Datos estructurados del evento
+       Actualiza: name, startDate, endDate, location, image,
+       description, organizer.name y organizer.url
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-sevilla.html",
+    "name": "Semana Santa de Sevilla",
+    "startDate": "2027-03-21",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Sevilla",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sevilla",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.0000,
+        "longitude": 0.0000
+      }
+    },
+    "image": ["https://folklorius.es/images/sevilla-santa1.jpg"],
+    "description": "La Semana Santa de Sevilla: 60 hermandades, costaleros, pasos de oro y saetas. La más famosa del mundo.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Consejo General de Hermandades y Cofradías de Sevilla",
+      "url": "https://www.hermandades-de-sevilla.org/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================ CABECERA -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================ BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Sevilla
+  </nav>
+
+  <!-- ============================================================ HERO -->
+  <!-- Imagen principal: mínimo 1200×500px, alt descriptivo -->
+  <div class="ficha-hero">
+    <img src="images/sevilla-santa1.jpg" alt="Paso de Semana Santa en las calles de Sevilla" />
+  </div>
+
+  <!-- ============================================================ CONTENIDO PRINCIPAL -->
+  <main class="ficha-main">
+    <article class="card">
+
+      <!-- TÍTULO Y SUBTÍTULO -->
+      <h1>Semana Santa de Sevilla</h1>
+      <p class="ficha-subtitle">
+        Sevilla (Andalucía) · Fiesta religiosa y cultural · "Donde la fe se hace arte y el arte sale a la calle."
+      </p>
+
+      <!-- BADGES / RECONOCIMIENTOS OFICIALES -->
+      <!-- Incluye solo los que correspondan. Elimina los que no apliquen. -->
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-unesco">Patrimonio Cultural Inmaterial (UNESCO)</span>
+        <!-- Añade o elimina badges según los reconocimientos reales de esta ciudad -->
+      </div>
+
+      <!-- NOTA DE SENSIBILIDAD -->
+      <!-- Ajusta los puntos según las particularidades de cada ciudad -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las procesiones son actos religiosos, no espectáculos. Guarda silencio durante las saetas y los momentos de oración.</li>
+          <li>No toques los pasos ni a los nazarenos. Respeta el espacio del cortejo.</li>
+          <li>Sigue las indicaciones de la Policía Local y Protección Civil, especialmente en zonas de mayor afluencia.</li>
+          <!-- Añade puntos específicos de la ciudad si los hay -->
+        </ul>
+      </div>
+
+
+      <!-- ====================================================
+           SECCIÓN 1: LA ESENCIA DE LA FIESTA
+           Texto evocador, en primera o tercera persona, que capture
+           la atmósfera y lo que hace única esta Semana Santa.
+           Mínimo 80 palabras. No usar bullet points aquí.
+           ==================================================== -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La Semana Santa de Sevilla es una de esas celebraciones que no se comprenden del todo hasta que se recorren a pie. Durante una semana, la ciudad cambia su ritmo cotidiano y se ordena en torno a la salida de las hermandades, al sonido de las bandas, al rumor de la espera y al silencio que se abre cuando un paso se aproxima. No es solo una suma de procesiones: es una manera de vivir la calle, la fe, el barrio y la memoria compartida. En Sevilla, la Semana Santa no se contempla únicamente; se escucha, se espera, se acompaña y se interpreta.
+      </p>
+
+
+      <!-- ====================================================
+           SECCIÓN 2: ¿EN QUÉ CONSISTE?
+           Explicación funcional para quien no conoce la Semana Santa:
+           qué es una cofradía, cómo funciona la procesión, qué es un paso/trono,
+           cómo se porta (costaleros vs. hombres de trono), itinerario general.
+           ==================================================== -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+       La Semana Santa de Sevilla se celebra entre el Domingo de Ramos y el Domingo de Resurrección. Durante esos días, más de 60 hermandades y cofradías realizan estación de penitencia a la Catedral, siguiendo horarios e itinerarios oficialmente aprobados por el Consejo General de Hermandades y Cofradías en coordinación con la autoridad eclesiástica. Cada una sale desde su templo, parroquia, iglesia o basílica de origen, recorre la ciudad hasta la Carrera Oficial y, desde allí, accede al entorno de la Catedral antes de regresar a su sede. 
+      </p>
+      <p>
+       El elemento central del cortejo es el <strong>paso</strong>, una estructura procesional de gran valor devocional y artístico sobre la que se disponen las imágenes titulares de Cristo, la Virgen o escenas de la Pasión. En Sevilla, los pasos son portados por <strong>costaleros</strong> desde el interior, sin quedar visibles al público, y son dirigidos por el <strong>capataz</strong>, que marca las maniobras y el ritmo mediante la voz y el llamador. Junto a ellos desfilan los <strong>nazarenos</strong>, los acólitos, los diputados de tramo, los ciriales y, según la hermandad, bandas de cornetas y tambores o bandas de música.
+      </p>
+      <p>
+       Para el visitante conviene tener presente que no se trata de un desfile festivo ni de una representación aislada, sino de un rito público cuidadosamente organizado. Una misma cofradía puede permanecer en la calle durante muchas horas y ofrecer experiencias muy distintas según el punto desde el que se contemple: la salida desde el templo, el tránsito por calles estrechas, el paso por Carrera Oficial, la estación de penitencia junto a la Catedral o la recogida en su barrio. Esa variedad es parte esencial de la experiencia sevillana. 
+      </p>
+
+
+      <!-- ====================================================
+           SECCIÓN 3: HISTORIA Y SIGNIFICADO
+           Origen, evolución histórica, escultores o imagineros relevantes,
+           significado cultural y religioso. Mínimo 2 párrafos.
+           ==================================================== -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las primeras cofradías penitenciales sevillanas se remontan a la Baja Edad Media, aunque el gran desarrollo de la Semana Santa en su forma actual se consolidó entre los siglos XVI y XVII. Sevilla, convertida entonces en un gran centro económico y artístico del mundo hispánico, impulsó una imaginería religiosa extraordinaria y reunió obras de escultores como <strong>Juan Martínez Montañés</strong>, <strong>Pedro Roldán</strong> o <strong>Juan de Mesa</strong>, cuya huella sigue siendo decisiva en muchas de las imágenes que procesionan hoy.
+      </p>
+      <p>
+       A lo largo de los siglos, la celebración ha cambiado en recorridos, organización y escala, pero ha mantenido sus elementos fundamentales: la hermandad, la estación de penitencia, la vinculación con un templo y con un barrio, y la convicción de que la imagen procesional es una presencia central en la vida devocional de la ciudad. Por eso, para muchos sevillanos, la Semana Santa no es solo una tradición anual, sino una parte de la memoria familiar y de la identidad local. 
+      </p>
+      <p>
+      En la actualidad, su significado es doble. Por un lado, sigue siendo una expresión religiosa de enorme intensidad; por otro, constituye un patrimonio vivo que articula arte, música, tradición oral, organización ciudadana y uso ceremonial del espacio urbano. Para quien llega de fuera, esto se traduce en una experiencia compleja y muy rica, donde la dimensión estética nunca está desligada del sentido espiritual ni del arraigo popular.
+      </p>
+
+
+      <!-- ====================================================
+           SECCIÓN 4: FECHAS
+           Fechas del año en curso con días nombrados.
+           Recuerda actualizar también el JSON-LD del <head>.
+           ==================================================== -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Sevilla se celebra del <strong>Domingo 21 de marzo</strong>,
+        <strong>Domingo de Ramos</strong>, al <strong>Domingo 28 de marzo</strong>,
+        <strong>Domingo de Resurrección</strong>. Las fechas cambian cada año según el calendario
+        litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+      </p>
+      <p>
+        Los horarios e itinerarios oficiales de cada hermandad se aprueban para cada edición por el Consejo General de Hermandades y Cofradías. Además, el Ayuntamiento publica información municipal sobre seguridad, movilidad, accesibilidad y servicios especiales.
+      </p>
+
+
+      <!-- ====================================================
+           SECCIÓN 5: PROCESIONES MÁS DESTACADAS (timeline)
+           Una entrada por día, con el nombre de la jornada y
+           descripción breve de lo más relevante de ese día.
+           ==================================================== -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La jornada abre simbólicamente la Semana Santa con hermandades muy esperadas como la Borriquita, y ofrece un ambiente especialmente familiar y de estreno de la fiesta.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          Permite descubrir buena parte de la diversidad cofrade sevillana, con hermandades muy ligadas a sus barrios y recorridos extensos que muestran otra cara de la ciudad.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Es un día muy útil para el visitante que quiere observar la riqueza de estilos y cortejos, desde corporaciones con gran implantación popular hasta otras de tono más sobrio. 
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          La ciudad entra en un clima de creciente intensidad y muchas hermandades ofrecen algunos de los recorridos más esperados en el centro histórico. 
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          La jornada desemboca en la Madrugada, el momento más emblemático de la Semana Santa sevillana, con una ciudad en vigilia hasta bien entrada la mañana del Viernes Santo.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          Tras la fuerza emocional de la Madrugada, el ambiente se vuelve generalmente más sobrio y penitencial, con procesiones de carácter muy marcado.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          La semana entra en su tramo final con un tono distinto, más contenido, antes de la celebración de la Resurrección.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La Hermandad de la Resurrección pone fin a la Semana Santa con un cierre de signo pascual y luminoso.
+        </li>
+      </ul>
+
+
+      <!-- ====================================================
+           SECCIÓN 6: COFRADÍAS POR DÍA (cuadrícula)
+           Lista de cofradías agrupadas por jornada.
+           Añade o elimina columnas según los días con procesiones.
+           Fuente: organismo oficial de la ciudad.
+           ==================================================== -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        Sevilla cuenta con más de 60 hermandades que realizan estación de penitencia durante la Semana Santa.
+        Consulta el programa oficial del Consejo General de Hermandades y Cofradías para horarios e itinerarios exactos de cada edición.
+      </p>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>La Borriquita/El Amor</li>
+            <li>La Cena</li>
+            <li>Jesús Despojado</li>
+            <li>La Hiniesta</li>
+            <li>La Paz</li>
+            <li>San Roque</li>
+            <li>La Estrella</li>
+            <li>La Amargura</li>
+            <li>El Amor</li>
+            <!-- Añade las que correspondan -->
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>San Pablo</li>
+            <li>La Redención</li>
+            <li>Santa Genoveva</li>
+            <li>Santa Marta</li>
+            <li>San Gonzalo</li>
+            <li>Vera-Cruz</li>
+            <li>Las Penas de San Vicente</li>
+            <li>Las Aguas</li>
+            <li>El Museo</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>El Cerro</li>
+            <li>San Esteban</li>
+            <li>La Candelaria</li>
+            <li>San Benito</li>
+            <li>Los Javieres</li>
+            <li>Dulce Nombre</li>
+            <li>Los Estudiantes</li>
+            <li>Santa Cruz</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>El Carmen Doloroso</li>
+            <li>El Buen Fin</li>
+            <li>La Sed</li>
+            <li>San Bernardo</li>
+            <li>La Lanzada</li>
+            <li>El Baratillo</li>
+            <li>Cristo de Burgos</li>
+            <li>Las Siete Palabras</li>
+            <li>Los Panaderos</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>Los Negritos</li>
+            <li>La Exaltación</li>
+            <li>Las Cigarreras</li>
+            <li>Montesión</li>
+            <li>Quinta Angustia</li>
+            <li>El Valle</li>
+            <li>Pasión</li>
+          </ul>
+        </div>
+       <div class="cofradia-col">
+  <h3>Viernes Santo · Madrugada</h3>
+  <ul>
+    <li>El Silencio</li>
+    <li>El Gran Poder</li>
+    <li>La Macarena</li>
+    <li>El Calvario</li>
+    <li>Esperanza de Triana</li>
+    <li>Los Gitanos</li>
+  </ul>
+</div>
+<div class="cofradia-col">
+  <h3>Viernes Santo · Tarde</h3>
+  <ul>
+    <li>La Carretería</li>
+    <li>Soledad de San Bonaventura</li>
+    <li>El Cachorro</li>
+    <li>La O</li>
+    <li>San Isidoro</li>
+    <li>Montserrat</li>
+    <li>La Mortaja</li>
+  </ul>
+</div>
+        <!-- Añade columna de Sábado Santo si hay procesiones ese día -->
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>El Sol</li>
+            <li>Los Servitas</li>
+            <li>La Trinidad</li>
+            <li>Santo Entierro</li>
+            <li>La Soledad de San Lorenzo</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>La Resurrección</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fuente">Fuente: <a href="https://www.hermandades-de-sevilla.org/" target="_blank" rel="noopener">Consejo General de Hermandades y Cofradías</a> — última verificación: 2026-04-15</p>
+
+
+      <!-- ====================================================
+           SECCIÓN 7: MÚSICA
+           Dimensión sonora: bandas, marchas emblemáticas, saeta.
+           Incluye consejos de escucha y piezas concretas si las hay.
+           ==================================================== -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La dimensión sonora de la Semana Santa sevillana es fundamental para comprenderla. Las bandas de cornetas y tambores aportan un sonido rotundo, penitencial y muy reconocible, mientras que las bandas de música interpretan marchas solemnes que forman parte de la memoria sentimental de la ciudad. La música no solo acompaña al cortejo: marca su pulso, anticipa la llegada del paso y cambia por completo la percepción de cada tramo del recorrido.
+        </p>
+        <p>
+         Junto a las bandas, la **saeta** ocupa un lugar singular. Es un cante de fuerte carga devocional que puede surgir desde un balcón o desde la propia calle al paso de una imagen. Cuando eso ocurre, el cortejo suele detenerse y el entorno guarda silencio. En Sevilla, ese instante tiene un valor especial porque concentra religiosidad popular, emoción colectiva y tradición flamenca en un mismo gesto. 
+        </p>
+        <p>
+         Hay también sonidos más sutiles que el visitante aprende a reconocer: el golpe seco del llamador antes de una levantá, el esfuerzo acompasado de los costaleros, el murmullo contenido del público o el contraste entre la multitud y el silencio en ciertas hermandades. Escuchar estos matices forma parte de la experiencia tanto como mirar el paso. 
+        </p>
+        <ul>
+          <li>Cuando suena una saeta, conviene guardar silencio y evitar moverse entre el público.</li>
+          <li>Si eres sensible al ruido, las zonas con bandas de cornetas y tambores pueden requerir protección auditiva, especialmente de noche.</li>
+        </ul>
+      </div>
+
+
+      <!-- ====================================================
+           SECCIÓN 8: NO TE LO PUEDES PERDER (tarjetas)
+           4-6 momentos o experiencias clave. Cada tarjeta tiene:
+           - Título del momento
+           - Tag con día/lugar/franja horaria
+           - Descripción breve (2-3 frases)
+           - Detalle expandible con consejo práctico
+           ==================================================== -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La salida de una hermandad desde su templo</h3>
+          <span class="tag">Domingo de Ramos o cualquier jornada · Templo de origen</span>
+          <p>Pocas escenas explican mejor la relación entre la hermandad y su barrio que el momento de la salida. Se abre la puerta del templo, se tensan los tiempos, el público guarda expectación y el primer movimiento del paso concentra una emoción difícil de describir.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el instante en el que la procesión deja de ser una espera y se convierte en presencia real. Conviene llegar con antelación, situarse sin invadir la puerta del templo y prestar atención tanto al paso como a la reacción del barrio.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Carrera Oficial y el entorno de la Catedral</h3>
+          <span class="tag">Cualquier día · Centro histórico</span>
+          <p>Ver una cofradía en este tramo permite apreciar con claridad el orden del cortejo, la densidad de nazarenos, la relación entre música y marcha procesional y la solemnidad que adquiere la estación de penitencia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ayuda a entender la estructura completa de la Semana Santa sevillana. Si se busca una visión más ordenada del desfile, es uno de los mejores lugares para observarla con perspectiva.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Madrugada</h3>
+          <span class="tag">Noche del Jueves Santo al Viernes Santo · Varias zonas del centro y Triana</span>
+          <p>La Madrugada reúne algunas de las hermandades más seguidas y concentra la imagen más universal de la Semana Santa de Sevilla: una ciudad despierta toda la noche, calles llenas, largos silencios, marchas inolvidables y una intensidad emocional muy particular.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento más emblemático de toda la semana. Conviene planificar bien el recorrido, asumir que habrá mucha afluencia de público y elegir uno o dos puntos clave en lugar de intentar abarcar demasiados.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La recogida en el barrio</h3>
+          <span class="tag">Final de cada jornada · Regreso al templo</span>
+          <p>Cuando una hermandad vuelve a su sede después de muchas horas en la calle, el ambiente cambia. El cansancio del cortejo, la cercanía del barrio y la emoción del regreso producen algunos de los momentos más humanos y memorables de toda la Semana Santa.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque permite ver la procesión en un contexto más íntimo y menos monumental que el centro. Para muchos visitantes, es el momento en el que mejor se comprende el vínculo entre la cofradía y su comunidad.</p>
+          </details>
+        </div>
+
+        <!-- Añade más tarjetas si lo necesitas. Máximo recomendado: 6 -->
+
+      </div>
+
+
+      <!-- ====================================================
+           SECCIÓN 9: CONSEJOS PRÁCTICOS
+           Lista de consejos directos y útiles para el visitante.
+           Personaliza según la ciudad (calles, transporte, zonas...).
+           ==================================================== -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li>Reserva alojamiento con mucha antelación, especialmente si deseas estar cerca del centro histórico o de zonas muy demandadas como la Carrera Oficial o Triana.</li>
+        <li>Las sillas y palcos de la Carrera Oficial son de pago; si prefieres una experiencia más libre, busca salidas, recogidas o calles secundarias del recorrido.</li>
+        <li>Lleva calzado muy cómodo, porque caminarás durante horas y el adoquinado del centro puede resultar exigente.</li>
+        <li>Ten en cuenta que por la noche y de madrugada la temperatura puede bajar sensiblemente respecto a las horas centrales del día.</li>
+        <li>Consulta siempre los itinerarios oficiales y la información municipal actualizada antes de desplazarte. La APP Sevilla incorpora datos de ocupación y geolocalización de hermandades.</li>
+        <li>No cruces los cortejos salvo en pasos habilitados y sigue siempre las indicaciones de la Policía Local y de la organización.</li>
+        <!-- Añade consejos específicos de la ciudad -->
+      </ul>
+
+
+      <!-- ====================================================
+           SECCIÓN 10: VOCABULARIO COFRADE
+           Términos propios de esta Semana Santa.
+           Incluye los generales y añade los específicos de la ciudad.
+           ==================================================== -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <!-- Términos comunes a todas las Semanas Santas -->
+        <dt>Cofradía / Hermandad</dt>
+        <dd>Asociación religiosa y cultural que organiza y sustenta una procesión. Cada una tiene sus imágenes, su historia y su barrio.</dd>
+
+        <dt>Paso</dt>
+        <dd>Estructura procesional portada por costaleros desde el interior. En Sevilla es el eje artístico y devocional del cortejo, y puede ser de misterio o de palio.</dd>
+
+        <dt>Nazareno</dt>
+        <dd>Miembro de la cofradía que acompaña la procesión con túnica y capirote, portando velas, cruces o insignias.</dd>
+
+        <dt>Capirote</dt>
+        <dd>Cono puntiagudo que utilizan los nazarenos. Simboliza penitencia y no tiene relación con significados ajenos a la Semana Santa.</dd>
+
+        <dt>Saeta</dt>
+        <dd>Cante flamenco improvisado desde un balcón o la calle como expresión de fervor. Detiene el cortejo y exige silencio absoluto.</dd>
+
+        <dt>Capataz</dt>
+        <dd>Quien dirige a los portadores del paso, marcando el ritmo y las maniobras mediante la voz y el llamador.</dd>
+
+        <!-- Términos específicos de la ciudad: añade, elimina o adapta los siguientes -->
+        <dt>Llamador</dt>
+        <dd>Pieza metálica situada en la parte delantera del paso que el capataz golpea para avisar a los costaleros antes de una maniobra.</dd>
+
+        <dt>Levantá</dt>
+        <dd>Momento en que los costaleros elevan el paso del suelo para iniciar o reanudar la marcha.</dd>
+
+      </dl>
+
+
+      <!-- ====================================================
+           SECCIÓN 11: GALERÍA
+           Mínimo 2 imágenes, máximo 6. Alt descriptivo en cada una.
+           Formatos recomendados: jpg/webp. Tamaño: 800-1200px de ancho.
+           ==================================================== -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-[ciudad]-1.jpg" alt="[Descripción visual detallada de la imagen 1]" />
+        <img src="images/semana-santa-[ciudad]-2.jpg" alt="[Descripción visual detallada de la imagen 2]" />
+        <img src="images/semana-santa-[ciudad]-3.jpg" alt="[Descripción visual detallada de la imagen 3]" />
+        <!-- Añade o elimina imágenes según disponibilidad -->
+      </div>
+
+
+      <!-- ====================================================
+           SECCIÓN 12: ENLACES ÚTILES
+           Solo fuentes oficiales verificadas. Incluye fecha de verificación.
+           ==================================================== -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.hermandades-de-sevilla.org/" target="_blank" rel="noopener">Consejo General de Hermandades y Cofradías de Sevilla</a></li>
+        <li><a href="https://www.sevilla.org/" target="_blank" rel="noopener">Ayuntamiento de Sevilla</a></li>
+        <li><a href="https://visitasevilla.es/puntos-de-informacion-turistica/" target="_blank" rel="noopener">Turismo de Sevilla</a></li>
+        <!-- Añade más si los hay: web de accesibilidad, app oficial, etc. -->
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-04-15</p>
+
+
+      <!-- ====================================================
+           SECCIÓN 13: PREGUNTAS FRECUENTES
+           Responde las 6 preguntas base. Añade las específicas de la ciudad.
+           ==================================================== -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo.</dd>
+
+        <dt>¿Necesito entrada para ver las procesiones?</dt>
+        <dd>No para la mayor parte del recorrido. Las sillas y palcos de la Carrera Oficial son de pago, pero el resto de calles es de acceso libre, aunque con afluencia muy alta en algunos puntos.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. Cada hermandad decide según el estado del tiempo para proteger las imágenes. La decisión se comunica por sus canales oficiales y suele ser de última hora.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, especialmente en procesiones diurnas y en jornadas como el Domingo de Ramos. La Madrugada y algunos recorridos muy largos pueden resultar más exigentes para los más pequeños.</dd>
+
+        <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
+        <dd> El Ayuntamiento activa medidas específicas y publica información práctica para cada edición, por lo que conviene consultar con antelación la planificación municipal vigente.</dd>
+
+        <dt>¿Puedo hacer fotografías durante las procesiones?</dt>
+        <dd>Sí, siempre sin flash y sin invadir el recorrido del cortejo. Respeta los silencios durante las saetas y los momentos de oración.</dd>
+
+        <!-- Añade preguntas específicas de la ciudad -->
+        <dt>¿Cuál es la diferencia entre la Semana Santa del sur y la del norte?</dt>
+        <dd>En términos generales, en el sur —y especialmente en Andalucía— suele haber mayor presencia de música, procesiones muy desarrolladas en la calle y una participación popular muy visible. En muchas zonas del norte predomina un tono más sobrio y contenido. Ambas formas comparten raíz religiosa, pero han desarrollado estilos distintos.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <!-- ============================================================ PIE DE PÁGINA -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>

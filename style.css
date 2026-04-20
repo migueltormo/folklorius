@@ -1,0 +1,461 @@
+/* ============================================================
+   FOLKLORIUS — style.css
+   Fiesta, tradición e historia
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --brand:        #b34700;
+  --brand-dark:   #8a3500;
+  --accent:       #d6a64f;
+  --accent-light: #f5e6c8;
+  --bg:           #fdf9f4;
+  --bg-card:      #ffffff;
+  --text:         #2c2c2c;
+  --text-muted:   #5a5a5a;
+  --border:       #e8ddd4;
+  --shadow:       0 2px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,0.14);
+  --radius:       10px;
+  --radius-sm:    6px;
+  --max-width:    900px;
+  --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Reset base ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul, ol { padding-left: 1.4rem; }
+li { margin-bottom: 0.35rem; }
+
+/* ── Tipografía ────────────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--brand);
+  line-height: 1.25;
+}
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.5rem; }
+h2 { font-size: clamp(1.25rem, 3vw, 1.65rem); margin-bottom: 0.5rem; }
+h3 { font-size: 1.1rem; }
+
+p { margin-bottom: 1rem; color: var(--text); }
+
+/* ── Layout helpers ─────────────────────────────────────────── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.site-header {
+  background: #fff;
+  border-bottom: 2px solid var(--accent-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.site-logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.main-nav a {
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: background 0.18s, color 0.18s;
+}
+.main-nav a:hover {
+  background: var(--accent-light);
+  color: var(--brand);
+  text-decoration: none;
+}
+.nav-cta {
+  background: var(--brand);
+  color: #fff !important;
+  border-radius: 999px;
+  padding: 7px 16px !important;
+}
+.nav-cta:hover {
+  background: var(--brand-dark) !important;
+  color: #fff !important;
+}
+
+/* ── HERO (portada) ─────────────────────────────────────────── */
+.hero-cover {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  overflow: hidden;
+  background: #111;
+}
+.hero-cover picture,
+.hero-cover .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(3,7,18,0.35) 0%,
+    rgba(3,7,18,0.55) 60%,
+    rgba(3,7,18,0.70) 100%
+  );
+  padding: 40px 18px;
+}
+.hero-inner {
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+}
+.hero-inner h1 {
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
+.hero-tag {
+  font-size: 1.1rem;
+  opacity: 0.92;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.hero-cta {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: #1a0f00;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: background 0.18s, transform 0.18s;
+}
+.hero-cta:hover {
+  background: #c49030;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ── SECCIÓN INTRO ──────────────────────────────────────────── */
+.intro {
+  text-align: center;
+  padding: 56px 18px 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.intro h2 { margin-bottom: 12px; }
+.intro p { font-size: 1.08rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+/* ── GRID DE FICHAS ──────────────────────────────────────────── */
+.fiestas-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 18px 56px;
+}
+.fiestas-section h2 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.fiestas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.fiesta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.fiesta-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+.fiesta-card a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+.fiesta-card a:hover { text-decoration: none; }
+.fiesta-card:hover .card-title { color: var(--brand); }
+
+/* Imagen de la tarjeta */
+.card-img-wrap {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.fiesta-card:hover .card-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  transition: color 0.18s;
+}
+.card-frase {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.4;
+}
+.card-meta {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ── FICHA INDIVIDUAL ────────────────────────────────────────── */
+
+/* Breadcrumb */
+.breadcrumb {
+  max-width: var(--max-width);
+  margin: 14px auto;
+  padding: 0 18px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.breadcrumb a { color: var(--brand); }
+
+/* Hero de ficha */
+.ficha-hero {
+  max-width: var(--max-width);
+  margin: 0 auto 0;
+  padding: 0 18px;
+}
+.ficha-hero img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Contenido principal de la ficha */
+.ficha-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 18px 48px;
+}
+
+/* Card blanca contenedora */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+/* Subtítulo bajo el h1 */
+.ficha-subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Badges de reconocimientos */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.badge {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.badge-unesco  { background: #0f766e; color: #fff; }
+.badge-oficial { background: var(--brand); color: #fff; }
+.badge-interes { background: #1d4ed8; color: #fff; }
+
+/* Aviso de sensibilidad */
+.aviso-sensibilidad {
+  background: #fff7ed;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: #7a4b11;
+  font-size: 0.95rem;
+}
+.aviso-sensibilidad strong { display: block; margin-bottom: 6px; }
+.aviso-sensibilidad ul { margin: 4px 0 0 16px; }
+
+/* Títulos de sección dentro de la ficha */
+.section-title {
+  font-family: var(--font-display);
+  color: var(--brand);
+  font-size: 1.3rem;
+  margin: 28px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent-light);
+}
+
+/* Bloque de música */
+.music-block {
+  background: #f0f7ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+/* Glosario festero */
+dl.festero { margin: 0 0 1rem; }
+dl.festero dt {
+  display: inline-block;
+  vertical-align: top;
+  width: 160px;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin-right: 10px;
+}
+dl.festero dd {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0.75rem;
+  width: calc(100% - 175px);
+  color: var(--text-muted);
+}
+
+/* FAQ */
+dl.faq dt {
+  font-weight: 700;
+  color: var(--brand);
+  margin-top: 14px;
+}
+dl.faq dd {
+  margin: 4px 0 0 0;
+  color: var(--text-muted);
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.galeria img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Nota de fuente */
+.fuente {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Enlace volver */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.site-footer {
+  background: #faf7f5;
+  border-top: 1px solid var(--border);
+  padding: 20px 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.site-footer p { margin-bottom: 4px; color: var(--text-muted); }
+.site-footer a { color: var(--brand); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .main-nav { gap: 4px; }
+  .main-nav a { padding: 6px 8px; font-size: 0.88rem; }
+  .site-logo { max-width: 160px; }
+  .card { padding: 18px 16px; }
+  dl.festero dt, dl.festero dd { display: block; width: auto; }
+  dl.festero dt { margin-bottom: 4px; }
+  dl.festero dd { margin-bottom: 12px; }
+}
