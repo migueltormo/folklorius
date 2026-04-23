@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cartagena — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Cartagena: diez días de procesiones marciales, tronos de luz y flor, tercios de granaderos y la emotiva Salve Cartagenera. Declarada Fiesta de Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-cartagena.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Cartagena — Folklorius" />
+  <meta property="og:description" content="Diez días de procesiones marciales, tronos monumentales y tradición naval en Cartagena." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-cartagena.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+    .must-see-card details {
+      margin-top: 10px;
+    }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after {
+      content: " ↓";
+      font-size: 0.8rem;
+    }
+    .must-see-card details[open] summary::after {
+      content: " ↑";
+    }
+    .must-see-card details p {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted, #666);
+    }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child {
+      padding-bottom: 0;
+    }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-cartagena.html",
+    "name": "Semana Santa de Cartagena",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Cartagena",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cartagena",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6057,
+        "longitude": -0.9916
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-cartagena.jpg"],
+    "description": "La Semana Santa de Cartagena: diez días de procesiones marciales con 5 cofradías, tronos monumentales de luz y flor, tercios de granaderos y la emotiva Salve Cartagenera.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Semana Santa de Cartagena",
+      "url": "https://semanasanta.cartagena.es/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Cartagena
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-cartagena.jpg" alt="Procesión nocturna de la Semana Santa de Cartagena con tronos iluminados y tercios de penitentes" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Cartagena</h1>
+      <p class="ficha-subtitle">
+        Cartagena (Región de Murcia) · Fiesta religiosa y cultural · "Diez días de orden, luces y tradición militar"
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las procesiones son actos religiosos solemnes, no espectáculos. Respeta el silencio y el orden marcial característico de Cartagena.</li>
+          <li>No toques los tronos ni interfieras con los tercios de penitentes, granaderos o soldados romanos.</li>
+          <li>Sigue las indicaciones de la Policía Local y Protección Civil, especialmente durante los actos militares y en calles estrechas del casco histórico.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La Semana Santa de Cartagena no se parece a ninguna otra. Durante diez días, la ciudad portuaria que fue base naval del Mediterráneo despliega un ritual que combina devoción religiosa con una disciplina castrense que lo impregna todo: el orden de los tercios, el paso sincronizado de los portapasos, el silencio profundo de las procesiones nocturnas. Los tronos monumentales cubiertos de flores y hachotes avanzan lentos por el casco histórico mientras la Salve Cartagenera cierra cada jornada con una emoción que el visitante difícilmente olvida. Aquí la Semana Santa no se contempla desde fuera: se vive desde dentro, en las calles estrechas, junto a los cortejos, entendiendo que cada gesto tiene un orden y cada silencio, un significado.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Cartagena, declarada de <strong>Interés Turístico Internacional en 2005</strong>, se celebra durante <strong>diez días</strong> desde el Viernes de Dolores hasta el Domingo de Resurrección. Las cinco cofradías organizan 24 procesiones y actos que recorren el casco histórico, con epicentro en la Iglesia de Santa María de Gracia.
+      </p>
+      <p>
+        Cada cofradía representa episodios cronológicos de la Pasión con tronos monumentales portados a hombros por <strong>portapasos</strong>, precedidos por tercios organizados: penitentes, granaderos, soldados romanos y niños nazarenos sin capirote que reparten caramelos y recuerdos manteniendo el orden del desfile. Destacan la decoración floral exuberante, la luz de hachotes y la marcialidad de los cortejos, con participación militar en actos como la salida del Arsenal.
+      </p>
+      <p>
+        Las procesiones son mayoritariamente nocturnas, con silencios profundos, redobles de tambores sordos y la <strong>Salve Cartagenera</strong> al regreso de cada hermandad. No es un espectáculo caótico, sino un ritual disciplinado que refleja la identidad cartagenera: orden, luces y devoción naval.
+      </p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La Semana Santa de Cartagena surge en el siglo XVII con las primeras cofradías penitenciales, profundamente influida por la tradición militar y naval de la ciudad como base del Mediterráneo. Las cofradías californios (rojo, fundada en 1747) y marrajos (morado, del siglo XVII) desarrollan un estilo propio con tercios marciales y tronos luminosos que se consolida en el siglo XIX con imágenes de escultores locales.
+      </p>
+      <p>
+        Tras la Guerra Civil, la Federación de Cofradías organiza el calendario actual de diez días. Declarada Fiesta de Interés Turístico Internacional en 2005, la Semana Santa de Cartagena representa la identidad de la ciudad: disciplina castrense, devoción popular y orgullo local. Las rivalidades festivas entre californios y marrajos son tradición, no hostilidad, y unen a la ciudad en torno a un ritual cronológico y colectivo de la Pasión.
+      </p>
+
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Cartagena se celebra del <strong>viernes 19 de marzo</strong>, Viernes de Dolores, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Con diez días de duración, es una de las más largas de España. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+      </p>
+      <p>
+        Consulta horarios e itinerarios oficiales en la web de la Federación de Cofradías y en el Ayuntamiento de Cartagena. Pueden ajustarse por meteorología o cambios de organización.
+      </p>
+
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 marzo</span>
+          El Santísimo Cristo del Socorro (cofradía negra) abre oficialmente la Semana Santa de España con una procesión nocturna de gran solemnidad.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 marzo</span>
+          "La Burrica" o Entrada de Jesús en Jerusalén (californios): procesión diurna e infantil con palmas, personajes bíblicos y ambiente familiar.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 marzo</span>
+          Virgen de la Piedad (marrajos): procesión multitudinaria con trono de plata, una de las más seguidas de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 marzo</span>
+          Santos Mártires (californios) con salida desde centros militares, incluyendo la singular procesión de San Pedro del Arsenal.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 marzo</span>
+          Lavatorio de Pilatos (californios) en la Plaza del Ayuntamiento, seguido de la Magna Procesión del Prendimiento.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 marzo</span>
+          Procesión del Silencio: calles en penumbra, tambores sordos y recogimiento absoluto. Uno de los momentos más impactantes de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 marzo</span>
+          El Encuentro (marrajos) en la madrugada y el Santo Entierro por la noche cierran la jornada más intensa de la Semana Santa cartagenera.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 marzo</span>
+          Virgen de la Soledad de los Pobres (marrajos): procesión de tono recogido y muy emotiva para los cartageneros.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 marzo</span>
+          Jesús Resucitado (resucitados): cierre jubiloso y diurno que contrasta con la gravedad de los días anteriores.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        Cartagena cuenta con 5 cofradías que organizan 24 procesiones durante los diez días que dura la Semana Santa.
+        Consulta el programa oficial de la Federación de Cofradías para horarios e itinerarios exactos.
+      </p>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>Ilustre Cofradía del Santísimo y Real Cristo del Socorro (negro)</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>Cofradía California (rojo) — La Burrica / Palmas</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno (marrajos, morado) — Virgen de la Piedad</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>Cofradía California — Santos Mártires (Santiago, San Juan, San Pedro)</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>Cofradía California — Prendimiento (Magna)</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>Cofradía California — Silencio</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>Cofradía Marraja — Encuentro (madrugada)</li>
+            <li>Cofradía Marraja — Santo Entierro (noche)</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>Cofradía Marraja — Virgen de la Soledad de los Pobres</li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>Real e Ilustre Cofradía de Nuestro Padre Jesús Resucitado (resucitados, blanco)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasanta.cartagena.es/" target="_blank" rel="noopener">Web oficial Semana Santa de Cartagena</a> — última verificación: 2026-04-23</p>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La música en Cartagena es sobria y marcial. Las <strong>bandas de cornetas con tambores de sordina</strong> marcan un ritmo preciso y contenido que no sobrecarga el ambiente solemne, sino que lo refuerza. Los redobles apagados y los silencios prolongados son especialmente intensos en la Procesión del Silencio del Jueves Santo, donde la penumbra y el sonido seco de los tambores crean una atmósfera difícil de describir.
+        </p>
+        <p>
+          A diferencia de las Semanas Santas andaluzas, en Cartagena no hay saetas flamencas. En su lugar destaca la <strong>Salve Cartagenera</strong>, un canto devocional propio que se interpreta al final de las procesiones virginales. Es un momento de gran carga emocional: el cortejo regresa, la ciudad guarda silencio y las voces se alzan en una despedida colectiva. Actos como el Lavatorio de Pilatos incluyen además diálogos recitados que añaden una dimensión teatral única. Si prestas atención, también escucharás el tintineo de los cristales en las tulipas de los tronos, el ritmo acompasado de los portapasos y el apagado gradual de las luces públicas al paso de los cortejos nocturnos.
+        </p>
+        <ul>
+          <li>Respeta el silencio ritual durante los desfiles; el ambiente recogido es parte esencial de la experiencia.</li>
+          <li>Las bandas pueden ser potentes en espacios estrechos; lleva protección auditiva si eres sensible al ruido.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Lavatorio de Pilatos</h3>
+          <span class="tag">Miércoles Santo · Plaza del Ayuntamiento</span>
+          <p>Representación teatral del Drama del Pretorio con diálogos recitados y cortejo solemne de californios. Un acto único en España que combina teatro, devoción y tradición cofrade en plena plaza mayor.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el acto más singular de toda la Semana Santa cartagenera y no tiene equivalente en ninguna otra ciudad. Conviene llegar con antelación a la Plaza del Ayuntamiento para encontrar buen sitio, ya que la afluencia es muy alta. Escuchar los diálogos con calma es parte esencial de la experiencia.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La salida de San Pedro del Arsenal</h3>
+          <span class="tag">Martes Santo · Arsenal Militar</span>
+          <p>San Pedro solicita permiso al Gobierno Militar para pernoctar fuera del Arsenal. La cofradía sale desde las instalaciones militares con un ceremonial castrense que no se repite en ninguna otra Semana Santa española.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ilustra mejor que ningún otro acto la fusión entre la tradición militar y la devoción popular que define a Cartagena. Situarse en las calles cercanas al Arsenal permite ver el orden de los tercios desde el inicio del cortejo y entender la escala del ceremonial.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Encuentro en la madrugada del Viernes Santo</h3>
+          <span class="tag">Viernes Santo · Madrugada · Barrio de la Pescadería</span>
+          <p>Jesús Nazareno y la Virgen Dolorosa se encuentran en uno de los momentos más emotivos de toda la semana marraja. El barrio de la Pescadería vive el instante con una intensidad que transforma el ambiente de la madrugada.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el clímax emocional de la cofradía marraja y uno de los momentos más recordados por quienes lo presencian. Posicionarse en el barrio de Santa Lucía antes de la salida permite ver el cortejo en un entorno íntimo. Prepárate para una noche larga y lleva abrigo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión del Silencio</h3>
+          <span class="tag">Jueves Santo · Noche · Santa María de Gracia</span>
+          <p>Calles en penumbra, tambores sordos y luces tenues. La Procesión del Silencio es el desfile más severo y recogido de toda la Semana Santa cartagenera, y uno de los más impactantes de España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contraste entre la oscuridad, el sonido apagado y la densidad del cortejo produce una atmósfera que muy pocas celebraciones logran. Si la ves desde un balcón, apaga las luces interiores para no romper el ambiente. En la calle, el silencio del público es parte del acto: respétalo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Salve Cartagenera</h3>
+          <span class="tag">Final de procesiones virginales · Toda la semana</span>
+          <p>El canto devocional propio de Cartagena que cierra las procesiones de imágenes virginales. Colectivo, emotivo y reconocible, es el sonido que los cartageneros asocian con el regreso al barrio y el final de cada jornada.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque concentra en un solo momento lo que diferencia a Cartagena de cualquier otra Semana Santa: una ciudad con canto propio, identidad propia y una relación muy particular entre la cofradía, el barrio y sus vecinos. Escucharla por primera vez junto a los cartageneros es una experiencia que no se improvisa.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li>Reserva las sillas de la Tribuna Oficial con mucha antelación; son de pago y se agotan rápido.</li>
+        <li>Usa calzado muy cómodo: el casco histórico tiene adoquines y las procesiones nocturnas son largas.</li>
+        <li>Para procesiones diurnas basta ropa de temporada; para las madrugadas del Viernes Santo la temperatura baja notablemente, lleva abrigo.</li>
+        <li>Consulta los itinerarios y horarios actualizados en la web oficial o en la app de la Federación de Cofradías antes de cada jornada.</li>
+        <li>No cruces los cortejos salvo en los puntos habilitados y sigue siempre las indicaciones del personal de seguridad.</li>
+        <li>El aparcamiento en el casco histórico es muy limitado durante la semana; usa el transporte público o aparca en zonas periféricas y accede a pie.</li>
+        <li>Si vas con niños, el Domingo de Ramos es la jornada más recomendable: es diurna, infantil y de ambiente muy accesible.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Cofradía</dt>
+        <dd>Asociación religiosa penitencial que organiza las procesiones de Semana Santa, integrada por múltiples agrupaciones especializadas. Se identifican por colores propios y representan episodios cronológicos de la Pasión con identidad diferenciada.</dd>
+
+        <dt>Trono</dt>
+        <dd>Estructura monumental con imagen sagrada portada a hombros por los portapasos. En Cartagena destaca por su decoración floral exuberante, la luz de los hachotes y los bordados ricos que lo cubren.</dd>
+
+        <dt>Portapasos</dt>
+        <dd>Portadores que cargan los tronos sobre los hombros de forma visible, a diferencia de los costaleros andaluces que trabajan ocultos bajo el paso. En Cartagena trabajan en cuadrillas sincronizadas dirigidas por el capataz mediante tambor o silbato.</dd>
+
+        <dt>Nazareno</dt>
+        <dd>Penitente infantil con el rostro descubierto, sin capirote: rasgo distintivo y único de Cartagena. Desfila manteniendo el orden marcial del cortejo y reparte caramelos y recuerdos entre el público.</dd>
+
+        <dt>Capirote</dt>
+        <dd>Cono puntiagudo que utilizan los penitentes adultos. Simboliza penitencia y no tiene relación con significados ajenos a la Semana Santa. Los niños nazarenos de Cartagena no lo utilizan.</dd>
+
+        <dt>Salve Cartagenera</dt>
+        <dd>Canto devocional propio de Cartagena que se interpreta al finalizar las procesiones virginales. Tiene carácter colectivo y emotivo, y funciona como despedida de cada jornada en un clima de silencio y recogimiento.</dd>
+
+        <dt>Tercio</dt>
+        <dd>Grupo organizado de nazarenos, granaderos o soldados romanos que desfila de forma ordenada. El carácter marcial de los tercios es esencial para la estética y el ritmo del cortejo cofrade cartagenero.</dd>
+
+        <dt>Hachote</dt>
+        <dd>Antorcha de gran tamaño característica de las procesiones cartageneras. Su luz crea la atmósfera solemne de los desfiles nocturnos y potencia el impacto visual de los tronos en la oscuridad.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-cartagena-1.jpg" alt="Trono monumental iluminado durante una procesión nocturna de la Semana Santa de Cartagena" />
+        <img src="images/semana-santa-cartagena-2.jpg" alt="Tercio de granaderos desfilando en la Semana Santa de Cartagena" />
+        <img src="images/semana-santa-cartagena-3.jpg" alt="Portapasos cargando un trono floral en el casco histórico de Cartagena" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasanta.cartagena.es/" target="_blank" rel="noopener">Web oficial de la Semana Santa de Cartagena</a></li>
+        <li><a href="https://www.delegacioncofradias.org/" target="_blank" rel="noopener">Delegación de Cofradías de Cartagena</a></li>
+        <li><a href="https://www.cartagena.es/" target="_blank" rel="noopener">Ayuntamiento de Cartagena</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es/es/semana_santa_cartagena/" target="_blank" rel="noopener">Turismo de la Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-04-23</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 al 28 de marzo. Con diez días de duración, es una de las Semanas Santas más largas de España.</dd>
+
+        <dt>¿Necesito entrada para ver las procesiones?</dt>
+        <dd>Las sillas de la Tribuna Oficial son de pago y se agotan con antelación. El resto de las calles del recorrido es de acceso libre y gratuito, aunque conviene llegar con tiempo a los puntos más concurridos.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. Cada cofradía decide según el estado del tiempo para proteger las imágenes. Lo comunican a través de sus webs y redes sociales, y suele ser una decisión de última hora.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, especialmente el Domingo de Ramos con La Burrica, una procesión diurna e infantil muy accesible. Las madrugadas del Viernes Santo son más exigentes por la hora y la duración.</dd>
+
+        <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
+        <dd>El Ayuntamiento reserva zonas específicas en la Tribuna Oficial. Consulta la web municipal o la app de la Federación de Cofradías para conocer las ubicaciones exactas de cada edición.</dd>
+
+        <dt>¿Puedo hacer fotografías durante las procesiones?</dt>
+        <dd>Sí, siempre sin flash y sin interferir el paso del cortejo. Respeta especialmente el silencio durante la Procesión del Silencio y el Lavatorio de Pilatos.</dd>
+
+        <dt>¿En qué se diferencia de la Semana Santa de Sevilla o Málaga?</dt>
+        <dd>Las diferencias son notables: los niños nazarenos van sin capirote, los tronos los portan portapasos visibles en lugar de costaleros ocultos, hay un marcado carácter militar con tercios de granaderos y soldados romanos, la celebración dura diez días y tiene canto devocional propio, la Salve Cartagenera.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
