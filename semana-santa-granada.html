@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Granada — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Granada: 32 cofradías, saetas en el Albaicín, el Cristo de los Gitanos al Sacromonte y la Alhambra como telón de fondo. Del 21 al 28 de marzo de 2027." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-granada.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Granada — Folklorius" />
+  <meta property="og:description" content="32 cofradías, saetas gitanas y la Alhambra como telón de fondo. Granada, Andalucía." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-granada.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* --- Cuadrícula de cofradías por día --- */
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* --- Tooltip sobre nombre de cofradía --- */
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto {
+      display: block;
+    }
+    .cofradia-col ul li:focus-within .tooltip-texto {
+      display: block;
+    }
+
+    /* --- Tarjetas "No te lo puedes perder" --- */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+    .must-see-card details {
+      margin-top: 10px;
+    }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after {
+      content: " ↓";
+      font-size: 0.8rem;
+    }
+    .must-see-card details[open] summary::after {
+      content: " ↑";
+    }
+    .must-see-card details p {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted, #666);
+    }
+
+    /* --- Timeline de procesiones por día --- */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child {
+      padding-bottom: 0;
+    }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-granada.html",
+    "name": "Semana Santa de Granada",
+    "startDate": "2027-03-21",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Granada",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Granada",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.1773,
+        "longitude": -3.5986
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-granada.jpg"],
+    "description": "La Semana Santa de Granada: 32 cofradías, saetas en el Albaicín, el Cristo de los Gitanos al Sacromonte y la Alhambra como telón de fondo. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Real Federación de Hermandades y Cofradías de Semana Santa de la Ciudad de Granada",
+      "url": "https://hermandadesdegranada.com/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Granada
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-granada.jpg" alt="Paso procesional iluminado por candelería de cera avanzando por las calles del Albaicín durante la Semana Santa de Granada con la Alhambra al fondo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Granada</h1>
+      <p class="ficha-subtitle">
+        Granada (Andalucía) · Fiesta religiosa y cultural · "Pasión entre el Albaicín, el Sacromonte y la Alhambra."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las procesiones son actos de fe y penitencia. Mantén el silencio al paso de las cofradías de luto y no cruces por medio de las filas de nazarenos en ningún momento.</li>
+          <li>El centro histórico, el Albaicín y el Realejo tienen calles muy estrechas. Sigue siempre las indicaciones de las autoridades y del personal de la cofradía para evitar bloqueos y situaciones de riesgo.</li>
+          <li>Granada tiene cuestas empedradas. Moverse siguiendo a los pasos requiere calzado adecuado, buena forma física y paciencia ante las aglomeraciones en zonas altas.</li>
+          <li>La saeta es un rezo flamenco espontáneo. Si desde un balcón surge una voz cantando, el paso se detiene y el silencio es obligatorio. No aplaudas hasta que la saeta haya terminado por completo.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Cerrar los ojos en la Semana Santa de Granada es respirar incienso mezclado con azahar frío, mientras la cera derretida sella los adoquines centenarios. Es una ciudad que se apaga para iluminarse a la luz de los cirios, donde el eco de un tambor ronco choca contra los muros de la Alhambra y rebota en las cuevas del Sacromonte. Aquí, la devoción no solo se reza, sino que se escala por cuestas imposibles, regalando al visitante una atmósfera íntima, sobrecogedora y monumental que no se puede replicar en ningún otro lugar del mundo.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Durante ocho días, Granada transforma su pulso cotidiano en un inmenso escenario de fervor donde <strong>treinta y dos cofradías</strong> toman las calles. El cortejo, formado por miles de nazarenos, camareras con mantilla y acólitos, dibuja un río de luz que desciende desde los barrios históricos hacia la <strong>Carrera Oficial</strong>, el recorrido obligatorio que incluye la Plaza de las Pasiegas y la solemne entrada a la Catedral. La ciudad entera huele a primavera y cera, y cada esquina ofrece un lienzo vivo de fe y arte barroco.
+      </p>
+      <p>
+        El corazón de la fiesta palpita debajo de las trabajaderas de los pasos, estructuras de orfebrería y madera tallada que sostienen a las imágenes sagradas. Son portados a hombros a costal por cuadrillas de <strong>costaleros</strong> que, guiados por la voz rota del capataz y el golpe seco del llamador, hacen bailar las figuras al compás de la música, rozando los balcones en maniobras que cortan la respiración del público que abarrota las aceras.
+      </p>
+      <p>
+        Para el visitante novato, sumergirse en esta celebración requiere dejarse llevar por la intuición, pero también por la planificación. No intentes verlo todo desde el centro; el verdadero encanto reside en buscar los rincones de barrio donde las hermandades inician o recogen su estación de penitencia. Sitúate con antelación en las plazas amplias para ver las salidas, o piérdete por las callejuelas del Albaicín para vivir la intimidad del cortejo a escasos centímetros, sintiendo el calor de los cirios y el esfuerzo humano.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de la Semana Santa granadina se hunden en el siglo XVI, consolidándose tras el Sínodo Diocesano de 1572, momento en el que las órdenes religiosas y las primeras cofradías de penitencia, como la Vera Cruz o Las Angustias, empezaron a salir a la calle. Fue una época de esplendor en la que la imaginería procesional cobró vida para educar al pueblo llano en los misterios de la fe.
+      </p>
+      <p>
+        Gran parte de la identidad visual de esta fiesta se debe a los maestros imagineros de la escuela barroca andaluza, con figuras cumbre como <strong>Pablo de Rojas</strong>, quien sentó las bases de las tallas escultóricas en las últimas décadas del siglo XVI, seguido posteriormente por genios como <strong>José de Mora</strong> o <strong>Pedro de Mena</strong>. Sus gubias crearon cristos y vírgenes que no son meras estatuas, sino representaciones desgarradoras del dolor y la belleza humana que hoy procesionan como auténticos tesoros del patrimonio nacional.
+      </p>
+      <p>
+        Hoy en día, esta celebración va mucho más allá de lo puramente religioso. Constituye el eje vertebrador de la identidad de barrios históricos como el Zaidín, el Realejo, el Albaicín y el Sacromonte. Las cofradías son familias extendidas que, de generación en generación, mantienen vivo el patrimonio inmaterial de Granada, vertebrando la vida social y cultural de la ciudad durante todo el año a través de la solidaridad y el sentimiento de pertenencia.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Granada en 2027 dará comienzo el <strong>domingo 21 de marzo</strong>, Domingo de Ramos, y finalizará el <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor efervescencia y fervor en las calles, donde se alcanzan los picos de visitantes, comprenden desde el Miércoles Santo (24 de marzo) hasta el Viernes Santo (26 de marzo). Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+      </p>
+      <p>
+        Consulta los horarios e itinerarios oficiales en la Real Federación de Hermandades y Cofradías de Semana Santa de la Ciudad de Granada. Ante el riesgo de lluvia, las decisiones de suspensión se toman con muy poco margen de aviso — sigue sus canales oficiales en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La Borriquilla baja iluminando la tarde con su algarabía infantil y palmas, inaugurando oficialmente los días de Pasión y llenando el centro de familias expectantes. Es la jornada más accesible y festiva de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La ciudad experimenta un contraste brutal de emociones. El fervor popular se desborda tras el Señor del Rescate, que arrastra tras de sí un sobrecogedor mar de penitentes por el barrio de la Magdalena, mientras el Cristo de San Agustín impone un luto riguroso y un silencio sepulcral que hiela la sangre a su paso por el centro.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          La decana hermandad del Vía Crucis desciende por las estrechísimas callejuelas del Albaicín bajo la tenue luz de los faroles. El aroma a incienso denso se mezcla con la humedad de la piedra antigua mientras los pasos avanzan casi rozando los muros, hasta que la Virgen de la Esperanza inunda de luz y júbilo Plaza Nueva.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          El Cristo de los Gitanos sube hacia la Abadía del Sacromonte envuelto en la luz purificadora de inmensas hogueras, saetas gitanas y quejíos en las cuevas. Es uno de los momentos más singulares e irrepetibles de toda la Semana Santa española.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          El Albaicín se convierte en protagonista absoluto cuando vírgenes como La Aurora y La Estrella cruzan calles imposibles, rozando las paredes blancas encaladas ante una multitud contenida. La madrugada del Jueves Santo es la más intensa del barrio.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El sobrecogedor acto de Las Chías encabeza a la hermandad de La Soledad tocando timbales y fanfarrias en un cortejo fúnebre de reminiscencias históricas únicas en España. La tarde del Viernes Santo concentra el mayor luto de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Santa María de la Alhambra desciende desde la colina roja, cruzando la Puerta de la Justicia entre cipreses iluminados por antorchas, en una estampa que funde el arte nazarí y la fe cristiana en una imagen de belleza única.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La alegría estalla en las calles de Granada con el repique de miles de facundillos — las pequeñas campanas de barro que portan los niños hebreos. El Resucitado cierra la semana en un ambiente jubiloso que contrasta con el recogimiento y el luto de los días anteriores.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        Granada cuenta con <strong>32 cofradías</strong> que realizan estación de penitencia durante la Semana Santa. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de la Real Federación de Hermandades y Cofradías para horarios e itinerarios exactos.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Borriquilla</span>
+              <span class="tooltip-texto">Hdad. de Nuestro Padre Jesús en su Entrada Triunfal en Jerusalén. Inaugura la Semana Santa.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Cena</span>
+              <span class="tooltip-texto">Hdad. Sacramental de la Santa Cena y Ntra. Sra. del Rosario.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Maravillas</span>
+              <span class="tooltip-texto">Hdad. de Nuestro Padre Jesús de las Maravillas y Ntra. Sra. de la Palma.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Despojado</span>
+              <span class="tooltip-texto">Hdad. de Jesús Despojado de sus Vestiduras y Ntra. Sra. de la Amargura.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Cautivo</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús Cautivo y Rescatado y Ntra. Sra. de la Esperanza.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Huerto</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús Orando en el Huerto de los Olivos y Ntra. Sra. de los Dolores.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Dolores</span>
+              <span class="tooltip-texto">Antigua e Ilustre Hdad. de Ntro. Padre Jesús del Soberano Poder y Ntra. Sra. de los Dolores.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Rescate</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús del Rescate y Ntra. Sra. de Gracia.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Agustín</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo de la Misericordia y Ntra. Sra. de la Consolación (San Agustín).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Esperanza</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús Nazareno del Paso y Ntra. Sra. de la Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Vía Crucis</span>
+              <span class="tooltip-texto">Real e Ilustre Hdad. del Santísimo Cristo del Mayor Dolor y Ntra. Sra. de la Amargura (Vía Crucis). Una de las más antiguas de Granada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Canilla</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús de la Salud y Ntra. Sra. de las Angustias Coronada (La Canilla).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Gitanos</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo de los Favores y Ntra. Sra. de los Ángeles (Los Gitanos). Sube al Sacromonte entre hogueras y saetas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Estudiantes</span>
+              <span class="tooltip-texto">Ilustre Hdad. Universitaria del Santísimo Cristo de la Misericordia y Ntra. Sra. de las Angustias.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Penas</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús de las Penas y Ntra. Sra. de los Dolores.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Rosario</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo del Perdón y Ntra. Sra. del Rosario en sus Misterios Dolorosos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Nazareno</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús Nazareno y Ntra. Sra. de la Soledad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Aurora</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús del Prendimiento y Ntra. Sra. de la Aurora. Procesiona por el Albaicín en la madrugada del Jueves Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Estrella</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús de la Pasión y Ntra. Sra. de la Estrella. También procesiona por el Albaicín.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Silencio</span>
+              <span class="tooltip-texto">Real, Ilustre y Venerable Hdad. del Santísimo Cristo del Silencio y Ntra. Sra. de las Lágrimas. Procesión de luto riguroso sin música.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Concha</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús de la Redención y Ntra. Sra. del Mar Coronada (La Concha).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Salesianos</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Padre Jesús del Milagro y Ntra. Sra. Auxiliadora (Salesianos).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Las Chías</span>
+              <span class="tooltip-texto">Hdad. de Ntra. Sra. de la Soledad y San Juan Evangelista (San Jerónimo). Las Chías abren el cortejo con fanfarrias medievales únicas en España.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Escolapios</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo de la Buena Muerte y Ntra. Sra. de las Angustias Coronada (Escolapios).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Ferroviarios</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo de la Expiración y Ntra. Sra. del Camino (Ferroviarios).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Favores</span>
+              <span class="tooltip-texto">Real e Ilustre Hdad. del Santísimo Cristo de los Favores y Ntra. Sra. de la Misericordia. La cofradía del Realejo, con enorme devoción popular.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Santo Sepulcro</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hdad. del Santo Sepulcro de Nuestro Señor Jesucristo y Ntra. Sra. de la Soledad Coronada. Cierra el Viernes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santa María de la Alhambra</span>
+              <span class="tooltip-texto">Ilustre Hdad. de Santa María de la Alhambra. Desciende desde la fortaleza atravesando la Puerta de la Justicia entre cipreses y antorchas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Facundillos</span>
+              <span class="tooltip-texto">Hdad. del Santísimo Cristo Resucitado y Ntra. Sra. de la Alegría (Los Facundillos). Los niños hebreos portan campanas de barro cuyo repique anuncia el fin del luto.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Resurrección</span>
+              <span class="tooltip-texto">Hdad. de la Resurrección del Señor y Ntra. Sra. de la Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Resucitado</span>
+              <span class="tooltip-texto">Hdad. de Ntro. Señor Jesucristo Resucitado y Ntra. Sra. de los Dolores. Cierra la Semana Santa de Granada.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://hermandadesdegranada.com/" target="_blank" rel="noopener">Real Federación de Cofradías y Hermandades de la Semana Santa de Granada</a> — última verificación: 2026-04-30</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La banda sonora de la Semana Santa de Granada es un contraste de texturas sonoras que eriza la piel. Las procesiones de capa y barrio se envuelven en la solemnidad de las agrupaciones musicales y las bandas de cornetas y tambores, que marcan el ritmo exacto de los costaleros. En el Albaicín o el Sacromonte, esta percusión se silencia repentinamente cuando desde un balcón surge una <strong>saeta</strong>, ese rezo flamenco y desgarrador que paraliza el tiempo y el caminar del paso. La voz rasga el aire, el paso se detiene, el público enmudece y durante unos segundos solo existe esa garganta y esa imagen.
+        </p>
+        <p>
+          En el polo opuesto, el Jueves y el Viernes Santo instauran el luto. En cortejos como El Silencio, el único sonido perceptible es el roce de las alpargatas contra la piedra, el goteo de la cera, el golpe seco del llamador golpeando la plata del paso y el sobrecogedor redoble de un tambor ronco destemplado. Otra exclusividad sonora son las fanfarrias de <strong>Las Chías</strong>, un sonido antiguo de metales y timbales que parece sacado del medievo y que no se escucha en ninguna otra Semana Santa española.
+        </p>
+        <ul>
+          <li>Para disfrutar de una acústica inmejorable de las marchas procesionales, busca calles estrechas como la calle San Matías; el sonido rebota en los muros envolviendo al espectador por completo.</li>
+          <li>Si eres sensible a los ruidos fuertes, mantén cierta distancia de la cabeza de las bandas de cornetas y tambores en callejones cerrados, ya que los decibelios pueden resultar abrumadores.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Cristo de los Gitanos subiendo al Sacromonte</h3>
+          <span class="tag">Madrugada del Miércoles Santo · Colinas del Sacromonte</span>
+          <p>La noche se ilumina con el fuego rojizo de decenas de hogueras encendidas en las laderas y cuevas. El humo, el cante gitano puro y el fervor crean una atmósfera que no existe en ningún otro lugar ni en ninguna otra Semana Santa del mundo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no es solo una procesión: es el instante en el que la religión se hace carne, fuego y quejío. La catarsis colectiva donde el dolor de la Pasión se funde con la identidad histórica del barrio más singular de Granada es una experiencia que no se puede preparar ni describir. Sube al Sacromonte con tiempo y sitúate en las laderas antes de la llegada del paso.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El encierro de La Aurora</h3>
+          <span class="tag">Madrugada del Jueves Santo · Barrio del Albaicín</span>
+          <p>Una marea humana canta el himno a la Virgen mientras los costaleros, exhaustos, realizan maniobras milimétricas de rodillas para introducir el paso por el dintel de su templo. El barrio entero se vuelca en una comunión de fe y esfuerzo físico que deja sin palabras.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Por la energía de un barrio entero condensada en escasos metros cuadrados. Es la brutal exhibición de resistencia física, fe y amor propio de la cuadrilla de costaleros entregando su último aliento antes de que se cierren las puertas. Sitúate frente al templo con bastante antelación; el espacio es reducido y se colapsa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las Chías abriendo paso</h3>
+          <span class="tag">Tarde del Viernes Santo · Salida del Monasterio de San Jerónimo</span>
+          <p>Personajes con plumas, bordados negros e inspirados en los cargos de la antigua Inquisición irrumpen tocando fanfarrias lúgubres que enmudecen a la ciudad. Es una figura antropológica exclusiva de Granada que no existe en ningún otro punto de España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es un viaje directo a los siglos XVI y XVII. Su sonido antiguo e inquietante te congela la sangre y te transporta a una época donde el miedo y el respeto dictaban el pulso de la fe. Presenciar la salida desde el Monasterio de San Jerónimo es la forma más impactante de vivirlo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El regreso por la Puerta de la Justicia</h3>
+          <span class="tag">Noche del Sábado Santo · Recinto de la Alhambra</span>
+          <p>El paso de la Virgen discurre por el bosque de la Alhambra flanqueado por cipreses, iluminado por antorchas y atravesando los arcos nazaríes de la fortaleza. La síntesis visual perfecta del alma de Granada: el abrazo irrepetible entre el legado islámico y la fe cristiana occidental.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es una de las estampas más hermosas del mundo. El olor a humedad y pino, el crujir de la madera del paso en la oscuridad y la sombra de la Alhambra como telón de fondo no se olvidan. Para coger buen sitio en el bosque y verla pasar entre la penumbra, sube con bastante antelación por la Cuesta de Gomérez. El acceso es gratuito: es zona exterior del recinto.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Reserva alojamiento con meses de antelación.</strong> Si quieres huir de los altos precios y el bloqueo del centro histórico, busca en la periferia bien conectada (Camino de Ronda, Zaidín) y accede al centro en metro o autobús.</li>
+        <li><strong>Zonas de pago y acceso libre.</strong> La Carrera Oficial (calles Ángel Ganivet, Mesones, Plaza de las Pasiegas) tiene sillas de pago y palcos, normalmente abonados de por vida. El resto del recorrido por la ciudad es completamente libre y gratuito.</li>
+        <li><strong>Calzado imprescindible.</strong> Prohibidos los tacones. Granada tiene adoquines irregulares y cuestas pronunciadas; usa deportivas con buena amortiguación para aguantar varias horas de pie.</li>
+        <li><strong>Ropa por capas.</strong> La primavera granadina es traicionera: por el día puedes estar a 25 grados bajo el sol, pero al caer la noche la cercanía a Sierra Nevada desploma los termómetros. Lleva siempre un abrigo para las madrugadas.</li>
+        <li><strong>Cómo llegar.</strong> Granada tiene conexión en AVE desde Madrid (unos 3 h) y autobús desde Sevilla, Málaga y Córdoba. Durante la Semana Santa el centro está cortado al tráfico; lo más cómodo es aparcar en la periferia y usar el metro ligero o los autobuses urbanos.</li>
+        <li><strong>Aglomeraciones.</strong> Si necesitas cruzar el centro, usa vías alternativas a Mesones o Reyes Católicos. En los momentos de máxima afluencia, déjate llevar por el flujo de la gente y no camines en dirección contraria.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con tres días puedes ver lo esencial: Miércoles Santo para el Cristo de los Gitanos al Sacromonte, Jueves Santo para el Albaicín y la Aurora, y Viernes Santo para Las Chías y el Santo Sepulcro. Si puedes añadir el Sábado Santo, no te pierdas la bajada de Santa María de la Alhambra.</li>
+        <li><strong>Gastronomía de Cuaresma.</strong> Repón fuerzas con un potaje de vigilia (garbanzos, bacalao y espinacas), pavías de bacalao o torrijas en cualquier taberna del centro. Son los platos tradicionales de esta época en Granada.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Cofradía y Hermandad</dt>
+        <dd>Aunque en la calle se usan casi como sinónimos, tienen un matiz histórico. La hermandad nacía originalmente para la integración y ayuda mutua de un gremio o grupo social, mientras que la cofradía tenía un fin puramente de culto y penitencia pública. Hoy conforman esa familia intergeneracional que sostiene la tradición durante todo el año.</dd>
+
+        <dt>Paso y costalero</dt>
+        <dd>El paso es el inmenso altar itinerante de madera tallada o plata sobre el que procesiona Cristo o la Virgen. En Granada, la inmensa mayoría de los pasos se portan a costal: los costaleros van ocultos bajo los faldones del paso, cargando cientos de kilos sobre su séptima vértebra cervical protegida por una tela fuertemente ceñida llamada el costal.</dd>
+
+        <dt>Nazareno y Penitente</dt>
+        <dd>El nazareno es el hermano anónimo que acompaña a las imágenes vistiendo la túnica de su hermandad y cubriendo su rostro con el capirote, el característico cono de cartón y tela. El penitente de promesa suele llevar una cruz de madera sobre el hombro, a veces caminando descalzo en señal de sacrificio.</dd>
+
+        <dt>Chía</dt>
+        <dd>Personaje único en el mundo, exclusivo de la Semana Santa granadina. Ataviado con ropajes negros, encajes y plumas lúgubres, es la herencia viva de los antiguos oficiales de la Inquisición. Abre el cortejo del Viernes Santo tocando fanfarrias fúnebres que hielan la sangre y anuncian que el luto ha llegado a la ciudad.</dd>
+
+        <dt>Facundillos</dt>
+        <dd>Nombre cariñoso y popular con el que se conoce a las pequeñas campanas de barro que portan los niños hebreos en el Domingo de Resurrección. El repique incesante y alegre de miles de facundillos chocando entre sí es el sonido oficial de que la tristeza de la Pasión ha terminado.</dd>
+
+        <dt>Greñúo</dt>
+        <dd>Localismo innegociable. Históricamente, es el apodo de los habitantes del barrio del Realejo, antigua judería. En Semana Santa, un greñúo es por extensión el devoto de la cofradía del Cristo de los Favores. Escuchar el grito de "¡Viva el Cristo de los Greñúos!" en el Campo del Príncipe es sentir la devoción más visceral de Granada.</dd>
+
+        <dt>Tambor ronco</dt>
+        <dd>Tambor intencionadamente destemplado con los bordones aflojados que marca un ritmo áspero, sordo y monótono. En hermandades de luto estricto como El Silencio, este redoble solitario es la única banda sonora que golpea la madrugada del Jueves Santo.</dd>
+
+        <dt>Carrera Oficial</dt>
+        <dd>El recorrido vallado común por el que obligatoriamente deben pasar todas las cofradías antes de llegar a la Catedral. Incluye la Plaza de las Pasiegas y las calles Mesones y Ángel Ganivet. Las sillas de este tramo son de pago.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-granada-1.jpg" alt="Paso procesional con candelería de cera avanzando por una calle estrecha del Albaicín durante la Semana Santa de Granada" />
+        <img src="images/semana-santa-granada-2.jpg" alt="Hogueras en las laderas del Sacromonte durante la procesión del Cristo de los Gitanos en la Semana Santa de Granada" />
+        <img src="images/semana-santa-granada-3.jpg" alt="Cofradía procesionando bajo los arcos de la Puerta de la Justicia de la Alhambra en el Sábado Santo de Granada" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://hermandadesdegranada.com/" target="_blank" rel="noopener">Real Federación de Cofradías y Hermandades de la Semana Santa de Granada</a></li>
+        <li><a href="https://turismo.granada.org/es" target="_blank" rel="noopener">Turismo de Granada — Ayuntamiento</a></li>
+        <li><a href="https://www.andalucia.org/" target="_blank" rel="noopener">Turismo de Andalucía</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-04-30</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 al 28 de marzo. Los días de mayor afluencia son del Miércoles al Viernes Santo.</dd>
+
+        <dt>¿Necesito entrada para ver las procesiones?</dt>
+        <dd>No. Las sillas de la Carrera Oficial y tribunas son de pago y suelen estar abonadas, pero puedes disfrutar de todas las procesiones de forma gratuita a lo largo de sus recorridos por la ciudad.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. El patrimonio artístico es incalculable y ante riesgo severo de lluvia la cofradía suspende su salida. En caso de llovizna imprevista durante el recorrido, las hermandades buscan refugio en el templo más cercano. Sigue los canales oficiales de la Federación para avisos en tiempo real.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Se puede, pero requiere planificación. Evita el Albaicín profundo y las salidas más masificadas con niños pequeños. Opta por avenidas amplias como Gran Vía o la zona del Triunfo para que tengan espacio. El Domingo de Ramos y el Domingo de Resurrección son los días más accesibles y festivos.</dd>
+
+        <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
+        <dd>El Ayuntamiento y la Federación habilitan palcos y espacios reservados gratuitos para personas en silla de ruedas en la Carrera Oficial, habitualmente en el entorno de la Plaza del Carmen. Fuera del centro, barrios como el Albaicín, el Realejo o el Sacromonte tienen pendientes, escalinatas y empedrado que dificultan enormemente la movilidad.</dd>
+
+        <dt>¿Puedo hacer fotografías durante las procesiones?</dt>
+        <dd>Sí, siempre sin flash y sin invadir el recorrido del cortejo. Está muy mal visto deslumbrar a los costaleros con el flash del móvil. Aprovecha la abundante luz natural de la candelería de cera del paso y busca lugares con buena iluminación municipal.</dd>
+
+        <dt>¿Tengo que pagar entrada de la Alhambra para ver la procesión del Sábado Santo?</dt>
+        <dd>No. La cofradía de Santa María de la Alhambra realiza su espectacular descenso por zonas exteriores de acceso público y gratuito: la Puerta de la Justicia y el bosque de la Cuesta de Gomérez. Para coger buen sitio entre la penumbra y el olor a pino, sube con bastante antelación.</dd>
+
+        <dt>¿Puedo cruzar por medio de una procesión si tengo prisa?</dt>
+        <dd>Rotundamente no. Interrumpir las filas de nazarenos es una falta grave de respeto al cortejo penitencial. Debes esperar a que la procesión se detenga o buscar un paso habilitado por la policía o los diputados de la hermandad para cruzar rápidamente.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
