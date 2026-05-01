@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Orihuela — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Orihuela 2027: 27 pasos en la Procesión General, obras maestras de Salzillo, La Diablesa y el Caballero Cubierto. Del 21 de marzo al 28 de marzo." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-orihuela.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Orihuela — Folklorius" />
+  <meta property="og:description" content="Un museo en la calle bañado de incienso y fervor. Orihuela, Alicante." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-orihuela.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-orihuela.html",
+    "name": "Semana Santa de Orihuela",
+    "startDate": "2027-03-21",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Orihuela",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orihuela",
+        "addressRegion": "Comunitat Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.0847,
+        "longitude": -0.9454
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-orihuela.jpg"],
+    "description": "La Semana Santa de Orihuela: 27 pasos en la Procesión General, obras maestras de Salzillo, La Diablesa y el Caballero Cubierto. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta Mayor de Cofradías, Hermandades y Mayordomías de la Semana Santa de Orihuela",
+      "url": "https://semanasantaorihuela.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Orihuela
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-orihuela.jpg" alt="Paso de Francisco Salzillo iluminado por candelería de cera durante la Procesión General del Viernes Santo en las calles empedradas de Orihuela" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Orihuela</h1>
+      <p class="ficha-subtitle">
+        Orihuela (Alicante) · Fiesta religiosa y cultural · "Un museo en la calle bañado de incienso y fervor."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Orihuela destaca por la solemnidad y el estricto orden de sus desfiles. No cruces por medio de las procesiones y mantén siempre una actitud de respeto, especialmente durante la Procesión del Silencio del Jueves Santo.</li>
+          <li>La ciudad atesora un patrimonio escultórico de valor incalculable, con obras maestras de Francisco Salzillo entre otras. Evita el uso de flash y mantén una distancia prudencial de las tallas y tronos para proteger este legado.</li>
+          <li>La Semana Santa oriolana es una mezcla de contrastes — desde el rigor absoluto de la Hermandad de la Buena Muerte hasta la particularidad de los Cantores de la Pasión. Abrázala en su totalidad para entenderla bien.</li>
+          <li>La centuria romana de los Armaos desfila con paso marcial y coreografiado. No interrumpas sus filas ni intentes cruzar por en medio de su formación.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Cerrar los ojos en la Semana Santa de Orihuela es escuchar el golpe rítmico de los tambores rebotando en fachadas góticas, renacentistas y barrocas. Es una ciudad señorial que convierte sus calles empedradas en el escenario perfecto para un relato bíblico esculpido en madera policromada. Aquí, la fe huele a azahar y cera quemada, y la espectacularidad de la imaginería — especialmente la de Salzillo — dota a cada procesión de un realismo y una emoción que atrapa irremediablemente al espectador. Y luego está lo insólito: una figura demoníaca que no puede entrar a la Catedral y un ciudadano que tiene bula papal para mantener el sombrero puesto dentro del templo. Orihuela es así: solemne y singular a partes iguales.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Durante la Semana Santa, <strong>catorce cofradías, hermandades y mayordomías</strong> toman las calles de Orihuela bajo la coordinación de la Junta Mayor. Las procesiones destacan por su extraordinaria riqueza artística, su orden cronológico de los pasajes evangélicos y la participación de miles de <strong>vestas</strong> — el nombre local para los nazarenos — que acompañan las imágenes en estricto orden y compostura.
+      </p>
+      <p>
+        El elemento central es el <strong>trono</strong> — inmensas plataformas de orfebrería repujada de plata o madera tallada sobre las que se asientan las imágenes. A diferencia de otras tradiciones, en Orihuela muchos tronos van sobre ruedas en lugar de a hombros, lo que permite construir estructuras monumentales de mayor tamaño y peso. La Mayordomía de Nuestra Señora de los Dolores, fundada en 1754, tiene además una particularidad única: sus integrantes no visten túnica y capuz sino <strong>mantilla española</strong>, dotando a sus procesiones de una elegancia señorial inconfundible.
+      </p>
+      <p>
+        Para el visitante, la clave es organizarse para la monumental <strong>Procesión General del Viernes Santo</strong>, donde desfilan 27 pasos en estricto orden bíblico formando el relato completo de la Pasión en una sola tarde. Sitúate en zonas amplias como la calle Mayor o los entornos de la Catedral y Santo Domingo para disfrutar del paso de los inmensos tronos y el esplendor de la fiesta.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de la Semana Santa en Orihuela se hunden en el siglo XVI, vinculadas al florecimiento de las órdenes religiosas en esta histórica ciudad episcopal. Sin embargo, su época de mayor esplendor artístico se fraguó en el siglo XVIII, cuando la ciudad encargó gran parte de su imaginería al insigne escultor murciano <strong>Francisco Salzillo</strong>. Sus obras maestras — "El Lavatorio", "La Caída" — dotaron a la celebración oriolana de una identidad artística inigualable que la convierte en uno de los conjuntos de imaginería de Salzillo más importantes fuera de Murcia capital.
+      </p>
+      <p>
+        Entre las piezas más singulares destaca el paso de <strong>"El Triunfo de la Cruz"</strong>, popularmente conocido como "La Diablesa", que muestra una figura demoníaca rendida a los pies de la cruz. Su autoría ha sido objeto de debate historiográfico — atribuida tradicionalmente a fray Nicolás de Bussy, aunque algunos investigadores han apuntado otras posibilidades — y su simbología hace que sea el único paso del mundo al que se le prohíbe la entrada a la Catedral.
+      </p>
+      <p>
+        La Semana Santa es el acontecimiento social y religioso más importante del año en Orihuela. Las cofradías vertebran la vida de la ciudad uniendo a familias enteras que, generación tras generación, mantienen tradiciones únicas como el canto de la Pasión, la figura del Caballero Cubierto o el desfile de la centuria romana de los Armaos.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Orihuela en 2027 se celebra del <strong>domingo 21 de marzo</strong>, Domingo de Ramos, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor grandiosidad y afluencia son el <strong>Miércoles Santo</strong> (1 de abril), con la procesión de El Lavatorio de Salzillo, y el <strong>Viernes Santo</strong> (3 de abril), con la monumental Procesión General de 27 pasos. Las fechas cambian cada año según el calendario litúrgico — consulta la web oficial de la Junta Mayor para información actualizada.
+      </p>
+      <p>
+        Los horarios e itinerarios exactos se publican en la web de la Junta Mayor de Cofradías, Hermandades y Mayordomías de la Semana Santa de Orihuela. Ante riesgo de lluvia, las salidas pueden suspenderse para proteger el patrimonio escultórico.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La mañana arranca con la bendición de las palmas y la alegre <strong>Procesión de las Palmas</strong> — la de la "Burrica" — que llena las calles de palmas blancas, ramas de olivo y niños acompañando a Jesús Triunfante. Por la tarde-noche el tono cambia radicalmente con el traslado del Cristo de las Santas Mujeres y la procesión titular de la <strong>Mayordomía de Nuestra Señora de los Dolores</strong>, cuyas integrantes visten mantilla española en lugar de túnica, en una estampa de elegancia señorial única en la Semana Santa levantina.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La solemne procesión de la Cofradía de la Samaritana y la Hermandad del Prendimiento marca el inicio de los grandes desfiles nocturnos, con una gran riqueza en tronos y bordados que anticipa la intensidad de los días centrales.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Desfilan la Cofradía del Perdón, portando el espectacular paso de Nuestro Padre Jesús de la Caída de Salzillo, y la Cofradía del Ecce-Homo. La noche del Martes Santo es una de las más ricas en imaginería barroca de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Gran noche para los amantes de la escultura: procesionan la Orden Franciscana Seglar y la <strong>Cofradía de El Lavatorio</strong>, obra maestra absoluta de Francisco Salzillo. También desfila la Cofradía de la Santa Cena, completando una jornada de altísimo nivel artístico.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo · 23:00 h</span>
+          La <strong>Hermandad del Silencio</strong> protagoniza el desfile más austero y sobrecogedor de la semana. Las oscuras calles empedradas se recorren en absoluto mutismo, roto únicamente por el lúgubre <strong>Canto de la Pasión</strong> — las voces masculinas a capella de los Cantores de la Pasión interpretando estrofas del siglo XVI que resuenan en las fachadas barrocas.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          De madrugada, la Hermandad Penitencial del Santísimo Cristo de la Buena Muerte realiza su vía crucis en un ambiente de recogimiento extremo. Por la tarde, a las 18:30 h, arranca la monumental <strong>Procesión General de la Pasión</strong>: 27 pasos en estricto orden cronológico bíblico, tronos de plata, miles de vestas y más de tres horas de desfile que construye el relato completo de la Pasión de principio a fin.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          La <strong>Procesión del Santo Entierro de Cristo</strong> impone el luto oficial en la ciudad. Desfila el peculiar paso de <strong>"La Diablesa"</strong> — el único con figura demoníaca en el mundo — que se desvía y rodea la Catedral mientras el resto de la procesión la atraviesa. Y encabeza el cortejo el <strong>Caballero Cubierto</strong>, el único ciudadano con bula papal para mantener el sombrero de copa puesto al entrar al templo.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo · 00:00 h</span>
+          La alegría estalla en la procesión de la Hermandad de la Resurrección a medianoche. El luto da paso al júbilo con el encuentro entre el Salvador Resucitado y la Virgen, seguido de la misa de vigilia pascual que cierra la Semana Santa oriolana.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Orihuela cuenta con <strong>14 cofradías, hermandades y mayordomías</strong> integradas en la Junta Mayor. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de la Junta Mayor para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Las Palmas</span>
+              <span class="tooltip-texto">Mayordomía de Nuestra Señora de los Dolores (fundada en 1754) — organiza tanto la Procesión de las Palmas por la mañana como su procesión titular por la tarde. Sus integrantes visten mantilla española, no túnica y capuz.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Samaritana</span>
+              <span class="tooltip-texto">Cofradía de la Samaritana.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Prendimiento</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad de Nuestro Padre Jesús en el paso de "El Prendimiento".</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Perdón</span>
+              <span class="tooltip-texto">Cofradía del Perdón — porta el paso de Nuestro Padre Jesús de la Caída, obra de Francisco Salzillo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Ecce-Homo</span>
+              <span class="tooltip-texto">Cofradía del Ecce-Homo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Orden Franciscana</span>
+              <span class="tooltip-texto">Orden Franciscana Seglar y Muy Ilustre Mayordomía de Nuestro Padre Jesús Nazareno.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Lavatorio</span>
+              <span class="tooltip-texto">Real Archicofradía y Mayordomía de Nuestra Señora del Pilar y Real Cofradía de "El Lavatorio" — obra maestra de Francisco Salzillo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Santa Cena</span>
+              <span class="tooltip-texto">Cofradía de la Santa Cena.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Silencio</span>
+              <span class="tooltip-texto">Hermandad del Silencio — la procesión más austera de la semana, a las 23:00 h, con los Cantores de la Pasión cantando estrofas del siglo XVI a capella.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Buena Muerte</span>
+              <span class="tooltip-texto">Hermandad Penitencial del Santísimo Cristo de la Buena Muerte — vía crucis de madrugada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Procesión General</span>
+              <span class="tooltip-texto">Procesión General de la Junta Mayor de Cofradías, Hermandades y Mayordomías de Orihuela — 27 pasos en orden cronológico bíblico desde las 18:30 h. No pertenece a una sola cofradía sino que reúne a (casi) todas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santo Entierro</span>
+              <span class="tooltip-texto">Sociedad Compañía de Armados y Procesión del Santo Entierro de Cristo — incluye La Diablesa y el Caballero Cubierto.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Resurrección</span>
+              <span class="tooltip-texto">Hermandad de la Resurrección — procesión a medianoche con el encuentro entre el Salvador Resucitado y la Virgen.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantaorihuela.com" target="_blank" rel="noopener">Junta Mayor de Cofradías, Hermandades y Mayordomías de la Semana Santa de Orihuela</a> — última verificación: 2026-05-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La Semana Santa de Orihuela posee una banda sonora de marcados contrastes. Las procesiones más tradicionales están acompañadas por potentes bandas de música y agrupaciones de cornetas y tambores que ejecutan marchas clásicas entre las fachadas barrocas de la ciudad. A esto se suma el sonido marcial de los tambores de la Centuria Romana — los Armaos — cuya cadencia militar impone respeto a su paso. El resultado es una acústica de gran densidad que llena las plazas amplias y rebota con fuerza en las calles más estrechas del casco histórico.
+        </p>
+        <p>
+          En el polo opuesto, el Jueves Santo instaura el mutismo absoluto en la Procesión del Silencio. El único sonido que rompe la noche son el roce de los pasos de los penitentes, el arrastre de cadenas y las ancestrales voces a capella de los <strong>Cantores de la Pasión</strong>, que interpretan lúgubres estrofas del siglo XVI sin ningún acompañamiento instrumental. Escuchar ese canto resonando en la oscuridad de las estrechas calles empedradas de Orihuela es sumergirse en una atmósfera de penitencia y devoción que el visitante difícilmente olvida.
+        </p>
+        <ul>
+          <li>Para escuchar el Canto de la Pasión en su mejor acústica, sitúate en las calles más estrechas del casco antiguo antes de las 23:00 h del Jueves Santo. Cuanto más angosta sea la calle, más envolvente resulta el sonido de las voces rebotando en la piedra.</li>
+          <li>Para la Procesión General del Viernes Santo, con más de tres horas de desfile y múltiples bandas de música, sitúate en zonas amplias como la calle Mayor o el entorno de la Catedral — la acústica es mejor y tendrás espacio para moverte sin agotarte.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Las obras maestras de Salzillo en movimiento</h3>
+          <span class="tag">Miércoles y Viernes Santo · Carrera Oficial</span>
+          <p>Pasos como "El Lavatorio", "La Caída" o las tallas de la Procesión General recorren las calles oriolanas con un dinamismo y un realismo que no se encuentra en ningún museo. Ver estas esculturas de tamaño natural iluminadas por la cera es una clase magistral de arte barroco.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque Orihuela custodia uno de los mejores conjuntos de imaginería de Salzillo fuera de Murcia. El Miércoles Santo es el día más concentrado en calidad escultórica — El Lavatorio es la pieza más celebrada. Para verla bien, sitúate en las zonas amplias del recorrido con antelación suficiente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión General del Viernes Santo</h3>
+          <span class="tag">Viernes Santo · 18:30 h · Desde el Santuario de Monserrate</span>
+          <p>27 pasos desfilan en estricto orden bíblico construyendo el relato completo de la Pasión en una sola tarde. Tronos de plata, bordados, bandas de música y miles de vestas durante más de tres horas de espectáculo escultórico continuo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la oportunidad de admirar en una sola tarde casi la totalidad del patrimonio escultórico de Orihuela. Compra o reserva asiento en las sillas habilitadas por la Junta Mayor con antelación — son de alquiler y se agotan. Lleva agua y algo para picar: la procesión dura más de tres horas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Caballero Cubierto en la Catedral</h3>
+          <span class="tag">Sábado Santo · Procesión del Santo Entierro · Catedral de Orihuela</span>
+          <p>Un ciudadano ilustre designado cada año encabeza la procesión vistiendo frac y sombrero de copa. Tiene el privilegio único concedido por bula papal de no descubrirse la cabeza al atravesar las naves de la Catedral — el único caso documentado de este tipo en España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es una rareza histórica y protocolar que no existe en ninguna otra Semana Santa del mundo. El momento en que el Caballero Cubierto cruza el umbral de la Catedral con el sombrero puesto, mientras el resto se descubre, condensa siglos de historia oriolana en un solo gesto. Sitúate en el entorno de la Catedral para verlo pasar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Diablesa rodeando la Catedral</h3>
+          <span class="tag">Sábado Santo · Procesión del Santo Entierro · Entorno de la Catedral</span>
+          <p>El único paso procesional del mundo que incluye la figura del demonio se desvía y rodea la Catedral mientras el resto de la procesión la atraviesa por dentro. La figura demoníaca con rasgos femeninos, rendida a los pies de la cruz, es una pieza escultórica sin equivalente en la imaginería religiosa española.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la singularidad más radical de la Semana Santa oriolana. Ver en directo el momento en que el cortejo se divide — unos entrando a la Catedral, La Diablesa rodeándola por fuera — es presenciar una tradición cargada de simbolismo teológico que no se repite en ningún otro lugar del mundo. Sitúate en la fachada lateral de la Catedral para verlo con claridad.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Planifica la Procesión General con antelación.</strong> Si vas el Viernes Santo, acude con tiempo a las zonas anchas del recorrido y compra asiento en las sillas habilitadas para no agotarte durante las más de tres horas que dura el desfile de los 27 pasos.</li>
+        <li><strong>Cómo llegar.</strong> Orihuela está a unos 50 km de Alicante y a unos 60 km de Murcia. Tiene conexión en Cercanías desde Alicante (línea C-1). En coche, la A-7 y la N-340 son las vías principales. Durante los días grandes el centro histórico se restringe al tráfico — aparca en zonas periféricas y accede a pie.</li>
+        <li><strong>Alojamiento en la Vega Baja.</strong> Orihuela recibe miles de visitantes. Si no encuentras alojamiento en el casco urbano, las localidades cercanas de la Vega Baja o la costa oriolana (a 20-30 minutos en coche) son buenas alternativas.</li>
+        <li><strong>Calzado cómodo.</strong> Las principales avenidas son llanas, pero parte del recorrido discurre por el casco histórico con suelo empedrado irregular. Evita los tacones y lleva suela gruesa y cómoda.</li>
+        <li><strong>Ropa por capas.</strong> El clima en Orihuela suele ser cálido durante el día, pero las procesiones nocturnas cerca del río Segura pueden ser frescas. Lleva siempre una chaqueta ligera para la noche.</li>
+        <li><strong>No interrumpas a los Armaos.</strong> La centuria romana realiza desfiles y maniobras a paso marcial. Nunca intentes cruzar sus filas ni interrumpir su formación.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con dos días cubres lo esencial: Miércoles Santo para El Lavatorio de Salzillo y Viernes Santo para la Procesión General. Si puedes añadir el Sábado Santo, La Diablesa y el Caballero Cubierto son imprescindibles.</li>
+        <li><strong>Gastronomía de Cuaresma.</strong> Disfruta de las Jornadas Gastronómicas de Cuaresma en los restaurantes de la ciudad. No te vayas sin probar el guisado de bacalao, el arroz con verdura y boquerón, el trigo picao y los dulces oriolanos.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Cofradía, Hermandad y Mayordomía</dt>
+        <dd>Las tres formas de corporación religiosa que conviven en Orihuela. Todas ellas están integradas en la Junta Mayor y realizan estación de penitencia durante la Semana Santa. Las mayordomías tienen a menudo un carácter más devocional y familiar, mientras que las hermandades y cofradías son más procesionales.</dd>
+
+        <dt>Trono</dt>
+        <dd>Las inmensas plataformas — muchas de orfebrería repujada de plata o madera tallada — sobre las que se asientan las imágenes sagradas. En Orihuela, a diferencia de otras ciudades, muchos tronos van sobre ruedas en lugar de a hombros, lo que permite construir estructuras de mayor tamaño y peso.</dd>
+
+        <dt>Vesta</dt>
+        <dd>Nombre tradicional y coloquial con el que se conoce a los nazarenos o penitentes en Orihuela. Derivado de la vestidura o túnica que portan, es el término que los oriolanos usan para referirse a los miles de cofrades que desfilan durante la semana.</dd>
+
+        <dt>Caballero Cubierto</dt>
+        <dd>Figura honorífica única en España. Un ciudadano destacado designado cada año que viste de frac y tiene el privilegio concedido por bula papal de mantener su sombrero de copa puesto al entrar en la Catedral durante la Procesión del Santo Entierro del Sábado Santo.</dd>
+
+        <dt>Cantores de la Pasión</dt>
+        <dd>Agrupación de voces masculinas que, sin ningún instrumento, interpretan a capella antiguos lamentos y estrofas del siglo XVI durante la Procesión del Silencio del Jueves Santo. Su sonido en las calles oscuras y empedradas de Orihuela crea una de las atmósferas más sobrecedoras de toda la Semana Santa levantina.</dd>
+
+        <dt>La Diablesa</dt>
+        <dd>Nombre popular del paso de "El Triunfo de la Cruz", único en la imaginería procesional mundial por incluir la figura del demonio — con rasgos femeninos — rendida a los pies de la cruz. Por su simbolismo, es el único paso al que se le prohíbe la entrada a la Catedral durante la procesión del Sábado Santo.</dd>
+
+        <dt>Armaos</dt>
+        <dd>La centuria romana de Orihuela. Desfilan con paso marcial y coreografiado custodiando los pasos más importantes, especialmente durante la Procesión General del Viernes Santo y el Santo Entierro del Sábado Santo.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-orihuela-1.jpg" alt="Paso de Francisco Salzillo iluminado por candelería durante la Procesión General del Viernes Santo en Orihuela" />
+        <img src="images/semana-santa-orihuela-2.jpg" alt="El paso de La Diablesa rodeando la Catedral de Orihuela durante la Procesión del Santo Entierro del Sábado Santo" />
+        <img src="images/semana-santa-orihuela-3.jpg" alt="Vestas con cirios acompañando un trono de plata durante la Semana Santa de Orihuela" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantaorihuela.com" target="_blank" rel="noopener">Junta Mayor de Cofradías, Hermandades y Mayordomías de Orihuela</a></li>
+        <li><a href="https://orihuelaturistica.es" target="_blank" rel="noopener">Turismo de Orihuela — Ayuntamiento</a></li>
+        <li><a href="https://comunitatvalenciana.com" target="_blank" rel="noopener">Turismo Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo. Los días de mayor afluencia son el Miércoles Santo y el Viernes Santo.</dd>
+
+        <dt>¿Es necesario pagar para ver las procesiones?</dt>
+        <dd>Ver las procesiones de pie por las calles es totalmente gratuito. Para la Procesión General del Viernes Santo, la Junta Mayor instala sillas de alquiler a lo largo del recorrido que conviene reservar con antelación dado el tiempo que dura el desfile.</dd>
+
+        <dt>¿Por qué La Diablesa no puede entrar a la Catedral?</dt>
+        <dd>La figura del demonio tallada en el paso del Triunfo de la Cruz es considerada profana. Por tradición histórica, este es el único paso que se desvía y rodea la Catedral mientras el resto de la procesión la atraviesa en su interior.</dd>
+
+        <dt>¿A qué hora se puede escuchar el Canto de la Pasión?</dt>
+        <dd>Los Cantores de la Pasión intervienen en la Procesión del Silencio, que arranca en la noche del Jueves Santo a las 23:00 h. Sitúate en calles estrechas del casco antiguo para disfrutar de la mejor acústica.</dd>
+
+        <dt>¿Se pueden visitar los pasos fuera de la Semana Santa?</dt>
+        <dd>Sí. La gran mayoría de los tronos e imágenes descansan expuestos permanentemente durante todo el año en el Museo de Semana Santa de Orihuela, donde pueden admirarse de cerca sin la distancia que impone verlos en procesión.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. El valor del patrimonio escultórico hace que ante cualquier riesgo de lluvia las cofradías puedan suspender o retrasar las salidas. Sigue los canales oficiales de la Junta Mayor para avisos en tiempo real.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí. El Domingo de Ramos con la Procesión de las Palmas es ideal para familias. La Procesión General del Viernes Santo es muy larga — más de tres horas — por lo que conviene llevar asiento para los más pequeños. La Procesión del Silencio del Jueves Santo a las 23:00 h no es recomendable para niños muy pequeños.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
