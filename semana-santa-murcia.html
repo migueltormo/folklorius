@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Murcia — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Murcia 2027: las tallas de Salzillo al alba, la generosidad huertana de Los Coloraos y el silencio sepulcral del Refugio. Del 19 de marzo al 28 de marzo." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-murcia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Murcia — Folklorius" />
+  <meta property="og:description" content="El arte de Salzillo al amanecer, los Coloraos repartiendo habas y el silencio absoluto del Refugio. Murcia, Región de Murcia." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-murcia.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* --- Cuadrícula de cofradías por día --- */
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* --- Tooltip sobre nombre de cofradía --- */
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto {
+      display: block;
+    }
+    .cofradia-col ul li:focus-within .tooltip-texto {
+      display: block;
+    }
+
+    /* --- Tarjetas "No te lo puedes perder" --- */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+    .must-see-card details {
+      margin-top: 10px;
+    }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after {
+      content: " ↓";
+      font-size: 0.8rem;
+    }
+    .must-see-card details[open] summary::after {
+      content: " ↑";
+    }
+    .must-see-card details p {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted, #666);
+    }
+
+    /* --- Timeline de procesiones por día --- */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child {
+      padding-bottom: 0;
+    }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-murcia.html",
+    "name": "Semana Santa de Murcia",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Murcia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Murcia",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.9838,
+        "longitude": -1.1301
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-murcia.jpg"],
+    "description": "La Semana Santa de Murcia: las tallas de Salzillo al alba del Viernes Santo, la generosidad huertana de Los Coloraos y el silencio absoluto del Refugio. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Cabildo Superior de Cofradías de Murcia",
+      "url": "https://cabildocofradiasmurcia.net"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Murcia
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-murcia.jpg" alt="Paso de Francisco Salzillo iluminado por el primer rayo de sol del Viernes Santo en las calles de Murcia durante la procesión de Los Moraos" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Murcia</h1>
+      <p class="ficha-subtitle">
+        Murcia (Región de Murcia) · Fiesta religiosa y cultural · "El genio de Salzillo esculpido en la tradición huertana."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La Semana Santa murciana tiene dos caras muy distintas. Respeta el silencio absoluto en procesiones de luto como El Refugio o Servitas, y disfruta con naturalidad de la generosidad desbordante en cortejos de estilo tradicional como Los Coloraos o El Resucitado.</li>
+          <li>Las imágenes de Francisco Salzillo que procesionan el Viernes Santo son obras maestras del siglo XVIII de un valor incalculable. Evita el uso de flash y mantén una distancia prudencial de los pasos en todo momento.</li>
+          <li>Las procesiones pueden ser largas. El clima primaveral en Murcia suele ser cálido durante el día pero fresco por la noche. Planifica tu vestimenta en capas, especialmente para la madrugada del Viernes Santo.</li>
+          <li>No cruces por medio de las filas de nazarenos en ningún momento. Espera siempre a los pasos habilitados por la organización y la policía.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Cerrar los ojos en la Semana Santa de Murcia es sentir el contraste vibrante entre la solemnidad sobrecogedora y la alegría huertana desbordante. Es una ciudad donde el olor a azahar se mezcla con el incienso, y donde los nazarenos con túnicas ceñidas a la cintura reparten caramelos y habas frescas con generosidad infinita. Aquí, el dolor de la Pasión se narra a través de las gubias magistrales de Francisco Salzillo, convirtiendo las plazas en museos al aire libre y demostrando que la fe en Murcia se vive con un arraigo terrenal, dulce y profundamente luminoso.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Durante diez días, Murcia transforma sus calles en un gran escenario de fervor y patrimonio donde <strong>15 cofradías</strong> realizan estación de penitencia. Sus cortejos entretejen dos estilos muy definidos que conviven en perfecta tensión: el <strong>estilo tradicional murciano</strong> y el <strong>estilo andaluz</strong>, cada uno con su propio lenguaje visual, sonoro y emocional. Esta dualidad es el rasgo más singular de la Semana Santa murciana y lo que la distingue de cualquier otra celebración española.
+      </p>
+      <p>
+        El elemento central en el estilo murciano es el paso portado a hombros por los <strong>estantes</strong>, nazarenos que cargan el trono visible y directamente sobre su hombro, a cara descubierta. En procesiones como Los Coloraos o El Resucitado, los estantes y penitentes reparten sin descanso caramelos, habas frescas, monas de pascua y regalos entre el público, reviviendo la antigua costumbre huertana de socorrer a los más necesitados. En contraste, el estilo andaluz — presente en cofradías como el Refugio o Servitas — impone el paso a costal, el silencio riguroso y la sobriedad estética más absoluta.
+      </p>
+      <p>
+        Para el visitante, la clave es la adaptación. Disfruta del bullicio generoso en las tardes de Domingo de Ramos o Miércoles Santo, pero prepárate para guardar un silencio reverencial en las noches de Jueves y Viernes Santo. Sitúate cerca de la Plaza Belluga, con la majestuosa Catedral de fondo, para presenciar maniobras espectaculares, o busca rincones más estrechos como la calle Trapería para sentir la cercanía abrumadora de las imágenes.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de las procesiones murcianas se remontan a los siglos XV y XVI, con la fundación de cofradías históricas como la de la Sangre (1411) o el Santo Sepulcro (1570). La evolución de la Semana Santa estuvo fuertemente marcada por el carácter agrícola de la región y la devoción popular de los huertanos, que imprimieron a la celebración ese carácter generoso y terrenal que la define hasta hoy.
+      </p>
+      <p>
+        El punto de inflexión llegó en el siglo XVIII con el genial escultor <strong>Francisco Salzillo</strong>. Sus obras revolucionaron la imaginería procesional, dotando a las figuras de un realismo, movimiento y humanidad sin precedentes. El grupo escultórico de La Oración en el Huerto, La Verónica o El Prendimiento son considerados obras maestras absolutas del barroco español que procesionan cada Viernes Santo al alba acompañadas por más de cuatro mil nazarenos morados.
+      </p>
+      <p>
+        Hoy, la fiesta es un pilar de la identidad murciana. Las cofradías articulan la vida social de la ciudad y los pueblos limítrofes durante todo el año, manteniendo viva la esencia de la Murcia huertana y transmitiendo de generación en generación el orgullo de portar sobre los hombros obras de arte de incalculable valor.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Murcia en 2026 se celebra del <strong>viernes 19 de marzo</strong>, Viernes de Dolores, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor intensidad son el <strong>Miércoles Santo</strong> (24 de marzo) con Los Coloraos y el <strong>Viernes Santo</strong> (26 de marzo) con la procesión de Los Salzillos al alba. Las fechas cambian cada año según el calendario litúrgico.
+      </p>
+      <p>
+        Consulta horarios e itinerarios exactos en la web del Cabildo Superior de Cofradías de Murcia. Ante riesgo de lluvia, las salidas pueden suspenderse con muy poco margen de aviso dado el valor incalculable de las tallas de Salzillo.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          La cofradía del Amparo inicia la Semana Santa en la tarde, marcando el comienzo de la Pasión por las calles del barrio de San Nicolás en un ambiente recogido y devoto.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          La Fe y La Caridad salen en un ambiente de creciente expectación. Es una jornada de transición que anticipa la intensidad de los días centrales de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La procesión de La Esperanza desfila por la tarde llenando la ciudad de palmas, luz y devoción mariana en un ambiente familiar y esperanzador que inaugura los días grandes.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          El popular Cristo del Perdón parte desde el histórico barrio de San Antolín en un desfile enormemente venerado por los murcianos, con gran participación de nazarenos locales.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          El Rescate de estilo andaluz contrasta con el de La Salud. Los piquetes militares que acompañan algunos pasos por la calle Mayor ofrecen una estampa de rigurosa solemnidad.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          La explosión roja de <strong>Los Coloraos</strong> (La Sangre) inunda las calles en la procesión más alegre y huertana de toda la semana. Desde el barrio del Carmen, miles de nazarenos reparten habas frescas, caramelos y monas de pascua a raudales entre el público desbordante.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          La sobrecogedora procesión del <strong>Refugio</strong> (El Silencio) discurre con las calles completamente a oscuras, solo iluminadas por cirios. El contraste con el Miércoles Santo es total: silencio absoluto, capuces caídos y cánticos gregorianos que hielan la sangre.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo · Desde las 06:00 h</span>
+          Al alba arranca la magistral procesión de <strong>Los Salzillos</strong> (Los Moraos): más de cuatro mil nazarenos de riguroso morado acompañan los impresionantes pasos de Francisco Salzillo iluminados por el primer rayo de sol. Por la noche, el rigor continúa con Servitas y el Santo Sepulcro, procesión oficial de la ciudad.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          El Cristo de la Caridad celebra la Procesión del Rosario en sus Misterios Dolorosos, un cortejo de recogimiento antes de la vigilia pascual que cierra los días de luto.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La procesión del <strong>Resucitado</strong> estalla en un júbilo sin igual. Unas 30.000 personas se concentran mientras llueven caramelos en el emblemático encuentro de <strong>La Cortesía</strong>, donde las imágenes de Jesús Resucitado y la Virgen de la Gloria se encuentran y los tronos bailan frente a frente en la Plaza Belluga.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Murcia reúne a <strong>15 cofradías</strong> que procesionan a lo largo de diez días. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa del Cabildo Superior de Cofradías para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Amparo</span>
+              <span class="tooltip-texto">Venerable Cofradía del Santísimo Cristo del Amparo y María Santísima de los Dolores.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Fe</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Fe.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Caridad</span>
+              <span class="tooltip-texto">Muy Ilustre y Venerable Cofradía del Santísimo Cristo de la Caridad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Esperanza</span>
+              <span class="tooltip-texto">Pontificia, Real y Venerable Cofradía del Santísimo Cristo de la Esperanza, María Santísima de los Dolores y del Santo Celo por la Salvación de las Almas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Perdón</span>
+              <span class="tooltip-texto">Real, Ilustre y Muy Noble Cofradía del Santísimo Cristo del Perdón.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Rescate</span>
+              <span class="tooltip-texto">Hermandad de Esclavos de Nuestro Padre Jesús del Rescate y María Santísima de la Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Salud</span>
+              <span class="tooltip-texto">Pontificia, Real, Hospitalaria y Primitiva Asociación del Santísimo Cristo de la Salud.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Coloraos</span>
+              <span class="tooltip-texto">Real, Muy Ilustre, Venerable y Antiquísima Archicofradía de la Preciosísima Sangre de Nuestro Señor Jesucristo. La procesión más alegre y huertana de Murcia.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Refugio</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Refugio. Procesión en silencio absoluto con las calles a oscuras.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Moraos</span>
+              <span class="tooltip-texto">Real y Muy Ilustre Cofradía de Nuestro Padre Jesús Nazareno (Los Salzillos). Procesiona al alba con las tallas de Francisco Salzillo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Misericordia</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Misericordia.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Servitas</span>
+              <span class="tooltip-texto">Real, Muy Ilustre y Venerable Cofradía de Servitas de María Santísima de las Angustias.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Sepulcro</span>
+              <span class="tooltip-texto">Real y Muy Ilustre Cofradía del Santo Sepulcro de Nuestro Señor Jesucristo. Procesión oficial de la ciudad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Cristo de la Caridad</span>
+              <span class="tooltip-texto">Muy Ilustre y Venerable Cofradía del Santísimo Cristo de la Caridad — Procesión del Rosario en sus Misterios Dolorosos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Resucitado</span>
+              <span class="tooltip-texto">Real y Muy Ilustre Archicofradía de Nuestro Señor Jesucristo Resucitado. Cierra la Semana Santa con La Cortesía en la Plaza Belluga.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://cabildocofradiasmurcia.net" target="_blank" rel="noopener">Cabildo Superior de Cofradías de Murcia</a> — última verificación: 2026-04-30</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El paisaje sonoro de la Semana Santa murciana es tan dual como sus procesiones. En los cortejos de estilo tradicional y alegre — Los Coloraos o el Resucitado — las agrupaciones musicales y bandas de viento envuelven el ambiente en marchas triunfales y jubilosas. A esa música se suma el sonido constante de los caramelos y obsequios cayendo sobre las manos de los niños, una percusión dulce e inconfundible que es la firma sonora de la Murcia huertana.
+        </p>
+        <p>
+          Por el contrario, el Jueves Santo por la noche instaura un silencio ensordecedor. En la procesión del Refugio, los faroles se apagan y el único sonido perceptible es el roce de las túnicas, los golpes coordinados de los estantes en el suelo y los coros polifónicos interpretando cánticos gregorianos de fondo. Escuchar cómo el silencio absoluto se rompe únicamente por el esfuerzo físico coordinado de los estantes cargando la madera maciza te conecta directamente con el sacrificio más puro de la Pasión.
+        </p>
+        <ul>
+          <li>Para escuchar las marchas procesionales con la mejor acústica, busca calles estrechas del centro histórico como la calle Trapería; el sonido rebota en las fachadas y envuelve al espectador por completo.</li>
+          <li>Durante el Refugio, guarda silencio absoluto desde que el alumbrado público se apaga. Cualquier conversación o sonido de móvil rompe el rito y falta el respeto a los penitentes y al público que comparte el momento.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El primer rayo de sol sobre Los Salzillos</h3>
+          <span class="tag">Viernes Santo · Desde las 06:00 h · Iglesia de Jesús</span>
+          <p>Más de cuatro mil nazarenos de riguroso morado inician su estación de penitencia al alba. El instante cumbre llega cuando el primer rayo de sol de la mañana ilumina los rostros perfectos de las tallas de Francisco Salzillo mientras asoman por la puerta de la iglesia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es como ver cobrar vida a un museo del siglo XVIII en mitad de la calle. La expresividad de las tallas de Salzillo iluminadas por la luz del amanecer ofrece un realismo tan abrumador que emociona tanto a creyentes como a los amantes del arte clásico. Sitúate frente a la Iglesia de Jesús con bastante antelación — la salida al alba congrega a miles de personas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La generosidad de Los Coloraos</h3>
+          <span class="tag">Miércoles Santo · Tarde · Barrio del Carmen y Puente Viejo</span>
+          <p>El Cristo de la Sangre atraviesa el río en un estallido de color rojo intenso. Los nazarenos, con sus túnicas arremangadas a la cintura formando la seno, reparten sin descanso caramelos, habas frescas, monas de pascua y regalos entre un público expectante y agradecido.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque refleja el alma genuina de la huerta murciana: la abundancia y la generosidad compartida. Es un desfile vibrante, lleno de alegría y familiaridad, que contrasta maravillosamente con el luto andaluz o castellano. Ver el Puente Viejo teñido de rojo desde la orilla del río es una de las imágenes más características de toda la Semana Santa murciana.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La oscuridad sepulcral del Refugio</h3>
+          <span class="tag">Jueves Santo · Noche · Calle Trapería y centro histórico</span>
+          <p>El alumbrado público se apaga por completo al paso de la cofradía del Refugio. Los capuces caídos de los penitentes, la ausencia total de obsequios y el silencio monacal dominan una ciudad sumida en una oscuridad que solo rompen los cirios.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pasar de la algarabía del Miércoles Santo a la más absoluta oscuridad te obliga a vivir la procesión de una manera íntima e inesperada. Es el impacto de la privación: una ciudad que sabe callar ante la inminencia de la cruz. Sitúate en la calle Trapería, donde el corredor estrecho amplifica el efecto del silencio hasta hacerlo físicamente palpable.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Cortesía del Domingo de Resurrección</h3>
+          <span class="tag">Domingo de Resurrección · Mañana · Plaza Belluga</span>
+          <p>Las imágenes de Jesús Resucitado y la Virgen de la Gloria se encuentran en una plaza abarrotada por 30.000 personas. Mientras los tronos bailan frente a frente, estalla una batalla campal de caramelos que cruzan el cielo de Murcia en todas direcciones.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la culminación de la esperanza hecha fiesta: el triunfo definitivo sobre la muerte celebrado con una alegría terrenal, ruidosa y espectacular. La Plaza Belluga con la Catedral de fondo es el escenario perfecto. Llega con tiempo para conseguir sitio en primera línea y no olvides llevar algo para protegerte la cabeza de la lluvia de caramelos.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> El centro histórico de Murcia se llena rápidamente. Si buscas opciones más económicas, las zonas de la Avenida Juan Carlos I o la Ronda Sur tienen buena conexión con tranvía o a pie.</li>
+        <li><strong>Cómo llegar.</strong> Murcia tiene conexión en tren desde Madrid, Barcelona, Valencia y Alicante. Durante la Semana Santa el centro está muy restringido al tráfico; lo más cómodo es aparcar en zonas periféricas y acceder en tranvía o a pie.</li>
+        <li><strong>Zonas de pago y acceso libre.</strong> A lo largo de la Carrera Oficial existen sillas de pago para ver las procesiones sentado. Si prefieres la movilidad gratuita, busca las calles secundarias del recorrido, especialmente cerca de los barrios de salida de cada cofradía.</li>
+        <li><strong>Ropa por capas.</strong> La primavera murciana es muy calurosa a mediodía pero traicionera por la noche. Lleva ropa cómoda, calzado muy amortiguado — estarás muchas horas de pie — y siempre una chaqueta para las madrugadas.</li>
+        <li><strong>Para el Viernes Santo.</strong> La procesión de Los Salzillos arranca al alba. Si quieres ver la salida desde la Iglesia de Jesús, tienes que estar allí antes de las 05:30 h. Lleva abrigo: las madrugadas primaverales en Murcia son frescas.</li>
+        <li><strong>No cruces las procesiones.</strong> Espera siempre a los pasos habilitados por la organización y la policía. Nunca interrumpas las filas de nazarenos.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con tres días cubres lo esencial: Miércoles Santo para Los Coloraos, Jueves Santo para el Refugio y Viernes Santo para Los Salzillos y el Santo Sepulcro. Si puedes añadir el Domingo de Resurrección, La Cortesía en la Plaza Belluga cierra la semana de forma inmejorable.</li>
+        <li><strong>Visita el Museo Salzillo.</strong> Si no logras ver los pasos en la procesión o quieres apreciarlos de cerca, el Museo Salzillo de Murcia expone permanentemente la mayor parte de las tallas durante todo el año. Es una visita imprescindible para entender la magnitud artística de lo que procesiona el Viernes Santo.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Cofradía y Hermandad</dt>
+        <dd>Grupos de fieles organizados en torno a una advocación religiosa. En Murcia, a menudo se integran varias hermandades dentro de una misma Archicofradía matriz, como ocurre en La Sangre. Sus miembros mantienen viva la tradición durante todo el año, no solo en Semana Santa.</dd>
+
+        <dt>Nazareno y Penitente</dt>
+        <dd>El hermano que viste la túnica de su cofradía durante la procesión. En Murcia, la vestimenta varía drásticamente según el estilo de la procesión: túnica corta ceñida a la cintura en el estilo murciano, o túnica larga arrastrando con capuz cubriendo el rostro en el estilo andaluz.</dd>
+
+        <dt>Estante</dt>
+        <dd>El equivalente murciano al costalero, pero con una técnica radicalmente distinta. El estante carga el paso directamente sobre su hombro, a cara descubierta, con la almohadilla protectora introducida por debajo de la túnica. A diferencia de los costaleros andaluces, trabaja visible y de pie, sin ocultarse bajo los faldones del trono.</dd>
+
+        <dt>La Seno (o buche)</dt>
+        <dd>La característica bolsa que se forma en la barriga del nazareno estante al ceñirse la túnica con un cordón a la cintura. Sirve como almacén inagotable de caramelos, habas, monas de pascua y regalos que se reparten durante las procesiones de estilo huertano. Es el símbolo visual más reconocible de la generosidad murciana.</dd>
+
+        <dt>Mayordomo</dt>
+        <dd>La máxima autoridad en la calle dentro de su hermandad durante la procesión. Se distingue por ir a cara descubierta, portando una vara de mando y organizando el ritmo y el orden de los nazarenos. Su figura equivale al capataz de otras tradiciones.</dd>
+
+        <dt>Estilo Murciano vs. Andaluz</dt>
+        <dd>Los dos lenguajes procesionales que conviven en Murcia. El estilo murciano implica túnicas cortas, estantes visibles, reparto de caramelos y marchas alegres. El estilo andaluz impone túnicas largas arrastrando, paso a costal, silencio estricto y capuz cubriendo el rostro. Esta dualidad es única en la Semana Santa española.</dd>
+
+        <dt>Los Moraos / Los Coloraos</dt>
+        <dd>Nombres coloquiales de las dos cofradías más populares de Murcia. Los Moraos son Jesús Nazareno, por el color morado de sus túnicas, portadores de los Salzillos al alba del Viernes Santo. Los Coloraos son La Sangre, por el rojo intenso de sus túnicas, protagonistas de la procesión más alegre y huertana del Miércoles Santo.</dd>
+
+        <dt>La Cortesía</dt>
+        <dd>El momento culminante del Domingo de Resurrección en la Plaza Belluga. Las imágenes de Jesús Resucitado y la Virgen de la Gloria se encuentran y los tronos "bailan" frente a frente mientras miles de personas lanzan caramelos al aire en una explosión de júbilo colectivo que cierra la Semana Santa murciana.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-murcia-1.jpg" alt="Talla de Francisco Salzillo iluminada por el amanecer en la procesión de Los Moraos durante el Viernes Santo de Murcia" />
+        <img src="images/semana-santa-murcia-2.jpg" alt="Nazarenos de Los Coloraos con túnicas rojas y la seno llena de caramelos en el Miércoles Santo de Murcia" />
+        <img src="images/semana-santa-murcia-3.jpg" alt="La Cortesía del Domingo de Resurrección en la Plaza Belluga de Murcia con la Catedral al fondo" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://cabildocofradiasmurcia.net" target="_blank" rel="noopener">Cabildo Superior de Cofradías de Murcia</a></li>
+        <li><a href="https://turismodemurcia.es" target="_blank" rel="noopener">Turismo de Murcia — Ayuntamiento</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo de la Región de Murcia</a></li>
+        <li><a href="https://www.museosalzillo.es" target="_blank" rel="noopener">Museo Salzillo de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 de marzo al 28 de marzo. Los días de mayor intensidad son el Miércoles Santo (Los Coloraos) y el Viernes Santo (Los Salzillos y el Santo Sepulcro).</dd>
+
+        <dt>¿Necesito entrada para ver las procesiones?</dt>
+        <dd>No. Las sillas de la Carrera Oficial son de pago, pero puedes disfrutar de todas las procesiones de forma gratuita a lo largo de sus recorridos por la ciudad.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí, y con muy poco margen de aviso. El valor de las tallas de Salzillo y otros imagineros es tan inmenso que ante cualquier riesgo de precipitación las salidas se retrasan o suspenden para proteger el patrimonio. Sigue los canales oficiales del Cabildo en tiempo real.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Murcia es una de las Semanas Santas más family-friendly de España gracias a su tradición huertana. Las procesiones de Los Coloraos o El Resucitado son ideales para los niños por el reparto de dulces. Para las madrugadas y las procesiones de silencio se recomienda más precaución.</dd>
+
+        <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
+        <dd>El Ayuntamiento y el Cabildo habilitan espacios y rampas reservados en el entorno de la Plaza Belluga y la Glorieta de España. Las avenidas del centro son en su mayoría llanas y peatonales, lo que facilita bastante el tránsito en comparación con otras ciudades con cuestas pronunciadas.</dd>
+
+        <dt>¿Tengo que pagar por los caramelos que reparten los nazarenos?</dt>
+        <dd>En absoluto. El reparto de caramelos, habas, monas y estampas es un acto de pura generosidad del nazareno murciano hacia los espectadores, recordando la antigua tradición huertana de compartir el alimento con el prójimo.</dd>
+
+        <dt>¿Dónde puedo ver las imágenes de Salzillo si no puedo ir a la procesión?</dt>
+        <dd>La mayoría de los impresionantes pasos de Francisco Salzillo están expuestos permanentemente en el Museo Salzillo de Murcia, abierto todo el año. Es una visita imprescindible para comprender la magnitud artística de lo que procesiona el Viernes Santo.</dd>
+
+        <dt>¿Puedo cruzar por medio de una procesión si tengo prisa?</dt>
+        <dd>Nunca. Debes rodear la calle o buscar los pasos habilitados por la organización y la policía para cruzar rápidamente sin faltar el respeto a las filas de penitentes.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
