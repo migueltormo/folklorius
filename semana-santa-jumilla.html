@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jumilla — Semana Santa — Folklorius</title>
+  <meta name="description" content="La Semana Santa de Jumilla 2027, la más antigua de la Región de Murcia (1411). El Drama del Prendimiento, los Armaos, el Silencio con cadenas y el Cristo de Salzillo. Del 20 de marzo al 28 de marzo." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-jumilla.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Jumilla — Folklorius" />
+  <meta property="og:description" content="Más de seiscientos años de fe entre túnicas y viñedos. El Drama del Prendimiento, los Armaos y el Cristo de Salzillo. Jumilla, Región de Murcia." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-jumilla.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-jumilla.html",
+    "name": "Semana Santa de Jumilla",
+    "startDate": "2027-03-20",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Jumilla",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jumilla",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.4784,
+        "longitude": -1.3284
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-jumilla.jpg"],
+    "description": "La Semana Santa de Jumilla, la más antigua de la Región de Murcia (1411). El Drama del Prendimiento, los Armaos, el Silencio con cadenas y el Cristo Amarrado de Salzillo. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta Central de Hermandades y Cofradías de Semana Santa de Jumilla",
+      "url": "https://semanasanta-jumilla.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Jumilla
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-jumilla.jpg" alt="Armaos desfilando marcialmente durante la Semana Santa de Jumilla con el Cristo Amarrado de Salzillo al fondo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Jumilla</h1>
+      <p class="ficha-subtitle">
+        Jumilla (Región de Murcia) · Fiesta religiosa y cultural · "Más de seiscientos años de fe entre túnicas y viñedos."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Durante la Procesión del Silencio (Martes Santo), los penitentes arrastran cadenas por las oscuras callejuelas del casco antiguo. Guarda absoluto silencio ante esta sobrecogedora muestra de penitencia — el ruido del hierro sobre los adoquines es parte esencial del rito.</li>
+          <li>Jumilla alterna el rigor con el júbilo. Respeta el recogimiento en las procesiones de luto y disfruta con naturalidad de la generosidad en días como el Domingo de Resurrección, donde las cofradías reparten caramelos entre el público.</li>
+          <li>El casco antiguo es de trazado medieval y las calles son muy estrechas. Sigue las indicaciones de las hermandades para no entorpecer el paso de los tronos ni interrumpir la formación de los Armaos durante sus desfiles.</li>
+          <li>El Cristo Amarrado a la Columna es una talla de Francisco Salzillo de valor incalculable. Evita el uso de flash y mantén siempre una distancia prudencial cuando la imagen esté en procesión o en romería.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Cerrar los ojos en la Semana Santa de Jumilla es viajar al año 1411, cuando San Vicente Ferrer encendió la mecha de la devoción en estas tierras nobles. Es una ciudad que huele a mosto añejo, a cera derretida y a pólvora. Aquí, la fe se representa en la calle con una crudeza teatral sobrecogedora, donde el tintineo del hierro arrastrando por los adoquines se mezcla con los redobles marciales de los Armaos. Jumilla no solo procesiona sus imágenes — escenifica la Pasión con una autenticidad rústica y profunda que convierte cada callejón en una página viva del Evangelio.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Jumilla cuenta con <strong>20 hermandades y cofradías</strong> que realizan estación de penitencia, sumando más de tres mil nazarenos en la calle a lo largo de los días de Semana Santa. El esqueleto de la fiesta se sostiene sobre una sucesión cronológica casi perfecta: los pasos narran visualmente la vida y muerte de Cristo en orden, desde la Entrada en Jerusalén hasta la Resurrección, convirtiendo el recorrido completo de la semana en una lectura coral del Evangelio hecha carne y madera.
+      </p>
+      <p>
+        El elemento central es el trono murciano portado a hombros por nazarenos que aquí no ocultan su rostro cuando cargan el peso. El ambiente es una mezcla fascinante: cofradías de una solemnidad imponente como el Cristo Amarrado o el Cristo de la Vida conviven con momentos de participación popular activa, como las representaciones teatrales al aire libre que preceden a los desfiles y que implican directamente al pueblo jumillano como actores. A ello se suma la presencia marcial y visual de los <strong>Armaos</strong> — la centuria de soldados romanos que custodia los pasos más importantes — cuya disciplina y estética military impregnan de autoridad cada cortejo.
+      </p>
+      <p>
+        Para el visitante, Jumilla exige caminar su casco antiguo. Sitúate cerca del Teatro Vico o la Plaza de la Constitución para los grandes pasos de la semana, pero no dudes en adentrarte en las callejuelas que rodean la Iglesia de Santiago en la noche del Martes Santo. Si vas con familia, el Miércoles y el Domingo son los días más accesibles y coloridos para disfrutar de la generosidad y el teatro popular.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La Semana Santa de Jumilla presume de ser, junto a la de Murcia capital, la más antigua de la Región, naciendo oficialmente en <strong>1411</strong> tras las predicaciones dominicas de <strong>San Vicente Ferrer</strong>. A mediados del siglo XIX vivió su gran resurgir, consolidando corporaciones como la antigua Hermandad de Jesús Nazareno y configurando el calendario procesional que ha llegado prácticamente intacto hasta hoy.
+      </p>
+      <p>
+        El valor patrimonial es extraordinario. Jumilla atesora tallas de imagineros cumbres como <strong>Francisco Salzillo</strong>, cuyo Cristo Amarrado a la Columna es la gran joya artística de la ciudad y una de las obras más expresivas del barroco español, además de piezas de <strong>Roque López</strong> y del imaginero local <strong>Mariano Spiteri</strong>. El Cristo Amarrado reside habitualmente en el Monasterio de Santa Ana del Monte, un paraje natural de gran belleza a las afueras del pueblo, y solo baja a la ciudad para la Semana Santa.
+      </p>
+      <p>
+        Para Jumilla, la Semana Santa trasciende lo religioso: es el reloj que marca el año. Las cofradías, profundamente ligadas a los gremios agrícolas y vitivinícolas históricos, vertebran la vida social de la ciudad mucho antes de que llegue la Cuaresma, transmitiendo de generación en generación la herencia de los Armaos, las manolas y el Drama Sacro del Prendimiento.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Semana Santa de Jumilla en 2027 se celebra del <strong>sábado 20 de marzo</strong>, Sábado de Pasión, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor impacto cultural son el <strong>Miércoles Santo</strong> (24 de marzo), con el Drama Sacro del Prendimiento y la procesión nocturna de Jesús Prendido, y el <strong>Viernes Santo</strong> (26 de marzo), con la procesión del Calvario y el solemne Santo Entierro. Las fechas cambian cada año según el calendario litúrgico.
+      </p>
+      <p>
+        Consulta los horarios e itinerarios exactos en la web de la Junta Central de Hermandades y Cofradías de Semana Santa de Jumilla. Ante riesgo de lluvia, las salidas pueden suspenderse o retrasarse para proteger las imágenes.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          El traslado del Cristo de la Reja desde el Convento de Santa Ana abre los días grandes, bajando la imagen hacia el pueblo al atardecer en un ambiente de expectación creciente que marca el inicio oficial de la Semana Santa jumillana.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La mañana arranca con la luminosa Procesión de las Palmas, donde los niños son protagonistas acompañando la entrada triunfal de Jesús en Jerusalén. Por la tarde, a las 20:00 h, el pueblo entero se echa al monte para arropar la multitudinaria bajada en romería del venerado <strong>Cristo Amarrado a la Columna</strong> desde el Convento de Santa Ana — uno de los momentos más emocionantes y singulares de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La Procesión de las Promesas del Santo Rosario, con la Virgen de los Dolores del Calvario, marca una noche de puro recogimiento y promesas personales. Es una de las jornadas más íntimas y devotas de la semana, con gran participación de jumillanos que cumplen mandas pendientes.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          El Silencio. La ciudad apaga sus luces y los nazarenos de túnica negra, muchos de ellos descalzos, arrastran pesadas cadenas acompañando al Cristo de la Vida y la Virgen de la Esperanza por el trazado medieval del casco antiguo. El único sonido que rompe la noche es el escalofriante rasgar del hierro sobre los adoquines centenarios.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Por la tarde (17:30-18:00 h), la Plaza de Arriba acoge el <strong>Drama Sacro del Prendimiento</strong>: los propios jumillanos escenifican a cielo abierto el apresamiento de Jesús en el Huerto de los Olivos. Por la noche, once hermandades participan en la solemne Procesión de Jesús Prendido, el desfile más multitudinario de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          La solemne Procesión de la Amargura conmemora la Pasión con una exhibición de estandartes y un silencio respetuoso que impresiona al visitante. Los Armaos despliegan toda su presencia marcial custodiando los pasos más importantes de la jornada.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          La mañana acoge la gran Procesión del Calvario, con la práctica totalidad de las hermandades en la calle. Por la noche, la solemne <strong>Procesión del Santo Entierro</strong> cierra la jornada más intensa de la semana, donde las <strong>manolas</strong> — mujeres de riguroso luto con teja y mantilla negra — escoltan llorando la muerte de Jesús en un cortejo de una belleza sobria y desgarradora.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          A las 19:00 h arranca la solemne Procesión de la Redención, un cortejo de creación más reciente y estilo austero que aporta un ambiente de espera y recogimiento franciscano justo antes de la vigilia pascual.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La tristeza desaparece. La procesión de Jesús Resucitado llena las calles de luz, música y repique de campanas mientras llueven caramelos sobre el público en una explosión de júbilo colectivo que cierra la Semana Santa más antigua de la Región de Murcia.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Jumilla reúne a <strong>20 hermandades y cofradías</strong>. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de la Junta Central para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo de la Reja</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Caída — el Cristo de la Reja es imagen titular de esta corporación. Traslado desde el Convento de Santa Ana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Entrada en Jerusalén</span>
+              <span class="tooltip-texto">Cofradía del Santo Costado de Cristo — procesiona el paso de la Entrada de Jesús en Jerusalén. Procesión de las Palmas por la mañana.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo Amarrado (Romería)</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo Amarrado a la Columna — bajada en romería desde el Convento de Santa Ana al atardecer. La talla es obra de Francisco Salzillo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Promesas del Rosario</span>
+              <span class="tooltip-texto">Cofradía de la Santísima Virgen del Primer Dolor, Unción de Jesús en Betania y Virgen Gloriosa — Procesión de las Promesas del Santo Rosario.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Silencio</span>
+              <span class="tooltip-texto">Hermandad Penitencial del Santísimo Cristo de la Vida — Procesión del Silencio. Nazarenos de negro con cadenas por el casco antiguo medieval.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Samaritana</span>
+              <span class="tooltip-texto">Cofradía de la Samaritana y Cristo Humillado.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Rollo</span>
+              <span class="tooltip-texto">Cofradía del Ecce-Homo "Cofradía del Rollo".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Costado</span>
+              <span class="tooltip-texto">Cofradía del Santo Costado de Cristo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Pedro</span>
+              <span class="tooltip-texto">Venerable e Ilustre Hermandad de San Juan Apóstol — procesiona imágenes como la Negación de San Pedro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Prendido</span>
+              <span class="tooltip-texto">Real Cofradía de Jesús Prendido y Santísima Virgen de la Piedad — preside la procesión nocturna más multitudinaria de la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Amargura</span>
+              <span class="tooltip-texto">Cofradía de la Oración del Huerto y Cruz Triunfante — paso de Ntra. Sra. de la Amargura. Preside la Procesión de la Amargura.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de la Caída</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Caída.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Sentencia</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Sentencia.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Hijas de Jerusalén</span>
+              <span class="tooltip-texto">Cofradía del Santo Costado de Cristo — las Hijas de Jerusalén pertenecen a esta corporación.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo Amarrado</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo Amarrado a la Columna — la gran joya artística de Jumilla, obra de Francisco Salzillo. Custodiada por los Armaos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno</span>
+              <span class="tooltip-texto">Real Cofradía de Jesús Nazareno.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Samaritana</span>
+              <span class="tooltip-texto">Cofradía de la Samaritana y Cristo Humillado — participa también en la Procesión del Calvario.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Pedro</span>
+              <span class="tooltip-texto">Venerable e Ilustre Hermandad de San Juan Apóstol — participa en la Procesión del Calvario.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Rollo</span>
+              <span class="tooltip-texto">Cofradía del Ecce-Homo "Cofradía del Rollo" — participa en la Procesión del Calvario.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Hermandad de la Vera Cruz y Santo Sepulcro — preside el solemne Santo Entierro de la noche del Viernes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Redención</span>
+              <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús de la Redención — Procesión de la Redención. Cortejo austero de espera y recogimiento antes de la vigilia pascual.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo Yacente</span>
+              <span class="tooltip-texto">Cofradía de la Guarda del Cuerpo de Cristo. No confundir con el Santo Sepulcro del Viernes Santo (Hermandad de la Vera Cruz y Santo Sepulcro).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Resucitado</span>
+              <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús de la Redención — culmina la semana con la procesión del Resucitado y la lluvia de caramelos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Virgen Gloriosa</span>
+              <span class="tooltip-texto">Cofradía de la Santísima Virgen del Primer Dolor, Unción de Jesús en Betania y Virgen Gloriosa.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasanta-jumilla.es" target="_blank" rel="noopener">Junta Central de Hermandades y Cofradías de Semana Santa de Jumilla</a> — última verificación: 2026-05-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          En Jumilla, el sonido te cuenta en qué día vives. Los desfiles alegres del Domingo de Ramos y Resurrección suenan a marchas triunfales de bandas de música que levantan el ánimo de la ciudad entera. Sin embargo, el Martes Santo en la Procesión Penitencial el silencio es tan denso que el único sonido que rompe la noche es el escalofriante rasgar del hierro de las cadenas que los penitentes arrastran por los adoquines centenarios. El impacto metálico rebota en los estrechos callejones de la morería medieval sumergiendo al espectador en una atmósfera de sacrificio físico que ninguna banda de música puede igualar.
+        </p>
+        <p>
+          A este contraste se suma la banda sonora marcial y percusiva de los <strong>Armaos</strong>, cuyas cornetas y tambores marcan un ritmo militar y añejo que impone respeto a su paso. Cuando la centuria de soldados romanos ejecuta sus <strong>caracoles</strong> — los carruseles coreografiados ante las imágenes — el sonido de los pasos sincronizados sobre el adoquín y el golpe seco de las lanzas crea una estética sonora que no existe en ninguna otra Semana Santa de España.
+        </p>
+        <ul>
+          <li>Para vivir el contraste acústico completo de Jumilla, combina la Procesión del Silencio del Martes Santo en las callejuelas del casco antiguo con las marchas triunfales del Domingo de Resurrección en la Plaza de la Constitución. Son las dos caras sonoras de la fiesta.</li>
+          <li>Durante el Silencio, apaga el sonido del móvil antes de entrar en el recorrido. Cualquier notificación o llamada rompe el rito y resulta extraordinariamente irrespetuosa con los penitentes y con el público que guarda silencio.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Drama Sacro del Prendimiento</h3>
+          <span class="tag">Miércoles Santo · 17:30-18:00 h · Plaza de Arriba</span>
+          <p>Antes de la procesión nocturna, los propios jumillanos escenifican a cielo abierto el apresamiento de Jesús en el Huerto de los Olivos, con vestuarios de época y textos de gran calado literario. El pueblo llano convertido en actor de su propia fe.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es una de las pocas representaciones teatrales sacras que sobreviven intactas en España. Ver a los vecinos de Jumilla escenificar los últimos días de Cristo aporta una dimensión pedagógica y humana que ninguna procesión puede ofrecer. Llega con tiempo a la Plaza de Arriba para conseguir buen sitio — la afluencia es muy alta y la representación es al aire libre sin aforo limitado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Silencio y las cadenas</h3>
+          <span class="tag">Martes Santo · Noche · Salida desde la Iglesia de Santiago</span>
+          <p>Con el alumbrado apagado, los nazarenos de negro avanzan descalzos arrastrando pesadas cadenas atadas a los tobillos por las calles más angostas y oscuras de Jumilla. El frío de la noche y el sonido del hierro te hacen partícipe del dolor del cortejo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Por la crudeza sobrecogedora de la escena. Es un viaje en el tiempo a la penitencia más pura y descarnada que te conecta físicamente con el sacrificio. Sitúate en las callejuelas más estrechas del casco antiguo cerca de la Iglesia de Santiago — cuanto más angosta sea la calle, más impactante resulta el eco del hierro. Lleva abrigo de invierno: las madrugadas del Altiplano son gélidas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los caracoles de los Armaos</h3>
+          <span class="tag">Jueves y Viernes Santo · Ante las imágenes principales</span>
+          <p>Una centuria de soldados romanos ataviados con corazas, cascos de plumas y lanzas desfila con disciplina marcial y ejecuta sus tradicionales caracoles — carruseles coreografiados — ante las imágenes sagradas como saludo y reverencia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pertenecer a los Armaos es un honor que pasa de padres a hijos en Jumilla. Presenciar su disciplina custodiando el paso de Salzillo es ver el orgullo militar y estético de una tradición que engrandece visualmente la Semana Santa levantina. El mejor momento para fotografiarlos es durante los caracoles ante la puerta de la iglesia al inicio del cortejo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La bajada del Cristo Amarrado desde Santa Ana</h3>
+          <span class="tag">Domingo de Ramos · 20:00 h · Desde el Convento de Santa Ana</span>
+          <p>La venerada talla de Francisco Salzillo baja en romería desde el monte hasta la ciudad acompañada por miles de jumillanos entre el polvo del camino y la luz del atardecer. Es el reencuentro de la ciudad con su gran tesoro artístico.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el fervor popular se mezcla aquí con el entorno natural en una romería que huele a monte y que sirve de pórtico triunfal a los días grandes. Ver descender la imagen de Salzillo entre el ocre del paisaje del Altiplano al atardecer es una estampa de una belleza rústica e irrepetible. Si puedes, sube al Convento de Santa Ana antes de las 19:00 h para acompañar la bajada desde el inicio.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento escaso.</strong> Jumilla no dispone de una gran planta hotelera. Reserva con muchos meses de antelación o busca alojamiento rural en los municipios vecinos del Altiplano murciano.</li>
+        <li><strong>Cómo llegar.</strong> Jumilla está a unos 75 km de Murcia capital y a unos 90 km de Alicante. La conexión más cómoda en transporte público es el autobús desde Murcia. En coche, la A-30 y la RM-14 son las vías principales. Durante los días grandes el centro se restringe al tráfico — aparca en las zonas periféricas habilitadas.</li>
+        <li><strong>Ubicación estratégica.</strong> Sitúate en la calle Cánovas del Castillo (zona conocida como "el cruce") o en la Plaza de la Constitución. Es el punto por donde pasan prácticamente todos los cortejos con suficiente amplitud para verlos bien.</li>
+        <li><strong>Clima de contrastes.</strong> El clima del Altiplano murciano es continental. Los días de abril pueden ser muy cálidos bajo el sol, pero las madrugadas son verdaderamente gélidas. Viste a capas y lleva abrigo grueso obligatoriamente para la Procesión del Silencio.</li>
+        <li><strong>No cruces las filas de Armaos.</strong> Las escuadras de soldados romanos desfilan con un paso rítmico y coreografiado. Nunca intentes cruzar por en medio de su formación — podrías romper su paso o provocar un accidente con sus lanzas.</li>
+        <li><strong>Miércoles Santo con niños.</strong> Si viajas con niños o prefieres la fotografía de día, la tarde del Miércoles Santo es ideal: el Drama Sacro del Prendimiento es al aire libre con luz natural y funciona como perfecto preámbulo a la procesión nocturna.</li>
+        <li><strong>Gastronomía de Cuaresma.</strong> Es obligatorio probar el <strong>Trigoentero</strong>, el plato cuaresmal por excelencia de Jumilla (guiso contundente de trigo, verduras y legumbres que se sirve especialmente el Jueves Santo). De postre, busca las empanadas de patata y las cristóbalas (mazapán local). Todo ello regado con un buen vino D.O. Jumilla.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con tres días cubres lo esencial: Martes Santo para el Silencio, Miércoles Santo para el Prendimiento y la procesión de Jesús Prendido, y Viernes Santo para la Procesión del Calvario y el Santo Entierro con las manolas. Si puedes añadir el Domingo de Ramos, la bajada del Cristo Amarrado desde Santa Ana es imprescindible.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Hermandad y Cofradía</dt>
+        <dd>La base social y religiosa de la Semana Santa. En Jumilla, las 20 hermandades y cofradías participan activamente tanto en los desfiles como en las representaciones teatrales del Prendimiento, vertebrando la vida social de la ciudad durante todo el año.</dd>
+
+        <dt>Paso / Trono</dt>
+        <dd>La estructura monumental sobre la que se asientan las imágenes sagradas, portada a hombros por los nazarenos. En Jumilla, los portadores no ocultan su rostro cuando cargan el peso, a diferencia del sistema de costaleros ocultos propio de otras tradiciones.</dd>
+
+        <dt>Armaos</dt>
+        <dd>Los soldados romanos de la Semana Santa jumillana. Su presencia es vital e históricamente custodian el sepulcro y acompañan los pasos más importantes, especialmente el Cristo Amarrado a la Columna. Lucen corazas, capas, cascos de plumas y lanzas o machetes atados al tahalí. Pertenecer a los Armaos es un honor que se transmite de padres a hijos.</dd>
+
+        <dt>Manolas</dt>
+        <dd>Mujeres que desfilan en la mañana y la noche del Viernes Santo vestidas de riguroso luto, con teja y mantilla negra, escenificando el llanto y el duelo por la muerte de Cristo. Su presencia añade una dimensión íntima y femenina al cortejo más solemne de la semana.</dd>
+
+        <dt>Drama Sacro</dt>
+        <dd>Representación teatral pública y al aire libre protagonizada por los propios vecinos de Jumilla, siendo el del Prendimiento (Miércoles Santo) el más famoso. Es una de las pocas representaciones sacras populares que sobreviven intactas en España.</dd>
+
+        <dt>Caracol</dt>
+        <dd>Maniobra o carrusel coreografiado que realizan las agrupaciones de Armaos a modo de saludo o reverencia ante las imágenes sagradas o las puertas del templo. Es uno de los momentos más vistosos y fotografiados de toda la Semana Santa jumillana.</dd>
+
+        <dt>Trigoentero</dt>
+        <dd>El plato cuaresmal por excelencia de Jumilla. Un guiso contundente de trigo, verduras y legumbres que se sirve especialmente el Jueves Santo. Es la forma más directa de conectar con la tradición gastronómica agrícola que ha vertebrado la identidad de la ciudad durante siglos.</dd>
+
+        <dt>Cristóbalas</dt>
+        <dd>Nombre local del mazapán tradicional de Jumilla. Junto a las empanadas de patata, son los dulces típicos de la Semana Santa jumillana. Su nombre es exclusivo de la ciudad y no se encuentra en ningún otro lugar de la región.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria">
+        <img src="images/semana-santa-jumilla-1.jpg" alt="Armaos en formación marcial durante la Semana Santa de Jumilla custodiando el paso del Cristo Amarrado a la Columna de Salzillo" />
+        <img src="images/semana-santa-jumilla-2.jpg" alt="Nazarenos de negro arrastrando cadenas por las callejuelas medievales durante la Procesión del Silencio de Jumilla" />
+        <img src="images/semana-santa-jumilla-3.jpg" alt="Representación teatral del Drama Sacro del Prendimiento en la Plaza de Arriba de Jumilla durante el Miércoles Santo" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasanta-jumilla.es" target="_blank" rel="noopener">Junta Central de Hermandades y Cofradías de Semana Santa de Jumilla</a></li>
+        <li><a href="https://jumillaturismo.es" target="_blank" rel="noopener">Turismo de Jumilla</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo de la Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Sábado de Pasión al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 28 de marzo al 5 de abril. Los días de mayor impacto son el Miércoles Santo (Drama del Prendimiento y procesión de Jesús Prendido) y el Viernes Santo (Procesión del Calvario y Santo Entierro).</dd>
+
+        <dt>¿Es apta la Procesión del Silencio para ir con niños?</dt>
+        <dd>No se recomienda para niños muy pequeños. La procesión del Martes Santo es extremadamente oscura y el sonido de las cadenas arrastrando puede asustarlos. Para familias con niños pequeños son mucho más recomendables el Drama Sacro del Prendimiento (Miércoles Santo, al aire libre y de día) o la procesión del Domingo de Resurrección con su lluvia de caramelos.</dd>
+
+        <dt>¿Cuándo se reparten caramelos?</dt>
+        <dd>La generosidad desborda especialmente el Domingo de Resurrección, donde llueven caramelos para celebrar el fin del luto. También hay reparto en otras procesiones de ambiente más festivo a lo largo de la semana.</dd>
+
+        <dt>¿Puedo ver el Cristo Amarrado fuera de la Semana Santa?</dt>
+        <dd>Sí. La venerada talla de Salzillo reside habitualmente en el Monasterio de Santa Ana del Monte, a las afueras de Jumilla, en un paraje natural de gran belleza que merece la visita durante todo el año.</dd>
+
+        <dt>¿A qué hora empieza el Prendimiento?</dt>
+        <dd>Generalmente sobre las 17:30-18:00 h del Miércoles Santo, sirviendo como preámbulo a la solemne procesión nocturna de Jesús Prendido. Consulta el programa oficial de la Junta Central para confirmar el horario exacto de cada edición.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. Ante riesgo de precipitaciones, las hermandades pueden suspender o retrasar las salidas para proteger las imágenes, especialmente las tallas de mayor valor patrimonial como el Cristo Amarrado de Salzillo. Sigue los canales oficiales de la Junta Central para avisos en tiempo real.</dd>
+
+        <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
+        <dd>El trazado medieval de Jumilla tiene calles empedradas, cuestas y tramos estrechos que dificultan la movilidad. Para los actos al aire libre como el Drama Sacro o las procesiones en la Plaza de la Constitución y la calle Cánovas del Castillo el acceso es más cómodo. Consulta con el Ayuntamiento o la Junta Central las zonas habilitadas de cada edición.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
