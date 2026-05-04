@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Ávila 2027: Silencio, Muralla y Devoción en Castilla</title>
+  <meta name="description" content="Descubre la Semana Santa de Ávila 2027, Interés Turístico Internacional. Guía inmersiva: procesiones, cofradías, recorridos, historia y el tradicional hornazo." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-avila.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Ávila: La Jerusalén Castellana bajo la Muralla" />
+  <meta property="og:description" content="El silencio granítico, el canto del Miserere en la madrugada y el misticismo se unen en la Semana Santa abulense. Todo lo que necesitas saber para vivirla en 2027." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-avila.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-avila.html",
+    "name": "Semana Santa de Ávila",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Ávila",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ávila",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6567,
+        "longitude": -4.6818
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-avila.jpg"],
+    "description": "La Semana Santa de Ávila: silencio, misticismo y fe al abrigo de la muralla medieval. 14 cofradías, 16 procesiones y el canto del Miserere en la madrugada. Declarada de Interés Turístico Internacional desde 2014.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Semana Santa de Ávila",
+      "url": "https://juntasemanasanta-avila.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Ávila
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-avila.jpg" alt="Procesión nocturna bordeando la muralla medieval de Ávila durante la Semana Santa, con capuchones y faroles iluminando los sillares de granito" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Ávila</h1>
+      <p class="ficha-subtitle">
+        Ávila · Castilla y León · "Piedra, silencio y fe al abrigo de la muralla medieval."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>El valor del silencio:</strong> A diferencia del ambiente festivo del sur, en Castilla el silencio es una forma de oración. Apaga el móvil y evita conversaciones en voz alta al paso de las cofradías.</li>
+          <li><strong>Rigor climático:</strong> Las noches abulenses de primavera son célebres por su intenso frío. La contemplación inmóvil en las calles de piedra exige ropa térmica: abrigo de invierno, bufanda y calzado grueso.</li>
+          <li><strong>Respeto al entorno:</strong> Muchas procesiones transcurren por calles estrechas de la zona intramuros y junto al adarve de la Muralla. Mantén siempre libre el paso de seguridad y no toques las imágenes ni los pasos.</li>
+          <li><strong>Fotografía responsable:</strong> Evita el flash cerca de las tallas. Estas imágenes de madera policromada son en muchos casos piezas de siglos de antigüedad.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Estar en Ávila durante su Semana de Pasión es viajar en el tiempo a la Jerusalén del medievo. El aire frío y cortante de la meseta transporta el lamento solitario de un clarín militar mientras las sombras de las tallas de madera policromada se proyectan gigantescas contra los sillares de la muralla milenaria. Aquí no hay palmas, ni algarabía: solo el crujir de la madera, el roce de las túnicas ásperas sobre el empedrado y un recogimiento místico que cala hasta los huesos, heredado directamente del espíritu de Santa Teresa de Jesús.
+      </p>
+      <p>
+        La Semana Santa abulense es una de las expresiones de fe más bellas y austeras de España. No es el sur: no hay saetas improvisadas ni costaleros que emergen exhaustos entre el griterío del público. Aquí el protagonista es el silencio colectivo, y ese silencio pesa, y emociona, de una manera completamente distinta.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa abulense articula su espíritu en torno a la <strong>sobriedad castellana</strong>: las imágenes sagradas, de un incalculable valor artístico, son portadas en <strong>andas</strong> —sobre los hombros, con los varales exteriores— a un paso lento, firme y acompasado, guiadas casi exclusivamente por el toque ronco del tambor. Es una catequesis en la calle que destila melancolía y respeto profundo.
+      </p>
+      <p>
+        Como contraste etnográfico fascinante, el Martes Santo rompe esta norma puramente castellana con la <strong>Hermandad de La Estrella</strong>, siendo la única cofradía de toda Castilla y León que porta a sus imágenes <strong>a costal</strong>, al puro estilo andaluz. Esta singularidad hace que la experiencia en la ciudad sea muy rica en matices para el visitante atento: en un mismo día puedes ver las dos grandes tradiciones del mundo cofrade español.
+      </p>
+      <p>
+        Ávila cuenta con <strong>14 cofradías, patronatos y hermandades</strong> que organizan hasta <strong>16 procesiones</strong> en muy pocos días. Si vienes por primera vez, abrígate bien, busca un hueco en los aledaños del Mercado Chico o la Catedral y déjate envolver por la oscuridad de la noche abulense.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La celebración hunde sus raíces en la profunda identidad cristiana y mística de la ciudad, fuertemente influenciada a partir del siglo XVI por las figuras de <strong>Santa Teresa de Jesús</strong> y <strong>San Juan de la Cruz</strong>. <em>"Tierra de cantos y de santos"</em>, dice el refrán local para explicar la dureza granítica de su gente y la profundidad de su espiritualidad. Durante siglos, las distintas parroquias organizaban sus actos de penitencia en la estricta intimidad, hasta unificarse y florecer como un conjunto monumental en el siglo XX.
+      </p>
+      <p>
+        Hoy en día, la Semana Santa es el momento en el que el abulense reconecta con el legado de sus abuelos. Es un patrimonio que va más allá de la religión: es el orgullo de una ciudad que se sabe guardiana de una <strong>imaginería soberbia</strong> y de una forma de vivir la Cuaresma que rechaza el bullicio para abrazar la meditación. La declaración como <strong>Fiesta de Interés Turístico Internacional en 2014</strong> reconoció oficialmente lo que los abulenses ya sabían: que esta Semana Santa es única.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Ávila en 2027 se celebra del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los momentos de mayor intensidad patrimonial y devocional se concentran entre el <strong>Miércoles y el Viernes Santo</strong>. Las fechas cambian cada año según el calendario litúrgico — consulta el programa oficial de la Junta de Semana Santa de Ávila para horarios e itinerarios exactos de cada edición.
+      </p>
+      <p>
+        Ante riesgo de lluvia, las salidas pueden suspenderse para proteger la imaginería. La noche abulense es hermosa pero también impredecible: consulta la previsión meteorológica antes de planificar los días de mayor interés.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          Todo comienza al caer la noche con la <strong>Procesión Vía Matris</strong>. La devoción sale de los templos y el frío saluda a los primeros capuchones. Es el preludio austero de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La mañana trae la alegría de los niños con la <strong>Procesión de la Borriquilla</strong> (o de las Palmas), bendiciendo ramos de laurel y olivo. Por la tarde, la seriedad castellana vuelve con el solemne traslado del <strong>Cristo de Medinaceli</strong>.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          Las cofradías de <strong>La Esperanza y La Ilusión</strong> abren los días centrales con la Procesión del Cristo de la Ilusión, un desfile sobrio que marca el ritmo espiritual de los primeros días de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Jornada de contrastes: desfila <strong>La Estrella</strong>, la única cofradía de Castilla y León que porta a sus imágenes <strong>a costal</strong>, al estilo andaluz. Comparte protagonismo con el imponente <strong>Cristo de Medinaceli</strong>. Quien quiera vivir las dos grandes tradiciones del mundo cofrade en un solo día, este es su momento.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Al anochecer arranca la mítica <strong>Procesión del Silencio</strong> organizada por la Cofradía de las Angustias. Más tarde, de madrugada, el sobrecogedor <strong>Vía Crucis de penitencia bordeando la muralla exterior</strong>: faroles, capuchones y el granito milenario de fondo. Una de las estampas más reconocibles de toda la Semana Santa española.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Traslado nocturno del <strong>Santísimo Cristo de los Ajusticiados</strong> desde la Ermita del Humilladero. Una estampa fúnebre iluminada con faroles, organizada por la Real e Ilustre Patronato de la Santa Vera Cruz, con su carga histórica de asistencia a los condenados a muerte.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          Día cumbre. Por la mañana, el <strong>Vía Crucis de Penitencia</strong>. Por la tarde, la solemne <strong>Procesión de la Pasión y Santo Entierro</strong>, en la que participa la práctica totalidad de las cofradías de la ciudad acompañando el cuerpo yacente. Es el acto de mayor concentración patrimonial y devocional de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          Fin del duelo. La ciudad recupera la luz con la procesión alegre hacia la ermita del Resucitado, seguida de la popular <strong>romería del Hornazo</strong> donde familias y amigos comparten comida en el campo: el cierre perfecto del ciclo del luto a la vida.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Ávila cuenta con <strong>14 cofradías, patronatos y hermandades</strong> integradas en la Junta de Semana Santa. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa oficial para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Afligidos</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de los Afligidos y Nuestra Señora de la Paz.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Juventud Antoniana</span>
+              <span class="tooltip-texto">Juventud Católico Antoniana — organiza la Procesión de la Borriquilla con los niños de las catequesis.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Medinaceli</span>
+              <span class="tooltip-texto">Archicofradía de la Real e Ilustre Esclavitud de Nuestro Padre Jesús Nazareno de Medinaceli — traslado solemne por la tarde.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Esperanza</span>
+              <span class="tooltip-texto">Hermandad de Nuestra Señora de la Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Ilusión</span>
+              <span class="tooltip-texto">Ilustre Patronato de la Santísima Trinidad y Nuestra Señora de las Vacas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Estrella</span>
+              <span class="tooltip-texto">Hermandad de Nazarenos de Jesús Redentor ante Caifás y Nuestra Señora de la Estrella — la única cofradía de Castilla y León que porta a costal, al estilo andaluz.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Medinaceli</span>
+              <span class="tooltip-texto">Archicofradía de la Real e Ilustre Esclavitud de Nuestro Padre Jesús Nazareno de Medinaceli.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Silencio / Angustias</span>
+              <span class="tooltip-texto">Real e Ilustre Patronato de Nuestra Señora de las Angustias y Santo Sepulcro — organiza la mítica Procesión del Silencio al anochecer.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de las Batallas</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de las Batallas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Los Ajusticiados</span>
+              <span class="tooltip-texto">Real e Ilustre Patronato de la Santa Vera Cruz — traslado nocturno del Cristo desde la Ermita del Humilladero.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Estudiantes</span>
+              <span class="tooltip-texto">Hermandad Universitaria del Santísimo Cristo de los Estudiantes y María Santísima Sede de la Sabiduría.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de Gracia</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de Gracia.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Amarrado a la Columna</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Amarrado a la Columna.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Virgen de la Piedad</span>
+              <span class="tooltip-texto">Ilustre Patronato de la Purísima Concepción, María Santísima de la Piedad y Nuestro Padre Jesús de la Salud y el Buen Camino.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Soledad</span>
+              <span class="tooltip-texto">Patronato de Nuestra Señora de los Dolores.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Descalzos / Santo Entierro</span>
+              <span class="tooltip-texto">Procesión del Santo Entierro general — participan la mayoría de las cofradías de la ciudad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Resucitado</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo Resucitado y Nuestra Señora del Buen Suceso — procesión alegre hacia la ermita, seguida de la romería del Hornazo.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://juntasemanasanta-avila.com" target="_blank" rel="noopener">Junta de Semana Santa de Ávila</a> — última verificación: 2026-05-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          En Ávila el sonido principal es, paradójicamente, el <strong>silencio colectivo</strong>. La música de capilla, los tríos de viento —trompeta, oboe y fagot— y el ritmo seco, casi marcial, de los <strong>tambores sordos</strong> marcan el lento avanzar de los pesados pasos sobre el empedrado. Las marchas procesionales son marchas fúnebres clásicas, sin alardes folclóricos, tocadas por bandas de cornetas y tambores cuyo sonido resuena con una densidad especial en las calles estrechas de la ciudad intramuros.
+        </p>
+        <p>
+          El momento cumbre sonoro es el <strong>canto del Miserere</strong> en la madrugada del Miércoles Santo: los cofrades entonan a capella el salmo penitencial del Salmo 50 rompiendo el silencio nocturno con un lamento coral que cala hasta los huesos. Si buscas una calle estrecha antes de que doble la esquina el paso y cierras los ojos, escucharás el golpear de la madera de las andas, el roce de las cadenas de los penitentes contra el granito y ese coro sobrecogedor fundiéndose con el frío de la noche abulense.
+        </p>
+        <ul>
+          <li>Para vivir el Miserere en su mejor acústica, sitúate en las calles más angostas del casco intramuros antes de que llegue la procesión. Cuanto más estrecha la calle, más envolvente el sonido.</li>
+          <li>Para el Vía Crucis ante la Muralla, la acústica cambia: el exterior abre el sonido y permite escuchar la banda con toda su dimensión frente al lienzo iluminado del monumento.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El canto del Miserere en la madrugada</h3>
+          <span class="tag">Madrugada del Miércoles Santo · Intramuros</span>
+          <p>Penitentes en el máximo de los silencios entonan el salmo penitencial del Miserere bajo el frío nocturno, a capella, sin ningún acompañamiento instrumental. La ciudad entera contiene la respiración.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la banda sonora viva del misticismo abulense. No existe en ninguna otra Semana Santa española una experiencia acústica como esta: el canto llano resonando en las fachadas de granito en plena oscuridad. Te pondrá los vellos de punta. Llega con tiempo y sitúate en una calle estrecha del casco antiguo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Cristo de los Ajusticiados</h3>
+          <span class="tag">Noche de Jueves Santo · Desde la Ermita del Humilladero</span>
+          <p>Traslado de una imagen históricamente ligada a la redención de los condenados a muerte, iluminado únicamente por faroles. Una estampa fúnebre que condensa siglos de relación entre Castilla y la muerte.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La atmósfera lúgubre, con la ciudad a media luz y la imagen avanzando entre faroles, es una clase magistral de etnografía sobre el misticismo castellano. Difícilmente olvidarás la imagen del cortejo saliendo de la ermita hacia la oscuridad de la ciudad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Vía Crucis ante la Muralla</h3>
+          <span class="tag">Madrugada del Miércoles Santo · Extramuros</span>
+          <p>Rezo de las estaciones bordeando el monumento defensivo iluminado. Devoción a los pies de la historia medieval: capuchones, faroles y el lienzo de la muralla como telón de fondo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Fotográficamente y a nivel inmersivo, es la imagen icónica de Ávila. No hay ningún otro lugar en España donde la Semana Santa y el patrimonio medieval se fundan de esta manera. Lleva una cámara, pero también guarda tiempo simplemente para mirarlo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Romería del Hornazo</h3>
+          <span class="tag">Domingo de Resurrección · Entorno de la Ermita del Resucitado</span>
+          <p>Tras la sobriedad de la semana, la ciudad explota en júbilo familiar. Las familias salen al campo a compartir el tradicional hornazo —empanada rellena de embutidos y huevo duro—, cerrando el ciclo del luto a la vida.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Te permitirá vivir la tradición secular desde dentro, como un abulense más. Si has vivido la austeridad de los días anteriores, este contraste de alegría colectiva y gastronomía popular es el cierre emocional perfecto de la experiencia.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Estrella: costal en Castilla</h3>
+          <span class="tag">Martes Santo · Centro histórico</span>
+          <p>La única cofradía de Castilla y León que porta a costal, al estilo andaluz. Ver esta técnica bajo el cielo frío de la meseta, con el empedrado abulense como escenario, es una rareza antropológica que no se repite en ningún otro punto de la región.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la singularidad más llamativa para quien conoce el mundo cofrade: el contraste entre la severa austeridad castellana que domina toda la semana y este instante de tradición puramente andaluza en pleno corazón de Castilla. Un contrapunto único.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva el hotel intramuros o cerca del Mercado Grande con muchos meses de antelación. Es temporada altísima y la ciudad se llena completamente durante la semana central.</li>
+        <li><strong>Ropa y clima.</strong> Olvida la chaqueta ligera: en Ávila en marzo y abril necesitas abrigo de invierno, bufanda y calzado grueso que aísle del frío del granito. Las noches pueden rozar los cero grados.</li>
+        <li><strong>Zonas clave.</strong> Sitúate en la Plaza de Santa Teresa o en los aledaños de la Catedral para ver las maniobras más complicadas y los pasos con más espacio. Para el Vía Crucis, el exterior de la Muralla.</li>
+        <li><strong>Movilidad accesible.</strong> Ávila es referente europeo en accesibilidad (Premio Ciudad Europea de Accesibilidad 2011). Para la procesión del Martes Santo (Medinaceli), el Ayuntamiento habilita espacios especiales para personas con movilidad reducida en la Plaza de Santa Teresa, con audiodescripción e intérpretes de lengua de signos.</li>
+        <li><strong>Gastronomía cuaresmal.</strong> Imprescindible probar el potaje de garbanzos y la tradicional "limonada" de vino. El Domingo de Resurrección, no te vayas sin comprar en un obrador local el <strong>hornazo</strong>: masa rellena de lomo, chorizo, panceta y huevo duro.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con dos días bien planificados cubres lo esencial: Miércoles Santo para el Silencio y el Vía Crucis ante la Muralla, y Viernes Santo para la Procesión del Santo Entierro. Si puedes añadir el Martes Santo, La Estrella es imperdible.</li>
+        <li><strong>Acceso a pie.</strong> El casco histórico intramuros es compacto pero con mucho desnivel y adoquín irregular. Calzado cómodo y suela gruesa. Evita los tacones.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Andas</dt>
+        <dd>Parihuelas de madera preparadas con varales exteriores donde los cofrades introducen el hombro para cargar las imágenes de pie. Es la forma tradicional castellana de portar los pasos, a diferencia del costal andaluz.</dd>
+
+        <dt>Imaginería</dt>
+        <dd>Conjunto de esculturas de carácter religioso, talladas en madera y policromadas, que protagonizan las procesiones. Ávila atesora piezas de gran valor artístico fruto de siglos de encargos parroquiales y gremiales.</dd>
+
+        <dt>Capirote o Capuchón</dt>
+        <dd>El característico cono de cartón cubierto de tela que llevan los penitentes en la cabeza para guardar el anonimato durante las procesiones. En Ávila su presencia es sencilla y austera, coherente con el espíritu castellano de la fiesta.</dd>
+
+        <dt>Miserere</dt>
+        <dd>Canto llano y lúgubre del Salmo 50 (<em>Ten piedad de mí, oh Dios</em>), que entonan los cofrades rompiendo el silencio nocturno del Miércoles Santo. Es el momento sonoro más sobrecogedor de toda la Semana Santa abulense.</dd>
+
+        <dt>Ajusticiado</dt>
+        <dd>Referencia histórica a los reos condenados a pena de muerte a los que tradicionalmente asistían cofradías específicas como la de la Vera Cruz antes de su ejecución. De ahí el nombre del Cristo de los Ajusticiados.</dd>
+
+        <dt>Hornazo</dt>
+        <dd>Empanada de masa dorada rellena de embutidos —lomo, chorizo, panceta— y huevo duro. Símbolo absoluto del Domingo de Resurrección abulense: con él se celebra la romería en el campo que cierra la semana.</dd>
+
+        <dt>A costal</dt>
+        <dd>Técnica de portar los pasos procesionales desde dentro de la estructura, con la cabeza agachada y el cuello soportando el peso, sin ver el exterior. Es el método sevillano que La Estrella importó y que la convierte en la única cofradía de este tipo en toda Castilla y León.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-avila-1.jpg" alt="Procesión nocturna con capuchones y faroles bordeando la muralla medieval de Ávila durante la Semana Santa" />
+        <img src="images/semana-santa-avila-2.jpg" alt="Cofrades portando andas con imagen procesional sobre el empedrado intramuros de Ávila" />
+        <img src="images/semana-santa-avila-3.jpg" alt="Romería del Hornazo en los alrededores de la ermita del Resucitado, Domingo de Resurrección en Ávila" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://juntasemanasanta-avila.com" target="_blank" rel="noopener">Junta de Semana Santa de Ávila</a></li>
+        <li><a href="https://avilaturismo.com" target="_blank" rel="noopener">Turismo de la Ciudad de Ávila — Ayuntamiento</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 de marzo al 28 de marzo. Los días de mayor intensidad son el Miércoles y el Viernes Santo.</dd>
+
+        <dt>¿Es necesario pagar para ver las procesiones?</dt>
+        <dd>No. La mayoría del recorrido es de acceso libre y gratuito. Algunas tribunas o asientos habilitados en zonas concretas pueden tener coste; consulta el programa oficial de la Junta de Semana Santa.</dd>
+
+        <dt>¿La Semana Santa de Ávila está adaptada para personas con movilidad reducida?</dt>
+        <dd>Sí. Ávila es referente europeo en accesibilidad (Premio Ciudad Europea de Accesibilidad 2011). Para la procesión del Martes Santo (Medinaceli), el Ayuntamiento habilita espacios especiales para PMR en la Plaza de Santa Teresa, con audiodescripción e intérpretes de lengua de signos.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>La lluvia es enemiga de las tallas de madera centenarias. Si llueve, la procesión no sale: se suspenden los actos exteriores o se realizan de forma estática dentro de las iglesias. Sigue los canales oficiales de la Junta para avisos en tiempo real.</dd>
+
+        <dt>¿Es un buen plan para ir con niños pequeños?</dt>
+        <dd>Es un plan cultural magnífico, pero requiere preparación. El Domingo de Ramos con la Borriquilla es ideal para los más pequeños. Las procesiones nocturnas de Miércoles y Jueves Santo son largas, frías y exigen silencio: no son recomendables para niños muy pequeños.</dd>
+
+        <dt>¿Por qué La Estrella lleva a costal si estamos en Castilla?</dt>
+        <dd>Es una rareza local y una belleza antropológica. La Hermandad de La Estrella se fundó importando el estilo sevillano de portar los pasos desde dentro, lo que la convierte en la única cofradía de toda Castilla y León con esta técnica. Un contrapunto único en el marco de la austeridad castellana que domina toda la semana.</dd>
+
+        <dt>¿Qué es el hornazo y dónde puedo comprarlo?</dt>
+        <dd>El hornazo es una empanada de masa dorada rellena de lomo, chorizo, panceta y huevo duro, símbolo del Domingo de Resurrección abulense. Se encuentra en obradores y panaderías de la ciudad durante la Semana Santa. Cómpralo el domingo por la mañana antes de la romería.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
