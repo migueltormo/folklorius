@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de León 2026: Papones, Encuentros y Devoción</title>
+  <meta name="description" content="Guía inmersiva de la Semana Santa de León 2026. Procesiones, cofradías, horarios, recorridos, el tradicional Encuentro, vocabulario papón y cómo disfrutar la limonada leonesa." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-leon.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de León: La pasión del Papón paso a paso" />
+  <meta property="og:description" content="Cornetas, tambores, 16 cofradías y la mítica Procesión de los Pasos. Todo lo que necesitas saber para vivir la Semana Santa leonesa en 2026 como un auténtico local." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-leon.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-leon.html",
+    "name": "Semana Santa de León",
+    "startDate": "2026-03-27",
+    "endDate": "2026-04-05",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "León",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "León",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.5987,
+        "longitude": -5.5671
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-leon.jpg"],
+    "description": "La Semana Santa de León: 16 cofradías, la legendaria Procesión de los Pasos con El Encuentro en la Plaza Mayor, el ritual de la Ronda de la Victoria y el sabor de la limonada leonesa. Declarada de Interés Turístico Internacional en 2002.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta Mayor de Cofradías y Hermandades de la Semana Santa de León",
+      "url": "https://semanasantaleon.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de León
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-leon.jpg" alt="Papones portando un paso procesional al compás de cornetas y tambores por las calles del casco histórico de León durante la Semana Santa" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de León</h1>
+      <p class="ficha-subtitle">
+        León · Castilla y León · "El latido del tambor, el orgullo del papón y el vuelo de los Pasos."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Devoción y celebración:</strong> León equilibra a la perfección el recogimiento religioso con un ambiente social en las calles muy vivo, especialmente en el Barrio Húmedo y el Barrio Romántico. Ambas dimensiones merecen respeto.</li>
+          <li><strong>Rigor climático:</strong> Las noches de primavera en la capital leonesa siguen siendo frías. Prepárate para cambios drásticos de temperatura entre las procesiones diurnas y las de madrugada.</li>
+          <li><strong>Respeto en El Encuentro:</strong> Durante el clímax de la Procesión de los Pasos en la Plaza Mayor, la multitud es muy densa y los sentimientos están a flor de piel. Evita empujar y mantén siempre libre el paso de seguridad durante las maniobras de las andas.</li>
+          <li><strong>Fotografía responsable:</strong> Evita el flash cerca de las tallas. Muchas de las imágenes que procesionan en León son obras de arte de valor incalculable con siglos de antigüedad.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Estar en León durante la Cuaresma es sentir cómo la ciudad entera respira al compás de la banda de cornetas y tambores. A diferencia de otras capitales castellanas, aquí el luto se intercala con el costumbrismo leonés más puro: las calles del casco antiguo huelen a incienso, cera quemada y a la canela de su tradicional limonada.
+      </p>
+      <p>
+        Al ver avanzar a los <strong>papones</strong> —nombre exclusivo de la provincia de León para sus cofrades— bajo sus pesados varales, empujando los grandes conjuntos escultóricos al son del tambor, uno comprende que en León la fe se lleva a hombros, se baila con la solemnidad del que sabe que toda la ciudad está mirando y se celebra después con una limonada en el Barrio Húmedo. Austeridad castellana y vitalidad leonesa, a partes iguales.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa leonesa se caracteriza por el inmenso volumen de sus cortejos y la espectacularidad de sus <strong>Pasos</strong> —grandes conjuntos escultóricos que representan escenas de la Pasión y que requieren de decenas de <strong>braceros</strong> para ser elevados y movidos al compás de las marchas procesionales. Es una celebración sonora: el silencio es roto constantemente por el golpe seco del tambor y el lamento estridente de la corneta.
+      </p>
+      <p>
+        El momento cumbre y definitorio es la <strong>Procesión de los Pasos</strong>, un acto monumental que tiene su epicentro en la Plaza Mayor con <strong>El Encuentro</strong>: un instante de teatralidad sacra donde las imágenes interactúan, movidas con precisión milimétrica por los braceros en lo que se conoce como <em>bailar el paso</em>, simulando escenas de la Pasión ante una multitud entregada.
+      </p>
+      <p>
+        León cuenta con <strong>16 cofradías y hermandades</strong> que organizan cerca de <strong>cuarenta procesiones y actos</strong> en la calle a lo largo de toda la semana. Si vienes por primera vez, planifica bien tu jornada, calza zapatos cómodos y asume que pasarás muchas horas de pie admirando este museo vivo al aire libre.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de las hermandades penitenciales leonesas se hunden en el siglo XVI, con fundaciones históricas como la de <strong>Angustias y Soledad</strong> (1578), <strong>Jesús Nazareno</strong> (1611) y <strong>Minerva y Santa Vera Cruz</strong> (1612). Estas corporaciones sentaron las bases de una forma de vivir la pasión que mezclaba el rigorismo castellano con una necesidad de expresar el sentimiento de forma sonora y visual, legando a la ciudad un patrimonio escultórico de primer orden con firmas como <strong>Juan de Juni</strong>, <strong>Gregorio Fernández</strong> o <strong>La Roldana</strong>.
+      </p>
+      <p>
+        Para un leonés, <strong>ser papón</strong> no es solo ponerse una túnica en abril: es una identidad, una herencia familiar que se transmite de generación en generación. La Semana Santa es el momento en que la ciudad exhibe con orgullo su valioso patrimonio escultórico y consolida sus lazos comunitarios. La declaración como <strong>Fiesta de Interés Turístico Internacional en 2002</strong> reconoció una celebración que los leoneses ya sabían irrepetible.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Semana Santa de León en 2026 se celebra del <strong>viernes 27 de marzo</strong> (Viernes de Dolores) al <strong>domingo 5 de abril</strong> (Domingo de Resurrección). El día de mayor afluencia y espectacularidad es el <strong>Viernes Santo 3 de abril</strong>, con la Procesión de los Pasos por la mañana y la Procesión del Entierro por la tarde. Las fechas cambian cada año según el calendario litúrgico — consulta el programa oficial de la Junta Mayor de Cofradías de León para horarios e itinerarios exactos de 2026.
+      </p>
+      <p>
+        Ante riesgo de lluvia, las salidas pueden suspenderse para proteger el patrimonio escultórico. Sigue los canales oficiales de la Junta Mayor para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 27 de marzo</span>
+          La Semana Santa arranca con la devota <strong>Procesión de la Virgen del Mercado</strong>, un preludio cargado de emoción barrial que marca el primer compás de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 28 de marzo</span>
+          Destacan las salidas de la <strong>Hermandad de Jesús Divino Obrero</strong> y el <strong>Camino de la Pasión y de la Esperanza</strong>, que abren el ambiente procesional antes de la semana central.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
+          Mañana festiva con las procesiones de las Palmas y los Ramos. Por la tarde, el recogimiento llega con el <strong>Cristo del Gran Poder</strong> y la inmemorial <strong>Procesión del Dainos</strong>, organizada por la Orden Franciscana Seglar: pequeña en tamaño, intensísima en devoción barrial.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
+          La <strong>Procesión de la Pasión</strong> marca el ritmo solemne del inicio de la semana central, con el casco histórico comenzando a llenarse de papones y túnicas de vivos colores.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
+          La <strong>Procesión del Dolor de Nuestra Madre</strong> sitúa la devoción mariana en el centro de León. El llanto y la emoción toman las calles.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
+          Jornada de contrastes que culmina con la multitudinaria <strong>Procesión de la Virgen de la Amargura</strong> y la solemne <strong>Procesión del Silencio</strong>, organizada por la Cofradía del Santísimo Cristo de la Expiración.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
+          La <strong>Procesión de Las Tinieblas</strong>, el <strong>Santo Cristo de las Injurias</strong> y la <strong>Sagrada Cena</strong> preparan la ciudad para su gran día. A medianoche, la <strong>Ronda de la Victoria</strong>: los hermanos de Jesús Nazareno recorren las calles anunciando a toques de esquila y clarín la salida inminente de la gran procesión.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
+          El día grande. A las <strong>7:15 h</strong>, la legendaria <strong>Procesión de los Pasos</strong> con <strong>El Encuentro</strong> en la Plaza Mayor: San Juan corre hacia la Dolorosa para anunciarle la llegada del Nazareno, y los pasos son bailados frenéticamente al son de las bandas. Por la tarde, a las <strong>18:00 h</strong>, la imponente <strong>Procesión del Entierro</strong> por el casco antiguo.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 4 de abril</span>
+          La <strong>Procesión del Santo Cristo del Desenclavo</strong> frente a la Catedral —la Pulchra Leonina— y la <strong>Procesión de La Soledad</strong>. El Desenclavo es un acto casi litúrgico donde la figura de Cristo es desclavada de la cruz ante la multitud en absoluto silencio.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
+          El ciclo cierra con la alegre <strong>Procesión de El Encuentro de Resurrección</strong> y la suelta de palomas. La ciudad recupera la luz y el luto da paso al júbilo.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de León cuenta con <strong>16 cofradías y hermandades</strong> integradas en la Junta Mayor. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial y año de fundación. Consulta el programa oficial para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Angustias y Soledad</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de las Angustias y Soledad (Fundada en 1578).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Divino Obrero</span>
+              <span class="tooltip-texto">Real Hermandad de Jesús Divino Obrero (Fundada en 1955).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Agonía</span>
+              <span class="tooltip-texto">Cofradía de la Agonía de Nuestro Señor (Fundada en 1993).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Minerva y Vera Cruz</span>
+              <span class="tooltip-texto">Real Cofradía del Santísimo Sacramento de Minerva y la Santa Vera Cruz (Fundada en 1612).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo del Gran Poder</span>
+              <span class="tooltip-texto">Cofradía del Cristo del Gran Poder (Fundada en 1994).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús de la Redención</span>
+              <span class="tooltip-texto">Cofradía de Nuestro Señor Jesús de la Redención (Fundada en 1991).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Angustias y Soledad</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de las Angustias y Soledad (Fundada en 1578).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santo Cristo del Perdón</span>
+              <span class="tooltip-texto">Cofradía del Santo Cristo del Perdón (Fundada en 1964).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Marta y la Sagrada Cena</span>
+              <span class="tooltip-texto">Hermandad de Santa Marta y de la Sagrada Cena (Fundada en 1945).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Minerva y Vera Cruz</span>
+              <span class="tooltip-texto">Real Cofradía del Santísimo Sacramento de Minerva y la Santa Vera Cruz (Fundada en 1612).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno / Dulce Nombre</span>
+              <span class="tooltip-texto">Cofradía del Dulce Nombre de Jesús Nazareno (Fundada en 1611).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Sacramentado y Piedad</span>
+              <span class="tooltip-texto">Sacramental y Penitencial Cofradía de Nuestro Padre Jesús Sacramentado y María Santísima de la Piedad, Amparo de los Leoneses (Fundada en 1994).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Silencio / Expiración</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Expiración y del Silencio (Fundada en 1991).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">María del Dulce Nombre</span>
+              <span class="tooltip-texto">Cofradía de María del Dulce Nombre (Fundada en 1991).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Marta y la Sagrada Cena</span>
+              <span class="tooltip-texto">Hermandad de Santa Marta y de la Sagrada Cena (Fundada en 1945).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Desenclavo</span>
+              <span class="tooltip-texto">Cofradía del Santo Cristo del Desenclavo (Fundada en 1992).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno / Dulce Nombre</span>
+              <span class="tooltip-texto">Cofradía del Dulce Nombre de Jesús Nazareno (Fundada en 1611) — organiza la Procesión de los Pasos con El Encuentro en la Plaza Mayor.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Siete Palabras</span>
+              <span class="tooltip-texto">Cofradía de las Siete Palabras de Jesús en la Cruz (Fundada en 1962).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Bienaventuranza</span>
+              <span class="tooltip-texto">Cofradía del Santo Cristo de la Bienaventuranza (Fundada en 1992).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Angustias y Soledad</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de las Angustias y Soledad (Fundada en 1578) — organiza la Procesión del Santo Entierro por la tarde.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Desenclavo</span>
+              <span class="tooltip-texto">Cofradía del Santo Cristo del Desenclavo (Fundada en 1992) — acto del Desenclavo frente a la Catedral.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Cofradía del Santo Sepulcro Esperanza de Vida (Fundada en 1992).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Divino Obrero</span>
+              <span class="tooltip-texto">Real Hermandad de Jesús Divino Obrero (Fundada en 1955) — organiza la Procesión de El Encuentro de Resurrección.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantaleon.org" target="_blank" rel="noopener">Junta Mayor de Cofradías y Hermandades de la Semana Santa de León</a> — última verificación: 2026-05-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          Si en Ávila primaba el silencio, en León domina el <strong>metal y la percusión solemne</strong>. El sonido de la capital leonesa en estos días es el de las prestigiosas bandas de cornetas y tambores de las cofradías, que ensayan durante todo el año para interpretar marchas procesionales que marcan el ritmo del <em>baile</em> de los pesados pasos. La acústica del casco histórico, con sus fachadas románicas y góticas, amplifica y transforma ese sonido en algo físico, envolvente.
+        </p>
+        <p>
+          El momento acústico más impactante no es el más largo, sino el más breve: <strong>la arrancada</strong>. Justo antes de elevar un paso al hombro tras un descanso, se escucha un golpe seco de llamador seguido del grito del <strong>seise</strong> —el capataz—. Después, el tambor rompe el aire y los braceros levantan cientos de kilos a la vez en un estruendo coordinado que te estremecerá aunque lo hayas visto mil veces.
+        </p>
+        <ul>
+          <li>Para escuchar la arrancada en su máxima expresión, sitúate cerca de un paso grande durante cualquier pausa larga del cortejo. Cierra los ojos justo antes del golpe de llamador.</li>
+          <li>Para El Encuentro en la Plaza Mayor, la acústica es excepcional por la amplitud del espacio y las fachadas que rodean la plaza. Llega con mucha antelación para conseguir un buen sitio.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Encuentro en la Plaza Mayor</h3>
+          <span class="tag">Viernes Santo · 7:15 h · Plaza Mayor</span>
+          <p>San Juan "corre" hacia la Dolorosa para anunciarle la llegada del Nazareno, y los pasos son bailados frenéticamente al son de las bandas ante una multitud entregada. El momento más pasional y multitudinario de toda Castilla y León.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es teatralidad sacra pura y dura, sin equivalente en ninguna otra Semana Santa castellana. La clave es la hora: hay que madrugar mucho para conseguir sitio en la Plaza Mayor. Llega con al menos una hora de antelación y colócate en la parte central de la plaza para ver las maniobras completas de los pasos.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Ronda de la Victoria</h3>
+          <span class="tag">Madrugada del Viernes Santo · Casco histórico</span>
+          <p>A medianoche del Jueves Santo, los hermanos de Jesús Nazareno recorren las calles anunciando a toques de esquila, clarín y tambor la salida inminente de la gran procesión. Un rito antiquísimo de vigilia que sumerge al visitante en el espíritu de los cofrades de otros siglos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el acto más íntimo y menos conocido de toda la Semana Santa leonesa. Si eres de los que llegan el Jueves por la noche, no te acuestes: la Ronda es el mejor preámbulo posible para el gran día del Viernes. Sitúate en cualquier calle del casco histórico y espera el sonido de la esquila acercándose en la oscuridad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Desenclavo ante la Catedral</h3>
+          <span class="tag">Sábado Santo · Frente a la Pulchra Leonina</span>
+          <p>Un acto casi litúrgico donde la figura de Cristo es desclavada de la cruz y presentada ante la multitud en absoluto silencio. El contraste entre el dramatismo de la escena y la belleza gótica de la Pulchra Leonina iluminada de fondo es sencillamente inolvidable.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Catedral de León, con sus vidrieras de colores, es uno de los escenarios más espectaculares de toda la Semana Santa española. El Sábado Santo es además el día menos masificado de los días grandes, lo que permite vivir el acto con más recogimiento y mejor visibilidad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión del Dainos</h3>
+          <span class="tag">Tarde del Domingo de Ramos · Entorno de Santa Nonia</span>
+          <p>Una inmemorial procesión franciscana, pequeña en tamaño pero intensísima en su devoción barrial. Perfecta para entender el origen conventual de estas celebraciones antes de que lleguen los grandes cortejos de los días centrales.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el lado íntimo y auténtico de la Semana Santa. Si llegas el Domingo de Ramos, el Dainos te da el tono correcto para toda la semana: discreción, fe y comunidad de barrio. Un antídoto perfecto contra el turismo de masas de los días siguientes.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con muchísima antelación en la zona Centro, Ensanche o Casco Histórico. En Semana Santa, León cuelga el cartel de completo.</li>
+        <li><strong>Ropa y clima.</strong> Vístete en capas. Las procesiones de mediodía bajo el sol pueden ser cálidas, pero las esperas nocturnas —especialmente la madrugada del Viernes Santo— te congelarán sin un buen abrigo. Lleva siempre algo de abrigo encima aunque salgas con buena temperatura.</li>
+        <li><strong>El Encuentro: llega pronto.</strong> Para la Procesión de los Pasos del Viernes Santo a las 7:15 h, madrugar no es opcional. La Plaza Mayor se llena con una hora de antelación. Para El Encuentro, cuanto antes llegues, mejor sitio.</li>
+        <li><strong>Zonas de pago.</strong> Existen sillas de pago gestionadas por la Junta Mayor en Ordoño II y la Calle Ancha, muy recomendables para ver Los Pasos cómodamente. El resto del recorrido es de acceso libre.</li>
+        <li><strong>Movilidad accesible.</strong> La zona del Ensanche, Calle Ancha y Ordoño II, al ser amplias y llanas, son las mejores para usuarios de silla de ruedas que deseen ver los grandes cortejos.</li>
+        <li><strong>La limonada leonesa.</strong> La bebida tradicional de la Semana Santa leonesa se prepara con vino tinto, limón, naranja, azúcar y canela. Se sirve en prácticamente todos los bares del Barrio Húmedo y el Barrio Romántico. No te vayas sin probarla.</li>
+        <li><strong>Gastronomía cuaresmal.</strong> Imprescindible tapear por el Barrio Húmedo: potaje de vigilia, bacalao al ajo arriero y torrijas son los clásicos de estas fechas.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Papón</dt>
+        <dd>Término exclusivo de la provincia de León para referirse al hermano o hermana cofrade, especialmente al bracero encargado de llevar el paso o participar en el cortejo. Es la palabra más identitaria de la Semana Santa leonesa.</dd>
+
+        <dt>Paso</dt>
+        <dd>Conjunto escultórico, a veces de inmensas proporciones, que representa una escena de la Pasión de Cristo. En León destacan por su tamaño y peso, requiriendo decenas de braceros para ser movidos.</dd>
+
+        <dt>Bracero</dt>
+        <dd>El papón que mete el hombro bajo los varales del paso —que en León van por fuera de la estructura— para cargarlo y desplazarlo. Es el trabajo físico más exigente de toda la procesión.</dd>
+
+        <dt>Seise</dt>
+        <dd>El capataz o responsable directo de dirigir un paso concreto y a sus braceros. Es quien da los toques de llamador para levantar o bajar las andas y quien marca el ritmo del baile del paso.</dd>
+
+        <dt>Bailar el paso</dt>
+        <dd>Movimiento acompasado y coordinado que realizan los braceros con la estructura al son de las marchas procesionales. En El Encuentro del Viernes Santo, este baile alcanza su máxima expresión y espectacularidad.</dd>
+
+        <dt>La arrancada</dt>
+        <dd>El momento en que los braceros elevan el paso al hombro tras una parada. Precedida por el golpe del llamador y el grito del seise, la arrancada es uno de los sonidos más emocionantes de toda la Semana Santa leonesa.</dd>
+
+        <dt>Limonada leonesa</dt>
+        <dd>Bebida tradicional de la Semana Santa en León: vino tinto macerado con limón, naranja, azúcar y canela. Es el motor social de la semana y se consume en los bares del Barrio Húmedo y el Barrio Romántico.</dd>
+
+        <dt>Matar judíos</dt>
+        <dd>Expresión tradicional e histórica leonesa —sin ninguna connotación de odio actual— para referirse al acto de reunirse en los bares a beber la limonada durante la Semana Santa. Es un modismo local de uso completamente cotidiano entre los leoneses.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-leon-1.jpg" alt="Papones portando un paso procesional por el casco histórico de León durante la Semana Santa" />
+        <img src="images/semana-santa-leon-2.jpg" alt="El Encuentro en la Plaza Mayor de León durante la Procesión de los Pasos del Viernes Santo" />
+        <img src="images/semana-santa-leon-3.jpg" alt="El Desenclavo frente a la Catedral de León, la Pulchra Leonina, durante el Sábado Santo" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantaleon.org" target="_blank" rel="noopener">Junta Mayor de Cofradías y Hermandades de la Semana Santa de León</a></li>
+        <li><a href="https://turismoleon.com" target="_blank" rel="noopener">Turismo de la Ciudad de León</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 27 de marzo al 5 de abril. El día de mayor espectacularidad es el Viernes Santo, con la Procesión de los Pasos a las 7:15 h y la del Entierro a las 18:00 h.</dd>
+
+        <dt>¿Qué es El Encuentro y a qué hora hay que ir?</dt>
+        <dd>Es el acto central de la Procesión de los Pasos del Viernes Santo, en la Plaza Mayor. Ocurre a primera hora de la mañana (la procesión sale a las 7:15 h). Debes llegar con al menos una hora de antelación para conseguir un buen sitio: es el momento más multitudinario de toda la Semana Santa leonesa.</dd>
+
+        <dt>¿Es un buen plan para ir con niños pequeños?</dt>
+        <dd>Sí. En León el ambiente es menos severo que en otras ciudades castellanas. Los niños disfrutan especialmente el Jueves y Viernes Santo. Además, los cofrades suelen repartir caramelos y estampas, haciendo las largas esperas más llevaderas para los más pequeños.</dd>
+
+        <dt>¿Es necesario pagar para ver las procesiones?</dt>
+        <dd>No. La mayor parte del recorrido es de acceso libre y gratuito. Existen sillas de pago en zonas concretas como Ordoño II y Calle Ancha, gestionadas por la Junta Mayor, que conviene reservar con antelación para ver Los Pasos con comodidad.</dd>
+
+        <dt>¿Qué significa la expresión "matar judíos"?</dt>
+        <dd>Es una antiquísima expresión local y popular, sin ninguna connotación antisemita actual. Es simplemente el modismo que usan los leoneses en Semana Santa para invitar a alguien a ir a los bares a beber la tradicional limonada de vino y frutas. Su uso es completamente cotidiano y festivo.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí. El valor del patrimonio escultórico hace que ante cualquier riesgo de lluvia las cofradías puedan suspender o retrasar las salidas. Sigue los canales oficiales de la Junta Mayor para avisos en tiempo real.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
