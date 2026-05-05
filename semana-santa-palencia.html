@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Palencia 2027: El toque del Tararú y la Fe Castellana</title>
+  <meta name="description" content="Descubre la Semana Santa de Palencia 2027 (Interés Turístico Internacional). Procesiones, las 9 cofradías, horarios, historia, gastronomía y el sonido del Tararú." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-palencia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Palencia: La Jerusalén del Tararú" />
+  <meta property="og:description" content="Sobriedad, imaginería gótica y renacentista, y el estremecedor sonido del Tararú marcan los pasos palentinos. Guía completa para 2026." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-palencia.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-palencia.html",
+    "name": "Semana Santa de Palencia",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Palencia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palencia",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.0097,
+        "longitude": -4.5288
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-palencia.jpg"],
+    "description": "La Semana Santa de Palencia: 9 cofradías, 17 procesiones oficiales, el lamento del Tararú y una confraternidad entre hermandades única en Castilla. Declarada de Interés Turístico Internacional desde 2012.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Hermandad de Cofradías de Palencia",
+      "url": "https://semanasantapalencia.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Palencia
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-palencia.jpg" alt="Procesión nocturna con hachones iluminando las tallas procesionales frente a la Catedral de Palencia durante la Semana Santa" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Palencia</h1>
+      <p class="ficha-subtitle">
+        Palencia · Castilla y León · "Silencio roto por el viento y el lamento del Tararú."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>La solemnidad del silencio:</strong> Palencia destaca por ser una de las plazas más sobrias y elegantes de Castilla. El silencio es estricto en las aceras al paso de las imágenes; guárdalo como señal de respeto hacia los cofrades y la comunidad.</li>
+          <li><strong>Clima impredecible:</strong> La primavera palentina es traicionera. Lleva siempre abrigo grueso para las procesiones nocturnas y un paraguas por si la meseta decide regar las calles.</li>
+          <li><strong>Momentos de oscuridad:</strong> En la procesión de Luz y Tinieblas, las iglesias y calles se apagan intencionadamente. No uses el flash del móvil: rompe la atmósfera y molesta a los hermanos que portan las tallas.</li>
+          <li><strong>Fotografía responsable:</strong> Las tallas palentinas incluyen piezas del siglo XIV de valor incalculable. Mantén siempre una distancia prudencial de las imágenes y los pasos.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Estar en Palencia durante los días de Pasión es sentir la historia de Castilla respirando a tu lado. La ciudad se convierte en un lienzo de piedra donde la luz mortecina de los <strong>hachones</strong> ilumina tallas de incalculable valor —como el <em>Jesús Crucificado</em> de Alejo de Vahía, del siglo XIV—. Aquí no hay estridencias: todo es cadencia, respeto y un recogimiento que envuelve al espectador desde el primer paso.
+      </p>
+      <p>
+        De pronto, en la negrura de la noche, un sonido seco, gutural y prolongado rasga el aire frío: es el <strong>Tararú</strong>, el latido atávico que avisa de que el dolor y la fe de Palencia están en la calle. Dos notas cortas y graves, y luego una nota altísima y sostenida que parece no acabar nunca. Quien lo escucha por primera vez no lo olvida.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa palentina es el paradigma de la sobriedad castellana, pero con una organización exquisita donde prima la <strong>fraternidad entre cofradías</strong>. A diferencia de otras ciudades, en Palencia existe una hermandad real entre todas las corporaciones: es habitual ver a hermanos de diferentes cofradías desfilando juntos en los cortejos para acompañarse mutuamente, con hábitos de distintos colores conviviendo en un mismo desfile.
+      </p>
+      <p>
+        Los pasos son empujados sobre ruedas o portados a hombros en andas por el exterior, avanzando a un ritmo lento y majestuoso. El hilo conductor sonoro de toda la semana es el toque del <strong>Tararú</strong> —la larga trompeta tradicional— y el coro incesante de las <strong>carracas</strong>, que marcan el ritmo de los penitentes en señal de luto.
+      </p>
+      <p>
+        Palencia cuenta con <strong>9 históricas cofradías</strong> que organizan hasta <strong>17 procesiones oficiales</strong> a lo largo de la semana. Si es tu primera vez, abrígate, busca un rincón estrecho cerca de la Catedral o la Plaza Mayor y déjate llevar por el ambiente de esta ciudad que se sabe, desde hace siglos, una de las grandes capitales de la Semana Santa castellana.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces penitenciales de Palencia son profundas: cuatro de sus cofradías —<strong>Vera Cruz, Santo Sepulcro, Nazareno y Soledad</strong>— fueron fundadas antes del siglo XVII, nacidas del impulso del Concilio de Trento y de la profunda huella de las órdenes franciscana y dominica en la ciudad. Siglos de fe sedimentada en piedra y madera policromada.
+      </p>
+      <p>
+        Para el palentino, la Semana Santa es un pacto de lealtad con sus antepasados. Es el momento en que salen a la luz tesoros escultóricos que habitualmente descansan en capillas cerradas. Más de <strong>6.000 cofrades</strong> participan cada año —una cifra extraordinaria para el tamaño de la ciudad—, demostrando que esta tradición no solo es fe, sino el principal evento vertebrador de la identidad cultural y social de Palencia. La declaración como <strong>Fiesta de Interés Turístico Internacional en 2012</strong> reconoció oficialmente lo que los palentinos ya sabían.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Palencia en 2027 se celebra del <strong>viernes 19 de marzo</strong> (Viernes de Pasión) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor intensidad son el <strong>Miércoles Santo</strong> con Luz y Tinieblas, el <strong>Jueves Santo</strong> con la Quinta Angustia a medianoche y el <strong>Viernes Santo</strong> con la Función del Descendimiento. Las fechas cambian cada año según el calendario litúrgico — consulta el programa oficial de la Hermandad de Cofradías de Palencia para horarios e itinerarios exactos.
+      </p>
+      <p>
+        Ante riesgo de lluvia, las cofradías palentinas son muy estrictas: las procesiones no salen para proteger el patrimonio escultórico. Sigue sus canales oficiales para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Pasión · 19 de marzo</span>
+          La Semana Santa arranca de forma espectacular con la <strong>Procesión de la Sentencia de Cristo</strong>, que sale desde el interior de la propia Catedral. Un arranque que marca el tono de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          Destaca el solemne <strong>Traslado de la imagen de Jesús Crucificado</strong> de Alejo de Vahía, una joya del gótico tardío del siglo XIV que raramente sale a la calle fuera de estas fechas.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          Mañana festiva con la <strong>Procesión de la Entrada de Jesús</strong> —la Borriquilla— que llena las calles de palmas y ramos. Por la tarde, el solemne <strong>Santo Rosario del Dolor</strong> sube hasta los pies del colosal Cristo del Otero, en una de las estampas más características del paisaje palentino.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La <strong>Procesión de las Cinco Llagas</strong> incluye el emocionante <strong>Acto de Vestición</strong> en la Plaza Mayor: públicamente, ante toda la ciudad, se impone el hábito a los nuevos hermanos penitentes. Un rito de iniciación visible y conmovedor.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <strong>Procesión del Prendimiento</strong>, donde el toque del Tararú retumba con especial fuerza marcando el arresto de Cristo. Una de las noches con mayor presencia sonora de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          La <strong>Procesión de Luz y Tinieblas</strong>: un sobrecogedor recorrido que culmina en el interior de la iglesia de San Agustín, donde las luces se apagan progresivamente al son de salmos hasta sumergir a los presentes en la oscuridad total.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Mañana de indulto y preparación. Por la tarde, la <strong>Procesión de la Oración del Huerto</strong>. A medianoche, la imponente y masiva <strong>Procesión de la Quinta Angustia</strong>, uno de los cortejos más multitudinarios de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El día grande. A la <strong>1:00 h</strong>, la <strong>Procesión de Silencio y Penitencia</strong>. A las <strong>11:00 h</strong>, la de <strong>Los Pasos</strong>. Por la tarde, a las <strong>19:30 h</strong>, la espectacular <strong>Función del Descendimiento</strong> en la Plaza de la Inmaculada: teatro sacro medieval heredado intacto, con el desenclavo de una talla articulada de Cristo bajo la impresionante estampa de la Catedral.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          La <strong>Procesión del Dolor y de la Soledad de la Virgen</strong> recupera las calles del barrio de Santa Marina en un recorrido de luto riguroso y recogimiento extremo.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La semana cierra con la <strong>Procesión del Rompimiento del Velo</strong> en la Plaza Mayor: las campanas repican, estallan los cohetes y la Virgen es despojada de su luto negro al encontrarse con el Resucitado. La explosión emocional que libera toda la tensión acumulada durante la semana.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Palencia está organizada por <strong>9 históricas cofradías</strong> integradas en la Hermandad de Cofradías. Una particularidad única: en Palencia es tradición que los hermanos de una cofradía desfilen acompañando a otra, por lo que verás hábitos de distintos colores conviviendo en un mismo cortejo. Pasa el cursor sobre cada nombre para ver el título oficial completo.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Misericordia</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Misericordia — organiza la Procesión de la Sentencia de Cristo desde el interior de la Catedral.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Real Cofradía Penitencial del Santo Sepulcro, Archicofradía de las Cinco Llagas de San Francisco y Cofradía de San Juan Bautista — organiza la Borriquilla.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Muy Antigua, Venerable y Dominicana Cofradía Penitencial y Sacramental de la Santa Vera-Cruz, de Ntra. Señora Madre de la Iglesia, del Niño Jesús y de la Resurrección de Cristo — organiza el Rosario del Dolor.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Crucificado</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Jesús Crucificado y Nuestra Madre Dolorosa — organiza la Procesión de las Cinco Llagas con el Acto de Vestición en la Plaza Mayor.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Nazareno y Nuestra Madre la Virgen de la Amargura.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Medinaceli</span>
+              <span class="tooltip-texto">Archicofradía de la Real e Ilustre Esclavitud de Nuestro Padre Jesús de Medinaceli.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Misericordia</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Misericordia — organiza el Viacrucis.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Piedad</span>
+              <span class="tooltip-texto">Hermandad Franciscana de la Santísima Virgen de la Piedad, del Santo Cristo Señor de la Vida y de la Muerte y de San Francisco de Asís — organiza Luz y Tinieblas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Oración del Huerto</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Oración del Huerto y la Vera Cruz — organiza la procesión de la tarde. Esta cofradía actúa en estrecha vinculación con la Vera Cruz, su iglesia matriz, y es habitual que sus hermanos desfilen conjuntamente.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Real Cofradía Penitencial del Santo Sepulcro, Archicofradía de las Cinco Llagas de San Francisco y Cofradía de San Juan Bautista — organiza la Quinta Angustia a medianoche.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Nazareno y Nuestra Madre la Virgen de la Amargura — organiza la Procesión de Silencio y la de Los Pasos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Real Cofradía Penitencial del Santo Sepulcro — organiza la Función del Descendimiento en la Plaza de la Inmaculada.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Soledad</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestra Señora de la Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Muy Antigua, Venerable y Dominicana Cofradía Penitencial y Sacramental de la Santa Vera-Cruz — organiza la Procesión del Dolor.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Muy Antigua, Venerable y Dominicana Cofradía Penitencial y Sacramental de la Santa Vera-Cruz — organiza el Rompimiento del Velo en la Plaza Mayor.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantapalencia.com" target="_blank" rel="noopener">Hermandad de Cofradías de Palencia</a> — última verificación: 2026-05-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La Semana Santa de Palencia no se entiende sin su banda sonora. Junto a las bandas de cornetas y tambores y las agrupaciones musicales de corte clásico, el ambiente está dominado por el sonido incesante de las <strong>carracas</strong> —matracas de madera que giran haciendo un ruido seco— y, sobre todo, por el lamento inconfundible del <strong>Tararú</strong>.
+        </p>
+        <p>
+          El toque del Tararú funciona como un aviso ancestral: dos notas cortas y graves seguidas de una nota altísima y sostenida que parece no acabar nunca. Es un sonido militar antiguo que avisa a los portadores, saluda a los monumentos y, en la práctica, congela la sangre de todos los presentes, cofrades y visitantes por igual. Si escuchas el Tararú por primera vez en una calle oscura de Palencia, entenderás en un segundo por qué esta Semana Santa es única.
+        </p>
+        <ul>
+          <li>Para escuchar el Tararú en su mejor contexto, sitúate cerca de la Catedral o la Plaza Mayor durante cualquier procesión nocturna. El sonido rebota en las fachadas de piedra con una resonancia especial.</li>
+          <li>Para Luz y Tinieblas del Miércoles Santo, entra a la iglesia de San Agustín con tiempo. La experiencia acústica del apagado progresivo con el coro entonando salmos es completamente diferente desde dentro que desde la calle.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Acto de Vestición</h3>
+          <span class="tag">Lunes Santo · Plaza Mayor</span>
+          <p>En plena calle, ante toda la ciudad reunida, se impone públicamente el hábito a los nuevos hermanos penitentes durante la Procesión de las Cinco Llagas. Un rito de iniciación visible y emocionante que muestra el relevo generacional de las cofradías.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es uno de los pocos rituales de iniciación cofrade que se celebran en público, al aire libre, con toda la ciudad como testigo. La mezcla de orgullo familiar, emoción de los nuevos hermanos y la hermandad entre cofradías que caracteriza a Palencia se condensa en este único acto del Lunes Santo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Luz y Tinieblas</h3>
+          <span class="tag">Miércoles Santo · Interior de San Agustín</span>
+          <p>La procesión culmina en el interior de la iglesia, donde mientras el coro entona salmos las luces se apagan progresivamente hasta sumergir a los presentes en la oscuridad total. Una experiencia litúrgica e inmersiva sin equivalente en la Semana Santa castellana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El efecto dramático de la oscuridad total combinado con el canto del coro es extrasensorial: en un momento dado no ves absolutamente nada y solo escuchas las voces resonando en la nave. No uses el flash del móvil — arruinaría la experiencia para todos. Entra con tiempo para conseguir sitio dentro del templo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Función del Descendimiento</h3>
+          <span class="tag">Viernes Santo · 19:30 h · Plaza de la Inmaculada</span>
+          <p>Teatro sacro medieval heredado intacto: el desenclavo escenificado de una talla articulada de Cristo para ser introducido en el sepulcro, enmarcado bajo la impresionante estampa de la Catedral palentina. Puro drama sagrado que lleva siglos repitiéndose sin cambios.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es uno de los actos de dramatización sacra más auténticos que quedan en España. La talla articulada, la Catedral de fondo al atardecer y el silencio absoluto del público crean una atmósfera que difícilmente se olvida. Llega con antelación para coger un buen sitio en la Plaza de la Inmaculada.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Rompimiento del Velo</h3>
+          <span class="tag">Domingo de Resurrección · Plaza Mayor</span>
+          <p>Las campanas repican, estallan los cohetes y la Virgen es despojada de su manto de luto negro al encontrarse con el Resucitado. La explosión emocional que libera toda la tensión acumulada durante la austera semana castellana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contraste con el resto de la semana es brutal y emocionante. Después de días de silencio, hachones y recogimiento, la Plaza Mayor estalla en alegría y color. Si solo puedes quedarte un día más, quédate el Domingo: el Rompimiento del Velo es el final perfecto para cualquier Semana Santa castellana.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> El casco histórico —entorno de la Calle Mayor, Puentecillas o San Lázaro— es ideal para moverte a pie a todas las procesiones.</li>
+        <li><strong>Ropa y clima.</strong> Imprescindible ropa térmica de invierno. Palencia es gélida al caer el sol; una bufanda y unos guantes serán tus mejores aliados para las procesiones nocturnas y de madrugada.</li>
+        <li><strong>Acceso y zonas.</strong> Prácticamente todo el recorrido es gratuito y a pie de calle. Las aceras porticadas de la larguísima Calle Mayor son el escaparate perfecto si hay algo de lluvia.</li>
+        <li><strong>Movilidad accesible.</strong> La orografía plana de Palencia y su amplia Calle Mayor peatonal la hacen muy cómoda para personas con movilidad reducida.</li>
+        <li><strong>Gastronomía cuaresmal.</strong> Imprescindible entrar en calor con las <strong>sopas de ajo palentinas</strong> servidas en cazuela de barro y el clásico potaje de vigilia.</li>
+        <li><strong>El tesoro dulce.</strong> Pásate por las pastelerías locales y compra las <strong>rosquillas de palo</strong> —elaboradas con aguardiente— o las rosquillas bañadas en azúcar lustre. Son el dulce típico de la Semana Santa palentina.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con dos días bien planificados cubres lo esencial: Miércoles Santo para Luz y Tinieblas, y Viernes Santo para Los Pasos y el Descendimiento. Si puedes añadir el Domingo, el Rompimiento del Velo es el cierre perfecto.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Tararú</dt>
+        <dd>El término más identitario de la Semana Santa palentina. Define tanto el característico toque de trompeta larga —dos notas cortas graves y una larga aguda que hiela la sangre— como, por extensión, al propio penitente o cofrade palentino. Escucharlo por primera vez en una calle oscura de Palencia es una experiencia que no se olvida.</dd>
+
+        <dt>Carraca o Matraca</dt>
+        <dd>Instrumento de madera con martinetes que, al girar o agitarse, produce un ruido seco y repetitivo que sustituye a las campanas en señal de luto durante los días de la Pasión. Su sonido es el telón de fondo permanente de las procesiones palentinas.</dd>
+
+        <dt>Hachón</dt>
+        <dd>Cirio o vela muy gruesa que llevan los hermanos de fila para iluminar el recorrido procesional. La luz mortecina de los hachones sobre las fachadas de piedra de Palencia crea una de las atmósferas más evocadoras de toda la Semana Santa castellana.</dd>
+
+        <dt>Andas</dt>
+        <dd>Estructuras de madera donde van fijadas las imágenes para ser llevadas a hombros por los hermanos. En Palencia conviven con pasos sobre ruedas, dependiendo del tamaño y peso de cada conjunto escultórico.</dd>
+
+        <dt>Hermandad de Cofradías</dt>
+        <dd>El organismo que en Palencia unifica las nueve cofradías, a diferencia de las "Juntas Mayores" de otras ciudades. Fomenta activamente que los cofrades de una hermandad desfilen acompañando a otra, creando una confraternidad única en Castilla.</dd>
+
+        <dt>Función del Descendimiento</dt>
+        <dd>Acto de dramatización sacra del Viernes Santo en la Plaza de la Inmaculada. Una talla articulada de Cristo es desclavada de la cruz y depositada en el sepulcro, heredando intacto el espíritu del teatro religioso medieval.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-palencia-1.jpg" alt="Procesión nocturna con hachones iluminando las tallas frente a la Catedral de Palencia durante la Semana Santa" />
+        <img src="images/semana-santa-palencia-2.jpg" alt="Función del Descendimiento en la Plaza de la Inmaculada de Palencia durante el Viernes Santo" />
+        <img src="images/semana-santa-palencia-3.jpg" alt="Cofrades con hábitos de distintas cofradías desfilando juntos en la Semana Santa de Palencia" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantapalencia.com" target="_blank" rel="noopener">Hermandad de Cofradías de Palencia</a></li>
+        <li><a href="https://turismo.aytopalencia.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Palencia</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Pasión al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 de marzo al 28 de marzo. Los días de mayor intensidad son el Miércoles Santo (Luz y Tinieblas), el Jueves Santo (Quinta Angustia a medianoche) y el Viernes Santo (Descendimiento).</dd>
+
+        <dt>¿Qué significa exactamente el Tararú?</dt>
+        <dd>Es el toque tradicional y exclusivo de Palencia. Consiste en hacer sonar una trompeta larga emitiendo dos golpes de sonido graves y cortos, rematados por un tercer toque muy prolongado y agudo. Es el aviso ancestral que anuncia la salida de los pasos y saluda a los monumentos de la ciudad.</dd>
+
+        <dt>¿Por qué hay penitentes con hábitos de distintos colores en un mismo desfile?</dt>
+        <dd>Porque en Palencia existe un sentido muy alto de la confraternidad. Es tradición que representantes de otras cofradías desfilen acompañando a la hermandad organizadora. Esta particularidad hace que los cortejos palentinos sean visualmente únicos en el panorama de la Semana Santa castellana.</dd>
+
+        <dt>¿La procesión se suspende si llueve?</dt>
+        <dd>Sí. Las cofradías palentinas son muy estrictas con la protección de su patrimonio escultórico, que incluye piezas del siglo XIV. Ante cualquier riesgo real de lluvia, las procesiones no salen a la calle. Sigue los canales oficiales de la Hermandad de Cofradías para avisos en tiempo real.</dd>
+
+        <dt>¿Es necesario pagar para ver las procesiones?</dt>
+        <dd>No. Prácticamente todo el recorrido es de acceso libre y gratuito. Las aceras de la Calle Mayor son especialmente cómodas para ver los desfiles, con sus soportales cubiertos por si cambia el tiempo.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, especialmente los primeros días. La Procesión de la Borriquilla del Domingo de Ramos es perfecta para los más pequeños. Las procesiones de madrugada del Jueves y Viernes Santo no son recomendables para niños muy pequeños por las horas y el frío.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
