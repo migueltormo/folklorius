@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Salamanca 2027: Guía Completa, Cofradías y Procesiones</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Salamanca 2027 (19 al 28 de marzo). Las 18 cofradías, el Acto del Descendimiento, el cruce del Puente Romano y una tradición pionera en igualdad desde 1985." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-salamanca.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Salamanca 2027 | El alma charra entre el silencio y la piedra" />
+  <meta property="og:description" content="Siente la Pasión en Salamanca. Guía completa con horarios, 18 cofradías, tradición pionera en igualdad y los mejores rincones para vivirla en 2027." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-salamanca.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card.card-destacada {
+      border-color: #2d6a2d;
+      border-width: 2px;
+    }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card .tag-igualdad {
+      background: #f0f7f0;
+      color: #2d6a2d;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    .banner-igualdad {
+      background: #f0f7f0;
+      border: 1px solid #b8d8b8;
+      border-left: 4px solid #2d6a2d;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-igualdad h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #2d6a2d;
+      margin-bottom: 8px;
+    }
+    .banner-igualdad p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2a2218);
+      margin-bottom: 6px;
+    }
+    .banner-igualdad p:last-child { margin-bottom: 0; }
+    .banner-igualdad ul {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text, #2a2218);
+      padding-left: 1.2rem;
+      margin: 6px 0 0;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-salamanca.html",
+    "name": "Semana Santa de Salamanca",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Centro Histórico de Salamanca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salamanca",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.9701,
+        "longitude": -5.6635
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Semana Santa de Salamanca",
+      "url": "https://semanasantasalamanca.es"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-salamanca.jpg"],
+    "description": "La Semana Santa de Salamanca: 18 cofradías, el Acto del Descendimiento desde 1615, el cruce del Puente Romano en Jueves Santo y una tradición pionera en igualdad desde 1985. Declarada de Interés Turístico Internacional en 2003.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Salamanca
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-salamanca.jpg" alt="Procesión nocturna cruzando el Puente Romano de Salamanca durante la Semana Santa, con hachones encendidos reflejados en el río Tormes" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Salamanca</h1>
+      <p class="ficha-subtitle">
+        Salamanca · Castilla y León · "Piedra viva, silencio estremecedor y pasión bajo el cielo charro."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2003</span>
+        <span class="badge badge-oficial">Medalla de Oro de la Ciudad</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>El silencio no es opcional.</strong> En Salamanca el silencio es parte de la fiesta, no una sugerencia de buenas maneras. Guárdalo al paso de las cofradías, especialmente en las procesiones de madrugada donde el recogimiento es total.</li>
+          <li><strong>La ciudad entera es patrimonio.</strong> El casco histórico de Salamanca es Patrimonio de la Humanidad. No te apoyes en fachadas, no subas a elementos arquitectónicos para ver mejor y mantén distancia prudencial con los pasos.</li>
+          <li><strong>El frío de la meseta.</strong> Las noches de marzo en Salamanca son más frías de lo que parece en el mapa. Para las procesiones de madrugada, el abrigo térmico no es exageración.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Huele a incienso y a río frío. Cuando cae la noche, la piedra dorada de Villamayor que construyó Salamanca se llena de sombras y la luz de los cirios hace cosas raras con las fachadas platerescas. El silencio se rompe de vez en cuando: el arrastre de cadenas sobre adoquines, el golpe seco de una campana, el canto de un coro que llega desde un balcón que no consigues localizar.
+      </p>
+      <p>
+        Salamanca no es una Semana Santa que se ve. Es una que se escucha y se aguanta. La belleza aquí es austera, a veces incómoda, y tarda un rato en entrar.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las calles medievales de Salamanca no son el decorado de las procesiones: son parte de ellas. La estrechez de la Rúa Mayor obliga a los pasos a maniobras imposibles. La Plaza Mayor los recibe con una amplitud que descoloca después de tanta penumbra. El contraste es siempre el mismo y nunca aburre.
+      </p>
+      <p>
+        Dieciocho cofradías, hermandades y congregaciones custodian tallas de los siglos XVII en adelante. La mayoría se portan a hombros, con carga interior o exterior, y el esfuerzo de los hermanos —y hermanas— de carga es visible y concreto: músculos, respiración, coordinación milimétrica bajo las andas. No hay artificio.
+      </p>
+      <p>
+        Si es tu primera vez, colócate en una calle estrecha del casco histórico, apaga el flash y espera. La atmósfera llega sola.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta de Semana Santa de Salamanca en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces son medievales, pero la Semana Santa que hoy conocemos nació en 1615, cuando la Vera Cruz instauró el Acto del Descendimiento y la Procesión del Santo Entierro. Desde entonces, la imaginería salmantina fue sumando obras de maestros como Alejandro Carnicero, Luis Salvador Carmona y Mariano Benlliure.
+      </p>
+      <p>
+        Hoy la fiesta no es solo religiosa. Es el momento del año en que Salamanca se para. Estudiantes, profesores, familias y vecinos de toda la vida se igualan bajo el capirote. En 2003 fue declarada Fiesta de Interés Turístico Internacional, y también lleva la Medalla de Oro de la Ciudad.
+      </p>
+
+      <div class="banner-igualdad" role="note" aria-label="Salamanca, pionera en igualdad cofrade">
+        <h3>Salamanca, pionera en igualdad dentro del mundo cofrade</h3>
+        <p>Salamanca tiene un mérito que pocas ciudades pueden reclamar: fue la primera en España en incorporar a la mujer al turno de carga de los pasos procesionales.</p>
+        <p>El primer paso lo dio la <strong>Hermandad del Cristo del Amor y de la Paz</strong> en <strong>1972</strong>, aún en plena dictadura, al admitir a las mujeres como cofrades de pleno derecho.</p>
+        <p>El hito definitivo llegó en <strong>1985</strong>, cuando dos hermandades hicieron historia al mismo tiempo:</p>
+        <ul>
+          <li>La <strong>Cofradía de la Vera Cruz</strong> sacó por primera vez a hombros a la <em>Virgen de la Amargura</em>, portada íntegramente por mujeres.</li>
+          <li>La <strong>Hermandad del Cristo del Amor y de la Paz</strong> hizo lo mismo con el paso de la <em>Coronación de Espinas</em> dentro del Santo Entierro.</li>
+        </ul>
+        <p>Hoy la presencia femenina en las andas es habitual. El paso de <strong>María Nuestra Madre</strong> lo portan más de <strong>100 hermanas</strong> cada Jueves Santo. El de <strong>Nuestra Señora de las Lágrimas</strong> también va bajo carga exclusivamente femenina. Una tradición de cuarenta años que forma parte de la identidad de la Semana Santa salmantina.</p>
+      </div>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Salamanca en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor intensidad son el <strong>Jueves Santo, 25 de marzo</strong>, y el <strong>Viernes Santo, 26 de marzo</strong>.
+      </p>
+      <p>
+        Si llueve, las procesiones se suspenden sin aplazamiento y las cofradías realizan los actos en el interior de su templo de origen. Sigue los canales oficiales de la Junta para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          Sale la Vera Cruz. Es el primer movimiento de la semana, sobrio y casi íntimo. La ciudad todavía no ha entrado en modo Semana Santa del todo, y eso se nota en el ambiente.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          Cristo de la Humildad y Archicofradía del Rosario. Cofradías con un recogimiento que no desmerece a las más antiguas de la ciudad.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          El día más accesible para familias. Las palmas llenan las calles por la mañana. Por la tarde: Jesús Amigo de los Niños, Jesús Despojado y la Hermandad del Perdón. Las primeras procesiones serias de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          A las <strong>21:00 h</strong> sale desde la Iglesia de la Vera Cruz la <strong>Procesión del Cristo de los Doctrinos</strong>, organizada por la Ilustre Cofradía de la Santa Vera Cruz. Dura aproximadamente tres horas y media y saca dos pasos de enorme valor: el <em>Santísimo Cristo de los Doctrinos</em>, talla anónima del siglo XVII, y la <em>Virgen de la Amargura</em>, obra de Pedro Hernández datada en 1615, el mismo año en que nació esta Semana Santa.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          La <strong>Hermandad Universitaria</strong> desfila ante la fachada de la Universidad mientras el coro interpreta canto gregoriano. Profesores y alumnos, piedra plateresca iluminada, fe y academia en el mismo punto. Es el acto más propio de Salamanca, el que ninguna otra ciudad podría copiar.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Jesús Flagelado. El tono se oscurece y las calles se vacían de turistas casuales. Quien se queda sabe por qué se queda. Es también la noche del paso de <em>Nuestra Señora de las Lágrimas</em>, portado exclusivamente por mujeres.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          La noche grande. Cuatro cofradías en la calle: Cristo de la Agonía, Amor y Paz, Vía Crucis y Cristo Yacente. Los pasos cruzan el Puente Romano sobre el Tormes de madrugada, con el río y el frío como únicos testigos. Es también la noche del paso de <strong>María Nuestra Madre</strong>, portado por más de 100 hermanas de carga.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El día cumbre. Por la mañana, el <strong>Acto del Descendimiento</strong> en el Campo de San Francisco, una tradición viva desde 1615. Por la tarde y noche, cinco cofradías: Hermandad Dominicana, Oración en el Huerto, Jesús Rescatado, Jesús Nazareno y Vera Cruz.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Hermandad del Silencio y La Soledad. Las procesiones más duras de aguantar, no por el horario sino por el peso emocional. Los tambores roncos en la madrugada salmantina son difíciles de olvidar.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La Vera Cruz cierra la semana en la Plaza Mayor. El encuentro del Resucitado con la Virgen, la música, las palomas. Después de una semana de silencio, el ruido de la plaza sorprende aunque lo estés esperando.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Salamanca está organizada por <strong>18 cofradías, hermandades y congregaciones</strong>. Pasa el cursor sobre cada nombre para ver su título oficial completo.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta de Semana Santa de Salamanca.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Ilustre Cofradía de la Santa Cruz del Redentor y de la Purísima Concepción, su Madre. Una de las más antiguas de Salamanca, fundadora del Acto del Descendimiento en 1615.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo de la Humildad</span>
+              <span class="tooltip-texto">Hermandad Franciscana del Santísimo Cristo de la Humildad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Archicofradía del Rosario</span>
+              <span class="tooltip-texto">Real y Pontificia Archicofradía Sacramental de María Santísima Madre de Dios del Rosario y San Pío V.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Amigo de los Niños</span>
+              <span class="tooltip-texto">Hermandad de Jesús Amigo de los Niños. Organiza la procesión de la Borriquilla, la más adecuada para familias con niños pequeños.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Despojado</span>
+              <span class="tooltip-texto">Hermandad Sacramental, Mercedaria y de Penitencia de Nuestro Padre Jesús Despojado de sus Vestiduras y María Santísima de la Caridad y del Consuelo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Hermandad del Perdón</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Padre Jesús del Perdón y María Santísima de Gracia y Amparo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vera Cruz (Cristo de los Doctrinos)</span>
+              <span class="tooltip-texto">Ilustre Cofradía de la Santa Cruz del Redentor y de la Purísima Concepción, su Madre. Sale a las 21:00 h con dos pasos: el Cristo de los Doctrinos (talla anónima, s. XVII) y la Virgen de la Amargura (Pedro Hernández, 1615). Duración aproximada: 3 horas y media.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Hermandad Universitaria</span>
+              <span class="tooltip-texto">Hermandad Universitaria del Santísimo Cristo de la Luz y Nuestra Señora Madre de la Sabiduría. Desfila ante la fachada de la Universidad con coro gregoriano. Lazo histórico entre fe y academia salmantina.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Flagelado</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Padre Jesús Flagelado y Nuestra Señora de las Lágrimas. Porta el paso de Nuestra Señora de las Lágrimas bajo carga exclusivamente femenina.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo de la Agonía</span>
+              <span class="tooltip-texto">Seráfica Hermandad de Nazarenos del Santísimo Cristo de la Agonía.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Amor y Paz</span>
+              <span class="tooltip-texto">Hermandad del Cristo del Amor y de la Paz. Primera en admitir mujeres como cofrades de pleno derecho en 1972. Porta el paso de María Nuestra Madre con más de 100 hermanas de carga cada Jueves Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vía Crucis</span>
+              <span class="tooltip-texto">Hermandad del Vía Crucis.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo Yacente</span>
+              <span class="tooltip-texto">Real Cofradía Penitencial de Cristo Yacente de la Misericordia y de la Agonía Redentora.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Hermandad Dominicana</span>
+              <span class="tooltip-texto">Hermandad Dominicana del Santísimo Cristo de la Buena Muerte, Nuestro Padre Jesús de la Pasión, Nuestra Señora de los Dolores y Nuestra Señora de la Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Oración en el Huerto</span>
+              <span class="tooltip-texto">Cofradía de la Oración en el Huerto de los Olivos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Rescatado</span>
+              <span class="tooltip-texto">Congregación de Nuestro Padre Jesús Divino Redentor Rescatado y Nuestra Señora de las Angustias.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno</span>
+              <span class="tooltip-texto">Ilustre y Venerable Congregación de Nuestro Padre Jesús Nazareno y Santo Entierro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Ilustre Cofradía de la Santa Cruz del Redentor y de la Purísima Concepción, su Madre. Cierra la jornada del Viernes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Hermandad del Silencio</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Padre Jesús del Silencio en el Desprecio de Herodes. Una de las procesiones de mayor recogimiento de toda la semana.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Soledad</span>
+              <span class="tooltip-texto">Hermandad de Nuestra Señora de la Soledad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Ilustre Cofradía de la Santa Cruz del Redentor y de la Purísima Concepción, su Madre. Cierra la Semana Santa en la Plaza Mayor con el Encuentro del Resucitado.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantasalamanca.es" target="_blank" rel="noopener">Junta de Semana Santa de Salamanca</a> — última verificación: 2027-03-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El sonido dominante en Salamanca es el silencio. Y eso, paradójicamente, hace que cada ruido cuente el doble.
+        </p>
+        <p>
+          La matraca avisa del avance del desfile con un golpe seco de madera que rebota en las fachadas. Las cadenas arrastran sobre el adoquín. Los tambores van destemplados, aposta, con ese sonido ronco y apagado que distingue la marcha penitencial de cualquier otra música. Y de vez en cuando, desde un balcón que no consigues identificar, llega el canto de un coro universitario interpretando un motete renacentista.
+        </p>
+        <p>
+          La acústica de Salamanca hace el resto. La piedra de Villamayor amplifica y devuelve el sonido de una manera que en una ciudad moderna no ocurriría. <strong>Busca una calle estrecha como la Calle Compañía o el entorno del Patio de Escuelas.</strong> Lo que escuches ahí no tiene equivalente en campo abierto.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Encuentro en el Patio de Escuelas</h3>
+          <span class="tag">Martes Santo · Noche · Fachada de la Universidad</span>
+          <p>La Hermandad Universitaria desfila ante la fachada plateresca mientras el coro interpreta canto gregoriano. La imagen del Cristo recortada contra la piedra iluminada es de las que no te esperas aunque hayas visto fotos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el acto más salmantino de toda la semana. Fe, historia académica y arquitectura en el mismo punto. Ninguna otra ciudad tiene esto. No hay reserva previa ni entrada: te colocas delante de la Universidad y esperas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Cruzando el Puente Romano</h3>
+          <span class="tag">Jueves Santo · Madrugada · Río Tormes</span>
+          <p>Las cofradías del Jueves Santo regresan cruzando el puente de origen romano con hachones encendidos y el viento frío del río. Una de esas estampas que parecen inventadas y no lo son.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Piedra romana, fuego y madrugada helada. No hay grada de pago ni reserva previa: te colocas en el puente, abrigas bien y esperas. El reflejo de los hachones en el Tormes hace el resto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Acto del Descendimiento</h3>
+          <span class="tag">Viernes Santo · Mediodía · Campo de San Francisco</span>
+          <p>Las tallas articuladas de Cristo son desenclavadas de la cruz por los hermanos en un rito que lleva celebrándose desde 1615. Es litúrgico, es teatral y es muy antiguo. El público guarda silencio sin que nadie se lo pida.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Cuatrocientos años de tradición continua en el mismo acto y en el mismo lugar. No hay muchas cosas así en España. La escena es visualmente impactante y culturalmente irrepetible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card card-destacada">
+          <h3>María Nuestra Madre: más de 100 hermanas bajo las andas</h3>
+          <span class="tag tag-igualdad">Jueves Santo · Tradición pionera desde 1985</span>
+          <p>El paso de María Nuestra Madre, de la Hermandad del Cristo del Amor y de la Paz, es portado íntegramente por más de 100 hermanas de carga. Salamanca fue la primera ciudad de España en incorporar a la mujer al turno de carga, en 1985. Este paso es la muestra más visible de esa historia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque detrás de cada paso hay personas, y este tiene cuarenta años de historia de igualdad. En 1985, cuando dos hermandades salmantinas sacaron por primera vez pasos portados íntegramente por mujeres, lo hicieron sin anuncios ni reivindicaciones: saliendo a la calle. Verlo hoy, con más de 100 hermanas bajo las andas, es entender que la tradición también cambia, y que cuando cambia bien, lo hace para quedarse.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Resurrección en la Plaza Mayor</h3>
+          <span class="tag">Domingo de Resurrección · Mañana · Plaza Mayor</span>
+          <p>La Vera Cruz llega a la Plaza Mayor, el Resucitado se encuentra con la Virgen, vuelan las palomas y estalla la música. Después de una semana de tambores y silencio, la plaza entera suena diferente.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el cierre. Si has aguantado toda la semana, este momento lo justifica. Si solo tienes un día, elige este o el Viernes Santo. El contraste entre el silencio de los días anteriores y el bullicio de la Plaza Mayor es físicamente perceptible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Lunes de Aguas</h3>
+          <span class="tag">Lunes siguiente a Pascua · 6 de abril 2027 · Río Tormes</span>
+          <p>Una semana después de la Resurrección, los salmantinos bajan al río Tormes a comer hornazo — una empanada rellena de embutido — para celebrar el fin de la Cuaresma. Es una fiesta pagana, local y muy antigua que tiene tanto peso identitario como la propia Semana Santa.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque Salamanca sin el Lunes de Aguas es solo la mitad de la historia. Si puedes quedarte unos días más después de la Resurrección, las orillas del Tormes se llenan de familias, música y hornazos. Es la cara más cotidiana y genuina de la ciudad.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con al menos cuatro meses de antelación. Las zonas aledañas a la Catedral y la Plaza Mayor son las más cómodas: todo a pie, sin depender del transporte durante los cortes de tráfico.</li>
+        <li><strong>Transporte.</strong> El centro se cierra al tráfico durante las procesiones. El tren desde Madrid (Alvia) o el autobús son las opciones más sensatas. El coche complica más de lo que ayuda.</li>
+        <li><strong>Ropa.</strong> Calzado muy cómodo: el adoquín irregular de Salamanca destroza los pies en dos horas. Abrigo térmico para las noches y madrugadas, en marzo la temperatura puede bajar de cero.</li>
+        <li><strong>Ver las procesiones gratis.</strong> La inmensa mayoría de los recorridos son de acceso libre en la calle. Si no toleras las aglomeraciones, evita la Rúa Mayor en los momentos de más afluencia y busca los tramos finales cerca de los templos de regreso, donde la gente ya se ha dispersado.</li>
+        <li><strong>Acústica.</strong> Para vivir el sonido de las procesiones en su máxima expresión, busca calles estrechas como la Calle Compañía o el entorno del Patio de Escuelas. La reverberación en la piedra de Villamayor no se puede reproducir en ningún otro sitio.</li>
+        <li><strong>Respeto básico.</strong> No cruces por el medio de una fila de nazarenos. No alces la voz al paso de una cofradía de silencio. No uses el flash. Tres normas que cualquier cofrade te agradecerá.</li>
+        <li><strong>Gastronomía.</strong> El potaje de vigilia es el plato de la semana. Y si te quedas hasta el lunes siguiente a Pascua, el <strong>Lunes de Aguas</strong> (6 de abril en 2027) es la fiesta local donde los salmantinos comen hornazo a orillas del Tormes para celebrar el fin de la Cuaresma.</li>
+        <li><strong>Accesibilidad.</strong> El adoquín del casco histórico dificulta el tránsito en silla de ruedas. La Plaza Mayor, el Paseo de las Carmelitas y las grandes avenidas son las zonas más accesibles para personas con movilidad reducida.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Capirote</dt>
+        <dd>El cono de cartón cubierto de tela que llevan los penitentes. Garantiza el anonimato de la penitencia: dentro hay vecinos, estudiantes, profesores. No sabes quién.</dd>
+
+        <dt>Paso</dt>
+        <dd>La plataforma con las imágenes escultóricas que representa una escena de la Pasión. En Salamanca algunos tienen siglos de antigüedad y un valor patrimonial incalculable.</dd>
+
+        <dt>Costalero / Hermano de carga</dt>
+        <dd>Quien porta el paso. En Salamanca puede hacerse con carga interior —metiendo el hombro bajo las andas, sin ver nada desde dentro— o exterior, agarrando los banzos desde fuera. En ambos casos el esfuerzo físico es real y exigente. En Salamanca, desde 1985, también son hermanas de carga.</dd>
+
+        <dt>Matraca</dt>
+        <dd>Instrumento de madera con martinetes móviles que produce un sonido bronco y seco. Avisa del avance del desfile en lugar de la campana. En las procesiones de madrugada, ese golpe seco rebotando en la piedra es uno de los sonidos más reconocibles de la Semana Santa salmantina.</dd>
+
+        <dt>Lunes de Aguas</dt>
+        <dd>El lunes siguiente a la Semana de Pascua (6 de abril en 2027). Los salmantinos bajan al río Tormes a comer hornazo, una empanada rellena de embutido, para celebrar el fin de la Cuaresma. Es una fiesta pagana y local que tiene tanto peso identitario como la propia Semana Santa. Si puedes quedarte, quédate.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-salamanca-1.jpg" alt="Procesión nocturna cruzando el Puente Romano de Salamanca con hachones encendidos durante el Jueves Santo" />
+        <img src="images/semana-santa-salamanca-2.jpg" alt="Hermandad Universitaria ante la fachada plateresca de la Universidad de Salamanca durante el Martes Santo" />
+        <img src="images/semana-santa-salamanca-3.jpg" alt="Paso de María Nuestra Madre portado por más de 100 hermanas de carga en la Semana Santa de Salamanca" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantasalamanca.es" target="_blank" rel="noopener">Junta de Semana Santa de Salamanca — Programa oficial</a></li>
+        <li><a href="https://salamanca.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Salamanca</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-03-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Salamanca en 2027?</dt>
+        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor intensidad son el Jueves Santo (25 de marzo) y el Viernes Santo (26 de marzo).</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>El adoquín del casco histórico dificulta el tránsito en silla de ruedas. La Plaza Mayor, el Paseo de las Carmelitas y las grandes avenidas son amplias y accesibles. Llegar con antelación a las procesiones más concurridas permite elegir una buena posición sin necesidad de moverse entre el público.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El patrimonio escultórico es muy delicado. Si llueve con intensidad, las procesiones se suspenden sin aplazamiento y las cofradías realizan los actos en el interior de su templo. Sigue los canales oficiales de la Junta para información en tiempo real.</dd>
+
+        <dt>¿Pueden ir niños a ver las procesiones?</dt>
+        <dd>Sí. La procesión de Jesús Amigo de los Niños el Domingo de Ramos es la más adecuada para los más pequeños. Las madrugadas del Jueves y Viernes Santo no son recomendables para niños muy pequeños por el frío intenso y la obligatoriedad de mantener silencio durante horas.</dd>
+
+        <dt>¿Es cierto que Salamanca fue la primera ciudad en incorporar a la mujer al turno de carga?</dt>
+        <dd>Sí. En 1985, dos hermandades salmantinas —la Cofradía de la Vera Cruz y la Hermandad del Cristo del Amor y de la Paz— sacaron a la calle los primeros pasos portados íntegramente por mujeres en España. Hoy esa tradición tiene cuarenta años y varios pasos con carga exclusivamente femenina, entre ellos el de María Nuestra Madre con más de 100 hermanas cada Jueves Santo.</dd>
+
+        <dt>¿Qué es el Lunes de Aguas?</dt>
+        <dd>Una fiesta local salmantina el lunes siguiente a la Semana de Pascua (6 de abril en 2027). Los salmantinos bajan al río Tormes a comer hornazo para celebrar el fin de la Cuaresma. Es tan parte de la identidad de la ciudad como la propia Semana Santa.</dd>
+
+        <dt>¿Existe alguna conexión especial entre la Universidad y las cofradías?</dt>
+        <dd>Sí, y es única en España. La Hermandad Universitaria mantiene lazos seculares con la institución académica, y el desfile del Martes Santo ante la fachada de la Universidad con coro gregoriano es el acto que mejor refleja esa relación. El Voto de la Universidad de Salamanca se renueva además cada Jueves Santo ante el Cristo de las Batallas.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
