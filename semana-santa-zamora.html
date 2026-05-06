@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Zamora 2027: Guía Completa, Cofradías y Procesiones</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Zamora 2027 (18 al 28 de marzo). Las 17 cofradías oficiales, el Juramento del Silencio, el Canto del Miserere y todo lo que necesitas saber para vivirla." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-zamora.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Zamora 2027 | El rezo esculpido en el silencio" />
+  <meta property="og:description" content="Zamora en Semana Santa: 17 cofradías, capas pardas, misereres a cuatro voces y madrugadas junto al Duero. Guía completa con fechas, procesiones y consejos para 2027." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-zamora.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-zamora.html",
+    "name": "Semana Santa de Zamora",
+    "startDate": "2027-03-18",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Centro Histórico y Románico de Zamora",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zamora",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.5034,
+        "longitude": -5.7447
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta Pro Semana Santa de Zamora",
+      "url": "https://semanasantadezamora.com"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-zamora.jpg"],
+    "description": "La Semana Santa de Zamora: 17 cofradías, el Juramento del Silencio ante el Cristo de las Injurias, el Canto del Miserere y la procesión de las Capas Pardas. Declarada de Interés Turístico Internacional en 1986.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Zamora
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-zamora.jpg" alt="Procesión nocturna de las Capas Pardas en la Semana Santa de Zamora, cofrades con linterna y capa alistana en el casco histórico románico" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Zamora</h1>
+      <p class="ficha-subtitle">
+        Zamora · Castilla y León · "Un museo románico donde el silencio, el frío y el canto desgarran el alma."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 1986</span>
+        <span class="badge badge-oficial">Bien de Interés Cultural Inmaterial</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>El silencio es parte de la fiesta.</strong> En Zamora no hace falta que nadie te lo pida: el ambiente lo impone. Evita hablar en voz alta al paso de las cofradías, especialmente en las procesiones nocturnas y de madrugada.</li>
+          <li><strong>El frío del Duero.</strong> Las madrugadas de marzo en Zamora son de las más duras de la Semana Santa española. Abrigo técnico, calzado cómodo y paciencia térmica. No es exageración.</li>
+          <li><strong>Luto riguroso.</strong> El Viernes Santo y el Sábado Santo tienen un nivel de recogimiento que no encontrarás en casi ninguna otra ciudad. Trátatelo como lo que es: un velatorio a escala urbana.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Huele a cera fundida y a almendras garrapiñadas. Cuando cae el sol, las callejuelas entre las iglesias románicas se quedan en penumbra y el silencio se vuelve físico: lo notas en el pecho antes de escuchar nada. Luego llega el tintineo de una esquila, el golpe seco de los banzos al tocar el suelo, y de algún sitio que no consigues identificar, el arranque de un Miserere cantado a cuatro voces en la oscuridad.
+      </p>
+      <p>
+        Zamora no tiene exuberancia. Tiene contención. Es austera por convicción, no por falta de medios. Y eso, viniendo de otras Semanas Santas, puede descolocar. Luego engancha de una manera que cuesta explicar.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Zamora transcurre por calles estrechas y cuestas empinadas donde las tallas casi rozan las fachadas de templos del siglo XII. No hay grandes estructuras barrocas. Hay sobriedad castellana, madera antigua y un misticismo que no necesita ornamento.
+      </p>
+      <p>
+        Diecisiete cofradías, hermandades, congregaciones y secciones de damas movilizan a gran parte de la población — se calcula que más de la mitad de los zamoranos son cofrades. La mayoría de los pasos van a hombros, a ritmo de marchas lentas o en silencio absoluto.
+      </p>
+      <p>
+        Si es tu primera vez, busca las cuestas del casco histórico, colócate cerca de una iglesia románica y abre los sentidos. La atmósfera no tarda en hacer su trabajo.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta Pro Semana Santa de Zamora en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces son del siglo XIII, aunque las cofradías más antiguas — como la Vera Cruz — datan de principios del XVI. Con el tiempo, la Semana Santa de Zamora fue construyendo una identidad muy concreta: austera, penitencial, sin concesiones al espectáculo.
+      </p>
+      <p>
+        Hoy es el momento del año en que Zamora se para. Familias enteras desfilan bajo hábitos monacales, capas pardas alistanas o caperuces de raso. El dato que mejor lo resume: se estima que más de la mitad de los zamoranos son cofrades. No es una fiesta que se ve desde fuera. Es una que se vive desde dentro.
+      </p>
+      <p>
+        Fue declarada de Interés Turístico Internacional en 1986, la primera Semana Santa de Castilla y León en conseguirlo, y también es Bien de Interés Cultural Inmaterial.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Zamora en 2027 va del <strong>jueves 18 de marzo</strong> (Jueves de Pasión) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). En 2027 la Pascua cae especialmente pronto — el Viernes de Dolores coincide con San José, el 19 de marzo. Los días de mayor intensidad son el <strong>Jueves Santo, 25 de marzo</strong>, y el <strong>Viernes Santo, 26 de marzo</strong>.
+      </p>
+      <p>
+        Si llueve, las procesiones pueden suspenderse o modificarse. Sigue los canales oficiales de la Junta Pro Semana Santa para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Jueves de Pasión · 18 de marzo</span>
+          El Traslado del Nazareno de San Frontis cruza el río Duero por el Puente de Piedra. Es el primer movimiento de la semana, íntimo y solemne. La ciudad todavía no ha entrado en modo Semana Santa, y ese contraste lo hace especial.
+        </li>
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          El Espíritu Santo sale con el canto del <em>Christus factus est</em> resonando en la plaza de la Catedral. Primer día grande para quien llega por primera vez. Ese año coincide con San José.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          Jesús Luz y Vida desciende a la vera del río. Se reza por los hermanos fallecidos. Es una jornada recogida que anticipa lo que viene.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La Entrada Triunfal llena las calles de palmas por la mañana. El día más accesible para familias con niños. Por la noche el tono cambia por completo.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          Dos cofradías en la calle: la Hermandad de Jesús en su Tercera Caída y la Buena Muerte. Jornada de devoción creciente con cantos castellanos nocturnos.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          El Vía Crucis en su procesión titular y las Siete Palabras. La intensidad sube un escalón más.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          La noche más característica de Zamora. Primero el <strong>Juramento del Silencio</strong> ante la Catedral con el Cristo de las Injurias. Después, de madrugada, las <strong>Capas Pardas</strong> — cofrades con la capa tradicional de los pastores alistanos, linterna en mano, esquilas como única música.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Tres cofradías: la Esperanza por la mañana, la Vera Cruz y Jesús Yacente por la tarde y noche. Culmina con el <strong>Canto del Miserere</strong> en la Plaza de Viriato, el momento más esperado de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          La madrugada más larga. La Congregación — más de 11.000 hermanos — sale a las 5:00 h. Tras el descanso y las sopas de ajo, los pasos van pasando uno a uno ante la Virgen de la Soledad para hacerle una reverencia en Las Tres Cruces. Por la tarde, el Santo Entierro y Las Angustias cierran el día en luto total.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Las Damas de la Soledad. Recogimiento máximo, Salve masiva. La ciudad en silencio casi completo.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La Cofradía de la Santísima Resurrección llega a la Plaza Mayor. Música, disparos de fogueo y el encuentro final. Después de diez días de austeridad, la plaza entera estalla.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Zamora está organizada por <strong>17 cofradías, hermandades, congregaciones y secciones de damas</strong>. Pasa el cursor sobre cada nombre para ver su título oficial completo.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta Pro Semana Santa de Zamora.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Jueves de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vía Crucis (San Frontis)</span>
+              <span class="tooltip-texto">Cofradía de Jesús del Vía Crucis — Sección San Frontis. Organiza el Traslado del Nazareno que cruza el Puente de Piedra sobre el Duero.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Espíritu Santo</span>
+              <span class="tooltip-texto">Hermandad Penitencial del Santísimo Cristo del Espíritu Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Luz y Vida</span>
+              <span class="tooltip-texto">Hermandad Penitencial de Nuestro Señor Jesús Luz y Vida. Procesiona descendiendo hacia la vera del río Duero.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Entrada Triunfal</span>
+              <span class="tooltip-texto">Real Cofradía de Jesús en su Entrada Triunfal en Jerusalén. Organiza la procesión de la Borriquilla, la más adecuada para familias con niños.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Tercera Caída</span>
+              <span class="tooltip-texto">Hermandad de Jesús en su Tercera Caída.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Buena Muerte</span>
+              <span class="tooltip-texto">Hermandad Penitencial del Santísimo Cristo de la Buena Muerte.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vía Crucis</span>
+              <span class="tooltip-texto">Cofradía de Jesús del Vía Crucis — Procesión titular.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Siete Palabras</span>
+              <span class="tooltip-texto">Hermandad Penitencial de las Siete Palabras.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Silencio</span>
+              <span class="tooltip-texto">Real Hermandad del Santísimo Cristo de las Injurias. Organiza el Juramento del Silencio ante la Catedral.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Capas Pardas</span>
+              <span class="tooltip-texto">Hermandad Penitencial del Santísimo Cristo del Amparo. Sus cofrades visten la capa tradicional de los pastores alistanos y desfilan con linterna en mano en silencio absoluto.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Esperanza</span>
+              <span class="tooltip-texto">Cofradía de la Virgen de la Esperanza. Sale por la mañana del Jueves Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Cofradía de la Santa Vera Cruz, Disciplina y Penitencia. Una de las más antiguas de Zamora, con raíces en el siglo XVI.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Yacente</span>
+              <span class="tooltip-texto">Penitente Hermandad de Jesús Yacente. Protagoniza el Canto del Miserere en la Plaza de Viriato, el momento más esperado de toda la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Congregación</span>
+              <span class="tooltip-texto">Cofradía de Jesús Nazareno, Vulgo Congregación. La más grande de Zamora con más de 11.000 hermanos. Sale a las 5:00 h de la madrugada. Organiza la Reverencia de Las Tres Cruces.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Entierro</span>
+              <span class="tooltip-texto">Real Cofradía del Santo Entierro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Angustias</span>
+              <span class="tooltip-texto">Real Cofradía de Nuestra Madre de las Angustias.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Damas de la Soledad</span>
+              <span class="tooltip-texto">Sección de Damas de la Virgen de la Soledad. Procesión de máximo recogimiento con Salve masiva.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santísima Resurrección</span>
+              <span class="tooltip-texto">Cofradía de la Santísima Resurrección. Cierra la Semana Santa en la Plaza Mayor con música y disparos de fogueo.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantadezamora.com" target="_blank" rel="noopener">Junta Pro Semana Santa de Zamora</a> — última verificación: 2027-03-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El sonido dominante en Zamora es el silencio. Pero no el silencio vacío — el silencio cargado, el que precede a algo.
+        </p>
+        <p>
+          Lo que lo rompe importa mucho. El frotar de la zapatilla contra la piedra. El golpeteo rítmico de los banzos. El tintineo de las esquilas marcando el paso en la oscuridad. Y luego, sin aviso, el arranque de un coro de hombres cantando el Miserere a cuatro voces en mitad de la calle.
+        </p>
+        <p>
+          La <em>Marcha de Thalberg</em> es la banda sonora de muchas procesiones: lenta, pesada, con ese tempo que obliga al cuerpo a ir más despacio de lo habitual. Pero lo que define a Zamora no es la música. Es lo que hay entre nota y nota.
+        </p>
+        <p>
+          <strong>Colócate en la Plaza de Viriato la noche del Jueves Santo.</strong> Cuando la procesión de Jesús Yacente se detiene y los hermanos arrancan el Miserere a la luz de los faroles, la acústica de la plaza hace algo que ninguna sala de conciertos podría replicar.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Juramento del Silencio</h3>
+          <span class="tag">Miércoles Santo · Tarde · Frente a la Catedral</span>
+          <p>Miles de cofrades se arrodillan ante el Cristo de las Injurias, que aguarda en el pórtico iluminado por antorchas, y prometen guardar silencio absoluto durante el desfile. Es colectivo, es unánime y es difícil de describir a quien no lo ha visto.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en un mundo donde todo el mundo habla a la vez, ver a miles de personas arrodilladas en silencio voluntario es una imagen que no se olvida fácilmente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las Capas Pardas</h3>
+          <span class="tag">Madrugada del Miércoles al Jueves Santo</span>
+          <p>Los cofrades del Amparo visten la capa tradicional de los pastores de la comarca de Aliste — lana parda, capucha decorada — y desfilan con una linterna en la mano en silencio absoluto, solo roto por esquilas rústicas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la procesión más etnográfica de toda la Semana Santa española. Conecta directamente la vida rural de la provincia zamorana con la devoción de la capital. No hay nada parecido en ninguna otra ciudad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Canto del Miserere</h3>
+          <span class="tag">Noche del Jueves Santo · Plaza de Viriato</span>
+          <p>La procesión de Jesús Yacente se detiene. Cientos de hermanos entonan el salmo a cuatro voces a la luz de los faroles. La plaza amplifica el sonido de una manera que dentro de un templo no ocurriría.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el momento más recordado por quienes visitan Zamora por primera vez. No hace falta ser creyente para que se te ponga la piel de gallina.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Reverencia de Las Tres Cruces</h3>
+          <span class="tag">Viernes Santo · Amanecer · Avenida de las Tres Cruces</span>
+          <p>Tras la madrugada más larga de la semana — más de 11.000 hermanos de La Congregación en la calle desde las 5:00 h — y el descanso con sopas de ajo, los pasos van pasando uno a uno ante la Virgen de la Soledad para hacerle una reverencia junto al crucero histórico de Las Tres Cruces.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el momento más esperado por los zamoranos. La combinación del amanecer, el agotamiento de la madrugada y la emoción del gesto hace que mucha gente que lleva años viéndolo siga llorando. Y las sopas de ajo que se toman justo antes ayudan a aguantar el frío.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con al menos seis meses de antelación. Si el centro está completo, alojarte en los alrededores y entrar en coche tiene sentido, pero deja tiempo para aparcar.</li>
+        <li><strong>Aparca bien.</strong> Deja el coche en la zona de La Marina o en los márgenes del Duero. El casco histórico se colapsa de viandantes durante las procesiones.</li>
+        <li><strong>Ropa.</strong> El invierno en Zamora es largo y la primavera tarda en llegar. Abrigo técnico, calzado muy cómodo y ropa extra para las madrugadas junto al río. No es exageración.</li>
+        <li><strong>Gradas de pago.</strong> El Ayuntamiento suele instalar gradas en la Plaza Mayor para los desfiles principales. El resto de la ciudad es de acceso libre. Las calles románicas más estrechas son las más impresionantes pero exigen llegar con tiempo.</li>
+        <li><strong>Gastronomía.</strong> La tradición manda tomar <strong>sopas de ajo</strong> en la madrugada del Viernes Santo para entrar en calor — es parte del ritual, no solo de la gastronomía. Durante toda la semana encontrarás <strong>aceitadas</strong>, el dulce anisado típico. Y el Domingo de Resurrección, el <strong>dos y pingada</strong>: huevos fritos con magras de cerdo y pan. El ciclo completo.</li>
+        <li><strong>El Merlú.</strong> La madrugada del Viernes Santo, antes de que salga La Congregación, presta atención a las parejas de cofrades que recorren las calles a toque de corneta sorda y tambor destemplado convocando a los hermanos. Son el Merlú, son exclusivos de esta cofradía y son únicos en España.</li>
+        <li><strong>Respeto básico.</strong> No cruces por el medio de una fila de nazarenos. No alces la voz al paso de una cofradía de silencio. No uses el flash. Tres normas que cualquier cofrade zamorano te agradecerá.</li>
+        <li><strong>Accesibilidad.</strong> El casco histórico tiene cuestas pronunciadas y empedrado irregular, especialmente en la zona de la Catedral y Balborraz. Las avenidas principales — Santa Clara, San Torcuato, Plaza de Alemania — son llanas y accesibles para personas con movilidad reducida.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Banzo</dt>
+        <dd>El listón de madera longitudinal de la plataforma sobre el que descansan las imágenes. En Zamora la carga es exterior: los cargadores apoyan el hombro bajo estos listones exteriores para portar el paso, a diferencia del sistema andaluz donde se carga desde el interior.</dd>
+
+        <dt>Cargador</dt>
+        <dd>Así se llama en Zamora a quien porta el paso a hombros. El término "costalero", habitual en Andalucía, no se usa aquí. Mismo esfuerzo físico, distinta tradición y distinta palabra.</dd>
+
+        <dt>Merlú</dt>
+        <dd>Parejas de congregantes — tradicionalmente seis — pertenecientes a la Cofradía de Jesús Nazareno, Vulgo Congregación. La madrugada del Viernes Santo recorren las calles de Zamora a toque de corneta sorda y tambor destemplado convocando a los hermanos antes de la salida de la procesión. Su sonido a esas horas, en las calles vacías de la ciudad, es inconfundible.</dd>
+
+        <dt>Capa Parda</dt>
+        <dd>La capa tradicional de los pastores de la comarca de Aliste, gruesa, de color marrón tierra y con capucha decorada. Es la seña de identidad de la Hermandad del Amparo y una de las imágenes más reconocibles de la Semana Santa zamorana.</dd>
+
+        <dt>Esquila</dt>
+        <dd>Pequeña campana o cencerro que algunas hermandades utilizan para marcar el paso de la procesión y pedir silencio. En las Capas Pardas es el único sonido durante todo el desfile.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-zamora-1.jpg" alt="Cofrades de las Capas Pardas con linterna en las calles románicas de Zamora durante la madrugada del Miércoles Santo" />
+        <img src="images/semana-santa-zamora-2.jpg" alt="Canto del Miserere de la Hermandad de Jesús Yacente en la Plaza de Viriato de Zamora durante el Jueves Santo" />
+        <img src="images/semana-santa-zamora-3.jpg" alt="El Traslado del Nazareno cruzando el Puente de Piedra sobre el río Duero en el Jueves de Pasión de Zamora" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantadezamora.com" target="_blank" rel="noopener">Junta Pro Semana Santa de Zamora — Programa oficial</a></li>
+        <li><a href="https://turismoenzamora.es" target="_blank" rel="noopener">Turismo de Zamora</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-03-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Zamora en 2027?</dt>
+        <dd>Del jueves 18 de marzo (Jueves de Pasión) al domingo 28 de marzo (Domingo de Resurrección). En 2027 la Pascua cae especialmente pronto: el Viernes de Dolores coincide con San José, el 19 de marzo.</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>El casco histórico tiene cuestas pronunciadas y empedrado irregular, especialmente en la zona de la Catedral y Balborraz. Las avenidas principales — Santa Clara, San Torcuato, Plaza de Alemania — son llanas y accesibles. Llegar con antelación a las procesiones más concurridas permite elegir un buen punto sin necesidad de moverse.</dd>
+
+        <dt>¿Qué significa "Vulgo Congregación"?</dt>
+        <dd>Es el nombre popular de la Cofradía de Jesús Nazareno. El término <em>vulgo</em> hace referencia a que así la llamaba el pueblo desde sus orígenes, por la multitud de hermanos que congregaba. Es la cofradía más grande de Zamora, con más de 11.000 hermanos.</dd>
+
+        <dt>¿Se ven nazarenos descalzos?</dt>
+        <dd>Sí. En muchas hermandades de penitencia, especialmente en las nocturnas, es habitual ver cofrades descalzos sobre el asfalto helado o arrastrando cruces en cumplimiento de promesas personales.</dd>
+
+        <dt>¿Qué es el Merlú?</dt>
+        <dd>Parejas de congregantes — tradicionalmente seis — de la Cofradía de Jesús Nazareno que recorren las calles la madrugada del Viernes Santo convocando a los hermanos antes de la salida. Un corneta y un tamborilero por pareja, con ese sonido ronco y destemplado a las cuatro de la mañana que es ya seña de identidad de la ciudad.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>Las procesiones pueden suspenderse o modificarse si llueve con intensidad. Sigue los canales oficiales de la Junta Pro Semana Santa de Zamora para información en tiempo real.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
