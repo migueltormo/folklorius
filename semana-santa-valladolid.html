@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Valladolid 2027: Imaginería, Silencio y Fe</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Valladolid 2027 (Interés Turístico Internacional). Las 20 cofradías, la Procesión General, el Sermón de las Siete Palabras y su gastronomía." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-valladolid.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Valladolid: El museo de la Pasión en la calle" />
+  <meta property="og:description" content="Descubre el apogeo de la talla barroca castellana, los majestuosos pasos a hombros o ruedas, y el silencio devoto de la Cuaresma pucelana en 2027." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-valladolid.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-valladolid.html",
+    "name": "Semana Santa de Valladolid",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Valladolid",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valladolid",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.6523,
+        "longitude": -4.7245
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-valladolid.jpg"],
+    "description": "La Semana Santa de Valladolid: 20 cofradías, 33 pasos en la Procesión General, el Sermón de las Siete Palabras en la Plaza Mayor y el mayor patrimonio escultórico procesional de España. Declarada de Interés Turístico Internacional desde 1980.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Cofradías de Semana Santa de Valladolid",
+      "url": "https://jcssva.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Valladolid
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-valladolid.jpg" alt="Procesión General de la Sagrada Pasión del Redentor por el centro histórico de Valladolid durante el Viernes Santo, con los grandes pasos barrocos iluminados por hachones" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Valladolid</h1>
+      <p class="ficha-subtitle">
+        Valladolid · Castilla y León · "Un museo de madera policromada bajo el cielo de Castilla."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 1980</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Devoción estética y religiosa:</strong> Valladolid posee el patrimonio escultórico procesional más importante de España. La contemplación de las tallas exige respeto absoluto; el silencio no es solo religioso, es también admiración artística ante obras de los siglos XVI y XVII.</li>
+          <li><strong>Calles históricas:</strong> Muchas procesiones transcurren por calles muy estrechas del casco antiguo —Platerías, Macías Picavea—. No invadas la calzada: el espacio para que maniobren los grandes conjuntos escultóricos es milimétrico.</li>
+          <li><strong>Temperaturas de contraste:</strong> El sol de marzo puede calentar al mediodía, pero las procesiones de madrugada requieren abrigo pesado de invierno. Vístete en capas.</li>
+          <li><strong>Fotografía responsable:</strong> Muchas de las tallas que procesionan son obras maestras de Juan de Juni y Gregorio Fernández con cuatro siglos de antigüedad. Evita el flash y mantén siempre una distancia prudencial.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En Valladolid, la Semana Santa se lee a través de las gubias de <strong>Juan de Juni</strong> y <strong>Gregorio Fernández</strong>. Las calles huelen a cera derretida y almendras garrapiñadas. Cuando cae la noche y los faroles iluminan los rostros hiperrealistas de los Cristos yacentes y las Dolorosas, la ciudad entera contiene el aliento.
+      </p>
+      <p>
+        Aquí no se aplaude a las imágenes: se las acompaña con una mirada introspectiva. El sonido rítmico de los tambores velados y el roce de las ruedas y horquillas contra el pavimento componen la sinfonía de una fe elegante, sobria y profundamente castellana. Valladolid no es una Semana Santa que se vea: es una que se contempla.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa pucelana es un despliegue de orden y majestuosidad. Su rasgo más distintivo es la excepcionalidad de sus <strong>Pasos</strong>: conjuntos escultóricos de tamaño natural —algunos con hasta media docena de figuras— que son auténticas obras maestras de los siglos XVI y XVII. Aunque la tendencia histórica fue empujarlos sobre grandes plataformas rodantes, en los últimos años muchas cofradías han recuperado la antigua tradición de portarlos <strong>a planta</strong> —a hombros—, lo que añade un dramatismo inmenso a los desfiles.
+      </p>
+      <p>
+        El momento cumbre es el <strong>Viernes Santo</strong>, una jornada sin parangón en España: por la mañana, el pregonero a caballo anuncia el <strong>Sermón de las Siete Palabras</strong> en la Plaza Mayor, y por la tarde se celebra la apoteósica <strong>Procesión General de la Sagrada Pasión del Redentor</strong>, donde desfilan consecutivamente <strong>33 pasos</strong> acompañados por las 20 cofradías vallisoletanas. Un museo en movimiento.
+      </p>
+      <p>
+        Valladolid cuenta con <strong>20 cofradías y hermandades históricas</strong>, seis de ellas fundadas antes del siglo XVII. Consulta el programa oficial de la Junta de Cofradías de Semana Santa para los itinerarios exactos de 2027.
+      </p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Los orígenes se remontan al siglo XV, con las <strong>Cofradías Históricas</strong> —Vera Cruz, Angustias, Piedad, Sagrada Pasión y Nuestro Padre Jesús Nazareno— nacidas bajo el amparo de los conventos franciscanos y dominicos. Sin embargo, la Semana Santa actual es heredera directa de la monumental reforma impulsada a principios del siglo XX por el arzobispo Gandásegui, quien rescató del olvido en museos e iglesias las grandes tallas barrocas para devolverlas a su verdadero fin: la catequesis en la calle.
+      </p>
+      <p>
+        Para la ciudad, estos días son su carta de presentación al mundo. Es el momento donde el orgullo civil, la devoción religiosa y la protección del patrimonio se funden en un solo sentimiento que paraliza por completo la rutina vallisoletana. La declaración como <strong>Fiesta de Interés Turístico Internacional en 1980</strong> —la primera de Castilla y León en conseguirlo— reconoció una celebración que lleva siglos siendo la columna vertebral de la identidad pucelana.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Valladolid en 2027 se celebra del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). El día de mayor espectacularidad es el <strong>Viernes Santo 26 de marzo</strong>, con el Sermón de las Siete Palabras a mediodía y la Procesión General por la tarde. Las fechas cambian cada año según el calendario litúrgico — consulta el programa oficial de la Junta de Cofradías para horarios e itinerarios exactos.
+      </p>
+      <p>
+        Ante riesgo de lluvia, las cofradías pueden suspender o modificar las salidas para proteger el patrimonio escultórico. Sigue los canales oficiales de la Junta para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          La semana arranca con la <strong>Procesión de Perdón y Esperanza</strong> desde San Pedro Apóstol y el solemne <strong>Viacrucis de la Exaltación</strong> por el barrio de Las Delicias. El primer compás de una semana monumental.
+        </li>
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          El <strong>Ejercicio Público de las Cinco Llagas</strong> recorre el centro conventual portando el Santo Cristo de las Cinco Llagas. Por la tarde, la <strong>Cofradía de los Artilleros</strong> desfila con el Cristo de la Misión a hombros, con profundo protocolo y sabor militar.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          Mañana luminosa con la <strong>Procesión de las Palmas</strong> —la Borriquilla— y la <strong>Procesión de Amor y Misericordia</strong> de la Cofradía del Discípulo Amado, que porta a Jesús de Medinaceli. Por la tarde, recogimiento con el <strong>Cristo de los Trabajos</strong> y el <strong>Camino del Prendimiento</strong>.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La <strong>Procesión del Santísimo Rosario del Dolor</strong> reúne a seis cofradías rezando los misterios en la calle, en una de las expresiones de hermandad cofrade más características de Valladolid.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <strong>Procesión del Encuentro</strong> frente al histórico Palacio de Santa Cruz, donde se cruzan la Virgen de las Angustias y el Cristo a Cuestas en uno de los momentos más emotivos de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Jornada de Viacrucis y de la solemne <strong>Procesión de Perdón y Esperanza</strong>. A medianoche, la imponente <strong>Procesión de la Piedad</strong>, que lleva a la calle uno de los grandes conjuntos escultóricos de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Día intenso y variado. La <strong>Procesión del Santísimo Cristo de la Luz</strong> ante la fachada de la Universidad, con el Coro entonando el Gaudeamus Igitur. La <strong>Procesión de la Amargura</strong>. Y a las <strong>23:30 h</strong>, la legendaria <strong>Procesión de Regla de la Santa Vera Cruz</strong> desde Platerías: cinco pasos históricos desfilando en oscuridad absoluta hasta la Catedral, la esencia pura de la cofradía decana de Valladolid.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El día monumental. A las <strong>8:30 h</strong>, el Pregón a caballo. A las <strong>12:00 h</strong>, el <strong>Sermón de las Siete Palabras</strong> en la Plaza Mayor. A las <strong>19:30 h</strong>, la <strong>Procesión General de la Sagrada Pasión del Redentor</strong>: 33 pasos y las 20 cofradías recreando la historia completa de la Pasión de Cristo.
+        </li>
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          El <strong>Santo Entierro de Cristo</strong> y la emotiva <strong>Procesión de la Soledad</strong>, donde las mujeres vallisoletanas acompañan a la Virgen en su luto con una sobriedad especialmente conmovedora.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          La semana cierra con la <strong>Procesión del Encuentro</strong> de Jesús Resucitado con la Virgen de la Alegría en la Plaza Mayor. El fin del silencio y el inicio de la Pascua.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Valladolid está organizada por <strong>20 cofradías y hermandades</strong> integradas en la Junta de Cofradías. Pasa el cursor sobre cada nombre para ver su título oficial completo y año de fundación.
+      </p>
+      <p class="nota-grid">Las 20 cofradías participan conjuntamente en la Procesión General del Viernes Santo. Aquí se listan en los días de sus procesiones o actos principales propios.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Exaltación de la Cruz</span>
+              <span class="tooltip-texto">Cofradía de la Exaltación de la Santa Cruz y Nuestra Señora de los Dolores (Fundada en 1944).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Sagrada Pasión</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Sagrada Pasión de Cristo (Fundada en 1531) — una de las cinco Cofradías Históricas de Valladolid.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Artilleros</span>
+              <span class="tooltip-texto">Hermandad del Santo Cristo de los Artilleros (Fundada en 1944) — desfila con el Cristo de la Misión a hombros, con protocolo y sabor militar.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Santa Vera Cruz (Fundada en 1498) — cofradía decana de Valladolid, organiza la Procesión de las Palmas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Medinaceli / Discípulo Amado</span>
+              <span class="tooltip-texto">Cofradía del Discípulo Amado y Jesús de Medinaceli (Fundada en 2011) — organiza la Procesión de Amor y Misericordia portando a Jesús de Medinaceli.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Sagrada Pasión</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Sagrada Pasión de Cristo (Fundada en 1531) — organiza el Camino del Prendimiento.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Siete Palabras</span>
+              <span class="tooltip-texto">Cofradía de las Siete Palabras (Fundada en 1929) — participa con el Cristo de los Trabajos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Rosario del Dolor</span>
+              <span class="tooltip-texto">Procesión conjunta organizada por Vera Cruz, Piedad, Angustias, Santo Sepulcro y otras cofradías — expresión máxima de la hermandad cofrade vallisoletana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Las Angustias</span>
+              <span class="tooltip-texto">Ilustre Cofradía Penitencial de Nuestra Señora de las Angustias (Fundada en 1536) — una de las cinco Cofradías Históricas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno</span>
+              <span class="tooltip-texto">Insigne Cofradía Penitencial de Nuestro Padre Jesús Nazareno (Fundada en 1596) — una de las cinco Cofradías Históricas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Piedad</span>
+              <span class="tooltip-texto">Muy Ilustre Cofradía Penitencial de Nuestra Señora de la Piedad (Fundada en 1504) — una de las cinco Cofradías Históricas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Hermandad Penitencial de Nuestro Padre Jesús Atado a la Columna (Fundada en 1930).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Angustias</span>
+              <span class="tooltip-texto">Ilustre Cofradía Penitencial de Nuestra Señora de las Angustias (Fundada en 1536).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Sagrada Cena</span>
+              <span class="tooltip-texto">Cofradía Penitencial y Sacramental de la Sagrada Cena (Fundada en 1940).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Oración del Huerto</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Oración del Huerto y San Pascual Bailón (Fundada en 1939).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de la Luz</span>
+              <span class="tooltip-texto">Hermandad Universitaria del Santísimo Cristo de la Luz (Fundada en 1941) — homenaje del Coro de la Universidad ante la fachada renacentista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Preciosísima Sangre</span>
+              <span class="tooltip-texto">Real y Venerable Cofradía de la Preciosísima Sangre de Nuestro Señor Jesucristo (Fundada en 1929).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Descendimiento</span>
+              <span class="tooltip-texto">Cofradía El Descendimiento y Santo Cristo de la Buena Muerte (Fundada en 1939).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo Despojado</span>
+              <span class="tooltip-texto">Cofradía Penitencial del Santísimo Cristo Despojado, Cristo Camino del Calvario y Ntra. Sra. de la Amargura (Fundada en 1943).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Amargura</span>
+              <span class="tooltip-texto">Cofradía Penitencial del Santísimo Cristo Despojado, Cristo Camino del Calvario y Ntra. Sra. de la Amargura — procesión de La Amargura.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz (Regla)</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Santa Vera Cruz (Fundada en 1498) — organiza a las 23:30 h la Procesión de Regla, la más antigua e histórica de la Semana Santa vallisoletana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Siete Palabras</span>
+              <span class="tooltip-texto">Cofradía de las Siete Palabras (Fundada en 1929) — organiza el Sermón de las Siete Palabras en la Plaza Mayor.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Orden Franciscana</span>
+              <span class="tooltip-texto">Cofradía de la Orden Franciscana Seglar V.O.T. - La Santa Cruz Desnuda (S. XV) — participa en la Procesión General con La Cruz Desnuda.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las 20 cofradías</span>
+              <span class="tooltip-texto">Todas las cofradías de Valladolid desfilan conjuntamente en la Procesión General de la Sagrada Pasión del Redentor (19:30 h) con los 33 pasos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santo Entierro</span>
+              <span class="tooltip-texto">Cofradía del Santo Entierro (Fundada en 1930).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Angustias</span>
+              <span class="tooltip-texto">Ilustre Cofradía Penitencial de Nuestra Señora de las Angustias (Fundada en 1536) — organiza la Procesión de La Soledad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Resucitado</span>
+              <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús Resucitado, María Santísima de la Alegría y Las Lágrimas de San Pedro (Fundada en 1959).</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Cofradía del Santo Sepulcro y Santísimo Cristo del Consuelo (Fundada en 1945).</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://jcssva.org" target="_blank" rel="noopener">Junta de Cofradías de Semana Santa de Valladolid</a> — última verificación: 2027-03-01</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El sonido de Valladolid es clásico, pausado y sobrio. Las bandas de cornetas y tambores marcan el paso fúnebre, pero el verdadero protagonista acústico es el <strong>roce de las grandes carrozas sobre el asfalto</strong> y el impacto seco de las <strong>horquillas</strong> de los cargadores cuando descansan las andas en el suelo. En una ciudad acostumbrada al silencio devoto, esos sonidos mecánicos y orgánicos se convierten en la música más auténtica de la semana.
+        </p>
+        <p>
+          El momento acústico y visual más irrepetible es la mañana del Viernes Santo: un <strong>pregonero a caballo</strong> recorre la ciudad leyendo el pergamino a toque de clarín y timbales, transportando al espectador visual y sonoramente al Siglo de Oro español. Es el único lugar de España donde este rito se conserva con esta grandeza.
+        </p>
+        <ul>
+          <li>Para escuchar la acústica de los grandes pasos a planta, sitúate en una calle estrecha del casco antiguo —Platerías o Macías Picavea— durante la Procesión General. El sonido de decenas de cofrades cargando a hombros en silencio es completamente diferente al de las carrozas rodantes.</li>
+          <li>Para la Procesión de Regla de la Vera Cruz a medianoche, el silencio es total. Guarda el teléfono y escucha: solo tambores velados y el roce de las ruedas sobre el empedrado de Platerías.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Sermón de las Siete Palabras</h3>
+          <span class="tag">Viernes Santo · 12:00 h · Plaza Mayor</span>
+          <p>La plaza se engalana con telones negros mientras un predicador reflexiona sobre las últimas palabras de Cristo, flanqueado por las cofradías a caballo y los pasos correspondientes. Puro teatro barroco sagrado que solo Valladolid conserva con esta grandeza.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es un acto de escenografía barroca único en España: una tradición litúrgica espectacular que ninguna otra ciudad conserva con este nivel de grandeza. La Plaza Mayor, los telones negros, las cofradías a caballo y el predicador crean una estampa que parece sacada directamente del siglo XVII. Llega con antelación para conseguir sitio en la plaza.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión General</h3>
+          <span class="tag">Viernes Santo · 19:30 h · Centro histórico</span>
+          <p>33 pasos escoltados por las 20 cofradías recrean la Pasión completa de Cristo en un desfile que dura horas y que concentra el mayor número de obras maestras del barroco castellano visibles en un solo acto en cualquier lugar del mundo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>No hay otro lugar en el mundo donde puedas ver seguidas tantas obras maestras de Juan de Juni y Gregorio Fernández. Si tienes que elegir solo un acto de toda la Semana Santa vallisoletana, este es. Las gradas de la Plaza Mayor tienen coste pero merecen la pena para ver el conjunto completo con comodidad. Reserva con mucha antelación.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Cristo de la Luz ante la Universidad</h3>
+          <span class="tag">Jueves Santo · Fachada de la Universidad</span>
+          <p>El impresionante Cristo de la Luz —obra de Gregorio Fernández— recibe el homenaje del Coro de la Universidad entonando el Gaudeamus Igitur y otros cánticos a la luz de las antorchas, con la portada renacentista de fondo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La mezcla de devoción estudiantil, luz de antorchas y el marco arquitectónico de la Universidad crea una atmósfera de una belleza abrumadora y completamente única. Es uno de esos momentos que no aparecen en las guías turísticas convencionales pero que los vallisoletanos consideran irrepetible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Procesión de Regla de la Vera Cruz</h3>
+          <span class="tag">Jueves Santo · 23:30 h · Desde Platerías</span>
+          <p>La cofradía decana de Valladolid saca a la calle cinco pasos históricos de valor incalculable —entre ellos La Oración del Huerto y El Descendimiento— en un cortejo nocturno que avanza en oscuridad y silencio absolutos hasta la Catedral para hacer Estación de Penitencia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la esencia pura de la Semana Santa vallisoletana: las obras maestras del barroco desfilando de madrugada en silencio, sin artificios ni escenografía, solo la fe de la cofradía más antigua de la ciudad. Si quieres entender por qué Valladolid es la capital de la imaginería procesional española, la Procesión de Regla es la respuesta.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con casi un año de antelación. Las zonas de la Plaza Mayor, Poniente y San Miguel son inmejorables. El entorno de la Estación del Norte (AVE) también es muy práctico para llegar en tren.</li>
+        <li><strong>Gradas de la Plaza Mayor.</strong> Para ver cómodamente la Procesión General y el Sermón, existen gradas de pago gestionadas por la Junta de Cofradías. Reserva con mucha antelación — se agotan rápido.</li>
+        <li><strong>Ropa y clima.</strong> El contraste térmico es brutal en marzo: sol radiante al mediodía y heladas de madrugada. Vestir en capas es obligatorio.</li>
+        <li><strong>Rincones para ver las procesiones.</strong> Fuera de las gradas, los mejores sitios son la Plaza del Salvador, Platerías y la calle Macías Picavea para ver las maniobras de los grandes pasos en espacios estrechos.</li>
+        <li><strong>Movilidad accesible.</strong> La Plaza Mayor dispone de zonas habilitadas. Las amplias calles de Santiago o Duque de la Victoria son excelentes para personas con silla de ruedas.</li>
+        <li><strong>El Museo Nacional de Escultura.</strong> Si llegas fuera de temporada o quieres ver las tallas con calma, el Museo Nacional de Escultura de Valladolid expone habitualmente muchas de las obras maestras que procesionan en Semana Santa. Una visita imprescindible en cualquier época del año.</li>
+        <li><strong>Gastronomía cuaresmal.</strong> Imprescindible el <strong>Potaje de Vigilia</strong> —garbanzos, espinacas y bacalao— en las tabernas históricas del centro, y las clásicas sopas de ajo.</li>
+        <li><strong>El tesoro dulce.</strong> Haz cola en las pastelerías del centro para las <strong>torrijas de leche y miel</strong> —el icono dulce de la ciudad— o los clásicos pestiños.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>A planta</dt>
+        <dd>El modo tradicional de cargar los pasos a hombros, sin ayuda de ruedas ni plataformas. En Valladolid, dado el inmenso tamaño y peso de los conjuntos escultóricos barrocos, muchas cofradías pasaron históricamente a las carrozas rodantes. En las últimas décadas se ha producido un importante regreso a la tradición de portarlos a planta, añadiendo un dramatismo extra a los desfiles.</dd>
+
+        <dt>Hachón / Blandón</dt>
+        <dd>Candelero de gran tamaño o cirio de cera muy gruesa que portan los penitentes o que va situado en las esquinas de los pasos. La luz mortecina de los hachones sobre los rostros hiperrealistas de las tallas barrocas crea la atmósfera más característica de la Semana Santa vallisoletana.</dd>
+
+        <dt>Horquilla</dt>
+        <dd>Bastón largo rematado en forma de "U" o "Y" metálica que utilizan los cargadores para apoyar los varales del paso y darle descanso durante la marcha. El golpe seco de las horquillas contra el pavimento al detener un paso es uno de los sonidos más característicos de la semana.</dd>
+
+        <dt>Cofradías Históricas</dt>
+        <dd>Denominación de respeto para las cinco corporaciones vallisoletanas más antiguas, fundadas entre los siglos XV y XVI: Vera Cruz (1498), Angustias (1536), Piedad (1504), Sagrada Pasión (1531) y Jesús Nazareno (1596). Son el núcleo identitario de la Semana Santa pucelana.</dd>
+
+        <dt>El Reventón</dt>
+        <dd>Leyenda local muy famosa referida al antiguo paso de El Descendimiento que, según la intrahistoria popular, aplastó o "reventó" a una persona debido al inmenso peso llevado a hombros en su entrada histórica. Es parte del imaginario colectivo pucelano sobre el peso y la exigencia de portar a planta los grandes pasos barrocos.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-valladolid-1.jpg" alt="Procesión General de la Sagrada Pasión del Redentor por el centro histórico de Valladolid durante el Viernes Santo" />
+        <img src="images/semana-santa-valladolid-2.jpg" alt="El Sermón de las Siete Palabras en la Plaza Mayor de Valladolid con los telones negros y las cofradías a caballo" />
+        <img src="images/semana-santa-valladolid-3.jpg" alt="Procesión de Regla de la Santa Vera Cruz de noche por las calles de Platerías en Valladolid" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://jcssva.org" target="_blank" rel="noopener">Junta de Cofradías de Semana Santa de Valladolid</a></li>
+        <li><a href="https://info.valladolid.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Valladolid</a></li>
+        <li><a href="https://cultura.gob.es/mnescultura" target="_blank" rel="noopener">Museo Nacional de Escultura de Valladolid</a></li>
+        <li><a href="https://turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-03-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 al 28 de marzo. El día de mayor espectacularidad es el Viernes Santo 26 de marzo, con el Sermón de las Siete Palabras a mediodía y la Procesión General por la tarde.</dd>
+
+        <dt>¿Es cierto que todas las procesiones van sobre ruedas?</dt>
+        <dd>Es un mito parcial. Históricamente, el inmenso tamaño y peso de las tallas barrocas hizo que la gran mayoría se montaran en carrozas con ruedas. Sin embargo, en las últimas décadas ha habido un importante resurgir por parte de muchas cofradías que han recuperado la tradición de portar los pasos a planta —a hombros— con resultados emocionantes.</dd>
+
+        <dt>¿Puedo ver las tallas si no hay procesión?</dt>
+        <dd>Sí. El Museo Nacional de Escultura de Valladolid expone habitualmente muchas de las obras maestras que procesionan en Semana Santa. Es una de las grandes ventajas de Valladolid: el patrimonio está accesible todo el año.</dd>
+
+        <dt>¿Qué es el Pregón de las Siete Palabras?</dt>
+        <dd>Un acto único en España. La mañana del Viernes Santo, un jinete con vestimenta de época recorre las plazas de la ciudad a lomos de un caballo anunciando la celebración del Sermón, a toque de trompeta, entregando el pergamino a las autoridades. Un rito que transporta directamente al Siglo de Oro.</dd>
+
+        <dt>¿Merece la pena pagar las gradas de la Plaza Mayor?</dt>
+        <dd>Para la Procesión General y el Sermón de las Siete Palabras, sí. El volumen del desfile es tal que desde las gradas se tiene una perspectiva completa imposible de conseguir en la acera. Reserva con mucha antelación a través de la Junta de Cofradías.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, especialmente los primeros días. La Procesión de las Palmas del Domingo de Ramos es perfecta para los más pequeños. Las procesiones de madrugada del Jueves y Viernes Santo no son recomendables para niños muy pequeños por las horas y el frío de marzo.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
