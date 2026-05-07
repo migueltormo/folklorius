@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Medina del Campo 2027: Guía Completa, Cofradías y Procesiones</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Medina del Campo 2027 (19 al 28 de marzo). Las 9 cofradías, el bastón de mando a la Virgen, el Nazareno de papelón y todo lo que necesitas saber para vivirla." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-medina-del-campo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Medina del Campo 2027 | Silencio castellano bajo cera y piedra antigua" />
+  <meta property="og:description" content="Medina del Campo en Semana Santa: 9 cofradías, el bastón de mando a la Virgen, el Nazareno de papelón y procesiones penitenciales con siglos de historia." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-medina-del-campo.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-medina-del-campo.html",
+    "name": "Semana Santa de Medina del Campo",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Medina del Campo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medina del Campo",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3103,
+        "longitude": -4.9144
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Semana Santa de Medina del Campo",
+      "url": "https://www.semanasantamedina.es/"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-medina-del-campo.jpg"],
+    "description": "La Semana Santa de Medina del Campo: 9 cofradías, procesiones penitenciales con raíces en 1411, el bastón de mando cedido a la Virgen de las Angustias y el singular Nazareno de papelón. Fiesta de Interés Turístico Internacional.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Medina del Campo
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-medina-del-campo.jpg" alt="Procesión nocturna en la Semana Santa de Medina del Campo con el Castillo de la Mota al fondo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Medina del Campo</h1>
+      <p class="ficha-subtitle">
+        Medina del Campo · Castilla y León · "Silencio castellano bajo cera y piedra antigua."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Villa Cofrade</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Respeta el silencio y la oración.</strong> Varias procesiones incluyen promesa de silencio. No es una sugerencia: es parte del rito. Guárdalo especialmente en los tramos de mayor recogimiento y en el entorno de templos.</li>
+          <li><strong>No toques el patrimonio.</strong> No toques pasos, cruces, hábitos ni elementos procesionales. No te apoyes en fachadas ni elementos arquitectónicos durante los recorridos.</li>
+          <li><strong>El frío de la meseta.</strong> Las noches de marzo y principios de abril en Medina del Campo son frías y húmedas. Abrigo por capas y calzado cómodo son imprescindibles, especialmente para los actos nocturnos.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En Medina del Campo la Semana Santa no llega con estruendo: se desliza. Avanza con el golpe medido del tambor, con la cera dibujando reflejos sobre la piedra, con la respiración contenida de una plaza que espera. Huele a templo abierto, a incienso y a madera antigua. Suena a banda que se acerca desde una calle estrecha y a silencio colectivo cuando una imagen gira una esquina.
+      </p>
+      <p>
+        Aquí la procesión se vive como memoria compartida. La villa entera se convierte durante unos días en un itinerario de devoción, arte y herencia castellana que sostienen nueve cofradías con siglos de historia a sus espaldas.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Medina del Campo es una celebración de raíz penitencial con un patrimonio escultórico muy notable — obras atribuidas a Francisco del Rincón, Domingo Beltrán o Juan Picardo — articulada en torno a cultos, traslados, rosarios, vía crucis y grandes procesiones. La propia Junta la presenta como una de las tradiciones penitenciales más antiguas de España.
+      </p>
+      <p>
+        A lo largo de los días santos, la villa encadena actos de naturaleza muy distinta: salidas populares, cortejos de silencio, procesiones de meditación y recorridos penitenciales a hombros. La experiencia no consiste solo en ver imágenes, sino en entrar en el ritmo local: la espera en la calle, el redoble que avisa, la entrada de un paso en su templo.
+      </p>
+      <p>
+        Medina del Campo cuenta con <strong>9 cofradías y hermandades</strong>. Consulta el programa oficial de la Junta de Semana Santa para horarios y recorridos exactos de cada edición.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta de Semana Santa de Medina del Campo en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La tradición local sitúa en <strong>1411</strong> un momento fundacional decisivo: la presencia de San Vicente Ferrer en la villa y el impulso que dio a las primeras procesiones de disciplina. Esa memoria histórica ha quedado incorporada al relato identitario de Medina del Campo, que hoy se reconoce a sí misma como <em>Villa Cofrade</em>.
+      </p>
+      <p>
+        Con el tiempo, la Semana Santa medinense consolidó una red de cofradías penitenciales y un conjunto escultórico procesional de gran valor. Dos datos que lo resumen: las obras de sus pasos incluyen piezas atribuidas a Francisco del Rincón, Domingo Beltrán y Juan Picardo, y entre su patrimonio se conserva el <strong>Nazareno de papelón</strong>, una imagen procesional de papel maché que sigue saliendo a la calle, algo extraordinariamente raro en el patrimonio procesional español.
+      </p>
+      <p>
+        Hoy la celebración mantiene su sentido religioso y comunitario, y también funciona como eje cultural y patrimonial de la villa. El Centro Cultural San Vicente Ferrer y la apertura coordinada de templos durante la semana refuerzan esa dimensión de conservación y divulgación sin que la fiesta pierda su tono austero y su fuerte raíz local.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Medina del Campo en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor densidad de actos son el <strong>Jueves Santo, 25 de marzo</strong>, el <strong>Viernes Santo, 26 de marzo</strong> y el <strong>Viernes de Dolores, 19 de marzo</strong>, con la salida de la patrona.
+      </p>
+      <p>
+        Si llueve, el protocolo de suspensión o modificación de procesiones lo decide la Junta y las cofradías. Sigue sus canales oficiales para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          La <strong>Procesión de Nuestra Señora de las Angustias</strong> parte de la Colegiata de San Antolín al finalizar la eucaristía, no antes de las 21:15 h, y recorre la Plaza Mayor, Maldonado, Lope de Vega y Padilla antes de regresar al templo. La llegada culmina con la Salve popular. Es la salida de la patrona y alcaldesa perpetua de Medina del Campo — y el momento en que la alcaldesa le cede el bastón de mando municipal.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          El <strong>Traslado Procesional del Nazareno de la Cruz</strong> comienza a las 20:00 h, con concentración previa a las 19:30 h en la Ermita de San Roque. El pequeño Nazareno — conocido popularmente como el Nazareno pequeño, una rarísima imagen de papelón aún en uso — recorre la villa hasta la Ermita del Amparo con la silueta del Castillo de la Mota al fondo.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La mañana abre con la <strong>Procesión de la Borriquilla</strong>, que parte tras la eucaristía y bendición de ramos en Santiago el Real, en torno a las 11:00 h. Por la tarde-noche, al finalizar la eucaristía de las 20:00 h, sale la <strong>Peregrinación del Santísimo Cristo del Amor</strong>, un recorrido penitencial salpicado por estaciones de meditación de las Siete Palabras.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La <strong>Procesión de la Sentencia</strong> arranca aproximadamente a las 21:00 h desde el Monasterio de San José. Ese mismo ciclo incluye el primero de los <strong>Rosarios de Penitencia</strong>, con salida a las 23:00 h desde Santiago el Real: una de las expresiones más austeras de toda la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Segundo de los <strong>Rosarios de Penitencia</strong>, desde Santiago el Real a las 23:00 h con itinerario diferente al del lunes. Antes, a las 20:30 h, el <strong>Sermón y Rosario de la Soledad y Esperanza</strong> desde el convento de las Hermanitas de Ancianos Desamparados despliega sus misterios por calles y plazas del centro.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          A las 19:30 h, la <strong>Procesión Las Llagas de Cristo</strong> de la Cofradía del Calvario sale desde la parroquia de Santo Tomás. Ya de noche, a las 22:30 h, tiene lugar el sobrecogedor <strong>Vía Crucis Popular</strong> desde San Miguel Arcángel: miles de personas acompañan en silencio el rezo de las catorce estaciones por el centro histórico.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          A las 19:00 h, el <strong>Traslado Procesional del Cristo del Desenclavo</strong> desde la Colegiata de San Antolín. A las 20:40 h, la <strong>Procesión de Caridad</strong> desde Santiago el Real, con promesa de silencio y parada destacada ante el asilo donde se canta la Salve. Una procesión que funde penitencia y acción caritativa de una manera que pocas ciudades pueden mostrar.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El día de mayor densidad ritual de la semana, con varios actos mayores encadenados: la <strong>Procesión del Encuentro</strong>, la <strong>Procesión General del Silencio</strong>, la <strong>Función del Desenclavo</strong> y otros cortejos penitenciales compartidos entre cofradías.
+          <br><br>
+          <span class="nota-grid">⚠️ Horarios exactos del Viernes Santo: consulta el programa oficial de la Junta de Semana Santa de Medina del Campo antes de salir.</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Jornada de espera y suspensión entre el luto del Viernes y la alegría que llega. No hay procesión pública documentada. El recogimiento se traslada al interior de los templos.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          Eucaristía de campaña y <strong>Procesión de Resurrección</strong> con recorrido por la Plaza Mayor y calles del centro histórico, con cierre en la Colegiata de San Antolín donde se entona la Salve a la Virgen de la Alegría. La Virgen procesiona a hombros, lo que refuerza el carácter festivo y luminoso del final pascual. Después de días de silencio y penitencia, el contraste es total.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Medina del Campo está organizada por <strong>9 cofradías y hermandades</strong>. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta de Semana Santa de Medina del Campo.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Viernes de Dolores</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Angustias</span>
+              <span class="tooltip-texto">Archicofradía de Nuestra Señora de las Angustias. Custodia a la patrona y alcaldesa perpetua de Medina del Campo. Su procesión del Viernes de Dolores es la más multitudinaria de la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Sábado de Pasión</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Misericordia y Nazareno</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Misericordia y Jesús Nazareno. Organiza el Traslado Procesional del Nazareno de la Cruz, la singular imagen de papelón conocida como el Nazareno pequeño.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Atado a la Columna.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Real Cofradía del Santo Sepulcro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Soledad</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Madre Santísima de la Soledad y Virgen de la Alegría.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera Cruz</span>
+              <span class="tooltip-texto">Cofradía de la Oración del Huerto y la Vera Cruz.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Calvario</span>
+              <span class="tooltip-texto">Cofradía del Calvario.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Desamparo</span>
+              <span class="tooltip-texto">Cofradía de Cristo en su Mayor Desamparo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Desamparo</span>
+              <span class="tooltip-texto">Cofradía de Cristo en su Mayor Desamparo. Organiza la Procesión de la Sentencia desde el Monasterio de San José.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Atado a la Columna. Participa en el ciclo de Rosarios de Penitencia.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Soledad</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Madre Santísima de la Soledad y Virgen de la Alegría. Organiza el Sermón y Rosario de la Soledad y Esperanza.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Atado a la Columna. Segundo Rosario de Penitencia con itinerario diferente al del Lunes.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Calvario</span>
+              <span class="tooltip-texto">Cofradía del Calvario. Organiza la Procesión Las Llagas de Cristo desde la parroquia de Santo Tomás.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Descendimiento</span>
+              <span class="tooltip-texto">Cofradía del Santo Descendimiento. Participa en el Vía Crucis Popular desde San Miguel Arcángel.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Misericordia y Nazareno</span>
+              <span class="tooltip-texto">Cofradía Penitencial de la Misericordia y Jesús Nazareno. Organiza el Traslado del Cristo del Desenclavo desde la Colegiata de San Antolín.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Cofradía Penitencial de Nuestro Padre Jesús Atado a la Columna. Organiza la Procesión de Caridad con promesa de silencio y parada ante el asilo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Varias cofradías</span>
+              <span class="tooltip-texto">Jornada compartida por varias cofradías de la villa: Procesión del Encuentro, Procesión General del Silencio, Función del Desenclavo y otros cortejos penitenciales. Consulta el programa oficial para el desglose completo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Soledad y Virgen de la Alegría</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Madre Santísima de la Soledad y Virgen de la Alegría. Organiza la Procesión de Resurrección con cierre en la Colegiata de San Antolín y Salve a la Virgen de la Alegría.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://www.semanasantamedina.es/" target="_blank" rel="noopener">Junta de Semana Santa de Medina del Campo</a> — última verificación: 2026</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El paisaje sonoro de Medina del Campo combina bandas de cornetas y tambores, marchas procesionales, salves populares y largos tramos de silencio donde solo se escuchan pasos, órdenes breves y rezos. En procesiones como la de las Angustias, la Caridad o el Vía Crucis Popular, el contraste entre música y recogimiento es uno de los rasgos más intensos de la experiencia.
+        </p>
+        <p>
+          Pero tan importante como la música es la pausa entre sonidos: esa suspensión castellana en la que se escucha el paso de la comitiva, el rumor contenido del público y el eco del casco histórico devolviendo cada detalle.
+        </p>
+        <p>
+          <strong>Busca la salida o la recogida de un paso importante en su templo.</strong> En Medina del Campo, escuchar una banda detenerse ante una imagen o una Salve ante la Colegiata ayuda a entender que la emoción no está solo en lo que se ve, sino también en cómo resuena en la calle.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Nuestra Señora de las Angustias y el bastón de mando</h3>
+          <span class="tag">Viernes de Dolores · 21:15 h · Colegiata de San Antolín</span>
+          <p>La patrona y alcaldesa perpetua de Medina del Campo sale en procesión con uno de los gestos más singulares de toda la Semana Santa española: la alcaldesa le cede el bastón de mando municipal, que la Virgen luce durante todo el recorrido.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no hay nada igual en España. Un gesto que funde autoridad civil y devoción religiosa de una manera que solo Medina del Campo puede reclamar como propia. La plaza llena, la Salve final y ese detalle del bastón hacen de esta procesión un momento irrepetible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Nazareno de papelón</h3>
+          <span class="tag">Sábado de Pasión · 20:00 h · De San Roque al Amparo</span>
+          <p>El Nazareno pequeño es una imagen procesional hecha de papelón — papel maché — que sigue saliendo a la calle con siglos de historia. En el patrimonio procesional español, las imágenes de papelón en uso son extraordinariamente raras.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver una imagen de papelón procesionar con la silueta del Castillo de la Mota al fondo es una estampa que no encontrarás en ninguna otra Semana Santa. El traslado es íntimo y sin grandes multitudes, lo que lo hace todavía más especial.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Vía Crucis Popular</h3>
+          <span class="tag">Miércoles Santo · 22:30 h · Desde San Miguel Arcángel</span>
+          <p>Miles de personas acompañan en silencio el rezo de las catorce estaciones por el centro histórico de noche. Solo se escuchan las estaciones y los cantos penitenciales rebotando en la piedra antigua.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Su silencio masivo tiene un valor etnográfico extraordinario. No es teatro ni espectáculo: es una comunidad entera rezando junta en la oscuridad. Difícil de olvidar aunque no seas creyente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión de Caridad</h3>
+          <span class="tag">Jueves Santo · 20:40 h · Desde Santiago el Real</span>
+          <p>La Cofradía de Atado a la Columna lleva en procesión a su titular y al Cristo de la Agonía con promesa de silencio y parada destacada ante el asilo, donde se canta la Salve.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque funde penitencia y acción caritativa de una manera que pocas procesiones españolas pueden mostrar. La parada ante el asilo, con los mayores asomados a las ventanas, es uno de esos momentos que no se buscan en los folletos turísticos y que sin embargo quedan grabados.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con antelación si viajas para el Viernes de Dolores, Jueves Santo o Viernes Santo, que son las jornadas de mayor afluencia.</li>
+        <li><strong>Movilidad.</strong> Muévete a pie por el centro histórico siempre que puedas. Buena parte del interés está en enlazar templos, plazas y calles procesionales. Llega con margen a los puntos de salida — Colegiata, Santiago el Real, San Miguel, Santo Tomás — porque son zonas de gran concentración.</li>
+        <li><strong>Ropa.</strong> Abrigo por capas y calzado muy cómodo. Muchas procesiones se siguen andando y el frío nocturno en la meseta se nota, especialmente en los Rosarios de Penitencia que salen a las 23:00 h.</li>
+        <li><strong>Programa oficial.</strong> Consulta el programa actualizado cada año para recorridos, cambios por lluvia y ajustes horarios. La web de la Junta es la fuente más fiable.</li>
+        <li><strong>Respeto básico.</strong> No cruces entre tramos procesionales ni entre andas y acompañamiento. Guarda silencio en los actos que así lo requieren. No toques pasos ni imágenes.</li>
+        <li><strong>Gastronomía.</strong> Aprovecha para conocer los dulces de convento, el vino de la tierra y la red de templos abiertos durante la semana, que forman parte del contexto cultural real de la fiesta.</li>
+        <li><strong>Accesibilidad.</strong> La accesibilidad concreta depende de cada recorrido y del pavimento histórico. Consulta la información municipal o de la Junta sobre puntos recomendados de visibilidad para personas con movilidad reducida.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Paso</dt>
+        <dd>Conjunto escultórico o imagen procesional que sale a la calle integrada en un cortejo ritual. En Medina del Campo algunos pasos tienen siglos de antigüedad y un valor patrimonial extraordinario.</dd>
+
+        <dt>Rosario de Penitencia</dt>
+        <dd>Cortejo rezado, de tono austero, donde el rezo y el canto tienen un protagonismo central. En Medina del Campo se celebran dos, el Lunes y el Martes Santo, desde Santiago el Real con itinerarios diferentes.</dd>
+
+        <dt>Vía Crucis</dt>
+        <dd>Ejercicio devocional que recorre y medita las catorce estaciones de la Pasión. El Vía Crucis Popular del Miércoles Santo es uno de los actos de mayor participación de toda la semana.</dd>
+
+        <dt>La Dolorosa</dt>
+        <dd>Nombre tradicional con el que muchos medinenses se refieren a Nuestra Señora de las Angustias, patrona de la villa. El mismo afecto de toda la vida condensado en dos palabras.</dd>
+
+        <dt>Nazareno pequeño</dt>
+        <dd>Nombre popular del Nazareno de la Cruz, la singular imagen procesional de papelón — papel maché — que organiza la Cofradía de la Misericordia y Jesús Nazareno. Su rareza material y su antigüedad la convierten en una pieza única del patrimonio procesional español.</dd>
+
+        <dt>Villa Cofrade</dt>
+        <dd>Expresión identitaria con la que Medina del Campo resume su fuerte personalidad procesional y su larga tradición cofrade, que la propia Junta vincula a la presencia de San Vicente Ferrer en 1411.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-medina-del-campo-1.jpg" alt="Procesión de Nuestra Señora de las Angustias en la Plaza Mayor de Medina del Campo durante el Viernes de Dolores" />
+        <img src="images/semana-santa-medina-del-campo-2.jpg" alt="Traslado del Nazareno de la Cruz con el Castillo de la Mota al fondo en el Sábado de Pasión de Medina del Campo" />
+        <img src="images/semana-santa-medina-del-campo-3.jpg" alt="Vía Crucis Popular nocturno por el centro histórico de Medina del Campo durante el Miércoles Santo" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.semanasantamedina.es/" target="_blank" rel="noopener">Junta de Semana Santa de Medina del Campo — Web oficial</a></li>
+        <li><a href="https://www.semanasantamedina.es/programacion" target="_blank" rel="noopener">Programación oficial</a></li>
+        <li><a href="https://www.semanasantamedina.es/procesionesmedina" target="_blank" rel="noopener">Procesiones de Medina del Campo</a></li>
+        <li><a href="https://www.turismocastillayleon.com/es/patrimonio-cultura/semana-santa-medina-campo" target="_blank" rel="noopener">Turismo de Castilla y León — Semana Santa de Medina del Campo</a></li>
+        <li><a href="https://www.ayto-medinadelcampo.es" target="_blank" rel="noopener">Ayuntamiento de Medina del Campo</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Medina del Campo en 2027?</dt>
+        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor densidad de actos son el Viernes de Dolores, el Jueves Santo (25 de marzo) y el Viernes Santo (26 de marzo).</dd>
+
+        <dt>¿Tiene reconocimiento oficial?</dt>
+        <dd>Sí. La Semana Santa de Medina del Campo está reconocida como Fiesta de Interés Turístico Internacional.</dd>
+
+        <dt>¿Es una Semana Santa silenciosa?</dt>
+        <dd>Sí, y ese es uno de sus rasgos más definitorios. Aunque hay bandas y marchas, varias de sus procesiones se caracterizan por el recogimiento, la promesa de silencio o el rezo penitencial. Es una Semana Santa que se escucha tanto como se ve.</dd>
+
+        <dt>¿Qué es el bastón de mando?</dt>
+        <dd>Durante la procesión del Viernes de Dolores, la alcaldesa de Medina del Campo cede el bastón de mando municipal a Nuestra Señora de las Angustias, patrona y alcaldesa perpetua de la villa. Es un gesto de gran carga simbólica y completamente propio de Medina del Campo.</dd>
+
+        <dt>¿Qué es el Nazareno de papelón?</dt>
+        <dd>El Nazareno de la Cruz, conocido popularmente como el Nazareno pequeño, es una imagen procesional hecha de papelón — papel maché — que sigue saliendo a la calle en el Sábado de Pasión. Las imágenes procesionales de papelón en uso son extraordinariamente raras en el patrimonio español.</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>Depende del punto del recorrido y de la afluencia. El centro histórico y los cambios de trazado pueden condicionar la movilidad. La recomendación más segura es revisar el programa oficial y la información municipal vigente para cada edición.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El protocolo de suspensión o modificación lo decide la Junta y las cofradías. Consulta sus canales oficiales para avisos en tiempo real durante la semana.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
