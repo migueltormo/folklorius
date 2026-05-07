@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Medina de Rioseco 2027: Guía Completa, Cofradías y Procesiones</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Medina de Rioseco 2027. 16 hermandades, pasos a hombros por calles empinadas, la rodillada y el Encuentro del Miércoles Santo. Fiesta de Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-medina-de-rioseco.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Medina de Rioseco 2027 | Madera al hombro, silencio y emoción castellana" />
+  <meta property="og:description" content="Medina de Rioseco en Semana Santa: 16 hermandades, pasos a hombros por calles estrechas, la rodillada ante la Virgen y el Encuentro en la Plaza Mayor." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-medina-de-rioseco.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-medina-de-rioseco.html",
+    "name": "Semana Santa de Medina de Rioseco",
+    "startDate": "2027-03-20",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Medina de Rioseco",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medina de Rioseco",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.8832,
+        "longitude": -5.0469
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta Local de Semana Santa de Medina de Rioseco",
+      "url": "https://www.semanasantaenrioseco.com/"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-medina-de-rioseco.jpg"],
+    "description": "La Semana Santa de Medina de Rioseco: 16 hermandades, pasos a hombros por calles estrechas y empinadas, la rodillada ante la Virgen y el Encuentro del Miércoles Santo en la Plaza Mayor. Fiesta de Interés Turístico Internacional y Bien de Interés Cultural.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Medina de Rioseco
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-medina-de-rioseco.jpg" alt="Paso a hombros por las calles empinadas de Medina de Rioseco durante la Semana Santa" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Medina de Rioseco</h1>
+      <p class="ficha-subtitle">
+        Medina de Rioseco · Castilla y León · "Madera al hombro, silencio y emoción castellana."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Bien de Interés Cultural</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Respeta el espacio de los braceros.</strong> En Rioseco el esfuerzo físico de quienes portan los pasos es parte central del rito. No invadas las trayectorias de los cortejos ni obstaculices giros, arrancadas o rodilladas en calles estrechas y con pendiente.</li>
+          <li><strong>Silencio en los momentos de mayor recogimiento.</strong> Aunque hay música y momentos de vibración popular, el tono general es sobrio y emocionado. Respétalo.</li>
+          <li><strong>El clima de finales de marzo.</strong> Prepárate para el frío cambiante de la meseta, especialmente en los actos de tarde y noche.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En Medina de Rioseco la Semana Santa entra por los hombros. Se oye primero el rumor contenido de la gente, el redoble que se acerca, el crujido grave de la madera. Y luego ese aliento compartido que precede al arranque de un paso: el momento en que los braceros lo levantan y la ciudad entera, con sobriedad y emoción, parece balancearse con él.
+      </p>
+      <p>
+        Huele a cera y a piedra antigua, a humedad de iglesia abierta, a calle estrecha que espera. La imagen no avanza sobre ruedas ni escondida tras artificio alguno. Avanza al pulso del cuerpo de los cofrades. Y eso lo cambia todo.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Medina de Rioseco es una de las grandes celebraciones penitenciales de Castilla y León. Su singularidad no está solo en las imágenes o en la antigüedad de las hermandades, sino en cómo se procesiona: los pasos van a hombros, portados por los braceros por calles estrechas y empinadas. Esa mecánica es la identidad entera de la fiesta.
+      </p>
+      <p>
+        A lo largo de la semana se suceden procesiones de fuerte intensidad dramática: desde la entrada triunfal del Domingo de Ramos hasta el júbilo pascual del Domingo de Resurrección. Entre medias, la villa encadena la Clemencia, el Vía Crucis, el Encuentro, el Mandato y la gran Procesión de la Sagrada Pasión del Redentor — un relato completo de la Pasión desplegado en el espacio urbano.
+      </p>
+      <p>
+        Medina de Rioseco cuenta con <strong>16 hermandades</strong> integradas en su Junta Local de Semana Santa.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta Local de Semana Santa de Medina de Rioseco en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de la Semana Santa riosecana se remontan al siglo XVI. Esa antigüedad explica que la ciudad haya sedimentado no solo un calendario de procesiones, sino una cultura cofrade transmitida de generación en generación con una identidad muy precisa.
+      </p>
+      <p>
+        Medina de Rioseco — la ciudad de los Almirantes — ha conservado un modo muy propio de vivir la Pasión: con sobriedad, emoción y una fisicidad excepcional en el porte de los pasos. Cada maniobra en una calle empinada, cada rodillada ante la Virgen, es también un gesto identitario que los riosecanos reconocen como suyo.
+      </p>
+      <p>
+        Hoy la fiesta mantiene su dimensión religiosa, patrimonial y social como eje de la vida local. El reconocimiento como Fiesta de Interés Turístico Internacional y Bien de Interés Cultural confirma una relevancia que en Rioseco se percibe, sobre todo, en la forma en que todo el pueblo se ordena alrededor de sus procesiones.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Medina de Rioseco en 2027 va del <strong>sábado 20 de marzo</strong> (Sábado de Pasión) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor densidad de actos son el <strong>Jueves Santo, 25 de marzo</strong>, el <strong>Viernes Santo, 26 de marzo</strong> y el <strong>Miércoles Santo, 24 de marzo</strong>, con el Encuentro en la Plaza Mayor.
+      </p>
+      <p>
+        Si llueve, el protocolo de suspensión o modificación lo decide la Junta y las hermandades. Sigue sus canales oficiales para avisos en tiempo real.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          Apertura del clima de Semana Santa en la ciudad. Los actos concretos de este día varían según la edición. Consulta el programa oficial de la Junta para la programación exacta de 2027.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          Sobre el mediodía, tras la misa solemne en la iglesia de Santiago, la <strong>Procesión de las Palmas</strong> recorre la ciudad con el paso de la <em>Entrada Triunfal de Jesús en Jerusalén</em>, obra de Inocencio Cuesta de 1952. Es un inicio luminoso, de ramos y expectación, que contrasta con la densidad penitencial de los días que vienen.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          Jornada de transición dentro del ciclo procesional. Los actos concretos deben confirmarse en el programa oficial de la Junta para 2027.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Por la noche, desde la iglesia de Santiago Apóstol, sale la <strong>Procesión de la Clemencia</strong>, presidida por el <em>Santo Cristo de la Clemencia</em>, atribuido a Pedro de Bolduque hacia 1592. Es una procesión de gran desnudez expresiva: el crucificado y la noche riosecana construyen una escena de enorme intensidad.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Desde la iglesia de Santa María, por la tarde, sale el solemne <strong>Vía Crucis</strong> con el <em>Santísimo Cristo del Amparo</em>, anónimo de comienzos del siglo XVI. Ese mismo día tiene lugar la <strong>Procesión del Encuentro de Jesús Camino del Calvario con su madre</strong> en la Plaza Mayor — uno de los momentos más teatrales y conmovedores de la Semana Santa riosecana.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Tras los oficios en la iglesia de Santiago, la <strong>Procesión del Mandato</strong> — una de las grandes de la ciudad — desfila con <strong>diez pasos</strong> portados a hombros: La Oración del Huerto, La Flagelación, Jesús Atado a la Columna, Ecce Homo, Jesús Nazareno de Santiago, La Santa Verónica, Jesús Nazareno de Santa Cruz, Nuestro Señor Jesús de la Desnudez, Santo Cristo de la Pasión y La Dolorosa. Es una tarde de calle apretada, hombros tensos y emoción sostenida en cada maniobra. En el paso por el Arco de Ajújar, los pasos realizan la <strong>rodillada</strong> ante la Virgen — la genuflexión ritual que es seña de identidad de Rioseco.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          Por la tarde, tras los oficios en la iglesia de Santa María, comienza la <strong>Procesión de la Sagrada Pasión del Redentor</strong>, con <strong>siete pasos</strong>: La Crucifixión, Santo Cristo de los Afligidos, Santo Cristo de la Paz, El Descendimiento, Nuestra Señora de la Piedad, El Santo Sepulcro y La Soledad. Es el gran desfile del dolor riosecano: severo, bello y de una hondura que pocas procesiones pueden igualar.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Jornada de espera y recogimiento previo a la Pascua. Los actos concretos deben confirmarse en el programa oficial de la Junta para 2027.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          Al mediodía, en la iglesia de Santa María, da comienzo la <strong>Procesión de Cristo Resucitado y el Santo Encuentro</strong>, con los pasos de <em>Jesús Resucitado</em> y <em>Nuestra Señora Virgen de la Alegría</em>. Después de varios días de luto y gravedad, la ciudad cambia el pulso y la luz de la Pascua entra de lleno en la calle.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Medina de Rioseco está organizada por <strong>16 hermandades y cofradías</strong>. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta Local de Semana Santa de Medina de Rioseco.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Entrada Triunfal</span>
+              <span class="tooltip-texto">Hermandad vinculada al paso de la Entrada Triunfal de Jesús en Jerusalén, obra de Inocencio Cuesta (1952). Organiza la Procesión de las Palmas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo de la Clemencia</span>
+              <span class="tooltip-texto">Hermandad del Santo Cristo de la Clemencia. Organiza la procesión nocturna del Martes Santo con el crucificado atribuido a Pedro de Bolduque (h. 1592).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo del Amparo</span>
+              <span class="tooltip-texto">Hermandad vinculada al Santísimo Cristo del Amparo, anónimo de comienzos del siglo XVI. Organiza el Vía Crucis desde Santa María.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Encuentro</span>
+              <span class="tooltip-texto">Hermandades participantes en la Procesión del Encuentro de Jesús Camino del Calvario con la Virgen María en la Plaza Mayor. Consulta el programa oficial para el desglose completo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Oración del Huerto</span>
+              <span class="tooltip-texto">Hermandad de la Oración del Huerto. Primer paso del Mandato.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Flagelación</span>
+              <span class="tooltip-texto">Gremio Hermandad de Nuestro Señor de la Columna "La Flagelación".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Atado a la Columna</span>
+              <span class="tooltip-texto">Hermandad de Jesús Atado a la Columna.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Ecce Homo</span>
+              <span class="tooltip-texto">Hermandad del Ecce Homo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Nazareno de Santiago</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Padre Jesús Nazareno de Santiago y Santa Verónica.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Nazareno de Santa Cruz</span>
+              <span class="tooltip-texto">Cofradía de Jesús Nazareno de Santa Cruz.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Desnudez</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Señor Jesús de la Desnudez.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de la Pasión</span>
+              <span class="tooltip-texto">Hermandad del Santo Cristo de la Pasión.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Dolorosa</span>
+              <span class="tooltip-texto">Hermandad de Nuestra Señora de la Soledad. En Rioseco la Dolorosa es la denominación devocional de esta imagen que cierra el Mandato del Jueves Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Crucifixión</span>
+              <span class="tooltip-texto">Cofradía del Santo Cristo de la Crucifixión. Abre la Procesión de la Sagrada Pasión del Redentor.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de los Afligidos</span>
+              <span class="tooltip-texto">Hermandad del Santo Cristo de los Afligidos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de la Paz</span>
+              <span class="tooltip-texto">Hermandad de Nuestro Señor Jesús de la Paz.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Descendimiento</span>
+              <span class="tooltip-texto">Hermandad del Santo Descendimiento.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Piedad</span>
+              <span class="tooltip-texto">Hermandad de Nuestra Señora de la Piedad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Cofradía del Santo Sepulcro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Soledad</span>
+              <span class="tooltip-texto">Hermandad de Nuestra Señora de la Soledad. Cierra la Procesión de la Sagrada Pasión del Redentor.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Resucitado</span>
+              <span class="tooltip-texto">Hermandad de Jesús Resucitado. Organiza junto a la Hermandad de la Virgen de la Alegría la Procesión de Cristo Resucitado y el Santo Encuentro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Virgen de la Alegría</span>
+              <span class="tooltip-texto">Hermandad de la Virgen de la Alegría. Junto a la Hermandad de Jesús Resucitado, cierra la Semana Santa con el Santo Encuentro pascual.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.82rem; color:var(--text-muted,#666); margin-top:0.5rem;">
+        La Semana Santa de Medina de Rioseco cuenta con <strong>16 hermandades oficiales</strong>. Las hermandades de los días sin procesión documentada (Sábado de Pasión, Lunes Santo, Sábado Santo) se confirmarán en el programa oficial de la Junta para 2027. También forma parte de la Junta la <strong>Real Cofradía de la Sagrada Pasión del Redentor</strong>, que da nombre a la gran procesión del Viernes Santo.
+      </p>
+      <p class="fuente">Fuente: <a href="https://www.semanasantaenrioseco.com/" target="_blank" rel="noopener">Junta Local de Semana Santa de Medina de Rioseco</a> — última verificación: 2026</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La Semana Santa de Medina de Rioseco no se entiende sin su música de calle, pero tampoco sin el silencio que deja respirar a los pasos. Suenan tambores, cornetas y órdenes breves. Y entre un arranque y otro queda ese vacío sonoro tan castellano donde lo que impresiona no es el ruido, sino la tensión de lo que está a punto de moverse.
+        </p>
+        <p>
+          El sonido más propio de Rioseco no viene de ningún instrumento: viene del crujido grave de la madera cuando los braceros levantan el paso, de la respiración acompasada de los hombros y del murmullo contenido del público antes de un giro imposible en una calle estrecha.
+        </p>
+        <p>
+          <strong>Busca una cuesta, una salida complicada o una plaza donde el paso deba corregir su trayectoria.</strong> Ahí oirás de verdad a Rioseco: el golpe sordo de la trabajadera, la respiración de los braceros y el silencio del público antes de que arranquen.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Encuentro del Miércoles Santo</h3>
+          <span class="tag">Miércoles Santo · Tarde · Plaza Mayor</span>
+          <p>Jesús Camino del Calvario se encuentra con su madre, la Virgen María, en la Plaza Mayor. Es uno de los momentos de mayor teatralidad religiosa de toda la Semana Santa riosecana: dos imágenes, dos procesiones y una plaza entera que contiene el aliento.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque concentra emoción popular, teatralidad religiosa y una lectura visual del dolor compartido que no necesita explicación. Es el momento que más recuerdan quienes visitan Rioseco por primera vez.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Clemencia en la noche</h3>
+          <span class="tag">Martes Santo · Noche · Desde Santiago Apóstol</span>
+          <p>El Santo Cristo de la Clemencia, atribuido a Pedro de Bolduque hacia 1592, recorre las calles de noche en una procesión de gran desnudez expresiva. Solo el crucificado, la oscuridad y el silencio roto por el redoble.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque su austeridad formal es la Semana Santa riosecana en estado puro. Sin ornamento, sin artificio. Una talla del siglo XVI y la noche castellana. Difícil encontrar algo más directo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La rodillada en el Arco de Ajújar</h3>
+          <span class="tag">Jueves Santo · Procesión del Mandato · Arco de Ajújar</span>
+          <p>Durante el Mandato del Jueves Santo, los pasos realizan la rodillada ante la Virgen situada en la capilla del Arco de Ajújar: los braceros inclinan el paso en una genuflexión ritual que simboliza la reverencia de Jesús ante su Madre. Es la seña de identidad más reconocible de la Semana Santa riosecana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver cómo los braceros inclinan un paso de cientos de kilos en una calle estrecha, con precisión y emoción al mismo tiempo, es una de esas cosas que no se buscan en los folletos y que sin embargo definen por qué merece la pena venir a Rioseco.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La gran Pasión del Viernes Santo</h3>
+          <span class="tag">Viernes Santo · Tarde · Desde Santa María</span>
+          <p>La Procesión de la Sagrada Pasión del Redentor reúne siete pasos — desde la Crucifixión hasta la Soledad — en una secuencia de enorme densidad simbólica portada íntegramente a hombros.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque resume con severidad castellana el núcleo teológico y emocional de toda la semana. Siete pasos, siete escenas, un solo recorrido. La fisicidad de los braceros y la belleza dramática de las tallas juntas en la misma calle.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Puntos clave.</strong> Llega con tiempo a las salidas de Santiago y Santa María, porque concentran buena parte de los momentos decisivos de la semana.</li>
+        <li><strong>Dónde colocarse.</strong> Busca calles con pendiente y giros cerrados si quieres apreciar de verdad cómo se portan los pasos a hombros. Ahí está la esencia de Rioseco.</li>
+        <li><strong>Ropa.</strong> Abrigo para la noche y calzado estable. En Rioseco la experiencia se sigue mejor caminando, y el frío de la meseta se nota en los actos nocturnos.</li>
+        <li><strong>Respeto a los braceros.</strong> Respeta siempre el espacio de maniobra, especialmente en arrancadas, rodilladas y encuentros. Un bracero que tropieza con un espectador puede comprometer la seguridad de todo el paso.</li>
+        <li><strong>Programa oficial.</strong> Consulta la web de la Junta antes de viajar por si hay ajustes de horario o recorrido. Los horarios exactos pueden variar entre ediciones.</li>
+        <li><strong>Patrimonio.</strong> Aprovecha para visitar el casco histórico y las iglesias de Santiago y Santa María fuera de los horarios procesionales. Forman parte del sentido completo de la fiesta y merecen una visita tranquila.</li>
+        <li><strong>Accesibilidad.</strong> Las calles empinadas y estrechas del casco histórico pueden dificultar el tránsito para personas con movilidad reducida. La Plaza Mayor y las avenidas principales son los puntos más accesibles para seguir las procesiones.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Bracero</dt>
+        <dd>Cofrade que carga físicamente el paso sobre los hombros. En Rioseco el bracero es figura central de la fiesta: su esfuerzo, su coordinación y su aguante son parte del sentido ritual de cada procesión.</dd>
+
+        <dt>Rodillada</dt>
+        <dd>Genuflexión ritual que realizan los pasos cuando pasan ante la Virgen: los braceros inclinan el paso por breves instantes como acto de reverencia. En el Jueves Santo ocurre de forma muy característica en el paso por el Arco de Ajújar, ante la Virgen situada en su capilla. El gesto se repite también al final de la procesión ante la Dolorosa o la Soledad, cerrando el acto con la Salve. No es un detalle menor: simboliza la reverencia de Jesús ante su Madre y es una de las señas más reconocibles de la Semana Santa riosecana.</dd>
+
+        <dt>Baile de los pasos</dt>
+        <dd>Forma popular de referirse a las maniobras y movimientos acompasados que hacen los pasos a hombros en las calles estrechas y empinadas de Rioseco. No es baile en sentido festivo: es coordinación física entre braceros, esfuerzo visible y gesto identitario.</dd>
+
+        <dt>Mandato</dt>
+        <dd>La gran procesión del Jueves Santo, que reúne diez pasos con escenas de la Pasión portados a hombros. Es una de las procesiones más largas e intensas de la Semana Santa riosecana.</dd>
+
+        <dt>Encuentro</dt>
+        <dd>Momento procesional en el que dos imágenes se encuentran en un punto simbólico del recorrido. El Encuentro del Miércoles Santo en la Plaza Mayor — Jesús Camino del Calvario con la Virgen María — es uno de los momentos más esperados de la semana.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-medina-de-rioseco-1.jpg" alt="Paso a hombros por las calles empinadas de Medina de Rioseco durante la Procesión del Mandato del Jueves Santo" />
+        <img src="images/semana-santa-medina-de-rioseco-2.jpg" alt="El Encuentro del Miércoles Santo en la Plaza Mayor de Medina de Rioseco" />
+        <img src="images/semana-santa-medina-de-rioseco-3.jpg" alt="Rodillada de un paso ante el Arco de Ajújar durante el Jueves Santo de Medina de Rioseco" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.semanasantaenrioseco.com/" target="_blank" rel="noopener">Junta Local de Semana Santa de Medina de Rioseco — Web oficial</a></li>
+        <li><a href="https://turismo.medinaderioseco.org/semana-santa" target="_blank" rel="noopener">Turismo de Medina de Rioseco — Semana Santa</a></li>
+        <li><a href="https://www.turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Medina de Rioseco en 2027?</dt>
+        <dd>Del sábado 20 de marzo (Sábado de Pasión) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor densidad son el Miércoles Santo (24), el Jueves Santo (25) y el Viernes Santo (26 de marzo).</dd>
+
+        <dt>¿Tiene reconocimiento oficial?</dt>
+        <dd>Sí. La Semana Santa de Medina de Rioseco está declarada Fiesta de Interés Turístico Internacional y Bien de Interés Cultural.</dd>
+
+        <dt>¿Qué la hace distinta de otras Semanas Santas?</dt>
+        <dd>Su rasgo más singular es que los pasos se portan a hombros por calles estrechas y empinadas, lo que da a cada desfile una intensidad física muy característica. La rodillada ante la Virgen y el Encuentro del Miércoles Santo en la Plaza Mayor son dos de sus momentos más reconocibles.</dd>
+
+        <dt>¿Qué es la rodillada?</dt>
+        <dd>Una genuflexión ritual que realizan los pasos al pasar ante la Virgen: los braceros inclinan el paso como acto de reverencia. En el Jueves Santo ocurre de forma muy característica en el Arco de Ajújar. Es una de las señas de identidad más propias de la Semana Santa riosecana.</dd>
+
+        <dt>¿Es una Semana Santa silenciosa?</dt>
+        <dd>Sí, aunque no muda. Hay música y momentos de gran vibración popular, pero el tono general es sobrio y emocionado. Lo que más impresiona a menudo no es el sonido, sino la tensión de lo que está a punto de moverse.</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>Las calles empinadas y estrechas del casco histórico pueden dificultar el tránsito. La Plaza Mayor y las avenidas principales son los puntos más accesibles. Llegar con antelación permite elegir un buen punto de visión sin necesidad de moverse entre el público.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El protocolo de suspensión o modificación lo decide la Junta y las hermandades. Consulta sus canales oficiales para avisos en tiempo real durante la semana.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
