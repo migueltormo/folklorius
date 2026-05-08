@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Ferrol 2027: Guía Completa, Cofradías y Os Caladiños</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Ferrol 2027 (19 al 28 de marzo). Os Caladiños, el Santo Encuentro, la Procesión de la Misericordia con 1.800 cofrades y el componente militar único en España. Fiesta de Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-ferrol.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Ferrol 2027 | Sobriedad, mar y silencio en las calles ilustradas" />
+  <meta property="og:description" content="Ferrol en Semana Santa: Os Caladiños, 1.800 cofrades en la Misericordia, los cantos militares de la Armada y más de 20 procesiones organizadas por solo 5 cofradías. La Semana Santa más importante de Galicia." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-ferrol.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-ferrol.html",
+    "name": "Semana Santa de Ferrol",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Ferrol",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ferrol",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.4831,
+        "longitude": -8.2314
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta General de Cofradías y Hermandades de la Semana Santa de Ferrol",
+      "url": "https://semanasantaferrol.com/"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-ferrol.jpg"],
+    "description": "La Semana Santa de Ferrol: Os Caladiños, la Procesión de la Misericordia con 1.800 cofrades, los cantos militares de la Armada y más de 20 procesiones organizadas por 5 cofradías. La más importante de Galicia. Declarada Fiesta de Interés Turístico Internacional en 2014.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Ferrol
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-ferrol.jpg" alt="Procesión nocturna de Os Caladiños en las calles del barrio de A Magdalena de Ferrol durante el Viernes Santo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Ferrol</h1>
+      <p class="ficha-subtitle">
+        Ferrol · Galicia · "Sobriedad, mar y silencio en las calles ilustradas."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2014</span>
+        <span class="badge badge-oficial">La más importante de Galicia</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Silencio absoluto en Os Caladiños.</strong> Durante esta procesión del Viernes Santo el único sonido permitido es el roce de las cadenas y el paso de los cofrades. Cualquier ruido rompe una atmósfera que los ferrolanos protegen con orgullo.</li>
+          <li><strong>El frío atlántico.</strong> Muchas procesiones transcurren cerca del mar y en las amplias avenidas del barrio de A Magdalena. La sensación térmica nocturna en Ferrol en marzo es baja y húmeda — el viento atlántico cala diferente al frío de la meseta. Abrígate más de lo que crees necesario.</li>
+          <li><strong>Respeta los giros de los tronos.</strong> Las calles rectilíneas de A Magdalena tienen cruces con poco margen. No te adelantes a las maniobras ni ocupes los espacios que los cofrades necesitan para girar.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Ferrol vive la Pasión con una sobriedad que tiene nombre propio: la cuadrícula perfecta del barrio de A Magdalena, trazada en el siglo XVIII con escuadra y cartabón, impone su orden a cada procesión que la recorre. No hay barroquismo excesivo. Hay una solemnidad grave y cadenciosa que viene de otra parte — de los astilleros, de la Armada, de una ciudad que aprendió a organizarse militarmente y trasladó esa disciplina a la devoción.
+      </p>
+      <p>
+        Huele a salitre mezclado con cera derretida. Se siente el viento atlántico empujando los capuces. Y de noche, en las procesiones de silencio, el único sonido es el arrastre metálico de las cadenas sobre el asfalto mojado de Galicia.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Ferrol es el acontecimiento religioso y cultural más importante de Galicia. En ocho días, <strong>5 cofradías</strong> organizan <strong>más de 20 procesiones</strong> — un dato que por sí solo habla de la escala y la complejidad de la fiesta. Esas cinco hermandades movilizan a unos <strong>3.000 cofrades</strong>, conocidos popularmente como <em>capuchones</em>.
+      </p>
+      <p>
+        El estilo ferrolano mezcla la herencia franciscana y mercedaria con una presencia militar y naval que no existe en ninguna otra Semana Santa española. Los tercios de la Armada y el Ejército participan en los desfiles y rematan algunas procesiones con cantos militares que son parte constitutiva de la identidad de la fiesta.
+      </p>
+      <p>
+        La celebración recorre tres barrios históricos con personalidades muy distintas: Ferrol Vello — la cuna fundacional de 1616 —, el trazado ilustrado de A Magdalena y el barrio obrero de Esteiro. Cada uno aporta un escenario diferente a la misma semana.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta General de Cofradías y Hermandades de Ferrol en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen documentado de la Semana Santa ferrolana se remonta a <strong>1616</strong>, aunque la tradición apunta a la influencia de los franciscanos llegados en el siglo XIV y, más tarde, a la Orden Tercera y los padres Mercedarios. Fue en los siglos XVIII y XIX, con el esplendor militar y naval de Ferrol como principal base de la Armada del norte, cuando los desfiles adquirieron la majestuosidad y el orden que hoy los define.
+      </p>
+      <p>
+        A mediados del siglo XX la Semana Santa ferrolana ya era un fenómeno social masivo. Logró resistir las crisis posteriores gracias al empeño ciudadano, y en <strong>2014 fue declarada Fiesta de Interés Turístico Internacional</strong> — la única en la provincia de A Coruña y la principal de Galicia con ese reconocimiento.
+      </p>
+      <p>
+        Hoy la fiesta involucra a unos 3.000 cofrades que sostienen una infraestructura extraordinaria: más de 20 procesiones en ocho días, organizadas por solo cinco hermandades con una precisión que tiene mucho de herencia castrense y otro tanto de orgullo ferrolano.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Ferrol en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días cumbre son el <strong>Jueves Santo, 25 de marzo</strong>, con la Procesión de la Misericordia, y el <strong>Viernes Santo, 26 de marzo</strong>, con el Santo Encuentro, el Desenclavo y Os Caladiños.
+      </p>
+      <p>
+        El clima gallego en marzo es impredecible. Si llueve, consulta los canales oficiales de la Junta General para posibles modificaciones de recorrido o aplazamientos.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          La mañana abre con la bendición de palmas y la <strong>Procesión de Jesús Amigo de los Niños</strong> desde las Angustias. Le sigue la <strong>Entrada Triunfal de Jesús en Jerusalén</strong> desde la Plaza de Amboage — luminosa, familiar y festiva, el único momento de la semana donde el tono es claramente alegre.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          La ciudad entra en el tramo penitencial. Las calles perpendiculares de A Magdalena acogen las primeras salidas nocturnas. Los desfiles largos y ordenados que caracterizan las noches ferrolanas empiezan a instalarse.
+          <br><br>
+          <span class="nota-grid">⚠️ Procesiones concretas del Lunes Santo: consulta el programa oficial de la Junta General para 2027.</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          Continúa el avance de los desfiles de Pasión por el centro histórico. Las bandas de música imponen su ritmo marcial y el tono de recogimiento se intensifica jornada a jornada.
+          <span class="nota-grid">⚠️ Procesiones concretas del Martes Santo: consulta el programa oficial de la Junta General para 2027.</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          Jornada de volumen creciente. Destaca la salida de la <strong>Cofradía de la Merced</strong> y procesiones mayores como la del <strong>Cristo del Perdón y María Santísima de los Desamparados</strong> y la <strong>Procesión de la Penitencia</strong>. El centro histórico se llena de cofrades y el ambiente de los días grandes empieza a sentirse.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          La noche más multitudinaria de la semana. La <strong>Procesión del Cristo de la Misericordia y María Santísima de la Piedad</strong> reúne cerca de <strong>1.800 cofrades</strong>, varios pasos de gran porte y hasta nueve bandas de música. El cierre, con el canto de las unidades militares de la Armada despidiendo el desfile, es uno de los momentos más emocionalmente cargados de toda la Semana Santa ferrolana.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          El día más denso de la semana, con tres momentos completamente distintos encadenados:
+          <br><br>
+          A las <strong>12:30 h</strong>, la <strong>Plaza de Armas enmudece</strong> con el <strong>Santo Encuentro</strong> — las procesiones convergen en la plaza mayor para escenificar el encuentro entre Jesús y la Virgen ante miles de personas.
+          <br><br>
+          Por la tarde, la <strong>Procesión del Crucificado</strong> y la <strong>del Traslado</strong>, seguidas del <strong>Acto del Desenclavo</strong>.
+          <br><br>
+          Cae la noche y llega <strong>Os Caladiños</strong>: sin música, sin palabras, solo capuchones arrastrando cadenas en el silencio más sobrecogedor de Galicia.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          Jornada de luto y contención. La <strong>Procesión de la Caridad y el Silencio</strong> mantiene el espíritu austero de la noche anterior, preparando a la ciudad para la vigilia pascual.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          Al mediodía, varias marchas simultáneas confluyen en la Plaza de Armas para el <strong>Gozoso Encuentro</strong>: la Procesión de María Magdalena y la de Jesús Resucitado convergen para escenificar el encuentro con la Virgen. Después de ocho días de capuces, cadenas y silencio, la plaza estalla en aplausos y música. El contraste es total y deliberado.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Ferrol está organizada por <strong>5 cofradías</strong> que gestionan conjuntamente más de 20 procesiones. Cada hermandad sale en múltiples jornadas — una escala de organización sin equivalente en España con tan pocas cofradías. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta General de Cofradías y Hermandades de Ferrol.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Angustias</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestra Señora de las Angustias. Organiza la Procesión de Jesús Amigo de los Niños del Domingo de Ramos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Dolores</span>
+              <span class="tooltip-texto">Venerable, Real y Muy Ilustre Cofradía del Santísimo Cristo de la Misericordia y María Santísima de los Dolores. Organiza la Entrada Triunfal de Jesús en Jerusalén desde la Plaza de Amboage.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Angustias</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestra Señora de las Angustias. Participa en las procesiones del Miércoles Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Merced</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de la Merced y del Santísimo Cristo Redentor. Heredera de la cofradía creada por los padres Mercedarios en 1908. Organiza procesiones del Miércoles Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Dolores</span>
+              <span class="tooltip-texto">Venerable, Real y Muy Ilustre Cofradía del Santísimo Cristo de la Misericordia y María Santísima de los Dolores. Organiza la Procesión de la Misericordia del Jueves Santo — casi 1.800 cofrades, varios pasos y hasta nueve bandas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Merced</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de la Merced y del Santísimo Cristo Redentor. Participa también en el Jueves Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Angustias</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestra Señora de las Angustias. Participa en el Jueves Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santo Entierro</span>
+              <span class="tooltip-texto">Cofradía de Caballeros Portadores del Santo Entierro. Protagoniza el Santo Encuentro del mediodía y actos del Viernes Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Dolores</span>
+              <span class="tooltip-texto">Venerable, Real y Muy Ilustre Cofradía del Santísimo Cristo de la Misericordia y María Santísima de los Dolores. Organiza el Santo Encuentro de las 12:30 h y Os Caladiños en la noche del Viernes Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Merced</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de la Merced y del Santísimo Cristo Redentor. Participa en las procesiones del Viernes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Merced</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de la Merced y del Santísimo Cristo Redentor. Participa en el Gozoso Encuentro del Domingo de Resurrección.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Soledad</span>
+              <span class="tooltip-texto">Venerable, Real y Muy Ilustre Cofradía de la Santísima Virgen de la Soledad, vinculada históricamente a la Venerable Orden Tercera de San Francisco. Participa en el Gozoso Encuentro del Domingo de Resurrección.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.82rem; color:var(--text-muted,#666); margin-top:0.75rem;">
+        Las 5 cofradías de Ferrol participan en múltiples jornadas. El esquema completo de salidas por día y hora se publica en el programa oficial de la Junta General.
+      </p>
+      <p class="fuente">Fuente: <a href="https://semanasantaferrol.com/" target="_blank" rel="noopener">Junta General de Cofradías y Hermandades de Ferrol</a> — última verificación: 2026</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El pulso acústico de Ferrol es el de los contrastes. Por un lado, la Procesión de la Misericordia del Jueves Santo con hasta nueve bandas de música marchando en formación — un volumen y una precisión que pocas ciudades pueden igualar. Por otro, el silencio cortante de Os Caladiños, donde el único sonido es el arrastre de las cadenas de hierro sobre el asfalto mojado.
+        </p>
+        <p>
+          El sonido más ferrolano de todos no es ninguno de esos dos extremos: es el canto de las unidades militares de la Armada al final de los grandes desfiles. Un canto que no está en ningún programa oficial pero que los ferrolanos esperan y reconocen como propio. Herencia castrense convertida en devoción.
+        </p>
+        <p>
+          <strong>Para Os Caladiños, colócate en una calle estrecha de A Magdalena.</strong> El silencio amplificado por las fachadas y el sonido del hierro contra el suelo es algo que no se puede preparar con antelación. Para la Misericordia, la recogida del Jueves Santo es el momento de escuchar el canto militar de despedida.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Os Caladiños</h3>
+          <span class="tag">Viernes Santo · Noche · Barrio de A Magdalena</span>
+          <p>Sin música, sin palabras, solo capuchones arrastrando cadenas por las calles del barrio ilustrado. <em>Os Caladiños</em> — los calladitos — es la procesión de silencio más estricta y antigua de Galicia. El único sonido es el roce metálico del hierro contra el asfalto y la respiración contenida de miles de personas que saben lo que están viendo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque concentra en un solo acto todo lo que define a la Semana Santa ferrolana: la sobriedad, la disciplina y un recogimiento colectivo que no se pide sino que surge. Colócate en una calle estrecha de A Magdalena y espera. El silencio hace el resto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión de la Misericordia</h3>
+          <span class="tag">Jueves Santo · 23:00 h · Barrio de A Magdalena</span>
+          <p>Casi 1.800 cofrades, varios pasos de gran porte y hasta nueve bandas de música. Es el desfile más largo y espectacular de toda la Semana Santa ferrolana y uno de los más grandes de Galicia. Cierra con el canto de las unidades militares de la Armada — el momento más emocionalmente cargado de la noche.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el gran escaparate del poder de convocatoria de Ferrol: 1.800 cofrades, nueve bandas y militares de la Armada en el mismo desfile. No hay nada parecido en ninguna otra Semana Santa española. La recogida, con el canto militar de despedida, es el momento que los ferrolanos más esperan.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Santo Encuentro en la Plaza de Armas</h3>
+          <span class="tag">Viernes Santo · 12:30 h · Plaza de Armas</span>
+          <p>Las procesiones convergen en la plaza mayor para escenificar el encuentro entre Jesús Camino del Calvario y la Virgen ante miles de personas. La precisión milimétrica con la que las cofradías sincronizan sus llegadas y la tensión emocional que se genera en el espacio abierto de la plaza son difíciles de olvidar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque requiere una coordinación entre cofradías que solo es posible después de décadas de práctica. Y porque la Plaza de Armas — amplia, simétrica, ilustrada — es el escenario perfecto para un acto que necesita espacio y público. Llega con una hora de antelación.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Gozoso Encuentro de Resurrección</h3>
+          <span class="tag">Domingo de Resurrección · Mediodía · Plaza de Armas</span>
+          <p>La Procesión de María Magdalena y la de Jesús Resucitado convergen en la Plaza de Armas para el encuentro con la Virgen. Después de ocho días de capuces, cadenas y silencio, la plaza estalla en aplausos, música y alegría. El contraste físico con lo vivido los días anteriores es parte del diseño de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque si has aguantado toda la semana, este momento lo justifica todo. Y si solo tienes un día, ven el Viernes Santo y quédate hasta el Domingo para entender el arco completo. Del silencio de Os Caladiños a los aplausos de la Plaza de Armas hay ocho días de distancia y una diferencia que se siente en el cuerpo.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> La Semana Santa es el evento turístico que más llena la comarca de Ferrolterra en todo el año. Reserva con mucha antelación, especialmente para el Jueves y Viernes Santo.</li>
+        <li><strong>La cuadrícula de A Magdalena.</strong> El trazado en damero del barrio ilustrado te permite ver la misma procesión en varios puntos moviéndote por calles paralelas. Es una ventaja que no existe en ciudades con trazado medieval — aprovéchala.</li>
+        <li><strong>Ropa.</strong> El viento atlántico y la humedad de Galicia hacen que el frío de marzo en Ferrol sea diferente al de la meseta. Abrigo técnico, capas y calzado impermeable. Para las procesiones de madrugada, abrígate más de lo que crees necesario.</li>
+        <li><strong>Silencio en Os Caladiños.</strong> No es una sugerencia. Es parte del rito. Cualquier ruido — un teléfono, una conversación, un flash — rompe algo que los ferrolanos llevan siglos construyendo.</li>
+        <li><strong>Museo de la Semana Santa.</strong> Abierto desde 2018, el Museo de la Semana Santa de Ferrol recoge el patrimonio textil y escultórico de las cofradías. Visítalo de día para entender mejor lo que ves de noche.</li>
+        <li><strong>Ruta Cofrade.</strong> Aprovecha los descansos diurnos para hacer la Ruta Cofrade, que repasa la herencia religiosa desde el Ferrol Vello de 1616 hasta los grandes astilleros. La historia de la ciudad y la de la Semana Santa son inseparables.</li>
+        <li><strong>Accesibilidad.</strong> Las amplias avenidas del barrio de A Magdalena y la Plaza de Armas son los puntos más accesibles para personas con movilidad reducida. El trazado en damero facilita la movilidad entre puntos de observación.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Os Caladiños</dt>
+        <dd>Literalmente, <em>los calladitos</em> en gallego. La procesión de silencio estricto del Viernes Santo, sin música ni palabra, donde los penitentes arrastran cadenas de hierro. Es la tradición penitencial más antigua y reconocible de la Semana Santa ferrolana.</dd>
+
+        <dt>Capuchones</dt>
+        <dd>Nombre popular con el que los ferrolanos conocen a los nazarenos o penitentes, por la característica prenda de cabeza cónica que llevan. En Ferrol el término es cotidiano y cargado de afecto — forma parte del vocabulario de la ciudad durante toda la semana.</dd>
+
+        <dt>Tercio</dt>
+        <dd>Grupo organizado de cofrades dentro de una procesión, herencia directa de la nomenclatura militar. En Ferrol el término no es solo administrativo: refleja la influencia real de la Armada y el Ejército en la estructura y disciplina de los desfiles.</dd>
+
+        <dt>Desenclavo</dt>
+        <dd>Ceremonia paralitúrgica del Viernes Santo en la que se desclava la figura articulada de Cristo de la cruz para introducirla en la urna del Santo Entierro. Es uno de los actos más dramáticamente teatrales de la semana.</dd>
+
+        <dt>Junta General</dt>
+        <dd>La Junta General de Cofradías y Hermandades de la Semana Santa de Ferrol es el organismo rector que coordina las cinco cofradías, edita el programa oficial y vela por la unidad y el prestigio de la fiesta. Su trabajo es el que hace posible que cinco hermandades gestionen más de veinte procesiones en ocho días.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-ferrol-1.jpg" alt="Procesión nocturna de Os Caladiños con capuchones arrastrando cadenas por las calles de A Magdalena de Ferrol" />
+        <img src="images/semana-santa-ferrol-2.jpg" alt="Procesión de la Misericordia del Jueves Santo en Ferrol con 1.800 cofrades y bandas militares" />
+        <img src="images/semana-santa-ferrol-3.jpg" alt="Santo Encuentro del Viernes Santo en la Plaza de Armas de Ferrol" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantaferrol.com/" target="_blank" rel="noopener">Junta General de Cofradías y Hermandades de Ferrol — Web oficial</a></li>
+        <li><a href="https://visitferrol.com/semana-santa/" target="_blank" rel="noopener">Turismo de Ferrol — Semana Santa</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Ferrol en 2027?</dt>
+        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días cumbre son el Jueves Santo (25 de marzo), con la Procesión de la Misericordia, y el Viernes Santo (26 de marzo), con el Santo Encuentro, el Desenclavo y Os Caladiños.</dd>
+
+        <dt>¿Tiene reconocimiento oficial?</dt>
+        <dd>Sí. La Semana Santa de Ferrol fue declarada Fiesta de Interés Turístico Internacional en 2014. Es la única en la provincia de A Coruña y la principal de Galicia con ese reconocimiento.</dd>
+
+        <dt>¿Por qué se llama "militar" la Semana Santa de Ferrol?</dt>
+        <dd>Porque Ferrol fue históricamente la principal base naval del norte de España. Las procesiones heredaron la disciplina de los arsenales y la simetría del trazado ilustrado, y aún hoy las unidades de la Armada y el Ejército participan en los desfiles. El canto militar al final de la Procesión de la Misericordia es uno de los momentos más esperados de la semana.</dd>
+
+        <dt>¿Qué son Os Caladiños?</dt>
+        <dd>Literalmente, <em>los calladitos</em> en gallego. Es la procesión de silencio estricto del Viernes Santo: sin música, sin palabras, solo capuchones arrastrando cadenas de hierro por las calles de A Magdalena. Es la tradición penitencial más antigua y reconocible de la Semana Santa ferrolana.</dd>
+
+        <dt>¿Es adecuada para familias con niños?</dt>
+        <dd>Sí, especialmente en los primeros días. La Procesión de Jesús Amigo de los Niños del Domingo de Ramos y la Entrada Triunfal son las más accesibles para los más pequeños. Las procesiones de madrugada y Os Caladiños no son recomendables por el frío y la obligatoriedad de guardar silencio durante horas.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El clima gallego es impredecible en marzo. Consulta los canales oficiales de la Junta General para posibles modificaciones de recorrido o aplazamientos. Lleva siempre ropa impermeable aunque el día salga despejado.</dd>
+
+        <dt>¿Cuál es la mejor zona para ver las procesiones?</dt>
+        <dd>El barrio de A Magdalena — especialmente la Plaza de Armas y el entorno de la Concatedral de San Julián — y la Plaza de Amboage. El trazado en damero permite además ver la misma procesión en varios puntos moviéndose por calles paralelas, algo que no es posible en ciudades con trazado medieval.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
