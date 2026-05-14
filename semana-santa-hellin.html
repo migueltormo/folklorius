@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa y Tamborada de Hellín 2027: Guía Completa, Cofradías y Procesiones</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Hellín 2027 (19 al 28 de marzo). Tamborada Patrimonio UNESCO, 30 cofradías, imaginería de Benlliure y Coullaut-Valera, y todo lo que necesitas para vivirla." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-hellin.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa y Tamborada de Hellín 2027 | Donde la fe camina a hombros y el suelo retumba" />
+  <meta property="og:description" content="Guía inmersiva de la Semana Santa de Hellín. Tamborada Patrimonio UNESCO, pasos monumentales de Benlliure y Coullaut-Valera, y consejos para vivirla en 2027." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-hellin.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Cofradías: grid por día ─────────────────────────────── */
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+    .cofradia-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 4px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.4;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+    /* Tooltip CSS puro */
+    .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #b34700);
+      cursor: help;
+    }
+    .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+    .cofradia-col .imagen-titular {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--text-muted, #5a5a5a);
+      display: block;
+      margin-top: 2px;
+      padding-left: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Día label en cofradías ──────────────────────────────── */
+    .dia-label-cofradia {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin: 22px 0 6px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--accent-light, #f5e6c8);
+    }
+    .dia-label-cofradia:first-of-type { margin-top: 10px; }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline procesiones ────────────────────────────────── */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+    .procesiones-list .tamborada-tag {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #fff0e6;
+      color: var(--brand, #b34700);
+      border: 1px solid var(--accent-light, #f5e6c8);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* ── Banner tamborada UNESCO ─────────────────────────────── */
+    .banner-tamborada {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-tamborada h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-tamborada p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-tamborada p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de fuente / aviso ──────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-hellin.html",
+    "name": "Semana Santa y Tamborada de Hellín",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Centro Histórico de Hellín",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hellín",
+        "addressRegion": "Castilla-La Mancha",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.5167,
+        "longitude": -1.6833
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación de Cofradías y Hermandades de Semana Santa de Hellín",
+      "url": "https://www.semanasantahellin.es"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-hellin.jpg"],
+    "description": "Festividad religiosa e inmaterial con tamboradas declaradas Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2018 y Fiesta de Interés Turístico Internacional desde 2007. Reúne a más de 20.000 tamborileros y 30 cofradías con imaginería de Benlliure, Coullaut-Valera y Zamorano.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Hellín
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/semana-santa-hellin.jpg" alt="Miles de tamborileros con túnica negra redoblando en las calles de Hellín durante la Tamborada de Semana Santa, Patrimonio UNESCO" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Las Tamboradas y Semana Santa de Hellín</h1>
+      <p class="ficha-subtitle">
+        Hellín · Albacete · Castilla-La Mancha · «Donde la fe camina a hombros y el suelo retumba.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2007</span>
+        <span class="badge badge-unesco">Patrimonio Cultural Inmaterial UNESCO desde 2018</span>
+      </div>
+
+      <!-- AVISO DE SENSIBILIDAD -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>⚠️ Aviso importante antes de venir</strong>
+        <ul>
+          <li><strong>Ruido extremo.</strong> La tamborada supera los 100 decibelios durante horas y días seguidos. El uso de protección auditiva es imprescindible para niños pequeños y personas sensibles al ruido, no opcional.</li>
+          <li><strong>Multitudes.</strong> Las zonas del casco antiguo durante las tamboradas y las procesiones del Miércoles y Viernes Santo concentran una densidad de público muy alta. Planifica los desplazamientos con margen.</li>
+          <li><strong>Las procesiones mandan.</strong> Por ordenanza municipal, el toque de tambor queda prohibido en las calles por donde pasa un desfile oficial. Respeta siempre esa norma.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Hellín huele a cuero curtido, a madera barnizada y a cera gastada. Pero, por encima de todo, Hellín se <em>siente físicamente en el esternón</em>. El tambor no acompaña aquí: protagoniza. Y cuando calla, ese silencio pesa más que cualquier redoble.
+      </p>
+      <p>
+        La ciudad vive en realidad tres Semanas Santas superpuestas: la de los templos, la de los tronos que salen a la calle, y la de la tamborada popular que lo envuelve todo. Ninguna de las tres entiende de separación. Conviven, se interrumpen y se necesitan. Eso es Hellín.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Por un lado están las procesiones: treinta cofradías y hermandades que portan a hombros tronos de imaginería monumental por calles de trazado medieval. Son desfiles de una solemnidad visual que cuesta trabajo procesar en directo, porque las esculturas tienen un tamaño y una calidad que no esperas encontrar en una ciudad de este tamaño.
+      </p>
+      <p>
+        Y mientras tanto, en las mismas calles, está la tamborada. Miles de hellineros con túnica negra y pañuelo al cuello tocan el tambor sin partitura, sin director, sin sincronía buscada. Cada uno a su ritmo. El resultado no es caos: es un trueno continuo que dura días.
+      </p>
+      <p>
+        Lo que hace única a Hellín es el momento en que las dos cosas se tocan. Cuando una procesión se acerca, los tambores paran. De golpe. El silencio que queda es tan físico como el ruido que lo precede. Quien lo ha vivido dice que ahí está la fiesta de verdad.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Asociación de Cofradías y Hermandades de Semana Santa de Hellín en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La tamborada tiene raíces documentadas en el siglo XIX. Los primeros tambores usaban aros de madera y pieles de cabrito que se destemplaban con la humedad. La solución era práctica: los vecinos encendían hogueras en la calle durante el Viernes de Dolores y acercaban el instrumento al fuego para tensarlo antes de tocar. Eso es templar el tambor.
+      </p>
+      <p>
+        Con los años dejó de ser un problema técnico para convertirse en ritual. Y el ritual acabó siendo la fiesta misma. El tambor pasó a ser el objeto que iguala: bajo una túnica oscura, el apellido no se ve y la cuenta corriente tampoco. Eso explica en parte por qué la tamborada tiene tanta fuerza todavía, y por qué los hellineros la defienden con una intensidad que a veces sorprende a quien viene de fuera.
+      </p>
+      <p>
+        En el plano escultórico, la historia tiene un punto de inflexión claro: la pérdida de gran parte del patrimonio religioso durante los años treinta. La respuesta de la ciudad fue una apuesta decidida por reconstruir, y para ello se encargaron obras a <strong>Mariano Benlliure</strong>, <strong>Federico Coullaut-Valera</strong> y al escultor local <strong>José Zamorano</strong>. El resultado es un catálogo de imaginería que pocas ciudades de su tamaño pueden igualar.
+      </p>
+
+      <div class="banner-tamborada" role="note">
+        <h3>Las Tamboradas de la Semana de Pasión — Patrimonio UNESCO desde 2018</h3>
+        <p>En 2018, la UNESCO inscribió en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad las Tamboradas de la Semana de Pasión, una candidatura colectiva que incluye a Hellín junto con Calanda, Híjar, Alcañiz y otras localidades españolas.</p>
+        <p>Hellín es una de las concentraciones más grandes e intensas del conjunto. La tamborada hellinera reúne a más de 20.000 tamborileros en los días de mayor actividad, convirtiendo la ciudad entera en un instrumento de percusión.</p>
+      </div>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Hellín en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). El <strong>Viernes Santo es el 26 de marzo</strong>.
+      </p>
+      <p>
+        El programa oficial de procesiones y tamboradas —con horarios y recorridos exactos— lo publica cada año la Asociación de Cofradías y el Ayuntamiento de Hellín. Los datos de ediciones anteriores no son fiables para planificar la visita.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          <strong>Vía Crucis de las Antorchas.</strong> La semana arranca con antorchas y tambores. El recorrido sube desde el casco antiguo hasta el Monte Calvario. Para muchos hellineros, este es el momento en que la fiesta empieza de verdad.
+          <br><span class="tamborada-tag">🥁 Inicio de la primera tamborada</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <strong>Procesión de las Palmas — La Burrica.</strong> La Entrada de Jesús en Jerusalén abre la semana procesional desde la Parroquia del Corazón de Jesús. Es el desfile más familiar y accesible de toda la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <strong>Solemne Vía Crucis de la Santa Escuela de Cristo.</strong> Procesión nocturna y austera organizada por la Cofradía de Nuestra Señora del Rosario desde su Santuario. Pocos actos de la semana tienen tanto recogimiento.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <strong>Procesión del Stmo. Cristo de la Preciosísima Sangre.</strong> La Hermandad de San Antonio Abad sale con el Cristo de la Preciosísima Sangre. Jornada de transición antes del gran volumen del Miércoles.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <strong>Gran procesión del Miércoles Santo.</strong> El día con más tronos en la calle. Ocho hermandades desfilan desde la Iglesia de la Asunción mientras la tamborada llena las calles durante horas. Cuando la procesión sale, los tambores paran. Ese momento lo recuerda cualquiera que lo haya visto.
+          <br><span class="tamborada-tag">🥁 Tamborada diurna y procesión vespertina</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <strong>Procesión del Silencio.</strong> La noche más austera. Las hermandades del Silencio salen desde la Parroquia de la Asunción sin ruido, sin ornamento, solo con el peso de la noche encima. A medianoche, la Gran Tamborada lo cambia todo de golpe.
+          <br><span class="tamborada-tag">🥁 Gran Tamborada de medianoche</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <strong>Subida al Calvario · Bajada del Calvario · Santo Entierro.</strong> El día más largo de la semana. Al amanecer, los banceros suben los tronos por la pendiente del Calvario con la tamborada de fondo. Al mediodía, la Bajada. Por la noche, el Santo Entierro en silencio total. Tres procesiones en un solo día, cada una con su propio carácter.
+          <br><span class="tamborada-tag">🥁 Silencio absoluto en el Santo Entierro</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          <strong>Tamborada de Sábado de Gloria.</strong> En la madrugada arranca la última tamborada de la semana. Muchos hellineros la consideran la más libre y la más sentida, quizá porque ya saben que se acaba.
+          <br><span class="tamborada-tag">🥁 Tamborada de madrugada</span>
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <strong>Procesión del Encuentro Glorioso.</strong> La Hermandad de Cristo Resucitado y la Cofradía de la Dolorosa salen por separado y caminan hacia la explanada de la Feria. Cuando las dos imágenes se encuentran, miles de tambores enmudecen a la vez. Silencio repentino, total. Es el final de la semana y lo sabe todo el mundo.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>Las 30 cofradías y hermandades de la Asociación, organizadas por jornada. Pasa el cursor sobre el nombre subrayado para ver la denominación oficial completa.</p>
+
+      <span class="dia-label-cofradia">Domingo de Ramos · 21 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Dom. Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cofradía de la Flagelación</span>
+              <span class="tooltip-texto">Cofradía de la Flagelación</span>
+              <span class="imagen-titular">Cristo Atado a la Columna · Iglesia de Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Lunes Santo · 22 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Lunes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Santa Escuela de Cristo</span>
+              <span class="tooltip-texto">Santa Escuela de Cristo — Cofradía de Nuestra Señora del Rosario «Patrona de Hellín»</span>
+              <span class="imagen-titular">Cristo Crucificado y Ntra. Sra. del Rosario · Santuario del Rosario</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Martes Santo · 23 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Hermandad de San Antonio Abad</span>
+              <span class="tooltip-texto">Hermandad de San Antonio Abad, Cristo de La Preciosísima Sangre y María Santísima de Las Penas</span>
+              <span class="imagen-titular">Cristo de La Preciosísima Sangre · Ermita de San Roque</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Miércoles Santo · 24 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Herm. La Samaritana</span>
+              <span class="tooltip-texto">Hermandad La Samaritana</span>
+              <span class="imagen-titular">La Samaritana con Jesús en el Pozo de Jacob (José Zamorano)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. Oración del Huerto</span>
+              <span class="tooltip-texto">Hermandad de la Oración del Huerto</span>
+              <span class="imagen-titular">«Paso Gordo» — Oración en el Huerto (Coullaut-Valera)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Archicofradía de Medinaceli</span>
+              <span class="tooltip-texto">Asociación Pública de Fieles Archicofradía de Nuestro Padre Jesús de Medinaceli</span>
+              <span class="imagen-titular">Nuestro Padre Jesús de Medinaceli (Faustino Sanz Herranz)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de Los Azotes</span>
+              <span class="tooltip-texto">Hermandad de Los Azotes</span>
+              <span class="imagen-titular">Santísimo Cristo a la Columna</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. Jesús Nazareno</span>
+              <span class="tooltip-texto">Hermandad Nuestro Padre Jesús Nazareno</span>
+              <span class="imagen-titular">Nuestro Padre Jesús Nazareno (Coullaut-Valera)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía del Perdón</span>
+              <span class="tooltip-texto">Cofradía de Ntra. Sra. del Perdón y Cristo de la Caída</span>
+              <span class="imagen-titular">Cristo de la Caída y Ntra. Sra. del Perdón (José Zamorano)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. San Juan Evangelista</span>
+              <span class="tooltip-texto">Hermandad San Juan Evangelista</span>
+              <span class="imagen-titular">San Juan Evangelista (José Dies López)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de la Dolorosa</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de los Dolores</span>
+              <span class="imagen-titular">Nuestra Señora de los Dolores (Coullaut-Valera)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Jueves Santo · 25 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Herm. La Negación de San Pedro</span>
+              <span class="tooltip-texto">Hermandad La Negación de San Pedro</span>
+              <span class="imagen-titular">Grupo de la Negación de San Pedro (José Zamorano)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía Ecce Homo</span>
+              <span class="tooltip-texto">Cofradía Ecce Homo</span>
+              <span class="imagen-titular">Santísimo Ecce Homo (José Zamorano) · Ermita de San Rafael</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía Coronación de Espinas</span>
+              <span class="tooltip-texto">Cofradía del Cristo de la Coronación de Espinas</span>
+              <span class="imagen-titular">Cristo de la Coronación de Espinas · Parroquia de San Roque</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Real Cofradía Jesús Misericordia</span>
+              <span class="tooltip-texto">Real Cofradía y Hermandad de Nazarenos de Nuestro Padre Jesús de la Misericordia, Jesús del Gran Poder y Nuestra Señora del Dolor</span>
+              <span class="imagen-titular">Jesús de la Misericordia · Jesús del Gran Poder · Ntra. Sra. del Dolor</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de la Sentencia</span>
+              <span class="tooltip-texto">Cofradía de la Sentencia — A.C. El Indulto a Barrabás</span>
+              <span class="imagen-titular">Ntro. Padre Jesús de La Sentencia ante el Indulto a Barrabás</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. Cristo de la Clemencia</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Clemencia</span>
+              <span class="imagen-titular">Cristo de la Clemencia · Colegio de la Compañía de María</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía del Prendimiento</span>
+              <span class="tooltip-texto">Cofradía del Prendimiento</span>
+              <span class="imagen-titular">Grupo del Beso de Judas / Prendimiento · Convento Franciscanos</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de la Santa Cena</span>
+              <span class="tooltip-texto">Hermandad de la Santa Cena</span>
+              <span class="imagen-titular">La Última Cena · Parroquia de San Roque</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de la Esperanza</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de la Esperanza</span>
+              <span class="imagen-titular">Virgen de la Esperanza · Iglesia de los Franciscanos</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de la Santa Cruz</span>
+              <span class="tooltip-texto">Hermandad de la Santa Cruz y Virgen de la Amargura</span>
+              <span class="imagen-titular">La Santa Cruz y Ntra. Sra. de la Amargura</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Viernes Santo · 26 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Subida y Bajada al Calvario</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Herm. Oración del Huerto</span>
+              <span class="tooltip-texto">Hermandad de la Oración del Huerto</span>
+              <span class="imagen-titular">«Paso Gordo» (Coullaut-Valera)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Archicofradía de Medinaceli</span>
+              <span class="tooltip-texto">Asociación Pública de Fieles Archicofradía de Nuestro Padre Jesús de Medinaceli</span>
+              <span class="imagen-titular">Nuestro Padre Jesús de Medinaceli</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de Los Azotes</span>
+              <span class="tooltip-texto">Hermandad de Los Azotes</span>
+              <span class="imagen-titular">Santísimo Cristo a la Columna</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. Jesús Nazareno</span>
+              <span class="tooltip-texto">Hermandad Nuestro Padre Jesús Nazareno</span>
+              <span class="imagen-titular">Nuestro Padre Jesús Nazareno</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía Sta. María Magdalena</span>
+              <span class="tooltip-texto">Cofradía de Santa María Magdalena</span>
+              <span class="imagen-titular">Santa María Magdalena</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de la Verónica</span>
+              <span class="tooltip-texto">Hermandad de la Verónica</span>
+              <span class="imagen-titular">La Verónica</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. del Descendimiento</span>
+              <span class="tooltip-texto">Hermandad del Sagrado Descendimiento de Nuestro Señor Jesucristo</span>
+              <span class="imagen-titular">Grupo del Sagrado Descendimiento</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de las Angustias</span>
+              <span class="tooltip-texto">Cofradía de la Virgen de las Angustias</span>
+              <span class="imagen-titular">La Piedad / Virgen de las Angustias</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de la Dolorosa</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de los Dolores</span>
+              <span class="imagen-titular">Nuestra Señora de los Dolores (Coullaut-Valera)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. San Juan Evangelista</span>
+              <span class="tooltip-texto">Hermandad San Juan Evangelista</span>
+              <span class="imagen-titular">San Juan Evangelista (José Dies López)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cofradia-col">
+          <h3>Santo Entierro</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Herm. de la Soledad</span>
+              <span class="tooltip-texto">Hermandad Nuestra Señora de la Soledad</span>
+              <span class="imagen-titular">Nuestra Señora de la Soledad</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. Cristo Yacente de Hellín</span>
+              <span class="tooltip-texto">Hermandad Cristo Yacente de Hellín</span>
+              <span class="imagen-titular">Cristo Yacente (Mariano Benlliure)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía Traslado al Sepulcro</span>
+              <span class="tooltip-texto">Cofradía del Traslado al Sepulcro</span>
+              <span class="imagen-titular">Grupo Escultórico del Traslado</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía Sta. María Magdalena</span>
+              <span class="tooltip-texto">Cofradía de Santa María Magdalena</span>
+              <span class="imagen-titular">Santa María Magdalena</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de la Verónica</span>
+              <span class="tooltip-texto">Hermandad de la Verónica</span>
+              <span class="imagen-titular">La Verónica</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. del Descendimiento</span>
+              <span class="tooltip-texto">Hermandad del Sagrado Descendimiento de Nuestro Señor Jesucristo</span>
+              <span class="imagen-titular">Grupo del Sagrado Descendimiento</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="dia-label-cofradia">Domingo de Resurrección · 28 de marzo</span>
+      <div class="cofradias-grid">
+        <div class="cofradia-col">
+          <h3>Dom. Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Herm. de Cristo Resucitado</span>
+              <span class="tooltip-texto">Hermandad de Cristo Resucitado</span>
+              <span class="imagen-titular">Grupo del Cristo Resucitado · Parroquia de la Asunción</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cofradía de la Dolorosa</span>
+              <span class="tooltip-texto">Cofradía de Nuestra Señora de los Dolores</span>
+              <span class="imagen-titular">Nuestra Señora de los Dolores (Coullaut-Valera)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. San Juan Evangelista</span>
+              <span class="tooltip-texto">Hermandad San Juan Evangelista</span>
+              <span class="imagen-titular">San Juan Evangelista (José Dies López)</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Herm. de la Alegría</span>
+              <span class="tooltip-texto">Hermandad María Santísima de la Alegría</span>
+              <span class="imagen-titular">María Santísima de la Alegría · Parroquia de San Roque</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">El tambor manda</h3>
+        <p>El sonido de Hellín no es música procesional en el sentido habitual. No hay marchas, no hay banda, no hay director. Hay miles de personas tocando el tambor a la vez, cada una a su propio ritmo, durante días. El resultado es un ruido físico que se mete en el pecho y no sale.</p>
+        <p>El silencio, cuando llega, es brutal precisamente por eso. Se nota más. Los instantes antes de que se abran las puertas de una iglesia para una salida, o el Encuentro del Domingo de Resurrección, tienen un peso que no tienen en ningún otro sitio porque el contraste es máximo.</p>
+        <p style="margin-bottom:0;">En 2018 la UNESCO reconoció las Tamboradas de la Semana de Pasión como Patrimonio Cultural Inmaterial de la Humanidad, junto a las de Calanda, Híjar, Alcañiz y otras localidades. Hellín es una de las más grandes e intensas del conjunto: más de 20.000 tamborileros, más de 100 dB, varios días ininterrumpidos.</p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El museo al aire libre</h3>
+          <span class="tag">Todo Viernes Santo · Casco antiguo</span>
+          <p>Hellín tiene obras de Benlliure, Coullaut-Valera y José Zamorano repartidas por sus procesiones. El Cristo Yacente de Benlliure, en particular, es una pieza que detiene a cualquiera que sepa algo de escultura. Y sale a la calle.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver imaginería de ese nivel procesionando por calles medievales es una experiencia que los museos no pueden reproducir. El contexto cambia completamente la percepción de las obras.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Subida al Calvario</h3>
+          <span class="tag">Viernes Santo · Amanecer · Monte Calvario</span>
+          <p>Al amanecer del Viernes Santo, los banceros suben tronos enormes por la cuesta del Calvario con la tamborada todavía sonando alrededor. Es agotador de ver. Lleva despertarse temprano, pero merece la pena sin discusión.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el momento más físico y visceral de toda la semana. El contraste entre el esfuerzo de los banceros y el estruendo de la tamborada de fondo crea algo que no se olvida fácilmente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El silencio del Encuentro</h3>
+          <span class="tag">Domingo de Resurrección · Explanada de la Feria</span>
+          <p>El Domingo de Resurrección, miles de tambores paran de golpe cuando las dos imágenes se encuentran en la explanada. No hay aviso previo. Simplemente para todo. Quien lo espera ya sabe que va a pasarle algo raro por dentro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento de mayor contraste de la semana. Después de días de ruido constante, ese silencio repentino tiene un efecto físico real. No exageración: físico.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Templar el tambor</h3>
+          <span class="tag">Viernes de Dolores · 19 de marzo · Calles del centro</span>
+          <p>En el Viernes de Dolores, la gente enciende hogueras en la calle para acercar el tambor al fuego y templar la piel. Nació siendo una solución práctica a un problema de humedad. Hoy es uno de los rituales más reconocibles de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento más íntimo y antiguo de toda la celebración. Antes de que empiece el espectáculo, la gente está en la calle con un tambor y una hoguera, igual que hace más de cien años.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Tocar en la tamborada</h3>
+          <span class="tag">Miércoles a Domingo · Calles del casco antiguo</span>
+          <p>No hace falta ser de Hellín ni pertenecer a ninguna cofradía. Con una túnica negra y un tambor —se alquilan en los días previos— puedes tocar en la calle. Es la forma más directa de entender desde dentro por qué esta fiesta dura días sin que nadie quiera irse.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver la tamborada y participar en ella son dos experiencias completamente distintas. Una es espectáculo, la otra es comprensión.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Paso Gordo</h3>
+          <span class="tag">Miércoles y Viernes Santo · Casco antiguo</span>
+          <p>El grupo de la Oración en el Huerto, obra de Coullaut-Valera, es el paso más grande y pesado de la semana. El apodo lo dice todo. Verlo doblar una esquina estrecha del casco antiguo es algo que no encaja del todo en la cabeza hasta que lo ves.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la escala de ese paso en relación con las calles que tiene que recorrer hace que cada giro sea una pequeña hazaña colectiva de coordinación y fuerza.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Protección auditiva.</strong> Llévala. No es exageración: la tamborada supera los 100 decibelios durante horas. Para niños pequeños y personas sensibles al ruido es imprescindible.</li>
+        <li><strong>Indumentaria.</strong> Si quieres integrarte, la indumentaria es túnica negra y pañuelo oscuro o rojo al cuello. En los días previos se puede alquilar o comprar en el propio centro de Hellín.</li>
+        <li><strong>Aparcamiento.</strong> Desde el Miércoles Santo, aparcar en el casco antiguo es imposible. Lo más sensato es dejar el coche en los polígonos habilitados en las afueras y entrar andando.</li>
+        <li><strong>Programa oficial.</strong> Los horarios y recorridos exactos los publica cada año la Asociación de Cofradías y el Ayuntamiento. Los datos de ediciones anteriores no son fiables para planificar la visita.</li>
+        <li><strong>Alojamiento.</strong> Las noches del Miércoles, Jueves y Viernes Santo se agotan con meses de antelación. Si esperas a la última semana, no encontrarás nada cerca.</li>
+        <li><strong>Abrigo.</strong> Las noches de marzo en Hellín son frías. Si vas a estar en la calle de madrugada tocando el tambor, lleva ropa de abrigo de verdad.</li>
+        <li><strong>Respeto básico.</strong> No cruces por el medio de una procesión. No uses el flash al paso de las imágenes. Si hay silencio procesional, guárdalo. Tres cosas que cualquier hellinero te agradecerá.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Tamborada</dt>
+        <dd>Miles de personas tocando el tambor a la vez por las calles, sin partitura y sin sincronía buscada, durante los días que marca el bando municipal. No es un desfile: es un fenómeno sonoro colectivo.</dd>
+
+        <dt>Paso Gordo</dt>
+        <dd>El apodo del grupo escultórico de la Oración en el Huerto, de Coullaut-Valera. Se llama así por su tamaño y peso. No hay forma más directa de describirlo.</dd>
+
+        <dt>Templar el tambor</dt>
+        <dd>Acercar la piel del tambor al calor de una hoguera callejera para tensarla antes de tocar. Surgió como solución práctica al problema de la humedad en los instrumentos de piel animal. Hoy es uno de los rituales más reconocibles del Viernes de Dolores.</dd>
+
+        <dt>Peñas</dt>
+        <dd>Grupos de amigos o familias que se juntan en cuarteles o locales para comer, beber y tocar el tambor juntos durante los días de tamborada. Son el núcleo social de la fiesta.</dd>
+
+        <dt>Banceros</dt>
+        <dd>Las personas que cargan los tronos a hombros. En Hellín se usa más este término que el de costaleros. Dado que parte del recorrido sube cuestas, el esfuerzo físico es considerable.</dd>
+
+        <dt>Trono</dt>
+        <dd>La estructura portátil sobre la que viaja la imagen en procesión. En Hellín destacan por su tamaño y peso, lo que convierte cada salida en un ejercicio de coordinación.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA (oculta hasta tener imágenes) -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/hellin/tamborada-miercoles-santo.jpg" alt="Miles de tamborileros con túnica negra en las calles de Hellín durante la tamborada del Miércoles Santo" />
+        <img src="images/hellin/subida-calvario-viernes-santo.jpg" alt="Banceros subiendo un trono procesional por la cuesta del Monte Calvario al amanecer del Viernes Santo de Hellín" />
+        <img src="images/hellin/cristo-yacente-benlliure-hellin.jpg" alt="Cristo Yacente obra de Mariano Benlliure, imagen titular de la Hermandad Cristo Yacente de Hellín" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.semanasantahellin.es" target="_blank" rel="noopener">Asociación de Cofradías y Hermandades de Semana Santa de Hellín — Web oficial</a></li>
+        <li><a href="https://www.hellin.es" target="_blank" rel="noopener">Ayuntamiento de Hellín</a></li>
+        <li><a href="https://turismo.castillalamancha.es" target="_blank" rel="noopener">Turismo Castilla-La Mancha</a></li>
+        <li><a href="https://ich.unesco.org" target="_blank" rel="noopener">Patrimonio Cultural Inmaterial UNESCO</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Hellín en 2027?</dt>
+        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). El Viernes Santo es el 26 de marzo. Los días de mayor intensidad son el Miércoles, Jueves y Viernes Santo.</dd>
+
+        <dt>¿Cualquiera puede participar en la tamborada?</dt>
+        <dd>Sí. No hace falta pertenecer a ninguna cofradía. Con una túnica negra y un tambor puedes tocar en la calle durante los horarios que fija el bando municipal. Nadie te va a pedir el carné de hellinero.</dd>
+
+        <dt>¿La tamborada interrumpe las procesiones?</dt>
+        <dd>No, es al revés: la procesión interrumpe la tamborada. Por ordenanza, el toque queda prohibido en las calles por donde pasa un desfile oficial. Hay franjas de silencio obligatorio, especialmente en el Santo Entierro del Viernes Santo.</dd>
+
+        <dt>¿Cuánto pesan los pasos?</dt>
+        <dd>No hay una cifra oficial publicada para todos, pero el Paso Gordo necesita decenas de banceros para moverse. Cuando lo ves doblar una calle cuesta arriba, entiendes por qué tiene ese apodo.</dd>
+
+        <dt>¿Dónde consigo una túnica y un tambor?</dt>
+        <dd>En los días previos a la Semana Santa hay puntos de venta y alquiler en el centro de Hellín. Para la ubicación exacta de cada año, consulta la web del Ayuntamiento.</dd>
+
+        <dt>¿La Tamborada de Hellín es Patrimonio UNESCO?</dt>
+        <dd>Sí. Desde 2018 forma parte de la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad, dentro del conjunto de las Tamboradas de la Semana de Pasión españolas.</dd>
+
+        <dt>¿Es apta para niños y personas mayores?</dt>
+        <dd>Con precauciones, sí. El ruido es el principal factor a controlar: protección auditiva imprescindible para los más pequeños. Las zonas de mayor aglomeración también requieren atención.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El patrimonio escultórico es delicado. Con lluvia intensa, las procesiones pueden suspenderse. Sigue los canales oficiales de la Asociación de Cofradías para información en tiempo real durante la semana.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
