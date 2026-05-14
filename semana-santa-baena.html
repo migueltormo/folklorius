@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Baena 2027: Coliblancos, Colinegros y Procesiones | Folklorius</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Baena 2027 (21 al 28 de marzo). Fiesta de Interés Turístico Internacional. Las Turbas de Judíos, la rivalidad entre Coliblancos y Colinegros, 7 cofradías y todo lo que necesitas para vivirla." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-baena.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Baena 2027 | El pueblo que reza a golpe de tambor" />
+  <meta property="og:description" content="Guía inmersiva de la Semana Santa de Baena. Turbas de Judíos, Coliblancos y Colinegros, teatro medieval en la calle y el tambor más denso de Andalucía." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-baena.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Cofradías: grid por día (modelo estándar) ───────────── */
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.45;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+    .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #b34700);
+      cursor: help;
+    }
+    .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    /* Etiquetas de turba */
+    .tag-coliblanco {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #f0f0f0;
+      color: #444;
+      border: 1px solid #ccc;
+      padding: 1px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .tag-colinegro {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #2c2c2c;
+      color: #fff;
+      padding: 1px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .tag-silencio {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #e8ddd4;
+      color: #5a4a3a;
+      padding: 1px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline procesiones ────────────────────────────────── */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    /* ── Banner histórico ────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-baena.html",
+    "name": "Semana Santa de Baena",
+    "startDate": "2027-03-21",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Baena",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baena",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6146,
+        "longitude": -4.3259
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Agrupación de Cofradías de Semana Santa de Baena",
+      "url": "https://www.semanasantabaena.com"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-baena.jpg"],
+    "description": "Semana Santa declarada Fiesta de Interés Turístico Internacional en 2025 (BOE 27/02/2026). Única en España por la figura del Judío y sus Turbas de Coliblancos y Colinegros, con atuendo de origen militar afrancesado y un continuo toque de tambor que acompaña siete procesiones del Domingo de Ramos al Domingo de Resurrección.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Baena
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/semana-santa-baena.jpg" alt="Turba de Judíos Coliblancos y Colinegros desfilando por las calles de Baena durante la Semana Santa, con sus cascos de latón, plumeros y colas de crin" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Baena</h1>
+      <p class="ficha-subtitle">
+        Baena · Córdoba · Andalucía · «El pueblo que reza a golpe de tambor.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2025</span>
+      </div>
+
+      <!-- AVISO DE SENSIBILIDAD -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Ruido extremo y sostenido.</strong> El tambor en Baena no aparece puntualmente: suena de forma casi ininterrumpida durante días. Protección auditiva imprescindible para niños pequeños y personas sensibles, sin excepciones.</li>
+          <li><strong>Aglomeraciones en espacios estrechos.</strong> La tarde del Jueves Santo es el momento de mayor concentración humana. En las callejuelas de la Almedina, moverse a contracorriente es prácticamente imposible.</li>
+          <li><strong>Terreno exigente.</strong> Baena está asentada sobre lomas con desniveles importantes. Las procesiones por la Almedina requieren calzado cómodo con suela gruesa y buena condición física para seguirlas.</li>
+          <li><strong>Nota cultural.</strong> La figura del «Judío» es una denominación histórica y teatral propia de esta fiesta, reconocida institucionalmente por el Ayuntamiento de Baena y la Agrupación de Cofradías. Representa el papel escénico de la guardia de la Pasión dentro de un teatro popular de raíces medievales y militares, sin connotación peyorativa hacia ningún grupo.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Huele a incienso, a metal pulido y a esfuerzo. Cuando una Turba de Judíos se acerca por una callejuela, el suelo vibra antes de que puedas verlos doblar la esquina. Y cuando aparecen, rompen con todo lo que uno espera de una Semana Santa: chaqueta roja, pantalón negro, casco de latón con plumero de colores y una cola de crin de caballo cayendo por la espalda. No hay penitente oscuro ni anonimato. Aquí la Semana Santa tiene cara, tiene ruido y tiene color.
+      </p>
+      <p>
+        Lo que hace única a Baena en toda España es la figura del Judío y su división en dos grandes bandos: los <strong>Coliblancos</strong> y los <strong>Colinegros</strong>, según el color de esa cola de crin. No compiten de forma violenta, pero el pique acústico, estético e identitario entre los dos bandos es real y lo notas en cada cruce de calles.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Siete cofradías organizan la semana de forma cronológica, del Domingo de Ramos al de Resurrección, siguiendo los pasos de la Pasión. Los pasos —algunos del siglo XVI— procesionan a hombros escoltados tanto por nazarenos clásicos como por las Turbas, que son algo mucho más complejo que un grupo de tamborileros.
+      </p>
+      <p>
+        El Judío de Baena tiene un papel activo en la Pasión. Durante las procesiones participa en representaciones teatrales en la calle: el «Paso de los Evangelistas», donde irrumpe entre las figuras que escriben los evangelios; o la escenificación del Prendimiento de Jesús, donde actúa como guardia que lo arresta. Es teatro medieval popular integrado dentro de la oficialidad de la Iglesia, y es algo que prácticamente no existe en ningún otro sitio de España.
+      </p>
+      <p>
+        Si es tu primera visita, olvida buscar silencio. Asúmelo como parte de la experiencia. Y consulta siempre el programa oficial de la Agrupación de Cofradías antes de salir: los horarios y recorridos exactos cambian cada año.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Agrupación de Cofradías de Semana Santa de Baena en su web oficial. Consúltalos antes de planificar tu visita.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La figura del Judío tiene dos capas de historia superpuestas que explican por qué hoy tiene el aspecto que tiene.
+      </p>
+      <p>
+        La primera es teológica y teatral. En los siglos XVI y XVIII, cuando los cultos de Semana Santa se abrieron al pueblo, se necesitaba a alguien que representara físicamente la guardia que apresó a Jesús. El Judío nació para eso: para hacer el Prendimiento, para escenificar la Pasión en la calle. De ahí vienen sus funciones teatrales que todavía conserva.
+      </p>
+      <p>
+        La segunda capa es militar y napoleónica. Tras la Batalla de Bailén en 1808, los baenenses tomaron parte del uniforme de los coraceros franceses vencidos — el casco de latón, el plumero, la casaca roja — y lo adaptaron a su fiesta. Esa estética afrancesada y militarizada es lo que distingue al Judío de Baena de cualquier otra figura de cualquier otra Semana Santa de España.
+      </p>
+
+      <div class="banner-historia" role="note">
+        <h3>El origen de Coliblancos y Colinegros</h3>
+        <p>Originalmente, la cola de crin blanca distinguía a los mandos de la Turba — cuadrilleros y abanderados — mientras la negra correspondía a la tropa. Pero en el siglo XIX esta distinción adquirió un cariz político: los «negros» se asociaron a los liberales y los «blancos» a los absolutistas.</p>
+        <p>A principios del siglo XX, la política quedó atrás y la división pasó a ser puramente cofrade. Hoy los <strong>Colinegros</strong> pertenecen a la Cofradía de Nuestro Padre Jesús Nazareno y al Resucitado. Los <strong>Coliblancos</strong> son de la Vera Cruz, el Huerto y el Dulce Nombre. Una rivalidad simbólica con doscientos años de historia que se sigue notando en cada Jueves Santo.</p>
+      </div>
+
+      <p>
+        En septiembre de 2025, el Ministerio de Industria y Turismo otorgó a la Semana Santa de Baena la declaración de <strong>Fiesta de Interés Turístico Internacional</strong>, publicada en el BOE el 27 de febrero de 2026. Es la cuarta Semana Santa andaluza con ese reconocimiento, tras Sevilla, Málaga y Granada.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Baena en 2027 va del <strong>domingo 21 de marzo</strong> (Domingo de Ramos) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). El tambor empieza a dominar la ciudad a partir de la tarde del <strong>Miércoles Santo (24 de marzo)</strong>. El Jueves Santo (25 de marzo) es el día grande de los Coliblancos; el Viernes Santo (26 de marzo), el de los Colinegros.
+      </p>
+      <p>
+        Si llueve, las cofradías no salen. El patrimonio escultórico y los ropajes de los Judíos — plumeros, parches de tambor, sedas — no pueden mojarse. En ese caso los tambores no desaparecen: se trasladan a los cuartelillos y locales de las cuadrillas, donde la fiesta continúa de puertas adentro.
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <strong>La Borriquita.</strong> La Cofradía de la Entrada Triunfal de Jesús en Jerusalén abre la semana. Es la procesión más familiar y accesible, sin Turbas todavía. El primer movimiento de una semana que va a ir subiendo de volumen.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <strong>Jesús del Huerto.</strong> Primera salida de los Coliblancos. La Cofradía de Nuestro Padre Jesús del Huerto y San Diego marca el arranque real del tambor en las calles. A partir de aquí, Baena ya no vuelve al silencio hasta el Domingo de Resurrección.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo — Tarde</span>
+          <strong>Visita a los Sagrarios.</strong> No es una procesión con imágenes. Es el espectáculo más visual de toda la semana: miles de Coliblancos y Colinegros con la celada bajada recorren la ciudad para visitar los distintos templos. Ver las filas interminables de cascos, plumeros y colas de crin moviéndose al ritmo del tambor por las calles de Baena no tiene comparación.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo — Noche</span>
+          <strong>El Prendimiento.</strong> La Ilustre Archicofradía de la Vera Cruz y Nuestro Padre Jesús del Prendimiento escenifica en la calle la entrega de Judas y el arresto de Jesús. Es el acto teatral de mayor peso narrativo de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo — Madrugada</span>
+          <strong>El Silencio.</strong> La otra cara de Baena. La Cofradía del Santísimo Cristo del Perdón procesiona sin judíos ni tambores, en oscuridad y recogimiento absolutos, por las callejuelas de la Almedina. Quien solo conoce el estruendo de los días anteriores no espera esto.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo — Mañana</span>
+          <strong>Jesús Nazareno.</strong> El día grande de los Colinegros. La procesión más larga, más dura y más multitudinaria de la semana. La Turba de cola negra precede a las imágenes en un recorrido extenuante que ocupa prácticamente toda la jornada.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo — Tarde</span>
+          <strong>Dulce Nombre.</strong> La Cofradía del Dulce Nombre de Jesús, Santo Cristo del Calvario y Soledad de María Santísima cierra el Viernes Santo con los Coliblancos. Después de un día entero de procesiones, la ciudad todavía aguanta.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <strong>El Resucitado.</strong> La Real Archicofradía de Nuestra Señora del Rosario y Santo Cristo Resucitado cierra la semana con los Colinegros. El último tambor de la semana.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Baena está organizada por <strong>7 cofradías y archicofradías</strong> integradas en la Agrupación. Pasa el cursor sobre cada nombre para ver su título oficial completo.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Agrupación de Cofradías de Semana Santa de Baena.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Borriquita</span>
+              <span class="tooltip-texto">Cofradía de la Entrada Triunfal de Jesús en Jerusalén. Sin Turba de Judíos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús del Huerto</span>
+              <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús del Huerto y San Diego. Cofradía Blanca — Turba de Judíos Coliblancos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Prendimiento <span class="tag-coliblanco">Coliblanco</span></span>
+              <span class="tooltip-texto">Ilustre Archicofradía de la Vera Cruz y Nuestro Padre Jesús del Prendimiento. Cofradía Blanca — Turba de Judíos Coliblancos. Día grande de los Coliblancos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo · Madrugada</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Perdón <span class="tag-silencio">Silencio</span></span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón. Procesión de silencio absoluto, sin participación de Turbas ni tambores. La única de la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo · Mañana</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Jesús Nazareno <span class="tag-colinegro">Colinegro</span></span>
+              <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús Nazareno. Cofradía Negra — Turba de Judíos Colinegros. Día grande de los Colinegros. Procesión más larga de la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo · Tarde</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Dulce Nombre <span class="tag-coliblanco">Coliblanco</span></span>
+              <span class="tooltip-texto">Cofradía del Dulce Nombre de Jesús, Santo Cristo del Calvario y Soledad de María Santísima. Cofradía Blanca — Turba de Judíos Coliblancos.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Resucitado <span class="tag-colinegro">Colinegro</span></span>
+              <span class="tooltip-texto">Real Archicofradía de Nuestra Señora del Rosario y Santo Cristo Resucitado. Cofradía Negra — Turba de Judíos Colinegros.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">El tambor tiene sus propias reglas</h3>
+        <p>Las bandas de música acompañan a los pasos, sí. Pero lo que realmente define el sonido de Baena es otra cosa: miles de tambores afinados que no tocan de forma caótica, sino siguiendo órdenes y cambiando de ritmo según el momento. Hay tres toques distintos.</p>
+        <p>El <strong>toque de calle</strong> es pausado y constante, el que escuchas cuando los Judíos van de camino o esperan fuera del desfile. El <strong>toque de procesión</strong> es más rítmico y físico, el bloque sónico que marca el paso de la Turba durante el recorrido oficial. Y el <strong>toque de redoble</strong>, reservado a los redoblantes que escoltan directamente a la imagen escultórica.</p>
+        <p style="margin-bottom:0;">Si quieres notar el tambor en el estómago, sitúate en los alrededores de la Plaza de la Constitución o la Plaza de España durante la Visita a los Sagrarios del Jueves Santo. Es el punto donde la concentración de tamborileros es máxima.</p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Paso de los Evangelistas</h3>
+          <span class="tag">Varias procesiones · Entorno de los desfiles</span>
+          <p>Los Judíos irrumpen teatralmente entre las figuras de los evangelistas mientras escriben, provocando un peculiar «baile del evangelista». Es folclore vivo: el puente exacto entre la solemnidad de la procesión y el teatro popular medieval que se ha perdido en casi toda España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es único. En ninguna otra Semana Santa de España existe una representación teatral callejera integrada en el cortejo oficial con este nivel de arraigo y de participación popular.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Prendimiento de Jesús</h3>
+          <span class="tag">Jueves Santo · Noche · Calle</span>
+          <p>La Turba escenifica en plena calle la venta de Judas y el arresto de Jesús. Los Judíos asumen el papel de guardia que lo apresa, con todo el estruendo de los tambores como telón. Es el acto teatral de mayor peso narrativo de la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque da a la Turba un papel activo en la Pasión, no solo musical. Ver la representación en medio de la noche, rodeado de miles de personas y con el tambor de fondo, tiene una fuerza que no se improvisa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Visita a los Sagrarios</h3>
+          <span class="tag">Jueves Santo · Tarde · Desde el Monumento al Judío</span>
+          <p>Miles de Coliblancos y Colinegros, con la celada bajada y el toque de procesión, recorren la ciudad para visitar los templos. No hay imágenes. Solo filas interminables de cascos, plumeros y colas de crin moviéndose al ritmo del tambor. Es la mayor concentración humana y rítmica de toda la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque visualmente es lo más impactante de Baena. Sin pasos ni imágenes que distraigan, puedes concentrarte en la Turba como fenómeno en sí mismo. Y la escala es difícil de procesar hasta que la ves.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La ofrenda en el Monumento al Judío</h3>
+          <span class="tag">Jueves Santo · Mañana · Plaza de la Constitución</span>
+          <p>La Turba de Colinegros se dirige a San Francisco para la confesión de sus hermanos y después hace un toque solemne y una ofrenda floral en el Monumento al Judío. Es el momento más silencioso y recogido de los Colinegros en toda la semana. La cara que no esperas ver.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque rompe la imagen que uno tiene de las Turbas. Ver a miles de tamborileros detenidos en silencio, rindiendo homenaje a los cofrades fallecidos, cambia la perspectiva sobre lo que esta fiesta significa para quienes la viven desde dentro.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Baena no es una ciudad grande y las plazas se agotan con un año de antelación. Si llegas tarde, busca en casas rurales de la Subbética cordobesa: Zuheros, Luque o Cabra están a menos de media hora.</li>
+        <li><strong>Calzado.</strong> Suela gruesa. Las cuestas de la Almedina y las horas de pie sobre adoquín te lo agradecerán al final del día.</li>
+        <li><strong>Protección auditiva.</strong> Ya está en el aviso de arriba, pero merece repetirse: el tambor en Baena es continuo y a muy alto volumen durante días. Para niños pequeños es imprescindible.</li>
+        <li><strong>Programa oficial.</strong> Los horarios y recorridos exactos cambian cada año. Los datos de ediciones anteriores no son fiables. Consulta la web de la Agrupación de Cofradías antes de planificar.</li>
+        <li><strong>Si llueve.</strong> Las cofradías no salen. Los tambores tampoco desaparecen: se trasladan a los cuartelillos de las cuadrillas. Búscalos ahí y la fiesta sigue de puertas adentro.</li>
+        <li><strong>Accesibilidad.</strong> La parte alta — la Almedina — es muy complicada para sillas de ruedas. Las zonas del Parque y las avenidas del área inferior son mucho más accesibles para personas con movilidad reducida.</li>
+        <li><strong>Gastronomía.</strong> El producto estrella de Baena es su Aceite de Oliva Virgen Extra con D.O.P. — pruébalo en tostadas en cualquier bar del centro. Y en Cuaresma, el empedrao y el bacalao son los platos de la semana.</li>
+        <li><strong>Cuántos días.</strong> Si llegas el Miércoles Santo por la tarde y te vas el Viernes Santo al caer la noche, habrás visto el núcleo de la fiesta. Tres días, con el Jueves como punto central.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Judío</dt>
+        <dd>La figura central y exclusiva de Baena. Cofrade ataviado con chaqueta roja de origen militar afrancesado, pantalón negro, casco de latón con plumero y cola de crin. Representa teatralmente la guardia de la Pasión y tiene un papel activo en las escenificaciones de la calle. El nombre es una denominación histórica y teatral reconocida institucionalmente, no una referencia peyorativa.</dd>
+
+        <dt>Coliblancos / Colinegros</dt>
+        <dd>Los dos bandos de la Turba, según el color de la cola de crin del casco. Los Coliblancos pertenecen a las cofradías de la Vera Cruz, el Huerto y el Dulce Nombre. Los Colinegros, a Jesús Nazareno y al Resucitado. La distinción tiene doscientos años de historia, con raíces militares y políticas que con el tiempo derivaron en pura identidad cofrade.</dd>
+
+        <dt>Turba</dt>
+        <dd>La agrupación masiva formada por las cuadrillas de Judíos, el Rey, los Evangelistas y otras figuras que acompañan a las cofradías. No es solo un grupo de tamborileros: es una institución con rangos, funciones teatrales y reglas propias.</dd>
+
+        <dt>Cuadrillero</dt>
+        <dd>El mando de una cuadrilla de Judíos. Lleva bastón como símbolo de autoridad y es quien dirige los toques y los movimientos del grupo durante las procesiones.</dd>
+
+        <dt>Celada</dt>
+        <dd>La visera móvil del casco del Judío. En la calle y tocando de forma informal va levantada. Al paso frente a los templos o durante la procesión oficial se baja como señal de respeto.</dd>
+
+        <dt>Plumero</dt>
+        <dd>El adorno de plumas de colores vivos que remata el casco. Uno de los elementos más vistosos y más caros del atuendo del Judío. Antiguamente se cosía a mano pluma a pluma.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA (oculta hasta tener imágenes) -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/baena/turbas-visita-sagrarios.jpg" alt="Turbas de Coliblancos y Colinegros durante la Visita a los Sagrarios del Jueves Santo en Baena" />
+        <img src="images/baena/judio-baena-casco-plumero.jpg" alt="Judío de Baena con casco de latón, plumero de colores y cola de crin durante la Semana Santa" />
+        <img src="images/baena/prendimiento-baena.jpg" alt="Escenificación del Prendimiento de Jesús en la calle durante la Semana Santa de Baena" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.semanasantabaena.com" target="_blank" rel="noopener">Agrupación de Cofradías de Semana Santa de Baena — Web oficial</a></li>
+        <li><a href="https://www.baena.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Baena</a></li>
+        <li><a href="https://www.andalucia.org" target="_blank" rel="noopener">Turismo de Andalucía</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Baena en 2027?</dt>
+        <dd>Del domingo 21 de marzo (Domingo de Ramos) al domingo 28 de marzo (Domingo de Resurrección). El tambor empieza a dominar la ciudad desde la tarde del Miércoles Santo. El Jueves es el día grande de los Coliblancos; el Viernes, el de los Colinegros.</dd>
+
+        <dt>¿Qué diferencia hay entre Coliblancos y Colinegros?</dt>
+        <dd>El color de la cola de crin del casco. Originalmente marcaba el rango militar — blanca para los mandos, negra para la tropa. En el siglo XIX adquirió connotaciones políticas. Hoy es pura identidad cofrade: los Coliblancos son de la Vera Cruz, el Huerto y el Dulce Nombre; los Colinegros, de Jesús Nazareno y el Resucitado.</dd>
+
+        <dt>¿Cualquiera puede vestir de Judío y tocar el tambor?</dt>
+        <dd>No. Para vestir la indumentaria completa y tocar en las procesiones oficiales hay que pertenecer como hermano a una de las cofradías o tener cargo en las cuadrillas.</dd>
+
+        <dt>¿Las procesiones se suspenden por lluvia?</dt>
+        <dd>Sí, de forma categórica. El patrimonio escultórico, los bordados, los plumeros y los parches de tambor no pueden mojarse. Si hay riesgo de lluvia, las cofradías no salen. Los tambores se trasladan a los locales de las cuadrillas.</dd>
+
+        <dt>¿Hay que pagar para ver las procesiones?</dt>
+        <dd>No. La Semana Santa de Baena se vive de pie y en la calle, de forma completamente gratuita.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, pero con una advertencia clara sobre el ruido. El tambor es continuo y a un volumen muy alto durante días. Los niños pequeños necesitan protección auditiva adecuada. La procesión del Domingo de Ramos es la más tranquila y accesible para los más pequeños.</dd>
+
+        <dt>¿Por qué los Judíos visten de rojo con casco militar?</dt>
+        <dd>El atuendo tiene origen napoleónico. Tras la Batalla de Bailén en 1808, los baenenses adoptaron parte del uniforme de los coraceros franceses vencidos — el casco de latón, el plumero, la casaca roja — y lo integraron en la figura teatral del Judío que ya existía en sus procesiones. Esa mezcla de teatralidad medieval y estética militar es lo que hace único al Judío de Baena en toda España.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
