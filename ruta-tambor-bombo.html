@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ruta del Tambor y el Bombo 2027: Semana Santa del Bajo Aragón | Folklorius</title>
+  <meta name="description" content="Guía completa de la Ruta del Tambor y el Bombo 2027. Los 9 pueblos del Bajo Aragón, Patrimonio UNESCO y Fiesta de Interés Turístico Internacional. Calanda, Híjar, Alcañiz y más." />
+  <link rel="canonical" href="https://folklorius.es/ruta-tambor-bombo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ruta del Tambor y el Bombo 2027 | Cuando el Bajo Aragón rompe la hora" />
+  <meta property="og:description" content="Guía inmersiva de la Ruta del Tambor y el Bombo. 9 pueblos, Patrimonio UNESCO, ITI 2014. Calanda rompe la hora al mediodía. Híjar, a medianoche. Y Alcañiz, en silencio." />
+  <meta property="og:image" content="https://folklorius.es/images/ruta-tambor-bombo.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Grid de localidades (sustituye cofradías por día) ───── */
+    .localidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .localidad-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 14px 16px;
+    }
+    .localidad-col h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .localidad-col .dato {
+      font-size: 0.84rem;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+    .localidad-col .dato strong {
+      color: var(--text, #2c2c2c);
+      font-weight: 600;
+    }
+    .localidad-col .organizador {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--text-muted, #5a5a5a);
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border, #e8ddd4);
+      line-height: 1.4;
+    }
+
+    /* Etiquetas de color de hábito */
+    .habito-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-top: 2px;
+      letter-spacing: 0.03em;
+    }
+    .habito-negro  { background: #2c2c2c; color: #fff; }
+    .habito-morado { background: #5b2d8e; color: #fff; }
+    .habito-azul   { background: #1d4ed8; color: #fff; }
+    .habito-paisano { background: #e8ddd4; color: #5a4a3a; }
+
+    /* Etiqueta de instrumento */
+    .instrumento-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Tabla comparativa de pueblos ───────────────────────── */
+    .tabla-ruta {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-top: 1rem;
+    }
+    .tabla-ruta th {
+      background: var(--brand, #b34700);
+      color: #fff;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+    }
+    .tabla-ruta td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c);
+      vertical-align: top;
+    }
+    .tabla-ruta tr:nth-child(even) td {
+      background: var(--bg, #fafafa);
+    }
+    .tabla-ruta tr:last-child td { border-bottom: none; }
+
+    @media (max-width: 600px) {
+      .tabla-ruta { font-size: 0.78rem; }
+      .tabla-ruta th, .tabla-ruta td { padding: 6px 7px; }
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline procesiones ────────────────────────────────── */
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    /* ── Banner UNESCO ───────────────────────────────────────── */
+    .banner-unesco {
+      background: #f0f7ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid #1d4ed8;
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-unesco h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+    .banner-unesco p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-unesco p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    /* ── Anclas de localidad ─────────────────────────────────── */
+    .ancla-localidad {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand, #b34700);
+      margin: 24px 0 6px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--accent-light, #f5e6c8);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/ruta-tambor-bombo.html",
+    "name": "Ruta del Tambor y el Bombo — Semana Santa del Bajo Aragón",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Comarca del Bajo Aragón, Teruel",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Aragón",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0494,
+        "longitude": -0.3500
+      }
+    },
+    "organizer": [
+      { "@type": "Organization", "name": "Junta de Cofradías y Hermandades de Semana Santa de Albalate del Arzobispo" },
+      { "@type": "Organization", "name": "Junta Suprema de la Semana Santa de Alcañiz" },
+      { "@type": "Organization", "name": "Junta Local de Semana Santa de Alcorisa" },
+      { "@type": "Organization", "name": "Junta Local de Cofradías de Semana Santa de Andorra" },
+      { "@type": "Organization", "name": "Coordinadora de Cofradías de Semana Santa de Calanda" },
+      { "@type": "Organization", "name": "Junta Coordinadora de la Semana Santa de Híjar" },
+      { "@type": "Organization", "name": "Junta de Cofradías de Semana Santa de La Puebla de Híjar" },
+      { "@type": "Organization", "name": "Junta Rectora de la Semana Santa de Samper de Calanda" },
+      { "@type": "Organization", "name": "Junta de Cofradías de Semana Santa de Urrea de Gaén" }
+    ],
+    "image": ["https://folklorius.es/images/ruta-tambor-bombo.jpg"],
+    "description": "La Semana Santa de los 9 pueblos del Bajo Aragón que forman la Ruta del Tambor y el Bombo. Fiesta de Interés Turístico Internacional desde 2014 y Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO desde 2018 bajo la denominación 'Tamboradas, toques de tambor rituales'.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Ruta del Tambor y el Bombo
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/ruta-tambor-bombo.jpg" alt="Tamborileros del Bajo Aragón tocando en la Rompida de la Hora durante la Semana Santa de la Ruta del Tambor y el Bombo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Ruta del Tambor y el Bombo</h1>
+      <p class="ficha-subtitle">
+        9 pueblos del Bajo Aragón · Teruel · Aragón · «Cuando el Bajo Aragón rompe la hora.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2014</span>
+        <span class="badge badge-unesco">Patrimonio Cultural Inmaterial UNESCO desde 2018</span>
+      </div>
+
+      <!-- AVISO DE SENSIBILIDAD -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Ruido extremo y repentino.</strong> La Rompida de la Hora es uno de los momentos sonoros más intensos de la Semana Santa española. El nivel de decibelios en la plaza cuando arrancan cientos de tambores y bombos a la vez es físico. Protección auditiva imprescindible para niños pequeños y personas sensibles.</li>
+          <li><strong>9 pueblos, 9 programas distintos.</strong> Cada localidad tiene su propio calendario, horario y organización. Lo que es válido para Calanda no lo es para Híjar ni para Alcañiz. Consulta siempre el programa oficial de cada pueblo antes de salir.</li>
+          <li><strong>Frío de madrugada en Aragón.</strong> La Rompida de la Hora en la mayoría de pueblos ocurre a medianoche del Jueves al Viernes Santo. En marzo, la meseta turolense registra temperaturas muy bajas de noche. Ropa térmica, no abrigo de ciudad.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Hay un momento en la Semana Santa del Bajo Aragón que no se puede preparar del todo aunque lo hayas leído mil veces. La plaza está en silencio. Todo el mundo sabe lo que viene. Y entonces alguien da la señal — un pañuelo, un bastón, una vara — y en una fracción de segundo cientos de tambores y bombos arrancan a la vez. No es música. Es algo más parecido a un terremoto localizado en el pecho.
+      </p>
+      <p>
+        Eso es romper la hora. Y lo hacen nueve pueblos del Bajo Aragón, cada uno a su manera, cada uno con su identidad propia, bajo el paraguas de lo que se conoce como la <strong>Ruta del Tambor y el Bombo</strong>.
+      </p>
+      <p>
+        No son nueve versiones de lo mismo. Calanda lo hace de día, al mediodía del Viernes Santo, con bombos artesanales enormes en el centro de la plaza y en honor a Luis Buñuel. Híjar lo hace a medianoche, vestidos de negro riguroso, con una solemnidad que pesa. Y Alcañiz no rompe la hora: hace procesiones de silencio en azul, sin un solo bombo, que son lo más parecido a Castilla que encontrarás en Aragón.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Ruta del Tambor y el Bombo no es una fiesta con un único escenario central. Es un territorio de unos cuantos kilómetros cuadrados en la comarca del Bajo Aragón donde, durante la Semana Santa, nueve pueblos celebran por separado pero bajo una misma tradición: el toque de tambor y bombo como forma de oración, de duelo y de identidad colectiva.
+      </p>
+      <p>
+        El eje de la celebración en la mayoría de pueblos es la <strong>Rompida de la Hora</strong>: el momento exacto en que el tambor arranca de golpe, en la plaza mayor, con toda la población volcada. En ocho de los nueve pueblos ocurre en la medianoche del Jueves al Viernes Santo. En Calanda, al mediodía del Viernes.
+      </p>
+      <p>
+        Hacer la ruta completa en una semana es posible pero exigente. Lo habitual es elegir dos o tres pueblos según lo que quieras vivir: el estruendo nocturno de Híjar, la escenificación cinematográfica de Calanda, el silencio procesional de Alcañiz. Cada combinación da una Semana Santa distinta.
+      </p>
+      <p class="nota-grid">⚠️ Cada pueblo publica su propio programa oficial con horarios y recorridos exactos. Consúltalos antes de planificar: los datos cambian cada año y cada localidad tiene su propia organización.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen documentado del toque se remonta a la Edad Media. La leyenda popular lo vincula a un aviso sonoro para alertar a las poblaciones de la llegada de tropas enemigas, que las órdenes franciscanas y dominicas reconvirtieron en acto religioso. Otras fuentes apuntan a un origen pastoril o morisco. Lo que está claro es que lleva siglos arraigado en estos pueblos de una manera que va mucho más allá de la religión.
+      </p>
+      <p>
+        El significado litúrgico de la Rompida de la Hora es concreto: representa el cataclismo sísmico y espiritual que sufrió la Tierra en el momento en que Jesucristo expiró en la cruz. El estruendo «rompe» el tiempo, interrumpe la paz del pueblo como la muerte de Cristo interrumpió el orden del mundo. De ahí la palabra exacta: romper.
+      </p>
+      <p>
+        El toque se transmite de generación en generación dentro de las familias. En la mayoría de estos pueblos no hace falta pertenecer a ninguna cofradía para participar: basta con ataviarse con la túnica del pueblo y bajar a la plaza. Esa apertura es parte de lo que lo hace tan vivo.
+      </p>
+
+      <div class="banner-unesco" role="note">
+        <h3>Patrimonio UNESCO y Fiesta de Interés Turístico Internacional</h3>
+        <p>El 29 de noviembre de 2018, la UNESCO inscribió las <strong>«Tamboradas, toques de tambor rituales»</strong> en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad. La candidatura es colectiva e incluye a los 9 pueblos de la Ruta del Bajo Aragón junto a otras localidades españolas como Hellín, Calanda y varias más.</p>
+        <p>La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> se otorgó el 6 de junio de 2014 al conjunto de los 9 pueblos bajo la denominación oficial «Semana Santa de los pueblos de la Ruta del Tambor y Bombo». Ambos reconocimientos son colectivos: no pertenecen a un solo pueblo, sino a la Ruta como entidad.</p>
+      </div>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de 2027 transcurre del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los momentos clave de la Ruta se concentran en:
+      </p>
+      <ul>
+        <li><strong>Medianoche del Jueves al Viernes Santo (25-26 de marzo)</strong> — Rompida de la Hora en Albalate, Alcorisa, Andorra, Híjar, La Puebla de Híjar, Samper de Calanda y Urrea de Gaén.</li>
+        <li><strong>Mediodía del Viernes Santo (26 de marzo)</strong> — Rompida de la Hora en <strong>Calanda</strong>. El único pueblo que lo hace de día.</li>
+        <li><strong>Viernes y Sábado Santo</strong> — Procesiones de silencio en <strong>Alcañiz</strong>, sin tambores ni bombos.</li>
+      </ul>
+      <p>
+        Consulta el programa de cada pueblo en su web oficial o en la de la Ruta del Tambor y Bombo antes de viajar. Los horarios exactos y recorridos procesionales se confirman cada año.
+      </p>
+
+      <!-- SECCIÓN 5: MOMENTOS DESTACADOS POR LOCALIDAD -->
+      <h2 class="section-title">Momentos destacados por localidad</h2>
+      <ul class="procesiones-list">
+
+        <li id="calanda">
+          <span class="dia-label">Calanda · Viernes Santo · Mediodía · Plaza de España</span>
+          <strong>La Rompida de la Hora de Calanda.</strong> El único pueblo de la Ruta que rompe al mediodía, no a medianoche. El alcalde mueve la vara y un invitado de honor — frecuentemente del mundo del cine, en homenaje a Luis Buñuel, hijo ilustre del pueblo — da el primer mazo a uno de los enormes bombos artesanales del centro de la plaza. Túnica y tercerol morados. Miles de tamborileros. La plaza entera.
+        </li>
+
+        <li id="hijar">
+          <span class="dia-label">Híjar · Medianoche del Jueves al Viernes Santo · Plaza de la Villa</span>
+          <strong>La Rompida de la Hora de Híjar.</strong> De riguroso negro. El alcalde levanta el bastón — el gesto se llama «la subida» — y la plaza estalla. Híjar es, junto a Alcañiz, la tradición más antigua de la Ruta. Sus cofradías compiten a nivel nacional en el Concurso de Tambores y Bombos que organiza el propio pueblo.
+        </li>
+
+        <li id="alcaniz">
+          <span class="dia-label">Alcañiz · Viernes y Sábado Santo · Procesiones de silencio</span>
+          <strong>El pueblo diferente.</strong> Alcañiz no rompe la hora. Es el único de los nueve que no permite el bombo. Sus procesiones — entre ellas la del Sellado del Sepulcro el Sábado Santo — son de silencio ordenado, con túnica azul y tercerol, y tienen más en común con la Semana Santa castellana que con el estruendo del resto de la Ruta.
+        </li>
+
+        <li id="alcorisa">
+          <span class="dia-label">Alcorisa · Medianoche del Jueves al Viernes Santo · Plaza de los Arcos</span>
+          <strong>La Rompida de la Hora de Alcorisa.</strong> La alcaldesa baja el bastón de mando para dar la señal. Túnica morada con pañuelo blanco. El Viernes Santo añade «El Drama de la Cruz», una Pasión Viviente en el monte Calvario que es el acto teatral más singular de este pueblo dentro de la Ruta.
+        </li>
+
+        <li id="andorra">
+          <span class="dia-label">Andorra · Medianoche del Jueves al Viernes Santo · Plaza del Regallo</span>
+          <strong>La Rompida de la Hora de Andorra.</strong> Tras el sonido de una corneta, la alcaldesa baja la maza. Túnica negra con el inconfundible fajín rojo en la cintura. La Cofradía del Cristo de los Tambores y Bombos aglutina a la mayoría de los andorranos que tocan.
+        </li>
+
+        <li id="samper">
+          <span class="dia-label">Samper de Calanda · Medianoche del Jueves al Viernes Santo · Plaza de España</span>
+          <strong>Los Alabarderos y el Cristo articulado.</strong> La Rompida arranca tras el toque de cornetas de Los Alabarderos. Samper añade dos elementos únicos en la Ruta: el uso de carracas monumentales y el acto del Descendimiento con el Cristo de la cama, un Cristo articulado que se desmonta escénicamente de la cruz.
+        </li>
+
+        <li id="albalate">
+          <span class="dia-label">Albalate del Arzobispo · Medianoche del Jueves al Viernes Santo · Plaza de la Iglesia</span>
+          <strong>El pañuelo blanco.</strong> La señal que da inicio a la Rompida en Albalate es un pañuelo blanco. Túnica y tercerol negros con pañuelo blanco al cuello. Participación libre: sale todo el pueblo.
+        </li>
+
+        <li id="puebla">
+          <span class="dia-label">La Puebla de Híjar · Medianoche del Jueves al Viernes Santo · Plaza de España</span>
+          <strong>De paisano a la medianoche.</strong> Único pueblo de la Ruta donde se rompe la hora sin hábito: los tamborileros van de paisano. La túnica negra solo aparece para el toque de «cese» del Sábado Santo. Sin protocolo de cofradía: cualquier vecino ataviado puede participar.
+        </li>
+
+        <li id="urrea">
+          <span class="dia-label">Urrea de Gaén · Medianoche del Jueves al Viernes Santo · Plaza del pueblo</span>
+          <strong>El reloj marca el inicio.</strong> En Urrea la señal la da el primer cuarto del reloj de la plaza. Sin ceremonia añadida: el reloj suena y el tambor arranca. Túnica negra con tercerol y pañuelo blanco. El más íntimo de los nueve pueblos.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: LOS 9 PUEBLOS — GUÍA RÁPIDA -->
+      <h2 class="section-title">Los 9 pueblos — guía rápida</h2>
+      <p>
+        Cada pueblo tiene su propio carácter. Pasa el cursor sobre el organizador para ver su nombre oficial completo.
+      </p>
+      <p class="nota-grid">Los horarios y programas exactos los publica cada año la organización de cada localidad. Consúltalos antes de planificar la ruta.</p>
+
+      <div class="localidades-grid">
+
+        <div class="localidad-col" id="grid-albalate">
+          <h3>Albalate del Arzobispo</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza de la Iglesia</p>
+          <p class="dato"><strong>Señal:</strong> Pañuelo blanco</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="organizador">Junta de Cofradías y Hermandades de Semana Santa de Albalate del Arzobispo · Participación libre vecinal</p>
+        </div>
+
+        <div class="localidad-col" id="grid-alcaniz">
+          <h3>Alcañiz</h3>
+          <p class="dato"><strong>No rompe la hora.</strong> Procesiones de silencio (Sellado del Sepulcro, Sábado Santo)</p>
+          <p class="dato">
+            <span class="habito-tag habito-azul">Túnica azul</span>
+            <span class="instrumento-tag">Solo tambor</span>
+          </p>
+          <p class="dato" style="font-size:0.8rem; color:var(--brand);">⚠️ Único pueblo sin bombo</p>
+          <p class="organizador">Junta Suprema de la Semana Santa de Alcañiz · Asociación de Amigos del Tambor de Alcañiz</p>
+        </div>
+
+        <div class="localidad-col" id="grid-alcorisa">
+          <h3>Alcorisa</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza de los Arcos</p>
+          <p class="dato"><strong>Señal:</strong> La alcaldesa baja el bastón</p>
+          <p class="dato"><strong>Extra:</strong> Drama de la Cruz (Viernes Santo)</p>
+          <p class="dato">
+            <span class="habito-tag habito-morado">Túnica morada</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="organizador">Junta Local de Semana Santa de Alcorisa · Cofradía de la Sangre de Cristo · Cofradía Jesús Nazareno</p>
+        </div>
+
+        <div class="localidad-col" id="grid-andorra">
+          <h3>Andorra</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza del Regallo</p>
+          <p class="dato"><strong>Señal:</strong> Corneta + la alcaldesa baja la maza</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="dato" style="font-size:0.8rem;">Fajín rojo en la cintura</p>
+          <p class="organizador">Junta Local de Cofradías de Semana Santa · Cofradía del Cristo de los Tambores y Bombos</p>
+        </div>
+
+        <div class="localidad-col" id="grid-calanda">
+          <h3>Calanda</h3>
+          <p class="dato"><strong>Rompida:</strong> Viernes Santo · Mediodía · Plaza de España</p>
+          <p class="dato"><strong>Señal:</strong> El alcalde mueve la vara</p>
+          <p class="dato"><strong>Único pueblo que rompe de día</strong></p>
+          <p class="dato">
+            <span class="habito-tag habito-morado">Túnica morada</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="organizador">Coordinadora de Cofradías de Semana Santa de Calanda · 9 cofradías oficiales</p>
+        </div>
+
+        <div class="localidad-col" id="grid-hijar">
+          <h3>Híjar</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza de la Villa</p>
+          <p class="dato"><strong>Señal:</strong> El alcalde levanta el bastón («la subida»)</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="dato" style="font-size:0.8rem;">Sede del Concurso Nacional de Tambores y Bombos</p>
+          <p class="organizador">Junta Coordinadora de la Semana Santa de Híjar · Cofradía de El Encuentro · La Burrica</p>
+        </div>
+
+        <div class="localidad-col" id="grid-puebla">
+          <h3>La Puebla de Híjar</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza de España</p>
+          <p class="dato"><strong>Sin hábito en la Rompida</strong> — de paisano</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="dato" style="font-size:0.8rem;">La túnica solo aparece en el toque de cese (Sábado Santo)</p>
+          <p class="organizador">Junta de Cofradías de Semana Santa de La Puebla de Híjar · Participación libre vecinal</p>
+        </div>
+
+        <div class="localidad-col" id="grid-samper">
+          <h3>Samper de Calanda</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie · Plaza de España</p>
+          <p class="dato"><strong>Señal:</strong> Toque de cornetas de Los Alabarderos</p>
+          <p class="dato"><strong>Extra:</strong> Carracas monumentales + Cristo articulado</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="organizador">Junta Rectora de la Semana Santa de Samper · Venerable Orden Tercera de San Francisco · Cofradía del Rosario</p>
+        </div>
+
+        <div class="localidad-col" id="grid-urrea">
+          <h3>Urrea de Gaén</h3>
+          <p class="dato"><strong>Rompida:</strong> Medianoche Jue→Vie — al sonar el primer cuarto del reloj de la plaza</p>
+          <p class="dato">
+            <span class="habito-tag habito-negro">Túnica negra</span>
+            <span class="instrumento-tag">Tambor + Bombo</span>
+          </p>
+          <p class="dato" style="font-size:0.8rem;">El más íntimo y vecinal de los nueve pueblos</p>
+          <p class="organizador">Junta de Cofradías de Semana Santa de Urrea de Gaén · Participación libre vecinal</p>
+        </div>
+
+      </div>
+
+      <!-- TABLA COMPARATIVA -->
+      <h2 class="section-title" style="margin-top:2rem;">¿Qué pueblo me conviene?</h2>
+      <p>Si tienes poco tiempo y quieres elegir bien, esta tabla te ayuda a decidir.</p>
+
+      <table class="tabla-ruta" aria-label="Comparativa de los 9 pueblos de la Ruta del Tambor y el Bombo">
+        <thead>
+          <tr>
+            <th>Pueblo</th>
+            <th>Cuándo rompe</th>
+            <th>Hábito</th>
+            <th>Especial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Calanda</strong></td>
+            <td>Viernes · Mediodía</td>
+            <td>Morado</td>
+            <td>El más cinematográfico. Homenaje a Buñuel.</td>
+          </tr>
+          <tr>
+            <td><strong>Híjar</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Negro</td>
+            <td>El más antiguo y austero. Concurso nacional.</td>
+          </tr>
+          <tr>
+            <td><strong>Alcañiz</strong></td>
+            <td>No rompe la hora</td>
+            <td>Azul</td>
+            <td>Silencio procesional. Sin bombos. Único.</td>
+          </tr>
+          <tr>
+            <td><strong>Alcorisa</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Morado</td>
+            <td>Pasión Viviente en el Calvario. Drama de la Cruz.</td>
+          </tr>
+          <tr>
+            <td><strong>Andorra</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Negro + fajín rojo</td>
+            <td>El fajín rojo lo distingue de todos los demás.</td>
+          </tr>
+          <tr>
+            <td><strong>Samper de Calanda</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Negro</td>
+            <td>Cristo articulado. Carracas monumentales.</td>
+          </tr>
+          <tr>
+            <td><strong>Albalate del Arzobispo</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Negro</td>
+            <td>La señal: un pañuelo blanco.</td>
+          </tr>
+          <tr>
+            <td><strong>La Puebla de Híjar</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>De paisano / Negro</td>
+            <td>Se rompe sin hábito. El más informal de la Ruta.</td>
+          </tr>
+          <tr>
+            <td><strong>Urrea de Gaén</strong></td>
+            <td>Jue→Vie · Medianoche</td>
+            <td>Negro</td>
+            <td>El reloj da la señal. El más íntimo.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">El tambor que rompe el tiempo</h3>
+        <p>El toque del Bajo Aragón no es un acompañamiento: es el acto en sí mismo. No hay imágenes que escoltar en la Rompida de la Hora, no hay procesión que seguir. Solo la plaza, los tambores, los bombos y el momento exacto en que todo arranca.</p>
+        <p>Lo que distingue este toque de otros como Hellín o Baena es la sincronía. En el Bajo Aragón los tambores arrancan juntos, en el mismo instante, a una señal precisa. El efecto es diferente: no es un océano sonoro caótico sino un impacto concentrado que corta el silencio de la noche como un hachazo.</p>
+        <p style="margin-bottom:0;">Cada pueblo tiene sus propios matices: los bombos artesanales de Calanda tienen un sonido más grave y físico que los de otros pueblos. Los tambores de Alcañiz — sin bombos — crean una textura más seca y precisa. Y en Andorra, el fajín rojo de los tamborileros añade una capa visual que cambia completamente la percepción del conjunto.</p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Rompida de la Hora en Calanda</h3>
+          <span class="tag">Viernes Santo · Mediodía · Plaza de España · Calanda</span>
+          <p>El mediodía en Calanda tiene una teatralidad que ningún otro pueblo de la Ruta puede igualar. La luz del día, el invitado del mundo del cine, el bombo gigante en el centro de la plaza y la vara del alcalde. Cuando arranca, lo hace todo a la vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque Calanda tiene la Rompida más famosa y más fotogénica de toda la Ruta. La herencia de Buñuel, que describió este sonido en sus memorias, le da una dimensión cultural que va más allá de la fiesta religiosa. Y hacerlo de día, con sol, lo hace accesible para quien no quiere trasnochar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Rompida de medianoche en Híjar</h3>
+          <span class="tag">Medianoche Jueves→Viernes Santo · Plaza de la Villa · Híjar</span>
+          <p>Híjar de noche, vestidos de negro, con «la subida» del bastón del alcalde como única señal. Es la versión más austera y más antigua de la Rompida. Si Calanda es cinematográfica, Híjar es literaria.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la combinación de oscuridad, túnica negra y el estruendo repentino a medianoche tiene una carga emocional que de día no existe. Es el Bajo Aragón en su versión más esencial.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las procesiones de silencio en Alcañiz</h3>
+          <span class="tag">Viernes y Sábado Santo · Alcañiz</span>
+          <p>En un recorrido por la Ruta donde el tambor es omnipresente, Alcañiz es el contrapunto necesario. Procesiones ordenadas, túnica azul, sin un solo bombo. La Procesión del Sellado del Sepulcro del Sábado Santo tiene una sobriedad que sorprende viniendo de la comarca más ruidosa de España durante estas fechas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contraste con el resto de la Ruta lo convierte en una experiencia completamente distinta. Quien viene buscando solo tambores se encuentra con algo que no esperaba y que, con frecuencia, acaba siendo lo que más recuerda.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Drama de la Cruz en Alcorisa</h3>
+          <span class="tag">Viernes Santo · Monte Calvario · Alcorisa</span>
+          <p>Alcorisa añade a su Rompida de medianoche una Pasión Viviente en el monte Calvario el Viernes Santo. Es el acto teatral más singular de la Ruta: la escenificación de la crucifixión en un escenario natural, con la sierra de fondo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque combina la tradición del tambor con el teatro popular al aire libre, dos formas de hacer Semana Santa que raramente coinciden en el mismo pueblo. Es la propuesta más completa de los nueve para quienes quieren más que la Rompida.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Cristo articulado de Samper de Calanda</h3>
+          <span class="tag">Viernes Santo · Samper de Calanda</span>
+          <p>Samper tiene dos elementos que no hay en ningún otro pueblo de la Ruta: las carracas monumentales y el Cristo de la cama — una imagen articulada que se desmonta escénicamente de la cruz en el acto del Descendimiento.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Cristo articulado es una pieza de patrimonio inmaterial único. Ver el Descendimiento representado con una imagen que se mueve, rodeado del sonido de las carracas, es una de las experiencias más insólitas de toda la Ruta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Rompida de paisano en La Puebla de Híjar</h3>
+          <span class="tag">Medianoche Jueves→Viernes Santo · Plaza de España · La Puebla de Híjar</span>
+          <p>El único pueblo donde se rompe la hora sin hábito. Los tamborileros bajan a la plaza de paisano, con el instrumento, y tocan. La túnica negra solo aparece días después para el toque de cese. Es la versión más vecinal e informal de la Ruta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque desnuda la fiesta de su aparato visual y deja solo lo esencial: el tambor, la plaza y la gente del pueblo. Es la Rompida más honesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El fajín rojo de Andorra</h3>
+          <span class="tag">Medianoche Jueves→Viernes Santo · Plaza del Regallo · Andorra</span>
+          <p>Entre el negro dominante de la Ruta, Andorra tiene un detalle que la distingue a simple vista: el fajín rojo en la cintura de sus tamborileros. La Cofradía del Cristo de los Tambores y Bombos reúne a casi todo el pueblo para la Rompida, y esa franja de color sobre la túnica negra convierte la plaza del Regallo en algo visualmente diferente al resto de la Ruta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque los detalles de identidad local son los que hacen que cada Rompida sea distinta. El fajín rojo de Andorra no es decorativo: es la marca de una comunidad que ha decidido que su tambor tiene su propio aspecto. Eso merece verse.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El pañuelo blanco de Albalate del Arzobispo</h3>
+          <span class="tag">Medianoche Jueves→Viernes Santo · Plaza de la Iglesia · Albalate del Arzobispo</span>
+          <p>En Albalate no hay bastón, ni maza, ni vara. La señal que rompe el silencio de la noche es un pañuelo blanco. Un gesto mínimo, casi íntimo, para desencadenar el estruendo colectivo. Túnica y tercerol negros con el mismo pañuelo blanco al cuello que después aparecerá en el aire para dar inicio al toque.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la sencillez de esa señal — un pañuelo en la oscuridad — concentra toda la emoción de la Rompida en un solo objeto. No hay aparato, no hay protocolo visible. Solo ese instante antes del estallido.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El reloj de Urrea de Gaén</h3>
+          <span class="tag">Medianoche Jueves→Viernes Santo · Plaza del pueblo · Urrea de Gaén</span>
+          <p>En Urrea no hay autoridad que dé la señal. La da el reloj de la plaza. Cuando suena el primer cuarto de la medianoche, los tambores arrancan. Es el pueblo más pequeño e íntimo de los nueve, y quizá por eso su Rompida tiene una escala humana que en los pueblos más grandes se pierde entre el gentío.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en Urrea el tambor no necesita escenografía. Solo necesita el reloj, la plaza y los vecinos. Para quien quiere vivir la Rompida sin multitudes de turistas, Urrea es la respuesta más honesta de la Ruta.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Planifica antes de salir.</strong> Nueve pueblos, nueve programas distintos. Decide qué Rompidas quieres ver y construye la ruta desde ahí. Intentar verlo todo en una semana es agotador y no suele salir bien.</li>
+        <li><strong>Alojamiento.</strong> Los pueblos de la Ruta son pequeños y el alojamiento es limitado. Busca en Alcañiz o Andorra como bases, tienen más oferta. Reserva con meses de antelación para el Jueves y Viernes Santo.</li>
+        <li><strong>Transporte.</strong> La Ruta está pensada para recorrerse en coche. Las distancias entre pueblos son manejables pero los transportes públicos entre localidades son escasos durante la Semana Santa.</li>
+        <li><strong>Ropa de noche.</strong> La mayoría de Rompidas son a medianoche en marzo en la meseta turolense. El frío es real y húmedo. Ropa térmica bajo el abrigo, no encima.</li>
+        <li><strong>Protección auditiva.</strong> El impacto sonoro de la Rompida es físico e instantáneo. Para niños pequeños y personas sensibles al ruido es imprescindible.</li>
+        <li><strong>Participación.</strong> En la mayoría de pueblos el toque es libre y vecinal. Pregunta en cada localidad si los visitantes pueden sumarse y cómo hacerlo correctamente.</li>
+        <li><strong>Gastronomía.</strong> El Bajo Aragón es tierra de aceite de oliva, ternasco de Aragón y melocotón de Calanda con Denominación de Origen. Las jornadas largas aguantan mejor con una buena base.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Romper la hora</dt>
+        <dd>El momento exacto en que cientos de tambores y bombos arrancan simultáneamente en la plaza mayor, a una señal precisa. Representa litúrgicamente el cataclismo de la Tierra en el momento de la muerte de Cristo. En ocho de los nueve pueblos ocurre a medianoche del Jueves al Viernes Santo; en Calanda, al mediodía del Viernes.</dd>
+
+        <dt>Tercerol</dt>
+        <dd>El gorro o capucha de tela que forma parte del hábito en los pueblos de la Ruta. A diferencia del capirote cónico de otras regiones, el tercerol aragonés es más plano y cercano al modelo histórico medieval.</dd>
+
+        <dt>Tamborilero</dt>
+        <dd>Quien toca el tambor en la Rompida y en los actos de Semana Santa. En la mayoría de pueblos de la Ruta no es necesario pertenecer a ninguna cofradía: basta con ataviarse correctamente y bajar a la plaza.</dd>
+
+        <dt>La subida</dt>
+        <dd>El gesto con el que el alcalde de Híjar da la señal para romper la hora: levantar el bastón de mando. Cada pueblo tiene su propia señal — un pañuelo, una maza, una vara, el reloj de la plaza —, pero en Híjar este gesto tiene nombre propio.</dd>
+
+        <dt>Toque de cese</dt>
+        <dd>El toque final que da por concluida la Semana Santa del tambor. En La Puebla de Híjar ocurre el Sábado Santo y es el único momento en que los tamborileros visten la túnica negra, al contrario que en el resto de pueblos donde el hábito se lleva desde la Rompida.</dd>
+
+        <dt>Cristo de la cama</dt>
+        <dd>Nombre popular del Cristo articulado de Samper de Calanda, una imagen con articulaciones en los brazos que permite representar escénicamente el Descendimiento de la cruz. Una pieza de patrimonio inmaterial único en la Ruta.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA (oculta hasta tener imágenes) -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/ruta-tambor-bombo/rompida-hora-calanda.jpg" alt="Rompida de la Hora al mediodía del Viernes Santo en la Plaza de España de Calanda, con cientos de tamborileros con túnica morada" />
+        <img src="images/ruta-tambor-bombo/rompida-medianoche-hijar.jpg" alt="Tamborileros vestidos de negro riguroso en la Rompida de la Hora a medianoche en la Plaza de la Villa de Híjar" />
+        <img src="images/ruta-tambor-bombo/procesion-silencio-alcaniz.jpg" alt="Procesión de silencio con túnicas azules en la Semana Santa de Alcañiz" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.rutadeltamborybombo.com" target="_blank" rel="noopener">Ruta del Tambor y el Bombo — Web oficial</a></li>
+        <li><a href="https://www.turismodearagon.com" target="_blank" rel="noopener">Turismo de Aragón</a></li>
+        <li><a href="https://www.ayto-calanda.es" target="_blank" rel="noopener">Ayuntamiento de Calanda</a></li>
+        <li><a href="https://www.hijar.es" target="_blank" rel="noopener">Ayuntamiento de Híjar</a></li>
+        <li><a href="https://ich.unesco.org" target="_blank" rel="noopener">Patrimonio Cultural Inmaterial UNESCO</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Qué es la Ruta del Tambor y el Bombo?</dt>
+        <dd>Es el nombre con el que se conoce el conjunto de 9 pueblos del Bajo Aragón (Teruel) que comparten la tradición del toque de tambor y bombo durante la Semana Santa. El reconocimiento como Fiesta de Interés Turístico Internacional y el Patrimonio UNESCO se otorgaron al conjunto, no a ningún pueblo por separado.</dd>
+
+        <dt>¿Cuándo se celebra en 2027?</dt>
+        <dd>La Semana Santa de 2027 va del 19 al 28 de marzo. Los momentos clave son la medianoche del Jueves al Viernes Santo (25-26 de marzo) en ocho de los nueve pueblos, y el mediodía del Viernes Santo (26 de marzo) en Calanda. Consulta el programa de cada localidad para los horarios exactos.</dd>
+
+        <dt>¿Qué diferencia a Calanda del resto?</dt>
+        <dd>Calanda es el único pueblo de la Ruta que rompe la hora de día, al mediodía del Viernes Santo. El resto lo hacen a medianoche del Jueves al Viernes. Además, Calanda rinde homenaje a Luis Buñuel, que describió este momento en sus memorias, invitando cada año a alguien del mundo del cine a dar el primer mazo.</dd>
+
+        <dt>¿Y Alcañiz?</dt>
+        <dd>Alcañiz es el pueblo más diferente de la Ruta: no rompe la hora, no permite el bombo y organiza procesiones de silencio con túnica azul. Su Semana Santa tiene más en común con la tradición castellana que con el estruendo del resto del Bajo Aragón.</dd>
+
+        <dt>¿Puede participar cualquier visitante en la Rompida?</dt>
+        <dd>En la mayoría de pueblos el toque es vecinal y abierto. No se necesita pertenecer a ninguna cofradía para participar, solo ataviarse correctamente. Consulta en cada localidad cómo hacerlo y si los visitantes están bienvenidos a sumarse.</dd>
+
+        <dt>¿Cuántos días necesito para hacer la ruta completa?</dt>
+        <dd>Para ver los momentos más importantes de los nueve pueblos necesitarías prácticamente toda la semana y un coche. Lo más habitual es elegir dos o tres localidades según el carácter que buscas: si quieres el estruendo de medianoche, Híjar; si prefieres el ambiente diurno, Calanda; si quieres silencio, Alcañiz.</dd>
+
+        <dt>¿Hay que pagar para ver las procesiones y la Rompida?</dt>
+        <dd>No. Todos los actos son de libre acceso en la calle y completamente gratuitos.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
