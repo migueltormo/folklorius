@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Cieza 2027: Guía Completa, Armaos y La Cortesía</title>
+  <meta name="description" content="Guía completa de la Semana Santa de Cieza 2027. La Caracola de los Armaos, el Auto del Prendimiento, la ciudad a oscuras en la Procesión del Silencio y la batalla de caramelos del Domingo de Resurrección. Fiesta de Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-cieza.html" />
+
+  <meta property="og:title" content="Semana Santa de Cieza 2027 | Pasión en la calle, escultura levantina y los Armaos" />
+  <meta property="og:description" content="Cieza en Semana Santa: la Caracola del Tercio Romano, el Auto del Prendimiento, la ciudad a oscuras a medianoche y miles de caramelos cayendo de los balcones el Domingo de Resurrección." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-cieza.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 14px 16px;
+    }
+    .cofradia-col h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-cieza.html",
+    "name": "Semana Santa de Cieza",
+    "startDate": "2027-03-19",
+    "endDate": "2027-03-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Cieza",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cieza",
+        "addressRegion": "Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.2394,
+        "longitude": -1.4197
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Hermandades Pasionarias de Cieza",
+      "url": "https://semanasantadecieza.es/"
+    },
+    "image": ["https://folklorius.es/images/semana-santa-cieza.jpg"],
+    "description": "La Semana Santa de Cieza: la Caracola del Tercio Romano, el Auto del Prendimiento, la ciudad a oscuras a medianoche con el Cristo de la Agonía y la batalla de caramelos del Domingo de Resurrección. 18 cofradías. Fiesta de Interés Turístico Internacional.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Cieza
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-cieza.jpg" alt="El Tercio Romano de los Armaos ejecutando la Caracola en las calles de Cieza durante la Semana Santa" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Cieza</h1>
+      <p class="ficha-subtitle">
+        Cieza · Murcia · "Pasión en la calle, escultura levantina y el eco de los Armaos."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Silencio en las procesiones nocturnas.</strong> La Procesión del Silencio del Jueves Santo y la del Descendimiento de madrugada exigen un recogimiento total. La ciudad literalmente apaga las luces — el ambiente lo impone.</li>
+          <li><strong>La batalla de caramelos.</strong> El Domingo de Resurrección caen miles de kilos de caramelos desde los balcones. Si asistes con niños pequeños o no quieres participar, sitúate fuera del núcleo central de La Cortesía.</li>
+          <li><strong>La Caracola de los Armaos.</strong> Durante las maniobras del Tercio Romano necesitan espacio amplio en la calle. Respeta las indicaciones de los organizadores y no te adelantes al paso.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Cieza huele a azahar y a huerta murciana, pero en Semana Santa ese aroma lo tapa el incienso, la cera fundida y el estallido seco de los tambores. La ciudad pasa en ocho días de la sobriedad de un Cristo agónico procesionando a oscuras a medianoche, a los miles de caramelos cayendo de los balcones el Domingo de Resurrección mientras las imágenes bailan en la calle.
+      </p>
+      <p>
+        Entre esos dos extremos, los anderos portan tronos pesados y luminosos con imaginería de González Moreno, Planes y Palma Burgos, y el Tercio Romano de los Armaos marca el paso con el ruido metálico de sus armaduras sobre los adoquines. Es una Semana Santa de fuertes contrastes y ninguno de ellos es accidental.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Cieza combina el rigor de la imaginería levantina con un componente teatral y sensorial que pocas ciudades de Murcia tienen tan desarrollado. La estructura de los desfiles es cuidada y homogénea — guion, tercio infantil, estandarte, nazarenos, anderos y banda — pero esa estructura se quiebra en momentos singulares: el Auto del Prendimiento en la Plaza Mayor, las coreografías militares del Tercio Romano y el Baile de los Santos del Domingo de Resurrección.
+      </p>
+      <p>
+        <strong>18 cofradías y hermandades</strong> organizan la semana bajo la coordinación de la Junta de Hermandades Pasionarias. Varias de ellas procesionan múltiples días, especialmente en la gran Procesión General del Miércoles Santo.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta de Hermandades Pasionarias de Cieza en su web oficial. Consúltalos antes de salir.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las raíces de la devoción nazarena en Cieza arrancan en los siglos XV y XVI de la mano de predicadores dominicos y franciscanos. Las primeras fundaciones documentadas datan de <strong>1692</strong> — la Cofradía de Jesús Nazareno y la de la Soledad — y forman el núcleo histórico de lo que hoy son 18 hermandades.
+      </p>
+      <p>
+        A lo largo del siglo XIX la fiesta adquirió el perfil de las grandes representaciones levantinas: pasos de mayor envergadura, aparición del Tercio Romano y consolidación de la Procesión General. Tras las pérdidas de la Guerra Civil, Cieza tuvo que reponer casi todo su patrimonio escultórico. El resultado fue la incorporación de obras de <strong>José Planes, Juan González Moreno y Palma Burgos</strong> — los grandes maestros de la imaginería murciana del siglo XX — que hoy son el orgullo artístico de la ciudad.
+      </p>
+      <p>
+        La fiesta fue declarada Fiesta de Interés Turístico Internacional, reconocimiento que recoge no solo el valor del patrimonio material sino el arraigo popular de tradiciones como La Caracola o La Cortesía.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        La Semana Santa de Cieza en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor densidad son el <strong>Martes Santo, 23 de marzo</strong> (Auto del Prendimiento), el <strong>Miércoles Santo, 24 de marzo</strong> (Procesión General), el <strong>Jueves Santo, 25 de marzo</strong> (Procesión del Silencio a medianoche) y el <strong>Domingo de Resurrección, 28 de marzo</strong> (La Cortesía).
+      </p>
+
+      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
+      <h2 class="section-title">Procesiones más destacadas</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          Abre la semana el <strong>Traslado del Santo Cristo del Consuelo</strong> desde su ermita hasta la Basílica de la Asunción — uno de los actos más emotivos para el pueblo ciezano. Además, la <strong>Procesión de la Palma</strong> y la <strong>Entrada de Jesús en Jerusalén</strong>.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          No hay procesión pública este día. En su lugar, la <strong>Ruta de Semana Santa</strong>: las casas-museo de las cofradías abren sus puertas junto con la Basílica de la Asunción, permitiendo ver la imaginería y el ajuar a escasos centímetros. Es la mejor oportunidad del año para apreciar los detalles de talla, pan de oro y bordados sin multitudes.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          La noche del <strong>Auto del Prendimiento</strong> en la Plaza Mayor. Una escenificación teatral al aire libre donde actores interactúan con los pasos procesionales en una representación que culmina cuando el Tercio Romano de los Armaos prende a la imagen del Nazareno. Es la herencia más directa de los autos sacramentales medievales que sigue viva en España.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          La gran noche de Cieza: la <strong>Procesión General</strong>. Más de 4.000 cofrades y 13 hermandades desfilan en orden cronológico narrando la Pasión entera en una sola noche. Es el mayor despliegue de tronos, imaginería y bandas de toda la semana. El punto de observación recomendado por los ciezanos: la <strong>Calle San Sebastián</strong>.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          Dos procesiones de naturaleza completamente distinta:
+          <br><br>
+          A las <strong>20:30 h</strong>, la <strong>Procesión de los Hijos de María</strong>, organizada por la Real Cofradía de Nuestra Señora de Gracia y Esperanza. Es la única procesión de Cieza con protagonismo absoluto de la Virgen y la única imagen que desfila bajo palio en toda la Semana Santa ciezana. La acompaña un extenso cortejo de nazarenos y un tercio de mujeres con mantilla y luto español — las manolas.
+          <br><br>
+          A las <strong>00:00 h</strong> — medianoche — la <strong>Procesión del Silencio</strong>. Cieza apaga literalmente el alumbrado público en el casco antiguo. En la oscuridad total, solo roto por tambores sordos y corales sacras, procesiona el <strong>Santísimo Cristo de la Agonía</strong>, obra de Juan González Moreno de 1941. La ciudad sumida en negro, una talla cumbre de la imaginería murciana y el silencio como único marco.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          La mañana arranca con la <strong>Caracola de los Armaos</strong> en la Calle San Sebastián: el Tercio Romano ejecuta su coreografía militar en espiral ante el público. Por la madrugada, del Viernes al Sábado, la <strong>Procesión del Descendimiento</strong> recorre la ciudad a oscuras con antorchas y música coral sacra en el mayor recogimiento de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          El cierre más festivo de la Semana Santa murciana: <strong>La Cortesía</strong>. Miles de personas en la calle para el <strong>Baile de los Santos</strong> — las imágenes se inclinan en reverencia al ritmo de marchas alegres — seguido de una batalla de miles de kilos de caramelos lanzados desde los balcones. El contraste con el silencio y la oscuridad del Jueves Santo es parte del diseño de la fiesta.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Cieza está organizada por <strong>18 cofradías y hermandades</strong> coordinadas por la Junta de Hermandades Pasionarias. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
+      </p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta de Hermandades Pasionarias de Cieza.</p>
+
+      <div class="cofradias-grid">
+
+        <div class="cofradia-col">
+          <h3>Domingo de Ramos</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Cristo del Consuelo</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Consuelo. Organiza el Traslado del Cristo desde su ermita hasta la Basílica de la Asunción, uno de los actos de mayor devoción popular de la semana.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Martes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Armaos</span>
+              <span class="tooltip-texto">Cofradía del Tercio Romano del Santo Sepulcro. Los Armaos protagonizan el Auto del Prendimiento del Martes Santo en la Plaza Mayor, arrestando a la imagen del Nazareno.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Nazareno</span>
+              <span class="tooltip-texto">Real Cofradía de Jesús Nazareno. Fundada en 1692, es una de las más antiguas de Cieza. Su imagen es la protagonista del Auto del Prendimiento del Martes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Miércoles Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Samaritana</span>
+              <span class="tooltip-texto">Cofradía de La Samaritana. Participa en la Procesión General del Miércoles Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Dormís</span>
+              <span class="tooltip-texto">Cofradía de La Oración del Huerto y El Santo Sepulcro, conocida popularmente como "Los Dormís".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Descendimiento</span>
+              <span class="tooltip-texto">Cofradía del Descendimiento de Cristo y Beso de Judas. Participa en la Procesión General.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Pedro</span>
+              <span class="tooltip-texto">Cofradía de San Pedro Apóstol. Participa en la Procesión General del Miércoles Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Agonía</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Agonía (fundada en 1931). Participa en la Procesión General y protagoniza la Procesión del Silencio a medianoche del Jueves Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Nazareno</span>
+              <span class="tooltip-texto">Real Cofradía de Jesús Nazareno. Fundada en 1692. Participa en la Procesión General.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Juan</span>
+              <span class="tooltip-texto">Cofradía de San Juan Evangelista. Participa en la Procesión General del Miércoles Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Verónica</span>
+              <span class="tooltip-texto">Cofradía de la Santa Verónica. Participa en la Procesión General.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Perdón</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón y Santísima Virgen del Amor Hermoso. Participa en la Procesión General.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Magdalena</span>
+              <span class="tooltip-texto">Hermandad de Santa María Magdalena. Participa en la Procesión General del Miércoles Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo del Consuelo</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Consuelo. Participa en la Procesión General.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Dolorosa</span>
+              <span class="tooltip-texto">Cofradía de la Santísima Virgen de los Dolores. Participa en la Procesión General del Miércoles Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Jueves Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Gracia y Esperanza</span>
+              <span class="tooltip-texto">Real Cofradía de Nuestra Señora de Gracia y Esperanza. Organiza la Procesión de los Hijos de María a las 20:30 h. — la única imagen bajo palio de toda la Semana Santa ciezana, acompañada por un tercio de manolas.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Agonía</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Agonía (1931). Organiza la Procesión del Silencio a las 00:00 h. La ciudad apaga el alumbrado público. El Cristo de la Agonía es obra de Juan González Moreno, 1941.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Viernes Santo</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Armaos</span>
+              <span class="tooltip-texto">Cofradía del Tercio Romano del Santo Sepulcro. Ejecuta la Caracola en la mañana del Viernes Santo en la Calle San Sebastián.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Soledad</span>
+              <span class="tooltip-texto">Real, Ilustre, Venerable y Primitiva Cofradía de María Santísima de la Soledad. Fundada en 1692. Participa en las procesiones del Viernes Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Ánimas</span>
+              <span class="tooltip-texto">Cofradía de Ánimas. Participa en las procesiones del Viernes Santo.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Yacente</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo Yacente y Santísima Virgen del Dolor. Participa en las procesiones del Viernes Santo y el Santo Entierro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Cofradía de La Oración del Huerto y El Santo Sepulcro. Participa en el Santo Entierro del Viernes Santo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cofradia-col">
+          <h3>Domingo de Resurrección</h3>
+          <ul>
+            <li>
+              <span class="nombre-corto">Resucitado</span>
+              <span class="tooltip-texto">Cofradía de Jesús Resucitado. Organiza La Cortesía del Domingo de Resurrección con el Baile de los Santos y la batalla de caramelos.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasantadecieza.es/" target="_blank" rel="noopener">Junta de Hermandades Pasionarias de Cieza</a> — última verificación: 2026</p>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          El sonido ciezano es una percusión constante: tambores y cornetas con el estilo levantino empujando a los anderos bajo los varales. Pero lo más propio de Cieza es el contraste entre los dos extremos de la semana.
+        </p>
+        <p>
+          Por un lado, las fanfarrias militares y el roce metálico de las armaduras del Tercio Romano en la Caracola del Viernes Santo — un sonido que rebota en las calles estrechas de una manera que no ocurre en ningún otro punto de la Región de Murcia. Por otro, el silencio del Jueves Santo a medianoche con la ciudad a oscuras, roto solo por tambores sordos y corales polifónicas a capella.
+        </p>
+        <p>
+          <strong>Para la Caracola, colócate en la Calle San Sebastián.</strong> La sincronización de los pasos militares cruzándose produce una reverberación metálica y rítmica única. Para la Procesión del Silencio, busca una esquina del casco antiguo y espera a que las luces se apaguen.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Caracola de los Armaos</h3>
+          <span class="tag">Viernes Santo · Mañana · Calle San Sebastián</span>
+          <p>El Tercio Romano ejecuta una coreografía de marcha militar envolviéndose en espiral sobre sí mismo y desplegándose de nuevo. El sonido de cientos de armaduras sincronizadas en calles estrechas es algo que no existe en ninguna otra Semana Santa de Murcia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es una herencia visual y sonora que exige una coordinación extraordinaria y rompe el ritmo de cualquier procesión convencional. La reverberación metálica de las armaduras en la Calle San Sebastián es físicamente perceptible. No se puede preparar con una foto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión del Silencio — la ciudad a oscuras</h3>
+          <span class="tag">Jueves Santo · 00:00 h · Desde la Basílica de la Asunción</span>
+          <p>A medianoche, Cieza apaga el alumbrado público en el casco antiguo. En la oscuridad total, solo tambores sordos y corales sacras acompañan al Santísimo Cristo de la Agonía — obra de Juan González Moreno, 1941 — por las calles de la ciudad. No hay otra procesión en Murcia donde la ciudad literalmente se apague.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el gesto de apagar el alumbrado público convierte toda la ciudad en el escenario de la procesión. No es una metáfora — es una decisión técnica que los ciezanos toman cada año para que el Cristo de la Agonía recorra las calles como merece: en silencio y en oscuridad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Auto del Prendimiento</h3>
+          <span class="tag">Martes Santo · Noche · Plaza Mayor</span>
+          <p>Actores de carne y hueso interactúan con los pasos procesionales en la Plaza Mayor para escenificar el arresto de Jesús. La escena culmina cuando el Tercio Romano de los Armaos prende a la imagen del Nazareno. Es la herencia más directa de los autos sacramentales medievales que sigue viva en España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque mezcla liturgia y teatro popular de una manera que casi no existe en la Semana Santa española actual. Actores reales, imágenes procesionales del siglo XX y el Tercio Romano en la misma plaza. Es un acto de enorme valor etnográfico que Cieza cuida con orgullo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Cortesía y la batalla de caramelos</h3>
+          <span class="tag">Domingo de Resurrección · Mañana · Centro de Cieza</span>
+          <p>El Baile de los Santos — las imágenes inclinándose en reverencia al ritmo de marchas alegres — seguido de miles de kilos de caramelos cayendo de los balcones sobre la multitud. Después de una semana de oscuridad y silencio, Cieza explota en alegría de una manera que solo ocurre aquí.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contraste con el Jueves Santo a oscuras tres días antes es parte del diseño de la fiesta. Y porque la tradición de los caramelos — que viene de endulzar la boca tras la abstinencia de Cuaresma — en Cieza se ha llevado a una escala que no tiene equivalente en ninguna otra Semana Santa española.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>La Procesión General del Miércoles Santo.</strong> No vayas de esquina en esquina. Busca un buen sitio en la Calle San Sebastián o la Calle San Pedro y deja que el relato cronológico de la Pasión pase ante ti. Es larguísima y merece verla bien desde un punto fijo.</li>
+        <li><strong>La Ruta de Semana Santa del Lunes Santo.</strong> Es la mejor oportunidad del año para ver la imaginería de cerca, sin multitudes y con las casas-museo abiertas. Aprovéchala antes de que lleguen los días grandes.</li>
+        <li><strong>La Procesión del Silencio.</strong> Colócate en el casco antiguo antes de medianoche. Cuando se apaguen las luces y solo queden las antorchas, el efecto es inmediato. No llegues tarde.</li>
+        <li><strong>La Cortesía del Domingo.</strong> Si vas con niños pequeños o no quieres participar en la batalla de caramelos, sitúate en los márgenes del recorrido, fuera del epicentro. En el centro caen literalmente miles de kilos.</li>
+        <li><strong>Gastronomía.</strong> La Semana Santa ciezana tiene su propia mesa: potajes, arroz con verduras y la repostería de convento de la zona. La temporada del melocotón de Cieza no coincide, pero la despensa murciana de primavera tiene mucho que ofrecer en los bares del centro.</li>
+        <li><strong>Accesibilidad.</strong> Las calles del casco histórico tienen tramos estrechos. Para personas con movilidad reducida, la Plaza Mayor y las avenidas principales son los puntos más accesibles para seguir las procesiones.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Los Armaos</dt>
+        <dd>Nombre popular del Tercio Romano del Santo Sepulcro — la guardia pretoriana de estética del siglo XIX que desfila marcialmente acompañando al Cristo. Sus armaduras, sus movimientos tácticos y el ruido metálico de sus pasos son uno de los sonidos más reconocibles de la Semana Santa ciezana.</dd>
+
+        <dt>La Caracola</dt>
+        <dd>Maniobra militar vistosa y circular que ejecutan los Armaos en puntos clave de la ciudad. Los soldados se envuelven en espiral sobre sí mismos y se despliegan de nuevo con una sincronización que exige meses de ensayo. Su ejecución en la Calle San Sebastián el Viernes Santo es el momento más buscado por los aficionados a la fotografía.</dd>
+
+        <dt>La Cortesía</dt>
+        <dd>La tradición del Domingo de Resurrección en la que los anderos hacen bailar e inclinar a las imágenes en reverencia festiva al ritmo de marchas alegres. Es el nombre que los ciezanos dan al acto que cierra la semana con la batalla de caramelos.</dd>
+
+        <dt>Anderos</dt>
+        <dd>Los cofrades que portan sobre sus hombros, mediante andas o varales, el peso de los tronos o pasos. En Cieza el término es el habitual para referirse a quienes cargan la imaginería procesional.</dd>
+
+        <dt>Auto Sacramental</dt>
+        <dd>Representación teatral de carácter religioso, herencia del teatro medieval y barroco. En Cieza el Auto del Prendimiento del Martes Santo en la Plaza Mayor es uno de los pocos ejemplos vivos de esta tradición en la Semana Santa española actual.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-cieza-1.jpg" alt="El Tercio Romano de los Armaos ejecutando la Caracola en la Calle San Sebastián de Cieza durante el Viernes Santo" />
+        <img src="images/semana-santa-cieza-2.jpg" alt="La Cortesía del Domingo de Resurrección en Cieza con el Baile de los Santos y la lluvia de caramelos desde los balcones" />
+        <img src="images/semana-santa-cieza-3.jpg" alt="Auto del Prendimiento en la Plaza Mayor de Cieza con actores y pasos procesionales del Martes Santo" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasantadecieza.es/" target="_blank" rel="noopener">Junta de Hermandades Pasionarias de Cieza — Web oficial</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Cieza en 2027?</dt>
+        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días más intensos son el Martes Santo con el Auto del Prendimiento, el Miércoles Santo con la Procesión General, el Jueves Santo con la Procesión del Silencio a medianoche y el Domingo de Resurrección con La Cortesía.</dd>
+
+        <dt>¿Tiene reconocimiento oficial?</dt>
+        <dd>Sí. La Semana Santa de Cieza está declarada Fiesta de Interés Turístico Internacional. Junto a Murcia capital, Cartagena, Lorca y Jumilla, forma parte de la élite de las Semanas Santas de la Región de Murcia.</dd>
+
+        <dt>¿Qué es la Procesión del Silencio?</dt>
+        <dd>La procesión de medianoche del Jueves Santo en la que Cieza apaga literalmente el alumbrado público del casco antiguo. El Santísimo Cristo de la Agonía — obra de Juan González Moreno de 1941 — recorre las calles a oscuras, acompañado solo por tambores sordos y corales sacras. No hay otra procesión en Murcia donde la ciudad apague las luces.</dd>
+
+        <dt>¿Por qué tiran caramelos el Domingo de Resurrección?</dt>
+        <dd>Es una evolución de la tradición murciana de repartir dulces para endulzar la boca tras la abstinencia de la Cuaresma. En Cieza esa tradición se ha llevado a una escala propia: miles de kilos de caramelos lanzados desde ventanas y balcones al paso de La Cortesía. No existe nada igual en ninguna otra Semana Santa española.</dd>
+
+        <dt>¿Quién esculpió la imaginería de Cieza?</dt>
+        <dd>Tras las pérdidas de la Guerra Civil, Cieza incorporó obras de los grandes maestros de la escultura religiosa murciana del siglo XX: José Planes, Juan González Moreno y Palma Burgos, entre otros. El Cristo de la Agonía de González Moreno (1941) es considerado una de las piezas cumbres de la imaginería ciezana.</dd>
+
+        <dt>¿Qué son exactamente los Armaos?</dt>
+        <dd>El nombre popular del Tercio Romano del Santo Sepulcro — una guardia pretoriana con armaduras de estética del siglo XIX que desfila marcialmente acompañando al Cristo. Ejecutan movimientos tácticos de gran complejidad, siendo la Caracola su maniobra más característica y buscada.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
