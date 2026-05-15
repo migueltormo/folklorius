@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Corpus Christi en Béjar 2026: Los Hombres de Musgo y Guía Completa</title>
+  <meta name="description" content="Guía completa del Corpus Christi de Béjar 2026 (7 de junio). La procesión eucarística más singular de España: los Hombres de Musgo escoltan la Custodia por las calles medievales. Fiesta de Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/corpus-christi-bejar.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Corpus Christi de Béjar 2026 | Los Hombres de Musgo y la leyenda medieval" />
+  <meta property="og:description" content="En Béjar, la procesión del Corpus la escoltan figuras cubiertas de musgo de la sierra. Una leyenda de la Reconquista que lleva siglos caminando junto a la Custodia. Guía completa 2026." />
+  <meta property="og:image" content="https://folklorius.es/images/corpus-christi-bejar.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Actos principales — timeline para fiesta de pocos días */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 22px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .acto-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+    .actos-list strong {
+      display: block;
+      font-size: 0.97rem;
+      margin-bottom: 3px;
+    }
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* Must-see grid */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card .tag-leyenda {
+      background: #f0f0f7;
+      color: #3a3a8b;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/corpus-christi-bejar.html",
+    "name": "Corpus Christi de Béjar",
+    "startDate": "2026-06-07",
+    "endDate": "2026-06-07",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Casco histórico amurallado de Béjar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Béjar",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.3871,
+        "longitude": -5.7661
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Béjar",
+      "url": "https://www.bejar.es"
+    },
+    "image": ["https://folklorius.es/images/corpus-christi-bejar.jpg"],
+    "description": "El Corpus Christi de Béjar es único en el mundo católico: un pequeño grupo de vecinos se recubre de musgo vivo de la sierra y escolta la Custodia en procesión por las calles medievales de la ciudad. La figura del Hombre de Musgo conecta la liturgia eucarística con la leyenda local de la Reconquista. Fiesta de Interés Turístico Internacional.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Corpus Christi de Béjar
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/corpus-christi-bejar.jpg" alt="Hombres de Musgo cubiertos de musgo verde de la sierra escoltando la Custodia en la procesión del Corpus Christi por las calles empedradas del casco histórico de Béjar" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Corpus Christi en Béjar</h1>
+      <p class="ficha-subtitle">
+        Béjar · Castilla y León · "La leyenda que camina junto a la Custodia."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Béjar — Conjunto Histórico Artístico</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Celebración religiosa.</strong> La procesión del Corpus es un acto de culto católico. Los Hombres de Musgo caminan en actitud reverencial y de silencio durante todo el recorrido. Respeta ese carácter: no los interpeles, no los toques durante la procesión y evita obstruir el paso del cortejo.</li>
+          <li><strong>Los Hombres de Musgo no son una atracción.</strong> Son vecinos de Béjar que cargan entre 10 y 15 kilos de musgo durante horas y realizan un esfuerzo físico considerable. Si quieres fotografiarte con ellos, espera a que termine la procesión y pide permiso con respeto.</li>
+          <li><strong>Aviso para personas con alergias.</strong> Las calles están alfombradas de tomillo y retama, y el ambiente cargado de incienso puede afectar a personas con sensibilidad respiratoria. Toma precauciones si es tu caso.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Hay algo que no encaja y eso es exactamente lo que hace que no puedas dejar de mirar. La Custodia avanza por las calles empedradas de Béjar con toda la solemnidad del Corpus, el incienso, los estandartes bordados, el clero con sus ornamentos. Y a su lado caminan ellos: figuras cubiertas de musgo verde de la sierra, de la cabeza a los pies, sin cara visible, en silencio absoluto.
+      </p>
+      <p>
+        No parecen pertenecer a la misma escena. Y sin embargo llevan siglos caminando juntos. Eso es Béjar.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Corpus Christi de Béjar es una procesión eucarística como las que se celebran en tantas ciudades de España, con su custodia, sus cofradías, sus niños de primera comunión y sus calles engalanadas con tomillo y retama. Lo que no hay en ningún otro sitio son los Hombres de Musgo.
+      </p>
+      <p>
+        Un pequeño grupo de vecinos elegidos cada año se recubre por completo con musgo vivo extraído de la sierra de Béjar. La cabeza, el cuerpo, los brazos, las piernas: todo desaparece bajo capas de verde que pesan entre 10 y 15 kilos. Solo queda una ranura estrecha para ver. Así equipados, desfilan en silencio escoltando la Custodia por el casco histórico amurallado, conectando la liturgia del Corpus con una leyenda medieval que la ciudad lleva siglos contando.
+      </p>
+      <p>
+        La procesión discurre por calles empedradas y empinadas, con los balcones colgados de banderas y estandartes de cofradías. El suelo, cubierto de plantas aromáticas. Y en medio de todo eso, esas figuras silenciosas que no parecen del siglo XXI ni del XIII, sino de un tiempo que no tiene nombre exacto.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo de actos, el recorrido de la procesión y los horarios definitivos los publica el Ayuntamiento de Béjar. Consúltalos antes de planificar tu visita.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La festividad del Corpus Christi llegó a Béjar como al resto de Europa: por la bula <em>Transiturus</em> del Papa Urbano IV en 1264. Pero la ciudad le añadió algo propio que no tiene parangón en ninguna otra procesión del mundo católico.
+      </p>
+      <p>
+        Cuenta la leyenda que en el siglo XII, durante la época de la Reconquista, un grupo de cristianos refugiados en los montes de la sierra encontró la manera de recuperar la plaza de Béjar sin batallar abiertamente. Se cubrieron de musgo de arriba abajo y, amparados en la oscuridad, se arrastraron hacia las murallas. Los centinelas que custodiaban la fortaleza, al ver acercarse aquellas figuras oscuras y silenciosas que no reconocían como humanas, huyeron aterrorizados. La plaza cayó sin derramamiento de sangre.
+      </p>
+      <p>
+        La leyenda sitúa aquella noche cerca de la festividad de Santa Marina, a mediados de junio, lo que la puso en vecindad de fechas con el Corpus. Con el tiempo, la ciudad fusionó ambas memorias: la religiosa y la militar. Los Hombres de Musgo entraron en la procesión y ya no salieron. Hoy son inseparables.
+      </p>
+      <p>
+        Es importante decir que la historia del camuflaje con musgo es eso: una leyenda. No hay documentación medieval que la respalde con precisión. Pero en Béjar eso no le resta un gramo de peso. La leyenda es de la ciudad y la ciudad la sostiene con convicción desde hace siglos.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El Corpus Christi de Béjar se celebra el domingo siguiente a la festividad litúrgica del jueves. En 2026, el día grande es el <strong>domingo 7 de junio</strong>, el domingo posterior al jueves 4 de junio.
+      </p>
+      <p>
+        Los días previos tienen también su ambiente: desde el jueves anterior, Béjar acoge actividades culturales y recreaciones históricas —entre ellas un mercado de las Tres Culturas y representaciones barrocas en el Parque de la Corredera— que dan contexto a la festividad y merece la pena conocer si puedes llegar con antelación. Confirma la programación completa con el Ayuntamiento, ya que los actos previos pueden variar según la edición.
+      </p>
+
+      <!-- SECCIÓN 5: LOS ACTOS PRINCIPALES -->
+      <h2 class="section-title">Los actos principales</h2>
+      <ul class="actos-list">
+        <li>
+          <span class="acto-label">Jueves 4 al sábado 6 de junio · Días previos</span>
+          <strong>Recreaciones históricas y mercado de las Tres Culturas</strong>
+          En el entorno de las murallas y el Parque de la Corredera tienen lugar desfiles de leyendas medievales, representaciones del asedio y actividades que recuerdan la convivencia de las tres culturas que dieron forma a Béjar. Es el preámbulo cultural de la fiesta y una manera de entender la ciudad antes del domingo.
+        </li>
+        <li>
+          <span class="acto-label">Domingo 7 de junio · Primera hora de la mañana</span>
+          <strong>El vestido de los Hombres de Musgo</strong>
+          En el claustro o espacio habilitado por el Ayuntamiento, operarios cosen a mano el musgo fresco sobre la ropa de cada figura. El trabajo es lento y minucioso: cada capa se fija con aguja e hilo hasta que la persona desaparece bajo entre 10 y 15 kilos de verde. El acto es público y abierto a los visitantes.
+        </li>
+        <li>
+          <span class="acto-label">Domingo 7 de junio · Media mañana</span>
+          <strong>Misa Solemne en Santa María la Mayor</strong>
+          Eucaristía que precede al desfile, con la asistencia de cofrades, autoridades y los Hombres de Musgo ya vestidos. Es el arranque litúrgico de la jornada.
+        </li>
+        <li>
+          <span class="acto-label">Domingo 7 de junio · Mañana y mediodía</span>
+          <strong>Procesión de la Custodia y los Hombres de Musgo</strong>
+          El cortejo recorre las calles empedradas del casco histórico amurallado sobre un suelo cubierto de tomillo y retama. La Custodia avanza escoltada por los Hombres de Musgo, los niños de comunión, las cofradías y la banda municipal. En la Plaza Mayor, las autoridades rinden los pendones de la ciudad ante el Santísimo en un momento de silencio que para el cortejo por completo.
+        </li>
+      </ul>
+
+      <!-- SECCIÓN 6: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El vestido de los Hombres de Musgo</h3>
+          <span class="tag">Domingo · Primera hora · Claustro de San Francisco</span>
+          <p>Desde primera hora de la mañana del domingo puedes asistir al ritual de cosido. Ver cómo una persona va desapareciendo bajo el musgo, capa a capa, mientras los operarios trabajan en silencio con aguja e hilo, es una de las experiencias más extrañas y más memorables de toda la fiesta. El proceso puede durar varias horas por figura.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en la procesión los ves caminar pero ya no puedes imaginar lo que hay detrás. Verlos vestir es entender el esfuerzo físico que implica el traje —entre 10 y 15 kilos de musgo vivo cargados durante horas— y la seriedad con la que Béjar toma su propia leyenda. Es el momento más íntimo de la fiesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La rendición de pendones en la Plaza Mayor</h3>
+          <span class="tag">Domingo · Procesión · Plaza Mayor</span>
+          <p>En un momento concreto del recorrido, el cortejo se detiene frente al Ayuntamiento y las autoridades civiles inclinan los pendones y estandartes de la ciudad ante la Custodia. El silencio que se hace en ese instante en una plaza llena de gente es de los que no se olvidan fácilmente.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento en que la dimensión política y la religiosa de la fiesta se tocan de manera visible. Y porque la Plaza Mayor de Béjar, con sus soportales y su escala humana, da a ese acto una intimidad que en una ciudad grande sería imposible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El contraste visual: musgo y oro</h3>
+          <span class="tag">Domingo · Durante toda la procesión</span>
+          <p>Hay pocas estampas en las fiestas españolas tan radicalmente opuestas en la misma imagen: las sedas bordadas, los estandartes de plata y la custodia dorada avanzando junto a esas figuras oscuras, mudas y cubiertas de tierra y verde. El contraste no es accidental. Lleva siglos siendo exactamente así.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque fotográficamente es lo más potente de la fiesta, pero sobre todo porque resume en una sola imagen lo que es Béjar: una ciudad que decidió que su leyenda cabía en la misma procesión que su fe. Eso no lo hace nadie más.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Puerta de la Traición</h3>
+          <span class="tag tag-leyenda">Leyenda local · Murallas medievales · Visitable</span>
+          <p>En el recinto amurallado de Béjar hay una puerta que la tradición señala como el lugar por donde los guerreros camuflados de musgo consiguieron adentrarse en la fortaleza aquella noche del siglo XII. Se llama la Puerta de la Traición. No hay documentación que lo confirme, pero el nombre lleva ahí siglos y el lugar merece la visita por sí solo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la manera más concreta de conectar la leyenda con el espacio físico. Pararte delante de esa puerta, tocar la piedra y saber que la ciudad lleva siglos señalando ese punto como el origen de su fiesta más importante dice más sobre Béjar que cualquier explicación.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 7: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Llega el sábado si puedes.</strong> Los días previos tienen recreaciones históricas y el mercado de las Tres Culturas que dan mucho contexto. Béjar con su ambiente de fiesta preparada merece más de un día.</li>
+        <li><strong>Para ver la procesión, busca las plazuelas.</strong> Las calles del casco histórico son estrechas y se colapsan en la calle Mayor. Las pequeñas plazas del recorrido dan mejor visión y menos agobio. Llega con tiempo y elige bien el sitio.</li>
+        <li><strong>Calzado muy cómodo y ropa de abrigo ligera.</strong> El empedrado de Béjar no perdona y las cuestas son serias. En junio, las mañanas en la sierra pueden ser frescas: una capa ligera que puedas quitar al mediodía es lo más práctico.</li>
+        <li><strong>El coche, en la zona baja.</strong> Tratar de entrar al recinto amurallado en coche el domingo por la mañana es inviable. Deja el vehículo en la zona de La Corredera o en la periferia y sube andando.</li>
+        <li><strong>Para fotografiarte con los Hombres de Musgo, espera al final.</strong> Durante la procesión guardan silencio y actitud reverencial: no los interpeles ni los toques. Al terminar el recorrido, cerca del claustro de San Francisco, suelen permitir fotografías. Pide permiso y ten en cuenta que acaban de cargar mucho peso durante horas.</li>
+        <li><strong>Alergias respiratorias.</strong> Las calles están alfombradas de tomillo y retama y el ambiente lleva incienso. Si tienes sensibilidad al polen o al humo, toma precauciones antes de acudir.</li>
+      </ul>
+
+      <!-- SECCIÓN 8: VOCABULARIO -->
+      <h2 class="section-title">Vocabulario</h2>
+      <dl class="festero">
+
+        <dt>Hombre de Musgo</dt>
+        <dd>El personaje central y único de la fiesta de Béjar. Un vecino elegido que desfila en la procesión del Corpus completamente recubierto de musgo vivo de la sierra —entre 10 y 15 kilos— en recuerdo de la leyenda de la Reconquista local. Su cara queda oculta durante todo el recorrido. No habla ni interactúa con el público durante la procesión.</dd>
+
+        <dt>Rendir pendones</dt>
+        <dd>El acto ceremonial en que los abanderados o las autoridades civiles inclinan las grandes banderas y estandartes heráldicos de la ciudad ante la Custodia al paso de la procesión. En Béjar ocurre en la Plaza Mayor y es uno de los momentos de mayor carga simbólica de la jornada.</dd>
+
+        <dt>Puerta de la Traición</dt>
+        <dd>Uno de los accesos del recinto amurallado de Béjar al que la tradición popular señala como el punto de entrada de los guerreros camuflados de musgo durante la reconquista de la villa. El nombre hace referencia al engaño que, según la leyenda, permitió tomar la fortaleza sin batalla abierta.</dd>
+
+        <dt>Mercado de las Tres Culturas</dt>
+        <dd>Actividad cultural de los días previos al Corpus en la que Béjar recrea la convivencia histórica de las comunidades cristiana, judía y árabe que habitaron la ciudad durante la Edad Media. Suele celebrarse en el Parque de la Corredera, aunque su programación puede variar cada edición.</dd>
+
+      </dl>
+
+      <!-- GALERÍA (oculta hasta tener imágenes reales) -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/corpus-christi-bejar-1.jpg" alt="Hombres de Musgo cubiertos de musgo verde escoltando la Custodia en la procesión del Corpus Christi de Béjar por las calles empedradas del casco histórico" />
+        <img src="images/corpus-christi-bejar-2.jpg" alt="Operarios cosiendo a mano el musgo sobre la figura de un Hombre de Musgo en el claustro de San Francisco antes de la procesión del Corpus de Béjar" />
+        <img src="images/corpus-christi-bejar-3.jpg" alt="Autoridades rindiendo pendones ante la Custodia en la Plaza Mayor de Béjar durante la procesión del Corpus Christi" />
+      </div>
+
+      <!-- ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.bejar.es" target="_blank" rel="noopener">Ayuntamiento de Béjar — Información oficial</a></li>
+        <li><a href="https://www.turismocastillayleon.com" target="_blank" rel="noopener">Turismo de Castilla y León</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
+
+      <!-- SECCIÓN 9: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Corpus Christi de Béjar en 2026?</dt>
+        <dd>El domingo 7 de junio de 2026. Béjar celebra su día grande el domingo siguiente al jueves litúrgico del Corpus, que en 2026 cae el 4 de junio. Los actos previos —recreaciones históricas y mercado medieval— comienzan desde el jueves anterior.</dd>
+
+        <dt>¿Quién puede ser un Hombre de Musgo?</dt>
+        <dd>Es uno de los honores más apreciados en la ciudad. Cada año el Ayuntamiento abre un proceso de inscripción para los vecinos que quieran participar. La carga física es considerable —entre 10 y 15 kilos de musgo durante varias horas— por lo que se valora la condición física de los candidatos.</dd>
+
+        <dt>¿Se daña el medio ambiente al recoger tanto musgo?</dt>
+        <dd>No. La extracción se realiza bajo control medioambiental, con permisos forestales y en zonas previamente autorizadas de la sierra. El Ayuntamiento gestiona la recogida de la cantidad estrictamente necesaria para vestir a las figuras de cada edición.</dd>
+
+        <dt>¿Hablan los Hombres de Musgo durante la procesión?</dt>
+        <dd>No. Guardan silencio riguroso y actitud reverencial durante todo el recorrido. La reducida visibilidad del traje y el peso que cargan exigen además una concentración y un ritmo de caminar muy pausados. Es parte del carácter solemne y misterioso de la figura.</dd>
+
+        <dt>¿Hay más fiestas con musgo en España?</dt>
+        <dd>No hay ninguna otra procesión en España que integre figuras de musgo en un cortejo eucarístico. La fusión de la liturgia del Corpus con la leyenda militar de la Reconquista es exclusiva de Béjar. Existen en otras culturas europeas tradiciones relacionadas con figuras vegetales y espíritus del bosque, pero el Hombre de Musgo bejarano es una cosa completamente distinta.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
