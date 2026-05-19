@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moros y Cristianos de Bocairent 2027: Guía Completa, Filaes y Nit de les Caixes | Folklorius</title>
+  <meta name="description" content="Guía completa de los Moros y Cristianos de Bocairent 2027 (5 al 10 de febrero). La fiesta más singular del invierno valenciano. La Nit de les Caixes, la manta bocairentina y 9 filaes centenarias." />
+  <link rel="canonical" href="https://folklorius.es/moros-cristianos-bocairent.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moros y Cristianos de Bocairent 2027 | La fiesta del invierno y la manta" />
+  <meta property="og:description" content="Guía inmersiva de los Moros y Cristianos de Bocairent. La Nit de les Caixes, el casco medieval, la manta bocairentina y la devoción a Sant Blai en pleno febrero." />
+  <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-bocairent.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Filaes por bando ────────────────────────────────────── */
+    .filaes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .filaes-grid { grid-template-columns: 1fr; }
+    }
+    .filae-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .filae-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .filae-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .filae-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.45;
+    }
+    .filae-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+    .nombre-filae {
+      border-bottom: 1px dotted var(--brand, #b34700);
+      cursor: help;
+    }
+    .tooltip-filae {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 260px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-filae::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .filae-col ul li:hover .tooltip-filae { display: block; }
+    .filae-col ul li:focus-within .tooltip-filae { display: block; }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+    .actos-list .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
+    .bando-moro      { background: #fef3c7; color: #92400e; }
+    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #b34700); }
+    .bando-religioso { background: #f3f4f6; color: #374151; }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/moros-cristianos-bocairent.html",
+    "name": "Moros y Cristianos de Bocairent — Festes de Sant Blai",
+    "startDate": "2027-02-05",
+    "endDate": "2027-02-10",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Bocairent — Plaça de l'Ajuntament",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bocairent",
+        "addressRegion": "Comunidad Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.7731,
+        "longitude": -0.5983
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Associació de Festes de Moros i Cristians a Sant Blai de Bocairent",
+      "url": "https://www.festesbocairent.com"
+    },
+    "image": ["https://folklorius.es/images/moros-cristianos-bocairent.jpg"],
+    "description": "Fiestas de Moros y Cristianos de Bocairent en honor a Sant Blai, declaradas Fiesta de Interés Turístico Nacional. Seis jornadas de febrero con la Nit de les Caixes, la manta bocairentina, 9 filaes centenarias y el singular Despojo del Moro.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Moros y Cristianos de Bocairent
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/moros-cristianos-bocairent.jpg" alt="Festeros de Bocairent con mantas bocairentinas y farolillos durante la Nit de les Caixes, desfilando por las calles medievales del casco histórico en la noche de febrero" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Moros y Cristianos de Bocairent</h1>
+      <p class="ficha-subtitle">
+        Bocairent · Valencia · Comunitat Valenciana · «La fiesta del invierno, la manta y Sant Blai.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-interes">Fiesta de Interés Turístico Nacional</span>
+      </div>
+
+      <!-- AVISO -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Frío de verdad.</strong> Bocairent está a 680 metros de altitud y la fiesta es en febrero. Las noches son frías de forma seria. La manta bocairentina no es un adorno folklórico: es una necesidad. Ropa térmica bajo el abrigo y calzado de abrigo imprescindibles.</li>
+          <li><strong>Pólvora y arcabucería.</strong> Las guerrillas y el Alardo concentran disparos de arcabucería. Protección auditiva para niños pequeños y personas sensibles.</li>
+          <li><strong>La Cordà.</strong> El lanzamiento de cohetes borrachos en recinto acotado del Día del Sant Crist es un acto con riesgo físico real. Respeta siempre el perímetro de seguridad y las indicaciones de la organización.</li>
+          <li><strong>Calles medievales.</strong> El casco histórico de Bocairent está excavado en la roca con calles estrechas y desniveles pronunciados. Calzado con suela antideslizante, especialmente de noche.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Bocairent en febrero huele a pólvora, a licor de hierbas y a lana recién sacada del armario. La mayoría de fiestas de Moros y Cristianos esperan la primavera o el verano. Bocairent no. Aquí la fiesta se hace en pleno invierno, en un pueblo medieval encaramado a la roca, con el frío colándose por cada callejuela y la gente arropada con la manta bocairentina como si llevar esa prenda fuera la contraseña de pertenencia.
+      </p>
+      <p>
+        Lo que distingue a Bocairent de cualquier otra fiesta festera valenciana no es solo el frío ni el casco histórico. Es la combinación de todo eso con una devoción a Sant Blai que no es ceremonial — es real, visceral, con raíces en una epidemia que arrasó el pueblo en 1632 y de la que salieron vivos de milagro. Eso se nota en cada acto de la semana.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La fiesta dura seis días — del viernes al miércoles — y sigue un hilo argumental que va de la celebración devocional al teatro bélico y termina en el recuerdo de los festeros que ya no están. No es solo desfile y pólvora: es una semana con su propio ritmo, donde cada jornada tiene un carácter completamente distinto.
+      </p>
+      <p>
+        El eje son las <strong>9 filaes</strong> — cinco del bando cristiano y cuatro del moro — herederas directas de las milicias locales del siglo XIX. Cada una tiene nombre, traje, banda y tradiciones propias. Algunas llevan más de 150 años desfilando por las mismas calles donde los fundadores de la filà pusieron los primeros pasos.
+      </p>
+      <p>
+        La fiesta combina dos registros que en otros sitios van por separado: el festero — con Entradas, Embajadas y guerrillas de arcabucería — y el estrictamente religioso, con la Procesión de Sant Blai como acto central de la semana. Aquí los dos son inseparables.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios exactos y el programa completo de 2027 los publica la Associació de Festes de Moros i Cristians a Sant Blai de Bocairent. Consúltalos antes de planificar tu visita.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen de la fiesta tiene una fecha y un drama concreto. En 1632, una epidemia de difteria — el «mal de garrotillo» — asoló Bocairent. Cuando la enfermedad cedió, el pueblo eligió por insaculación a Sant Blai como patrón en señal de gratitud. Esa deuda nunca se ha olvidado. Cada febrero, la fiesta es en parte una celebración y en parte un voto cumplido.
+      </p>
+      <p>
+        Las raíces militares vienen de más atrás: las antiguas soldadescas, milicias locales que escoltaban la procesión del patrón, son el embrión de lo que hoy son las filaes. Tras el levantamiento de la prohibición de pólvora festiva en el siglo XVIII, la soldadesca de la Villa fue tomando impulso. Y en noviembre de 1859, el Consejo de la Villa aprobó estructurar la celebración en formato de Moros y Cristianos, fuertemente influenciada por la fiesta de Alcoi y el fervor popular por la Guerra de África. La primera edición en ese formato fue en 1860.
+      </p>
+      <p>
+        Hoy la <strong>Associació de Festes de Moros i Cristians a Sant Blai de Bocairent</strong> es el ente rector que organiza y protege la celebración. Y el reconocimiento como <strong>Fiesta de Interés Turístico Nacional</strong> certifica lo que cualquier bocairentino ya sabe: que esto es único.
+      </p>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        Las fiestas se celebran siempre del viernes al miércoles más cercanos al 3 de febrero — festividad litúrgica de Sant Blai — con la condición de que todos los días caigan dentro del mes de febrero. En 2027:
+      </p>
+      <ul>
+        <li><strong>Viernes 5 de febrero</strong> — L'Eixida · Nit de les Caixes</li>
+        <li><strong>Sábado 6 de febrero</strong> — L'Entrada</li>
+        <li><strong>Domingo 7 de febrero</strong> — Dia de Sant Blai</li>
+        <li><strong>Lunes 8 de febrero</strong> — Dia de Moros i Cristians</li>
+        <li><strong>Martes 9 de febrero</strong> — Dia del Sant Crist</li>
+        <li><strong>Miércoles 10 de febrero</strong> — Dia de l'Eixabegó</li>
+      </ul>
+      <p class="nota-grid">⚠️ El programa completo con horarios exactos de cada acto lo publica la Associació de Festes de Moros i Cristians a Sant Blai de Bocairent.</p>
+
+      <!-- SECCIÓN 5: ACTOS PRINCIPALES -->
+      <h2 class="section-title">Los actos principales</h2>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Viernes 5 de febrero — L'Eixida · Nit de les Caixes</span>
+          <strong>La Nit de les Caixes.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El inicio oficial de la fiesta arranca con un volteo de campanas al mediodía. Pero el momento que define Bocairent llega por la noche. Cientos de festeros abrigados con la manta bocairentina y portando farolillos de papel — los <em>farolets</em> — recorren el casco histórico medieval haciendo sonar miles de cajas y tambores. Las calles estrechas, la oscuridad, la luz de los faroles y el sonido de los tabalets crean algo que no se parece a ningún otro inicio de fiesta en la Comunitat Valenciana.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado 6 de febrero — L'Entrada</span>
+          <strong>L'Entrada.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          La mañana arranca con las bandas de música interpretando el Himno a Bocairent en la Plaza del Ayuntamiento y una mascletà al mediodía. Por la tarde desfila primero el bando cristiano al ritmo de los pasodobles, y al caer la tarde llegan las escuadras moras con su paso lento y solemne. La topografía de Bocairent convierte este desfile en algo único: las filaes tienen que maniobrar por calles excavadas en la roca, con desniveles que no se ven en ninguna otra Entrada festera valenciana.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 7 de febrero — Dia de Sant Blai</span>
+          <strong>Procesión de Sant Blai.</strong>
+          <span class="bando-tag bando-religioso">Devocional</span>
+          El día del patrón. Por la mañana, Diana y Misa Mayor en la Parroquia de la Asunción. Por la tarde, el Desfile del Piquete y el <em>Ball del Moro</em>. Al anochecer sale la Procesión de Sant Blai: la reliquia y la imagen del patrón recorren las calles con todo el pueblo festero, culminando con la entrada del Guió y la Reliquia en la plaza entre fuegos artificiales y el canto del Himno al Patrón. Es el acto más emotivo de los seis días para los bocairentinos.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes 8 de febrero — Dia de Moros i Cristians</span>
+          <strong>Embajadas y Guerrillas.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El día de la pólvora y el teatro. Por la mañana, guerrillas de arcabucería seguidas de la Embajada del Moro ante el castillo. Por la tarde se reanuda la batalla y llega la Embajada del Cristiano, que culmina con la recuperación del castillo por el bando de la cruz. Por la noche, desfile-retreta que cierra la jornada más intensa de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes 9 de febrero — Dia del Sant Crist</span>
+          <strong>El Despojo del Moro y la Cordà.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Al amanecer, dianas libres. Subida a la ermita del Santo Cristo y misa de acción de gracias. A continuación, el <em>Despullament del Moro</em>: el embajador moro vencido se despoja de sus armas y símbolos rindiéndose ante la cruz, en un acto de marcada carga teatral que no tiene equivalente en otras fiestas festeras. Se canta el Te Deum. Por la noche, la <strong>Cordà</strong>: cohetes borrachos lanzados en el casco antiguo en recinto acotado. Uno de los momentos más espectaculares y ruidosos de toda la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles 10 de febrero — Dia de l'Eixabegó</span>
+          <strong>Réquiem por los festeros difuntos.</strong>
+          <span class="bando-tag bando-religioso">Cierre litúrgico</span>
+          El último día no es de celebración en el sentido festivo. Las juntas se reúnen y se celebra la misa de Réquiem por los festeros fallecidos en la parroquia. Es el cierre de la semana: un momento de recuerdo, de pertenencia y de continuidad. Una fiesta que recuerda a sus muertos antes de cerrar el ciclo anual tiene una madurez que pocas celebraciones populares pueden decir que tienen.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: FILAES POR BANDO -->
+      <h2 class="section-title">Filaes por bando</h2>
+      <p>
+        Las 9 filaes de Bocairent son herederas directas de las milicias decimonónicas que escoltaban la procesión de Sant Blai. Pasa el cursor sobre el nombre para ver la nota de cada filà.
+      </p>
+      <p class="nota-grid">La composición oficial y el orden de desfile los publica anualmente la Associació de Festes de Moros i Cristians a Sant Blai de Bocairent.</p>
+
+      <div class="filaes-grid">
+
+        <div class="filae-col">
+          <h3>⚔️ Bando Cristiano</h3>
+          <ul>
+            <li>
+              <span class="nombre-filae">Filà Espanyoletos</span>
+              <span class="tooltip-filae">Filà Espanyoletos · Bando Cristiano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Granaders</span>
+              <span class="tooltip-filae">Filà Granaders (Granaderos) · Bando Cristiano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Contrabandistes</span>
+              <span class="tooltip-filae">Filà Contrabandistes (Contrabandistas) · Bando Cristiano · Encargada de arrancar la Nit de les Caixes y de portar la reliquia de Sant Blai.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Terç de Suavos</span>
+              <span class="tooltip-filae">Filà Terç de Suavos (Tercio de Zuavos) · Bando Cristiano · Conocidos por el rito del Desfile del Piquete en la tarde del día del patrón.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Estudiants</span>
+              <span class="tooltip-filae">Filà Estudiants (Estudiantes) · Bando Cristiano</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filae-col">
+          <h3>🌙 Bando Moro</h3>
+          <ul>
+            <li>
+              <span class="nombre-filae">Filà Moros Vells</span>
+              <span class="tooltip-filae">Filà Moros Vells (Moros Viejos) · Bando Moro · Una de las filaes más antiguas y con mayor peso histórico en la fiesta.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Marrocs</span>
+              <span class="tooltip-filae">Filà Marrocs (Marruecos) · Bando Moro · Tienen la tradición de descender el zigzag hacia el castillo la tarde de las embajadas para realizar la oración a los difuntos.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Moros Marins</span>
+              <span class="tooltip-filae">Filà Moros Marins (Moros Marinos) · Bando Moro</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Mosqueters</span>
+              <span class="tooltip-filae">Filà Mosqueters (Mosqueteros) · Bando Moro · Su adscripción al bando moro responde a la tradición histórica propia de Bocairent, no a una interpretación literal del nombre.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="banner-historia" role="note">
+        <h3>La filà Mosqueters — por qué está en el bando moro</h3>
+        <p>Que una filà se llame Mosqueters no significa que deba pertenecer automáticamente al bando cristiano. En Bocairent, la adscripción de cada comparsa responde a la tradición festera local e histórica fijada por la propia organización, no al significado moderno del nombre.</p>
+        <p>Los Mosqueters forman parte del bando moro porque así quedaron integrados históricamente dentro de la estructura de las filaes de Bocairent. Su pertenencia se explica por la evolución interna de la fiesta y por la clasificación heredada de la tradición local.</p>
+      </div>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">Cajas, marchas y pólvora en el frío de febrero</h3>
+        <p>El sonido de Bocairent empieza la noche de las Caixes — miles de tabalets golpeando en las calles medievales — y no para hasta que la Cordà del martes convierte el casco antiguo en un estruendo de cohetes. Entre medias, el repertorio festero completo: marchas cristianas de metal triunfal para la Entrada del sábado por la mañana, y marchas moras lentas y solemnes cuando llega el bando de la media luna por la tarde.</p>
+        <p>Las bandas de música de la comarca son las encargadas de dar cuerpo sonoro a los desfiles. Cada filà desfila con su propia banda, y la diferencia entre el sonido cristiano — pasodobles rápidos, trompetas al frente — y el moro — percusión prominente, melodías orientales — es tan clara como en cualquier otra fiesta festera valenciana.</p>
+        <p style="margin-bottom:0;">El momento acústico más singular de Bocairent no es ningún desfile: es la Nit de les Caixes. El sonido de cientos de cajas y tambores rebotando en las paredes de piedra del barrio medieval de noche, con los farolillos como única luz, no tiene equivalente en ninguna otra fiesta de la Comunitat Valenciana.</p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Nit de les Caixes</h3>
+          <span class="tag">Viernes · Noche · Casco histórico medieval</span>
+          <p>Cientos de festeros con manta bocairentina y farolillos de papel recorren las calles medievales haciendo sonar miles de cajas. La oscuridad, la piedra, la luz de los faroles y el sonido de los tabalets crean una atmósfera que no se parece a ningún otro inicio de fiesta en Valencia. Es el acto más singular de Bocairent.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque resume en una sola noche todo lo que hace diferente a Bocairent: el invierno, el casco medieval, la manta, la devoción y la música. Quien solo puede venir un día, que venga este.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>L'Entrada por el casco medieval</h3>
+          <span class="tag">Sábado · Tarde · Recorrido oficial</span>
+          <p>Las filaes desfilan por calles excavadas en la roca con desniveles que obligan a maniobras que no se ven en ninguna otra Entrada festera. El trazado medieval convierte cada tramo en algo distinto. Es la Entrada más física y más auténtica de las fiestas valenciano-murcianas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver a una filà maniobrar por una calle de metro y medio de ancho cuesta abajo, con el traje completo y la banda tocando, es entender por qué la gente de Bocairent lleva 165 años haciéndolo exactamente así.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión de Sant Blai</h3>
+          <span class="tag">Domingo · Tarde · Parroquia de la Asunción</span>
+          <p>La reliquia y la imagen del patrón recorren las calles con todo el pueblo festero. No es un acto de exhibición — es el cumplimiento de una promesa que el pueblo de Bocairent lleva renovando desde 1632. La entrada del Guió en la plaza entre fuegos artificiales y el canto del Himno al Patrón cierra la jornada religiosa más importante de la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque explica por qué existe la fiesta. Sin entender la devoción a Sant Blai, los desfiles son espectáculo. Con ella, todo tiene sentido.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Despojo del Moro</h3>
+          <span class="tag">Martes · Mañana · Centro histórico</span>
+          <p>El embajador moro vencido se despoja de sus armas y símbolos rindiéndose ante la cruz. Es un acto de teatro popular sin equivalente en otras fiestas festeras: la rendición escenificada, el gesto de quitarse los atributos del poder, el Te Deum cantado después. La fiesta tiene un final dramático que pocas celebraciones de este tipo se permiten.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento de los seis días donde la fiesta se detiene completamente para hacer teatro puro. Y porque la carga simbólica de ese gesto — rendirse, despojarse — tiene una intensidad que los desfiles no pueden reproducir.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Cordà</h3>
+          <span class="tag">Martes · Noche · Casco antiguo · Recinto acotado</span>
+          <p>Cohetes borrachos lanzados en las calles del casco antiguo en recinto acotado. Es el acto más ruidoso y más caótico de la semana. La pólvora, el humo y el estruendo en un espacio cerrado tienen una intensidad que la arcabucería de las guerrillas no alcanza.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Respeta siempre el perímetro de seguridad. Dicho esto: si buscas el momento más visceral de toda la fiesta, es este. No hay nada igual en las fiestas festeras valencianas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Dia de l'Eixabegó</h3>
+          <span class="tag">Miércoles · Mañana · Parroquia de la Asunción</span>
+          <p>El último día no es de celebración: es de réquiem. Las juntas se reúnen y se celebra la misa por los festeros difuntos. Una fiesta que recuerda a sus muertos antes de cerrar el ciclo anual tiene una profundidad que va más allá de lo festivo. Muchos visitantes que lo conocen dicen que es el acto que más les ha marcado de toda la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque muestra la dimensión humana de la fiesta. Detrás de los trajes y la pólvora hay una comunidad que se cuida, que recuerda y que lleva generaciones haciendo lo mismo. Eso no se ve en ningún desfile.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Ropa de abrigo de verdad.</strong> Bocairent está a 680 metros. En febrero de noche el frío es intenso. Ropa térmica bajo el abrigo, no encima. Si quieres integrarte, hazte con una manta bocairentina — es la prenda de identidad de la fiesta.</li>
+        <li><strong>Calzado antideslizante.</strong> El casco histórico está excavado en la roca con calles empedradas y desniveles. De noche, con frío, el suelo puede ser traicionero. Suela gruesa con agarre.</li>
+        <li><strong>Alojamiento.</strong> Bocairent es un pueblo pequeño. Las plazas se agotan. Busca en Ontinyent o Alcoi como bases y desplázate en coche — están a menos de 20 minutos.</li>
+        <li><strong>Protección auditiva.</strong> Para la Cordà y las guerrillas del Dia de Moros i Cristians. Imprescindible para niños pequeños.</li>
+        <li><strong>Programa oficial.</strong> Los horarios exactos y el orden de actos cambian cada año. Consúlta la web de la Associació antes de salir.</li>
+        <li><strong>Gastronomía.</strong> La fiesta se come con <em>olleta de Bocairent</em> y <em>bajoques farcides</em>, y se bebe con <strong>Herbero</strong> — el licor de hierbas de la sierra de Mariola que calienta las noches largas. Los embutidos de montaña son los aperitivos de rigor en cualquier bar del centro.</li>
+        <li><strong>El Museo Festero.</strong> Documenta la evolución de la fiesta desde las antiguas soldadescas hasta las filaes actuales. Vale la visita antes de los días grandes para entender lo que se va a ver.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO FESTERO -->
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Filà</dt>
+        <dd>Agrupación festera del bando moro o cristiano con nombre, traje, banda y sede propios. En Bocairent hay 9: cinco cristianas y cuatro moras. Son herederas directas de las milicias del siglo XIX.</dd>
+
+        <dt>Nit de les Caixes</dt>
+        <dd>La noche de las cajas. Acto inaugural de la fiesta en el que los festeros recorren el casco histórico medieval con farolillos y tabalets. El acto más singular y más propio de Bocairent dentro de las fiestas de Moros y Cristianos valencianas.</dd>
+
+        <dt>Tabal / Tabalet</dt>
+        <dd>Tambor pequeño de doble parche, instrumento protagonista de la Nit de les Caixes. Su sonido seco y rítmico en las calles de piedra es el sonido más identificativo de la fiesta.</dd>
+
+        <dt>Farolet</dt>
+        <dd>Farolillo de papel que portan los festeros durante la Nit de les Caixes. La luz de los farolillos en las calles oscuras del casco medieval es la imagen más icónica de la fiesta.</dd>
+
+        <dt>Manta bocairentina</dt>
+        <dd>Manta de lana de tradición textil secular en Bocairent. En la fiesta es la prenda de identidad y de abrigo que llevan festeros y visitantes durante los actos nocturnos de febrero. No es un adorno: es una necesidad.</dd>
+
+        <dt>Despullament del Moro</dt>
+        <dd>El Despojo del Moro. Acto teatral del Dia del Sant Crist en el que el embajador moro vencido se despoja de sus armas y símbolos rindiéndose ante la cruz. Único en las fiestas festeras valencianas por su carga dramática y simbólica.</dd>
+
+        <dt>Cordà</dt>
+        <dd>Lanzamiento de cohetes borrachos en recinto acotado del casco antiguo, la noche del Dia del Sant Crist. Es el acto pirotécnico más intenso de los seis días. Respeta siempre el perímetro de seguridad.</dd>
+
+        <dt>Herbero</dt>
+        <dd>Licor de hierbas elaborado con plantas de la sierra de Mariola. Bebida tradicional de las fiestas de Bocairent, especialmente en las noches frías de febrero. Se encuentra en cualquier bar del centro durante la semana festera.</dd>
+
+        <dt>Eixabegó</dt>
+        <dd>El último día de la fiesta, dedicado a la misa de Réquiem por los festeros difuntos. El nombre hace referencia a la red de pesca que se cierra — el ciclo que termina. Es el cierre litúrgico y emocional de la semana.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/bocairent/nit-caixes-farolets.jpg" alt="Festeros con farolillos y mantas bocairentinas durante la Nit de les Caixes en las calles medievales de Bocairent" />
+        <img src="images/bocairent/entrada-casco-medieval.jpg" alt="Desfile de L'Entrada por las calles empedradas del casco histórico de Bocairent durante los Moros y Cristianos" />
+        <img src="images/bocairent/proceso-sant-blai.jpg" alt="Procesión de Sant Blai con los festeros de ambos bandos acompañando la reliquia del patrón por las calles de Bocairent" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.festesbocairent.com" target="_blank" rel="noopener">Associació de Festes de Moros i Cristians a Sant Blai de Bocairent — Web oficial</a></li>
+        <li><a href="https://www.bocairent.org" target="_blank" rel="noopener">Ayuntamiento de Bocairent</a></li>
+        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Moros y Cristianos de Bocairent en 2027?</dt>
+        <dd>Del viernes 5 al miércoles 10 de febrero de 2027. La fiesta se celebra siempre del viernes al miércoles más cercanos al 3 de febrero — festividad de Sant Blai — con la condición de que todos los días caigan en febrero.</dd>
+
+        <dt>¿Por qué se celebran en febrero y no en verano como otras fiestas de Moros y Cristianos?</dt>
+        <dd>Porque las fiestas están dedicadas a Sant Blai, cuya festividad litúrgica es el 3 de febrero. Bocairent mantiene ese calendario desde 1860 sin cederle al clima. El frío y la manta bocairentina son parte de la identidad de la fiesta.</dd>
+
+        <dt>¿Qué es la Nit de les Caixes?</dt>
+        <dd>El acto inaugural de la fiesta. La noche del viernes, cientos de festeros recorren el casco histórico medieval con farolillos de papel y miles de cajas y tambores. Es el acto más singular de Bocairent y uno de los más únicos de toda la fiesta festera valenciana.</dd>
+
+        <dt>¿Cuántas filaes participan?</dt>
+        <dd>Nueve en total: cinco del bando cristiano (Espanyoletos, Granaders, Contrabandistes, Terç de Suavos y Estudiants) y cuatro del bando moro (Moros Vells, Marrocs, Moros Marins y Mosqueters).</dd>
+
+        <dt>¿Por qué la filà Mosqueters está en el bando moro?</dt>
+        <dd>Por tradición histórica propia de Bocairent. La adscripción de cada filà responde a la evolución interna de la fiesta y a la clasificación heredada de la tradición local, no a una interpretación literal del nombre de la agrupación.</dd>
+
+        <dt>¿Qué es el Despojo del Moro?</dt>
+        <dd>El Despullament del Moro es un acto teatral del Dia del Sant Crist en el que el embajador moro vencido se despoja públicamente de sus armas y símbolos rindiéndose ante la cruz. Es único en las fiestas festeras valencianas por su carga dramática.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí, con precauciones. El frío de febrero requiere ropa adecuada para los más pequeños. La arcabucería del Dia de Moros i Cristians y la Cordà del martes requieren protección auditiva. La Nit de les Caixes y la Procesión de Sant Blai son los actos más adecuados para todas las edades.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
