@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moros y Cristianos de Crevillent 2027: Guía Completa, Embajada a Jaime I y Filaes | Folklorius</title>
+  <meta name="description" content="Guía completa de los Moros y Cristianos de Crevillent 2027 (1 al 4 de octubre). Fiesta de Interés Turístico Internacional. La Embajada al Rey Jaime I, el vasallaje histórico y 12 comparsas." />
+  <link rel="canonical" href="https://folklorius.es/moros-cristianos-crevillent.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moros y Cristianos de Crevillent 2027 | Vasallaje histórico y pacto en el Baix Vinalopó" />
+  <meta property="og:description" content="Guía inmersiva de los Moros y Cristianos de Crevillent. La única fiesta festera donde el desenlace es un acuerdo pacífico real basado en el Llibre dels Fets de Jaime I." />
+  <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-crevillent.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Comparsas por bando ─────────────────────────────────── */
+    .filaes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .filaes-grid { grid-template-columns: 1fr; }
+    }
+    .filae-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .filae-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .filae-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .filae-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.45;
+    }
+    .filae-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+    .nombre-filae {
+      border-bottom: 1px dotted var(--brand, #b34700);
+      cursor: help;
+    }
+    .tooltip-filae {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 260px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-filae::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .filae-col ul li:hover .tooltip-filae { display: block; }
+    .filae-col ul li:focus-within .tooltip-filae { display: block; }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+    .actos-list .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
+    .bando-moro      { background: #fef3c7; color: #92400e; }
+    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #b34700); }
+    .bando-religioso { background: #f3f4f6; color: #374151; }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/moros-cristianos-crevillent.html",
+    "name": "Moros y Cristianos de Crevillent — Festes de Sant Francesc d'Assís",
+    "startDate": "2027-10-01",
+    "endDate": "2027-10-04",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Crevillent — Plaza de la Constitución",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Crevillent",
+        "addressRegion": "Comunidad Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.2497,
+        "longitude": -0.8119
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación de Fiestas de Moros y Cristianos San Francisco de Asís de Crevillent",
+      "url": "https://www.morosicristianscrevillent.com"
+    },
+    "image": ["https://folklorius.es/images/moros-cristianos-crevillent.jpg"],
+    "description": "Fiestas de Moros y Cristianos de Crevillent, declaradas de Interés Turístico Internacional en 2017. La única fiesta festera valenciana cuya Embajada narra un vasallaje histórico real y pacífico basado en el Llibre dels Fets de Jaime I, declarada Bien de Relevancia Local Inmaterial.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Moros y Cristianos de Crevillent
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/moros-cristianos-crevillent.jpg" alt="La Embajada al Rey Jaime I en la Plaza de la Constitución de Crevillent, con el castillo festero al fondo y los dos bandos frente a frente en el acto central de los Moros y Cristianos" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Moros y Cristianos de Crevillent</h1>
+      <p class="ficha-subtitle">
+        Crevillent · Alicante · Comunitat Valenciana · «Vasallaje histórico, pacto pacífico y puro espectáculo visual en el Baix Vinalopó.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2017</span>
+        <span class="badge badge-interes">Embajada al Rey Jaime I — Bien de Relevancia Local Inmaterial</span>
+      </div>
+
+      <!-- AVISO -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Respeta las zonas acotadas durante las Entradas.</strong> Los boatos y escuadras de Crevillent necesitan espacio para sus coreografías. No invadas el recorrido oficial aunque parezca que hay hueco.</li>
+          <li><strong>Pólvora en el Alardo.</strong> El Alardo de Arcabucería del lunes discurre por un recorrido delimitado desde el Calvario hasta la Plaza de la Constitución. Sigue siempre las medidas de seguridad perimetrales y mantén distancia.</li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 1: LA ESENCIA -->
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La mayoría de las fiestas de Moros y Cristianos terminan igual: un bando derrota al otro. En Crevillent no. Aquí el desenlace es un acuerdo. El señor musulmán de la villa entrega las llaves al Rey Jaime I sin que nadie muera, porque eso fue exactamente lo que ocurrió en el siglo XIII y los fundadores de la fiesta decidieron contarlo tal cual.
+      </p>
+      <p>
+        Esa decisión de hace sesenta años lo cambia todo. Le da a la fiesta una narrativa de concordia que contrasta con el relato de reconquista por la espada que domina la mayoría de celebraciones festeras. Y le da una Embajada con un texto de valor literario e histórico real, protegido por la Generalitat Valenciana, que no tiene equivalente en ninguna otra fiesta de la provincia.
+      </p>
+      <p>
+        Junto a eso, Crevillent tiene una tradición musical propia — es ciudad de coros y orfeones — que se nota en cómo suenan sus Entradas. Y un nivel de elaboración en los boatos de capitanía que la sitúa entre las referencias estéticas de las fiestas festeras alicantinas.
+      </p>
+
+      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Cuatro días en el primer fin de semana de octubre, coincidiendo con las patronales de San Francisco de Asís. La <strong>Asociación de Fiestas de Moros y Cristianos San Francisco de Asís</strong> coordina 12 comparsas — 6 de cada bando — en un programa que combina los dos grandes desfiles de las Entradas, el Alardo de pólvora y la pieza central de la fiesta: las dos Embajadas.
+      </p>
+      <p>
+        El orden de los desfiles alterna cada año. En 2027, año impar, el sábado desfila el bando moro y el domingo el cristiano. La Embajada al Ra'is el domingo por la noche prepara el terreno para el acto culminante del lunes: la Embajada al Rey Jaime I, donde el señor musulmán entrega los castillos al monarca aragonés.
+      </p>
+      <p class="nota-grid">⚠️ El programa exacto y los horarios de 2027 los publica la Asociación de Fiestas de Moros y Cristianos San Francisco de Asís de Crevillent. Consúltalos antes de planificar tu visita.</p>
+
+      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Crevillent estrenó sus Moros y Cristianos en 1965. Joven para los estándares de la provincia, pero con algo que pocas fiestas más antiguas pueden decir: nació con un texto propio. Los fundadores — que formaron las dos primeras comparsas, Almogávares y Beduinos — se negaron a copiar los parlamentos genéricos que circulaban por otros pueblos y encargaron un guion basado en hechos reales.
+      </p>
+      <p>
+        La fuente fue el <strong><em>Llibre dels Fets</em></strong>, la crónica del propio Jaime I de Aragón, donde se relata que a mediados del siglo XIII el Ra'is Ahmad, señor musulmán de Crevillent, pactó pacíficamente su sumisión al monarca cristiano y le entregó los castillos sin derramar sangre. Ese hecho documentado es el que se representa cada año en la Plaza de la Constitución.
+      </p>
+
+      <div class="banner-historia" role="note">
+        <h3>La Embajada al Rey Jaime I — Bien de Relevancia Local Inmaterial</h3>
+        <p>El texto de la Embajada al Rey Jaime I está declarado Bien de Relevancia Local Inmaterial por la Generalitat Valenciana desde 2010. No es un parlamento festero genérico: es un texto de valor literario e histórico propio, elaborado a partir de fuentes documentales medievales, que narra el vasallaje real del Ra'is de Crevillent al monarca aragonés.</p>
+        <p>Es el único texto de una Embajada festera de la Comunitat Valenciana con este nivel de protección patrimonial.</p>
+      </div>
+
+      <!-- SECCIÓN 4: FECHAS -->
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        Las fiestas se celebran siempre el <strong>primer fin de semana de octubre</strong>, en torno a la festividad de San Francisco de Asís (4 de octubre). En 2027:
+      </p>
+      <ul>
+        <li><strong>Viernes 1 de octubre</strong> — Entrada Infantil y pasacalles nocturnos</li>
+        <li><strong>Sábado 2 de octubre</strong> — Gran Entrada del Bando Moro <em>(año impar)</em></li>
+        <li><strong>Domingo 3 de octubre</strong> — Gran Entrada del Bando Cristiano · Embajada al Ra'is (noche)</li>
+        <li><strong>Lunes 4 de octubre</strong> — Alardo de Arcabucería (mañana) · Embajada al Rey Jaime I (tarde) · Procesión en honor al patrón (noche)</li>
+      </ul>
+      <p class="nota-grid">⚠️ El orden de las Entradas alterna cada año: en años impares (2027) el sábado desfila el bando moro y el domingo el cristiano. En años pares, al revés. Confirma siempre en el programa oficial.</p>
+
+      <!-- SECCIÓN 5: ACTOS PRINCIPALES -->
+      <h2 class="section-title">Los actos principales</h2>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Viernes 1 de octubre — Entrada Infantil</span>
+          <strong>Entrada Infantil y pasacalles nocturnos.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Los niños abren la fiesta con su propia Entrada. Es el primer desfile del año y el que marca que la fiesta tiene continuidad generacional. Los pasacalles nocturnos calientan el ambiente antes de los dos días grandes.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado 2 de octubre — Gran Entrada Mora</span>
+          <strong>Gran Entrada del Bando Moro.</strong>
+          <span class="bando-tag bando-moro">Bando moro · 2027</span>
+          El desfile más esperado del fin de semana para el bando de la media luna. Las comparsas moras desfilan con sus trajes, escuadras y boatos por el recorrido principal de Crevillent. La comparsa que ostenta la Capitanía Mora ese año cierra el desfile con el boato más elaborado.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 3 de octubre — Gran Entrada Cristiana</span>
+          <strong>Gran Entrada del Bando Cristiano.</strong>
+          <span class="bando-tag bando-cristiano">Bando cristiano · 2027</span>
+          El bando de la cruz toma las calles en el día de San Francisco de Asís. Las marchas triunfales, los coros en vivo integrados en los boatos de capitanía y el despliegue de las escuadras hacen de esta Entrada una de las más singulares sonoramente de las fiestas festeras alicantinas.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 3 de octubre — Embajada al Ra'is · Noche</span>
+          <strong>Embajada al Ra'is.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Frente al Castillo Festero en la Plaza de la Constitución, las tropas cristianas intentan negociar con el Ra'is — el señor musulmán de Crevillent. El parlamento establece las condiciones y la tensión narrativa que se resolverá al día siguiente. Es el primer acto teatral de los dos que articulan la historia real en la que se basa la fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes 4 de octubre — Alardo de Arcabucería · Mañana</span>
+          <strong>Alardo de Arcabucería.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Desde primera hora, el centro de Crevillent huele a pólvora. Las comparsas recorren el trayecto desde el Calvario hasta la Plaza de la Constitución disparando arcabuces y mosquetes. El recorrido está delimitado con precisión, lo que lo convierte en uno de los Alardos más accesibles y seguros de la provincia para el espectador.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes 4 de octubre — Embajada al Rey Jaime I · Tarde</span>
+          <strong>La Embajada al Rey Jaime I.</strong>
+          <span class="bando-tag bando-ambos">Acto culminante</span>
+          El cenit de la fiesta. Frente al Castillo en la Plaza de la Constitución, el Ra'is entrega simbólicamente las llaves de Crevillent al Rey Jaime I de Aragón. No hay asalto, no hay derrota violenta — el texto narra un acuerdo real. El parlamento está declarado Bien de Relevancia Local Inmaterial y tiene un valor literario e histórico que lo distingue de cualquier otra Embajada festera valenciana.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes 4 de octubre — Procesión del Patrón · Noche</span>
+          <strong>Procesión de San Francisco de Asís.</strong>
+          <span class="bando-tag bando-religioso">Devocional</span>
+          La procesión solemne en honor al patrón cierra los cuatro días de fiesta devolviendo la celebración a su dimensión religiosa original. Las comparsas acompañan al patrón por las calles de Crevillent en el acto de cierre de la semana festera.
+        </li>
+
+      </ul>
+
+      <!-- SECCIÓN 6: COMPARSAS POR BANDO -->
+      <h2 class="section-title">Comparsas por bando</h2>
+      <p>
+        Las <strong>12 comparsas</strong> de Crevillent están coordinadas por la Asociación de Fiestas de Moros y Cristianos San Francisco de Asís: 6 del bando cristiano y 6 del moro. Pasa el cursor sobre el nombre para ver la nota de cada comparsa.
+      </p>
+      <p class="nota-grid">La comparsa que ostenta la Capitanía de cada bando varía cada año. Consulta el programa oficial de la Asociación para saber qué comparsas ejercen de Capitanía Cristiana y Mora en 2027.</p>
+
+      <div class="filaes-grid">
+
+        <div class="filae-col">
+          <h3>⚔️ Bando Cristiano</h3>
+          <ul>
+            <li>
+              <span class="nombre-filae">Almogávares</span>
+              <span class="tooltip-filae">Comparsa Almogávares · Bando Cristiano · Una de las dos comparsas fundadoras de la fiesta en 1965.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Maseros</span>
+              <span class="tooltip-filae">Comparsa Maseros · Bando Cristiano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Caballeros del Cid</span>
+              <span class="tooltip-filae">Comparsa Caballeros del Cid · Bando Cristiano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Castellano Leonesa</span>
+              <span class="tooltip-filae">Comparsa Castellano Leonesa · Bando Cristiano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Dragones</span>
+              <span class="tooltip-filae">Comparsa Dragones de San Jorge · Bando Cristiano. Conocidos habitualmente como Dragones.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Astures</span>
+              <span class="tooltip-filae">Comparsa Guerreros Astures · Bando Cristiano. Conocidos habitualmente como Astures.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filae-col">
+          <h3>🌙 Bando Moro</h3>
+          <ul>
+            <li>
+              <span class="nombre-filae">Beduinos</span>
+              <span class="tooltip-filae">Comparsa Beduinos · Bando Moro · Fundada en 1965, decana del bando moro y comparsa fundadora junto a Almogávares.</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Berberiscos</span>
+              <span class="tooltip-filae">Comparsa Berberiscos · Bando Moro</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Benimerines</span>
+              <span class="tooltip-filae">Comparsa Benimerines · Bando Moro</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Omeyas</span>
+              <span class="tooltip-filae">Comparsa Omeyas · Bando Moro</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Marroquíes</span>
+              <span class="tooltip-filae">Comparsa Marroquíes · Bando Moro</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Moros Viejos Tuareg</span>
+              <span class="tooltip-filae">Comparsa Moros Viejos Tuareg · Bando Moro. Conocidos indistintamente como Moros Viejos o Tuareg.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">La ciudad de los coros y las marchas</h3>
+        <p>Crevillent tiene una tradición coral y orquestal que va más allá de la fiesta festera. Eso se nota en cómo suenan las Entradas: junto a las marchas moras y cristianas habituales, es frecuente encontrar formaciones corales cantando en directo dentro de los boatos de las capitanías. Voces reales, no grabaciones — integradas en el desfile como si fuera parte natural del espectáculo.</p>
+        <p>Las marchas siguen la división clásica: paso triunfal y rápido con protagonismo de los metales para el bando cristiano, cadencia lenta y percusión oriental para el moro. Pero la capa coral que añade Crevillent crea una textura sonora propia que diferencia esta fiesta de sus vecinas de la provincia.</p>
+        <p style="margin-bottom:0;">El Alardo del lunes por la mañana tiene su propio sonido: el de los arcabuces y mosquetes disparando pólvora negra en el centro del pueblo, con la plaza como caja de resonancia. Es el contrapunto explosivo a la solemnidad de las Embajadas.</p>
+      </div>
+
+      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Embajada al Rey Jaime I</h3>
+          <span class="tag">Lunes · Tarde · Plaza de la Constitución</span>
+          <p>El Ra'is entrega las llaves de Crevillent al Rey Jaime I de Aragón. Sin asalto, sin derrota violenta — solo un acuerdo histórico real representado con un texto declarado Bien de Relevancia Local Inmaterial. Es la única Embajada festera de la Comunitat Valenciana con ese nivel de protección patrimonial.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no existe ninguna otra Embajada festera en Valencia con un texto de esa calidad literaria e histórica. Asistir es más parecido a presenciar un hecho documentado que a ver una representación convencional.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los Boatos de Capitanía</h3>
+          <span class="tag">Sábado y Domingo · Tarde · Recorrido oficial</span>
+          <p>La comparsa que ostenta la Capitanía de cada bando cierra el desfile con su boato: carrozas, ballets en vivo, coreografías, trajes de un nivel de elaboración que se mira en toda la provincia. Crevillent está entre las referencias estéticas de las fiestas festeras alicantinas y los boatos son el motivo principal.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el nivel de diseño, coordinación y recursos que concentra un boato de capitanía alicantino no tiene equivalente en ninguna otra fiesta festera española. Y Crevillent compite en la primera división de esa categoría.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Alardo de Arcabucería</h3>
+          <span class="tag">Lunes · Mañana · Del Calvario a la Plaza de la Constitución</span>
+          <p>Cientos de tiradores recorren el centro de Crevillent disparando arcabuces en un trayecto delimitado con precisión. El recorrido acotado lo convierte en uno de los Alardos más accesibles de la provincia para el visitante, sin perder nada de la intensidad de la pólvora.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el puente entre la teatralidad de las Embajadas y la dimensión física de la fiesta. Y porque el olor a pólvora negra en las calles de un pueblo en octubre, con el castillo festero al fondo, es parte inseparable de la experiencia.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los coros en los desfiles</h3>
+          <span class="tag">Sábado y Domingo · Tarde · Recorrido oficial</span>
+          <p>Dentro de los boatos de las capitanías, formaciones corales cantan en directo mientras desfilan. Es la huella de la tradición musical de Crevillent integrada en la fiesta festera. En ninguna otra ciudad de la provincia encontrarás voces reales dentro de un desfile de Moros y Cristianos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque añade una dimensión sonora que distingue Crevillent del resto. Escuchar canto coral en directo mientras pasa una capitanía es uno de esos detalles que no esperas y que luego recuerdas.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Sillas y tribunas.</strong> La afluencia de visitantes durante las Entradas del sábado y domingo llena las aceras. Gestiona con antelación el alquiler de sillas en el recorrido principal a través de la Asociación de Fiestas.</li>
+        <li><strong>El Castillo Festero.</strong> La construcción en la Plaza de la Constitución merece una visita tranquila durante las mañanas, cuando no hay actos. Es el escenario de las Embajadas y vale la pena verlo de cerca sin la presión del público.</li>
+        <li><strong>Las sedes de las comparsas.</strong> Las cabilas y cuarteles son el espacio privado donde los festeros comen, celebran y descansan durante los días de fiesta. Si tienes la oportunidad de visitar alguna como invitado, no la dejes pasar — es donde la fiesta ocurre de verdad, fuera del programa oficial.</li>
+        <li><strong>El Alardo.</strong> Sitúate en el tramo del recorrido con más antelación de la que crees necesaria. Las zonas con mejor visibilidad se llenan rápido y el perímetro de seguridad no se puede cruzar una vez empezados los disparos.</li>
+        <li><strong>Alternancia de bandos.</strong> En 2027 (año impar) el sábado desfila el bando moro y el domingo el cristiano. Si solo puedes venir un día, decide qué Entrada quieres ver antes de planificar.</li>
+        <li><strong>Programa oficial.</strong> Consulta la web de la Asociación de Fiestas antes de viajar. Los horarios exactos y el orden de actos se confirman cada año.</li>
+      </ul>
+
+      <!-- SECCIÓN 10: VOCABULARIO FESTERO -->
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Ra'is</dt>
+        <dd>Caudillo o señor islámico. En Crevillent es la figura central de la narrativa histórica: el Ahmad, señor musulmán de la villa, que pactó con Jaime I la entrega de los castillos sin violencia. Su papel en la Embajada es el más importante de toda la fiesta.</dd>
+
+        <dt>Boato</dt>
+        <dd>El conjunto de elementos estéticos — ballets, carrozas, escuadras especiales, música en directo — que acompañan a la Capitanía durante el desfile para mostrar su poderío y nivel de elaboración. En Crevillent los boatos de capitanía son la referencia estética de la fiesta.</dd>
+
+        <dt>Cabila / Cuartel</dt>
+        <dd>La sede social de cada comparsa durante los días de fiesta. Las cabilas son las sedes del bando moro; los cuarteles, las del cristiano. Es donde los festeros comen, celebran y viven la fiesta fuera del programa oficial.</dd>
+
+        <dt>Alardo</dt>
+        <dd>Acto festero en el que las comparsas simulan una escaramuza disparando arcabuces y mosquetes de pólvora negra a lo largo de un recorrido delimitado. En Crevillent discurre desde el Calvario hasta la Plaza de la Constitución.</dd>
+
+        <dt>Embajada</dt>
+        <dd>Representación teatralizada en la que los portavoces de cada bando intercambian parlamentos ante el castillo festero. En Crevillent hay dos: la Embajada al Ra'is (domingo) y la Embajada al Rey Jaime I (lunes), siendo esta última la más importante y la única con protección patrimonial oficial.</dd>
+
+        <dt>Capitanía</dt>
+        <dd>El cargo de mayor honor dentro de cada bando para cada edición. La comparsa que ostenta la Capitanía ese año cierra el desfile con el boato más elaborado y representa a su bando en los actos oficiales. Rota entre las comparsas año a año.</dd>
+
+      </dl>
+
+      <!-- SECCIÓN 11: GALERÍA -->
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/crevillent/embajada-jaime-castillo.jpg" alt="La Embajada al Rey Jaime I frente al Castillo Festero en la Plaza de la Constitución de Crevillent" />
+        <img src="images/crevillent/entrada-bando-moro.jpg" alt="Gran Entrada del Bando Moro durante los Moros y Cristianos de Crevillent" />
+        <img src="images/crevillent/alardo-arcabuceria.jpg" alt="Alardo de Arcabucería en el centro histórico de Crevillent con festeros disparando arcabuces" />
+      </div>
+
+      <!-- SECCIÓN 12: ENLACES ÚTILES -->
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.morosicristianscrevillent.com" target="_blank" rel="noopener">Asociación de Fiestas de Moros y Cristianos San Francisco de Asís — Web oficial</a></li>
+        <li><a href="https://visita.crevillent.es" target="_blank" rel="noopener">Turismo de Crevillent</a></li>
+        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
+
+      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Moros y Cristianos de Crevillent en 2027?</dt>
+        <dd>Del viernes 1 al lunes 4 de octubre de 2027, coincidiendo con el primer fin de semana de octubre y la festividad de San Francisco de Asís. El acto central — la Embajada al Rey Jaime I — es el lunes por la tarde.</dd>
+
+        <dt>¿Por qué la fiesta de Crevillent es diferente a otras de Moros y Cristianos?</dt>
+        <dd>Porque su narrativa no termina con una reconquista por la fuerza. La Embajada al Rey Jaime I relata el vasallaje pacífico histórico real del señor musulmán de Crevillent al monarca aragonés, basado en el Llibre dels Fets de Jaime I. El texto está declarado Bien de Relevancia Local Inmaterial por la Generalitat Valenciana.</dd>
+
+        <dt>¿Qué es la regla de alternancia y cómo afecta a 2027?</dt>
+        <dd>En Crevillent el bando que desfila el sábado cambia cada año para garantizar la equidad. En años impares (2027) el sábado es la Entrada Mora y el domingo la Cristiana. En años pares, al revés.</dd>
+
+        <dt>¿Cuántas comparsas participan?</dt>
+        <dd>Doce en total: seis del bando cristiano (Almogávares, Maseros, Caballeros del Cid, Castellano Leonesa, Dragones y Astures) y seis del bando moro (Beduinos, Berberiscos, Benimerines, Omeyas, Marroquíes y Moros Viejos Tuareg).</dd>
+
+        <dt>¿Hay ganadores y perdedores en la fiesta?</dt>
+        <dd>No en el sentido habitual. La Embajada al Rey Jaime I narra un acuerdo pacífico, no una derrota violenta. El Ra'is entrega los castillos al monarca cristiano por voluntad propia. Es lo que ocurrió históricamente y es lo que se representa.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí. La Entrada Infantil del viernes es el acto más adecuado para los más pequeños. Las Entradas del sábado y domingo son muy visuales y atractivas para todas las edades. Para el Alardo del lunes, protección auditiva recomendada para niños pequeños.</dd>
+
+      </dl>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
