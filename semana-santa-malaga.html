@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ============================================================
-       SEO: Personaliza title y description para cada ciudad
-       ============================================================ -->
-  <title>Málaga — Semana Santa — Folklorius</title>
-  <meta name="description" content="Semana Santa de Málaga 2027: 42 cofradías recorren las calles con tronos gigantes, saetas y bandas del 21 de marzo al 28 de marzo. Guía completa con cofradías, historia y consejos prácticos." />
+  <title>Semana Santa de Málaga 2026: Guía, Cofradías y Tronos</title>
+  <meta name="description" content="Semana Santa de Málaga 2026: 42 cofradías, tronos monumentales, saetas y la Legión. Del 29 de marzo al 5 de abril. Guía con historia y cofradías." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-malaga.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Málaga — Folklorius" />
-  <meta property="og:description" content="42 cofradías, tronos dorados y saetas. Guía completa de la Semana Santa de Málaga 2027." />
+  <meta property="og:title" content="Semana Santa de Málaga 2026: Guía Completa" />
+  <meta property="og:description" content="42 cofradías, tronos monumentales y saetas. Guía completa de la Semana Santa de Málaga 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-malaga.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -25,45 +21,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- ============================================================
-       CSS LOCAL: Componentes específicos de esta plantilla
-       (cofradias-grid, must-see-cards, procesiones-timeline)
-       ============================================================ -->
   <style>
 
     /* --- Cuadrícula de cofradías por día --- */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
       font-size: 0.88rem;
       padding: 3px 0;
       color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
     }
     .cofradia-col ul li::before {
       content: "·";
@@ -71,8 +80,40 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
 
     /* --- Tarjetas "No te lo puedes perder" --- */
     .must-see-grid {
@@ -170,13 +211,140 @@
       margin-bottom: 3px;
     }
 
-  </style>
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
 
-  <!-- ============================================================
-       JSON-LD: Datos estructurados del evento
-       Actualiza: name, startDate, endDate, location, image,
-       description, organizer.name y organizer.url
-       ============================================================ -->
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -245,7 +413,6 @@
   </nav>
 
   <!-- ============================================================ HERO -->
-  <!-- Imagen principal: mínimo 1200×500px, alt descriptivo -->
   <div class="ficha-hero">
     <img src="images/semana-santa-malaga.jpg" alt="Legionarios portando el Cristo de La Buena Muerte o Cristo de Mena" />
   </div>
@@ -261,43 +428,23 @@
       </p>
 
       <!-- BADGES / RECONOCIMIENTOS OFICIALES -->
-      <!-- Incluye solo los que correspondan. Elimina los que no apliquen. -->
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
-        <!-- Añade o elimina badges según los reconocimientos reales de esta ciudad -->
       </div>
 
       <!-- NOTA DE SENSIBILIDAD -->
-      <!-- Ajusta los puntos según las particularidades de cada ciudad -->
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
           <li>Las procesiones son actos religiosos, no espectáculos. Guarda silencio durante las saetas y los momentos de oración.</li>
           <li>No toques los tronos ni a los nazarenos. Respeta el espacio del cortejo.</li>
           <li>Sigue las indicaciones de la Policía Local y Protección Civil, especialmente en calles estrechas del centro histórico.</li>
-          <!-- Añade puntos específicos de la ciudad si los hay -->
         </ul>
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 1: LA ESENCIA DE LA FIESTA
-           Texto evocador, en primera o tercera persona, que capture
-           la atmósfera y lo que hace única esta Semana Santa.
-           Mínimo 80 palabras. No usar bullet points aquí.
-           ==================================================== -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        La Semana Santa de Málaga es una de las celebraciones más intensas y reconocibles de Andalucía. Durante ocho días, la ciudad se transforma en un gran escenario de devoción popular donde las hermandades avanzan por calles y plazas con una mezcla muy particular de solemnidad, emoción y participación ciudadana. La imagen más característica es la de los <strong>tronos</strong>, enormes estructuras procesionales que se desplazan entre una multitud de fieles, visitantes y malagueños que acompañan la salida, el paso o la recogida de cada cofradía. 
+        La Semana Santa de Málaga es una de las celebraciones más intensas y reconocibles de Andalucía. Durante ocho días, la ciudad se transforma en un gran escenario de devoción popular donde las hermandades avanzan por calles y plazas con una mezcla muy particular de solemnidad, emoción y participación ciudadana. La imagen más característica es la de los <strong>tronos</strong>, enormes estructuras procesionales que avanzan entre una multitud de fieles, visitantes y malagueños. Acompañar la salida, el paso o la recogida de cualquier cofradía es una experiencia que va más allá de lo visual. 
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 2: ¿EN QUÉ CONSISTE?
-           Explicación funcional para quien no conoce la Semana Santa:
-           qué es una cofradía, cómo funciona la procesión, qué es un paso/trono,
-           cómo se porta (costaleros vs. hombres de trono), itinerario general.
-           ==================================================== -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
        La Semana Santa de Málaga se celebra entre el Domingo de Ramos y el Domingo de Resurrección. Durante esos días, 42 cofradías realizan sus estaciones de penitencia por la ciudad, con itinerarios y horarios que cada edición publica la Agrupación de Cofradías y que el Ayuntamiento complementa con información municipal de movilidad, seguridad y servicios.  
@@ -311,13 +458,6 @@
       <p>
       Para quien viene de fuera, conviene saber que aquí la procesión no funciona como un simple desfile. Hay calles donde el trono pasa muy cerca del público, momentos en los que la música se detiene para dejar espacio a una saeta y episodios especialmente esperados, como los relevos de portadores o la salida del Cristo de la Buena Muerte con la Legión. El ritmo de la Semana Santa malagueña alterna entre grandiosidad, recogimiento y emoción popular. 
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 3: HISTORIA Y SIGNIFICADO
-           Origen, evolución histórica, escultores o imagineros relevantes,
-           significado cultural y religioso. Mínimo 2 párrafos.
-           ==================================================== -->
       <h2 class="section-title">Historia y significado</h2>
       <p>
         La tradición de la Semana Santa de Málaga se remonta al siglo XVI, cuando comenzaron a organizarse las primeras cofradías penitenciales tras el impulso del Concilio de Trento. Con el tiempo, la ciudad desarrolló un estilo propio en el que los tronos adquirieron gran protagonismo y las hermandades se convirtieron en parte esencial de la identidad local. 
@@ -326,167 +466,272 @@
         Durante el siglo XIX y en etapas posteriores, la Semana Santa fue consolidando su personalidad artística y devocional, reforzada por nuevas imágenes y por una participación popular cada vez más amplia. Tras la Guerra Civil, la Agrupación de Cofradías permitió reorganizar y fortalecer el calendario procesional, dando estabilidad a una tradición que hoy continúa muy viva. 
       </p>
       <p>
-      En Málaga, la Semana Santa no es solo una cita religiosa anual. Es también una expresión de pertenencia, una forma de memoria compartida y un punto de encuentro entre generaciones. Muchas familias participan en ella desde hace décadas y muchas calles del centro y de los barrios se reconocen en la hermandad que pasa por delante de sus casas. Ese vínculo entre barrio, fe e identidad explica por qué la Semana Santa malagueña moviliza tanta emoción y tanta fidelidad. 
+      En Málaga, la Semana Santa forma parte de algo más que el calendario religioso anual. Es una expresión de pertenencia, una forma de memoria compartida y un punto de encuentro entre generaciones. Muchas familias participan en ella desde hace décadas y muchas calles del centro y de los barrios se reconocen en la hermandad que pasa por delante de sus casas. Ese vínculo entre barrio, fe e identidad explica por qué la Semana Santa malagueña moviliza tanta emoción y tanta fidelidad. 
       </p>
-
-      <!-- ====================================================
-           SECCIÓN 4: FECHAS
-           Fechas del año en curso con días nombrados.
-           Recuerda actualizar también el JSON-LD del <head>.
-           ==================================================== -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Málaga se celebra del <strong>domingo 21 de marzo</strong>,
-        <strong>Domingo de Ramos</strong>, al <strong>domingo 28 de marzo</strong>,
+        La Semana Santa de Málaga se celebra del <strong>domingo 29 de marzo</strong>,
+        <strong>Domingo de Ramos</strong>, al <strong>domingo 5 de abril</strong>,
         <strong>Domingo de Resurrección</strong>. Las fechas cambian cada año según el calendario
         litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
       </p>
       <p>
         La información oficial de horarios, itinerarios, movilidad, accesibilidad y seguridad se publica cada año por los organismos competentes del Ayuntamiento y la Agrupación de Cofradías. Para una visita bien planificada, es recomendable consultar los documentos de cada edición, ya que pueden producirse ajustes por organización o meteorología.
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 5: PROCESIONES MÁS DESTACADAS (timeline)
-           Una entrada por día, con el nombre de la jornada y
-           descripción breve de lo más relevante de ese día.
-           ==================================================== -->
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
          La Pollinica abre la Semana Santa. Jesús Cautivo, conocido como el Señor de Málaga, concentra una gran devoción y marca uno de los momentos más esperados de la jornada. 
         </li>
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
           La procesión del Cautivo es una de las más multitudinarias y refuerza la intensidad de los primeros días de la semana. 
         </li>
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
           El Rocío, conocida como la “Novia de Málaga”, atrae a muchos malagueños y visitantes por su fuerza popular y su presencia muy querida en la ciudad. 
         </li>
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           La Expiración ofrece una procesión nocturna de gran solemnidad, mientras que El Rico incorpora la tradicional liberación de un preso, uno de los momentos más singulares de la Semana Santa malagueña. 
         </li>
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           Cristo de la Buena Muerte o Cristo de Mena destaca por la participación especial de la Legión Española, que convierte ese momento en una escena especialmente reconocible.
         </li>
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           Es uno de los días más intensos y recogidos, con procesiones de carácter muy marcado y una atmósfera particularmente solemne. 
         </li>
         <li>
-          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          <span class="dia-label">Sábado Santo · 4 de abril</span>
           El Santo Sepulcro aporta un tono de respeto y silencio muy acorde con el final de la Pasión. 
         </li>
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La Resurrección cierra la Semana Santa con júbilo y devuelve a la ciudad un tono más luminoso y festivo.
         </li>
       </ul>
-
-
-      <!-- ====================================================
-           SECCIÓN 6: COFRADÍAS POR DÍA (cuadrícula)
-           Lista de cofradías agrupadas por jornada.
-           Añade o elimina columnas según los días con procesiones.
-           Fuente: organismo oficial de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Cofradías por día</h2>
 <p>
   Málaga cuenta con 42 cofradías que realizan estación de penitencia durante la Semana Santa.
   Consulta el programa oficial de la Agrupación de Cofradías y el Ayuntamiento para horarios e itinerarios exactos.
 </p>
 <div class="cofradias-grid">
-  <div class="cofradia-col">
-    <h3>Domingo de Ramos</h3>
-    <ul>
-      <li title="Real Cofradía de Nuestro Padre Jesús a su Entrada en Jerusalén, María Santísima del Amparo y San Juan Evangelista">Pollinica</li>
-      <li title="María Santísima de Lágrimas y Favores (RR.CC. Fusionadas)">Lágrimas y Favores</li>
-      <li title="Antigua, Venerable Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Soledad, Negaciones y Lágrimas de San Pedro, María Santísima del Dulce Nombre y San Francisco de Asís">Dulce Nombre</li>
-      <li title="Fervorosa Hermandad y Antigua Cofradía del Divino Nombre de Jesús Nazareno de Salutación, María Santísima del Patrocinio Reina de los Cielos, San Juan Evangelista, Santa Mujer Verónica y de la Santa Faz de Nuestro Señor Jesucristo">Salutación</li>
-      <li title="Antigua Hermandad y Real Cofradía de Nazarenos del Stmo. Cristo de la Humildad en su Presentación al Pueblo (Ecce Homo), Nuestra Madre y Señora de la Merced y San Juan Evangelista">Humildad y Paciencia</li>
-      <li title="Hermandad del Santísimo Cristo de la Esperanza en su Gran Amor y María Santísima de la Salud">Salud</li>
-      <li title="Pontificia, Real, Muy Ilustre y Venerable Archicofradía Sacramental y Seráfica de Nuestro Padre Jesús Orando en el Huerto, Nuestra Señora de la Concepción, San Juan Evangelista y Nuestra Señora de la Oliva">Huerto</li>
-      <li title="Fervorosa y Muy Ilustre Hermandad de Nuestro Padre Jesús del Prendimiento y María Santísima del Gran Perdón">Prendimiento</li>
+  <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Pollinica</span>
+              <span class="tooltip-texto">Real Cofradía de Nuestro Padre Jesús a su Entrada en Jerusalén, María Santísima del Amparo y San Juan Evangelista</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Lágrimas y Favores</span>
+              <span class="tooltip-texto">María Santísima de Lágrimas y Favores (RR.CC. Fusionadas)</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Dulce Nombre</span>
+              <span class="tooltip-texto">Antigua, Venerable Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Soledad, Negaciones y Lágrimas de San Pedro, María Santísima del Dulce Nombre y San Francisco de Asís</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Salutación</span>
+              <span class="tooltip-texto">Fervorosa Hermandad y Antigua Cofradía del Divino Nombre de Jesús Nazareno de Salutación, María Santísima del Patrocinio Reina de los Cielos, San Juan Evangelista, Santa Mujer Verónica y de la Santa Faz de Nuestro Señor Jesucristo</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Humildad y Paciencia</span>
+              <span class="tooltip-texto">Antigua Hermandad y Real Cofradía de Nazarenos del Stmo. Cristo de la Humildad en su Presentación al Pueblo (Ecce Homo), Nuestra Madre y Señora de la Merced y San Juan Evangelista</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Salud</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Esperanza en su Gran Amor y María Santísima de la Salud</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Huerto</span>
+              <span class="tooltip-texto">Pontificia, Real, Muy Ilustre y Venerable Archicofradía Sacramental y Seráfica de Nuestro Padre Jesús Orando en el Huerto, Nuestra Señora de la Concepción, San Juan Evangelista y Nuestra Señora de la Oliva</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Prendimiento</span>
+              <span class="tooltip-texto">Fervorosa y Muy Ilustre Hermandad de Nuestro Padre Jesús del Prendimiento y María Santísima del Gran Perdón</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Lunes Santo</h3>
-    <ul>
-      <li title="Real, Muy Ilustre y Venerable Archicofradía Sacramental y de Nazarenos de Nuestro Padre Jesús de la Pasión y María Santísima del Amor Doloroso">Pasión</li>
-      <li title="Venerable y Muy Ilustre Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Columna y María Santísima de la O">Columna y la O</li>
-      <li title="Real, Muy Ilustre y Venerable Cofradía de Nazarenos de Nuestro Padre Jesús Cautivo, María Santísima de la Trinidad Coronada y del Glorioso Apóstol Santiago">Cautivo</li>
-      <li title="Antigua Cofradía del Santísimo Cristo del Perdón y Nuestra Señora de los Dolores">Perdón</li>
-      <li title="Fervorosa Hermandad de Culto y Procesión del Santísimo Cristo de la Crucifixión y María Santísima del Mayor Dolor en su Soledad">Crucifixión</li>
-      <li title="Cofradía del Santísimo Cristo Coronado de Espinas y Nuestra Señora de Gracia y Esperanza">Coronado de Espinas</li>
+        </details>
+  <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Pasión</span>
+              <span class="tooltip-texto">Real, Muy Ilustre y Venerable Archicofradía Sacramental y de Nazarenos de Nuestro Padre Jesús de la Pasión y María Santísima del Amor Doloroso</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Columna y la O</span>
+              <span class="tooltip-texto">Venerable y Muy Ilustre Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Columna y María Santísima de la O</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Cautivo</span>
+              <span class="tooltip-texto">Real, Muy Ilustre y Venerable Cofradía de Nazarenos de Nuestro Padre Jesús Cautivo, María Santísima de la Trinidad Coronada y del Glorioso Apóstol Santiago</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Perdón</span>
+              <span class="tooltip-texto">Antigua Cofradía del Santísimo Cristo del Perdón y Nuestra Señora de los Dolores</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Crucifixión</span>
+              <span class="tooltip-texto">Fervorosa Hermandad de Culto y Procesión del Santísimo Cristo de la Crucifixión y María Santísima del Mayor Dolor en su Soledad</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Coronado de Espinas</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo Coronado de Espinas y Nuestra Señora de Gracia y Esperanza</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Martes Santo</h3>
-    <ul>
-      <li title="Real, Ilustre y Venerable Hermandad Sacramental de Nuestro Padre Jesús Nazareno de los Pasos en el Monte Calvario y María Santísima del Rocío Coronada">Rocío</li>
-      <li title="Venerable Hermandad de la Caridad de Nuestro Señor y Cofradía de Nazarenos del Santísimo Cristo de la Agonía, María Santísima de las Penas, Reina y Madre y Santo Domingo de la Calzada">Penas</li>
-      <li title="Venerable Hermandad de Culto y Procesión de Jesús Nazareno del Perdón y María Santísima de Nueva Esperanza, San Joaquín y Santa Ana">Nueva Esperanza</li>
-      <li title="Ilustre y Venerable Hermandad de la Orden de Santo Domingo de Guzmán de Nuestro Padre Jesús de la Humillación y Perdón y María Santísima de la Estrella">Estrella</li>
-      <li title="Real, Piadosa y Venerable Hermandad de Culto y Procesión de Nuestro Padre Jesús del Rescate y María Santísima de Gracia">Rescate</li>
-      <li title="Muy Ilustre, Venerable y Fervorosa Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús de la Sentencia, María Santísima del Rosario en sus Misterios Dolorosos y San Juan Evangelista">Sentencia</li>
+        </details>
+  <details class="cofradia-col">
+          <summary>Martes Santo</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Rocío</span>
+              <span class="tooltip-texto">Real, Ilustre y Venerable Hermandad Sacramental de Nuestro Padre Jesús Nazareno de los Pasos en el Monte Calvario y María Santísima del Rocío Coronada</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Penas</span>
+              <span class="tooltip-texto">Venerable Hermandad de la Caridad de Nuestro Señor y Cofradía de Nazarenos del Santísimo Cristo de la Agonía, María Santísima de las Penas, Reina y Madre y Santo Domingo de la Calzada</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Nueva Esperanza</span>
+              <span class="tooltip-texto">Venerable Hermandad de Culto y Procesión de Jesús Nazareno del Perdón y María Santísima de Nueva Esperanza, San Joaquín y Santa Ana</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Estrella</span>
+              <span class="tooltip-texto">Ilustre y Venerable Hermandad de la Orden de Santo Domingo de Guzmán de Nuestro Padre Jesús de la Humillación y Perdón y María Santísima de la Estrella</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Rescate</span>
+              <span class="tooltip-texto">Real, Piadosa y Venerable Hermandad de Culto y Procesión de Nuestro Padre Jesús del Rescate y María Santísima de Gracia</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Sentencia</span>
+              <span class="tooltip-texto">Muy Ilustre, Venerable y Fervorosa Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús de la Sentencia, María Santísima del Rosario en sus Misterios Dolorosos y San Juan Evangelista</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Miércoles Santo</h3>
-    <ul>
-      <li title="Hermandad Sacramental y Reales Cofradías Fusionadas de Jesús de Azotes y Columna, Stmo. Cristo de la Exaltación, Stmo. Cristo de Ánimas de Ciegos, María Stma. de Lágrimas y Favores e Ilustre Archicofradía de la Santa Vera Cruz y Sangre, Ntra. Sra. del Mayor Dolor Reina de los Ángeles y San Juan Evangelista (Primitiva de la Ciudad)">Vera-Cruz Fusionadas</li>
-      <li title="Venerable Hermandad de Nuestro Padre Jesús Nazareno Redentor del Mundo y Nuestra Señora Mediadora de la Salvación">Mediadora</li>
-      <li title="Hermandad Salesiana y Cofradía de Nazarenos del Santo Cristo de las Penas, María Santísima del Auxilio, San Juan Evangelista y San Juan Bosco">Salesianos</li>
-      <li title="Pontificia y Real, Muy Ilustre y Venerable Archicofradía del Santísimo Cristo de la Sangre, María Santísima de Consolación y Lágrimas y del Santo Sudario">Sangre</li>
-      <li title="Real, Excelentísima, Muy Ilustre y Venerable Cofradía de Culto y Procesión de Nuestro Padre Jesús Nazareno bajo la advocación de 'El Rico' y María Santísima del Amor">Rico</li>
-      <li title="Real, Muy Ilustre, Venerable y Antigua Hermandad y Cofradía de Nazarenos de Nuestro Padre de la Puente del Cedrón y María Santísima de la Paloma">Paloma</li>
-      <li title="Pontificia, Real, Ilustre y Venerable Archicofradía Sacramental de Culto y Procesión del Santísimo Cristo de la Expiración y María Santísima de los Dolores Coronada">Expiración</li>
+        </details>
+  <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Vera-Cruz Fusionadas</span>
+              <span class="tooltip-texto">Hermandad Sacramental y Reales Cofradías Fusionadas de Jesús de Azotes y Columna, Stmo. Cristo de la Exaltación, Stmo. Cristo de Ánimas de Ciegos, María Stma. de Lágrimas y Favores e Ilustre Archicofradía de la Santa Vera Cruz y Sangre, Ntra. Sra. del Mayor Dolor Reina de los Ángeles y San Juan Evangelista (Primitiva de la Ciudad)</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Mediadora</span>
+              <span class="tooltip-texto">Venerable Hermandad de Nuestro Padre Jesús Nazareno Redentor del Mundo y Nuestra Señora Mediadora de la Salvación</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Salesianos</span>
+              <span class="tooltip-texto">Hermandad Salesiana y Cofradía de Nazarenos del Santo Cristo de las Penas, María Santísima del Auxilio, San Juan Evangelista y San Juan Bosco</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Sangre</span>
+              <span class="tooltip-texto">Pontificia y Real, Muy Ilustre y Venerable Archicofradía del Santísimo Cristo de la Sangre, María Santísima de Consolación y Lágrimas y del Santo Sudario</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Rico</span>
+              <span class="tooltip-texto">Real, Excelentísima, Muy Ilustre y Venerable Cofradía de Culto y Procesión de Nuestro Padre Jesús Nazareno bajo la advocación de 'El Rico' y María Santísima del Amor</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Paloma</span>
+              <span class="tooltip-texto">Real, Muy Ilustre, Venerable y Antigua Hermandad y Cofradía de Nazarenos de Nuestro Padre de la Puente del Cedrón y María Santísima de la Paloma</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Expiración</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre y Venerable Archicofradía Sacramental de Culto y Procesión del Santísimo Cristo de la Expiración y María Santísima de los Dolores Coronada</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Jueves Santo</h3>
-    <ul>
-      <li title="Real y Muy Ilustre Hermandad de la Sagrada Cena Sacramental de Nuestro Señor Jesucristo y María Santísima de la Paz">Cena</li>
-      <li title="Archicofradía de la Santa Vera Cruz (RR.CC. Fusionadas)">Vera-Cruz</li>
-      <li title="Seráfica Hermandad de la Santa Cruz, Santísimo Cristo de la Victoria y Nuestra Señora de los Dolores en su Amparo y Misericordia">Santa Cruz</li>
-      <li title="Muy Ilustre, Antigua y Venerable Hermandad Sacramental de Nuestro Padre Jesús Nazareno de Viñeros, Nuestra Señora del Traspaso y Soledad de Viñeros y San Lorenzo Mártir">Viñeros</li>
-      <li title="Pontificia y Real Congregación del Santísimo Cristo de la Buena Muerte y Ánimas, Nuestra Señora de la Soledad (Mena)">Mena</li>
-      <li title="Real y Excelentísima Hermandad de Nuestro Padre Jesús del Santo Suplicio, Santísimo Cristo de los Milagros y María Santísima de la Amargura Coronada">Zamarrilla</li>
-      <li title="Real Ilustre y Venerable Hermandad de Nuestro Padre Jesús de la Misericordia, Santísimo Cristo de Ánimas y Nuestra Señora del Gran Poder y San Juan de Dios">Misericordia</li>
-      <li title="Pontificia y Real Archicofradía del Dulce Nombre de Jesús Nazareno del Paso y María Santísima de la Esperanza">Esperanza del Paso</li>
+        </details>
+  <details class="cofradia-col" open>
+          <summary>Jueves Santo</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Cena</span>
+              <span class="tooltip-texto">Real y Muy Ilustre Hermandad de la Sagrada Cena Sacramental de Nuestro Señor Jesucristo y María Santísima de la Paz</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Vera-Cruz</span>
+              <span class="tooltip-texto">Archicofradía de la Santa Vera Cruz (RR.CC. Fusionadas)</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Santa Cruz</span>
+              <span class="tooltip-texto">Seráfica Hermandad de la Santa Cruz, Santísimo Cristo de la Victoria y Nuestra Señora de los Dolores en su Amparo y Misericordia</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Viñeros</span>
+              <span class="tooltip-texto">Muy Ilustre, Antigua y Venerable Hermandad Sacramental de Nuestro Padre Jesús Nazareno de Viñeros, Nuestra Señora del Traspaso y Soledad de Viñeros y San Lorenzo Mártir</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Mena</span>
+              <span class="tooltip-texto">Pontificia y Real Congregación del Santísimo Cristo de la Buena Muerte y Ánimas, Nuestra Señora de la Soledad (Mena)</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Zamarrilla</span>
+              <span class="tooltip-texto">Real y Excelentísima Hermandad de Nuestro Padre Jesús del Santo Suplicio, Santísimo Cristo de los Milagros y María Santísima de la Amargura Coronada</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Misericordia</span>
+              <span class="tooltip-texto">Real Ilustre y Venerable Hermandad de Nuestro Padre Jesús de la Misericordia, Santísimo Cristo de Ánimas y Nuestra Señora del Gran Poder y San Juan de Dios</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Esperanza del Paso</span>
+              <span class="tooltip-texto">Pontificia y Real Archicofradía del Dulce Nombre de Jesús Nazareno del Paso y María Santísima de la Esperanza</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Viernes Santo</h3>
-    <ul>
-      <li title="Muy Antigua y Venerable Hermandad de Vía Crucis del Santo Cristo del Calvario y Señor San Francisco de Paula y Cofradía de Nazarenos del Santísimo Cristo Yacente de la Paz y la Unidad en el Misterio de su Sagrada Mortaja, Nuestra Señora de Fe y Consuelo, Santa María del Monte Calvario y San Manuel González">Calvario</li>
-      <li title="Fervorosa Hermandad Sacramental y Real Cofradía de Nazarenos del Sagrado Descendimiento de Nuestro Señor Jesucristo, Nuestra Señora del Santo Sudario y María Santísima de las Angustias">Descendimiento</li>
-      <li title="Real Cofradía del Santísimo Cristo del Amor y Nuestra Señora de la Caridad">Amor</li>
-      <li title="Muy Antigua, Venerable y Pontificia Archicofradía Sacramental de Nazarenos del Santísimo Cristo de la Redención y Nuestra Señora de los Dolores">Dolores de San Juan</li>
-      <li title="Real, Ilustre y Venerable Hermandad del Santo Traslado y Nuestra Señora de la Soledad">Traslado</li>
-      <li title="Real Hermandad de Nuestra Señora de la Piedad">Piedad</li>
-      <li title="Real Hermandad de Nuestro Padre Jesús del Santo Sepulcro y Nuestra Señora de la Soledad">Santo Sepulcro</li>
-      <li title="Venerable Orden Seglar de Siervos de María Santísima de los Dolores (Servitas)">Servitas</li>
+        </details>
+  <details class="cofradia-col">
+          <summary>Viernes Santo</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Calvario</span>
+              <span class="tooltip-texto">Muy Antigua y Venerable Hermandad de Vía Crucis del Santo Cristo del Calvario y Señor San Francisco de Paula y Cofradía de Nazarenos del Santísimo Cristo Yacente de la Paz y la Unidad en el Misterio de su Sagrada Mortaja, Nuestra Señora de Fe y Consuelo, Santa María del Monte Calvario y San Manuel González</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Descendimiento</span>
+              <span class="tooltip-texto">Fervorosa Hermandad Sacramental y Real Cofradía de Nazarenos del Sagrado Descendimiento de Nuestro Señor Jesucristo, Nuestra Señora del Santo Sudario y María Santísima de las Angustias</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Amor</span>
+              <span class="tooltip-texto">Real Cofradía del Santísimo Cristo del Amor y Nuestra Señora de la Caridad</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Dolores de San Juan</span>
+              <span class="tooltip-texto">Muy Antigua, Venerable y Pontificia Archicofradía Sacramental de Nazarenos del Santísimo Cristo de la Redención y Nuestra Señora de los Dolores</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Traslado</span>
+              <span class="tooltip-texto">Real, Ilustre y Venerable Hermandad del Santo Traslado y Nuestra Señora de la Soledad</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Piedad</span>
+              <span class="tooltip-texto">Real Hermandad de Nuestra Señora de la Piedad</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Santo Sepulcro</span>
+              <span class="tooltip-texto">Real Hermandad de Nuestro Padre Jesús del Santo Sepulcro y Nuestra Señora de la Soledad</span>
+            </li>
+      <li>
+              <span class="nombre-corto">Servitas</span>
+              <span class="tooltip-texto">Venerable Orden Seglar de Siervos de María Santísima de los Dolores (Servitas)</span>
+            </li>
     </ul>
-  </div>
-  <div class="cofradia-col">
-    <h3>Domingo de Resurrección</h3>
-    <ul>
-      <li title="Santísimo Cristo Resucitado y María Santísima Reina de los Cielos">Resucitado</li>
+        </details>
+  <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
+          <ul>
+      <li>
+              <span class="nombre-corto">Resucitado</span>
+              <span class="tooltip-texto">Santísimo Cristo Resucitado y María Santísima Reina de los Cielos</span>
+            </li>
     </ul>
-  </div>
+        </details>
 </div>
 <p class="fuente">Fuente: <a href="https://agrupaciondecofradias.com/" target="_blank" rel="noopener">Agrupación de Cofradías Semana Santa de Málaga</a> — última verificación: 2026-04-17</p>
-
-      <!-- ====================================================
-           SECCIÓN 7: MÚSICA
-           Dimensión sonora: bandas, marchas emblemáticas, saeta.
-           Incluye consejos de escucha y piezas concretas si las hay.
-           ==================================================== -->
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
@@ -499,20 +744,9 @@
           Hay también piezas y momentos sonoros muy identificables, como el “Himno de Coronación de la Esperanza”, “Pasa la Soledad” o las marchas asociadas al Cautivo y a la Pollinica. Para quien visita la ciudad por primera vez, conviene saber que la música y las saetas forman parte de una práctica religiosa: deben escucharse con respeto, sin interferir en el paso ni en el intérprete. 
         </p>
         <ul>
-          <li>La música y las saetas son parte de una práctica religiosa: trátalas con respeto.</li>
-          <li>Si grabas una saeta, hazlo sin interrumpir al intérprete ni al cortejo. </li>
+          <li>Si grabas una saeta, hazlo sin interrumpir al intérprete ni al cortejo.</li>
         </ul>
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 8: NO TE LO PUEDES PERDER (tarjetas)
-           4-6 momentos o experiencias clave. Cada tarjeta tiene:
-           - Título del momento
-           - Tag con día/lugar/franja horaria
-           - Descripción breve (2-3 frases)
-           - Detalle expandible con consejo práctico
-           ==================================================== -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -529,10 +763,10 @@
         <div class="must-see-card">
           <h3>La Legión y el Cristo de Mena</h3>
           <span class="tag">Jueves Santo · Puerto y Plaza de Fray Alonso de Santo Tomás</span>
-          <p>El día completo de la <strong>Legión</strong> con el <strong>Cristo de la Buena Muerte y Ánimas</strong> comienza con el <strong>desembarco</strong> naval a las 10:00 en el Puerto de Málaga, sigue con desfile de legionarios hasta la casa hermandad y culmina con el <strong>traslado del Cristo a hombros de gastadores</strong> a las 12:00. Por la tarde, salida procesional a las 18:55 con los legionarios cantando el "Novio de la Muerte"</p>
+          <p>El día completo de la <strong>Legión</strong> con el <strong>Cristo de la Buena Muerte y Ánimas</strong> comienza con el <strong>desembarco</strong> naval en el Puerto de Málaga a primera hora de la mañana, sigue con el desfile de legionarios hasta la casa hermandad y culmina con el <strong>traslado del Cristo a hombros de gastadores</strong> a mediodía. Por la tarde, salida procesional con los legionarios cantando el "Novio de la Muerte"</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el acto más singular de la Semana Santa malagueña: fusión de tradición militar, devoción popular y ceremonia naval. Para el traslado de mediodía, llega antes de las 11:00 a Plaza Fray Alonso de Santo Tomás. Conviene llegar con mucha antelación para encontrar un buen lugar.</p>
+            <p>Es el acto más singular de la Semana Santa malagueña: fusión de tradición militar, devoción popular y ceremonia naval. Para el traslado de mediodía, llega con bastante antelación a Plaza Fray Alonso de Santo Tomás — la afluencia es muy alta y los mejores lugares se ocupan pronto.</p>
           </details>
         </div>
 
@@ -556,16 +790,7 @@
           </details>
         </div>
 
-        <!-- Añade más tarjetas si lo necesitas. Máximo recomendado: 6 -->
-
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 9: CONSEJOS PRÁCTICOS
-           Lista de consejos directos y útiles para el visitante.
-           Personaliza según la ciudad (calles, transporte, zonas...).
-           ==================================================== -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li>Llega con tiempo de antelación para conseguir buen lugar en las zonas céntricas.</li>
@@ -573,19 +798,9 @@
         <li>Consulta diariamente los itinerarios: pueden cambiar por meteorología.</li>
         <li>Lleva calzado cómodo y agua: los recorridos son largos y hay mucha aglomeración.</li>
         <li>Consulta la información municipal de movilidad, turismo y seguridad publicada por el Ayuntamiento de Málaga. </li>
-        <!-- Añade consejos específicos de la ciudad -->
       </ul>
-
-
-      <!-- ====================================================
-           SECCIÓN 10: VOCABULARIO COFRADE
-           Términos propios de esta Semana Santa.
-           Incluye los generales y añade los específicos de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
-
-        <!-- Términos comunes a todas las Semanas Santas -->
         <dt>Cofradía / Hermandad</dt>
         <dd>Asociación religiosa y cultural que organiza y sustenta una procesión. Cada una tiene sus imágenes, su historia y su barrio.</dd>
 
@@ -605,50 +820,27 @@
 
         <dt>Capataz</dt>
         <dd>Quien dirige a los portadores del trono, marcando el ritmo y las maniobras.</dd>
-
-        <!-- Términos específicos de la ciudad: añade, elimina o adapta los siguientes -->
        
 
       </dl>
-
-
-      <!-- ====================================================
-           SECCIÓN 11: GALERÍA
-           Mínimo 2 imágenes, máximo 6. Alt descriptivo en cada una.
-           Formatos recomendados: jpg/webp. Tamaño: 800-1200px de ancho.
-           ==================================================== -->
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
-        <img src="images/semana-santa-[ciudad]-1.jpg" alt="[Descripción visual detallada de la imagen 1]" />
-        <img src="images/semana-santa-[ciudad]-2.jpg" alt="[Descripción visual detallada de la imagen 2]" />
-        <img src="images/semana-santa-[ciudad]-3.jpg" alt="[Descripción visual detallada de la imagen 3]" />
-        <!-- Añade o elimina imágenes según disponibilidad -->
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-malaga-1.jpg" alt="Trono monumental procesionando por las calles del centro histórico de Málaga durante la Semana Santa" loading="lazy" />
+        <img src="images/semana-santa-malaga-2.jpg" alt="Legionarios portando el Cristo de la Buena Muerte en el traslado del Jueves Santo de Málaga" loading="lazy" />
+        <img src="images/semana-santa-malaga-3.jpg" alt="Nazarenos con cirios iluminando una calle estrecha del centro de Málaga en Semana Santa" loading="lazy" />
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 12: ENLACES ÚTILES
-           Solo fuentes oficiales verificadas. Incluye fecha de verificación.
-           ==================================================== -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://agrupaciondecofradias.com/" target="_blank" rel="noopener">Agrupación de Cofradías de Semana Santa de Málaga</a></li>
         <li><a href="https://www.malaga.eu/" target="_blank" rel="noopener">Ayuntamiento de Málaga</a></li>
         <li><a href="https://visita.malaga.eu/es/que-hacer/oficina-municipal-de-informacion-turistica-p103309" target="_blank" rel="noopener">Turismo de Málaga</a></li>
-        <!-- Añade más si los hay: web de accesibilidad, app oficial, etc. -->
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-04-17</p>
-
-
-      <!-- ====================================================
-           SECCIÓN 13: PREGUNTAS FRECUENTES
-           Responde las 6 preguntas base. Añade las específicas de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo.</dd>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril.</dd>
 
         <dt>¿Necesito entrada para ver las procesiones?</dt>
         <dd>Solo para las sillas y tribunas del recorrido oficial. El acceso al resto de calles es gratuito. </dd>
@@ -664,12 +856,57 @@
 
         <dt>¿Puedo hacer fotografías durante las procesiones?</dt>
         <dd>Sí, siempre sin flash y sin invadir el recorrido del cortejo. Respeta los silencios durante las saetas y los momentos de oración.</dd>
-
-        <!-- Añade preguntas específicas de la ciudad -->
          <dt>¿Cuál es la diferencia entre la Semana Santa del sur y la del norte?</dt>
         <dd>En términos generales, en el sur —y especialmente en Andalucía— suele haber mayor presencia de música, procesiones muy desarrolladas en la calle y una participación popular muy visible. En muchas zonas del norte predomina un tono más sobrio y contenido. Ambas formas comparten raíz religiosa, pero han desarrollado estilos distintos.</dd>
 
       </dl>
+
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Málaga</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">8 días</a>
+        <a href="#" class="etiqueta">Tronos</a>
+        <a href="#" class="etiqueta">La Legión</a>
+        <a href="#" class="etiqueta">Saetas</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-malaga">
+        <h2 id="rel-title-malaga">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-sevilla.html" class="ficha-rel-card">
+            <img src="images/semana-santa-sevilla.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Sevilla</span>
+              <span class="rel-frase">60 hermandades y la Madrugada más famosa del mundo.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-granada.html" class="ficha-rel-card">
+            <img src="images/semana-santa-granada.jpg" alt="Semana Santa de Granada" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Granada</span>
+              <span class="rel-frase">La Alhambra como testigo de las procesiones.</span>
+              <span class="rel-meta">Granada · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-orihuela.html" class="ficha-rel-card">
+            <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Orihuela</span>
+              <span class="rel-frase">Salzillo, La Diablesa y 27 pasos en la Procesión General.</span>
+              <span class="rel-meta">Orihuela · Alicante</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
@@ -679,7 +916,7 @@
   <!-- ============================================================ PIE DE PÁGINA -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
