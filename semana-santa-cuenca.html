@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cuenca — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Cuenca: 33 hermandades, Las Turbas al alba del Viernes Santo, el Miserere entre hoces y una pasión vertical única en España. Del 21 al 28 de marzo de 2027." />
+  <title>Semana Santa de Cuenca 2026: Guía, Las Turbas y el Miserere</title>
+  <meta name="description" content="Semana Santa de Cuenca 2026: Las Turbas al alba, el Miserere entre hoces y 33 hermandades. Del 29 de marzo al 5 de abril. Guía completa con historia y consejos." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-cuenca.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Cuenca — Folklorius" />
-  <meta property="og:description" content="Las Turbas al alba, el Miserere entre hoces y una pasión vertical única. Cuenca, Castilla-La Mancha." />
+  <meta property="og:title" content="Semana Santa de Cuenca 2026: Guía Completa" />
+  <meta property="og:description" content="Las Turbas al alba, el Miserere entre hoces y 33 hermandades en la ciudad Patrimonio de la Humanidad. Del 29 de marzo al 5 de abril de 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-cuenca.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -28,29 +28,45 @@
     /* --- Cuadrícula de cofradías por día --- */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -66,7 +82,140 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
 
     /* --- Tooltip sobre nombre de cofradía --- */
@@ -286,6 +435,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 29 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cuenca · Castilla-La Mancha</span>
+          <span>⏱️ 8 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -295,9 +453,7 @@
           <li>La orografía de Cuenca — calles empedradas, curvas cerradas y cuestas pronunciadas — hace que maniobrar los pesados pasos a hombros sea muy exigente. Mantén siempre una distancia prudencial, sobre todo si vas con niños pequeños o personas mayores en zonas de aglomeración.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Cuenca no celebra la Semana Santa en horizontal. Aquí, la Pasión sube y baja por cuestas medievales empedradas, se dobla en curvas imposibles y se detiene ante hoces que caen al vacío. La ciudad entera — apenas cincuenta mil habitantes de los que más de treinta mil participan como cofrades — se convierte durante una semana en un escenario único donde la austeridad castellana y la devoción más visceral conviven en perfecta tensión. No verás el balanceo de los tronos andaluces ni el desfile ecuestre de Lorca: en Cuenca los pasos avanzan con paso firme y rítmico, sostenidos a hombros por banceros que literalmente se juegan el equilibrio en cada curva.
       </p>
@@ -307,9 +463,7 @@
       <p>
         Para el visitante, Cuenca exige resistencia y calzado cómodo. El frío de las madrugadas primaverales castellanas, el olor a cera quemada en las calles húmedas y la sobriedad estética de los pasos configuran una experiencia íntima y poderosa. Aquí, el silencio de la multitud es tan atronador como el golpe de los tambores turbos.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La Semana Santa de Cuenca, declarada <strong>Fiesta de Interés Turístico Internacional</strong>, agrupa a <strong>33 venerables hermandades</strong> que organizan procesiones del Domingo de Ramos al Domingo de Resurrección. Todo ocurre en el casco histórico de la ciudad alta — declarado Patrimonio de la Humanidad por la UNESCO — cuyas calles empedradas, cuestas y curvas cerradas determinan por completo el carácter único de la celebración. No existe una Carrera Oficial con tribunas de pago: aquí el recorrido es la ciudad entera y el acceso es libre, a pie de calle, pegado a los pasos.
       </p>
@@ -319,9 +473,7 @@
       <p>
         Para entender bien la Semana Santa conquense hay que liberarse de las referencias del sur. No hay saetas, no hay aplausos, no hay balanceo de los tronos. Lo que hay es recogimiento, esfuerzo físico visible, frío y una devoción que lleva siglos grabada en la piedra de esta ciudad. El visitante no contempla la fiesta desde fuera: la vive a centímetros de los pasos, en calles tan estrechas que a veces hay que pegarse a la pared para dejar pasar la procesión.
       </p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         Los orígenes de la Semana Santa de Cuenca se remontan al siglo XVII — la primera salida de Las Turbas está documentada en 1616 — cuando las órdenes de agustinos y trinitarios configuraron las primeras procesiones de la ciudad. A lo largo de los siglos, la festividad ha evolucionado moldeada por el carácter castellano y la geografía de la ciudad, consolidando una estética de recogimiento, silencio y penitencia. La implicación ciudadana es total: en una ciudad de apenas cincuenta mil habitantes, más de treinta mil participan directamente como cofrades.
       </p>
@@ -329,81 +481,75 @@
         El origen exacto de "Las Turbas" mezcla devoción y leyenda. Algunos historiadores lo vinculan con antiguas fiestas de primavera en la Cordillera Ibérica, similares a las tamborradas de Teruel y Albacete, que fueron cristianizadas. Otros relatos populares apuntan al "Motín del Tío Corujo" de 1766, cuando, por la subida del pan, el pueblo sacó instrumentos de las iglesias y protestó con gran estruendo. Hoy, Las Turbas representan el escarnio y la burla bíblica al Redentor y es la procesión con más matices sociológicos de toda la Semana Santa conquense.
       </p>
       <p>
-        Más allá de la religión, la Semana Santa es el núcleo de la identidad conquense. En las empinadas cuestas hacia el Calvario, el esfuerzo físico de los banceros y el sonido del Miserere se convierten en un acto de comunión cívica. Para el conquense, ser turbo o bancero es una herencia familiar innegociable que se transmite de generación en generación.
+        Más allá de la religión, la Semana Santa es el núcleo de la identidad conquense. En las empinadas cuestas hacia el Calvario, el esfuerzo físico de los banceros y el sonido del Miserere se convierten en un acto de comunión cívica. Para el conquense, ser turbo o bancero es una herencia familiar que se lleva en la sangre y se transmite de generación en generación.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Cuenca se celebra del <strong>domingo 21 de marzo</strong>, Domingo de Ramos, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor intensidad son del Miércoles al Viernes Santo. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+        La Semana Santa de Cuenca se celebra del <strong>domingo 29 de marzo</strong>, Domingo de Ramos, al <strong>domingo 5 de abril</strong>, Domingo de Resurrección. Los días de mayor intensidad son del Miércoles al Viernes Santo. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
       </p>
       <p>
         Consulta los horarios e itinerarios oficiales en la web de la Junta de Cofradías de la Semana Santa de Cuenca. Dada la posibilidad de suspensión por lluvia o nieve, es imprescindible seguir sus comunicaciones en tiempo real durante los días de procesión.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           La Procesión del Hosanna, conocida como La Borriquilla, inaugura la Semana Santa llenando la parte alta de la ciudad de palmas, ramas de olivo y familias enteras. Es el día de luz y alegría antes de adentrarse en la penitencia de la semana.
         </li>
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
           La Procesión del Perdón marca el inicio de los días grandes. El momento clave se vive en las escalinatas de San Felipe Neri o en la Plaza Mayor, cuando el silencio se rompe con el sobrecogedor canto del <strong>Miserere</strong> al paso de las imágenes.
         </li>
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           La Procesión del Silencio envuelve las estrechas y oscuras calles del casco antiguo en un mutismo absoluto. Solo se escucha el rítmico arrastrar de las horquillas de los banceros contra los adoquines y el leve golpe de campana para levantar los pasos.
         </li>
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           La Procesión de Paz y Caridad es monumental: nueve imponentes pasos ascienden hacia la Plaza Mayor relatando el inicio de la Pasión. El esfuerzo físico de los banceros en las cuestas empedradas y las maniobras del capataz en las curvas cerradas son dignos de admiración.
         </li>
         <li>
-          <span class="dia-label">Viernes Santo · Madrugada · 26 de marzo · 05:30 h</span>
+          <span class="dia-label">Viernes Santo · Madrugada · 3 de abril</span>
           El clímax de Cuenca: <strong>Las Turbas</strong> (Camino del Calvario). La Iglesia del Salvador se abre y miles de turbos inician el estruendo ensordecedor de tambores y clarines destemplados simulando la burla bíblica a Jesús. Un caos profundamente devoto y espectacular que no tiene equivalente en ninguna otra Semana Santa española.
         </li>
         <li>
-          <span class="dia-label">Viernes Santo · Noche · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · Noche · 3 de abril</span>
           La Procesión del Santo Entierro parte majestuosa desde la Catedral. Es la antítesis de la madrugada: la ciudad vuelve al recogimiento sepulcral, el negro tiñe las túnicas y el luto se respira en cada rincón empedrado bajo la sombra de las hoces del Huécar y del Júcar.
         </li>
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La Procesión del Encuentro pone el broche luminoso. La ciudad se divide en dos recorridos que convergen en la Plaza de la Constitución, donde el Resucitado y la Virgen — ya sin el manto de luto — se encuentran, cerrando la semana con júbilo.
         </li>
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         Más de 30.000 nazarenos se organizan en <strong>33 venerables hermandades</strong>, cada una con su color y su momento estelar. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de cada edición en la web de la Junta de Cofradías para horarios e itinerarios exactos.
       </p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Borriquilla</span>
               <span class="tooltip-texto">V.H. de Jesús entrando en Jerusalén y Ntra. Sra. de la Esperanza. Protagoniza la Procesión del Hosanna.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Vera Cruz</span>
               <span class="tooltip-texto">V.H. Penitencial del Stmo. Cristo de la Vera Cruz. Meditan las Siete Palabras.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Bautista</span>
@@ -418,10 +564,10 @@
               <span class="tooltip-texto">V.H. de Ntra. Sra. de la Esperanza. Cierra la Procesión del Perdón.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Santa Cena</span>
@@ -444,10 +590,10 @@
               <span class="tooltip-texto">V.H. de Ntra. Sra. de la Amargura y San Juan Apóstol.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Huerto de San Antón</span>
@@ -474,10 +620,10 @@
               <span class="tooltip-texto">V.H. de Ntra. Sra. de la Soledad (del Puente).</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo (Las Turbas)</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo (Las Turbas)</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Jesús</span>
@@ -492,10 +638,10 @@
               <span class="tooltip-texto">V.H. de Nuestra Señora de la Soledad (de San Agustín).</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo (Día y Noche)</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo (Día y Noche)</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Exaltación</span>
@@ -518,23 +664,21 @@
               <span class="tooltip-texto">Ilustre y V.H. y Cabildo de Caballeros y Escuderos de Cuenca. Santo Entierro.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Resucitado</span>
               <span class="tooltip-texto">V.H. de Nuestro Señor Jesucristo Resucitado y María Santísima del Amparo. Cierra la semana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://www.juntacofradiascuenca.es" target="_blank" rel="noopener">Junta de Cofradías de la Semana Santa de Cuenca</a> — última verificación: 2026-04-29</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           La banda sonora de Cuenca vibra en dos frecuencias opuestas que definen su carácter: el silencio y el tambor. Durante la mayor parte de la semana, las procesiones discurren sin música — solo el sonido de las horquillas sobre los adoquines, el golpe del llamador y el roce de las túnicas contra la piedra húmeda. En ese contexto de mutismo absoluto, el <strong>Miserere</strong> — el canto coral basado en el Salmo 50 que interpreta el Coro del Conservatorio en puntos estratégicos como las escalinatas de San Felipe Neri o la Plaza Mayor — produce un efecto emocional de una intensidad difícil de describir. El sonido reverbera contra las fachadas de piedra caliza mientras la multitud agacha la cabeza en silencio.
@@ -547,18 +691,16 @@
           <li>Durante el Miserere, apaga el flash y evita cualquier sonido — incluso el del obturador del móvil. El silencio del público es tan parte del rito como el canto mismo.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
           <h3>La salida de Las Turbas al alba</h3>
-          <span class="tag">Viernes Santo · Iglesia del Salvador · 05:30 h</span>
+          <span class="tag">Viernes Santo · madrugada · Iglesia del Salvador</span>
           <p>A las cinco y media de la mañana, la puerta de El Salvador se abre y la imagen de El Jesús se asoma a la plaza. En ese instante, miles de turbos inician un estruendo ensordecedor de tambores roncos y clarines destemplados, simulando la burla y el escarnio que sufrió Cristo camino del Calvario. El choque entre la serenidad de la talla y el caos acústico de la multitud es puro escalofrío.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es el rito que hace única a Cuenca en el mundo. La Plaza del Salvador se colapsa horas antes. Si quieres ver la salida, llega sobre las 03:00 h. Si prefieres menos agobio con la misma intensidad sonora, sitúate en la subida por la calle del Peso o en la herradura de San Juan hacia las 07:00 h. Lleva ropa de abrigo extremo: las madrugadas primaverales conquenses pueden rondar los cero grados.</p>
+            <p>Porque es el rito que hace única a Cuenca en el mundo. La Plaza del Salvador se colapsa horas antes. Si quieres ver la salida, llega de madrugada con bastante tiempo. Si prefieres menos agobio con la misma intensidad sonora, sitúate en la subida por la calle del Peso o en la herradura de San Juan cuando ya haya amanecido. Lleva ropa de abrigo extremo: las madrugadas primaverales conquenses pueden rondar los cero grados.</p>
           </details>
         </div>
 
@@ -588,14 +730,12 @@
           <p>Tras la intensidad de la madrugada, el Santo Entierro parte de la Catedral iluminada. El negro tiñe las túnicas, los faroles tintinean y el luto lo abarca todo mientras el cortejo desciende lentamente bajo la sombra de las hoces del Huécar y del Júcar.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque representa el fin del drama pasional en un escenario Patrimonio de la Humanidad. Ver descender la serpiente de luz de los cirios por las cuestas desde los miradores de la ciudad es una imagen insuperable. Busca perspectiva: observa la bajada desde el puente de San Pablo o desde la parte baja, en la calle Calderón de la Barca.</p>
+            <p>Porque representa el fin del drama pasional en un escenario Patrimonio de la Humanidad. Ver descender la serpiente de luz de los cirios por las cuestas desde los miradores de la ciudad es una imagen difícil de olvidar. Busca perspectiva: observa la bajada desde el puente de San Pablo o desde la parte baja, en la calle Calderón de la Barca.</p>
           </details>
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Reserva alojamiento con meses de antelación.</strong> Cuenca se llena por completo durante la Semana Santa. Si llegas sin reserva, tendrás que dormir fuera de la ciudad.</li>
         <li><strong>Calzado y ropa de abrigo serio.</strong> Las calles son adoquinadas, empinadas y resbaladizas. Lleva bota o zapatilla fuerte con suela antideslizante. Para las madrugadas — especialmente Las Turbas — necesitas ropa de invierno real: abrigo, guantes y bufanda.</li>
@@ -606,9 +746,7 @@
         <li><strong>Cuántos días necesitas.</strong> Con dos días puedes ver lo esencial: Miércoles Santo para la Procesión del Silencio y el Miserere, y Viernes Santo para Las Turbas y el Santo Entierro. Si puedes añadir el Jueves Santo, tendrás la visión completa de todos los registros de la semana.</li>
         <li><strong>El Resolí.</strong> El licor tradicional conquense de café, coñac, anís, canela y naranja es el combustible de las madrugadas. Lo encontrarás en bares y en manos de nazarenos durante Las Turbas. Un trago pequeño en el frío de la madrugada es parte de la experiencia.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Cofradía / Hermandad</dt>
@@ -639,30 +777,24 @@
         <dd>Licor tradicional conquense elaborado con café, coñac, anís, canela, cáscara de naranja y azúcar. Se consume en pequeños tragos, especialmente en las gélidas madrugadas de procesión, para calentar el cuerpo de nazarenos y espectadores.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+<h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
         <img src="images/semana-santa-cuenca-1.jpg" alt="Banceros portando un paso por las empinadas calles empedradas del casco histórico de Cuenca durante la Semana Santa" />
         <img src="images/semana-santa-cuenca-2.jpg" alt="Turbos con tambores y clarines en la madrugada del Viernes Santo de Cuenca durante Las Turbas" />
         <img src="images/semana-santa-cuenca-3.jpg" alt="Nazarenos con hachones en procesión nocturna bajo las hoces del Huécar en la Semana Santa de Cuenca" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://www.juntacofradiascuenca.es/" target="_blank" rel="noopener">Junta de Cofradías de la Semana Santa de Cuenca</a></li>
         <li><a href="https://www.visitacuenca.es/" target="_blank" rel="noopener">Turismo de Cuenca — Ayuntamiento</a></li>
         <li><a href="https://www.turismocastillalamancha.es/es/cultura-y-patrimonio/semana-santa/cuenca/semana-santa-de-cuenca" target="_blank" rel="noopener">Turismo de Castilla-La Mancha</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-04-29</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 al 28 de marzo. Los días de mayor intensidad son del Miércoles al Viernes Santo.</dd>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril. Los días de mayor intensidad son del Miércoles al Viernes Santo.</dd>
 
         <dt>¿Necesito entrada para ver las procesiones?</dt>
         <dd>No. A diferencia de otras Semanas Santas con Carreras Oficiales de pago, en Cuenca todo el recorrido es de acceso libre y a pie de calle. El verdadero coste es la paciencia: debes llegar con mucha antelación para coger sitio en las estrechas aceras del casco histórico.</dd>
@@ -677,7 +809,7 @@
         <dd>Sí, pero con reglas de respeto claras: nunca uses flash, ya que puede deslumbrar a los banceros que cargan peso en bajadas peligrosas; no cruces entre los nazarenos para buscar el ángulo perfecto; y mantén silencio absoluto durante el Miserere y la Procesión del Silencio.</dd>
 
         <dt>¿Las Turbas son una fiesta de descontrol?</dt>
-        <dd>Rotundamente no. Es un falso mito que indigna a los conquenses. Aunque el ruido es ensordecedor y la multitud es inmensa, es una procesión profundamente devota que escenifica la burla bíblica a Cristo. Es un caos sonoro organizado; el respeto hacia la imagen de El Jesús es sagrado.</dd>
+        <dd>Rotundamente no. Es un falso mito que indigna a los conquenses. Aunque el ruido es ensordecedor y la multitud es inmensa, es una procesión profundamente devota que escenifica la burla bíblica a Cristo. Es un caos sonoro organizado que lleva siglos repitiéndose; el respeto hacia la imagen de El Jesús es absoluto.</dd>
 
         <dt>¿Hace mucho frío en Cuenca en Semana Santa?</dt>
         <dd>Sí, muchísimo. Cuenca está a casi 1.000 metros de altitud. Aunque la Semana Santa caiga en marzo o abril, las procesiones nocturnas y la madrugada de Las Turbas registran temperaturas que pueden rondar los cero grados. Olvida la estética primaveral: lleva abrigo de invierno, guantes y calzado de suela gruesa.</dd>
@@ -690,6 +822,53 @@
 
       </dl>
 
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Castilla-La Mancha</a>
+        <a href="#" class="etiqueta">Cuenca</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Las Turbas</a>
+        <a href="#" class="etiqueta">Miserere</a>
+        <a href="#" class="etiqueta">Banceros</a>
+        <a href="#" class="etiqueta">Patrimonio UNESCO</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cuenca">
+        <h2 id="rel-title-cuenca">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-toledo.html" class="ficha-rel-card">
+            <img src="images/semana-santa-toledo.jpg" alt="Semana Santa de Toledo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Toledo</span>
+              <span class="rel-frase">Procesiones en la ciudad imperial, entre piedra y recogimiento.</span>
+              <span class="rel-meta">Toledo · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">La Semana Santa más silenciosa y austera de Castilla.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-valladolid.html" class="ficha-rel-card">
+            <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Valladolid</span>
+              <span class="rel-frase">Imaginería de Gregorio Fernández y tradición castellana.</span>
+              <span class="rel-meta">Valladolid · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -697,7 +876,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
