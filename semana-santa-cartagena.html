@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cartagena — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Cartagena: diez días de procesiones marciales, tronos de luz y flor, tercios de granaderos y la emotiva Salve Cartagenera. Declarada Fiesta de Interés Turístico Internacional." />
+  <title>Semana Santa de Cartagena 2026: Guía, Cofradías y Salve</title>
+  <meta name="description" content="Semana Santa de Cartagena 2026: diez días de procesiones marciales, tronos de luz y flor, tercios y la Salve Cartagenera. Del 20 al 29 de marzo. Guía completa." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-cartagena.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Cartagena — Folklorius" />
-  <meta property="og:description" content="Diez días de procesiones marciales, tronos monumentales y tradición naval en Cartagena." />
+  <meta property="og:title" content="Semana Santa de Cartagena 2026: Guía Completa" />
+  <meta property="og:description" content="Diez días de procesiones marciales, tronos monumentales y tradición naval en Cartagena. Del 20 al 29 de marzo de 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-cartagena.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -26,35 +26,53 @@
   <style>
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
       font-size: 0.88rem;
       padding: 3px 0;
       color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
     }
     .cofradia-col ul li::before {
       content: "·";
@@ -62,7 +80,172 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 300px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
 
     .must-see-grid {
@@ -241,6 +424,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cartagena · Región de Murcia</span>
+          <span>⏱️ 10 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -271,12 +463,12 @@
         La Semana Santa de Cartagena surge en el siglo XVII con las primeras cofradías penitenciales, profundamente influida por la tradición militar y naval de la ciudad como base del Mediterráneo. Las cofradías californios (rojo, fundada en 1747) y marrajos (morado, del siglo XVII) desarrollan un estilo propio con tercios marciales y tronos luminosos que se consolida en el siglo XIX con imágenes de escultores locales.
       </p>
       <p>
-        Tras la Guerra Civil, la Federación de Cofradías organiza el calendario actual de diez días. Declarada Fiesta de Interés Turístico Internacional en 2005, la Semana Santa de Cartagena representa la identidad de la ciudad: disciplina castrense, devoción popular y orgullo local. Las rivalidades festivas entre californios y marrajos son tradición, no hostilidad, y unen a la ciudad en torno a un ritual cronológico y colectivo de la Pasión.
+        Tras la Guerra Civil, la Federación de Cofradías organiza el calendario actual de diez días. Declarada Fiesta de Interés Turístico Internacional en 2005, la Semana Santa de Cartagena representa la identidad de la ciudad: disciplina castrense, devoción popular e identidad colectiva. Las rivalidades festivas entre californios y marrajos son tradición, no hostilidad, y unen a la ciudad en torno a un ritual cronológico y colectivo de la Pasión.
       </p>
 
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Cartagena se celebra del <strong>viernes 19 de marzo</strong>, Viernes de Dolores, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Con diez días de duración, es una de las más largas de España. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+        La Semana Santa de Cartagena se celebra del <strong>viernes 20 de marzo</strong>, Viernes de Dolores, al <strong>domingo 5 de abril</strong>, Domingo de Resurrección. Con diez días de duración, es una de las más largas de España. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
       </p>
       <p>
         Consulta horarios e itinerarios oficiales en la web de la Federación de Cofradías y en el Ayuntamiento de Cartagena. Pueden ajustarse por meteorología o cambios de organización.
@@ -285,31 +477,31 @@
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Viernes de Dolores · 19 marzo</span>
+          <span class="dia-label">Viernes de Dolores · 20 de marzo</span>
           El Santísimo Cristo del Socorro (cofradía negra) abre oficialmente la Semana Santa de España con una procesión nocturna de gran solemnidad.
         </li>
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           "La Burrica" o Entrada de Jesús en Jerusalén (californios): procesión diurna e infantil con palmas, personajes bíblicos y ambiente familiar.
         </li>
         <li>
-          <span class="dia-label">Lunes Santo · 22 marzo</span>
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
           Virgen de la Piedad (marrajos): procesión multitudinaria con trono de plata, una de las más seguidas de toda la semana.
         </li>
         <li>
-          <span class="dia-label">Martes Santo · 23 marzo</span>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
           Santos Mártires (californios) con salida desde centros militares, incluyendo la singular procesión de San Pedro del Arsenal.
         </li>
         <li>
-          <span class="dia-label">Miércoles Santo · 24 marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           Lavatorio de Pilatos (californios) en la Plaza del Ayuntamiento, seguido de la Magna Procesión del Prendimiento.
         </li>
         <li>
-          <span class="dia-label">Jueves Santo · 25 marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           Procesión del Silencio: calles en penumbra, tambores sordos y recogimiento absoluto. Uno de los momentos más impactantes de la semana.
         </li>
         <li>
-          <span class="dia-label">Viernes Santo · 26 marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           El Encuentro (marrajos) en la madrugada y el Santo Entierro por la noche cierran la jornada más intensa de la Semana Santa cartagenera.
         </li>
         <li>
@@ -328,61 +520,91 @@
         Consulta el programa oficial de la Federación de Cofradías para horarios e itinerarios exactos.
       </p>
       <div class="cofradias-grid">
-        <div class="cofradia-col">
-          <h3>Viernes de Dolores</h3>
+        <details class="cofradia-col">
+          <summary>Viernes de Dolores</summary>
           <ul>
-            <li>Ilustre Cofradía del Santísimo y Real Cristo del Socorro (negro)</li>
+            <li>
+              <span class="nombre-corto">Socorro</span>
+              <span class="tooltip-texto">Ilustre Cofradía del Santísimo y Real Cristo del Socorro. Color negro. Fundada en 1691. Abre oficialmente la Semana Santa con una procesión nocturna de gran solemnidad.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
-            <li>Cofradía California (rojo) — La Burrica / Palmas</li>
+            <li>
+              <span class="nombre-corto">Californios — La Burrica</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestro Padre Jesús en el Doloroso Paso del Prendimiento y Esperanza de la Salvación de las Almas. Color rojo. Fundada en 1747. Procesión diurna e infantil de la Entrada en Jerusalén.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
-            <li>Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno (marrajos, morado) — Virgen de la Piedad</li>
+            <li>
+              <span class="nombre-corto">Marrajos — Virgen de la Piedad</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno. Color morado. Documentada desde 1612. La Virgen de la Piedad, con trono de plata, es una de las procesiones más multitudinarias de la semana.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
-            <li>Cofradía California — Santos Mártires (Santiago, San Juan, San Pedro)</li>
+            <li>
+              <span class="nombre-corto">Californios — Santos Mártires</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestro Padre Jesús en el Doloroso Paso del Prendimiento y Esperanza de la Salvación de las Almas. Procesión con salida desde centros militares, incluyendo la singular procesión de San Pedro del Arsenal.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
-            <li>Cofradía California — Prendimiento (Magna)</li>
+            <li>
+              <span class="nombre-corto">Californios — Prendimiento</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestro Padre Jesús en el Doloroso Paso del Prendimiento y Esperanza de la Salvación de las Almas. Magna Procesión del Prendimiento precedida del Lavatorio de Pilatos en la Plaza del Ayuntamiento.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        </details>
+        <details class="cofradia-col" open>
+          <summary>Jueves Santo</summary>
           <ul>
-            <li>Cofradía California — Silencio</li>
+            <li>
+              <span class="nombre-corto">Californios — Silencio</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Cofradía de Nuestro Padre Jesús en el Doloroso Paso del Prendimiento y Esperanza de la Salvación de las Almas. Procesión del Silencio: calles en penumbra, tambores sordos y recogimiento absoluto.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Viernes Santo</summary>
           <ul>
-            <li>Cofradía Marraja — Encuentro (madrugada)</li>
-            <li>Cofradía Marraja — Santo Entierro (noche)</li>
+            <li>
+              <span class="nombre-corto">Marrajos — El Encuentro</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno. Color morado. El Encuentro en la madrugada del Viernes Santo es uno de los momentos más emocionantes de toda la semana.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Marrajos — Santo Entierro</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno. Color morado. El Santo Entierro nocturno cierra la jornada más intensa de la Semana Santa cartagenera.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Sábado Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Sábado Santo</summary>
           <ul>
-            <li>Cofradía Marraja — Virgen de la Soledad de los Pobres</li>
+            <li>
+              <span class="nombre-corto">Marrajos — Soledad de los Pobres</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Nazareno. Color morado. Procesión mariana de carácter íntimo y recogido que acompaña el tramo final de la Semana Santa.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
-            <li>Real e Ilustre Cofradía de Nuestro Padre Jesús Resucitado (resucitados, blanco)</li>
+            <li>
+              <span class="nombre-corto">Resucitados</span>
+              <span class="tooltip-texto">Real e Ilustre Cofradía de Nuestro Padre Jesús Resucitado. Color blanco. Fundada en 1940. Cierra la Semana Santa con júbilo pascual.</span>
+            </li>
           </ul>
-        </div>
+        </details>
       </div>
       <p class="fuente">Fuente: <a href="https://semanasanta.cartagena.es/" target="_blank" rel="noopener">Web oficial Semana Santa de Cartagena</a> — última verificación: 2026-04-23</p>
 
@@ -496,7 +718,7 @@
       </dl>
 
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+      <div class="galeria" style="display:none;">
         <img src="images/semana-santa-cartagena-1.jpg" alt="Trono monumental iluminado durante una procesión nocturna de la Semana Santa de Cartagena" />
         <img src="images/semana-santa-cartagena-2.jpg" alt="Tercio de granaderos desfilando en la Semana Santa de Cartagena" />
         <img src="images/semana-santa-cartagena-3.jpg" alt="Portapasos cargando un trono floral en el casco histórico de Cartagena" />
@@ -515,7 +737,7 @@
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 19 al 28 de marzo. Con diez días de duración, es una de las Semanas Santas más largas de España.</dd>
+        <dd>Del Viernes de Dolores al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 20 de marzo al 5 de abril. Con diez días de duración, es una de las Semanas Santas más largas de España.</dd>
 
         <dt>¿Necesito entrada para ver las procesiones?</dt>
         <dd>Las sillas de la Tribuna Oficial son de pago y se agotan con antelación. El resto de las calles del recorrido es de acceso libre y gratuito, aunque conviene llegar con tiempo a los puntos más concurridos.</dd>
@@ -537,6 +759,53 @@
 
       </dl>
 
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Cartagena</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">10 días</a>
+        <a href="#" class="etiqueta">Californios</a>
+        <a href="#" class="etiqueta">Marrajos</a>
+        <a href="#" class="etiqueta">Salve Cartagenera</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cartagena">
+        <h2 id="rel-title-cartagena">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-murcia.html" class="ficha-rel-card">
+            <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Murcia</span>
+              <span class="rel-frase">El reino de Salzillo y la imaginería levantina.</span>
+              <span class="rel-meta">Murcia · Región de Murcia</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-orihuela.html" class="ficha-rel-card">
+            <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Orihuela</span>
+              <span class="rel-frase">Salzillo, La Diablesa y 27 pasos en la Procesión General.</span>
+              <span class="rel-meta">Orihuela · Alicante</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-malaga.html" class="ficha-rel-card">
+            <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Málaga</span>
+              <span class="rel-frase">42 cofradías, tronos monumentales y la Legión.</span>
+              <span class="rel-meta">Málaga · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -544,7 +813,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
