@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Orihuela — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Orihuela 2027: 27 pasos en la Procesión General, obras maestras de Salzillo, La Diablesa y el Caballero Cubierto. Del 21 de marzo al 28 de marzo." />
+  <title>Semana Santa de Orihuela 2026: Guía, Salzillo y La Diablesa</title>
+  <meta name="description" content="Semana Santa de Orihuela 2026: 27 pasos, obras de Salzillo, La Diablesa y el Caballero Cubierto. Procesión General el Viernes Santo. Del 29 de marzo al 5 de abril." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-orihuela.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Orihuela — Folklorius" />
+  <meta property="og:title" content="Semana Santa de Orihuela 2026: Guía Completa" />
   <meta property="og:description" content="Un museo en la calle bañado de incienso y fervor. Orihuela, Alicante." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-orihuela.jpg" />
   <meta property="og:type" content="article" />
@@ -27,29 +27,45 @@
 
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -65,7 +81,7 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
 
     .cofradia-col ul li .nombre-corto {
@@ -176,6 +192,139 @@
       margin-bottom: 3px;
     }
 
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -259,6 +408,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 29 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Orihuela · Alicante</span>
+          <span>⏱️ 8 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -268,15 +426,11 @@
           <li>La centuria romana de los Armaos desfila con paso marcial y coreografiado. No interrumpas sus filas ni intentes cruzar por en medio de su formación.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Cerrar los ojos en la Semana Santa de Orihuela es escuchar el golpe rítmico de los tambores rebotando en fachadas góticas, renacentistas y barrocas. Es una ciudad señorial que convierte sus calles empedradas en el escenario perfecto para un relato bíblico esculpido en madera policromada. Aquí, la fe huele a azahar y cera quemada, y la espectacularidad de la imaginería — especialmente la de Salzillo — dota a cada procesión de un realismo y una emoción que atrapa irremediablemente al espectador. Y luego está lo insólito: una figura demoníaca que no puede entrar a la Catedral y un ciudadano que tiene bula papal para mantener el sombrero puesto dentro del templo. Orihuela es así: solemne y singular a partes iguales.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         Durante la Semana Santa, <strong>catorce cofradías, hermandades y mayordomías</strong> toman las calles de Orihuela bajo la coordinación de la Junta Mayor. Las procesiones destacan por su extraordinaria riqueza artística, su orden cronológico de los pasajes evangélicos y la participación de miles de <strong>vestas</strong> — el nombre local para los nazarenos — que acompañan las imágenes en estricto orden y compostura.
       </p>
@@ -286,9 +440,7 @@
       <p>
         Para el visitante, la clave es organizarse para la monumental <strong>Procesión General del Viernes Santo</strong>, donde desfilan 27 pasos en estricto orden bíblico formando el relato completo de la Pasión en una sola tarde. Sitúate en zonas amplias como la calle Mayor o los entornos de la Catedral y Santo Domingo para disfrutar del paso de los inmensos tronos y el esplendor de la fiesta.
       </p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         Las raíces de la Semana Santa en Orihuela se hunden en el siglo XVI, vinculadas al florecimiento de las órdenes religiosas en esta histórica ciudad episcopal. Sin embargo, su época de mayor esplendor artístico se fraguó en el siglo XVIII, cuando la ciudad encargó gran parte de su imaginería al insigne escultor murciano <strong>Francisco Salzillo</strong>. Sus obras maestras — "El Lavatorio", "La Caída" — dotaron a la celebración oriolana de una identidad artística inigualable que la convierte en uno de los conjuntos de imaginería de Salzillo más importantes fuera de Murcia capital.
       </p>
@@ -298,18 +450,14 @@
       <p>
         La Semana Santa es el acontecimiento social y religioso más importante del año en Orihuela. Las cofradías vertebran la vida de la ciudad uniendo a familias enteras que, generación tras generación, mantienen tradiciones únicas como el canto de la Pasión, la figura del Caballero Cubierto o el desfile de la centuria romana de los Armaos.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Orihuela en 2027 se celebra del <strong>domingo 21 de marzo</strong>, Domingo de Ramos, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días de mayor grandiosidad y afluencia son el <strong>Miércoles Santo</strong> (1 de abril), con la procesión de El Lavatorio de Salzillo, y el <strong>Viernes Santo</strong> (3 de abril), con la monumental Procesión General de 27 pasos. Las fechas cambian cada año según el calendario litúrgico — consulta la web oficial de la Junta Mayor para información actualizada.
+        La Semana Santa de Orihuela en 2026 se celebra del <strong>domingo 29 de marzo</strong>, Domingo de Ramos, al <strong>domingo 5 de abril</strong>, Domingo de Resurrección. Los días de mayor grandiosidad y afluencia son el <strong>Miércoles Santo</strong> (1 de abril), con la procesión de El Lavatorio de Salzillo, y el <strong>Viernes Santo</strong> (3 de abril), con la monumental Procesión General de 27 pasos. Las fechas cambian cada año según el calendario litúrgico — consulta la web oficial de la Junta Mayor para información actualizada.
       </p>
       <p>
         Los horarios e itinerarios exactos se publican en la web de la Junta Mayor de Cofradías, Hermandades y Mayordomías de la Semana Santa de Orihuela. Ante riesgo de lluvia, las salidas pueden suspenderse para proteger el patrimonio escultórico.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
           <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
@@ -344,27 +492,25 @@
           La alegría estalla en la procesión de la Hermandad de la Resurrección a medianoche. El luto da paso al júbilo con el encuentro entre el Salvador Resucitado y la Virgen, seguido de la misa de vigilia pascual que cierra la Semana Santa oriolana.
         </li>
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Orihuela cuenta con <strong>14 cofradías, hermandades y mayordomías</strong> integradas en la Junta Mayor. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de la Junta Mayor para horarios e itinerarios exactos de cada edición.
       </p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Las Palmas</span>
               <span class="tooltip-texto">Mayordomía de Nuestra Señora de los Dolores (fundada en 1754) — organiza tanto la Procesión de las Palmas por la mañana como su procesión titular por la tarde. Sus integrantes visten mantilla española, no túnica y capuz.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Samaritana</span>
@@ -375,10 +521,10 @@
               <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad de Nuestro Padre Jesús en el paso de "El Prendimiento".</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Perdón</span>
@@ -389,10 +535,10 @@
               <span class="tooltip-texto">Cofradía del Ecce-Homo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Orden Franciscana</span>
@@ -407,20 +553,20 @@
               <span class="tooltip-texto">Cofradía de la Santa Cena.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Silencio</span>
               <span class="tooltip-texto">Hermandad del Silencio — la procesión más austera de la semana, a las 23:00 h, con los Cantores de la Pasión cantando estrofas del siglo XVI a capella.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Buena Muerte</span>
@@ -431,33 +577,31 @@
               <span class="tooltip-texto">Procesión General de la Junta Mayor de Cofradías, Hermandades y Mayordomías de Orihuela — 27 pasos en orden cronológico bíblico desde las 18:30 h. No pertenece a una sola cofradía sino que reúne a (casi) todas.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Sábado Santo</h3>
+        <details class="cofradia-col">
+          <summary>Sábado Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Santo Entierro</span>
               <span class="tooltip-texto">Sociedad Compañía de Armados y Procesión del Santo Entierro de Cristo — incluye La Diablesa y el Caballero Cubierto.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Resurrección</span>
               <span class="tooltip-texto">Hermandad de la Resurrección — procesión a medianoche con el encuentro entre el Salvador Resucitado y la Virgen.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantaorihuela.com" target="_blank" rel="noopener">Junta Mayor de Cofradías, Hermandades y Mayordomías de la Semana Santa de Orihuela</a> — última verificación: 2026-05-01</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           La Semana Santa de Orihuela posee una banda sonora de marcados contrastes. Las procesiones más tradicionales están acompañadas por potentes bandas de música y agrupaciones de cornetas y tambores que ejecutan marchas clásicas entre las fachadas barrocas de la ciudad. A esto se suma el sonido marcial de los tambores de la Centuria Romana — los Armaos — cuya cadencia militar impone respeto a su paso. El resultado es una acústica de gran densidad que llena las plazas amplias y rebota con fuerza en las calles más estrechas del casco histórico.
@@ -470,9 +614,7 @@
           <li>Para la Procesión General del Viernes Santo, con más de tres horas de desfile y múltiples bandas de música, sitúate en zonas amplias como la calle Mayor o el entorno de la Catedral — la acústica es mejor y tendrás espacio para moverte sin agotarte.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
@@ -516,9 +658,7 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Planifica la Procesión General con antelación.</strong> Si vas el Viernes Santo, acude con tiempo a las zonas anchas del recorrido y compra asiento en las sillas habilitadas para no agotarte durante las más de tres horas que dura el desfile de los 27 pasos.</li>
         <li><strong>Cómo llegar.</strong> Orihuela está a unos 50 km de Alicante y a unos 60 km de Murcia. Tiene conexión en Cercanías desde Alicante (línea C-1). En coche, la A-7 y la N-340 son las vías principales. Durante los días grandes el centro histórico se restringe al tráfico — aparca en zonas periféricas y accede a pie.</li>
@@ -529,9 +669,7 @@
         <li><strong>Cuántos días necesitas.</strong> Con dos días cubres lo esencial: Miércoles Santo para El Lavatorio de Salzillo y Viernes Santo para la Procesión General. Si puedes añadir el Sábado Santo, La Diablesa y el Caballero Cubierto son imprescindibles.</li>
         <li><strong>Gastronomía de Cuaresma.</strong> Disfruta de las Jornadas Gastronómicas de Cuaresma en los restaurantes de la ciudad. No te vayas sin probar el guisado de bacalao, el arroz con verdura y boquerón, el trigo picao y los dulces oriolanos.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Cofradía, Hermandad y Mayordomía</dt>
@@ -556,30 +694,24 @@
         <dd>La centuria romana de Orihuela. Desfilan con paso marcial y coreografiado custodiando los pasos más importantes, especialmente durante la Procesión General del Viernes Santo y el Santo Entierro del Sábado Santo.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+<h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
         <img src="images/semana-santa-orihuela-1.jpg" alt="Paso de Francisco Salzillo iluminado por candelería durante la Procesión General del Viernes Santo en Orihuela" />
         <img src="images/semana-santa-orihuela-2.jpg" alt="El paso de La Diablesa rodeando la Catedral de Orihuela durante la Procesión del Santo Entierro del Sábado Santo" />
         <img src="images/semana-santa-orihuela-3.jpg" alt="Vestas con cirios acompañando un trono de plata durante la Semana Santa de Orihuela" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantaorihuela.com" target="_blank" rel="noopener">Junta Mayor de Cofradías, Hermandades y Mayordomías de Orihuela</a></li>
         <li><a href="https://orihuelaturistica.es" target="_blank" rel="noopener">Turismo de Orihuela — Ayuntamiento</a></li>
         <li><a href="https://comunitatvalenciana.com" target="_blank" rel="noopener">Turismo Comunitat Valenciana</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo. Los días de mayor afluencia son el Miércoles Santo y el Viernes Santo.</dd>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril. Los días de mayor afluencia son el Miércoles Santo y el Viernes Santo.</dd>
 
         <dt>¿Es necesario pagar para ver las procesiones?</dt>
         <dd>Ver las procesiones de pie por las calles es totalmente gratuito. Para la Procesión General del Viernes Santo, la Junta Mayor instala sillas de alquiler a lo largo del recorrido que conviene reservar con antelación dado el tiempo que dura el desfile.</dd>
@@ -601,6 +733,53 @@
 
       </dl>
 
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Alicante</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">8 días</a>
+        <a href="#" class="etiqueta">Salzillo</a>
+        <a href="#" class="etiqueta">La Diablesa</a>
+        <a href="#" class="etiqueta">Procesión General</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-orihuela">
+        <h2 id="rel-title-orihuela">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-sevilla.html" class="ficha-rel-card">
+            <img src="images/semana-santa-sevilla.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Sevilla</span>
+              <span class="rel-frase">60 hermandades y la Madrugada más famosa del mundo.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-murcia.html" class="ficha-rel-card">
+            <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Murcia</span>
+              <span class="rel-frase">El reino de Salzillo y la imaginería levantina.</span>
+              <span class="rel-meta">Murcia · Región de Murcia</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-malaga.html" class="ficha-rel-card">
+            <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Málaga</span>
+              <span class="rel-frase">Tronos a hombros y la calle como único escenario.</span>
+              <span class="rel-meta">Málaga · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -608,7 +787,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
