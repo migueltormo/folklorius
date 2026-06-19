@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Lorca — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Lorca: 6 cofradías, caballos al galope, bordados únicos en seda y oro y una rivalidad legendaria entre Blancos y Azules. Del 19 al 28 de marzo de 2027." />
+  <title>Semana Santa de Lorca 2026: Guía, Bordados y Desfiles Bíblicos</title>
+  <meta name="description" content="Semana Santa de Lorca 2026: cuadrigas al galope, bordados en seda y oro, rivalidad Blancos y Azules. Del 20 de marzo al 5 de abril. Guía completa." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-lorca.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Lorca — Folklorius" />
-  <meta property="og:description" content="Caballos al galope, bordados en seda y oro y la rivalidad entre Blancos y Azules. Lorca, Región de Murcia." />
+  <meta property="og:title" content="Semana Santa de Lorca 2026: Guía Completa" />
+  <meta property="og:description" content="Cuadrigas al galope, bordados en seda y oro y la rivalidad entre Blancos y Azules. Lorca, Región de Murcia. Del 20 de marzo al 5 de abril de 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-lorca.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -28,29 +28,45 @@
     /* --- Cuadrícula de cofradías por día --- */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -66,7 +82,7 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
 
     /* --- Tooltip sobre nombre de cofradía --- */
@@ -232,6 +248,139 @@
       margin-bottom: 3px;
     }
 
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -315,6 +464,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Lorca · Región de Murcia</span>
+          <span>⏱️ 10 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -324,77 +482,65 @@
           <li>Los bordados en seda son extremadamente sensibles a la humedad. Si el tiempo amenaza lluvia, los desfiles pueden suspenderse con muy poco margen de aviso. Consulta siempre los canales oficiales antes de cada jornada.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        Lorca no celebra una Semana Santa convencional: transforma sus calles en un escenario monumental donde la historia bíblica cobra vida entre bordados de seda y oro. Aquí la devoción se siente en el rugido de la multitud y en el temblor del suelo ante el galope de los caballos, marcada por una rivalidad apasionada entre el Paso Blanco y el Paso Azul que divide barrios pero une a toda la ciudad en un sentimiento compartido. No es solo un desfile de emperadores asirios y profetas del Éxodo: es el orgullo de un pueblo que se reconoce en su arte y en sus tradiciones más puras. Quien viene a Lorca esperando una procesión silenciosa de imágenes sagradas encontrará algo radicalmente distinto: una epopeya colectiva, viva y ruidosa, donde lo religioso y lo teatral se funden en una sola experiencia que no se olvida.
+        Lorca no celebra una Semana Santa convencional: transforma sus calles en un escenario monumental donde la historia bíblica cobra vida entre bordados de seda y oro. Aquí la devoción se siente en el rugido de la multitud y en el temblor del suelo ante el galope de los caballos, marcada por una rivalidad apasionada entre el Paso Blanco y el Paso Azul que divide barrios pero une a toda la ciudad en un sentimiento compartido. Aquí conviven emperadores asirios, profetas del Éxodo y el orgullo de un pueblo que se reconoce en su arte y en sus tradiciones más arraigadas. Quien viene a Lorca esperando una procesión silenciosa de imágenes sagradas encontrará algo completamente distinto: una epopeya colectiva, viva y ruidosa, donde lo religioso y lo teatral se funden en una sola experiencia que no se olvida.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La Semana Santa de Lorca es conocida mundialmente por sus <strong>Desfiles Bíblico-Pasionales</strong>, una puesta en escena que narra la historia de la salvación de forma dinámica y única en el mundo. A diferencia de las procesiones de imágenes estáticas, Lorca despliega grandes grupos que representan las antiguas civilizaciones de Egipto, Roma o Babilonia. El centro de todo es <strong>La Carrera</strong>, un tramo de la Avenida Juan Carlos I cubierto de arena donde los caballos son los grandes protagonistas del rito. Las seis cofradías organizan sus actos del Viernes de Dolores al Domingo de Resurrección, con los grandes desfiles concentrados en Jueves y Viernes Santo.
       </p>
       <p>
-        Verás <strong>cuadrigas y trigas</strong> — carros romanos tirados por cuatro y tres caballos — lanzadas al galope mientras los aurigas demuestran una pericia asombrosa bajo el griterío de las gradas. Junto a ellos, el <strong>Bordado Lorquino</strong>, realizado a mano en seda y oro con una técnica de punto de matiz que busca el realismo pictórico, adorna mantos y estandartes que son auténticos tesoros nacionales. Es un desfile donde lo sagrado y lo histórico se funden en una explosión de color, fuerza animal y arte textil sin parangón.
+        Verás <strong>cuadrigas y trigas</strong> — carros romanos tirados por cuatro y tres caballos — lanzadas al galope mientras los aurigas demuestran una pericia asombrosa bajo el griterío de las gradas. Junto a ellos, el <strong>Bordado Lorquino</strong>, realizado a mano en seda y oro con una técnica de punto de matiz que busca el realismo pictórico, adorna mantos y estandartes que son auténticos tesoros nacionales. Es un desfile donde lo sagrado y lo histórico se funden en una explosión de color, fuerza animal y arte textil sin equivalente en la Semana Santa española.
       </p>
       <p>
         Para un visitante que viene por primera vez, la clave es entender que Lorca no se contempla desde la distancia: se vive desde dentro. Las gradas de La Carrera son el corazón del espectáculo, pero los momentos más íntimos ocurren en las calles estrechas del casco histórico, cerca de las sedes de los pasos, cuando los cortejos salen o regresan entre el fervor de los propios lorquinos. Llevar el pañuelo del color que hayas elegido y dejarte contagiar por la pasión local es la mejor forma de entender esta fiesta.
       </p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         Las raíces de la Semana Santa lorquina se hunden en el siglo XVI con las tradicionales hermandades de penitencia, pero su carácter único nació realmente en el siglo XIX. Fue entonces cuando surgió la competencia estética y social entre el <strong>Paso Azul</strong> (Hermandad de Labradores) y el <strong>Paso Blanco</strong> (Cabildo de la Amargura). Esta rivalidad se convirtió en el motor de la fiesta: para superar al bando contrario, cada cofradía comenzó a encargar bordados más complejos y a incorporar grupos bíblicos más espectaculares en sus desfiles, creando un ciclo de superación mutua que ha llegado hasta hoy.
       </p>
       <p>
-        El <strong>Bordado de Lorca</strong>, que aspira a ser declarado Patrimonio de la Humanidad por la UNESCO, no es un simple adorno: es una pintura con aguja donde se emplean años de trabajo manual para completar una sola pieza. Las maestras bordadoras utilizan la técnica del punto de matiz para conseguir un realismo pictórico que no tiene equivalente en ninguna otra tradición textil española. Junto a los bordados, la dimensión ecuestre de los desfiles — con cuadrigas al galope en pleno centro urbano — convierte a Lorca en un espectáculo sin precedentes en el contexto de la Semana Santa española.
+        El <strong>Bordado de Lorca</strong>, candidato a ser declarado Patrimonio de la Humanidad por la UNESCO, es una pintura hecha con aguja: años de trabajo manual para completar una sola pieza. Las maestras bordadoras utilizan la técnica del punto de matiz para conseguir un realismo pictórico que no tiene equivalente en ninguna otra tradición textil española. Junto a los bordados, la dimensión ecuestre de los desfiles — con cuadrigas al galope en pleno centro urbano — convierte a Lorca en un espectáculo sin precedentes en el contexto de la Semana Santa española.
       </p>
       <p>
         El significado profundo de la fiesta reside en esa simbiosis perfecta entre el fervor religioso hacia las imágenes titulares — la Virgen de la Amargura del Paso Blanco, la Virgen de los Dolores del Paso Azul — y el orgullo de pertenecer a una tradición que ha sabido conservar un arte manual único mientras desafía las leyes de la física con sus desfiles ecuestres. Ser blanco o azul es una seña de identidad familiar que se lleva en la sangre y se transmite de generación en generación.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Lorca en 2027 se celebra del <strong>viernes 19 de marzo</strong>, Viernes de Dolores, al <strong>sábado 28 de marzo</strong>, Sábado Santo, con el Domingo de Resurrección el <strong>29 de marzo</strong>. Los actos más esperados — los grandes Desfiles Bíblico-Pasionales — tienen lugar el Jueves y el Viernes Santo. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
+        La Semana Santa de Lorca en 2026 se celebra del <strong>viernes 20 de marzo</strong>, Viernes de Dolores, al <strong>domingo 5 de abril</strong>, Domingo de Resurrección. Los actos más esperados — los grandes Desfiles Bíblico-Pasionales — tienen lugar el Jueves y el Viernes Santo. Las fechas cambian cada año según el calendario litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
       </p>
       <p>
         Los horarios e itinerarios detallados de cada jornada se publican en la web oficial de la Semana Santa de Lorca y en los canales de las cofradías. Dada la posibilidad de suspensión por lluvia, es imprescindible seguir las comunicaciones oficiales en tiempo real durante los días de los grandes desfiles.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          <span class="dia-label">Viernes de Dolores · 20 de marzo</span>
           La primera gran cita del Paso Azul abre oficialmente la semana. La procesión de la Virgen de los Dolores recorre el casco antiguo en un ambiente de fervor contenido, con la ciudad entera pendiente del inicio de la rivalidad anual entre los dos grandes pasos.
         </li>
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           La Procesión de las Palmas llena la ciudad de alegría y ambiente familiar. El Paso Negro preside su día principal mientras el Paso Blanco recrea la Entrada de Jesús en Jerusalén con el célebre Pueblo Hebreo. Es la jornada más accesible para familias con niños.
         </li>
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           Jornada de recogimiento con el Vía Crucis del Paso Encarnado y la emotiva Bajada del Cristo de la Misericordia del Paso Morado. Dos actos de carácter más penitencial que contrastan con el espectáculo ecuestre de los días siguientes.
         </li>
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           Se despliega por primera vez toda la caballería y los mantos históricos en La Carrera. El Paso Encarnado preside la solemne Procesión del Silencio por el barrio de San Cristóbal, uno de los momentos más sobrios e intensos de toda la semana. Por la tarde, el Paso Morado protagoniza la Procesión del Perdón con representaciones de los imperios opresores de la historia.
         </li>
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           El día de mayor esplendor de Lorca. Por la mañana, la Procesión Penitencial de Subida al Calvario del Paso Morado con los rezaores. Por la tarde, el Desfile Bíblico-Pasional definitivo: el Cortejo de la Salvación presidido por el Paso Blanco con la Virgen de la Amargura, todas las civilizaciones antiguas, las cuadrigas al galope y miles de figurantes en un despliegue artístico sin igual.
         </li>
         <li>
-          <span class="dia-label">Domingo de Resurrección · 29 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La Archicofradía de Jesús Resucitado protagoniza en solitario el cierre de la Semana Santa. La imagen de Jesús avanza a hombros bajo una lluvia de pétalos en un ambiente jubiloso que contrasta con la gravedad y la pasión de los días anteriores. Un final que devuelve la calma a la ciudad.
         </li>
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Lorca cuenta con <strong>6 cofradías</strong> que organizan los desfiles bíblico-pasionales. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de cada edición en la web oficial para horarios e itinerarios exactos.
       </p>
@@ -428,8 +574,8 @@
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Viernes de Dolores</h3>
+        <details class="cofradia-col">
+          <summary>Viernes de Dolores</summary>
           <ul>
             <li class="paso-azul">
               <span class="nombre-corto">Paso Azul</span>
@@ -440,10 +586,10 @@
               <span class="tooltip-texto">Muy Ilustre Cabildo de Ntra. Sra. la Virgen de la Amargura en la Real y Muy Ilustre Orden-Archicofradía de Ntra. Sra. del Rosario — participación.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li class="paso-negro">
               <span class="nombre-corto">Paso Negro</span>
@@ -458,10 +604,10 @@
               <span class="tooltip-texto">Hermandad de Labradores — participación.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li class="paso-encarnado">
               <span class="nombre-corto">Paso Encarnado</span>
@@ -472,10 +618,10 @@
               <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón — Bajada del Cristo de la Misericordia.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li class="paso-encarnado">
               <span class="nombre-corto">Paso Encarnado</span>
@@ -498,10 +644,10 @@
               <span class="tooltip-texto">Hermandad de la Curia — participación.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo</summary>
           <ul>
             <li class="paso-blanco">
               <span class="nombre-corto">Paso Blanco</span>
@@ -528,23 +674,21 @@
               <span class="tooltip-texto">Hermandad de la Curia — participación.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li class="paso-resucitado">
               <span class="nombre-corto">Resucitado</span>
               <span class="tooltip-texto">Archicofradía de Jesús Resucitado — Única cofradía de este día. Cierra la Semana Santa con la imagen de Jesús a hombros bajo una lluvia de pétalos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantalorca.com" target="_blank" rel="noopener">Semana Santa de Lorca — web oficial</a> — última verificación: 2026-04-24</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           La banda sonora de Lorca es una de las más singulares de la Semana Santa española. En La Carrera, el sonido de las bandas de metales — cornetas y percusión — se mezcla de forma espectacular con el galope y el relinchar de los caballos contra la arena, creando una acústica imposible de reproducir en ningún otro contexto. Las cofradías de Lorca tienen marchas procesionales compuestas exclusivamente para ellas que funcionan como verdaderos himnos locales. Cuando suena el himno de tu paso entre el griterío de los seguidores, entiendes que la música aquí no es acompañamiento sino protagonista.
@@ -560,14 +704,12 @@
           <li>Si te sientas en primera fila de la Carrera durante los grandes desfiles, el volumen combinado de cornetas, tambores, caballos y vítores es muy alto. Unos tapones ligeros te ayudarán a disfrutar horas sin fatiga auditiva.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
           <h3>El galope de las cuadrigas</h3>
-          <span class="tag">Jueves y Viernes Santo · desde las 20:00 h · Avenida Juan Carlos I (La Carrera)</span>
+          <span class="tag">Jueves y Viernes Santo · tarde-noche · Avenida Juan Carlos I (La Carrera)</span>
           <p>Las cuadrigas romanas atraviesan a toda velocidad la arena de La Carrera guiadas por expertos aurigas. Un estruendo de cascos y vítores envuelve el paso de estos carros que desafían la gravedad en pleno centro de la ciudad.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -576,18 +718,8 @@
         </div>
 
         <div class="must-see-card">
-          <h3>La recogida de las banderas</h3>
-          <span class="tag">Jueves y Viernes Santo · 17:00-19:00 h · Capilla del Rosario (Blanco) e Iglesia de San Francisco (Azul)</span>
-          <p>Frente a la sede de cada paso, los abanderados hacen bailar las insignias de sus cofradías al ritmo de los himnos. El ambiente se electrifica con miles de seguidores que defienden sus colores agitando pañuelos y cantando sin descanso.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el momento donde mejor se palpa la pasión de la rivalidad local y la identidad de barrio que define el alma de los lorquinos. Elige un bando, ponte el pañuelo de su color y permítete sentirte parte de la historia por un momento. La entrada es libre y el ambiente es de los más auténticos de toda la semana.</p>
-          </details>
-        </div>
-
-        <div class="must-see-card">
           <h3>Los Museos de Bordados (MASS y muBBLA)</h3>
-          <span class="tag">Toda la semana · 10:30-14:00 h y 17:00-20:00 h · C/ Santo Domingo (muBBLA) y C/ Cuesta de San Francisco (MASS)</span>
+          <span class="tag">Toda la semana · mañana y tarde · C/ Santo Domingo (muBBLA) y C/ Cuesta de San Francisco (MASS)</span>
           <p>Los espacios dedicados a custodiar las obras maestras en seda y oro que desfilan durante la semana. Aquí puedes apreciar a pocos centímetros la técnica de punto de matiz que parece pintura real hecha con aguja.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -597,8 +729,8 @@
 
         <div class="must-see-card">
           <h3>El paso de las civilizaciones antiguas</h3>
-          <span class="tag">Viernes Santo · desde las 20:00 h · Avenida Juan Carlos I (La Carrera)</span>
-          <p>Grandes carrozas monumentales recrean los imperios de Egipto, Roma y Babilonia con personajes históricos como Cleopatra o Nerón. Miles de figurantes ataviados con terciopelos y metales preciosos transforman la ciudad en una epopeya bíblica viviente.</p>
+          <span class="tag">Viernes Santo · tarde-noche · Avenida Juan Carlos I (La Carrera)</span>
+          <p>Grandes carrozas monumentales recrean los imperios de Egipto, Roma y Babilonia con personajes históricos como Cleopatra o Nerón. Miles de figurantes ataviados con terciopelos y metales preciosos transforman la ciudad en un escenario bíblico de una escala que no tiene equivalente en ninguna otra procesión española.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
             <p>Porque es una lección de historia y arte en movimiento de una escala y fastuosidad inabarcables. El Viernes Santo es la jornada más completa de toda la semana y este momento es su clímax. Llega con la entrada de tribuna comprada con antelación — el aforo se agota meses antes.</p>
@@ -616,9 +748,7 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Compra las entradas de tribuna con meses de antelación.</strong> Las sillas de La Carrera para Jueves y Viernes Santo se agotan muy pronto. Sin entrada de tribuna, ver los grandes desfiles bíblicos desde el recorrido oficial es prácticamente imposible. Cómpralas en <a href="https://vivelapasion.org" target="_blank" rel="noopener">vivelapasion.org</a>.</li>
         <li><strong>Elige un color.</strong> La fiesta se disfruta más si te unes a un bando. Compra un pañuelo blanco o azul en las tiendas del centro: los lorquinos te acogerán como uno más si ven que defiendes sus colores con convicción.</li>
@@ -629,9 +759,7 @@
         <li><strong>Visita los Museos de Bordados.</strong> Reserva tiempo para el MASS y el muBBLA antes o después de los grandes desfiles. Entender la técnica de los bordados cambia completamente la forma de ver los mantos en movimiento.</li>
         <li><strong>No cruces el recorrido cuando haya caballos.</strong> Durante el paso de cuadrigas y trigas en La Carrera está terminantemente prohibido cruzar el recorrido. Sigue siempre las indicaciones del personal de seguridad y los acomodadores de tribuna.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Paso</dt>
@@ -671,17 +799,13 @@
         <dd>Grupo de penitentes del Paso Morado que acompañan la Procesión Penitencial de Subida al Calvario el Viernes Santo por la mañana, rezando en voz alta durante el recorrido. Su presencia da a ese acto un carácter particularmente íntimo y recogido.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+<h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
         <img src="images/semana-santa-lorca-1.jpg" alt="Cuadriga romana al galope sobre la arena de La Carrera durante el Desfile Bíblico-Pasional de Lorca" />
         <img src="images/semana-santa-lorca-2.jpg" alt="Detalle de un manto bordado en seda y oro de la Semana Santa de Lorca" />
         <img src="images/semana-santa-lorca-3.jpg" alt="Figurantes caracterizados como soldados del Antiguo Egipto en el desfile de la Semana Santa de Lorca" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantalorca.com" target="_blank" rel="noopener">Semana Santa de Lorca — web oficial</a></li>
         <li><a href="https://vivelapasion.org" target="_blank" rel="noopener">Venta de entradas — Vive la Pasión</a></li>
@@ -689,13 +813,11 @@
         <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo de la Región de Murcia</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-04-24</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>En 2027, la Semana Santa de Lorca tiene lugar del 19 de marzo (Viernes de Dolores) al 29 de marzo (Domingo de Resurrección). Los grandes Desfiles Bíblico-Pasionales se concentran en Jueves Santo (25 de marzo) y Viernes Santo (26 de marzo).</dd>
+        <dd>En 2026, la Semana Santa de Lorca tiene lugar del 20 de marzo (Viernes de Dolores) al 5 de abril (Domingo de Resurrección). Los grandes Desfiles Bíblico-Pasionales se concentran en Jueves Santo (2 de abril) y Viernes Santo (3 de abril).</dd>
 
         <dt>¿Necesito entrada para ver las procesiones?</dt>
         <dd>Para los grandes desfiles de Jueves y Viernes Santo en La Carrera es imprescindible comprar asiento en las tribunas con meses de antelación. Los actos en plazas, puertas de iglesias y calles del casco antiguo son de acceso libre y gratuito.</dd>
@@ -720,6 +842,53 @@
 
       </dl>
 
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Lorca</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">10 días</a>
+        <a href="#" class="etiqueta">Bordados</a>
+        <a href="#" class="etiqueta">Caballos</a>
+        <a href="#" class="etiqueta">Blancos y Azules</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-lorca">
+        <h2 id="rel-title-lorca">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-cartagena.html" class="ficha-rel-card">
+            <img src="images/semana-santa-cartagena.jpg" alt="Semana Santa de Cartagena" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cartagena</span>
+              <span class="rel-frase">Tercios marciales, tronos de luz y la Salve Cartagenera.</span>
+              <span class="rel-meta">Cartagena · Región de Murcia</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-murcia.html" class="ficha-rel-card">
+            <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Murcia</span>
+              <span class="rel-frase">El reino de Salzillo y la imaginería levantina.</span>
+              <span class="rel-meta">Murcia · Región de Murcia</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-malaga.html" class="ficha-rel-card">
+            <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Málaga</span>
+              <span class="rel-frase">42 cofradías, tronos monumentales y la Legión.</span>
+              <span class="rel-meta">Málaga · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -727,7 +896,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
