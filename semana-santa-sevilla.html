@@ -4,15 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ============================================================
-       SEO: Personaliza title y description para cada ciudad
-       ============================================================ -->
-  <title>Sevilla — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Sevilla es la más famosa del mundo: 60 hermandades, pasos de oro, costaleros y saetas llenan las calles entre el Domingo de Ramos y el Domingo de Resurrección. Guía completa con historia, hermandades y consejos." />
+  <title>Semana Santa de Sevilla 2026: Guía, Hermandades y Fechas</title>
+  <meta name="description" content="Semana Santa de Sevilla 2026: 60 hermandades, costaleros, saetas y pasos de oro entre el 29 de marzo y el 5 de abril. Guía completa con historia y cofradías por día." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-sevilla.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Sevilla — Folklorius" />
+  <meta property="og:title" content="Semana Santa de Sevilla 2026: Guía Completa" />
   <meta property="og:description" content="La Semana Santa más famosa del mundo: costaleros, saetas y pasos de oro en Sevilla." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-sevilla.jpg" />
   <meta property="og:type" content="article" />
@@ -26,44 +23,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ============================================================
-       CSS LOCAL: Componentes específicos de esta plantilla
-       (cofradias-grid, must-see-cards, procesiones-timeline)
-       ============================================================ -->
   <style>
 
     /* --- Cuadrícula de cofradías por día --- */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
       font-size: 0.88rem;
       padding: 3px 0;
       color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
     }
     .cofradia-col ul li::before {
       content: "·";
@@ -71,8 +82,41 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
 
     /* --- Tarjetas "No te lo puedes perder" --- */
     .must-see-grid {
@@ -170,13 +214,150 @@
       margin-bottom: 3px;
     }
 
+    /* ══════════════════════════════════════════════════════════
+       ELEMENTOS TRANSVERSALES (Nivel 1 — comunes a toda ficha)
+       ══════════════════════════════════════════════════════════ */
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; gap: 6px 14px; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+      line-height: 1.3;
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      line-height: 1.45;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
   </style>
 
-  <!-- ============================================================
-       JSON-LD: Datos estructurados del evento
-       Actualiza: name, startDate, endDate, location, image,
-       description, organizer.name y organizer.url
-       ============================================================ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -198,8 +379,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 0.0000,
-        "longitude": 0.0000
+        "latitude": 37.3858,
+        "longitude": -5.9926
       }
     },
     "image": ["https://folklorius.es/images/sevilla-santa1.jpg"],
@@ -245,7 +426,6 @@
   </nav>
 
   <!-- ============================================================ HERO -->
-  <!-- Imagen principal: mínimo 1200×500px, alt descriptivo -->
   <div class="ficha-hero">
     <img src="images/sevilla-santa1.jpg" alt="Paso de Semana Santa en las calles de Sevilla" />
   </div>
@@ -261,44 +441,34 @@
       </p>
 
       <!-- BADGES / RECONOCIMIENTOS OFICIALES -->
-      <!-- Incluye solo los que correspondan. Elimina los que no apliquen. -->
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
         <span class="badge badge-unesco">Patrimonio Cultural Inmaterial (UNESCO)</span>
-        <!-- Añade o elimina badges según los reconocimientos reales de esta ciudad -->
+      </div>
+
+      <!-- BLOQUE DESTACADO DE FECHAS -->
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 29 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Sevilla · Andalucía</span>
+          <span>⏱️ 8 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
       </div>
 
       <!-- NOTA DE SENSIBILIDAD -->
-      <!-- Ajusta los puntos según las particularidades de cada ciudad -->
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
           <li>Las procesiones son actos religiosos, no espectáculos. Guarda silencio durante las saetas y los momentos de oración.</li>
           <li>No toques los pasos ni a los nazarenos. Respeta el espacio del cortejo.</li>
           <li>Sigue las indicaciones de la Policía Local y Protección Civil, especialmente en zonas de mayor afluencia.</li>
-          <!-- Añade puntos específicos de la ciudad si los hay -->
         </ul>
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 1: LA ESENCIA DE LA FIESTA
-           Texto evocador, en primera o tercera persona, que capture
-           la atmósfera y lo que hace única esta Semana Santa.
-           Mínimo 80 palabras. No usar bullet points aquí.
-           ==================================================== -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        La Semana Santa de Sevilla es una de esas celebraciones que no se comprenden del todo hasta que se recorren a pie. Durante una semana, la ciudad cambia su ritmo cotidiano y se ordena en torno a la salida de las hermandades, al sonido de las bandas, al rumor de la espera y al silencio que se abre cuando un paso se aproxima. No es solo una suma de procesiones: es una manera de vivir la calle, la fe, el barrio y la memoria compartida. En Sevilla, la Semana Santa no se contempla únicamente; se escucha, se espera, se acompaña y se interpreta.
+        La Semana Santa de Sevilla es una de esas celebraciones que no se comprenden del todo hasta que se recorren a pie. Durante una semana, la ciudad cambia su ritmo cotidiano y se ordena en torno a la salida de las hermandades, al sonido de las bandas, al rumor de la espera y al silencio que se abre cuando un paso se aproxima. Lo que de verdad la define se vive en la calle: la fe, el barrio y la memoria compartida de generaciones de sevillanos. En Sevilla, la Semana Santa no se contempla únicamente; se escucha, se espera, se acompaña y se interpreta.
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 2: ¿EN QUÉ CONSISTE?
-           Explicación funcional para quien no conoce la Semana Santa:
-           qué es una cofradía, cómo funciona la procesión, qué es un paso/trono,
-           cómo se porta (costaleros vs. hombres de trono), itinerario general.
-           ==================================================== -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
        La Semana Santa de Sevilla se celebra entre el Domingo de Ramos y el Domingo de Resurrección. Durante esos días, más de 60 hermandades y cofradías realizan estación de penitencia a la Catedral, siguiendo horarios e itinerarios oficialmente aprobados por el Consejo General de Hermandades y Cofradías en coordinación con la autoridad eclesiástica. Cada una sale desde su templo, parroquia, iglesia o basílica de origen, recorre la ciudad hasta la Carrera Oficial y, desde allí, accede al entorno de la Catedral antes de regresar a su sede. 
@@ -307,49 +477,28 @@
        El elemento central del cortejo es el <strong>paso</strong>, una estructura procesional de gran valor devocional y artístico sobre la que se disponen las imágenes titulares de Cristo, la Virgen o escenas de la Pasión. En Sevilla, los pasos son portados por <strong>costaleros</strong> desde el interior, sin quedar visibles al público, y son dirigidos por el <strong>capataz</strong>, que marca las maniobras y el ritmo mediante la voz y el llamador. Junto a ellos desfilan los <strong>nazarenos</strong>, los acólitos, los diputados de tramo, los ciriales y, según la hermandad, bandas de cornetas y tambores o bandas de música.
       </p>
       <p>
-       Para el visitante conviene tener presente que no se trata de un desfile festivo ni de una representación aislada, sino de un rito público cuidadosamente organizado. Una misma cofradía puede permanecer en la calle durante muchas horas y ofrecer experiencias muy distintas según el punto desde el que se contemple: la salida desde el templo, el tránsito por calles estrechas, el paso por Carrera Oficial, la estación de penitencia junto a la Catedral o la recogida en su barrio. Esa variedad es parte esencial de la experiencia sevillana. 
+       Para el visitante conviene tener presente que esto es un rito público cuidadosamente organizado, no un desfile festivo ni una representación pensada para el espectador. Una misma cofradía puede permanecer en la calle durante muchas horas y ofrecer experiencias muy distintas según el punto desde el que se contemple: la salida desde el templo, el tránsito por calles estrechas, el paso por Carrera Oficial, la estación de penitencia junto a la Catedral o la recogida en su barrio. Esa variedad es parte esencial de la experiencia sevillana. 
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 3: HISTORIA Y SIGNIFICADO
-           Origen, evolución histórica, escultores o imagineros relevantes,
-           significado cultural y religioso. Mínimo 2 párrafos.
-           ==================================================== -->
       <h2 class="section-title">Historia y significado</h2>
       <p>
         Las primeras cofradías penitenciales sevillanas se remontan a la Baja Edad Media, aunque el gran desarrollo de la Semana Santa en su forma actual se consolidó entre los siglos XVI y XVII. Sevilla, convertida entonces en un gran centro económico y artístico del mundo hispánico, impulsó una imaginería religiosa extraordinaria y reunió obras de escultores como <strong>Juan Martínez Montañés</strong>, <strong>Pedro Roldán</strong> o <strong>Juan de Mesa</strong>, cuya huella sigue siendo decisiva en muchas de las imágenes que procesionan hoy.
       </p>
       <p>
-       A lo largo de los siglos, la celebración ha cambiado en recorridos, organización y escala, pero ha mantenido sus elementos fundamentales: la hermandad, la estación de penitencia, la vinculación con un templo y con un barrio, y la convicción de que la imagen procesional es una presencia central en la vida devocional de la ciudad. Por eso, para muchos sevillanos, la Semana Santa no es solo una tradición anual, sino una parte de la memoria familiar y de la identidad local. 
+       A lo largo de los siglos, la celebración ha cambiado en recorridos, organización y escala, pero ha mantenido sus elementos fundamentales: la hermandad, la estación de penitencia, la vinculación con un templo y con un barrio, y la convicción de que la imagen procesional es una presencia central en la vida devocional de la ciudad. Para muchos sevillanos es algo que va más allá de la tradición anual: forma parte de la memoria familiar y de la identidad local. 
       </p>
       <p>
-      En la actualidad, su significado es doble. Por un lado, sigue siendo una expresión religiosa de enorme intensidad; por otro, constituye un patrimonio vivo que articula arte, música, tradición oral, organización ciudadana y uso ceremonial del espacio urbano. Para quien llega de fuera, esto se traduce en una experiencia compleja y muy rica, donde la dimensión estética nunca está desligada del sentido espiritual ni del arraigo popular.
+      En la actualidad, su significado es doble. Por un lado, sigue siendo una expresión religiosa de enorme intensidad; por otro, es un patrimonio vivo de arte, música y tradición oral que se vive en plena calle. Para quien llega de fuera, esto se traduce en una experiencia compleja y muy rica, donde la dimensión estética nunca está desligada del sentido espiritual ni del arraigo popular.
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 4: FECHAS
-           Fechas del año en curso con días nombrados.
-           Recuerda actualizar también el JSON-LD del <head>.
-           ==================================================== -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Sevilla se celebra del <strong>Domingo 21 de marzo</strong>,
-        <strong>Domingo de Ramos</strong>, al <strong>Domingo 28 de marzo</strong>,
+        La Semana Santa de Sevilla se celebra del <strong>Domingo 29 de marzo</strong>,
+        <strong>Domingo de Ramos</strong>, al <strong>Domingo 5 de abril</strong>,
         <strong>Domingo de Resurrección</strong>. Las fechas cambian cada año según el calendario
         litúrgico, por lo que conviene consultar la edición correspondiente antes de planificar el viaje.
       </p>
       <p>
         Los horarios e itinerarios oficiales de cada hermandad se aprueban para cada edición por el Consejo General de Hermandades y Cofradías. Además, el Ayuntamiento publica información municipal sobre seguridad, movilidad, accesibilidad y servicios especiales.
       </p>
-
-
-      <!-- ====================================================
-           SECCIÓN 5: PROCESIONES MÁS DESTACADAS (timeline)
-           Una entrada por día, con el nombre de la jornada y
-           descripción breve de lo más relevante de ese día.
-           ==================================================== -->
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
@@ -385,144 +534,307 @@
           La Hermandad de la Resurrección pone fin a la Semana Santa con un cierre de signo pascual y luminoso.
         </li>
       </ul>
-
-
-      <!-- ====================================================
-           SECCIÓN 6: COFRADÍAS POR DÍA (cuadrícula)
-           Lista de cofradías agrupadas por jornada.
-           Añade o elimina columnas según los días con procesiones.
-           Fuente: organismo oficial de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Cofradías por día</h2>
       <p>
         Sevilla cuenta con más de 60 hermandades que realizan estación de penitencia durante la Semana Santa.
         Consulta el programa oficial del Consejo General de Hermandades y Cofradías para horarios e itinerarios exactos de cada edición.
       </p>
       <div class="cofradias-grid">
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
-            <li>La Borriquita/El Amor</li>
-            <li>La Cena</li>
-            <li>Jesús Despojado</li>
-            <li>La Hiniesta</li>
-            <li>La Paz</li>
-            <li>San Roque</li>
-            <li>La Estrella</li>
-            <li>La Amargura</li>
-            <li>El Amor</li>
-            <!-- Añade las que correspondan -->
+            <li>
+              <span class="nombre-corto">La Borriquita / El Amor</span>
+              <span class="tooltip-texto">Primitiva Archicofradía Pontificia y Real Hermandad de Nazarenos de la Sagrada Entrada en Jerusalén, Santísimo Cristo del Amor, Nuestra Señora del Socorro y Santiago Apóstol. La Borriquita es el primer cuerpo de nazarenos de esta misma hermandad, que procesiona de forma autónoma al inicio de la jornada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Cena</span>
+              <span class="tooltip-texto">Antigua, Real, Ilustre y Fervorosa Hermandad Sacramental, Esclavitud de Nuestra Señora de la Encarnación y Cofradía de Nazarenos de la Sagrada Cena, Santísimo Cristo de la Humildad y Paciencia y Nuestra Señora del Subterráneo, Reina de Cielos y Tierra.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Jesús Despojado</span>
+              <span class="tooltip-texto">Fervorosa y Creadora Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús Despojado de sus Vestiduras, María Santísima de los Dolores y Misericordia y San Juan Evangelista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Hiniesta</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad Sacramental, Ánimas Benditas y Cofradía de Nazarenos del Santísimo Cristo de la Buena Muerte y Nuestra Señora de la Hiniesta.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Paz</span>
+              <span class="tooltip-texto">Real y Fervorosa Hermandad Sacramental del Señor San Sebastián y Nuestra Señora del Prado y Cofradía de Nazarenos de Nuestro Padre Jesús de la Victoria y María Santísima de la Paz Coronada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Roque</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Archicofradía del Santísimo Sacramento, Ánimas Benditas, Purísima Concepción y Congregación del Santo Escapulario y Cofradía de Nazarenos de Nuestro Padre Jesús de las Penas y Nuestra Señora de Gracia y Esperanza Coronada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Estrella</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre y Fervorosa Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús de las Penas, María Santísima de la Estrella Coronada, Triunfo del Santo Lignum Crucis, San Francisco de Paula y Santas Justa y Rufina.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Amargura</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús del Silencio en el Desprecio de Herodes, María Santísima de la Amargura Coronada, San Juan Evangelista y Santa Ángela de la Cruz.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
-            <li>San Pablo</li>
-            <li>La Redención</li>
-            <li>Santa Genoveva</li>
-            <li>Santa Marta</li>
-            <li>San Gonzalo</li>
-            <li>Vera-Cruz</li>
-            <li>Las Penas de San Vicente</li>
-            <li>Las Aguas</li>
-            <li>El Museo</li>
+            <li>
+              <span class="nombre-corto">San Pablo</span>
+              <span class="tooltip-texto">Fervorosa Trinitaria y Sacramentada Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús Cautivo y Rescatado, María Santísima del Rosario, San Ignacio de Loyola y San Juan de Mata. Conocida popularmente también como "El Polígono".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Redención</span>
+              <span class="tooltip-texto">Fervorosa e Ilustre Hermandad del Santísimo Sacramento y Cofradía de Nazarenos de Nuestro Padre Jesús de la Redención en el Beso de Judas, María Santísima del Rocío, Nuestra Señora del Carmen, San Fernando Rey y San Lucas Evangelista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Genoveva</span>
+              <span class="tooltip-texto">Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús Cautivo en el Abandono de sus Discípulos y Nuestra Señora de las Mercedes Coronada. Conocida también como "El Tiro de Línea".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Marta</span>
+              <span class="tooltip-texto">Real, Muy Ilustre y Venerable Hermandad del Santísimo Sacramento, Inmaculada Concepción, Ánimas Benditas y Cofradía de Nazarenos del Santísimo Cristo de la Caridad en su Traslado al Sepulcro, Nuestra Señora de las Penas y Santa Marta.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Gonzalo</span>
+              <span class="tooltip-texto">Pontificia y Real Hermandad del Santísimo Sacramento y Cofradía de Nazarenos de Nuestro Padre Jesús en Su Soberano Poder ante Caifás, Nuestra Señora de la Salud y San Juan Evangelista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Vera-Cruz</span>
+              <span class="tooltip-texto">Muy Antigua, Siempre Ilustre, Venerable, Pontificia, Real, Fervorosa, Humilde y Seráfica Hermandad y Archicofradía de Nazarenos de la Santísima Vera Cruz, Sangre de Nuestro Señor Jesucristo y Tristezas de María Santísima.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Penas de San Vicente</span>
+              <span class="tooltip-texto">Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de las Penas y María Santísima de los Dolores.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Aguas</span>
+              <span class="tooltip-texto">Real, Ilustre, Antigua y Fervorosa Hermandad de la Santa Cruz y Nuestra Señora del Rosario y Cofradía de Nazarenos del Santísimo Cristo de las Aguas, Nuestra Madre y Señora del Mayor Dolor y María Santísima de Guadalupe.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Museo</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad del Santísimo Sacramento y Cofradía de Nazarenos de la Sagrada Expiración de Nuestro Señor Jesucristo y María Santísima de las Aguas.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
-            <li>El Cerro</li>
-            <li>San Esteban</li>
-            <li>La Candelaria</li>
-            <li>San Benito</li>
-            <li>Los Javieres</li>
-            <li>Dulce Nombre</li>
-            <li>Los Estudiantes</li>
-            <li>Santa Cruz</li>
+            <li>
+              <span class="nombre-corto">El Cerro</span>
+              <span class="tooltip-texto">Fervorosa Hermandad Sacramental y Cofradía de Nazarenos del Santísimo Cristo del Desamparo y Abandono, Nuestro Padre Jesús de la Humildad y Nuestra Señora de los Dolores. Nombre completo del barrio: El Cerro del Águila.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Esteban</span>
+              <span class="tooltip-texto">Fervorosa Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Salud y Buen Viaje, María Santísima Madre de los Desamparados, San Juan de Ribera y Protomártir San Esteban. Conocida también como "La Ventana".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Candelaria</span>
+              <span class="tooltip-texto">Ilustre y Fervorosa Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús de la Salud, María Santísima de la Candelaria, Nuestra Señora del Subterráneo y San Nicolás de Bari.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Benito</span>
+              <span class="tooltip-texto">Hermandad del Santísimo Sacramento, Pontificia y Real Archicofradía de Nazarenos de la Sagrada Presentación de Jesús al Pueblo, Santísimo Cristo de la Sangre, Nuestra Señora de la Encarnación Coronada y San Benito Abad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Javieres</span>
+              <span class="tooltip-texto">Hermandad y Cofradía de Nazarenos del Santísimo Cristo de las Almas, María Santísima de Gracia y Amparo y San Francisco Javier.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Dulce Nombre</span>
+              <span class="tooltip-texto">Pontificia, Fervorosa, Ilustre y Antigua Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús ante Anás, Santo Cristo del Mayor Dolor, María Santísima del Dulce Nombre y San Juan Evangelista. Conocida también como "La Bofetá".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Estudiantes</span>
+              <span class="tooltip-texto">Pontificia, Patriarcal e Ilustrísima Hermandad y Archicofradía de Nazarenos del Santísimo Cristo de la Buena Muerte y María Santísima de la Angustia.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santa Cruz</span>
+              <span class="tooltip-texto">Ilustre y Antigua Hermandad del Santísimo Sacramento y Nuestra Señora de la Paz, Fervorosa Cofradía de Nazarenos del Santísimo Cristo de las Misericordias, Santa María de la Antigua y Nuestra Señora de los Dolores.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
-            <li>El Carmen Doloroso</li>
-            <li>El Buen Fin</li>
-            <li>La Sed</li>
-            <li>San Bernardo</li>
-            <li>La Lanzada</li>
-            <li>El Baratillo</li>
-            <li>Cristo de Burgos</li>
-            <li>Las Siete Palabras</li>
-            <li>Los Panaderos</li>
+            <li>
+              <span class="nombre-corto">El Carmen Doloroso</span>
+              <span class="tooltip-texto">Hermandad Carmelita de las Maravillas de María y Cofradía de Nazarenos de Nuestro Padre Jesús de la Paz y Nuestra Señora del Carmen en sus Misterios Dolorosos.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Sed</span>
+              <span class="tooltip-texto">Hospitalaria Hermandad Sacramental de Congregantes de la Concepción Inmaculada de la Santísima Virgen María y Cofradía de Nazarenos del Santísimo Cristo de la Sed y Santa María de Consolación Madre de la Iglesia, San Juan Evangelista y San Juan de Dios. Vinculada al barrio de Nervión.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Bernardo</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad Sacramental, Ánimas Benditas y Cofradía de Nazarenos del Santísimo Cristo de la Salud, María Santísima del Refugio, Santa Cruz, Nuestra Señora del Patrocinio, Santa Bárbara y San Bernardo. Conocida también como "Los Toreros".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Buen Fin</span>
+              <span class="tooltip-texto">Real, Ilustre, Antigua, Fervorosa y Franciscana Hermandad Sacramental y Cofradía de Nazarenos del Santo Sudario, Santísimo Cristo del Buen Fin, Nuestra Señora de la Palma Coronada, San Francisco de Asís y San Antonio de Padua.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Lanzada</span>
+              <span class="tooltip-texto">Imperial, Antigua, Ilustre y Fervorosa Hermandad del Santísimo Sacramento, Inmaculada Concepción de Nuestra Señora, Santa Espina de la Cruz y Cofradía de Nazarenos del Santísimo Cristo de la Sagrada Lanzada, Nuestra Señora de Guía, San Juan Evangelista y María Santísima del Buen Fin.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Baratillo</span>
+              <span class="tooltip-texto">Antigua y Fervorosa Hermandad de la Santa Cruz y Cofradía de Nazarenos del Santísimo Cristo de la Misericordia y Nuestra Señora de la Piedad, Patriarca Bendito Señor San José y María Santísima de la Caridad en su Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Cristo de Burgos</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre y Fervorosa Hermandad y Cofradía de Nazarenos del Santísimo Cristo de Burgos, Negaciones y Lágrimas de San Pedro y Madre de Dios de la Palma.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Siete Palabras</span>
+              <span class="tooltip-texto">Real e Ilustre Hermandad Sacramental de Nuestra Señora del Rosario, Ánimas Benditas del Purgatorio y Primitiva Archicofradía del Sagrado Corazón y Clavos de Jesús, Nuestro Padre Jesús de la Divina Misericordia, Santísimo Cristo de las Siete Palabras, María Santísima de los Remedios, Nuestra Señora de la Cabeza y San Juan Evangelista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Panaderos</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre y Fervorosa Hermandad y Archicofradía de Nazarenos de Nuestro Padre Jesús del Soberano Poder en su Prendimiento, María Santísima de Regla y San Andrés Apóstol.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
-            <li>Los Negritos</li>
-            <li>La Exaltación</li>
-            <li>Las Cigarreras</li>
-            <li>Montesión</li>
-            <li>Quinta Angustia</li>
-            <li>El Valle</li>
-            <li>Pasión</li>
+            <li>
+              <span class="nombre-corto">Los Negritos</span>
+              <span class="tooltip-texto">Antigua, Pontificia y Franciscana Hermandad y Cofradía de Nazarenos del Santísimo Cristo de la Fundación y Nuestra Señora de los Ángeles Coronada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Exaltación</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad Sacramental Purísima Concepción Ánimas Benditas del Purgatorio, San Sebastián Mártir y Archicofradía de Nazarenos del Santísimo Cristo de la Exaltación y Nuestra Señora de las Lágrimas. Conocida también como "Los Caballos".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Las Cigarreras</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad y Cofradía de Nazarenos de la Sagrada Columna y Azotes de Nuestro Señor Jesucristo y María Santísima de la Victoria.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Montesión</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre, Antigua y Dominica Hermandad y Archicofradía de Nazarenos de la Sagrada Oración de Nuestro Señor Jesucristo en el Huerto, Santísimo Cristo de la Salud, María Santísima del Rosario en sus Misterios Dolorosos Coronada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Quinta Angustia</span>
+              <span class="tooltip-texto">Pontificia, Real Hermandad y Archicofradía de Nazarenos del Dulce Nombre de Jesús, Sagrado Descendimiento de Nuestro Señor Jesucristo y Quinta Angustia de María Santísima Nuestra Señora.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Valle</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre y Primitiva Archicofradía de Nazarenos del Santísimo Cristo de la Coronación de Espinas, Nuestro Padre Jesús con la Cruz al Hombro, Nuestra Señora del Valle y Santa Mujer Verónica.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Pasión</span>
+              <span class="tooltip-texto">Archicofradía del Santísimo Sacramento, Pontificia y Real de Nazarenos de Nuestro Padre Jesús de la Pasión y Nuestra Madre y Señora de la Merced.</span>
+            </li>
           </ul>
-        </div>
-       <div class="cofradia-col">
-  <h3>Viernes Santo · Madrugada</h3>
-  <ul>
-    <li>El Silencio</li>
-    <li>El Gran Poder</li>
-    <li>La Macarena</li>
-    <li>El Calvario</li>
-    <li>Esperanza de Triana</li>
-    <li>Los Gitanos</li>
-  </ul>
-</div>
-<div class="cofradia-col">
-  <h3>Viernes Santo · Tarde</h3>
-  <ul>
-    <li>La Carretería</li>
-    <li>Soledad de San Bonaventura</li>
-    <li>El Cachorro</li>
-    <li>La O</li>
-    <li>San Isidoro</li>
-    <li>Montserrat</li>
-    <li>La Mortaja</li>
-  </ul>
-</div>
-        <!-- Añade columna de Sábado Santo si hay procesiones ese día -->
-        <div class="cofradia-col">
-          <h3>Sábado Santo</h3>
+        </details>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo · Madrugada</summary>
           <ul>
-            <li>El Sol</li>
-            <li>Los Servitas</li>
-            <li>La Trinidad</li>
-            <li>Santo Entierro</li>
-            <li>La Soledad de San Lorenzo</li>
+            <li>
+              <span class="nombre-corto">El Silencio</span>
+              <span class="tooltip-texto">Primitiva Hermandad de los Nazarenos de Sevilla, Archicofradía Pontificia y Real de Nuestro Padre Jesús Nazareno, Santa Cruz en Jerusalén y María Santísima de la Concepción.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Gran Poder</span>
+              <span class="tooltip-texto">Pontificia y Real Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús del Gran Poder y María Santísima del Mayor Dolor y Traspaso. Conocida también como "El Señor de Sevilla".</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Macarena</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad y Cofradía de Nazarenos de Nuestra Señora del Santo Rosario, Nuestro Padre Jesús de la Sentencia y María Santísima de la Esperanza Macarena Coronada.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Calvario</span>
+              <span class="tooltip-texto">Pontificia y Real Hermandad y Cofradía de Nazarenos del Santísimo Cristo del Calvario y Nuestra Señora de la Presentación.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Esperanza de Triana</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad y Archicofradía de Nazarenos del Santísimo Sacramento y de la Pura y Limpia Concepción de la Santísima Virgen María, del Santísimo Cristo de las Tres Caídas, Nuestra Señora de la Esperanza Coronada y San Juan Evangelista.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Gitanos</span>
+              <span class="tooltip-texto">Real, Ilustre y Fervorosa Hermandad Sacramental, Ánimas Benditas y Cofradía de Nazarenos de Nuestro Padre Jesús de la Salud y María Santísima de las Angustias Coronada.</span>
+            </li>
           </ul>
-        </div>
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        </details>
+        <details class="cofradia-col">
+          <summary>Viernes Santo · Tarde</summary>
           <ul>
-            <li>La Resurrección</li>
+            <li>
+              <span class="nombre-corto">La Carretería</span>
+              <span class="tooltip-texto">Pontificia y Real Archicofradía de Nazarenos del Santísimo Cristo de la Salud, María Santísima de la Luz en el Sagrado Misterio de sus Tres Necesidades al pie de la Santa Cruz, San Juan Evangelista, San Juan Pablo II y Nuestra Señora del Mayor Dolor en su Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Soledad de San Buenaventura</span>
+              <span class="tooltip-texto">Real, Ilustre y Franciscana Hermandad y Cofradía de Nazarenos de la Santa Cruz en el Monte Calvario, Santísimo Cristo de la Salvación y Nuestra Señora de la Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">El Cachorro</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Hermandad y Cofradía de Nazarenos del Santísimo Cristo de la Expiración y Nuestra Madre y Señora del Patrocinio.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La O</span>
+              <span class="tooltip-texto">Pontificia, Real e Ilustre Archicofradía del Santísimo Sacramento, Nuestro Padre Jesús Nazareno y María Santísima de la O.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">San Isidoro</span>
+              <span class="tooltip-texto">Antigua e Ilustre Hermandad del Santísimo Sacramento y Pontificia y Real Archicofradía de Nazarenos de Nuestro Padre Jesús de las Tres Caídas, Nuestra Señora de Loreto y Señor San Isidoro.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Montserrat</span>
+              <span class="tooltip-texto">Pontificia, Real, Ilustre, Antigua y Primitiva Hermandad del Santísimo Rosario, la Santa Cruz y Cofradía de Nazarenos del Santísimo Cristo de la Conversión del Buen Ladrón y Nuestra Señora de Montserrat.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Mortaja</span>
+              <span class="tooltip-texto">Antigua, Real e Ilustre Hermandad de Nuestra Señora de la Luz en el Misterio de sus Tres Necesidades y Venerable, Fervorosa y Real Cofradía de Nazarenos de Nuestro Padre Jesús Descendido de la Cruz en el Misterio de Su Sagrada Mortaja y María Santísima de la Piedad.</span>
+            </li>
           </ul>
-        </div>
+        </details>
+        <details class="cofradia-col">
+          <summary>Sábado Santo</summary>
+          <ul>
+            <li>
+              <span class="nombre-corto">El Sol</span>
+              <span class="tooltip-texto">Hermandad Sacramental de la Inmaculada Concepción de María y Cofradía de Nazarenos del Santo Cristo Varón de Dolores de la Divina Misericordia y Nuestra Señora del Sol.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Los Servitas</span>
+              <span class="tooltip-texto">Real, Muy Ilustre y Venerable Hermandad y Cofradía de Nazarenos de la Santa Cruz en el Monte Calvario, Santísimo Cristo de la Providencia, María Santísima de los Dolores y Nuestra Señora de la Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Trinidad</span>
+              <span class="tooltip-texto">Pontificia, Real y Muy Ilustre Hermandad Sacramental y Archicofradía de Nazarenos del Sagrado Decreto de la Santísima Trinidad, Santísimo Cristo de las Cinco Llagas, María Santísima de la Concepción, Nuestra Señora de la Esperanza Coronada y San Juan Bosco.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">Santo Entierro</span>
+              <span class="tooltip-texto">Real y Fervorosa Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús del Santo Entierro en su Traslado al Sepulcro y María Santísima de la Soledad.</span>
+            </li>
+            <li>
+              <span class="nombre-corto">La Soledad de San Lorenzo</span>
+              <span class="tooltip-texto">Pontificia y Real Hermandad Sacramental, Nuestra Señora de Roca-Amador, Ánimas Benditas, Beato Marcelo Spínola y Primitiva Cofradía de Nazarenos de María Santísima en su Soledad.</span>
+            </li>
+          </ul>
+        </details>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
+          <ul>
+            <li>
+              <span class="nombre-corto">La Resurrección</span>
+              <span class="tooltip-texto">Hermandad Sacramental de la Sagrada Resurrección de Nuestro Señor Jesucristo y Nuestra Señora de la Aurora. Conocida también como "El Resucitado".</span>
+            </li>
+          </ul>
+        </details>
       </div>
-      <p class="fuente">Fuente: <a href="https://www.hermandades-de-sevilla.org/" target="_blank" rel="noopener">Consejo General de Hermandades y Cofradías</a> — última verificación: 2026-04-15</p>
-
-
-      <!-- ====================================================
-           SECCIÓN 7: MÚSICA
-           Dimensión sonora: bandas, marchas emblemáticas, saeta.
-           Incluye consejos de escucha y piezas concretas si las hay.
-           ==================================================== -->
+      <p class="nota-grid">⚠️ Las denominaciones oficiales completas se han verificado a partir de fuentes del Consejo General de Hermandades y Cofradías de Sevilla. Dado el elevado número de corporaciones, recomendamos cotejar cualquier dato concreto con la hermandad correspondiente antes de su uso oficial.</p>
+      <p class="fuente">Fuente: <a href="https://www.hermandades-de-sevilla.org/" target="_blank" rel="noopener">Consejo General de Hermandades y Cofradías</a> — última verificación: 2026-06-18</p>
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           La dimensión sonora de la Semana Santa sevillana es fundamental para comprenderla. Las bandas de cornetas y tambores aportan un sonido rotundo, penitencial y muy reconocible, mientras que las bandas de música interpretan marchas solemnes que forman parte de la memoria sentimental de la ciudad. La música no solo acompaña al cortejo: marca su pulso, anticipa la llegada del paso y cambia por completo la percepción de cada tramo del recorrido.
         </p>
         <p>
-         Junto a las bandas, la **saeta** ocupa un lugar singular. Es un cante de fuerte carga devocional que puede surgir desde un balcón o desde la propia calle al paso de una imagen. Cuando eso ocurre, el cortejo suele detenerse y el entorno guarda silencio. En Sevilla, ese instante tiene un valor especial porque concentra religiosidad popular, emoción colectiva y tradición flamenca en un mismo gesto. 
+         Junto a las bandas, la <strong>saeta</strong> ocupa un lugar singular. Es un cante de fuerte carga devocional que puede surgir desde un balcón o desde la propia calle al paso de una imagen. Cuando eso ocurre, el cortejo suele detenerse y el entorno guarda silencio. En Sevilla, ese instante tiene un valor especial porque concentra religiosidad popular, emoción colectiva y tradición flamenca en un mismo gesto. 
         </p>
         <p>
          Hay también sonidos más sutiles que el visitante aprende a reconocer: el golpe seco del llamador antes de una levantá, el esfuerzo acompasado de los costaleros, el murmullo contenido del público o el contraste entre la multitud y el silencio en ciertas hermandades. Escuchar estos matices forma parte de la experiencia tanto como mirar el paso. 
@@ -532,16 +844,6 @@
           <li>Si eres sensible al ruido, las zonas con bandas de cornetas y tambores pueden requerir protección auditiva, especialmente de noche.</li>
         </ul>
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 8: NO TE LO PUEDES PERDER (tarjetas)
-           4-6 momentos o experiencias clave. Cada tarjeta tiene:
-           - Título del momento
-           - Tag con día/lugar/franja horaria
-           - Descripción breve (2-3 frases)
-           - Detalle expandible con consejo práctico
-           ==================================================== -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -585,16 +887,7 @@
           </details>
         </div>
 
-        <!-- Añade más tarjetas si lo necesitas. Máximo recomendado: 6 -->
-
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 9: CONSEJOS PRÁCTICOS
-           Lista de consejos directos y útiles para el visitante.
-           Personaliza según la ciudad (calles, transporte, zonas...).
-           ==================================================== -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li>Reserva alojamiento con mucha antelación, especialmente si deseas estar cerca del centro histórico o de zonas muy demandadas como la Carrera Oficial o Triana.</li>
@@ -603,19 +896,9 @@
         <li>Ten en cuenta que por la noche y de madrugada la temperatura puede bajar sensiblemente respecto a las horas centrales del día.</li>
         <li>Consulta siempre los itinerarios oficiales y la información municipal actualizada antes de desplazarte. La APP Sevilla incorpora datos de ocupación y geolocalización de hermandades.</li>
         <li>No cruces los cortejos salvo en pasos habilitados y sigue siempre las indicaciones de la Policía Local y de la organización.</li>
-        <!-- Añade consejos específicos de la ciudad -->
       </ul>
-
-
-      <!-- ====================================================
-           SECCIÓN 10: VOCABULARIO COFRADE
-           Términos propios de esta Semana Santa.
-           Incluye los generales y añade los específicos de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
-
-        <!-- Términos comunes a todas las Semanas Santas -->
         <dt>Cofradía / Hermandad</dt>
         <dd>Asociación religiosa y cultural que organiza y sustenta una procesión. Cada una tiene sus imágenes, su historia y su barrio.</dd>
 
@@ -633,8 +916,6 @@
 
         <dt>Capataz</dt>
         <dd>Quien dirige a los portadores del paso, marcando el ritmo y las maniobras mediante la voz y el llamador.</dd>
-
-        <!-- Términos específicos de la ciudad: añade, elimina o adapta los siguientes -->
         <dt>Llamador</dt>
         <dd>Pieza metálica situada en la parte delantera del paso que el capataz golpea para avisar a los costaleros antes de una maniobra.</dd>
 
@@ -642,45 +923,24 @@
         <dd>Momento en que los costaleros elevan el paso del suelo para iniciar o reanudar la marcha.</dd>
 
       </dl>
-
-
-      <!-- ====================================================
-           SECCIÓN 11: GALERÍA
-           Mínimo 2 imágenes, máximo 6. Alt descriptivo en cada una.
-           Formatos recomendados: jpg/webp. Tamaño: 800-1200px de ancho.
-           ==================================================== -->
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
-        <img src="images/semana-santa-[ciudad]-1.jpg" alt="[Descripción visual detallada de la imagen 1]" />
-        <img src="images/semana-santa-[ciudad]-2.jpg" alt="[Descripción visual detallada de la imagen 2]" />
-        <img src="images/semana-santa-[ciudad]-3.jpg" alt="[Descripción visual detallada de la imagen 3]" />
-        <!-- Añade o elimina imágenes según disponibilidad -->
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-sevilla-1.jpg" alt="Paso de palio de la Virgen recorriendo la Carrera Oficial durante la Semana Santa de Sevilla" loading="lazy" />
+        <img src="images/semana-santa-sevilla-2.jpg" alt="Costaleros portando un paso de misterio por las calles del centro histórico de Sevilla" loading="lazy" />
+        <img src="images/semana-santa-sevilla-3.jpg" alt="Nazarenos con cirios encendidos durante la Madrugada de la Semana Santa de Sevilla" loading="lazy" />
       </div>
-
-
-      <!-- ====================================================
-           SECCIÓN 12: ENLACES ÚTILES
-           Solo fuentes oficiales verificadas. Incluye fecha de verificación.
-           ==================================================== -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://www.hermandades-de-sevilla.org/" target="_blank" rel="noopener">Consejo General de Hermandades y Cofradías de Sevilla</a></li>
         <li><a href="https://www.sevilla.org/" target="_blank" rel="noopener">Ayuntamiento de Sevilla</a></li>
         <li><a href="https://visitasevilla.es/puntos-de-informacion-turistica/" target="_blank" rel="noopener">Turismo de Sevilla</a></li>
-        <!-- Añade más si los hay: web de accesibilidad, app oficial, etc. -->
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-04-15</p>
-
-
-      <!-- ====================================================
-           SECCIÓN 13: PREGUNTAS FRECUENTES
-           Responde las 6 preguntas base. Añade las específicas de la ciudad.
-           ==================================================== -->
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo.</dd>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril.</dd>
 
         <dt>¿Necesito entrada para ver las procesiones?</dt>
         <dd>No para la mayor parte del recorrido. Las sillas y palcos de la Carrera Oficial son de pago, pero el resto de calles es de acceso libre, aunque con afluencia muy alta en algunos puntos.</dd>
@@ -696,12 +956,58 @@
 
         <dt>¿Puedo hacer fotografías durante las procesiones?</dt>
         <dd>Sí, siempre sin flash y sin invadir el recorrido del cortejo. Respeta los silencios durante las saetas y los momentos de oración.</dd>
-
-        <!-- Añade preguntas específicas de la ciudad -->
         <dt>¿Cuál es la diferencia entre la Semana Santa del sur y la del norte?</dt>
         <dd>En términos generales, en el sur —y especialmente en Andalucía— suele haber mayor presencia de música, procesiones muy desarrolladas en la calle y una participación popular muy visible. En muchas zonas del norte predomina un tono más sobrio y contenido. Ambas formas comparten raíz religiosa, pero han desarrollado estilos distintos.</dd>
 
       </dl>
+
+      <!-- ETIQUETAS VISIBLES -->
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Sevilla</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">8 días</a>
+        <a href="#" class="etiqueta">Pasos y tronos</a>
+        <a href="#" class="etiqueta">Saetas</a>
+        <a href="#" class="etiqueta">Costaleros</a>
+      </div>
+
+      <!-- FICHAS RELACIONADAS -->
+      <section class="fichas-relacionadas" aria-labelledby="rel-title">
+        <h2 id="rel-title">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-malaga.html" class="ficha-rel-card">
+            <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Málaga</span>
+              <span class="rel-frase">Tronos a hombros y la calle como único escenario.</span>
+              <span class="rel-meta">Málaga · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-granada.html" class="ficha-rel-card">
+            <img src="images/semana-santa-granada.jpg" alt="Semana Santa de Granada" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Granada</span>
+              <span class="rel-frase">La Alhambra como testigo de las procesiones.</span>
+              <span class="rel-meta">Granada · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">El silencio castellano frente al boato del sur.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
@@ -711,7 +1017,7 @@
   <!-- ============================================================ PIE DE PÁGINA -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
