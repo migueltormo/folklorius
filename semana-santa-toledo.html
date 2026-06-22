@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Semana Santa de Toledo 2027: Guía Completa, Cofradías y Procesiones</title>
-  <meta name="description" content="Guía completa de la Semana Santa de Toledo 2027 (19 al 28 de marzo). Las 20 cofradías, el Cristo de la Vega, el Capítulo del Redentor bajo los cobertizos y el canto de las monjas de clausura." />
+  <title>Semana Santa de Toledo 2026: Guía, Cobertizos y Cofradías</title>
+  <meta name="description" content="Semana Santa de Toledo 2026: 20 cofradías, el Cristo de la Vega y cobertizos medievales. Del 20 de marzo al 5 de abril. Guía completa con historia y consejos." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-toledo.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Toledo 2027 | El silencio bajo los cobertizos" />
-  <meta property="og:description" content="Guía inmersiva de la Semana Santa de Toledo. 20 cofradías, procesiones nocturnas por el laberinto medieval y el canto gregoriano de los conventos de clausura." />
+  <meta property="og:title" content="Semana Santa de Toledo 2026: Guía Completa" />
+  <meta property="og:description" content="20 cofradías, procesiones nocturnas y canto gregoriano de clausura en la ciudad Primada. Del 20 de marzo al 5 de abril de 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-toledo.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -22,36 +22,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+<style>
 
-  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
-  <style>
-
-    /* ── Cofradías: grid por día (modelo Salamanca) ──────────── */
+    /* ── Cofradías: grid por día con desplegables ──────────── */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--bg, #fafafa);
       border: 1px solid var(--border, #e8ddd4);
       border-radius: var(--radius, 10px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #b34700);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #5a5a5a);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e8ddd4);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -98,9 +112,141 @@
     }
     .cofradia-col ul li:hover .tooltip-texto { display: block; }
     .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
-
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 10px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2c2c2c);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e8ddd4);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px;
+      color: var(--text-muted, #5a5a5a);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e8ddd4);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2c2c2c);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2c2c2c);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #b34700);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
 
     /* ── Must-see cards ──────────────────────────────────────── */
@@ -223,7 +369,7 @@
     "organizer": {
       "@type": "Organization",
       "name": "Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo",
-      "url": "https://www.semanasantatToledo.es"
+      "url": "https://www.semanasantatoledo.es"
     },
     "image": ["https://folklorius.es/images/semana-santa-toledo.jpg"],
     "description": "Semana Santa declarada de Interés Turístico Internacional en 2014. Las procesiones discurren por el laberinto medieval de la ciudad Primada de España, con 20 cofradías, imaginería renacentista y barroca, canto gregoriano de conventos de clausura y el paso del Cristo Redentor bajo los cobertizos.",
@@ -237,9 +383,7 @@
   </script>
 </head>
 <body>
-
-  <!-- HEADER GLOBAL -->
-  <header class="site-header" role="banner">
+<header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
         <picture>
@@ -256,14 +400,10 @@
       </nav>
     </div>
   </header>
-
-  <!-- BREADCRUMB -->
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
     <a href="index.html">Inicio</a> › Semana Santa de Toledo
   </nav>
-
-  <!-- HERO IMAGEN -->
-  <div class="ficha-hero">
+<div class="ficha-hero">
     <img src="images/semana-santa-toledo.jpg" alt="Procesión nocturna cruzando uno de los cobertizos medievales de Toledo durante la Semana Santa, iluminada únicamente por la luz de los hachones" />
   </div>
 
@@ -278,9 +418,7 @@
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2014</span>
       </div>
-
-      <!-- AVISO DE SENSIBILIDAD -->
-      <div class="aviso-sensibilidad" role="note">
+<div class="aviso-sensibilidad" role="note">
         <strong>Antes de venir, ten en cuenta esto</strong>
         <ul>
           <li><strong>El terreno exige.</strong> El casco histórico de Toledo es un laberinto de adoquines irregulares y cuestas con fuertes desniveles. Calzado con amortiguación y agarre, sin discusión.</li>
@@ -288,9 +426,7 @@
           <li><strong>Frío de madrugada.</strong> La humedad del Tajo sube por las callejuelas y el termómetro cae bruscamente de noche. Lo que de día parece primavera, de madrugada es otra cosa. Ropa térmica, no abrigo de ciudad.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Huele a humedad secular, a incienso atrapado entre muros viejos y a cera derritiéndose sobre granito. La Semana Santa de Toledo no está pensada para las grandes avenidas. Es una fiesta de callejones, de dinteles bajos y de silencio tan denso que casi tiene peso.
       </p>
@@ -300,9 +436,7 @@
       <p>
         Lo que distingue a Toledo de cualquier otra ciudad es que aquí la arquitectura no es el fondo de la procesión: es la procesión misma. Los tejados se inclinan sobre los pasos, los faroles iluminan lo justo y las imágenes tienen que sortear arcos, dintedles y murallas como si el siglo XVI no hubiera terminado.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         Veinte cofradías, hermandades y Capítulos organizan una semana de procesiones de carácter austero y castellano. Las imágenes que salen a la calle llevan siglos guardadas en parroquias y conventos: tallas renacentistas y barrocas de un valor histórico que los museos envidiarían. En Toledo no existen los grandes tronos levantinos o andaluces. Aquí las imágenes se portan en andas sobrias, a hombros de hermanos de carga que calculan cada centímetro para no chocar con las fachadas.
       </p>
@@ -312,10 +446,8 @@
       <p>
         Si es tu primera vez, no intentes perseguir las procesiones por el laberinto. Los atajos están cortados y te perderás. Elige un punto estratégico — una puerta de muralla, un cobertizo — abrígate bien y espera. La procesión llega sola.
       </p>
-      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica cada año la Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo. Consúltalos antes de salir.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2026 los publica cada año la Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo. Consúltalos antes de salir.</p>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         El origen de esta Semana Santa está ligado a la historia de Toledo como sede Primada de España. Sus raíces son medievales: cofradías gremiales y nobiliarias fundadas tras la reconquista de Alfonso VI, con fines que iban más allá de lo religioso — dar sepultura a los desamparados, asistir a los condenados. Esa herencia caritativa explica la sobriedad que todavía define los desfiles.
       </p>
@@ -325,22 +457,18 @@
       <p>
         Hoy la celebración es el mayor orgullo cultural de la ciudad. Declarada de Interés Turístico Internacional en 2014, es también un museo vivo que saca a la calle piezas que el resto del año solo se ven tras rejas de parroquia. Y que invita a rastrear leyendas que escritores como Zorrilla inmortalizaron en la literatura.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Toledo en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor intensidad son la noche del <strong>Miércoles Santo (24 de marzo)</strong>, el <strong>Jueves Santo (25 de marzo)</strong> y la madrugada y tarde del <strong>Viernes Santo (26 de marzo)</strong>.
+        La Semana Santa de Toledo en 2026 va del <strong>viernes 20 de marzo</strong> (Viernes de Dolores) al <strong>domingo 5 de abril</strong> (Domingo de Resurrección). Los días de mayor intensidad son la noche del <strong>Miércoles Santo (1 de abril)</strong>, el <strong>Jueves Santo (2 de abril)</strong> y la madrugada y tarde del <strong>Viernes Santo (3 de abril)</strong>.
       </p>
       <p>
         Si llueve con intensidad, las procesiones se suspenden. El patrimonio escultórico de los siglos XVI y XVII no puede mojarse. En ese caso las cofradías abren sus templos para que se puedan ver los pasos montados en el interior. Sigue los canales oficiales de la Junta para información en tiempo real.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          <span class="dia-label">Viernes de Dolores · 20 de marzo</span>
           La <strong>Cofradía de Nuestra Señora de la Soledad</strong> abre la semana desde la Parroquia Mozárabe de las Santas Justa y Rufina. No llevan capirotes: los caballeros visten traje oscuro y corbata negra, las damas mantilla. Es el primer aviso de que Toledo funciona con sus propias reglas.
         </li>
 
@@ -350,17 +478,17 @@
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           <strong>La Borriquita</strong>. La Entrada Triunfal de Jesús en Jerusalén desde la Parroquia Mozárabe. Es la jornada más accesible para familias. Las túnicas blancas y verdes de los nazarenos son las más vistosas de la semana.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           La noche más toledana. El <strong>Capítulo de Caballeros Penitentes de Cristo Redentor</strong> sale desde el Monasterio de Santo Domingo el Real en absoluto silencio, sin capirote de cartón, con hábito blanco monacal y una cruz de madera. El Vía Crucis atraviesa los cobertizos del barrio conventual iluminado solo por un farol. No hay nada parecido en ninguna otra ciudad.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           La <strong>Cofradía de Nuestra Señora del Amparo</strong> sale desde la Puerta Llana de la Catedral Primada. Al anochecer, la ciudad alcanza su punto de mayor densidad de público. Es también la noche en que los conventos de clausura cantan a las procesiones desde dentro.
         </li>
 
@@ -375,53 +503,51 @@
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La <strong>Hermandad de Nuestra Señora de la Alegría y Jesús Resucitado</strong> cierra la semana desde la Parroquia de San Andrés. Las túnicas blancas con capa celeste son el contrapunto luminoso a los grises y granates de los días anteriores. El encuentro se celebra en el entorno de la Plaza de Zocodover.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Toledo está organizada por <strong>20 cofradías, hermandades y Capítulos</strong> integrados en la Junta. Pasa el cursor sobre cada nombre para ver su título oficial completo.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2026 se publican en el programa oficial de la Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo.</p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Viernes de Dolores</h3>
+        <details class="cofradia-col">
+          <summary>Viernes de Dolores</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Soledad</span>
               <span class="tooltip-texto">Cofradía de Nuestra Señora de la Soledad. Parroquia Mozárabe de las Santas Justa y Rufina. Hábito: caballeros con traje oscuro y corbata negra; damas con mantilla negra.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Sábado de Pasión</h3>
+        <details class="cofradia-col">
+          <summary>Sábado de Pasión</summary>
           <ul>
             <li>
               <span class="nombre-corto">Jesús Nazareno</span>
               <span class="tooltip-texto">Hermandad de la Esclavitud de Nuestro Padre Jesús Nazareno y su Santísima Madre de los Dolores. Iglesia de Santiago el Mayor. Túnica morada con cíngulo amarillo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Borriquita</span>
               <span class="tooltip-texto">Venerable, Real e Ilustre Hermandad de Nuestra Madre María Inmaculada en su Mayor Angustia y Piedad y Cristo Rey en su entrada triunfal en Jerusalén. Parroquia Mozárabe de las Santas Justa y Rufina. Túnica blanca con capa y fajín verde esperanza.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo Cautivo</span>
@@ -432,10 +558,10 @@
               <span class="tooltip-texto">Hermandad del Santísimo Cristo de la Esperanza. Iglesia Parroquial de San Andrés. Túnica de sarga verde con capuz, guantes y cordón blancos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Santa Caridad</span>
@@ -450,10 +576,10 @@
               <span class="tooltip-texto">Cofradía de Penitencia del Santísimo Cristo del Amor. Iglesia Conventual de Santa Isabel de los Reyes. Túnica y capuz rojo burdeos con cíngulo y guantes negros.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Humildad</span>
@@ -468,20 +594,20 @@
               <span class="tooltip-texto">Hermandad de Caballeros Penitentes de Cristo Despojado de sus Vestiduras. Ermita de Nuestra Señora de la Estrella / Colegio de los Infantes. Túnica y capuz granate ribeteados en negro.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Amparo</span>
               <span class="tooltip-texto">Cofradía de Nuestra Señora del Amparo. Puerta Llana de la Catedral Primada. Túnica azul oscura con capa, capuz y cíngulo blancos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo · Madrugada</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo · Madrugada</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo de la Vega</span>
@@ -492,10 +618,10 @@
               <span class="tooltip-texto">Cofradía Penitencial del Santísimo Cristo de la Buena Muerte. Monasterio de San Juan de los Reyes. Túnica y capuz negro riguroso con cruz blanca en el pecho. Sale en la madrugada del Viernes al Sábado Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo · Santo Entierro</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo · Santo Entierro</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Soledad</span>
@@ -530,31 +656,27 @@
               <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Expiración. Monasterio de Santo Domingo el Antiguo. Túnica blanca con capa y capuz negros.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Alegría</span>
               <span class="tooltip-texto">Hermandad de Nuestra Señora de la Alegría y Jesús Resucitado. Parroquia de San Andrés. El encuentro se celebra en el entorno de la Plaza de Zocodover. Túnica y capuz blancos con capa y cíngulo azul celeste.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <h3 style="color:#1d4ed8; margin-bottom:8px;">La ciudad como caja de resonancia</h3>
         <p>Toledo no es una ciudad de cornetas y bandas. Lo que define su sonido es el redoble de tambor destemplado marcando el paso a los hermanos de carga, y la polifonía vocal. La piedra hace el resto: el canto gregoriano rebota entre fachadas de una manera que ningún teatro podría reproducir.</p>
         <p>El momento más impactante no tiene imagen. Ocurre cuando una procesión se detiene frente a un convento de clausura y, desde el interior, las monjas —sin que nadie las vea— entonan un motete o el Miserere en latín a las imágenes. Sus voces suben sobre las cabezas de la multitud en medio del frío de la noche. Es el tipo de cosa que no se programa y no se puede fotografiar.</p>
         <p style="margin-bottom:0;">Para vivir la mejor acústica: sitúate frente al Monasterio de Santo Domingo el Real durante la procesión del Redentor del Miércoles Santo, o en los cobertizos de Santo Domingo o Santa Clara, donde el crujir de las andas y el arrastre de las cadenas se amplifican de una manera que no tiene comparación.</p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
@@ -598,9 +720,7 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Alojamiento.</strong> Reserva con más de cuatro meses de antelación. Si quieres vivir las madrugadas, alójate dentro del casco histórico. Los accesos desde fuera de noche, cuesta arriba y con frío, son otra historia.</li>
         <li><strong>Calzado.</strong> El adoquín irregular y las cuestas destrozan los pies en dos horas con cualquier zapato normal. Suela gruesa antideslizante, sin excepciones.</li>
@@ -611,9 +731,7 @@
         <li><strong>Gastronomía de Cuaresma.</strong> Potaje de garbanzos, bacalao rebozado y carcamusas en los mesones del casco. Y mazapán: en Toledo los hornos lo amasen todo el año, no solo en Navidad. Es un reconstituyente perfecto para las madrugadas largas.</li>
         <li><strong>Cuántos días.</strong> Mínimo tres completos, del Jueves Santo al Sábado Santo. Con menos tiempo te quedas sin las procesiones de clausura y sin el Santo Entierro.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Capítulo</dt>
@@ -635,31 +753,25 @@
         <dd>El cofrade que acompaña al paso en fila, con túnica larga y rostro oculto por capuz o capirote en señal de penitencia anónima. En algunas cofradías toledanas, como la Santa Caridad, no llevan capuz cónico — cada una tiene sus propias reglas.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA (oculta hasta tener imágenes) -->
-      <h2 class="section-title">Galería</h2>
+<h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/toledo/redentor-cobertizos.jpg" alt="Procesión del Cristo Redentor atravesando uno de los cobertizos medievales de Toledo en la noche del Miércoles Santo" />
         <img src="images/toledo/cristo-vega-catedral.jpg" alt="Salida del Cristo de la Vega por la Puerta del Perdón de la Catedral Primada de Toledo en la madrugada del Viernes Santo" />
         <img src="images/toledo/santo-entierro-toledo.jpg" alt="Procesión del Santo Entierro por las calles empedradas del casco histórico de Toledo al atardecer del Viernes Santo" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
-        <li><a href="https://www.semanasantatToledo.es" target="_blank" rel="noopener">Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo — Web oficial</a></li>
+        <li><a href="https://www.semanasantatoledo.es" target="_blank" rel="noopener">Junta de Cofradías, Hermandades y Capítulos de Semana Santa de Toledo — Web oficial</a></li>
         <li><a href="https://turismo.toledo.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Toledo</a></li>
         <li><a href="https://turismo.castillalamancha.es" target="_blank" rel="noopener">Turismo Castilla-La Mancha</a></li>
         <li><a href="https://www.archidiocesisdetoledo.es" target="_blank" rel="noopener">Archidiócesis de Toledo</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="fuente">Última verificación de enlaces: 2026-06-22</p>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Semana Santa de Toledo en 2027?</dt>
-        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor intensidad son la noche del Miércoles Santo (24 de marzo), el Jueves Santo (25 de marzo) y la madrugada y tarde del Viernes Santo (26 de marzo).</dd>
+        <dt>¿Cuándo se celebra la Semana Santa de Toledo en 2026?</dt>
+        <dd>Del viernes 20 de marzo (Viernes de Dolores) al domingo 5 de abril (Domingo de Resurrección). Los días de mayor intensidad son la noche del Miércoles Santo (1 de abril), el Jueves Santo (2 de abril) y la madrugada y tarde del Viernes Santo (3 de abril).</dd>
 
         <dt>¿Qué es un Capítulo en la Semana Santa de Toledo?</dt>
         <dd>Una agrupación penitencial que conserva reglas estrictas, túnicas de reminiscencia monacal o militar y un marcado carácter de silencio. El más conocido es el Capítulo de Caballeros Penitentes de Cristo Redentor, que no usa capirote de cartón y desfila con hábito blanco monacal.</dd>
@@ -680,6 +792,53 @@
         <dd>Es una talla románica del siglo XII conservada en la Basílica extramuros que lleva su nombre. Protagoniza la leyenda «A buen juez, mejor testigo» que José Zorrilla inmortalizó en verso. Sale en procesión desde la Catedral Primada en la madrugada del Viernes Santo y es, para muchos toledanos, la imagen central de toda la semana.</dd>
 
       </dl>
+
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Castilla-La Mancha</a>
+        <a href="#" class="etiqueta">Toledo</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Cobertizos</a>
+        <a href="#" class="etiqueta">Cristo de la Vega</a>
+        <a href="#" class="etiqueta">Capítulos</a>
+        <a href="#" class="etiqueta">Clausura</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-toledo">
+        <h2 id="rel-title-toledo">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-cuenca.html" class="ficha-rel-card">
+            <img src="images/semana-santa-cuenca.jpg" alt="Semana Santa de Cuenca" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cuenca</span>
+              <span class="rel-frase">Las Turbas al alba y el Miserere entre las hoces.</span>
+              <span class="rel-meta">Cuenca · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">La Semana Santa más austera y silenciosa de Castilla.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-valladolid.html" class="ficha-rel-card">
+            <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Valladolid</span>
+              <span class="rel-frase">Imaginería de Gregorio Fernández y tradición castellana.</span>
+              <span class="rel-meta">Valladolid · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
