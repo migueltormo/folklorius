@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Semana Santa de Cáceres 2027: Guía Completa, Cofradías y Procesiones</title>
-  <meta name="description" content="Guía completa de la Semana Santa de Cáceres 2027 (20 al 28 de marzo). 17 cofradías, el Cristo Negro a medianoche, la Pasión Viviente y procesiones por la Ciudad Monumental Patrimonio de la Humanidad." />
+  <title>Semana Santa de Cáceres 2026: Cristo Negro y Ciudad Monumental</title>
+  <meta name="description" content="Semana Santa de Cáceres 2026: 17 cofradías, el Cristo Negro a medianoche y procesiones por la Ciudad Monumental. Del 21 de marzo al 5 de abril. Guía completa." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-caceres.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Cáceres 2027 | Piedra, silencio y cera en la penumbra" />
-  <meta property="og:description" content="Cáceres en Semana Santa: 17 cofradías con siglos de historia, el Cristo Negro a medianoche, la Pasión Viviente y procesiones por la Ciudad Monumental Patrimonio de la Humanidad." />
+  <meta property="og:title" content="Semana Santa de Cáceres 2026: Guía Completa" />
+  <meta property="og:description" content="17 cofradías, el Cristo Negro a medianoche y la Ciudad Monumental Patrimonio de la Humanidad. Del 21 de marzo al 5 de abril de 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-caceres.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -25,29 +25,45 @@
   <style>
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #666);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -96,7 +112,7 @@
     .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
 
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
 
     .must-see-grid {
@@ -206,6 +222,105 @@
       background: rgba(0,0,0,0.025);
     }
     .tabla-fundacion tr:last-child td { border-bottom: none; }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover,
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .ficha-rel-card .rel-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
+    .ficha-rel-card .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text, #2a2218); }
+    .ficha-rel-card .rel-frase { font-size: 0.82rem; color: var(--text-muted, #666); font-style: italic; }
+    .ficha-rel-card .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
   </style>
 
   <script type="application/ld+json">
@@ -290,6 +405,15 @@
         <span class="badge badge-oficial">Ciudad Monumental Patrimonio de la Humanidad</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 21 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cáceres · Extremadura</span>
+          <span>⏱️ 16 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -298,28 +422,22 @@
           <li><strong>Pavimento de piedra.</strong> Calzado firme y cómodo. El suelo del casco histórico puede ser resbaladizo tras horas de seguimiento procesional, especialmente de noche.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         En Cáceres la Semana Santa se adentra en la noche como una respiración antigua. Las campanas se quedan pronto en la memoria y lo que resta es el roce de las túnicas, el tambor contenido, la cera encendida frente a los sillares oscuros y esa luz temblorosa que agranda aún más los arcos, las torres y las cuestas de la Ciudad Monumental.
       </p>
       <p>
-        Huele a incienso y a humedad de piedra vieja. Se siente el fresco de marzo sobre la piel y el peso de cada cortejo avanzando por uno de los escenarios urbanos más singulares de la Semana Santa española. Aquí el decorado no es fondo: es parte del rito.
+        Huele a incienso y a humedad de muro viejo. Se siente el fresco de marzo sobre la piel y el peso de cada cortejo avanzando por uno de los escenarios urbanos más singulares de la Semana Santa española. Aquí el decorado no es fondo: es parte del rito.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        La Semana Santa de Cáceres es una celebración penitencial organizada por la Unión de Cofradías Penitenciales y marcada de forma determinante por su marco urbano. La Ciudad Monumental — Patrimonio de la Humanidad — no es solo el recorrido: es la razón por la que cada procesión suena, se siente y se recuerda de una manera que no ocurre en ninguna otra ciudad.
+        La Semana Santa de Cáceres es una celebración penitencial organizada por la Unión de Cofradías Penitenciales y marcada de forma determinante por su marco urbano. La Ciudad Monumental — Patrimonio de la Humanidad — da sentido a cada procesión: el sonido, la sensación y la memoria de lo que aquí ocurre no se reproducen en ninguna otra ciudad.
       </p>
       <p>
         A lo largo de la semana, diecisiete cofradías recorren plazas amuralladas, adarves, calles medievales y templos con siglos de historia a sus espaldas. El valor de Cáceres está en esa relación íntima entre hermandad, imagen, calle y patrimonio monumental — una combinación que convierte cada esquina en escena y cada piedra en testigo.
       </p>
-      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Unión de Cofradías Penitenciales de Cáceres en su web oficial. Consúltalos antes de salir.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2026 los publica la Unión de Cofradías Penitenciales de Cáceres en su web oficial. Consúltalos antes de salir.</p>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         Las raíces de la Semana Santa cacereña son medievales en el sentido más literal. La <strong>Cofradía del Nazareno fue fundada en 1464</strong>, la <strong>Cofradía de la Soledad en 1470</strong> y la <strong>Cofradía del Cristo Negro en 1490</strong>. Estamos hablando de hermandades con más de cinco siglos de historia continua, anteriores a la colonización de América.
       </p>
@@ -329,130 +447,124 @@
       <p>
         La Semana Santa de Cáceres fue declarada Fiesta de Interés Turístico Internacional, un reconocimiento que se suma al de la Ciudad Monumental como Patrimonio de la Humanidad desde 1986.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Cáceres en 2027 va del <strong>sábado 20 de marzo</strong> (Sábado de Pasión) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor densidad procesional son el <strong>Jueves Santo, 25 de marzo</strong>, y el <strong>Viernes Santo, 26 de marzo</strong>. El <strong>Martes Santo, 23 de marzo</strong>, destaca por la procesión del Cristo Negro a medianoche.
+        La Semana Santa de Cáceres en 2026 va del <strong>sábado 21 de marzo</strong> (Sábado de Pasión) al <strong>domingo 5 de abril</strong> (Domingo de Resurrección). Los días de mayor densidad procesional son el <strong>Jueves Santo, 2 de abril</strong>, y el <strong>Viernes Santo, 3 de abril</strong>. El <strong>Martes Santo, 31 de marzo</strong>, destaca por la procesión del Cristo Negro a medianoche.
       </p>
       <p>
         Si llueve, el protocolo de suspensión o modificación lo decide la Unión de Cofradías. Sigue el visor oficial de procesiones para avisos en tiempo real.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
-          El <strong>Vía Crucis del Humilladero</strong> sale a las 22:00 h desde el Templo del Buen Pastor. Es el primer movimiento de la semana, nocturno desde el principio. La ciudad entra en clima de Semana Santa con la piedra y la oscuridad como únicos elementos.
+          <span class="dia-label">Sábado de Pasión · 21 de marzo</span>
+          El <strong>Vía Crucis del Humilladero</strong> sale entrada la noche desde el Templo del Buen Pastor. Es el primer movimiento de la semana, nocturno desde el principio. La ciudad entra en clima de Semana Santa con la piedra y la oscuridad como únicos elementos.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
-          La <strong>Procesión de la Burrina</strong> sale a las 12:00 h desde la Iglesia de San Juan. Es el inicio más luminoso de la semana, el único momento donde el mediodía y las palmas rompen el tono nocturno que domina el resto de los días.
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
+          La <strong>Procesión de la Burrina</strong> sale a mediodía desde la Iglesia de San Juan. Es el inicio más luminoso de la semana, el único momento donde el mediodía y las palmas rompen el tono nocturno que domina el resto de los días.
         </li>
 
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
-          Dos procesiones en la tarde-noche: la <strong>Procesión de la Salud</strong> sale a las 20:00 h desde la Iglesia de Santo Domingo, y la <strong>Procesión de las Batallas</strong> a las 20:50 h desde la Concatedral de Santa María. La Concatedral, en el corazón de la Ciudad Monumental, convierte la salida de las Batallas en una de las estampas más buscadas por los fotógrafos.
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
+          Dos procesiones en la tarde-noche: la <strong>Procesión de la Salud</strong> sale por la tarde desde la Iglesia de Santo Domingo, y la <strong>Procesión de las Batallas</strong> al caer la tarde desde la Concatedral de Santa María. La Concatedral, en el corazón de la Ciudad Monumental, convierte la salida de las Batallas en una de las estampas más buscadas por los fotógrafos.
         </li>
 
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
-          La tarde arranca con la <strong>Procesión de Jesús Despojado</strong> a las 20:00 h desde la Parroquia de Fátima. Pero el momento cumbre llega a medianoche: a las <strong>24:00 h</strong>, el <strong>Cristo Negro</strong> — talla de 1490 — sale desde la Concatedral de Santa María y recorre el casco histórico en un silencio que los cacereños consideran el más sobrecogededor de toda la semana.
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
+          La tarde arranca con la <strong>Procesión de Jesús Despojado</strong> por la tarde desde la Parroquia de Fátima. Pero el momento cumbre llega a medianoche: a medianoche, el <strong>Cristo Negro</strong> — talla de 1490 — sale desde la Concatedral de Santa María y recorre el casco histórico en un silencio que los cacereños consideran el más sobrecogededor de toda la semana.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           Sale la <strong>Procesión del Perdón</strong> de la Cofradía del Nazareno — la más antigua de Cáceres, fundada en 1464 — y la <strong>Procesión del Amparo</strong>.
           <br><br>
           <span class="nota-grid">⚠️ Horarios exactos del Miércoles Santo: consulta el programa oficial de la Unión de Cofradías antes de salir.</span>
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
-          La jornada más densa de la semana, con cuatro procesiones: la <strong>Procesión de la Sagrada Cena</strong> a las 11:00 h desde la Iglesia de Santiago, la <strong>Procesión del Amor</strong> a las 19:30 h desde la Capilla del Colegio San José, la <strong>Procesión de la Vera Cruz</strong> a las 20:00 h desde la Iglesia de San Mateo — una de las cofradías históricas, fundada en 1521 — y la <strong>Procesión del Humilladero</strong> a las 22:00 h desde el Templo del Espíritu Santo.
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
+          La jornada más densa de la semana, con cuatro procesiones: la <strong>Procesión de la Sagrada Cena</strong> a media mañana desde la Iglesia de Santiago, la <strong>Procesión del Amor</strong> por la tarde desde la Capilla del Colegio San José, la <strong>Procesión de la Vera Cruz</strong> por la tarde desde la Iglesia de San Mateo — una de las cofradías históricas, fundada en 1521 — y la <strong>Procesión del Humilladero</strong> entrada la noche desde el Templo del Espíritu Santo.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
-          La madrugada abre con la <strong>Procesión de Jesús Condenado</strong> a las 00:30 h desde el Palacio Episcopal. Le siguen durante el día la <strong>Procesión de la Madrugada</strong> de los Estudiantes y la <strong>Procesión de la Expiración</strong>. Por la tarde, a las 20:00 h, el <strong>Santo Entierro</strong> sale desde la Ermita de la Soledad con el Cristo Yacente del siglo XVI y la Virgen de la Soledad del siglo XVI — dos de las piezas más antiguas y veneradas de la Semana Santa cacereña.
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
+          La madrugada abre con la <strong>Procesión de Jesús Condenado</strong> pasada la medianoche desde el Palacio Episcopal. Le siguen durante el día la <strong>Procesión de la Madrugada</strong> de los Estudiantes y la <strong>Procesión de la Expiración</strong>. Por la tarde, por la tarde, el <strong>Santo Entierro</strong> sale desde la Ermita de la Soledad con el Cristo Yacente del siglo XVI y la Virgen de la Soledad del siglo XVI — dos de las piezas más antiguas y veneradas de la Semana Santa cacereña.
           <br><br>
-          <span class="nota-grid">⚠️ Los templos de salida de la Procesión de la Madrugada y la Expiración deben confirmarse en el programa oficial de 2027.</span>
+          <span class="nota-grid">⚠️ Los templos de salida de la Procesión de la Madrugada y la Expiración deben confirmarse en el programa oficial de cada edición.</span>
         </li>
 
         <li>
-          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          <span class="dia-label">Sábado Santo · 4 de abril</span>
           Jornada de espera y recogimiento entre el luto del Viernes y la alegría que llega. No hay procesión pública documentada. El silencio se traslada al interior de los templos.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La <strong>Procesión de la Victoria</strong> cierra la semana desde la Ermita de la Soledad. Después de días de oscuridad, piedra y silencio, la ciudad cambia el registro y la Pascua entra de lleno en la calle.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Cáceres está organizada por <strong>17 cofradías</strong> integradas en la Unión de Cofradías Penitenciales. Pasa el cursor sobre cada nombre para ver su año de fundación y datos adicionales.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial y el visor de procesiones de la Unión de Cofradías Penitenciales de Cáceres.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2026 se publican en el programa oficial y el visor de procesiones de la Unión de Cofradías Penitenciales de Cáceres.</p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Sábado de Pasión</h3>
+        <details class="cofradia-col">
+          <summary>Sábado de Pasión</summary>
           <ul>
             <li>
               <span class="nombre-corto">Humilladero</span>
-              <span class="tooltip-texto">Cofradía del Humilladero (1493). Una de las cinco cofradías históricas de Cáceres. Organiza el Vía Crucis de apertura a las 22:00 h desde el Templo del Buen Pastor.</span>
+              <span class="tooltip-texto">Cofradía del Humilladero (1493). Una de las cinco cofradías históricas de Cáceres. Organiza el Vía Crucis de apertura entrada la noche desde el Templo del Buen Pastor.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Ramos</span>
-              <span class="tooltip-texto">Cofradía de los Ramos (1946). Organiza la Procesión de la Burrina a las 12:00 h desde la Iglesia de San Juan.</span>
+              <span class="tooltip-texto">Cofradía de los Ramos (1946). Organiza la Procesión de la Burrina a mediodía desde la Iglesia de San Juan.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Salud</span>
-              <span class="tooltip-texto">Cofradía de la Salud (2006). Sale a las 20:00 h desde la Iglesia de Santo Domingo.</span>
+              <span class="tooltip-texto">Cofradía de la Salud (2006). Sale por la tarde desde la Iglesia de Santo Domingo.</span>
             </li>
             <li>
               <span class="nombre-corto">Batallas</span>
-              <span class="tooltip-texto">Cofradía de las Batallas (1951). Sale a las 20:50 h desde la Concatedral de Santa María, en el corazón de la Ciudad Monumental.</span>
+              <span class="tooltip-texto">Cofradía de las Batallas (1951). Sale al caer la tarde desde la Concatedral de Santa María, en el corazón de la Ciudad Monumental.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Despojado</span>
-              <span class="tooltip-texto">Cofradía de Jesús Despojado (2018). La cofradía más reciente de Cáceres. Sale a las 20:00 h desde la Parroquia de Fátima.</span>
+              <span class="tooltip-texto">Cofradía de Jesús Despojado (2018). La cofradía más reciente de Cáceres. Sale por la tarde desde la Parroquia de Fátima.</span>
             </li>
             <li>
               <span class="nombre-corto">Cristo Negro</span>
-              <span class="tooltip-texto">Cofradía del Cristo Negro (1490). La tercera cofradía más antigua de Cáceres. Sale a las 24:00 h desde la Concatedral de Santa María. Su procesión de medianoche es considerada el momento más sobrecogedor de la semana.</span>
+              <span class="tooltip-texto">Cofradía del Cristo Negro (1490). La tercera cofradía más antigua de Cáceres. Sale a medianoche desde la Concatedral de Santa María. Su procesión de medianoche es considerada el momento más sobrecogedor de la semana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Nazareno</span>
@@ -463,36 +575,36 @@
               <span class="tooltip-texto">Cofradía del Amparo (1989). Organiza la Procesión del Amparo del Miércoles Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Sagrada Cena</span>
-              <span class="tooltip-texto">Cofradía de la Sagrada Cena (1996). Sale a las 11:00 h desde la Iglesia de Santiago.</span>
+              <span class="tooltip-texto">Cofradía de la Sagrada Cena (1996). Sale a media mañana desde la Iglesia de Santiago.</span>
             </li>
             <li>
               <span class="nombre-corto">Amor</span>
-              <span class="tooltip-texto">Cofradía del Amor (1989). Sale a las 19:30 h desde la Capilla del Colegio San José.</span>
+              <span class="tooltip-texto">Cofradía del Amor (1989). Sale por la tarde desde la Capilla del Colegio San José.</span>
             </li>
             <li>
               <span class="nombre-corto">Vera Cruz</span>
-              <span class="tooltip-texto">Cofradía de la Vera Cruz (1521). Una de las cofradías históricas de Cáceres, con cinco siglos de historia. Sale a las 20:00 h desde la Iglesia de San Mateo.</span>
+              <span class="tooltip-texto">Cofradía de la Vera Cruz (1521). Una de las cofradías históricas de Cáceres, con cinco siglos de historia. Sale por la tarde desde la Iglesia de San Mateo.</span>
             </li>
             <li>
               <span class="nombre-corto">Humilladero</span>
-              <span class="tooltip-texto">Cofradía del Humilladero (1493). Sale también el Jueves Santo a las 22:00 h desde el Templo del Espíritu Santo.</span>
+              <span class="tooltip-texto">Cofradía del Humilladero (1493). Sale también el Jueves Santo entrada la noche desde el Templo del Espíritu Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Condenado</span>
-              <span class="tooltip-texto">Cofradía de Jesús Condenado (2011). Sale a las 00:30 h desde el Palacio Episcopal. Abre la madrugada del Viernes Santo.</span>
+              <span class="tooltip-texto">Cofradía de Jesús Condenado (2011). Sale pasada la medianoche desde el Palacio Episcopal. Abre la madrugada del Viernes Santo.</span>
             </li>
             <li>
               <span class="nombre-corto">Estudiantes</span>
@@ -504,20 +616,20 @@
             </li>
             <li>
               <span class="nombre-corto">Soledad</span>
-              <span class="tooltip-texto">Cofradía de la Soledad (1470). Una de las cofradías más antiguas de Cáceres. Organiza el Santo Entierro a las 20:00 h desde la Ermita de la Soledad, con el Cristo Yacente y la Virgen de la Soledad, ambos del siglo XVI.</span>
+              <span class="tooltip-texto">Cofradía de la Soledad (1470). Una de las cofradías más antiguas de Cáceres. Organiza el Santo Entierro por la tarde desde la Ermita de la Soledad, con el Cristo Yacente y la Virgen de la Soledad, ambos del siglo XVI.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">Victoria</span>
               <span class="tooltip-texto">Cofradía de la Victoria (2009). Organiza la Procesión de la Victoria que cierra la Semana Santa desde la Ermita de la Soledad.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
 
@@ -551,9 +663,7 @@
         </table>
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantadecaceres.es/" target="_blank" rel="noopener">Unión de Cofradías Penitenciales de Cáceres</a> — última verificación: 2026</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           La acústica de la Semana Santa de Cáceres es un fenómeno en sí mismo. La piedra medieval no solo envuelve las procesiones: las amplifica, las devuelve, las transforma. Un tambor en una calle estrecha del casco histórico suena diferente a cualquier otro tambor en cualquier otra ciudad.
@@ -562,17 +672,15 @@
           Lo que impresiona no es una gran masa sonora sino el eco corto del tambor, la voz de una orden, el golpe seco de las andas al corregir el paso en un giro imposible y el rumor apagado de una multitud que sabe guardar distancia. Entre sonido y sonido, el silencio se vuelve casi físico.
         </p>
         <p>
-          <strong>Busca un paso por arco, una subida o una calle estrecha del recinto monumental.</strong> Ahí el sonido no acompaña: transforma. La Ciudad Monumental funciona como caja de resonancia emocional que ningún espacio moderno puede replicar.
+          <strong>Busca un paso por arco, una subida o una calle estrecha del recinto monumental.</strong> Ahí el sonido no acompaña: transforma. La Ciudad Monumental actúa de caja de resonancia emocional que ningún espacio moderno puede replicar.
         </p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
           <h3>El Cristo Negro a medianoche</h3>
-          <span class="tag">Martes Santo · 24:00 h · Concatedral de Santa María</span>
+          <span class="tag">Martes Santo ·  · Concatedral de Santa María</span>
           <p>A medianoche del Martes Santo, la Cofradía del Cristo Negro — fundada en 1490 — saca su talla por las calles del casco histórico en un silencio que los cacereños consideran el más sobrecogedor de toda la semana. La piedra medieval, la oscuridad y esa hora imposible crean una atmósfera que no se olvida.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -592,7 +700,7 @@
 
         <div class="must-see-card">
           <h3>El Santo Entierro del Viernes Santo</h3>
-          <span class="tag">Viernes Santo · 20:00 h · Ermita de la Soledad</span>
+          <span class="tag">Viernes Santo ·  · Ermita de la Soledad</span>
           <p>La Cofradía de la Soledad — fundada en 1470 — organiza el Santo Entierro con el Cristo Yacente y la Virgen de la Soledad, ambos del siglo XVI. Más de cinco siglos de historia desfilan por la Ciudad Monumental en la procesión más solemne de la semana.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -602,7 +710,7 @@
 
         <div class="must-see-card">
           <h3>La Vera Cruz desde San Mateo</h3>
-          <span class="tag">Jueves Santo · 20:00 h · Iglesia de San Mateo</span>
+          <span class="tag">Jueves Santo · Noche · Iglesia de San Mateo</span>
           <p>La Cofradía de la Vera Cruz — fundada en 1521 — sale desde la Iglesia de San Mateo, en el punto más alto de la Ciudad Monumental. El descenso de la procesión por las cuestas del casco histórico, con la vista de las torres medievales al fondo, es una de las imágenes más características de la Semana Santa de Cáceres.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -611,9 +719,7 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Llega con tiempo.</strong> Los mejores puntos de observación en el casco histórico se ocupan pronto en los días centrales. Para el Cristo Negro del Martes Santo a medianoche, llega con al menos una hora de antelación.</li>
         <li><strong>Prioriza zonas, no procesiones.</strong> En lugar de intentar seguir cada procesión de principio a fin, elige uno o dos puntos fijos por jornada — un arco, una plaza, una cuesta — y deja que la procesión venga a ti. Así verás más y mejor.</li>
@@ -623,9 +729,7 @@
         <li><strong>De día también merece.</strong> Aprovecha para visitar los templos y espacios patrimoniales asociados a las cofradías fuera de los horarios procesionales. La Concatedral de Santa María, San Mateo y la Ermita de la Soledad tienen una dimensión diferente cuando no hay multitudes.</li>
         <li><strong>Accesibilidad.</strong> El casco histórico presenta pavimento irregular, cuestas y estrechamientos. Para personas con movilidad reducida, la Plaza Mayor y las avenidas del ensanche son los puntos más accesibles para seguir las procesiones.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Ciudad Monumental</dt>
@@ -635,26 +739,22 @@
         <dd>Denominación que agrupa a las cinco cofradías fundadas antes del siglo XVI: Nazareno (1464), Soledad (1470), Cristo Negro (1490), Humilladero (1493) y Vera Cruz (1521). Son el núcleo original de la Semana Santa cacereña y las que dan continuidad histórica al conjunto.</dd>
 
         <dt>Vía Crucis</dt>
-        <dd>Recorrido devocional que medita las catorce estaciones de la Pasión. En Cáceres el Vía Crucis del Humilladero abre la Semana Santa el Sábado de Pasión a las 22:00 h, marcando desde el primer momento el tono nocturno y penitencial de la celebración.</dd>
+        <dd>Recorrido devocional que medita las catorce estaciones de la Pasión. En Cáceres el Vía Crucis del Humilladero abre la Semana Santa el Sábado de Pasión entrada la noche, marcando desde el primer momento el tono nocturno y penitencial de la celebración.</dd>
 
         <dt>Recogida</dt>
         <dd>Momento en que la procesión regresa a su templo o sede de salida. En las calles estrechas de la Ciudad Monumental, la recogida de un paso — especialmente si implica un giro complicado — es uno de los momentos más técnicamente exigentes y visualmente potentes de la semana.</dd>
 
         <dt>Silencio cacereño</dt>
-        <dd>Expresión que resume el tipo de atmósfera procesional propio de Cáceres: la contención del público, el eco de la piedra medieval y la noche como marco. No es un silencio impuesto sino uno que surge naturalmente de la escala y la antigüedad del escenario.</dd>
+        <dd>Expresión que resume el tipo de atmósfera procesional propio de Cáceres: la contención del público, el eco de los muros medievales y la noche como marco. No es un silencio impuesto sino uno que surge naturalmente de la escala y la antigüedad del escenario.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
+<h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/semana-santa-caceres-1.jpg" alt="Procesión nocturna del Cristo Negro a medianoche por las calles medievales de la Ciudad Monumental de Cáceres" />
         <img src="images/semana-santa-caceres-2.jpg" alt="Santo Entierro del Viernes Santo saliendo desde la Ermita de la Soledad en Cáceres" />
         <img src="images/semana-santa-caceres-3.jpg" alt="Procesión de la Vera Cruz descendiendo desde la Iglesia de San Mateo por las cuestas de la Ciudad Monumental de Cáceres" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantadecaceres.es/" target="_blank" rel="noopener">Unión de Cofradías Penitenciales de Cáceres — Web oficial</a></li>
         <li><a href="https://semanasantadecaceres.es/cofradias" target="_blank" rel="noopener">Cofradías de la Semana Santa de Cáceres</a></li>
@@ -662,13 +762,11 @@
         <li><a href="https://www.turismoextremadura.com" target="_blank" rel="noopener">Turismo de Extremadura</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Semana Santa de Cáceres en 2027?</dt>
-        <dd>Del sábado 20 de marzo (Sábado de Pasión) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor densidad procesional son el Jueves Santo (25) y el Viernes Santo (26 de marzo). El Cristo Negro del Martes Santo a medianoche es el momento más esperado por los cacereños.</dd>
+        <dt>¿Cuándo se celebra la Semana Santa de Cáceres en 2026?</dt>
+        <dd>Del sábado 21 de marzo (Sábado de Pasión) al domingo 5 de abril (Domingo de Resurrección). Los días de mayor densidad procesional son el Jueves Santo (2 de abril) y el Viernes Santo (3 de abril). El Cristo Negro del Martes Santo 31 de marzo a medianoche es el momento más esperado por los cacereños.</dd>
 
         <dt>¿Tiene reconocimiento oficial?</dt>
         <dd>Sí. La Semana Santa de Cáceres está declarada Fiesta de Interés Turístico Internacional. Además, se celebra en la Ciudad Monumental de Cáceres, Patrimonio de la Humanidad por la UNESCO desde 1986.</dd>
@@ -689,6 +787,53 @@
         <dd>Una representación teatral de la Pasión de Cristo que tiene lugar el jueves anterior al Domingo de Ramos en los espacios más emblemáticos de la Ciudad Monumental: Plaza Mayor, Plaza de Santa María, Palacio de los Golfines de Abajo, Plaza de San Mateo y el Adarve de la Estrella. Incluye los juicios del Sanedrín, de Herodes y de Pilato, el Vía Crucis y la Crucifixión.</dd>
 
       </dl>
+
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Extremadura</a>
+        <a href="#" class="etiqueta">Cáceres</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Ciudad Monumental UNESCO</a>
+        <a href="#" class="etiqueta">Cristo Negro</a>
+        <a href="#" class="etiqueta">17 cofradías</a>
+        <a href="#" class="etiqueta">Pasión Viviente</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-caceres">
+        <h2 id="rel-title-caceres">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-merida.html" class="ficha-rel-card">
+            <img src="images/semana-santa-merida.jpg" alt="Semana Santa de Mérida" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Mérida</span>
+              <span class="rel-frase">Procesiones entre el teatro romano y el anfiteatro.</span>
+              <span class="rel-meta">Mérida · Extremadura</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-toledo.html" class="ficha-rel-card">
+            <img src="images/semana-santa-toledo.jpg" alt="Semana Santa de Toledo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Toledo</span>
+              <span class="rel-frase">Procesiones bajo los cobertizos medievales de la ciudad imperial.</span>
+              <span class="rel-meta">Toledo · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">Capas pardas, Miserere y el silencio junto al Duero.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
