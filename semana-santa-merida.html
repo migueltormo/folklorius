@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Semana Santa de Mérida 2027: Guía Completa, Cofradías y Vía Crucis en el Anfiteatro</title>
-  <meta name="description" content="Guía completa de la Semana Santa de Mérida 2027. El Vía Crucis en el Anfiteatro Romano, los pasos bajo el Arco de Trajano, 9 cofradías y procesiones entre ruinas imperiales. Fiesta de Interés Turístico Internacional." />
+  <title>Semana Santa de Mérida 2026: Anfiteatro Romano y Cofradías</title>
+  <meta name="description" content="Semana Santa de Mérida 2026: Vía Crucis en el Anfiteatro Romano, pasos bajo el Arco de Trajano y 9 cofradías. Del 20 de marzo al 5 de abril." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-merida.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Mérida 2027 | La Pasión de Cristo sobre la piedra de Roma" />
+  <meta property="og:title" content="Semana Santa de Mérida 2026: Guía Completa" />
   <meta property="og:description" content="Mérida en Semana Santa: el Vía Crucis en el Anfiteatro Romano, los pasos bajo el Arco de Trajano y procesiones entre el Templo de Diana y la Alcazaba. Único en el mundo." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-merida.jpg" />
   <meta property="og:type" content="article" />
@@ -25,29 +25,45 @@
   <style>
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #666);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -96,7 +112,7 @@
     .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
 
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
 
     .must-see-grid {
@@ -203,6 +219,105 @@
       line-height: 1.6;
     }
     .aviso-anfiteatro strong { color: #f5c842; }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover,
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .ficha-rel-card .rel-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
+    .ficha-rel-card .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text, #2a2218); }
+    .ficha-rel-card .rel-frase { font-size: 0.82rem; color: var(--text-muted, #666); font-style: italic; }
+    .ficha-rel-card .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
   </style>
 
   <script type="application/ld+json">
@@ -287,31 +402,36 @@
         <span class="badge badge-oficial">Patrimonio de la Humanidad UNESCO</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Mérida · Extremadura</span>
+          <span>⏱️ 17 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
           <li><strong>Respeta el patrimonio arqueológico.</strong> No uses los sillares del Templo de Diana, el Arco de Trajano ni la Alcazaba como gradas o apoyos. Son monumentos protegidos y el paso de los cortejos exige distancia y respeto.</li>
-          <li><strong>Aforo limitado en el Anfiteatro.</strong> El Vía Crucis del Anfiteatro Romano tiene aforo restringido por tratarse de un recinto arqueológico. Sigue las instrucciones de la Junta de Cofradías para el acceso a las gradas en 2027.</li>
+          <li><strong>Aforo limitado en el Anfiteatro.</strong> El Vía Crucis del Anfiteatro Romano tiene aforo restringido por tratarse de un recinto arqueológico. Sigue las instrucciones de la Junta de Cofradías para el acceso a las gradas en cada edición.</li>
           <li><strong>Clima variable.</strong> Mérida en primavera puede alternar calor a mediodía con humedad y frío por la noche junto al río. Ropa por capas, especialmente para los actos de madrugada.</li>
         </ul>
       </div>
 
       <div class="aviso-anfiteatro" role="note">
-        <strong>⚠️ Acceso al Vía Crucis del Anfiteatro Romano — verifica para 2027</strong><br>
-        En 2026, las entradas gratuitas para las gradas del Anfiteatro se recogían a las 00:00 h del Viernes Santo en la puerta del Teatro Romano. Este procedimiento puede cambiar cada año. <strong>Consulta el sistema de acceso oficial para 2027 en la web de la Junta de Cofradías antes de viajar.</strong>
+        <strong>⚠️ Acceso al Vía Crucis del Anfiteatro Romano — verifica antes de viajar</strong><br>
+        En ediciones anteriores, las entradas gratuitas para las gradas del Anfiteatro se recogían a medianoche del Viernes Santo en la puerta del Teatro Romano. Este procedimiento cambia cada edición. <strong>Consulta el sistema de acceso oficial en la web de la Junta de Cofradías antes de viajar.</strong>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         En Mérida, la Semana Santa no transcurre entre calles cualquiera. Huele a incienso y a tierra húmeda en el recinto del Anfiteatro. Suena a tambor bajo la bóveda de un arco bimilenario. Y el silencio que llega después es denso de una manera diferente cuando la oscuridad que te rodea tiene dos mil años.
       </p>
       <p>
         La cera encendida ilumina sillares que vieron caer un imperio. Los costaleros ajustan sus pasos bajo el Arco de Trajano con la misma concentración con la que un cantero medieval encajaba piedra sobre piedra. Mérida es la única ciudad de España donde la devoción cristiana camina, literalmente, sobre la antigua Augusta Emerita. Y eso se nota en cada esquina.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La Semana Santa de Mérida es una celebración penitencial con un rasgo que no existe en ninguna otra ciudad de España: las procesiones recorren de forma orgánica y programada monumentos de época romana y visigoda. Las hermandades no solo recorren calles, sino que enmarcan sus salidas y tránsitos en el Templo de Diana, el Arco de Trajano, el Puente Romano y la Alcazaba árabe.
       </p>
@@ -321,10 +441,8 @@
       <p>
         Mérida cuenta con <strong>9 cofradías oficiales</strong> integradas en la Junta de Cofradías.
       </p>
-      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Junta de Cofradías de Mérida en su web oficial. Consúltalos antes de salir.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2026 los publica la Junta de Cofradías de Mérida en su web oficial. Consúltalos antes de salir.</p>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         El tejido cofrade de Mérida hunde sus raíces en hermandades que mantuvieron el pulso procesional durante el siglo XX. La <strong>Cofradía del Nazareno fue fundada en 1928</strong>, y la <strong>Infantil y la Ferroviaria en 1947</strong>. A ellas se sumaron en décadas posteriores la Vera Cruz, las Tres Caídas y otras corporaciones que fueron enriqueciendo los cortejos y la imaginería local.
       </p>
@@ -334,85 +452,79 @@
       <p>
         Hoy la Junta de Cofradías y el Ayuntamiento de Mérida conciben la semana como un evento religioso, cultural y de conservación donde la ciudad se proyecta a través de su herencia clásica y devocional. El reconocimiento como Fiesta de Interés Turístico Internacional lo confirma.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Mérida en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). El momento cumbre es la <strong>madrugada del Viernes al Sábado Santo</strong> — del 26 al 27 de marzo — con el Vía Crucis en el Anfiteatro Romano. Los días de mayor concentración procesional son el <strong>Jueves Santo, 25 de marzo</strong>, y el <strong>Viernes Santo, 26 de marzo</strong>.
+        La Semana Santa de Mérida en 2026 va del <strong>viernes 20 de marzo</strong> (Viernes de Dolores) al <strong>domingo 5 de abril</strong> (Domingo de Resurrección). El momento cumbre es la <strong>madrugada del Viernes al Sábado Santo</strong> — del 3 al 4 de abril — con el Vía Crucis en el Anfiteatro Romano. Los días de mayor concentración procesional son el <strong>Jueves Santo, 2 de abril</strong>, y el <strong>Viernes Santo, 3 de abril</strong>.
       </p>
       <p>
         Si llueve, la Junta de Cofradías y las hermandades aplican protocolos estrictos de retraso o suspensión que se comunican por la App oficial y los canales de la Junta.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
+          <span class="dia-label">Viernes de Dolores · 20 de marzo</span>
           Últimos preparativos en basílicas y parroquias. El clima de Semana Santa empieza a instalarse en el centro histórico antes de que arranquen las grandes procesiones.
         </li>
 
         <li>
           <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
-          Jornada de prólogo inminente. El montaje final de los pasos y la actividad en los templos marcan la antesala de la semana. Los actos procesionales concretos deben confirmarse en el programa oficial de 2027.
+          Jornada de prólogo inminente. El montaje final de los pasos y la actividad en los templos marcan la antesala de la semana. Los actos procesionales concretos deben confirmarse en el programa oficial de cada edición.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           La mañana abre con <strong>La Borriquita</strong> — la entrada triunfal de Jesús — en una de las salidas más populares y luminosas de la semana. Por la tarde, la <strong>Cofradía de la Sagrada Cena</strong> inicia su recorrido llevando el misterio de la institución de la Eucaristía por las calles del centro.
         </li>
 
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
           La <strong>Real Hermandad y Cofradía Infantil</strong> recupera parte de su recorrido histórico transitando por la Plaza de Santo Domingo y la calle Los Maestros en dirección al entorno del <strong>Templo de Diana</strong>. El contraste entre los cofrades más jóvenes y la piedra imperial crea una de las estampas más buscadas de la semana.
         </li>
 
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
           Jornada marcada por el rigor de la <strong>Cofradía del Calvario</strong>. El paso de los cortejos por el <strong>Arco de Trajano</strong> convierte la noche en un ejercicio de sobriedad y precisión: los costaleros ajustan las proporciones del paso para cruzar bajo el arco de granito romano.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           El día de <strong>Las Tres Caídas</strong>. El momento en que el Cristo se aproxima al <strong>Templo de Diana</strong> o transita por los enclaves más angostos del centro crea uno de los nudos emocionales más potentes de la semana. La columna dórica a un lado y el paso penitencial al otro es una imagen que no tiene equivalente en ninguna otra Semana Santa española.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           La noche de mayor densidad cofrade. El <strong>Nazareno</strong> sale desde la Basílica de Santa Eulalia y la <strong>Vera Cruz</strong> baja hacia el centro monumental. Es la noche en que la antigua Augusta Emerita acoge el núcleo más denso de la Pasión: varias cofradías en movimiento, monumentos romanos como marco y la ciudad entera pendiente de cada salida.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           Jornada de luto y grandes estaciones penitenciales. El <strong>Santo Entierro</strong> y el paso solemne junto a la muralla de la <strong>Alcazaba</strong> y el <strong>Templo de Diana</strong> ofrecen el marco más austero y monumental de la semana. La combinación de la muralla árabe, la piedra romana y las imágenes del XVII es visualmente imposible de replicar en otro lugar.
         </li>
 
         <li>
-          <span class="dia-label">Madrugada del Sábado Santo · 27 de marzo · desde la 1:30 h</span>
+          <span class="dia-label">Madrugada del Sábado Santo · 4 de abril</span>
           El acto cumbre de la Semana Santa de Mérida y uno de los más singulares de toda la Semana Santa española: el <strong>Vía Crucis en el Anfiteatro Romano</strong>. El Santísimo Cristo de la O entra en la arena iluminada por antorchas mientras se leen las catorce estaciones en un silencio que la piedra del Anfiteatro amplifica y devuelve de una manera que ningún espacio moderno podría replicar.
           <br><br>
-          <span class="nota-grid">⚠️ El acceso a las gradas del Anfiteatro es limitado y requiere entrada gratuita. El procedimiento de recogida varía cada año. Consulta el sistema oficial para 2027 en la web de la Junta de Cofradías con antelación.</span>
+          <span class="nota-grid">⚠️ El acceso a las gradas del Anfiteatro es limitado y requiere entrada gratuita. El procedimiento de recogida varía cada año. Consulta el sistema oficial de cada edición en la web de la Junta de Cofradías con antelación.</span>
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La <strong>Procesión del Encuentro</strong> cierra el ciclo con un ambiente festivo, luminoso y popular cerca de la Concatedral y el corazón urbano de Mérida. Después de días de oscuridad y silencio, la ciudad cambia el pulso de golpe.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Mérida está organizada por <strong>9 cofradías</strong> integradas en la Junta de Cofradías de Mérida. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta de Cofradías de Mérida.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2026 se publican en el programa oficial de la Junta de Cofradías de Mérida.</p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Infantil</span>
@@ -423,30 +535,30 @@
               <span class="tooltip-texto">Hermandad y Cofradía de la Sagrada Cena y Ntra. Sra. del Patrocinio. Procesiona por la tarde del Domingo de Ramos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Infantil</span>
               <span class="tooltip-texto">Real Hermandad y Cofradía Infantil de Nuestro Padre Jesús de Medinaceli, Santísimo Cristo de las Injurias y Nuestra Señora del Rosario. El Lunes Santo recupera su recorrido histórico por el Templo de Diana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Calvario</span>
               <span class="tooltip-texto">Hermandad y Cofradía de Nazarenos del Santísimo Cristo del Calvario, Nuestro Padre Jesús Nazareno, Santísima Virgen de los Dolores y María Santísima de la Amargura. Sus costaleros cruzan bajo el Arco de Trajano en una de las maniobras más exigentes de la semana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Tres Caídas</span>
@@ -457,10 +569,10 @@
               <span class="tooltip-texto">Cofradía Ferroviaria del Descendimiento, Stma. Virgen de las Angustias y Ntra. Sra. de la Esperanza. Fundada en 1947. Participa en el Miércoles Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Nazareno</span>
@@ -475,10 +587,10 @@
               <span class="tooltip-texto">Cofradía Ferroviaria del Descendimiento, Stma. Virgen de las Angustias y Ntra. Sra. de la Esperanza. Participa también el Jueves Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Calvario</span>
@@ -493,33 +605,31 @@
               <span class="tooltip-texto">Cofradía de Ntro. Padre Jesús Nazareno, Stmo. Cristo de los Remedios y Ntra. Sra. del Mayor Dolor. Organiza el Santo Entierro del Viernes Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Sábado Santo · Madrugada</h3>
+        <details class="cofradia-col">
+          <summary>Sábado Santo · Madrugada</summary>
           <ul>
             <li>
               <span class="nombre-corto">Junta de Cofradías</span>
               <span class="tooltip-texto">El Vía Crucis en el Anfiteatro Romano es un acto organizado conjuntamente por la Junta de Cofradías de Mérida. El Santísimo Cristo de la O preside el acto en la arena iluminada por antorchas.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">Varias cofradías</span>
-              <span class="tooltip-texto">La Procesión del Encuentro reúne la participación de varias hermandades de la Junta de Cofradías. Consulta el programa oficial para el desglose completo de 2027.</span>
+              <span class="tooltip-texto">La Procesión del Encuentro reúne la participación de varias hermandades de la Junta de Cofradías. Consulta el programa oficial para el desglose completo de cada edición.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantademerida.es/" target="_blank" rel="noopener">Junta de Cofradías de Mérida</a> — última verificación: 2026</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           El sonido de la Semana Santa de Mérida es el del contraste. El eco de una marcha de cornetas y tambores rebotando en el Arco de Trajano. Y luego el silencio absoluto dentro de la arena del Anfiteatro, donde cada palabra rezada llega con una claridad que ningún micrófono podría mejorar.
@@ -531,18 +641,16 @@
           <strong>Sitúate cerca de las columnas del Templo de Diana o en la embocadura del Anfiteatro.</strong> No necesitas micrófonos ni amplificación. La ruina hace el trabajo sola.
         </p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card card-unica">
           <h3>El Vía Crucis en el Anfiteatro Romano</h3>
-          <span class="tag tag-unica">Único en el mundo · Madrugada del Sábado Santo · desde 1:30 h</span>
+          <span class="tag tag-unica">Único en el mundo · Madrugada del Sábado Santo</span>
           <p>El Santísimo Cristo de la O baja a la arena del Anfiteatro Romano iluminada por antorchas mientras se rezan las catorce estaciones en silencio. Un edificio de espectáculos del siglo I d.C. convertido en espacio litúrgico de la Pasión. No existe nada igual en ninguna otra ciudad del mundo.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es la razón por la que Mérida es diferente a cualquier otra Semana Santa. La arena del Anfiteatro, las antorchas, el silencio y la imagen del Cristo bajando a ese espacio dos mil años después de que se construyera para el espectáculo. Hay que verlo al menos una vez. El aforo es limitado — consulta el sistema de entrada para 2027 con mucha antelación.</p>
+            <p>Porque es la razón por la que Mérida es diferente a cualquier otra Semana Santa. La arena del Anfiteatro, las antorchas, el silencio y la imagen del Cristo bajando a ese espacio dos mil años después de que se construyera para el espectáculo. Hay que verlo al menos una vez. El aforo es limitado — consulta el sistema de entrada de cada edición con mucha antelación.</p>
           </details>
         </div>
 
@@ -577,21 +685,17 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li><strong>El Anfiteatro — planifica con mucho tiempo.</strong> El Vía Crucis tiene aforo muy limitado. Consulta el sistema de entradas para 2027 en la web de la Junta de Cofradías con la máxima antelación posible. En 2026 las entradas gratuitas se recogían a medianoche del Viernes Santo — el sistema puede cambiar.</li>
+        <li><strong>El Anfiteatro — planifica con mucho tiempo.</strong> El Vía Crucis tiene aforo muy limitado. Consulta el sistema de entradas de cada edición en la web de la Junta de Cofradías con la máxima antelación posible. En 2026 las entradas gratuitas se recogían a medianoche del Viernes Santo — el sistema puede cambiar.</li>
         <li><strong>Puntos fotográficos clave.</strong> Para el Templo de Diana y el Arco de Trajano, llega al menos una hora antes de la procesión prevista. Son los enclaves más buscados y el espacio es limitado.</li>
         <li><strong>App oficial.</strong> Descarga la App "Semana Santa de Mérida" o consulta el programa oficial del Ayuntamiento para seguir el GPS de las cofradías en tiempo real y conocer ajustes de última hora.</li>
-        <li><strong>Ropa por capas.</strong> Mérida en primavera puede tener calor a mediodía y frío junto al río por la noche. Para la madrugada del Anfiteatro, lleva abrigo — la arena es fría a la 1:30 h aunque el día haya sido templado.</li>
+        <li><strong>Ropa por capas.</strong> Mérida en primavera puede tener calor a mediodía y frío junto al río por la noche. Para la madrugada del Anfiteatro, lleva abrigo — la arena es fría a esas horas aunque el día haya sido templado.</li>
         <li><strong>Patrimonio protegido.</strong> No uses los sillares del Templo de Diana, el Arco de Trajano ni la Alcazaba como asiento o apoyo. Son monumentos protegidos y el acceso está regulado durante las procesiones.</li>
         <li><strong>Gastronomía.</strong> Las torrijas y pestiños extremeños son el dulce de la semana. Fáciles de encontrar en los bares del centro histórico cerca de los recorridos.</li>
-        <li><strong>Accesibilidad.</strong> El centro histórico tiene tramos de pavimento irregular. Para personas con movilidad reducida, las zonas más amplias del recorrido — Plaza de España, entorno de la Concatedral — son los puntos más accesibles. El Anfiteatro requiere consultar las condiciones de acceso específicas para 2027.</li>
+        <li><strong>Accesibilidad.</strong> El centro histórico tiene tramos de pavimento irregular. Para personas con movilidad reducida, las zonas más amplias del recorrido — Plaza de España, entorno de la Concatedral — son los puntos más accesibles. El Anfiteatro requiere consultar las condiciones de acceso específicas de cada edición.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Cristo de la O</dt>
@@ -610,30 +714,24 @@
         <dd>Organismo que agrupa a las 9 hermandades de la Semana Santa de Mérida, edita el programa oficial y coordina el acto del Anfiteatro. Es la referencia para cualquier consulta sobre horarios, accesos y novedades de cada edición.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
+<h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/semana-santa-merida-1.jpg" alt="Vía Crucis en el Anfiteatro Romano de Mérida con el Cristo de la O en la arena iluminada por antorchas durante la madrugada del Sábado Santo" />
         <img src="images/semana-santa-merida-2.jpg" alt="Paso procesional cruzando bajo el Arco de Trajano de Mérida durante la Semana Santa" />
         <img src="images/semana-santa-merida-3.jpg" alt="Cristo de las Tres Caídas ante las columnas del Templo de Diana de Mérida durante el Miércoles Santo" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantademerida.es/" target="_blank" rel="noopener">Junta de Cofradías de Mérida — Web oficial</a></li>
-        <li><a href="https://merida.es/agenda/semana-santa-2027/" target="_blank" rel="noopener">Programa Oficial — Ayuntamiento de Mérida</a></li>
+        <li><a href="https://merida.es/agenda/" target="_blank" rel="noopener">Agenda oficial — Ayuntamiento de Mérida</a></li>
         <li><a href="https://www.turismoextremadura.com" target="_blank" rel="noopener">Turismo de Extremadura</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Semana Santa de Mérida en 2027?</dt>
-        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). El momento cumbre es la madrugada del 26 al 27 de marzo con el Vía Crucis en el Anfiteatro Romano, que comienza aproximadamente a la 1:30 h.</dd>
+        <dt>¿Cuándo se celebra la Semana Santa de Mérida en 2026?</dt>
+        <dd>Del viernes 20 de marzo (Viernes de Dolores) al domingo 5 de abril (Domingo de Resurrección). El momento cumbre es la madrugada del 3 al 4 de abril con el Vía Crucis en el Anfiteatro Romano, que comienza pasada la medianoche.</dd>
 
         <dt>¿Tiene reconocimiento oficial?</dt>
         <dd>Sí. La Semana Santa de Mérida está declarada Fiesta de Interés Turístico Internacional. Además, los monumentos que forman parte de sus recorridos — Anfiteatro, Templo de Diana, Arco de Trajano — están integrados en el conjunto arqueológico de Mérida, Patrimonio de la Humanidad por la UNESCO desde 1993.</dd>
@@ -642,7 +740,7 @@
         <dd>Es la única en España que integra ruinas imperiales de esta magnitud como recorrido orgánico y programado de las cofradías. El Templo de Diana, el Arco de Trajano, el Anfiteatro y la Alcazaba forman parte activa de los itinerarios procesionales, no son puntos de paso casual.</dd>
 
         <dt>¿Cómo se accede al Vía Crucis del Anfiteatro?</dt>
-        <dd>El aforo es muy limitado por tratarse de un recinto arqueológico protegido. El sistema de acceso varía cada año. En 2026 las entradas gratuitas se recogían a las 00:00 h del Viernes Santo en la puerta del Teatro Romano. Consulta el procedimiento exacto para 2027 en la web de la Junta de Cofradías con la máxima antelación posible.</dd>
+        <dd>El aforo es muy limitado por tratarse de un recinto arqueológico protegido. El sistema de acceso varía cada año. En ediciones anteriores las entradas gratuitas se recogían a medianoche del Viernes Santo en la puerta del Teatro Romano. Consulta el procedimiento exacto para 2026 en la web de la Junta de Cofradías con la máxima antelación posible.</dd>
 
         <dt>¿Es una fiesta silenciosa o musical?</dt>
         <dd>Combina ambas. Hay cofradías con bandas de mucho nivel y momentos de gran vibración popular, pero el Vía Crucis del Anfiteatro y el paso de algunas cofradías por el centro monumental se viven en absoluto recogimiento. El contraste entre música y silencio es parte de la experiencia.</dd>
@@ -651,9 +749,56 @@
         <dd>La Junta de Cofradías y las hermandades aplican protocolos estrictos de retraso o suspensión, especialmente en recintos de tierra como el Anfiteatro. Los avisos se comunican por la App oficial y los canales de la Junta en tiempo real.</dd>
 
         <dt>¿Es accesible para personas con movilidad reducida?</dt>
-        <dd>El centro histórico tiene tramos de pavimento irregular. Las zonas más amplias del recorrido — Plaza de España, entorno de la Concatedral — son los puntos más accesibles. El acceso al Anfiteatro requiere consultar las condiciones específicas para 2027 con la Junta de Cofradías.</dd>
+        <dd>El centro histórico tiene tramos de pavimento irregular. Las zonas más amplias del recorrido — Plaza de España, entorno de la Concatedral — son los puntos más accesibles. El acceso al Anfiteatro requiere consultar las condiciones específicas con la Junta de Cofradías.</dd>
 
       </dl>
+
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Extremadura</a>
+        <a href="#" class="etiqueta">Mérida</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Anfiteatro Romano</a>
+        <a href="#" class="etiqueta">Patrimonio UNESCO</a>
+        <a href="#" class="etiqueta">Vía Crucis</a>
+        <a href="#" class="etiqueta">9 cofradías</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-merida">
+        <h2 id="rel-title-merida">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-caceres.html" class="ficha-rel-card">
+            <img src="images/semana-santa-caceres.jpg" alt="Semana Santa de Cáceres" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cáceres</span>
+              <span class="rel-frase">El Cristo Negro a medianoche en la Ciudad Monumental UNESCO.</span>
+              <span class="rel-meta">Cáceres · Extremadura</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-toledo.html" class="ficha-rel-card">
+            <img src="images/semana-santa-toledo.jpg" alt="Semana Santa de Toledo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Toledo</span>
+              <span class="rel-frase">Procesiones bajo los cobertizos medievales de la ciudad imperial.</span>
+              <span class="rel-meta">Toledo · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">Capas pardas, Miserere y el silencio junto al Duero.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
