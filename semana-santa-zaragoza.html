@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Zaragoza — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Zaragoza 2027: 25 cofradías, el bombo y el tambor del Bajo Aragón y la Procesión General del Santo Entierro, el cortejo cronológico más largo de España. Del 19 al 28 de marzo." />
+  <title>Semana Santa de Zaragoza 2026: Guía, Bombo y Santo Entierro</title>
+  <meta name="description" content="Semana Santa de Zaragoza 2026: 25 cofradías, bombo y tambor y el Santo Entierro más largo de España. Del 20 de marzo al 5 de abril. Guía completa." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-zaragoza.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Zaragoza — Folklorius" />
+  <meta property="og:title" content="Semana Santa de Zaragoza 2026: Guía Completa" />
   <meta property="og:description" content="El bombo y el tambor del Bajo Aragón, 25 cofradías y el Santo Entierro más largo de España. Zaragoza, Aragón." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-zaragoza.jpg" />
   <meta property="og:type" content="article" />
@@ -28,29 +28,45 @@
     /* --- Cuadrícula de cofradías por día --- */
     .cofradias-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .cofradia-col {
       background: var(--surface, #fafafa);
       border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
     }
-    .cofradia-col h3 {
+    .cofradia-col summary {
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--brand, #8b1a1a);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #666);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
       border-bottom: 1px solid var(--border, #e5e0d8);
     }
     .cofradia-col ul {
       list-style: none;
-      padding: 0;
+      padding: 10px 16px 14px;
       margin: 0;
     }
     .cofradia-col ul li {
@@ -66,7 +82,7 @@
       color: var(--brand, #8b1a1a);
     }
     @media (max-width: 480px) {
-      .cofradias-grid { grid-template-columns: 1fr 1fr; }
+      .cofradias-grid { grid-template-columns: 1fr; }
     }
 
     /* --- Tooltip sobre nombre de cofradía --- */
@@ -184,6 +200,115 @@
       margin-bottom: 3px;
     }
 
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover,
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .ficha-rel-card .rel-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
+    .ficha-rel-card .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text, #2a2218); }
+    .ficha-rel-card .rel-frase { font-size: 0.82rem; color: var(--text-muted, #666); font-style: italic; }
+    .ficha-rel-card .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
   </style>
 
   <script type="application/ld+json">
@@ -267,6 +392,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Zaragoza · Aragón</span>
+          <span>⏱️ 17 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -275,15 +409,11 @@
           <li><strong>Calles estrechas.</strong> La reverberación entre fachadas multiplica la intensidad del sonido de forma significativa.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
+<h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         En Zaragoza la Semana Santa se escucha antes de verse: el bombo impone el paso, el tambor lo sostiene y miles de cofrades herederos de la tradición percusiva del Bajo Aragón marchan al unísono por el centro monumental de la ciudad mientras el sonido rebota en las fachadas y llega a manzanas de distancia. Quien espera el silencio recogido de otras Semanas Santas encontrará algo radicalmente distinto; quien llega sabiendo lo que va a encontrar, difícilmente lo olvida.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La Semana Santa de Zaragoza reúne a <strong>25 cofradías, hermandades y congregaciones</strong> con alrededor de <strong>16.000 cofrades</strong>, miles de los cuales portan instrumentos de percusión. Las procesiones cruzan el casco histórico cada día, desde Vía Crucis barriales hasta grandes desfiles nocturnos, con el Jueves Santo como noche de mayor densidad cofrade.
       </p>
@@ -291,11 +421,9 @@
         El culmen llega el Viernes Santo con la <strong>Procesión General del Santo Entierro</strong>: las 25 cofradías desfilan juntas en un único cortejo de 4.250 metros en orden cronológico completo, representando la Pasión de principio a fin. No hay otra procesión de estas características en España con un recorrido equivalente.
       </p>
       <p>
-        El otro gran momento es el <strong>Encuentro del Miércoles Santo</strong> en la Plaza del Pilar, cuando dos cofradías parten de puntos distintos de la ciudad y convergen frente a la Basílica en la madrugada. Si el Santo Entierro es la gran epopeya colectiva, el Encuentro es el instante íntimo: la plaza casi vacía, las cúpulas iluminadas y los tambores aproximándose desde dos direcciones a la vez.
+        El otro gran momento es el <strong>Encuentro del Miércoles Santo</strong> en la Plaza del Pilar, cuando dos cofradías parten de puntos distintos de la ciudad y convergen frente a la Basílica en la madrugada. Si el Santo Entierro es el gran despliegue colectivo, el Encuentro es el instante íntimo: la plaza casi vacía, las cúpulas iluminadas y los tambores aproximándose desde dos direcciones a la vez.
       </p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
+<h2 class="section-title">Historia y significado</h2>
       <p>
         Las raíces de la Semana Santa zaragozana se remontan al siglo XVI, pero su estructura moderna arranca en 1617, cuando la <em>Muy Ilustre, Antiquísima y Real Hermandad de la Preciosísima Sangre de Nuestro Señor Jesucristo y Madre de Dios de Misericordia</em> instauró la Procesión del Santo Entierro. Desde entonces, la fiesta fue sumando hermandades hasta alcanzar las 25 actuales.
       </p>
@@ -305,73 +433,68 @@
       <p>
         Hoy la fiesta trasciende lo religioso. El zaragozano que lleva el bombo lo ha llevado su padre antes, y su abuelo antes que su padre. Esa continuidad generacional, unida a la escala del Santo Entierro, convierte la Semana Santa en el acontecimiento colectivo más importante del año para la ciudad.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+<h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Zaragoza 2027 se celebra del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días de mayor intensidad son el <strong>Jueves Santo, 25 de marzo</strong>, y el <strong>Viernes Santo, 26 de marzo</strong>.
+        La Semana Santa de Zaragoza 2026 se celebra del <strong>viernes 20 de marzo</strong> (Viernes de Dolores) al <strong>domingo 5 de abril</strong> (Domingo de Resurrección). Los días de mayor intensidad son el <strong>Jueves Santo, 2 de abril</strong>, y el <strong>Viernes Santo, 3 de abril</strong>.
       </p>
       <p>
         Los horarios e itinerarios detallados de cada jornada se publican en la web oficial de la Junta Coordinadora de Cofradías. Consulta siempre el programa oficial antes de planificar tu visita.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
-      <h2 class="section-title">Procesiones más destacadas</h2>
+<h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 29 de marzo</span>
           La ciudad abre la semana con la Procesión de las Palmas desde San Cayetano y el Vía Crucis de los Enfermos por la tarde. El tono es recogido y familiar, muy distinto al impacto sonoro que llegará los días siguientes.
         </li>
 
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <span class="dia-label">Lunes Santo · 30 de marzo</span>
           Día de Vía Crucis barriales repartidos por toda la ciudad. Las procesiones salen desde barrios como Valdefierro, Miralbueno y el casco histórico, con las cofradías llevando sus imágenes por las calles de su entorno más próximo.
         </li>
 
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <span class="dia-label">Martes Santo · 31 de marzo</span>
           Siete procesiones recorren la ciudad. Las cofradías del Cristo Despojado, la Piedad y la Crucifixión protagonizan una jornada de carácter más íntimo antes de que la semana alcance su plena intensidad.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 1 de abril</span>
           La noche de los Encuentros. Ocho cofradías salen a la calle. El momento cumbre llega en la madrugada, cuando dos cofradías parten de puntos distintos de la ciudad y convergen frente a la Basílica iluminada del Pilar. Las cúpulas al fondo, los tambores resonando y las imágenes encontrándose en uno de los momentos más cinematográficos de toda la semana.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
           La noche con mayor densidad cofrade. Casi todas las cofradías grandes realizan sus procesiones titulares —el Prendimiento, la Columna, la Coronación, el Descendimiento— dejando los pasos en San Cayetano listos para el Santo Entierro. La jornada cierra con la sobria Procesión del Silencio desde la Iglesia de San Pablo.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           El día grande. La Procesión General del Santo Entierro sale desde la Iglesia de Santa Isabel de Portugal (San Cayetano) con las 25 cofradías en cortejo cronológico. Es el centro absoluto de la Semana Santa zaragozana y uno de los espectáculos más singulares de toda la Semana Santa española.
         </li>
 
         <li>
-          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          <span class="dia-label">Sábado Santo · 4 de abril</span>
           Dos actos de luto protagonizan el día. En la madrugada, al término del Santo Entierro, la Hermandad de la Virgen de los Dolores sale desde San Felipe. Por la mañana, la Congregación de Esclavas de los Dolores organiza su propia procesión desde San Pablo.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 5 de abril</span>
           La Procesión del Encuentro Glorioso sale desde San Cayetano y el Encuentro tiene lugar en la Plaza del Pilar al mediodía. Después de días de oscuridad y percusión, la ciudad cambia el pulso de golpe.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
-      <h2 class="section-title">Cofradías por día</h2>
+<h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Zaragoza está organizada por <strong>25 cofradías, hermandades y congregaciones</strong> integradas en la Junta Coordinadora de Cofradías. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Junta Coordinadora de Cofradías de Zaragoza.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos para 2026 se publican en el programa oficial de la Junta Coordinadora de Cofradías de Zaragoza.</p>
 
+      <p class="nota-grid">⚠️ Los horarios e itinerarios exactos de cada procesión los publica la Junta Coordinadora de Cofradías de Zaragoza antes de cada edición. Consúltalos antes de planificar el viaje.</p>
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Entrada en Jerusalén</span>
@@ -382,10 +505,10 @@
               <span class="tooltip-texto">Cofradía de la Coronación de Espinas. Organiza el Vía Crucis de los Enfermos desde la Parroquia de San Gregorio Ostiense.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Llegada al Calvario</span>
@@ -408,10 +531,10 @@
               <span class="tooltip-texto">Real, Muy Ilustre y Antiquísima Cofradía de la Esclavitud de Jesús Nazareno y Conversión de Santa María Magdalena. Vía Crucis desde la Parroquia de San Miguel de los Navarros.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo Despojado</span>
@@ -426,10 +549,10 @@
               <span class="tooltip-texto">Cofradía de la Crucifixión del Señor y de la Venerable Orden Tercera de San Francisco de Asís. Desde la Parroquia de San Antonio de Padua.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Soledad y San Lamberto</span>
@@ -444,14 +567,14 @@
               <span class="tooltip-texto">Hermandad de San Joaquín y de la Virgen de los Dolores. Parte desde el Hospital Provincial hacia el Encuentro en la Plaza del Pilar.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Exaltación de la Santa Cruz</span>
-              <span class="tooltip-texto">Cofradía de la Exaltación de la Santa Cruz. Procesión titular matinal. ⚠️ Punto de salida pendiente de confirmar en programa oficial de 2027.</span>
+              <span class="tooltip-texto">Cofradía de la Exaltación de la Santa Cruz. Procesión titular matinal. ⚠️ Punto de salida pendiente de confirmar en el programa oficial de cada edición.</span>
             </li>
             <li>
               <span class="nombre-corto">Jesús de la Agonía · Silencio</span>
@@ -459,13 +582,13 @@
             </li>
             <li>
               <span class="nombre-corto">Prendimiento, Columna, Coronación…</span>
-              <span class="tooltip-texto">Múltiples cofradías realizan sus procesiones titulares de tarde-noche con destino a San Cayetano. Consulta el programa oficial para el listado completo de 2027.</span>
+              <span class="tooltip-texto">Múltiples cofradías realizan sus procesiones titulares de tarde-noche con destino a San Cayetano. Consulta el programa oficial para el listado completo en el programa oficial de cada edición.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Sangre de Cristo · organiza</span>
@@ -476,10 +599,10 @@
               <span class="tooltip-texto">Todas las cofradías, hermandades y congregaciones desfilan juntas en el Santo Entierro, representando la Pasión completa en orden cronológico a lo largo de 4.250 metros.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Sábado Santo</h3>
+        <details class="cofradia-col">
+          <summary>Sábado Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Virgen de los Dolores · madrugada</span>
@@ -490,23 +613,21 @@
               <span class="tooltip-texto">Congregación de Esclavas de María Santísima de los Dolores. Procesión de la Soledad desde la Parroquia de San Pablo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo Resucitado</span>
               <span class="tooltip-texto">Real Hermandad de Cristo Resucitado y Santa María de la Esperanza y del Consuelo. Procesión del Encuentro Glorioso desde San Cayetano. El Encuentro tiene lugar en la Plaza del Pilar.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://www.semanasantazaragoza.com" target="_blank" rel="noopener">Junta Coordinadora de Cofradías de Zaragoza</a> — última verificación: 2026</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
-      <h2 class="section-title">Música y sonido</h2>
+<h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
           El sonido de Zaragoza es percusión pura. No hay silencio en la mayoría de los desfiles. Los pasos avanzan a golpe de bombo, caja, tambor y timbal, y en algunas hermandades se suman carracas y matracas, que producen un chasquido áspero de madera. Este tapiz acústico es tan denso que puede escucharse a manzanas de distancia.
@@ -519,9 +640,7 @@
           <li>Si te sitúas en primera fila durante el paso de las grandes secciones de tambores, los tapones para los oídos son muy recomendables. No es exageración.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card card-unica">
@@ -550,7 +669,7 @@
           <p>La Cofradía de Nuestro Padre Jesús de la Agonía organiza el desfile más recogido de toda la semana. Sin el estruendo habitual del bombo, la sobriedad de este cortejo contrasta radicalmente con el registro percusivo que define a Zaragoza y revela otra cara de la fiesta.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque muestra que Zaragoza no es solo percusión. Esta procesión es la prueba de que bajo el ruido existe también una Semana Santa de hondura y recogimiento. El contraste con el resto de la semana hace que este momento resulte especialmente impactante.</p>
+            <p>Porque muestra otra cara de Zaragoza. Bajo el ruido existe también una Semana Santa de hondura y recogimiento. El contraste con el resto de la semana hace que este momento resulte especialmente impactante.</p>
           </details>
         </div>
 
@@ -565,9 +684,7 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Para el Santo Entierro, busca las aceras anchas.</strong> El Coso y la calle Don Jaime I son los mejores puntos. El paso de las 25 cofradías puede demorarse varias horas; llega pronto y elige bien tu sitio.</li>
         <li><strong>Tapones para los oídos.</strong> En primera fila durante el paso de las grandes secciones de bombos y tambores son imprescindibles, especialmente para quienes no están acostumbrados. No es exageración.</li>
@@ -576,9 +693,7 @@
         <li><strong>Sin gradas de pago.</strong> A diferencia de otras ciudades, no hay tribunas ni asientos habilitados. El público se sitúa de pie a lo largo de las aceras del recorrido.</li>
         <li><strong>Cuántos días necesitas.</strong> Con dos días puedes ver lo esencial: el Miércoles Santo para el Encuentro en la Plaza del Pilar y el Viernes Santo para el Santo Entierro. Si puedes añadir el Jueves Santo, la Procesión del Silencio desde San Pablo completa el cuadro.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
-      <h2 class="section-title">Vocabulario cofrade</h2>
+<h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
         <dt>Tercerol</dt>
@@ -588,7 +703,7 @@
         <dd>Instrumento de percusión de gran tamaño, característico del Bajo Aragón. Marca el compás grave que define el sonido de la Semana Santa zaragozana. A corta distancia, su impacto es físico además de sonoro: se siente en el pecho antes de procesarse como música.</dd>
 
         <dt>Matraca / Carraca</dt>
-        <dd>Instrumento rústico de madera que sustituye a las campanas durante los días de luto litúrgico. Produce un sonido seco y repetitivo. En Zaragoza se suma al bombo y el tambor formando el tapiz sonoro característico de la semana.</dd>
+        <dd>Instrumento rústico de madera que sustituye a las campanas durante los días de luto litúrgico. Produce un sonido seco y repetitivo. En Zaragoza se suma al bombo y el tambor completando el paisaje sonoro característico de la semana.</dd>
 
         <dt>Atributos</dt>
         <dd>Elementos simbólicos que portan los cofrades representando escenas de la Pasión: clavos, corona de espinas, dados. En el Santo Entierro, los atributos de cada cofradía identifican el misterio que representan dentro del cortejo cronológico.</dd>
@@ -597,30 +712,24 @@
         <dd>Organismo que agrupa a las 25 hermandades de la Semana Santa de Zaragoza, edita el programa oficial y coordina la Procesión General del Santo Entierro. Es la referencia para consultar horarios, recorridos y novedades de cada edición.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
-      <h2 class="section-title">Galería</h2>
+<h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/semana-santa-zaragoza-1.jpg" alt="Cofrades con bombos y tambores durante la Procesión General del Santo Entierro de Zaragoza" />
         <img src="images/semana-santa-zaragoza-2.jpg" alt="El Encuentro del Miércoles Santo en la Plaza del Pilar de Zaragoza con la Basílica iluminada al fondo" />
         <img src="images/semana-santa-zaragoza-3.jpg" alt="Nazarenos con tercerol aragonés en una procesión nocturna de la Semana Santa de Zaragoza" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://www.semanasantazaragoza.com" target="_blank" rel="noopener">Junta Coordinadora de Cofradías de la Semana Santa de Zaragoza — Web oficial</a></li>
         <li><a href="https://www.zaragoza.es/sede/portal/turismo" target="_blank" rel="noopener">Turismo del Ayuntamiento de Zaragoza</a></li>
         <li><a href="https://www.turismodearagon.com" target="_blank" rel="noopener">Turismo de Aragón</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>En 2027, del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días de mayor intensidad son el Jueves Santo (25 de marzo) y el Viernes Santo (26 de marzo).</dd>
+        <dd>En 2026, del viernes 20 de marzo (Viernes de Dolores) al domingo 5 de abril (Domingo de Resurrección). Los días de mayor intensidad son el Jueves Santo (2 de abril) y el Viernes Santo (3 de abril).</dd>
 
         <dt>¿Tiene reconocimiento oficial?</dt>
         <dd>Sí. La Semana Santa de Zaragoza está declarada Fiesta de Interés Turístico Internacional.</dd>
@@ -641,6 +750,53 @@
         <dd>La diferencia principal es el sonido y la escala del Santo Entierro. Ninguna otra ciudad española tiene un cortejo cronológico con las 25 cofradías defilando juntas a lo largo de 4.250 metros. Y el tercerol aragonés, el bombo del Bajo Aragón y el avance sobrio y rotundo de los cofrades crean una identidad visual y sonora que no se repite en ningún otro lugar.</dd>
 
       </dl>
+
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Aragón</a>
+        <a href="#" class="etiqueta">Zaragoza</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Bombo y tambor</a>
+        <a href="#" class="etiqueta">Santo Entierro</a>
+        <a href="#" class="etiqueta">25 cofradías</a>
+        <a href="#" class="etiqueta">Tercerol</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-zaragoza">
+        <h2 id="rel-title-zaragoza">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="ruta-tambor-bombo.html" class="ficha-rel-card">
+            <img src="images/ruta-tambor-bombo.jpg" alt="Ruta del Tambor y el Bombo del Bajo Aragón" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Ruta del Tambor y el Bombo</span>
+              <span class="rel-frase">El origen percusivo de la Semana Santa aragonesa.</span>
+              <span class="rel-meta">Bajo Aragón · Aragón</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-valladolid.html" class="ficha-rel-card">
+            <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Valladolid</span>
+              <span class="rel-frase">33 pasos y el mayor museo escultórico procesional de España.</span>
+              <span class="rel-meta">Valladolid · Castilla y León</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zamora.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zamora.jpg" alt="Semana Santa de Zamora" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zamora</span>
+              <span class="rel-frase">Capas pardas, Miserere y el silencio junto al Duero.</span>
+              <span class="rel-meta">Zamora · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
