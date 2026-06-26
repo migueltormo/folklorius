@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Semana Santa de Baena 2027: Coliblancos, Colinegros y Procesiones | Folklorius</title>
-  <meta name="description" content="Guía completa de la Semana Santa de Baena 2027 (21 al 28 de marzo). Fiesta de Interés Turístico Internacional. Las Turbas de Judíos, la rivalidad entre Coliblancos y Colinegros, 7 cofradías y todo lo que necesitas para vivirla." />
+  <title>Semana Santa de Baena 2026: Turbas, Judíos y Tambor</title>
+  <meta name="description" content="Guía de la Semana Santa de Baena 2026 (22 al 29 de marzo). ITI. Las Turbas de Judíos, Coliblancos y Colinegros, 7 cofradías y el tambor más denso de Andalucía." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-baena.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Baena 2027 | El pueblo que reza a golpe de tambor" />
-  <meta property="og:description" content="Guía inmersiva de la Semana Santa de Baena. Turbas de Judíos, Coliblancos y Colinegros, teatro medieval en la calle y el tambor más denso de Andalucía." />
+  <meta property="og:title" content="Semana Santa de Baena 2026 | El pueblo que reza a golpe de tambor" />
+  <meta property="og:description" content="Turbas de Judíos, Coliblancos y Colinegros, teatro medieval en la calle y el tambor más denso de Andalucía. Guía completa de la Semana Santa de Baena 2026." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-baena.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -256,6 +256,95 @@
       border-left: 3px solid var(--brand, #b34700);
     }
 
+
+    /* ── Cofradías: details/summary desplegable ─────────────────── */
+    .cofradia-col summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+      list-style: none;
+      margin-bottom: 8px;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after { content: "+"; font-size: 1rem; font-weight: 700; }
+    .cofradia-col[open] summary::after { content: "−"; }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid var(--accent-light, #f5e6c8);
+      border-radius: var(--radius, 10px);
+      padding: 18px 22px;
+      margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+    }
+    .datos-secundarios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .datos-secundarios span {
+      font-size: 0.85rem;
+      color: var(--text, #2c2c2c);
+      background: #fff;
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+    }
+    .etiqueta {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c);
+      background: var(--bg, #fafafa);
+      text-decoration: none;
+    }
+    .etiqueta-destacada {
+      background: var(--brand, #b34700);
+      color: #fff;
+      border-color: var(--brand, #b34700);
+    }
+
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--text, #2c2c2c);
+      transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
   </style>
 
   <script type="application/ld+json">
@@ -342,6 +431,15 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2025</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 22 de marzo al 29 de marzo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Baena · Córdoba · Andalucía</span>
+          <span>⏱️ 8 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
       <!-- AVISO DE SENSIBILIDAD -->
       <div class="aviso-sensibilidad" role="note">
         <strong>Antes de venir, ten en cuenta esto</strong>
@@ -352,8 +450,6 @@
           <li><strong>Nota cultural.</strong> La figura del «Judío» es una denominación histórica y teatral propia de esta fiesta, reconocida institucionalmente por el Ayuntamiento de Baena y la Agrupación de Cofradías. Representa el papel escénico de la guardia de la Pasión dentro de un teatro popular de raíces medievales y militares, sin connotación peyorativa hacia ningún grupo.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Huele a incienso, a metal pulido y a esfuerzo. Cuando una Turba de Judíos se acerca por una callejuela, el suelo vibra antes de que puedas verlos doblar la esquina. Y cuando aparecen, rompen con todo lo que uno espera de una Semana Santa: chaqueta roja, pantalón negro, casco de latón con plumero de colores y una cola de crin de caballo cayendo por la espalda. No hay penitente oscuro ni anonimato. Aquí la Semana Santa tiene cara, tiene ruido y tiene color.
@@ -361,21 +457,17 @@
       <p>
         Lo que hace única a Baena en toda España es la figura del Judío y su división en dos grandes bandos: los <strong>Coliblancos</strong> y los <strong>Colinegros</strong>, según el color de esa cola de crin. No compiten de forma violenta, pero el pique acústico, estético e identitario entre los dos bandos es real y lo notas en cada cruce de calles.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         Siete cofradías organizan la semana de forma cronológica, del Domingo de Ramos al de Resurrección, siguiendo los pasos de la Pasión. Los pasos —algunos del siglo XVI— procesionan a hombros escoltados tanto por nazarenos clásicos como por las Turbas, que son algo mucho más complejo que un grupo de tamborileros.
       </p>
       <p>
-        El Judío de Baena tiene un papel activo en la Pasión. Durante las procesiones participa en representaciones teatrales en la calle: el «Paso de los Evangelistas», donde irrumpe entre las figuras que escriben los evangelios; o la escenificación del Prendimiento de Jesús, donde actúa como guardia que lo arresta. Es teatro medieval popular integrado dentro de la oficialidad de la Iglesia, y es algo que prácticamente no existe en ningún otro sitio de España.
+        El Judío de Baena tiene un papel activo en la Pasión. Durante las procesiones participa en representaciones teatrales en la calle: el «Paso de los Evangelistas», donde irrumpe entre las figuras que escriben los evangelios; o la escenificación del Prendimiento de Jesús, donde hace de guardia que lo arresta. Es teatro medieval popular integrado dentro de la oficialidad de la Iglesia, y es algo que prácticamente no existe en ningún otro sitio de España.
       </p>
       <p>
         Si es tu primera visita, olvida buscar silencio. Asúmelo como parte de la experiencia. Y consulta siempre el programa oficial de la Agrupación de Cofradías antes de salir: los horarios y recorridos exactos cambian cada año.
       </p>
-      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Agrupación de Cofradías de Semana Santa de Baena en su web oficial. Consúltalos antes de planificar tu visita.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos los publica la Agrupación de Cofradías de Semana Santa de Baena antes de cada edición. Consúltalos antes de planificar tu visita.</p>
       <h2 class="section-title">Historia y significado</h2>
       <p>
         La figura del Judío tiene dos capas de historia superpuestas que explican por qué hoy tiene el aspecto que tiene.
@@ -396,144 +488,136 @@
       <p>
         En septiembre de 2025, el Ministerio de Industria y Turismo otorgó a la Semana Santa de Baena la declaración de <strong>Fiesta de Interés Turístico Internacional</strong>, publicada en el BOE el 27 de febrero de 2026. Es la cuarta Semana Santa andaluza con ese reconocimiento, tras Sevilla, Málaga y Granada.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Baena en 2027 va del <strong>domingo 21 de marzo</strong> (Domingo de Ramos) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). El tambor empieza a dominar la ciudad a partir de la tarde del <strong>Miércoles Santo (24 de marzo)</strong>. El Jueves Santo (25 de marzo) es el día grande de los Coliblancos; el Viernes Santo (26 de marzo), el de los Colinegros.
+        La Semana Santa de Baena en 2026 va del <strong>domingo 22 de marzo</strong> (Domingo de Ramos) al <strong>domingo 29 de marzo</strong> (Domingo de Resurrección). El tambor empieza a dominar la ciudad a partir de la tarde del <strong>Miércoles Santo (25 de marzo)</strong>. El Jueves Santo (26 de marzo) es el día grande de los Coliblancos; el Viernes Santo (27 de marzo), el de los Colinegros.
       </p>
       <p>
         Si llueve, las cofradías no salen. El patrimonio escultórico y los ropajes de los Judíos — plumeros, parches de tambor, sedas — no pueden mojarse. En ese caso los tambores no desaparecen: se trasladan a los cuartelillos y locales de las cuadrillas, donde la fiesta continúa de puertas adentro.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 22 de marzo</span>
           <strong>La Borriquita.</strong> La Cofradía de la Entrada Triunfal de Jesús en Jerusalén abre la semana. Es la procesión más familiar y accesible, sin Turbas todavía. El primer movimiento de una semana que va a ir subiendo de volumen.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
+          <span class="dia-label">Miércoles Santo · 25 de marzo</span>
           <strong>Jesús del Huerto.</strong> Primera salida de los Coliblancos. La Cofradía de Nuestro Padre Jesús del Huerto y San Diego marca el arranque real del tambor en las calles. A partir de aquí, Baena ya no vuelve al silencio hasta el Domingo de Resurrección.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo — Tarde</span>
+          <span class="dia-label">Jueves Santo · 26 de marzo — Tarde</span>
           <strong>Visita a los Sagrarios.</strong> No es una procesión con imágenes. Es el espectáculo más visual de toda la semana: miles de Coliblancos y Colinegros con la celada bajada recorren la ciudad para visitar los distintos templos. Ver las filas interminables de cascos, plumeros y colas de crin moviéndose al ritmo del tambor por las calles de Baena no tiene comparación.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo — Noche</span>
+          <span class="dia-label">Jueves Santo · 26 de marzo — Noche</span>
           <strong>El Prendimiento.</strong> La Ilustre Archicofradía de la Vera Cruz y Nuestro Padre Jesús del Prendimiento escenifica en la calle la entrega de Judas y el arresto de Jesús. Es el acto teatral de mayor peso narrativo de la semana.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo — Madrugada</span>
+          <span class="dia-label">Viernes Santo · 27 de marzo — Entrada la noche</span>
           <strong>El Silencio.</strong> La otra cara de Baena. La Cofradía del Santísimo Cristo del Perdón procesiona sin judíos ni tambores, en oscuridad y recogimiento absolutos, por las callejuelas de la Almedina. Quien solo conoce el estruendo de los días anteriores no espera esto.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo — Mañana</span>
+          <span class="dia-label">Viernes Santo · 27 de marzo — Mañana</span>
           <strong>Jesús Nazareno.</strong> El día grande de los Colinegros. La procesión más larga, más dura y más multitudinaria de la semana. La Turba de cola negra precede a las imágenes en un recorrido extenuante que ocupa prácticamente toda la jornada.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo — Tarde</span>
+          <span class="dia-label">Viernes Santo · 27 de marzo — Tarde</span>
           <strong>Dulce Nombre.</strong> La Cofradía del Dulce Nombre de Jesús, Santo Cristo del Calvario y Soledad de María Santísima cierra el Viernes Santo con los Coliblancos. Después de un día entero de procesiones, la ciudad todavía aguanta.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 29 de marzo</span>
           <strong>El Resucitado.</strong> La Real Archicofradía de Nuestra Señora del Rosario y Santo Cristo Resucitado cierra la semana con los Colinegros. El último tambor de la semana.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
       <h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Baena está organizada por <strong>7 cofradías y archicofradías</strong> integradas en la Agrupación. Pasa el cursor sobre cada nombre para ver su título oficial completo.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Agrupación de Cofradías de Semana Santa de Baena.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos se publican en el programa oficial de la Agrupación de Cofradías de Semana Santa de Baena antes de cada edición.</p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Borriquita</span>
               <span class="tooltip-texto">Cofradía de la Entrada Triunfal de Jesús en Jerusalén. Sin Turba de Judíos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Jesús del Huerto</span>
               <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús del Huerto y San Diego. Cofradía Blanca — Turba de Judíos Coliblancos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Prendimiento <span class="tag-coliblanco">Coliblanco</span></span>
               <span class="tooltip-texto">Ilustre Archicofradía de la Vera Cruz y Nuestro Padre Jesús del Prendimiento. Cofradía Blanca — Turba de Judíos Coliblancos. Día grande de los Coliblancos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo · Madrugada</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo · Madrugada</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Perdón <span class="tag-silencio">Silencio</span></span>
               <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón. Procesión de silencio absoluto, sin participación de Turbas ni tambores. La única de la semana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo · Mañana</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo · Mañana</summary>
           <ul>
             <li>
               <span class="nombre-corto">Jesús Nazareno <span class="tag-colinegro">Colinegro</span></span>
               <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús Nazareno. Cofradía Negra — Turba de Judíos Colinegros. Día grande de los Colinegros. Procesión más larga de la semana.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo · Tarde</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo · Tarde</summary>
           <ul>
             <li>
               <span class="nombre-corto">Dulce Nombre <span class="tag-coliblanco">Coliblanco</span></span>
               <span class="tooltip-texto">Cofradía del Dulce Nombre de Jesús, Santo Cristo del Calvario y Soledad de María Santísima. Cofradía Blanca — Turba de Judíos Coliblancos.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Resucitado <span class="tag-colinegro">Colinegro</span></span>
               <span class="tooltip-texto">Real Archicofradía de Nuestra Señora del Rosario y Santo Cristo Resucitado. Cofradía Negra — Turba de Judíos Colinegros.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <h3 style="color:#1d4ed8; margin-bottom:8px;">El tambor tiene sus propias reglas</h3>
@@ -541,8 +625,6 @@
         <p>El <strong>toque de calle</strong> es pausado y constante, el que escuchas cuando los Judíos van de camino o esperan fuera del desfile. El <strong>toque de procesión</strong> es más rítmico y físico, el bloque sónico que marca el paso de la Turba durante el recorrido oficial. Y el <strong>toque de redoble</strong>, reservado a los redoblantes que escoltan directamente a la imagen escultórica.</p>
         <p style="margin-bottom:0;">Si quieres notar el tambor en el estómago, sitúate en los alrededores de la Plaza de la Constitución o la Plaza de España durante la Visita a los Sagrarios del Jueves Santo. Es el punto donde la concentración de tamborileros es máxima.</p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -587,8 +669,6 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Alojamiento.</strong> Baena no es una ciudad grande y las plazas se agotan con un año de antelación. Si llegas tarde, busca en casas rurales de la Subbética cordobesa: Zuheros, Luque o Cabra están a menos de media hora.</li>
@@ -600,8 +680,6 @@
         <li><strong>Gastronomía.</strong> El producto estrella de Baena es su Aceite de Oliva Virgen Extra con D.O.P. — pruébalo en tostadas en cualquier bar del centro. Y en Cuaresma, el empedrao y el bacalao son los platos de la semana.</li>
         <li><strong>Cuántos días.</strong> Si llegas el Miércoles Santo por la tarde y te vas el Viernes Santo al caer la noche, habrás visto el núcleo de la fiesta. Tres días, con el Jueves como punto central.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
       <h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
@@ -612,7 +690,7 @@
         <dd>Los dos bandos de la Turba, según el color de la cola de crin del casco. Los Coliblancos pertenecen a las cofradías de la Vera Cruz, el Huerto y el Dulce Nombre. Los Colinegros, a Jesús Nazareno y al Resucitado. La distinción tiene doscientos años de historia, con raíces militares y políticas que con el tiempo derivaron en pura identidad cofrade.</dd>
 
         <dt>Turba</dt>
-        <dd>La agrupación masiva formada por las cuadrillas de Judíos, el Rey, los Evangelistas y otras figuras que acompañan a las cofradías. No es solo un grupo de tamborileros: es una institución con rangos, funciones teatrales y reglas propias.</dd>
+        <dd>La agrupación masiva formada por las cuadrillas de Judíos, el Rey, los Evangelistas y otras figuras que acompañan a las cofradías. La Turba tiene rangos, funciones teatrales y reglas propias. No es un grupo de tamborileros al uso.</dd>
 
         <dt>Cuadrillero</dt>
         <dd>El mando de una cuadrilla de Judíos. Lleva bastón como símbolo de autoridad y es quien dirige los toques y los movimientos del grupo durante las procesiones.</dd>
@@ -624,30 +702,24 @@
         <dd>El adorno de plumas de colores vivos que remata el casco. Uno de los elementos más vistosos y más caros del atuendo del Judío. Antiguamente se cosía a mano pluma a pluma.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA (oculta hasta tener imágenes) -->
       <h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/baena/turbas-visita-sagrarios.jpg" alt="Turbas de Coliblancos y Colinegros durante la Visita a los Sagrarios del Jueves Santo en Baena" />
         <img src="images/baena/judio-baena-casco-plumero.jpg" alt="Judío de Baena con casco de latón, plumero de colores y cola de crin durante la Semana Santa" />
         <img src="images/baena/prendimiento-baena.jpg" alt="Escenificación del Prendimiento de Jesús en la calle durante la Semana Santa de Baena" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://www.semanasantabaena.com" target="_blank" rel="noopener">Agrupación de Cofradías de Semana Santa de Baena — Web oficial</a></li>
         <li><a href="https://www.baena.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Baena</a></li>
         <li><a href="https://www.andalucia.org" target="_blank" rel="noopener">Turismo de Andalucía</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <p class="fuente">Última verificación de enlaces: 2026-06-01</p>
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Semana Santa de Baena en 2027?</dt>
-        <dd>Del domingo 21 de marzo (Domingo de Ramos) al domingo 28 de marzo (Domingo de Resurrección). El tambor empieza a dominar la ciudad desde la tarde del Miércoles Santo. El Jueves es el día grande de los Coliblancos; el Viernes, el de los Colinegros.</dd>
+        <dt>¿Cuándo se celebra la Semana Santa de Baena en 2026?</dt>
+        <dd>Del domingo 22 de marzo (Domingo de Ramos) al domingo 29 de marzo (Domingo de Resurrección). El tambor empieza a dominar la ciudad desde la tarde del Miércoles Santo. El Jueves es el día grande de los Coliblancos; el Viernes, el de los Colinegros.</dd>
 
         <dt>¿Qué diferencia hay entre Coliblancos y Colinegros?</dt>
         <dd>El color de la cola de crin del casco. Originalmente marcaba el rango militar — blanca para los mandos, negra para la tropa. En el siglo XIX adquirió connotaciones políticas. Hoy es pura identidad cofrade: los Coliblancos son de la Vera Cruz, el Huerto y el Dulce Nombre; los Colinegros, de Jesús Nazareno y el Resucitado.</dd>
@@ -669,6 +741,36 @@
 
       </dl>
 
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Semana Santa</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Andalucía</span>
+        <span class="etiqueta">Córdoba</span>
+        <span class="etiqueta">Baena</span>
+        <span class="etiqueta">Marzo</span>
+        <span class="etiqueta">Turbas de Judíos</span>
+        <span class="etiqueta">Coliblancos y Colinegros</span>
+        <span class="etiqueta">Tamborada</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="semana-santa-hellin.html" class="relacionada-card">
+            <strong>Semana Santa de Hellín</strong>
+            <span>Castilla-La Mancha · ITI · Tamborada UNESCO</span>
+          </a>
+          <a href="semana-santa-sevilla.html" class="relacionada-card">
+            <strong>Semana Santa de Sevilla</strong>
+            <span>Andalucía · ITI · La referencia andaluza</span>
+          </a>
+          <a href="semana-santa-cuenca.html" class="relacionada-card">
+            <strong>Semana Santa de Cuenca</strong>
+            <span>Castilla-La Mancha · ITI · Arte sacro y recogimiento</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
