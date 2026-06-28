@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Semana Santa de Viveiro 2027: Guía Completa, Tamborrada y Os Caladiños</title>
-  <meta name="description" content="Guía completa de la Semana Santa de Viveiro 2027. La Tamborrada del Lunes Santo, tallas articuladas del siglo XV, Os Caladiños con velas y el Desenclavo con un Cristo del siglo XVI. Fiesta de Interés Turístico Internacional desde 2013." />
+  <title>Semana Santa de Viveiro 2026: Tamborrada y Os Caladiños</title>
+  <meta name="description" content="Semana Santa de Viveiro 2026. ITI. Tamborrada del Lunes Santo, tallas articuladas del siglo XV, Os Caladiños con velas y el Desenclavo del Cristo del siglo XVI." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-viveiro.html" />
 
-  <meta property="og:title" content="Semana Santa de Viveiro 2027 | Tambores de pasión y silencio en A Mariña" />
-  <meta property="og:description" content="Viveiro en Semana Santa: la Tamborrada, tallas articuladas góticas únicas en España, Os Caladiños con velas y el Nazareno dos de Fóra. La gran Semana Santa de A Mariña lucense." />
+  <meta property="og:title" content="Semana Santa de Viveiro 2026 | Tambores de pasión y silencio en A Mariña" />
+  <meta property="og:description" content="Viveiro en Semana Santa 2026: la Tamborrada, tallas articuladas góticas únicas en España, Os Caladiños con velas y el Nazareno dos de Fóra." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-viveiro.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -205,6 +205,61 @@
       margin-bottom: 6px;
     }
     .banner-patrimonio p:last-child { margin-bottom: 0; }
+
+    /* ── Cofradías: details/summary desplegable ─────────────────── */
+    .cofradia-col summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+      list-style: none;
+      margin-bottom: 8px;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after { content: "+"; font-size: 1rem; font-weight: 700; }
+    .cofradia-col[open] summary::after { content: "−"; }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #fdf3e7; border-radius: var(--radius, 8px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2a2218);
+      background: #fff; border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e5e0d8);
+      color: var(--text, #2a2218); background: var(--surface, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2a2218); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--surface, #fafafa); border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2a2218); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #666); }
   </style>
 
   <script type="application/ld+json">
@@ -289,6 +344,16 @@
         <span class="badge badge-oficial">La gran Semana Santa de A Mariña lucense</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 de marzo al 29 de marzo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Viveiro · Galicia</span>
+          <span>⏱️ 10 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+          <span>🏺 Tallas articuladas del siglo XV</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
@@ -297,17 +362,13 @@
           <li><strong>El clima del norte de Lugo.</strong> La ría y el Atlántico hacen de Viveiro un lugar de humedad intensa y temperatura variable en primavera. Ropa impermeable y abrigo, especialmente para los actos nocturnos y de madrugada.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Viveiro no entiende la Semana Santa sin el eco de los tambores rebotando contra los muros de sus calles estrechas y las antiguas puertas de su muralla medieval. La fiesta huele al salitre de la ría fundido con incienso espeso. Suena a marchas acompasadas y a luto riguroso, pero también, el Lunes Santo, a un estruendo coordinado de cientos de timbales que hace vibrar el suelo empedrado de la Plaza Mayor.
       </p>
       <p>
-        Y luego viene el silencio. El silencio de Os Caladiños en la madrugada del Viernes, con filas interminables de velas avanzando por el casco histórico sin que nadie diga una sola palabra. Dos extremos en la misma semana, en la misma ciudad, con la misma convicción.
+        Y luego viene el silencio. El silencio de Os Caladiños en la madrugada del Viernes, con filas largas de velas avanzando por el casco histórico sin que nadie diga una sola palabra. Dos extremos en la misma semana, en la misma ciudad, con la misma convicción.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La Semana Santa de Viveiro es la celebración más importante de A Mariña lucense. Un ciclo penitencial de ocho días que destaca por dos cosas que pocas Semanas Santas españolas pueden ofrecer al mismo tiempo: una imaginería articulada de valor patrimonial excepcional — algunas tallas del siglo XIV al XVIII con mecanismos originales todavía en uso — y una programación que alterna la devoción más callada con la Tamborrada del Lunes Santo, un fenómeno acústico que no existe en ninguna otra Semana Santa de Galicia.
@@ -315,9 +376,7 @@
       <p>
         Ocho cofradías organizan los actos en torno a tres templos del casco antiguo: la Iglesia de Santa María del Campo, la Iglesia gótica de San Francisco y la Capilla de la Misericordia. El casco histórico medieval es el escenario de todo.
       </p>
-      <p class="nota-grid">⚠️ Los horarios y recorridos exactos de 2027 los publica la Xunta de Cofradías de Viveiro en su web oficial. Consúltalos antes de salir.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos los publica la Xunta de Cofradías de Viveiro antes de cada edición. Consúltalos antes de salir.</p>
       <h2 class="section-title">Historia y significado</h2>
       <p>
         El germen de la Semana Santa vivariense se documenta en la Plena Edad Media, impulsado por las órdenes dominica y franciscana asentadas en la villa. A los franciscanos se debe la conservación de una imaginería extraordinaria y de tradiciones como el Sermón de las Siete Palabras. Las tallas articuladas que hoy protagonizan el Desenclavo y el Encuentro fueron creadas precisamente para hacer comprensible el drama de la Pasión a una población iletrada — y llevan funcionando con sus mecanismos originales desde entonces.
@@ -333,128 +392,122 @@
       <p>
         En los años cuarenta del siglo XX, la Semana Santa vivió su gran transformación. Impulsada por empresarios y vecinos locales, se crearon nuevas hermandades que democratizaron la fiesta e introdujeron pasos inéditos. Ese impulso social la convirtió en el evento multitudinario que es hoy. En 2013 fue declarada Fiesta de Interés Turístico Internacional.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Viveiro en 2027 va del <strong>viernes 19 de marzo</strong> (Viernes de Dolores) al <strong>domingo 28 de marzo</strong> (Domingo de Resurrección). Los días cumbre son el <strong>Lunes Santo, 22 de marzo</strong> — con la Tamborrada —, el <strong>Jueves Santo, 25 de marzo</strong> y el <strong>Viernes Santo, 26 de marzo</strong>, con el Encuentro, el Desenclavo y Os Caladiños.
+        La Semana Santa de Viveiro en 2026 va del <strong>viernes 20 de marzo</strong> (Viernes de Dolores) al <strong>domingo 29 de marzo</strong> (Domingo de Resurrección). Los días cumbre son el <strong>Lunes Santo, 22 de marzo</strong> — con la Tamborrada —, el <strong>Jueves Santo, 25 de marzo</strong> y el <strong>Viernes Santo, 26 de marzo</strong>, con el Encuentro, el Desenclavo y Os Caladiños.
       </p>
       <p>
         El clima gallego en marzo es impredecible. Si llueve, consulta los canales oficiales de la Xunta de Cofradías para posibles modificaciones.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
 
         <li>
-          <span class="dia-label">Viernes de Dolores · 19 de marzo</span>
-          A las <strong>21:00 h</strong>, la <strong>Procesión de la Virgen de los Dolores</strong> sale de la Iglesia de San Francisco, organizada por la Venerable Orden Tercera Franciscana. Es el primer movimiento de la semana — sobrio, íntimo y nocturno desde el principio.
+          <span class="dia-label">Viernes de Dolores · 20 de marzo</span>
+          A las <strong>al caer la noche</strong>, la <strong>Procesión de la Virgen de los Dolores</strong> sale de la Iglesia de San Francisco, organizada por la Venerable Orden Tercera Franciscana. Es el primer movimiento de la semana — sobrio, íntimo y nocturno desde el principio.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 22 de marzo</span>
           La mañana abre con la <strong>Entrada Triunfal de Jesús en Jerusalén</strong>, con palmas y ramas de olivo llenando las calles. Por la tarde, el tono cambia radicalmente: la <strong>Procesión del Ecce-Homo</strong>, organizada por las Juventudes Franciscanas desde San Francisco, devuelve la austeridad.
         </li>
 
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <span class="dia-label">Lunes Santo · 23 de marzo</span>
           La noche más diferente de la semana. <strong>La Tamborrada</strong>: todas las bandas de la Semana Santa de Viveiro marchan al unísono hacia la Plaza Mayor para el toque conjunto. No hay pasos, no hay imágenes — solo cientos de timbales, bombos y tambores haciendo vibrar el suelo empedrado. Es un fenómeno acústico sin equivalente en ninguna otra Semana Santa gallega.
         </li>
 
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
+          <span class="dia-label">Martes Santo · 24 de marzo</span>
           La semana entra en el luto estricto. El <strong>Vía Crucis de Mujeres</strong> marca la tónica de devoción callada que dominará los días siguientes.
         </li>
 
         <li>
-          <span class="dia-label">Miércoles Santo · 24 de marzo</span>
-          A las <strong>22:00 h</strong>, el <strong>Vía Crucis de Hombres</strong> sale desde la Iglesia de San Francisco, organizado por la Parroquia de Santiago y la Real Hermandad de las Siete Palabras. Catorce penitentes cargan pesadas cruces de madera marcando las estaciones, acompañados por el Cristo de la Agonía, obra de José Rivas de 1946. Es una de las procesiones de mayor recogimiento de toda la semana.
+          <span class="dia-label">Miércoles Santo · 25 de marzo</span>
+          Entrada la noche, el <strong>Vía Crucis de Hombres</strong> sale desde la Iglesia de San Francisco, organizado por la Parroquia de Santiago y la Real Hermandad de las Siete Palabras. Catorce penitentes cargan pesadas cruces de madera marcando las estaciones, acompañados por el Cristo de la Agonía, obra de José Rivas de 1946. Es una de las procesiones de mayor recogimiento de toda la semana.
         </li>
 
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo</span>
-          A las <strong>22:00 h</strong>, la <strong>Procesión del Prendimiento</strong> sale desde la Iglesia de San Francisco. Protagonizan el desfile el célebre paso de <em>El Beso de Judas</em>, el <strong>Nazareno dos de Fóra</strong> — la imagen de los marineros y los forasteros — y la Virgen de los Dolores. La oscuridad del casco histórico y la arquitectura medieval acentúan la belleza de una de las noches más memorables de la Pasión gallega.
+          <span class="dia-label">Jueves Santo · 2 de abril</span>
+          Entrada la noche, la <strong>Procesión del Prendimiento</strong> sale desde la Iglesia de San Francisco. Protagonizan el desfile el célebre paso de <em>El Beso de Judas</em>, el <strong>Nazareno dos de Fóra</strong> — la imagen de los marineros y los forasteros — y la Virgen de los Dolores. La oscuridad del casco histórico y la arquitectura medieval acentúan la belleza de una de las noches más memorables de la Pasión gallega.
         </li>
 
         <li>
-          <span class="dia-label">Viernes Santo · 26 de marzo</span>
+          <span class="dia-label">Viernes Santo · 3 de abril</span>
           El día más denso de la semana, con tres momentos encadenados de naturaleza completamente distinta:
           <br><br>
           Por la mañana, el <strong>Santo Encuentro</strong> entre Jesús, San Juan y La Dolorosa — protagonizado por las tallas articuladas del siglo XV con sus mecanismos originales en funcionamiento.
           <br><br>
           Por la tarde, la <strong>función del Desenclavo</strong>: el Cristo articulado del siglo XVI desciende físicamente de la cruz al liberar sus brazos de los clavos, para ser introducido en la urna del Santo Entierro. Seguidamente, la <strong>Procesión del Santo Entierro</strong>.
           <br><br>
-          De madrugada, <strong>Os Caladiños</strong>: la procesión más silenciosa de Galicia. Desde la Iglesia de San Francisco, una multitud interminable de fieles con velas encendidas acompaña a La Verónica, San Juan, la Cruz con el Sudario y la Virgen de la Soledad en el más absoluto mutismo. Sin capuchones, sin cadenas — solo velas, silencio y oscuridad.
+          De madrugada, <strong>Os Caladiños</strong>: la procesión más silenciosa de Galicia. Desde la Iglesia de San Francisco, una gran multitud de fieles con velas encendidas acompaña a La Verónica, San Juan, la Cruz con el Sudario y la Virgen de la Soledad en el más estricto silencio. Sin capuchones, sin cadenas — solo velas, silencio y oscuridad.
         </li>
 
         <li>
-          <span class="dia-label">Sábado Santo · 27 de marzo</span>
+          <span class="dia-label">Sábado Santo · 4 de abril</span>
           La <strong>Procesión de la Esperanza de la Resurrección</strong> asume el protagonismo en la tarde-noche, con los fieles acompañando a la Virgen en su tristeza serena antes de la Vigilia Pascual.
         </li>
 
         <li>
-          <span class="dia-label">Domingo de Resurrección · 28 de marzo</span>
+          <span class="dia-label">Domingo de Resurrección · 29 de marzo</span>
           La <strong>Procesión del Encuentro de Resurrección o Vía Lucis</strong> cierra el ciclo. San Juan, María y Jesús Resucitado se encuentran bajo el repique festivo de campanas. El salitre de la ría, que durante ocho días olió a incienso, vuelve a ser simplemente mar.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
       <h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Viveiro está organizada por <strong>8 cofradías y hermandades</strong> integradas en la Xunta de Cofradías. Pasa el cursor sobre cada nombre para ver su denominación oficial completa.
       </p>
-      <p class="nota-grid">Los horarios y recorridos exactos para 2027 se publican en el programa oficial de la Xunta de Cofradías de Viveiro.</p>
+      <p class="nota-grid">Los horarios y recorridos exactos se publican en el programa oficial de la Xunta de Cofradías de Viveiro antes de cada edición.</p>
 
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Viernes de Dolores</h3>
+        <details class="cofradia-col">
+          <summary>Viernes de Dolores</summary>
           <ul>
             <li>
               <span class="nombre-corto">Orden Tercera</span>
-              <span class="tooltip-texto">Venerable Orden Tercera Franciscana (V.O.T.). Organiza la Procesión de la Virgen de los Dolores que abre la Semana Santa el Viernes de Dolores a las 21:00 h desde San Francisco.</span>
+              <span class="tooltip-texto">Venerable Orden Tercera Franciscana (V.O.T.). Organiza la Procesión de la Virgen de los Dolores que abre la Semana Santa el Viernes de Dolores al caer la noche desde San Francisco.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Orden Tercera</span>
               <span class="tooltip-texto">Venerable Orden Tercera Franciscana (V.O.T.). Organiza la Procesión del Ecce-Homo del Domingo de Ramos por la tarde desde San Francisco.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Todas las cofradías</span>
               <span class="tooltip-texto">La Tamborrada es un acto conjunto de todas las bandas de la Semana Santa de Viveiro. No hay imágenes ni pasos — solo el toque coordinado de cientos de timbales, bombos y tambores en la Plaza Mayor.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Siete Palabras</span>
-              <span class="tooltip-texto">Real Hermandad de las Siete Palabras. Coorganiza el Vía Crucis de Hombres del Miércoles Santo a las 22:00 h desde San Francisco, junto a la Parroquia de Santiago.</span>
+              <span class="tooltip-texto">Real Hermandad de las Siete Palabras. Coorganiza el Vía Crucis de Hombres del Miércoles Santo, entrada la noche, desde San Francisco, junto a la Parroquia de Santiago.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Prendimiento</span>
-              <span class="tooltip-texto">Hermandad del Prendimiento. Organiza la gran procesión del Jueves Santo a las 22:00 h desde San Francisco, con El Beso de Judas, el Nazareno dos de Fóra y la Dolorosa.</span>
+              <span class="tooltip-texto">Hermandad del Prendimiento. Organiza la gran procesión del Jueves Santo, entrada la noche, desde San Francisco, con El Beso de Judas, el Nazareno dos de Fóra y la Dolorosa.</span>
             </li>
             <li>
               <span class="nombre-corto">Nazareno dos de Fóra</span>
@@ -465,10 +518,10 @@
               <span class="tooltip-texto">Cofradía del Santísimo Cristo de la Piedad. Participa en las procesiones del Jueves Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">El Rosario</span>
@@ -483,22 +536,20 @@
               <span class="tooltip-texto">Hermandad de la Santa Cruz, formada tradicionalmente por mujeres. Participa en las procesiones del Viernes Santo.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">Xunta de Cofradías</span>
-              <span class="tooltip-texto">La Procesión del Encuentro de Resurrección o Vía Lucis es organizada conjuntamente por las cofradías de la Xunta. Consulta el programa oficial para el desglose completo de 2027.</span>
+              <span class="tooltip-texto">La Procesión del Encuentro de Resurrección o Vía Lucis es organizada conjuntamente por las cofradías de la Xunta. Consulta el programa oficial para el desglose completo de cada edición.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantaviveiro.com/" target="_blank" rel="noopener">Xunta de Cofradías de la Semana Santa de Viveiro</a> — última verificación: 2026</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
@@ -511,8 +562,6 @@
           <strong>Para la Tamborrada, colócate en la Plaza Mayor la noche del Lunes Santo.</strong> La fuerza acústica de todas las bandas tocando al unísono es un fenómeno físico — no metafórico. El suelo vibra. Para Os Caladiños, busca una calle estrecha del casco histórico y espera en silencio.
         </p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -539,7 +588,7 @@
         <div class="must-see-card">
           <h3>Os Caladiños — silencio y velas en A Mariña</h3>
           <span class="tag">Madrugada del Viernes al Sábado · Casco histórico</span>
-          <p>Diferente a Os Caladiños de Ferrol: aquí no hay capuchones ni cadenas. En Viveiro, Os Caladiños es una multitud interminable de fieles vestidos de calle portando velas encendidas en absoluto silencio, acompañando a La Verónica, San Juan, la Cruz con el Sudario y la Virgen de la Soledad desde San Francisco. Solo los tambores marcan el paso, muy suavemente.</p>
+          <p>Diferente a Os Caladiños de Ferrol: aquí no hay capuchones ni cadenas. En Viveiro, Os Caladiños es una gran multitud de fieles vestidos de calle portando velas encendidas en silencio, acompañando a La Verónica, San Juan, la Cruz con el Sudario y la Virgen de la Soledad desde San Francisco. Solo los tambores marcan el paso, muy suavemente.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
             <p>Porque ver a toda una villa enmudecida, con velas, en la oscuridad de la madrugada, es una de esas experiencias que no se buscan en los folletos turísticos y que sin embargo se recuerdan años después. No hace falta ser creyente para que te impresione.</p>
@@ -548,7 +597,7 @@
 
         <div class="must-see-card">
           <h3>La Procesión del Prendimiento y el Nazareno dos de Fóra</h3>
-          <span class="tag">Jueves Santo · 22:00 h · Desde San Francisco</span>
+          <span class="tag">Jueves Santo · Entrada la noche · Desde San Francisco</span>
           <p>El paso de <em>El Beso de Judas</em>, el Nazareno dos de Fóra — la imagen de los marineros foráneos y los emigrantes que volvían — y la Dolorosa recorren el casco histórico en la noche más bella del Jueves Santo gallego. El Nazareno dos de Fóra toma su nombre de la devoción histórica de quienes llegaban de fuera: los marineros que atracaban en Viveiro y los hijos del pueblo que regresaban en Semana Santa.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -557,8 +606,6 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Alojamiento.</strong> La Semana Santa es el evento de mayor afluencia del año en Viveiro. Reserva con mucha antelación, especialmente para el Lunes, Jueves y Viernes Santo.</li>
@@ -569,8 +616,6 @@
         <li><strong>Ropa.</strong> Impermeable y abrigo por capas. La humedad de la ría y el viento atlántico hacen que el frío nocturno de Viveiro cale de una manera muy particular. Para Os Caladiños de madrugada, abrígate más de lo que creas necesario.</li>
         <li><strong>Accesibilidad.</strong> El casco histórico medieval tiene calles estrechas y pavimento irregular. Las plazas principales — Plaza Mayor, entorno de San Francisco — son los puntos más accesibles para personas con movilidad reducida.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
       <h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
@@ -590,30 +635,24 @@
         <dd>El máximo órgano coordinador de la Semana Santa de Viveiro, que aglutina y representa a las ocho hermandades. Publica el programa oficial y gestiona la coordinación de todos los actos de la semana.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
       <h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/semana-santa-viveiro-1.jpg" alt="La Tamborrada del Lunes Santo en la Plaza Mayor de Viveiro con todas las bandas tocando al unísono" />
         <img src="images/semana-santa-viveiro-2.jpg" alt="Os Caladiños de Viveiro con fieles portando velas en silencio por el casco histórico en la madrugada del Viernes Santo" />
         <img src="images/semana-santa-viveiro-3.jpg" alt="Desenclavo del Cristo articulado del siglo XVI durante el Viernes Santo de la Semana Santa de Viveiro" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantaviveiro.com/" target="_blank" rel="noopener">Xunta de Cofradías de Viveiro — Web oficial</a></li>
-        <li><a href="https://viveiro.gal/evento/semana-santa-viveiro-2027/" target="_blank" rel="noopener">Programa Oficial — Ayuntamiento de Viveiro</a></li>
+        <li><a href="https://viveiro.gal/semana-santa/" target="_blank" rel="noopener">Programa Oficial — Ayuntamiento de Viveiro</a></li>
         <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Semana Santa de Viveiro en 2027?</dt>
-        <dd>Del viernes 19 de marzo (Viernes de Dolores) al domingo 28 de marzo (Domingo de Resurrección). Los días cumbre son el Lunes Santo (22 de marzo) con la Tamborrada, el Jueves Santo (25) con el Prendimiento y el Viernes Santo (26) con el Encuentro, el Desenclavo y Os Caladiños.</dd>
+        <dt>¿Cuándo se celebra la Semana Santa de Viveiro en 2026?</dt>
+        <dd>Del viernes 20 de marzo (Viernes de Dolores) al domingo 29 de marzo (Domingo de Resurrección). Los días cumbre son el Lunes Santo (23 de marzo) con la Tamborrada, el Jueves Santo (2 de abril) con el Prendimiento y el Viernes Santo (3 de abril) con el Encuentro, el Desenclavo y Os Caladiños.</dd>
 
         <dt>¿Tiene reconocimiento oficial?</dt>
         <dd>Sí. La Semana Santa de Viveiro fue declarada Fiesta de Interés Turístico Internacional en 2013, siendo junto a Ferrol uno de los dos grandes referentes de la Semana Santa gallega con ese reconocimiento.</dd>
@@ -624,17 +663,41 @@
         <dt>¿Por qué tiene tanta fama la imaginería de Viveiro?</dt>
         <dd>Porque conserva tallas articuladas de los siglos XV y XVI con sus mecanismos originales en funcionamiento. El Cristo del Santo Encuentro puede mover el brazo para bendecir y simular las tres caídas. El Cristo del Desenclavo tiene los brazos articulados que descienden físicamente al liberarlos de los clavos. Son piezas extraordinariamente raras en la Semana Santa española.</dd>
 
-        <dt>¿Qué es el Nazareno dos de Fóra?</dt>
-        <dd>Literalmente, el Nazareno de los de fuera. El nombre recoge la devoción histórica de los marineros foráneos y los emigrantes que regresaban a Viveiro en Semana Santa. Eran ellos quienes sufragaban sus cultos y asumían el honor de cargar el paso. Una historia de fe y mar que le da a esta imagen un carácter muy propio.</dd>
-
         <dt>¿Qué es exactamente la Tamborrada?</dt>
         <dd>El toque conjunto de todas las bandas de la Semana Santa en la Plaza Mayor del Lunes Santo. No hay imágenes ni pasos — solo cientos de timbales, bombos y tambores tocando al unísono. Es un fenómeno acústico único en la Semana Santa gallega y ya forma parte de la identidad cultural de Viveiro.</dd>
 
-        <dt>¿Qué pasa si llueve?</dt>
-        <dd>El clima gallego en marzo es impredecible. Consulta los canales oficiales de la Xunta de Cofradías para posibles modificaciones. El programa de rutas guiadas gratuitas y la carpa-antesala del museo son una buena alternativa para los días de lluvia.</dd>
-
       </dl>
 
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Semana Santa</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Galicia</span>
+        <span class="etiqueta">Lugo</span>
+        <span class="etiqueta">Viveiro</span>
+        <span class="etiqueta">Marzo</span>
+        <span class="etiqueta">Tamborrada</span>
+        <span class="etiqueta">Os Caladiños</span>
+        <span class="etiqueta">Tallas articuladas</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="semana-santa-ferrol.html" class="relacionada-card">
+            <strong>Semana Santa de Ferrol</strong>
+            <span>Galicia · ITI · Os Caladiños y La Misericordia</span>
+          </a>
+          <a href="semana-santa-zamora.html" class="relacionada-card">
+            <strong>Semana Santa de Zamora</strong>
+            <span>Castilla y León · ITI · Silencio y penitencia</span>
+          </a>
+          <a href="semana-santa-hellin.html" class="relacionada-card">
+            <strong>Semana Santa de Hellín</strong>
+            <span>Castilla-La Mancha · ITI · Tamborada UNESCO</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
