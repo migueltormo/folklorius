@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Crevillent — Semana Santa — Folklorius</title>
-  <meta name="description" content="La Semana Santa de Crevillent 2027: el mayor conjunto de obra religiosa de Mariano Benlliure, coros polifónicos a capela y el pa torrat del Viernes Santo. Del 20 de marzo al 28 de marzo." />
+  <title>Semana Santa de Crevillent 2026: Benlliure y Polifonía</title>
+  <meta name="description" content="Guía de la Semana Santa de Crevillent 2026. ITI. El mayor conjunto de obra religiosa de Benlliure, coros polifónicos a capella y el pa torrat del Viernes Santo." />
   <link rel="canonical" href="https://folklorius.es/semana-santa-crevillent.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Semana Santa de Crevillent — Folklorius" />
-  <meta property="og:description" content="El genio de Benlliure mecido por el canto polifónico. Crevillent, Alicante." />
+  <meta property="og:title" content="Semana Santa de Crevillent 2026 | El genio de Benlliure mecido por el canto polifónico" />
+  <meta property="og:description" content="Crevillent en Semana Santa 2026: el mayor conjunto de obra religiosa de Benlliure al aire libre, coros polifónicos a capella y el pa torrat del Viernes Santo." />
   <meta property="og:image" content="https://folklorius.es/images/semana-santa-crevillent.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -176,6 +176,71 @@
       margin-bottom: 3px;
     }
 
+
+    /* ── Cofradías: details/summary desplegable ─────────────────── */
+    .cofradia-col summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e5e0d8);
+      list-style: none;
+      margin-bottom: 8px;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after { content: "+"; font-size: 1rem; font-weight: 700; }
+    .cofradia-col[open] summary::after { content: "−"; }
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #fdf3e7);
+      border-radius: var(--radius, 8px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #fdf3e7; border-radius: var(--radius, 8px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2a2218);
+      background: #fff; border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e5e0d8);
+      color: var(--text, #2a2218); background: var(--surface, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2a2218); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--surface, #fafafa); border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2a2218); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #666); }
   </style>
 
   <script type="application/ld+json">
@@ -259,23 +324,29 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 21 de marzo al 29 de marzo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Crevillent · Alicante · Comunitat Valenciana</span>
+          <span>⏱️ 9 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+          <span>🎨 Patrimonio de Benlliure</span>
+        </div>
+      </div>
+
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
           <li>La Semana Santa crevillentina destaca por su profundo respeto al silencio. Durante las procesiones, el público guarda compostura para que los coros polifónicos puedan escucharse con claridad. No interrumpas las interpretaciones corales con conversaciones ni aplausos antes de que terminen.</li>
-          <li>Las tallas de Mariano Benlliure y otros maestros que procesionan son obras de arte de valor incalculable. Evita el uso de flash y mantén siempre una distancia prudencial de los pasos para proteger la madera policromada.</li>
+          <li>Las tallas de Mariano Benlliure y otros maestros que procesionan son obras de arte de valor excepcional. Evita el uso de flash y mantén siempre una distancia prudencial de los pasos para proteger la madera policromada.</li>
           <li>La diana musical del Viernes Santo es una tradición festiva y ruidosa que contrasta con el recogimiento posterior. Es un momento de júbilo colectivo — vívelo con esa actitud.</li>
           <li>El casco antiguo de Crevillent tiene calles muy estrechas en algunos tramos. Sigue las indicaciones de las cofradías y no bloquees el recorrido de los pasos en curvas o zonas de maniobra.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        Cerrar los ojos en la Semana Santa de Crevillent es escuchar cómo la madera tallada respira al compás de un coro polifónico. Aquí no hay estridencias, sino una elegancia contenida donde el olor a incienso se funde con el aire fresco de la sierra alicantina. Es una ciudad que ha sabido convertir sus calles en un museo vivo del siglo XX, meciendo sobre los hombros auténticas obras maestras de la escultura mientras las voces desgarradoras de los coros locales cantan a capella. Crevillent no grita su devoción — la susurra con una belleza artística y musical que paraliza el tiempo.
+        Cerrar los ojos en la Semana Santa de Crevillent es escuchar cómo la madera tallada respira al compás de un coro polifónico. Aquí no hay estridencias, sino una elegancia contenida donde el olor a incienso se funde con el aire fresco de la sierra alicantina. Es una ciudad que ha sabido convertir sus calles en un espacio donde la escultura del siglo XX, procesiona sobre los hombros auténticas obras maestras de la escultura mientras los coros locales cantan a capella. Crevillent no grita su devoción — la susurra con una precisión artística y musical que detiene el paso.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         En Crevillent, una treintena de cofradías y hermandades dan vida a una de las celebraciones más ricas y estructuradas del levante español durante nueve días. La fiesta se articula en torno a procesiones cronológicas que narran la Pasión con una puesta en escena impecable y austera, con el patrimonio escultórico como hilo conductor. La <strong>Federación de Cofradías y Hermandades de Semana Santa de Crevillent</strong> coordina un calendario preciso que conviene consultar antes de cada edición para confirmar horarios e itinerarios exactos.
@@ -287,7 +358,7 @@
         Para el visitante, es vital no perderse los momentos de mayor concentración escultórica, como la Procesión de la Pasión de Cristo del Miércoles Santo o el Vía Crucis Penitencial del Jueves Santo. Sitúate en la Plaza de la Constitución o en La Morquera, donde las maniobras de los pasos y la acústica de los coros alcanzan su máximo esplendor. Y no te marches sin vivir el amanecer del Viernes Santo y su tradicional almuerzo de pa torrat.
       </p>
 
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <p class="nota-grid">⚠️ Los horarios e itinerarios exactos los publica la Federación de Cofradías y Hermandades de Semana Santa de Crevillent antes de cada edición. Consúltalos antes de planificar tu visita.</p>
       <h2 class="section-title">Historia y significado</h2>
       <p>
         Los orígenes de la Semana Santa en Crevillent se remontan al último tercio del siglo XVII, con cofradías primitivas como las del Nazareno y la Dolorosa que procesionaban hacia el antiguo Calvario. Sin embargo, la fiesta adquirió su dimensión internacional a mediados del siglo XX, tras la destrucción de casi todo el patrimonio durante la Guerra Civil.
@@ -298,46 +369,42 @@
       <p>
         Hoy, la Semana Santa es el orgullo absoluto de la localidad, uniendo la tradición artesana, la afición musical y la fe en un evento que define la identidad crevillentina. El <strong>Museo de la Semana Santa de Crevillent (MUSS)</strong> custodia y explica las tallas titulares durante todo el año, convirtiéndose en visita imprescindible para entender la dimensión patrimonial de lo que procesiona cada primavera.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Semana Santa de Crevillent en 2027 se celebra del <strong>sábado 20 de marzo</strong>, Sábado de Pasión, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días que concentran mayor actividad y visitantes son el <strong>Miércoles Santo</strong> (1 de abril), con la Procesión de la Pasión de Cristo y sus dieciséis pasos, y el <strong>Viernes Santo</strong> (3 de abril), con la Subida al Calvario al alba y el Santo Entierro por la noche. Las fechas cambian cada año según el calendario litúrgico — actualiza esta información para ediciones posteriores en la web oficial de la Federación.
+        La Semana Santa de Crevillent en 2026 se celebra del <strong>sábado 20 de marzo</strong>, Sábado de Pasión, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. Los días que concentran mayor actividad y visitantes son el <strong>Miércoles Santo</strong> (1 de abril), con la Procesión de la Pasión de Cristo y sus dieciséis pasos, y el <strong>Viernes Santo</strong> (3 de abril), con la Subida al Calvario al alba y el Santo Entierro por la noche. Las fechas cambian cada año según el calendario litúrgico — actualiza esta información para ediciones posteriores en la web oficial de la Federación.
       </p>
       <p>
         Consulta los horarios e itinerarios exactos en la web de la Federación de Cofradías y Hermandades de Semana Santa de Crevillent. Ante riesgo de lluvia, los desfiles pueden suspenderse para proteger el patrimonio escultórico.
       </p>
-
-      <!-- SECCIÓN 5: PROCESIONES MÁS DESTACADAS -->
       <h2 class="section-title">Procesiones más destacadas</h2>
       <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Sábado de Pasión · 20 de marzo</span>
+          <span class="dia-label">Sábado de Pasión · 21 de marzo</span>
           El Guión de la Semana Santa — <strong>La Convocatoria</strong> — recorre las calles de Crevillent haciendo sonar bocinas para anunciar oficialmente el inicio de los días grandes. Es el pistoletazo de salida que moviliza a toda la ciudad.
         </li>
         <li>
-          <span class="dia-label">Domingo de Ramos · 21 de marzo</span>
+          <span class="dia-label">Domingo de Ramos · 22 de marzo</span>
           La mañana se llena de luz y palmas blancas con la Procesión de la Entrada de Jesús en Jerusalén. Desfila <strong>Jesús Triunfante</strong>, conocido popularmente como "El pas de la Burreta", la obra póstuma de Mariano Benlliure finalizada en 1947, de un valor histórico y artístico inconmensurable.
         </li>
         <li>
-          <span class="dia-label">Lunes Santo · 22 de marzo</span>
+          <span class="dia-label">Lunes Santo · 23 de marzo</span>
           Jornada sin desfiles oficiales en la calle. Los crevillentinos dedican este día a montar los tronos, fundir la cera y preparar los espectaculares arreglos florales en las sedes y templos, dejando todo a punto para los días grandes que arrancan el Martes.
         </li>
         <li>
-          <span class="dia-label">Martes Santo · 23 de marzo</span>
-          La <strong>Procesión de Penitencia</strong>. El alumbrado público se apaga en el tortuoso casco antiguo. En medio del silencio y la oscuridad, solo rotos por la luz de las antorchas y el olor a incienso, desfila el Cristo de Difuntos y Ánimas escoltado por penitentes con sobrios hábitos cistercienses y el canto sobrecogedor del Coro de Voces Graves.
+          <span class="dia-label">Martes Santo · 24 de marzo</span>
+          La <strong>Procesión de Penitencia</strong>. El alumbrado público se apaga en el tortuoso casco antiguo. En medio del silencio y la oscuridad, solo rotos por la luz de las antorchas y el olor a incienso, desfila el Cristo de Difuntos y Ánimas escoltado por penitentes con sobrios hábitos cistercienses y el canto singular del Coro de Voces Graves.
         </li>
         <li>
           <span class="dia-label">Miércoles Santo · 24 de marzo</span>
           La <strong>Procesión de la Pasión de Cristo</strong>: la más genuina y completa de la ciudad. Dieciséis pasos desfilan narrando las secuencias evangélicas por la zona norte, conformando un impresionante museo itinerante al aire libre donde la obra de Benlliure alcanza su máxima expresión.
         </li>
         <li>
-          <span class="dia-label">Jueves Santo · 25 de marzo · 21:00 h</span>
+          <span class="dia-label">Jueves Santo · 25 de marzo · entrada la noche</span>
           La ciudad se sume en el rezo durante el <strong>Vía Crucis Penitencial</strong>. El Cristo del Perdón y la Buena Muerte recorren su duro caminar hacia el Calvario acompañados por una marea de crevillentinos que rezan las catorce estaciones en un ambiente de estricto recogimiento y oración comunitaria.
         </li>
         <li>
           <span class="dia-label">Viernes Santo · 26 de marzo</span>
-          La jornada más intensa. En la madrugada, las alegres dianas de rondallas despiertan a la ciudad. A las 06:00 h arranca la multitudinaria <strong>Subida al Calvario</strong>. A media mañana, el tradicional almuerzo del pa torrat repone fuerzas. Por la noche, a las 21:00 h, el silencio envuelve la solemne <strong>Procesión de la Muerte de Cristo</strong> (Santo Entierro), donde desfilan obras cumbre como las Tres Marías de Benlliure.
+          La jornada más intensa. En la madrugada, las alegres dianas de rondallas despiertan a la ciudad. A las al amanecer arranca la multitudinaria <strong>Subida al Calvario</strong>. A media mañana, el tradicional almuerzo del pa torrat repone fuerzas. Por la noche, entrada la noche, el silencio envuelve la solemne <strong>Procesión de la Muerte de Cristo</strong> (Santo Entierro), donde desfilan obras cumbre como las Tres Marías de Benlliure.
         </li>
         <li>
           <span class="dia-label">Sábado Santo · 27 de marzo</span>
@@ -348,57 +415,57 @@
           El luto se rompe. La <strong>Procesión del Encuentro</strong> llena la Plaza de la Constitución de aleluyas, abrazos y el canto triunfal de los coros locales. Miles de papeles de colores caen desde los balcones sobre los pasos en una explosión de luz y júbilo que cierra la semana.
         </li>
       </ul>
-
-      <!-- SECCIÓN 6: COFRADÍAS POR DÍA -->
       <h2 class="section-title">Cofradías por día</h2>
       <p>
         La Semana Santa de Crevillent reúne a <strong>una treintena de cofradías y hermandades</strong>. Pasa el cursor sobre el nombre de cada cofradía para ver su nombre completo oficial. Consulta el programa de la Federación para horarios e itinerarios exactos de cada edición.
       </p>
 
+      <p class="nota-grid">⚠️ Los horarios y recorridos exactos se publican en el programa oficial de la Federación antes de cada edición.</p>
+
       <div class="cofradias-grid">
 
-        <div class="cofradia-col">
-          <h3>Sábado de Pasión</h3>
+        <details class="cofradia-col">
+          <summary>Sábado de Pasión</summary>
           <ul>
             <li>
               <span class="nombre-corto">La Convocatoria</span>
               <span class="tooltip-texto">Cofradía de la Convocatoria y Jesús Triunfante — el Guión que recorre la ciudad con bocinas anunciando el inicio de la Semana Santa.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Ramos</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
           <ul>
             <li>
               <span class="nombre-corto">Jesús Triunfante</span>
               <span class="tooltip-texto">Cofradía de la Convocatoria y Jesús Triunfante — "El pas de la Burreta". Obra póstuma de Mariano Benlliure, finalizada en 1947.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Lunes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Sin desfiles</span>
               <span class="tooltip-texto">Jornada dedicada al montaje de tronos y preparación de arreglos florales en las sedes. Actividad interna de las cofradías.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Martes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo de Difuntos</span>
               <span class="tooltip-texto">Cofradía del Santísimo Cristo de Difuntos y Ánimas — Procesión de Penitencia con hábitos cistercienses y el Coro de Voces Graves.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Miércoles Santo</h3>
+        <details class="cofradia-col" open>
+          <summary>Miércoles Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Jesús Triunfante</span>
@@ -433,20 +500,20 @@
               <span class="tooltip-texto">Cofradía de Nuestro Padre Jesús Nazareno.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Jueves Santo</h3>
+        <details class="cofradia-col">
+          <summary>Jueves Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Cristo del Perdón</span>
-              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón y la Buena Muerte — preside el Vía Crucis Penitencial a las 21:00 h.</span>
+              <span class="tooltip-texto">Cofradía del Santísimo Cristo del Perdón y la Buena Muerte — preside el Vía Crucis Penitencial, entrada la noche.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Viernes Santo</h3>
+        <details class="cofradia-col">
+          <summary>Viernes Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Mujer Verónica</span>
@@ -485,20 +552,20 @@
               <span class="tooltip-texto">Cofradía Regina Martyrum.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Sábado Santo</h3>
+        <details class="cofradia-col">
+          <summary>Sábado Santo</summary>
           <ul>
             <li>
               <span class="nombre-corto">Virgen de la Soledad</span>
               <span class="tooltip-texto">Cofradía Virgen de la Soledad — Procesión de la Soledad y Santo Entierro de Cristo. Luto riguroso y silencio absoluto.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cofradia-col">
-          <h3>Domingo de Resurrección</h3>
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
           <ul>
             <li>
               <span class="nombre-corto">San Juan de la Alegría</span>
@@ -513,16 +580,14 @@
               <span class="tooltip-texto">Cofradía de la Virgen de la Aurora — cierra la Semana Santa con el canto triunfal de los coros en la Plaza de la Constitución.</span>
             </li>
           </ul>
-        </div>
+        </details>
 
       </div>
       <p class="fuente">Fuente: <a href="https://semanasantacrevillent.com" target="_blank" rel="noopener">Federación de Cofradías y Hermandades de Semana Santa de Crevillent</a> — última verificación: 2026-05-01</p>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
-          Si algo hace única a la Semana Santa de Crevillent es su asombrosa tradición coral. Aquí, el silencio de los nazarenos sirve de lienzo para que los orfeones y agrupaciones corales locales interpreten <strong>motetes</strong> y cantos a capella de una factura técnica y emocional excepcional. La polifonía rebota en las paredes del casco antiguo, dotando a los desfiles de una elegancia sobrecogedora que no se encuentra en ninguna otra Semana Santa del levante español. Escuchar a decenas de voces empastadas cantando a capella un Stabat Mater mientras un paso de Benlliure avanza lentamente en la oscuridad de la noche es una experiencia estética que trasciende lo religioso y eriza la piel.
+          Si algo hace única a la Semana Santa de Crevillent es su asombrosa tradición coral. Aquí, el silencio de los nazarenos sirve de lienzo para que los orfeones y agrupaciones corales locales interpreten <strong>motetes</strong> y cantos a capella de una factura técnica y emocional excepcional. La polifonía rebota en las paredes del casco antiguo, dotando a los desfiles de una elegancia vocal que no se encuentra en ninguna otra Semana Santa del levante español. Escuchar a decenas de voces empastadas cantando a capella un Stabat Mater mientras un paso de Benlliure avanza lentamente en la oscuridad de la noche es una experiencia estética de difícil descripción.
         </p>
         <p>
           A este luto vocal se contraponen las alegres y populares <strong>dianas</strong> de las rondallas en la madrugada del Viernes Santo, que despiertan a la ciudad con un pasacalles festivo antes de la Subida al Calvario. El contraste entre el recogimiento polifónico de los días anteriores y ese estallido de alegría mediterránea resume en pocas horas toda la dualidad emocional de la Semana Santa crevillentina.
@@ -532,8 +597,6 @@
           <li>Para las dianas del Viernes Santo madruga sin miedo: la alegría colectiva de ese momento compensa con creces el esfuerzo. El almuerzo de pa torrat que sigue a la Subida al Calvario es la recompensa perfecta.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -549,7 +612,7 @@
 
         <div class="must-see-card">
           <h3>El Vía Crucis Penitencial al Calvario</h3>
-          <span class="tag">Jueves Santo · 21:00 h · Paseo del Calvario</span>
+          <span class="tag">Jueves Santo · Entrada la noche · Paseo del Calvario</span>
           <p>Una marea de crevillentinos acompaña al Cristo del Perdón en la oscuridad rezando las catorce estaciones hacia el monte del Calvario. La imagen se recorta contra la noche mientras miles de personas caminan en silencio y oración comunitaria.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
@@ -560,7 +623,7 @@
         <div class="must-see-card">
           <h3>Las dianas y el Pa Torrat del Viernes Santo</h3>
           <span class="tag">Viernes Santo · Madrugada y mañana · Calles del centro</span>
-          <p>Al amanecer, rondallas y bandas despiertan a la ciudad con alegres dianas antes de la Subida al Calvario a las 06:00 h. A media mañana, el rito del pa torrat — pan tostado con aceite, bacalao seco, ajos asados y habas — reúne a cofrades y visitantes en un almuerzo de hermandad.</p>
+          <p>Al amanecer, rondallas y bandas despiertan a la ciudad con alegres dianas antes de la Subida al Calvario al amanecer. A media mañana, el rito del pa torrat — pan tostado con aceite, bacalao seco, ajos asados y habas — reúne a cofrades y visitantes en un almuerzo de hermandad.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
             <p>Porque es el contraste perfecto de la Semana Santa crevillentina: pasar del madrugón procesional a la hermandad del almuerzo compartido es la esencia del carácter mediterráneo aplicado a la Cuaresma. Busca los bares y casas de cofradías del centro que sirven el almuerzo tradicional — los locales te indicarán los mejores sitios.</p>
@@ -578,8 +641,6 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Si solo puedes ir un día, elige el Miércoles Santo.</strong> La Procesión de la Pasión de Cristo saca a la calle la mayor parte del patrimonio de Benlliure. Es el día imprescindible para los amantes del arte y la escultura.</li>
@@ -591,8 +652,6 @@
         <li><strong>Aparcamiento.</strong> El centro histórico se corta al tráfico durante los días grandes. Aparca en las grandes avenidas periféricas como la Ronda Sur o los accesos cercanos a la N-340 y accede al centro a pie — es perfectamente abarcable.</li>
         <li><strong>Cuántos días necesitas.</strong> Con dos días cubres lo esencial: Miércoles Santo para la Procesión de la Pasión y Viernes Santo para las dianas, la Subida al Calvario, el pa torrat y el Santo Entierro. Si puedes añadir el Jueves Santo, el Vía Crucis Penitencial completa la experiencia de forma inmejorable.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO COFRADE -->
       <h2 class="section-title">Vocabulario cofrade</h2>
       <dl class="festero">
 
@@ -621,16 +680,12 @@
         <dd>Museo de la Semana Santa de Crevillent. Espacio expositivo donde se custodian y explican las tallas titulares durante todo el año. Es la visita imprescindible para entender la dimensión patrimonial de lo que procesiona cada primavera y para ver de cerca la obra de Benlliure sin la distancia de la calle.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+      <div class="galeria" style="display:none;">
         <img src="images/semana-santa-crevillent-1.jpg" alt="Paso de Mariano Benlliure iluminado por candelería de cera durante la Procesión de la Pasión de Cristo en la Semana Santa de Crevillent" />
         <img src="images/semana-santa-crevillent-2.jpg" alt="Coro polifónico cantando a capella ante un paso durante la Semana Santa de Crevillent" />
         <img src="images/semana-santa-crevillent-3.jpg" alt="Procesión del Encuentro en la Plaza de la Constitución de Crevillent con aleluyas de colores cayendo desde los balcones" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://semanasantacrevillent.com" target="_blank" rel="noopener">Federación de Cofradías y Hermandades de Semana Santa de Crevillent</a></li>
@@ -638,13 +693,11 @@
         <li><a href="https://comunitatvalenciana.com" target="_blank" rel="noopener">Turismo Comunitat Valenciana</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>Del Sábado de Pasión al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2027, del 21 de marzo al 28 de marzo. Los días de mayor concentración de visitantes son el Miércoles Santo y el Viernes Santo.</dd>
+        <dd>Del Sábado de Pasión al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 21 de marzo al 29 de marzo. Los días de mayor concentración de visitantes son el Miércoles Santo y el Viernes Santo.</dd>
 
         <dt>¿Es necesario pagar para ver las procesiones?</dt>
         <dd>No. El acceso a las calles es totalmente libre y gratuito. En zonas clave como la Plaza de la Constitución o La Morquera suelen instalarse sillas de alquiler gestionadas por la Federación para mayor comodidad, pero no son obligatorias.</dd>
@@ -652,20 +705,44 @@
         <dt>¿A qué hora cantan los coros?</dt>
         <dd>Los coros polifónicos interpretan sus motetes en puntos acústicamente favorables a lo largo del recorrido — esquinas, plazas, puertas de iglesias. Lo mejor es consultar el programa de mano oficial para saber exactamente dónde y cuándo se ubicarán.</dd>
 
-        <dt>¿Dónde aparcar en Crevillent durante la Semana Santa?</dt>
-        <dd>El centro histórico se corta al tráfico durante los días grandes. Se recomienda aparcar en las grandes avenidas periféricas como la Ronda Sur o los accesos cercanos a la N-340 y caminar hacia el centro, que es perfectamente abarcable a pie.</dd>
-
         <dt>¿Las procesiones se suspenden por lluvia?</dt>
-        <dd>Sí. Dada la incalculable valía del patrimonio escultórico de Benlliure y otros autores, las cofradías suspenden los desfiles ante cualquier riesgo de lluvia para proteger la madera policromada. Sigue los canales oficiales de la Federación para avisos en tiempo real.</dd>
-
-        <dt>¿Es apta para familias con niños?</dt>
-        <dd>Sí, en general. El Domingo de Ramos con el pas de la Burreta y el Domingo de Resurrección con la lluvia de aleluyas son especialmente apropiados para niños. La Procesión de Penitencia del Martes Santo (oscuridad y coro de voces graves) puede impresionar a los más pequeños.</dd>
+        <dd>Sí. Dada la excepcional valía del patrimonio escultórico de Benlliure y otros autores, las cofradías suspenden los desfiles ante cualquier riesgo de lluvia para proteger la madera policromada. Sigue los canales oficiales de la Federación para avisos en tiempo real.</dd>
 
         <dt>¿Puedo visitar las tallas de Benlliure fuera de la Semana Santa?</dt>
         <dd>Sí. El Museo de la Semana Santa de Crevillent (MUSS) custodia las tallas titulares y está abierto durante todo el año. Es la visita imprescindible para ver de cerca la obra de Benlliure con detalle y sin la distancia que impone verlas en procesión.</dd>
 
       </dl>
 
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Semana Santa</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Comunitat Valenciana</span>
+        <span class="etiqueta">Alicante</span>
+        <span class="etiqueta">Crevillent</span>
+        <span class="etiqueta">Marzo</span>
+        <span class="etiqueta">Benlliure</span>
+        <span class="etiqueta">Coros polifónicos</span>
+        <span class="etiqueta">Pa Torrat</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="semana-santa-orihuela.html" class="relacionada-card">
+            <strong>Semana Santa de Orihuela</strong>
+            <span>Alicante · ITI · Arte sacro y procesiones</span>
+          </a>
+          <a href="semana-santa-cartagena.html" class="relacionada-card">
+            <strong>Semana Santa de Cartagena</strong>
+            <span>Murcia · ITI · Cinco cofradías históricas</span>
+          </a>
+          <a href="semana-santa-lorca.html" class="relacionada-card">
+            <strong>Semana Santa de Lorca</strong>
+            <span>Murcia · ITI · Desfiles bíblicos y pasos</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -673,7 +750,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
