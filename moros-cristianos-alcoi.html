@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Moros y Cristianos de Alcoi 2027: Guía Completa, Filaes y Entradas | Folklorius</title>
-  <meta name="description" content="Guía completa de los Moros y Cristianos de Alcoi 2027. La fiesta festera más antigua de España desde 1276. 28 filaes, las Entradas, las Embajadas y la aparición de Sant Jordi." />
+  <title>Moros y Cristianos de Alcoi 2026: Entrades y Sant Jordi</title>
+  <meta name="description" content="Guía de los Moros y Cristianos de Alcoi 2026 (25-27 abril). ITI. 28 filaes, las Entrades más antiguas de España, las Embajadas ante el castillo y Sant Jordi." />
   <link rel="canonical" href="https://folklorius.es/moros-cristianos-alcoi.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Moros y Cristianos de Alcoi 2027 | Donde nació la tradición festera" />
-  <meta property="og:description" content="Guía inmersiva de los Moros y Cristianos de Alcoi. 28 filaes, las Entradas más antiguas de España, las Embajadas y la aparición de Sant Jordi." />
+  <meta property="og:title" content="Moros y Cristianos de Alcoi 2026 | Donde nació la tradición festera" />
+  <meta property="og:description" content="28 filaes, las Entrades más antiguas de España, las Embajadas en verso ante el castillo y la aparición de Sant Jordi. Guía completa de Alcoi 2026." />
   <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-alcoi.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -235,6 +235,51 @@
       border-left: 3px solid var(--brand, #b34700);
     }
 
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+    .nota-filae {
+      font-size: 0.78rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -317,6 +362,16 @@
         Alcoi · Alicante · Comunitat Valenciana · «Donde nació la tradición festera que se extendió por el mundo.»
       </p>
 
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 25 al 27 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Alcoi · Alicante · Comunitat Valenciana</span>
+          <span>⏱️ 3 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional desde 1980</span>
+          <span>🎖️ Cuna de la tradición festera</span>
+        </div>
+      </div>
+
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 1980</span>
       </div>
@@ -325,14 +380,11 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Antes de venir, ten en cuenta esto</strong>
         <ul>
-          <li><strong>Pólvora y arcabucería.</strong> El Dia dels Trons concentra el mayor volumen de disparos de la fiesta. La detonación es intensa y repentina. Protección auditiva imprescindible para niños pequeños y personas sensibles.</li>
-          <li><strong>No cruces el desfile.</strong> Durante las Entradas y el Alardo el recorrido está cerrado. Espera siempre en los pasos habilitados por la organización.</li>
-          <li><strong>Respeta a los festeros.</strong> La fiesta tiene una dimensión religiosa y de identidad muy arraigada. No interfieras con los actos ni con los disparos de arcabucería.</li>
-          <li><strong>Sillas y tribunas.</strong> El sistema de sillas es gestionado por la Associació de Sant Jordi. Si quieres ver las Entradas sentado, reserva en cuanto abran las solicitudes — normalmente en marzo.</li>
+          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Alcoi conmemoran un hecho histórico del siglo XIII con admiración y respeto hacia ambas culturas. No hay desprecio hacia el mundo musulmán ni hacia ninguna otra religión o creencia. Festeros del bando moro y del cristiano comparten la misma fiesta, las mismas calles y el mismo orgullo. Si algo define esta tradición es la unión, no la confrontación.</li>
+          <li><strong>No cruces el desfile.</strong> Durante las Entrades y el Alardo el recorrido está cerrado al paso. Espera siempre en los pasos habilitados por la organización.</li>
+          <li><strong>Respeta a los festeros.</strong> La fiesta tiene una dimensión de identidad muy arraigada en Alcoi. No interfieras con los actos ni con los momentos de arcabucería.</li>
         </ul>
       </div>
-
-      <!-- SECCIÓN 1: LA ESENCIA -->
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
         Alcoi en abril tiene un sonido propio. No es el de una sola marcha ni el de un solo instrumento: es la suma de veintiocho bandas tocando simultáneamente a lo largo de un recorrido que sube y baja por el casco histórico de una ciudad montañosa. El metal retumba entre los edificios, la pólvora huele a fiesta y los trajes — algunos de un nivel de elaboración que no tiene nada que envidiar a ninguna ópera — desfilan durante horas sin que nadie mire el reloj.
@@ -340,8 +392,6 @@
       <p>
         Alcoi no inventó los Moros y Cristianos. Lo que inventó fue la manera de hacerlos fiesta: con filaes, con música compuesta expresamente, con embajadas teatrales ante un castillo de madera y con la aparición de su patrón como desenlace. Ese modelo lleva siglos exportándose a cientos de pueblos de la geografía española. Aquí es donde empezó.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
         La fiesta se estructura en tres días principales — la Trilogía — precedidos por semanas de actos previos. El eje de todo son las <strong>28 filaes</strong>: agrupaciones festeras con nombre propio, traje, banda y sede. Catorce del bando cristiano, catorce del moro. Cada filà tiene su identidad, su historia y su manera de entender la fiesta. No son comparsas genéricas: son instituciones con estatutos del siglo XIX.
@@ -349,9 +399,7 @@
       <p>
         La narración que se despliega en los tres días sigue un hilo argumental claro: el bando cristiano y el moro toman la ciudad (las Entradas), se venera al patrón (Dia de Sant Jordi) y se libra la batalla definitiva ante el castillo (el Alardo), con la aparición milagrosa de Sant Jordi como desenlace. Todo ello envuelto en música festera — marchas moras y cristianas compuestas específicamente para esta fiesta — y en la arcabucería que hace vibrar el aire de la ciudad.
       </p>
-      <p class="nota-grid">⚠️ Los horarios exactos y el programa completo de 2027 los publica la Associació de Sant Jordi d'Alcoi. Consúltalos en su web oficial antes de planificar tu visita.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
+      <p class="nota-grid">⚠️ Los horarios exactos y el programa completo  los publica la Associació de Sant Jordi d'Alcoi. Consúltalos en su web oficial antes de planificar tu visita.</p>
       <h2 class="section-title">Historia y significado</h2>
       <p>
         La fiesta rememora los hechos del 23 de abril de 1276. Alcoi fue asediada por las tropas del líder Al-Azraq. La tradición cuenta que en el peor momento del sitio, Sant Jordi apareció cabalgando sobre las murallas, infundió ánimos a los defensores y les dio la victoria. Al-Azraq murió en la batalla. Ese día se convirtió en la fecha fundacional de una celebración que lleva más de siete siglos sin interrumpirse.
@@ -362,20 +410,16 @@
       <p>
         En 1883 se constituye legalmente la <strong>Associació de Sant Jordi d'Alcoi</strong>, el ente rector que organiza y protege la fiesta hasta hoy. En 1980, Alcoi fue la primera fiesta festera en recibir la declaración de <strong>Fiesta de Interés Turístico Internacional</strong>, que reconocía lo que los alcoyanos ya sabían: que esto era único.
       </p>
-
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2027</h2>
+      <h2 class="section-title">Fechas 2026</h2>
       <p>
-        Las fiestas de Alcoi se celebran siempre en torno al 23 de abril, día de Sant Jordi, ajustando las fechas para que no coincidan con la Semana Santa. Las fechas de 2027 son:
+        Las fiestas de Alcoi se celebran siempre en torno al 23 de abril, día de Sant Jordi, ajustando las fechas para que no coincidan con la Semana Santa. Las fechas de 2026 son:
       </p>
       <ul>
-        <li><strong>Dia de les Entrades:</strong> sábado 24 de abril de 2027</li>
-        <li><strong>Dia de Sant Jordi:</strong> domingo 25 de abril de 2027</li>
-        <li><strong>Dia dels Trons (Alardo):</strong> lunes 26 de abril de 2027</li>
+        <li><strong>Dia de les Entrades:</strong> sábado 25 de abril de 2026</li>
+        <li><strong>Dia de Sant Jordi:</strong> domingo 26 de abril de 2026</li>
+        <li><strong>Dia dels Trons (Alardo):</strong> lunes 27 de abril de 2026</li>
       </ul>
       <p class="nota-grid">⚠️ El programa completo con horarios exactos de cada acto lo publica la Associació de Sant Jordi d'Alcoi en su web oficial. Consúltalo antes de planificar tu visita.</p>
-
-      <!-- SECCIÓN 5: ACTOS PRINCIPALES -->
       <h2 class="section-title">Los actos principales</h2>
 
       <ul class="actos-list">
@@ -398,14 +442,14 @@
           <span class="dia-label">Dia de les Entrades — Mañana</span>
           <strong>L'Entrada Cristiana.</strong>
           <span class="bando-tag bando-cristiano">Bando cristiano</span>
-          El ejército de la cruz baja desde El Partidor hacia el centro de la ciudad. Metales triunfales, trajes heráldicos y europeos, paso marcado y enérgico. El acto culmina con la llegada del Capitán y el Alférez cristianos al Ayuntamiento, donde el Capitán recibe las llaves de la ciudad. Es el desfile más épico y poderoso de los tres días.
+          El ejército de la cruz baja desde El Partidor hacia el centro de la ciudad. Metales triunfales, trajes heráldicos y europeos, paso marcado y enérgico. El Capitán, al frente de su boato, llega a la Plaça d'Espanya donde recibe las llaves de la ciudad mientras redoblan las campanas de Santa María — el instante más esperado de la mañana. El Alférez, con su boato, cierra el desfile. Es el acto más épico de los tres días.
         </li>
 
         <li>
           <span class="dia-label">Dia de les Entrades — Tarde</span>
           <strong>L'Entrada Mora.</strong>
           <span class="bando-tag bando-moro">Bando moro</span>
-          La invasión de Al-Azraq llega al atardecer. El ritmo cambia radicalmente: paso lento, solemne, arrastrado. Las marchas moras tienen una carga de percusión y de melodía oriental que no tiene nada que ver con la entrada de la mañana. Las carrozas, los ballets y la fantasía de los trajes convierten esta entrada en el acto más visual de la fiesta. Quien solo puede ver uno de los dos, suele recordar este.
+          La invasión de Al-Azraq llega al atardecer. El ritmo cambia radicalmente: paso lento, solemne, arrastrado. Las marchas moras tienen una carga de percusión y de melodía oriental que no tiene nada que ver con la entrada de la mañana. La estructura es la misma que en la Entrada Cristiana: el Capitán moro abre con su boato y recibe las llaves en la Plaça d'Espanya entre el redoble de campanas; el Alférez cierra el conjunto. Las carrozas, los ballets y la fantasía de los trajes convierten esta entrada en el acto más visual de la fiesta. Quien solo puede ver uno de los dos, suele recordar este.
         </li>
 
         <li>
@@ -444,11 +488,9 @@
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: FILAES POR BANDO -->
       <h2 class="section-title">Filaes por bando</h2>
       <p>
-        Las 28 filaes son el alma de la fiesta. Cada una tiene nombre, traje, banda de música, sede propia y un año de fundación que en muchos casos supera el siglo y medio. Pasa el cursor sobre el nombre para ver el año de fundación.
+        Las 28 filaes son el alma de la fiesta. Cada una tiene nombre, traje, banda de música y sede propia. Muchas tienen estatutos del siglo XIX y una historia que supera el siglo y medio. Pasa el cursor sobre el nombre para ver el nombre oficial en valenciano.
       </p>
       <p class="nota-grid">La composición oficial y el orden de desfile de cada filà lo publica anualmente la Associació de Sant Jordi d'Alcoi.</p>
 
@@ -456,152 +498,126 @@
 
         <div class="filae-col">
           <h3>⚔️ Bando Cristiano</h3>
+          <p class="nota-filae">Por orden oficial de antigüedad. El orden de desfile en las Entrades rota anualmente.</p>
           <ul>
             <li>
-              <span class="nombre-filae">Filà Labradores</span>
-              <span class="tooltip-filae">Filà Labradores · Fundada en 1842</span>
-              <span class="anyo">(1842)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Guzmanes</span>
-              <span class="tooltip-filae">Filà Guzmanes · Fundada en 1862</span>
-              <span class="anyo">(1862)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Almogávares</span>
-              <span class="tooltip-filae">Filà Almogávares · Fundada en 1869</span>
-              <span class="anyo">(1869)</span>
-            </li>
-            <li>
               <span class="nombre-filae">Filà Andaluces</span>
-              <span class="tooltip-filae">Filà Andaluces (Els Contrabandistes) · Fundada en 1852</span>
-              <span class="anyo">(1852)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Navarros</span>
-              <span class="tooltip-filae">Filà Navarros · Fundada en 1859</span>
-              <span class="anyo">(1859)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Aragonesos</span>
-              <span class="tooltip-filae">Filà Aragonesos · Fundada en 1859</span>
-              <span class="anyo">(1859)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Tomasinas</span>
-              <span class="tooltip-filae">Filà Tomasinas · Fundada en 1858</span>
-              <span class="anyo">(1858)</span>
+              <span class="tooltip-filae">Filà dels Andaluços · La más antigua del bando cristiano</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Asturianos</span>
-              <span class="tooltip-filae">Filà Asturianos (Els Creuats) · Fundada en 1875</span>
-              <span class="anyo">(1875)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Vascos</span>
-              <span class="tooltip-filae">Filà Vascos · Fundada en 1875</span>
-              <span class="anyo">(1875)</span>
+              <span class="tooltip-filae">Filà dels Asturians</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Cides</span>
-              <span class="tooltip-filae">Filà Cides · Fundada en 1881</span>
-              <span class="anyo">(1881)</span>
+              <span class="tooltip-filae">Filà dels Cides</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Labradores</span>
+              <span class="tooltip-filae">Filà dels Llauradors · Conocidos popularmente como Maseros</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Guzmanes</span>
+              <span class="tooltip-filae">Filà dels Guzmans</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Vascos</span>
+              <span class="tooltip-filae">Filà dels Vascos</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Mozárabes</span>
-              <span class="tooltip-filae">Filà Mozárabes · Fundada en 1893</span>
-              <span class="anyo">(1893)</span>
+              <span class="tooltip-filae">Filà dels Mossàrabs</span>
             </li>
             <li>
-              <span class="nombre-filae">Filà Alcodianos</span>
-              <span class="tooltip-filae">Filà Alcodianos · Fundada en 1911</span>
-              <span class="anyo">(1911)</span>
+              <span class="nombre-filae">Filà Almogávares</span>
+              <span class="tooltip-filae">Filà dels Almogàvers</span>
             </li>
             <li>
-              <span class="nombre-filae">Filà Muntanyesos</span>
-              <span class="tooltip-filae">Filà Muntanyesos · Fundada en 1921</span>
-              <span class="anyo">(1921)</span>
+              <span class="nombre-filae">Filà Navarros</span>
+              <span class="tooltip-filae">Filà dels Navarresos</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Tomasinas</span>
+              <span class="tooltip-filae">Filà de les Tomasines</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Montañeses</span>
+              <span class="tooltip-filae">Filà dels Muntanyesos</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Cruzados</span>
-              <span class="tooltip-filae">Filà Cruzados · Fundada en 1940</span>
-              <span class="anyo">(1940)</span>
+              <span class="tooltip-filae">Filà dels Creuats</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Alcodianos</span>
+              <span class="tooltip-filae">Filà dels Alcodians</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Aragoneses</span>
+              <span class="tooltip-filae">Filà dels Aragonesos · La más reciente del bando cristiano</span>
             </li>
           </ul>
         </div>
 
         <div class="filae-col">
           <h3>🌙 Bando Moro</h3>
+          <p class="nota-filae">Por orden oficial de antigüedad. El orden de desfile en les Entrades rota anualmente.</p>
           <ul>
             <li>
-              <span class="nombre-filae">Filà Judíos</span>
-              <span class="tooltip-filae">Filà Judíos · Fundada en 1817. Una de las más antiguas. Su traje evoca la indumentaria de tribus norteafricanas.</span>
-              <span class="anyo">(1817)</span>
-            </li>
-            <li>
               <span class="nombre-filae">Filà Llana</span>
-              <span class="tooltip-filae">Filà Llana · Fundada en 1839</span>
-              <span class="anyo">(1839)</span>
+              <span class="tooltip-filae">Filà Llana · La más antigua del bando moro, de finales del siglo XVIII</span>
             </li>
             <li>
-              <span class="nombre-filae">Filà Chano</span>
-              <span class="tooltip-filae">Filà Chano · Fundada en 1844</span>
-              <span class="anyo">(1844)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Verdes</span>
-              <span class="tooltip-filae">Filà Verdes · Fundada en 1854</span>
-              <span class="anyo">(1854)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Magenta</span>
-              <span class="tooltip-filae">Filà Magenta · Fundada en 1865</span>
-              <span class="anyo">(1865)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Cordón</span>
-              <span class="tooltip-filae">Filà Cordón · Fundada en 1869</span>
-              <span class="anyo">(1869)</span>
+              <span class="nombre-filae">Filà Judíos</span>
+              <span class="tooltip-filae">Filà dels Jueus · Fundada en 1817 como «Sultanes». El apodo popular «Judíos», por su indumentaria original, se convirtió en nombre oficial.</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Domingo Miques</span>
-              <span class="tooltip-filae">Filà Domingo Miques · Fundada en 1870</span>
-              <span class="anyo">(1870)</span>
+              <span class="tooltip-filae">Filà Domingo Miques</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Chano</span>
+              <span class="tooltip-filae">Filà Chano</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Verdes</span>
+              <span class="tooltip-filae">Filà dels Verds</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Magenta</span>
+              <span class="tooltip-filae">Filà Magenta</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Cordón</span>
+              <span class="tooltip-filae">Filà del Cordó</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Ligeros</span>
-              <span class="tooltip-filae">Filà Ligeros · Fundada en 1870</span>
-              <span class="anyo">(1870)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Marrakesch</span>
-              <span class="tooltip-filae">Filà Marrakesch · Fundada en 1901</span>
-              <span class="anyo">(1901)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Realistes</span>
-              <span class="tooltip-filae">Filà Realistes · Fundada en 1901</span>
-              <span class="anyo">(1901)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Berberiscos</span>
-              <span class="tooltip-filae">Filà Berberiscos · Fundada en 1901</span>
-              <span class="anyo">(1901)</span>
-            </li>
-            <li>
-              <span class="nombre-filae">Filà Abencerrajes</span>
-              <span class="tooltip-filae">Filà Abencerrajes · Fundada en 1904</span>
-              <span class="anyo">(1904)</span>
+              <span class="tooltip-filae">Filà dels Lleugers</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Mudéjares</span>
-              <span class="tooltip-filae">Filà Mudéjares · Fundada en 1904</span>
-              <span class="anyo">(1904)</span>
+              <span class="tooltip-filae">Filà dels Mudèjars</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Abencerrajes</span>
+              <span class="tooltip-filae">Filà dels Abencerratges</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Marrakesch</span>
+              <span class="tooltip-filae">Filà Marrakesch</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Realistes</span>
+              <span class="tooltip-filae">Filà Realistes</span>
+            </li>
+            <li>
+              <span class="nombre-filae">Filà Berberiscos</span>
+              <span class="tooltip-filae">Filà dels Berberiscs</span>
             </li>
             <li>
               <span class="nombre-filae">Filà Benimerines</span>
-              <span class="tooltip-filae">Filà Benimerines · Fundada en 1980. La más joven del bando moro.</span>
-              <span class="anyo">(1980)</span>
+              <span class="tooltip-filae">Filà Benimerines · Incorporada en 1980, la más reciente del bando moro</span>
             </li>
           </ul>
         </div>
@@ -609,11 +625,9 @@
       </div>
 
       <div class="banner-historia" role="note">
-        <h3>La filà Judíos — por qué está en el bando moro</h3>
-        <p>Es la pregunta que se hace cualquier visitante que lee el listado. La filà Judíos, fundada en 1817, es una de las más antiguas de la fiesta. Su nombre no tiene connotación peyorativa: proviene de su traje original, el «tàrbit», que evoca la indumentaria de las tribus del norte de África integradas históricamente bajo la media luna. En el contexto festero alcoiano, «judíos» hace referencia a ese origen oriental del atuendo, no a ninguna caracterización religiosa. Es una denominación histórica reconocida y respetada por la propia comunidad festera.</p>
+        <h3>La filà Judíos — por qué se llama así y por qué está en el bando moro</h3>
+        <p>La filà nació en 1817 con el nombre de «Sultanes». Con el tiempo el pueblo de Alcoi empezó a llamarla «Judíos» por su indumentaria, que recordaba a las representaciones de tribus hebreas de la época. El apodo arraigó y se convirtió en nombre oficial. En cuanto a su bando: en la narrativa festera, el bando moro agrupaba a todas las culturas que convivían en Al-Andalus, incluidas las minorías sefardíes. No es una confusión religiosa ni histórica — es la manera en que la fiesta del siglo XVIII retrató esa diversidad. El nombre no tiene connotación peyorativa y la propia comunidad festera lo reconoce y respeta así.</p>
       </div>
-
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <h3 style="color:#1d4ed8; margin-bottom:8px;">Dos sonidos, dos mundos</h3>
@@ -621,18 +635,26 @@
         <p>La diferencia entre los dos bandos se escucha antes de verlos. La <strong>Entrada Cristiana</strong> avanza con pasodobles y marchas de metal triunfal: trompetas, trombones, tempos rápidos y heroicos. La <strong>Entrada Mora</strong> llega con un paso arrastrado, lento y solemne, cargado de timbales y de melodías lánguidas que recuerdan a la chirimía oriental.</p>
         <p style="margin-bottom:0;">Entre los compositores que han definido el sonido de Alcoi destacan <strong>Amando Blanquer</strong>, autor de la primera marcha cristiana <em>Aleluya</em> (1958), y <strong>Gonzalo Barrachina</strong>, autor del <em>Himne de la Festa</em>. La <strong>Unió Musical d'Alcoi</strong>, junto a la Corporación Musical Primitiva y la Societat Musical Nova, son los entes centenarios que garantizan que cada filà suene como merece.</p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
-          <h3>L'Entrada Mora al atardecer</h3>
-          <span class="tag">Dia de les Entrades · Tarde · Plaça d'Espanya</span>
-          <p>El bando moro desfila al ritmo de las marchas orientales, con paso lento y solemne. Las carrozas, los ballets y la fantasía de los trajes hacen de este desfile el más visual de los tres días. Es el que más sorprende a quien viene por primera vez.</p>
+          <h3>Les Entrades: Cristiana i Mora</h3>
+          <span class="tag">Dia de les Entrades · Mañana y tarde · Plaça d'Espanya</span>
+          <p>Son dos desfiles con la misma estructura y distinta alma. Por la mañana desfila el bando cristiano, con pasodobles triunfales y trajes de metal y terciopelo. Por la tarde, el bando moro avanza al ritmo lento y solemne de las marchas orientales. En ambos la estructura es la misma: el Capitán llega a la Plaça d'Espanya, donde se le hace entrega de las llaves de la ciudad mientras redoblan las campanas de Santa María — el momento más esperado de las Entrades. Desfilan después las filaes sin cargo. La Esquadra del Mig parte el desfile por la mitad. Y el Alférez, con su boato, cierra el conjunto. Los cargos — Capitán y Alférez — no van solos: encabezan un boato propio cuyo orden interno diseña cada año un creador específico. La misma arquitectura, dos mundos opuestos.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque el contraste con la Entrada Cristiana de la mañana es total. Dos estéticas, dos músicas, dos formas de entender el desfile en el mismo día. Ver las dos seguidas es entender la fiesta de golpe.</p>
+            <p>Porque ver las dos Entradas el mismo día es entender la fiesta de golpe. El contraste entre la marcha cristiana triunfal de la mañana y el paso arrastrado y solemne de la tarde es total. No hay otro lugar en España donde ese contraste se viva con esta intensidad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Diana antes del amanecer</h3>
+          <span class="tag">Dia de les Entrades · Madrugada · Plaça d'Espanya</span>
+          <p>Antes de que salga el sol, las escuadras de las filaes recorren las calles a un ritmo marcial y exigente. La ciudad todavía está dormida cuando la música ya está sonando. Es el aviso físico de que la fiesta ha comenzado de verdad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Diana a oscuras, con la ciudad vacía y el sonido de las marchas rebotando en los edificios, tiene una atmósfera que el bullicio del resto del día no puede reproducir.</p>
           </details>
         </div>
 
@@ -656,52 +678,18 @@
           </details>
         </div>
 
-        <div class="must-see-card">
-          <h3>La Diana antes del amanecer</h3>
-          <span class="tag">Dia de les Entrades · Madrugada · Plaça d'Espanya</span>
-          <p>Antes de que salga el sol, las escuadras de las filaes recorren las calles a un ritmo marcial y exigente. La ciudad todavía está dormida cuando la música ya está sonando. Es el aviso físico de que la fiesta ha comenzado de verdad.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque la Diana a oscuras, con la ciudad vacía y el sonido de las marchas rebotando en los edificios, tiene una atmósfera que el bullicio del resto del día no puede reproducir.</p>
-          </details>
-        </div>
-
-        <div class="must-see-card">
-          <h3>El Museu Alcoià de la Festa</h3>
-          <span class="tag">Todo el año · Carrer Sant Miquel, 60 · Alcoi</span>
-          <p>El museo está instalado en la antigua casa del Barón de la Torre. Trajes históricos, diseños de escuadras especiales, cartelería y montajes audiovisuales que permiten sentir las Entradas aunque no sea la semana de la fiesta. Imprescindible antes o después de los tres días.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque da contexto a todo lo demás. Quien visita el museo antes de la fiesta entiende lo que está viendo en la calle. Quien lo visita después, recuerda mejor lo que vivió.</p>
-          </details>
-        </div>
-
-        <div class="must-see-card">
-          <h3>La gastronomía festera</h3>
-          <span class="tag">Días de fiesta · Bares y restaurantes del centro</span>
-          <p>La fiesta tiene sus propios sabores. La <em>olleta alcoiana</em> es el guiso de fiesta mayor. La <em>pericana</em> — pimiento seco, bacalao y aceite — es el aperitivo de la ciudad. Y las bebidas: el <em>Plis-Play</em> (café licor con cola) y la <em>Mentireta</em> (café licor con granizado de limón) son tan parte de la fiesta como las marchas.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque comer y beber como los alcoyanos durante la fiesta es una forma de participar que no requiere ser festero. La gastronomía de la fiesta está en cualquier bar del centro y es la manera más sencilla de integrarse.</p>
-          </details>
-        </div>
-
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Alojamiento.</strong> Alcoi y los municipios cercanos se llenan completamente. Reserva con meses de antelación, especialmente para el fin de semana de las Entradas.</li>
         <li><strong>Sillas y tribunas.</strong> El sistema de sillas lo gestiona la Associació de Sant Jordi. Las solicitudes abren normalmente en marzo en su portal oficial. El precio oscila entre 15 € y 30 € según el sector. Si no consigues silla, llega temprano y colócate en una zona amplia como la Glorieta o el Parterre.</li>
-        <li><strong>Protección auditiva.</strong> Imprescindible para el Dia dels Trons y para los momentos de arcabucería en general. Para niños pequeños no es opcional.</li>
+        <li><strong>Protección auditiva.</strong> Imprescindible para el Dia dels Trons y los momentos de arcabucería. La detonación es intensa y repentina — para niños pequeños no es opcional.</li>
         <li><strong>Calzado.</strong> Alcoi es una ciudad montañosa con calles estrechas y empedradas. Zapatillas cómodas, sin excepciones.</li>
         <li><strong>Sol de abril.</strong> A finales de abril en Alicante el sol ya aprieta. Protector solar para las horas de las Entradas, que son largas y al aire libre.</li>
         <li><strong>Restaurantes.</strong> Reserva mesa con antelación si quieres comer con tranquilidad. También hay puestos de comida rápida en zonas adyacentes al recorrido del desfile.</li>
         <li><strong>Programa oficial.</strong> Descárgalo de la web de la Associació de Sant Jordi antes de venir. Los actos se solapan y hay que elegir bien qué ver cada día.</li>
         <li><strong>Accesibilidad.</strong> La Associació habilita zonas reservadas para sillas de ruedas en diferentes tramos del recorrido. Consulta en su web la ubicación exacta para cada edición.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO FESTERO -->
       <h2 class="section-title">Vocabulario festero</h2>
       <dl class="festero">
 
@@ -730,8 +718,6 @@
         <dd>Las cenas callejeras con las que los festeros cierran la fiesta la noche del Dia dels Trons, después de la aparición de Sant Jordi. Son el epílogo informal de la Trilogía.</dd>
 
       </dl>
-
-      <!-- SECCIÓN 11: GALERÍA -->
       <h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/alcoi/entrada-mora-atardecer.jpg" alt="Entrada Mora al atardecer en Alcoi con festeros del bando moro desfilando por la Plaça d'Espanya" />
@@ -739,43 +725,63 @@
         <img src="images/alcoi/embajada-castillo.jpg" alt="Embajada ante el castillo durante el Dia dels Trons de los Moros y Cristianos de Alcoi" />
         <img src="images/alcoi/sant-jordi-aparicion.jpg" alt="Aparición de Sant Jordi en lo alto del castillo iluminado durante el Dia dels Trons de Alcoi" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://www.asjordi.org" target="_blank" rel="noopener">Associació de Sant Jordi d'Alcoi — Web oficial</a></li>
         <li><a href="https://www.alcoi.org" target="_blank" rel="noopener">Ayuntamiento de Alcoi</a></li>
         <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2027-01-01</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
+      <p class="fuente">Última verificación de enlaces: 2026-06-01</p>
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebran los Moros y Cristianos de Alcoi en 2027?</dt>
-        <dd>Las fechas de 2027 son del 24 al 26 de abril: Dia de les Entrades (sábado 24), Dia de Sant Jordi (domingo 25) y Dia dels Trons (lunes 26). El programa completo con horarios de cada acto lo publica la Associació de Sant Jordi d'Alcoi en su web oficial.</dd>
+        <dt>¿Cuándo se celebran los Moros y Cristianos de Alcoi en 2026?</dt>
+        <dd>Las fechas de 2026 son del 25 al 27 de abril: Dia de les Entrades (sábado 25), Dia de Sant Jordi (domingo 26) y Dia dels Trons (lunes 27). El programa completo con horarios de cada acto lo publica la Associació de Sant Jordi d'Alcoi en su web oficial antes de cada edición.</dd>
 
         <dt>¿Son los Moros y Cristianos más antiguos de España?</dt>
         <dd>Sí. Las primeras referencias documentadas a exhibiciones bélicas estructuradas en Alcoi datan de 1552, y la descripción de los dos bandos organizados aparece en 1672. Alcoi es considerada la cuna de la tradición festera de Moros y Cristianos.</dd>
 
         <dt>¿Qué son las filaes y cuántas hay?</dt>
-        <dd>Las filaes son las agrupaciones festeras que organizan y dan vida a la fiesta. Hay 28 en total: 14 del bando cristiano y 14 del moro. Cada una tiene nombre propio, traje, banda de música y sede. Muchas tienen estatutos del siglo XIX y año de fundación documentado.</dd>
+        <dd>Las filaes son las agrupaciones festeras que organizan y dan vida a la fiesta. Hay 28 en total: 14 del bando cristiano y 14 del moro. Cada una tiene nombre propio, traje, banda de música y sede. Muchas tienen estatutos del siglo XIX.</dd>
 
         <dt>¿Se puede ver la fiesta sin pagar?</dt>
         <dd>Los desfiles se pueden seguir de pie en el recorrido de forma gratuita. El sistema de sillas y tribunas tiene coste y lo gestiona la Associació de Sant Jordi. Si no consigues silla, llega temprano y elige una posición con buena visibilidad en zonas amplias como la Glorieta.</dd>
 
-        <dt>¿Es apta para familias con niños?</dt>
-        <dd>Sí, aunque los actos de arcabucería y pólvora del Dia dels Trons requieren protección auditiva para los más pequeños. Las Entradas son muy visuales y atractivas para todas las edades. Para evitar que los niños se cansen, colócate en zonas amplias donde puedan moverse.</dd>
-
-        <dt>¿Qué es el Museu Alcoià de la Festa?</dt>
-        <dd>Un museo inmersivo instalado en la antigua casa del Barón de la Torre (Carrer Sant Miquel, 60). Expone trajes históricos, cartelería y montajes audiovisuales sobre la fiesta. Está abierto todo el año y es muy recomendable visitarlo antes o después de los días de fiesta para entender mejor lo que se ve en la calle.</dd>
-
         <dt>¿Por qué la filà Judíos está en el bando moro?</dt>
-        <dd>Su nombre proviene del traje original de la agrupación, el «tàrbit», que evoca la indumentaria de tribus norteafricanas históricamente integradas bajo la media luna. Es una denominación histórica de origen festero sin connotación peyorativa, reconocida y respetada por la propia comunidad.</dd>
+        <dd>La filà nació como «Sultanes» y recibió el apodo «Judíos» por su indumentaria original, que recordaba a las representaciones de tribus hebreas de la época. El nombre arraigó y se hizo oficial. En la narrativa festera, el bando moro agrupaba a todas las culturas que convivían en Al-Andalus. No es una confusión religiosa: es la forma en que la fiesta retrató esa diversidad. La denominación no tiene connotación peyorativa y la comunidad festera la reconoce y respeta así.</dd>
 
       </dl>
 
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Moros y Cristianos</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Comunitat Valenciana</span>
+        <span class="etiqueta">Alicante</span>
+        <span class="etiqueta">Alcoi</span>
+        <span class="etiqueta">Abril</span>
+        <span class="etiqueta">Filaes</span>
+        <span class="etiqueta">Entrades</span>
+        <span class="etiqueta">Sant Jordi</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="moros-cristianos-ontinyent.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Ontinyent</strong>
+            <span>Valencia · ITI · La noche de les Multes</span>
+          </a>
+          <a href="moros-cristianos-elda.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Elda</strong>
+            <span>Alicante · ITI · Comparsas y Gran Entrada</span>
+          </a>
+          <a href="moros-cristianos-bocairent.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Bocairent</strong>
+            <span>Valencia · ITN · Calles medievales y estruendo</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
