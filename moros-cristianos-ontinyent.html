@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Moros y Cristianos de Ontinyent 2026: Guía Completa, Comparsas, Bajada del Cristo y Fechas | Folklorius</title>
-  <meta name="description" content="Guía completa de los Moros y Cristianos de Ontinyent 2026. Fiesta de Interés Turístico Internacional desde 2025. 24 comparsas, Bajada del Cristo, Embajadas de 1860 y fechas oficiales del 16 al 24 de agosto." />
+  <title>Moros y Cristianos de Ontinyent 2026: Bajada y Chimo</title>
+  <meta name="description" content="Guía de los Moros y Cristianos de Ontinyent 2026 (20-24 agosto). ITI. 24 comparsas, Bajada del Cristo, Embajadas de 1860 y el centenario del Mestre Ferrero." />
   <link rel="canonical" href="https://folklorius.es/moros-cristianos-ontinyent.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Moros y Cristianos de Ontinyent 2026 | Bajada del Cristo, Embajadas y 24 comparsas" />
-  <meta property="og:description" content="Guía cultural de los Moros y Cristianos de Ontinyent. ITI desde 2025. La Bajada del Cristo, las Embajadas con el texto de 1860 y Chimo, la marcha mora más icónica de la fiesta, compuesta por el Mestre Ferrero." />
+  <meta property="og:title" content="Moros y Cristianos de Ontinyent 2026 | La Bajada del Morenet y el Chimo del Mestre Ferrero" />
+  <meta property="og:description" content="24 comparsas, la Bajada del Cristo de la Agonía, las Embajadas con texto de 1860 y el centenario del Mestre Ferrero. Guía completa de Ontinyent 2026." />
   <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-ontinyent.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -102,6 +102,41 @@
     }
     .filae-col ul li:hover .tooltip-filae { display: block; }
     .filae-col ul li:focus-within .tooltip-filae { display: block; }
+
+    /* Chip de cargo del año en curso, junto al nombre de la comparsa */
+    .cargo-2026 {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      margin-left: 6px;
+      background: var(--brand, #b34700);
+      color: #fff;
+      border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    /* Nota plegable bajo el listado de comparsas (rotación de cargos) */
+    .nota-rotacion {
+      margin: 1rem 0 0;
+      font-size: 0.88rem;
+      color: var(--text-muted, #5a5a5a);
+    }
+    .nota-rotacion summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+      padding: 4px 0;
+    }
+    .nota-rotacion summary::-webkit-details-marker { display: none; }
+    .nota-rotacion summary::after { content: " +"; }
+    .nota-rotacion[open] summary::after { content: " −"; }
+    .nota-rotacion p {
+      margin-top: 8px;
+      line-height: 1.55;
+    }
 
     /* ── Must-see cards ──────────────────────────────────────── */
     .must-see-grid {
@@ -230,6 +265,111 @@
       border-left: 3px solid var(--brand, #b34700);
     }
 
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #f5e6c8 100%);
+      border: 1px solid #e8ddd4;
+      border-radius: var(--radius, 10px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2c2c2c);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; gap: 6px 14px; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ──────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e8ddd4);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px;
+      color: var(--text-muted, #5a5a5a);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
+    }
+
+    /* ── FICHAS RELACIONADAS ─────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e8ddd4);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2c2c2c);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    
+
+
+    /* ── Fichas relacionadas (estándar) ─────────────────────────── */
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+      display: block;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+    /* ── Etiquetas (estándar) ────────────────────────────────────── */
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
   </style>
 
   <script type="application/ld+json">
@@ -238,8 +378,8 @@
     "@type": "Festival",
     "@id": "https://folklorius.es/moros-cristianos-ontinyent.html",
     "name": "Moros y Cristianos de Ontinyent",
-    "startDate": "2026-08-16",
-    "endDate": "2026-08-24",
+    "startDate": "2027-08-20",
+    "endDate": "2027-08-24",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -316,39 +456,44 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2025</span>
       </div>
 
-      <!-- AVISO DE SENSIBILIDAD -->
-      <div class="aviso-sensibilidad" role="note">
-        <strong>Nota de sensibilidad</strong>
-        <ul>
-          <li><strong>Una fiesta de unión y respeto.</strong> Los Moros y Cristianos escenifican un hecho histórico como acto de celebración cultural. Su propósito es reunir y hermanar, nunca ofender ni menospreciar ninguna cultura, religión o pueblo. Así lo entiende y lo vive la comunidad festera de Ontinyent.</li>
-          <li><strong>Respeto en los actos religiosos.</strong> La Bajada del Cristo y las procesiones tienen una carga devocional profunda y muy arraigada. El silencio y el respeto al paso de la imagen forman parte del sentido mismo de la fiesta.</li>
-          <li><strong>Seguridad durante los desfiles.</strong> No cruces por en medio de un desfile, ni entre los festeros ni entre los músicos. En algunos actos pueden participar caballos: mantén la distancia y sigue siempre las indicaciones de la organización.</li>
-        </ul>
+      <!-- BLOQUE DESTACADO DE FECHAS -->
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 20 al 24 de agosto de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Ontinyent · Valencia</span>
+          <span>⏱️ 5 días de fiesta</span>
+          <span>🏅 ITI desde 2025</span>
+        </div>
       </div>
 
-      <!-- SECCIÓN 1: LA ESENCIA -->
+      <!-- AVISO DE SENSIBILIDAD -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Ontinyent conmemoran un hecho histórico con respeto y admiración hacia ambas culturas. No hay desprecio hacia el mundo musulmán ni hacia ninguna otra religión o creencia. Lo que define esta tradición es la unión entre festeros de ambos bandos, no la confrontación.</li>
+          <li><strong>Devoción real.</strong> La Bajada del Cristo de la Agonía es un acto de devoción popular genuino, no solo un espectáculo. El silencio y el respeto durante el traslado de la imagen son esenciales.</li>
+          <li><strong>Protección auditiva.</strong> La arcabucería de la Bajada y la batalla del lunes es intensa. Imprescindible para niños pequeños.</li>
+          <li><strong>No cruces el desfile.</strong> Durante las Entradas y los actos de arcabucería el recorrido está cerrado. Usa siempre los pasos habilitados por la organización.</li>
+        </ul>
+      </div>
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        Ontinyent en agosto huele a pólvora y a tela planchada. El calor del final del verano se mezcla con la vibración de las bandas de música, que no acompañan la fiesta sino que la generan: sin ellas no hay desfile, no hay arcabucería, no hay Bajada del Cristo. Cada comparsa contrata a su propia banda, y el resultado es una ciudad que durante nueve días funciona como un auditorio en movimiento donde las marchas moras pesan en el pecho y las cristianas aceleran el paso.
+        Ontinyent en agosto vive cinco días de Moros y Cristianos. Veinticuatro comparsas, cerca de seis mil festeros, más de mil músicos en la calle. El acto que más se espera es la Entrada Mora del viernes por la noche, después de la Entrada Cristiana de la tarde: los dos desfiles donde la ciudad se expone al mundo.
       </p>
       <p>
-        Pero lo que hace distinta a Ontinyent no es solo el aparato visual. Es la doble raíz que atraviesa todo: la representación festera de moros y cristianos y la devoción al Santísimo Cristo de la Agonía conviven aquí desde 1860 sin que nadie haya tenido que elegir entre las dos. El estruendo del arcabuz y el silencio del paso procesional ocupan el mismo sábado, el mismo camino, el mismo cielo de agosto. Eso no se da en ningún otro sitio.
+        Y la fiesta no son solo cinco días. Es todo el año. Las sedes de las comparsas funcionan como clubes sociales los doce meses: ahí se preparan los trajes y se ensayan las marchas. En febrero llega el Mig Any, con mercado medieval y desfile propio. Cuando vuelve agosto, lo que ve el visitante es solo la última semana.
       </p>
-
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        La fiesta dura nueve días y la organizan 24 comparsas: doce del bando cristiano y doce del moro. Cada una tiene su traje, su banda, sus cargos anuales y su identidad propia. No son grupos intercambiables; llevan décadas construyendo una estética y una manera de desfilar que las distingue dentro del bando y del conjunto.
+        La fiesta tiene dos capas. El despliegue festero: veinticuatro comparsas, doce cristianas y doce moras, con sus boatos, sus bandas y sus cargos. Y la devoción al Santísimo Cristo de la Agonía, al que en Ontinyent llaman el Morenet. Las dos llevan entrelazadas desde 1860.
       </p>
       <p>
-        La semana grande arranca el jueves con la Entrada de Bandas, el acto que abre oficialmente los días grandes y que termina con algo que no existe igual en ninguna otra fiesta: todas las bandas de todas las comparsas interpretando juntas Chimo, la marcha mora compuesta en 1964 por José María Ferrero Pastor. Desde ese momento y hasta el lunes, la ciudad no para.
+        La semana grande dura cinco días, de jueves a lunes. El jueves arranca con la Entrada de Bandas. El viernes son los dos grandes desfiles: Entrada Cristiana por la tarde, Entrada Mora por la noche. El sábado llega la Bajada del Cristo, que mezcla arcabucería y procesión devocional. El domingo, Diana de Gala, Misa Mayor y Procesión. Y el lunes, las Embajadas: los embajadores declaman a caballo los textos de Cervino de 1860.
       </p>
       <p>
-        Dentro de esos días hay dos pilares que van mucho más allá del desfile. La Bajada del Cristo es un acto a caballo entre el alardo festero y la procesión devocional: arcabucería ante la ermita, parlamento entre embajadores y después el Cristo bajando a hombros por el camino de Santa Ana. Las Embajadas del lunes cierran la fiesta con los textos que Joaquín José Cervino escribió en 1860 y que desde entonces no se han cambiado ni una coma.
+        Cada año, seis comparsas asumen los cargos máximos —Capitán, Embajador y Abanderado en cada bando—. Los de 2026 están marcados en el listado de comparsas.
       </p>
       <p class="nota-grid">⚠️ Los horarios exactos y el programa completo de 2026 los publica la Sociedad de Festeros del Santísimo Cristo de la Agonía. Consúltalos en su web antes de planificar el viaje.</p>
-
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
       <h2 class="section-title">Historia y significado</h2>
       <p>
         La fiesta moderna arranca en 1860, cuando Joaquín José Cervino escribió los textos de las Embajadas para Ontinyent. No era un encargo genérico: eran versos pensados para esta ciudad y este patrón, en un momento en que se celebraba la victoria en la guerra de África y se daba gracias al Santísimo Cristo de la Agonía por las crisis superadas. Ese doble origen —festero y devocional— lleva impreso en la fiesta desde el primer día.
@@ -365,11 +510,9 @@
         <p>En 2018 el Boletín Oficial del Estado publicó la resolución de incoación del expediente para declarar la <strong>Bajada del Cristo de la Agonía y las Embajadas del Moro y del Cristiano</strong> como Bien de Interés Cultural inmaterial. El expediente reconoce el valor excepcional de estos dos actos: los textos de Cervino de 1860 siguen vigentes sin modificación, y la fusión entre arcabucería ritual y procesión devocional en la Bajada no tiene equivalente en la fiesta festera española.</p>
         <p>Para el estado actualizado del expediente, consulta el Portal del Patrimonio Cultural Inmaterial de España o la web oficial de la Sociedad de Festeros.</p>
       </div>
-
-      <!-- SECCIÓN 4: FECHAS -->
       <h2 class="section-title">Fechas 2026</h2>
       <p>
-        Los Moros y Cristianos de Ontinyent se celebran del tercer al cuarto domingo de agosto. En 2026 la fiesta transcurre entre el <strong>16 y el 24 de agosto</strong>. Las fechas ancla de los actos principales son:
+        Los días grandes de los Moros y Cristianos de Ontinyent van de jueves a lunes, en la tercera semana de agosto. En 2026 son del <strong>20 al 24 de agosto</strong>. El fin de semana anterior tiene sus propios actos previos, que marcan el arranque del año festero pero no forman parte de los días grandes:
       </p>
       <ul>
         <li><strong>Domingo 16 de agosto:</strong> Esmorzar de la Llàgrima (mañana) y Pregón de Fiestas con Presentación de Cargos (noche, plaza del Ayuntamiento)</li>
@@ -380,120 +523,109 @@
         <li><strong>Lunes 24 de agosto:</strong> Batalla de arcabucería, Embajada Mora y Embajada Cristiana</li>
       </ul>
       <p class="nota-grid">⚠️ El programa completo con horarios exactos lo publica la Sociedad de Festeros en su web oficial. Consúltalo antes de planificar el viaje — los actos pueden variar entre ediciones.</p>
-
-      <!-- SECCIÓN 5: ACTOS PRINCIPALES -->
       <h2 class="section-title">Los actos principales</h2>
 
       <ul class="actos-list">
 
         <li>
-          <span class="dia-label">Domingo previo — Tercer domingo de agosto · Mañana</span>
+          <span class="dia-label">Domingo previo · Mañana</span>
           <strong>Esmorzar de la Llàgrima.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          El primer acto de la fiesta es íntimo y sobrio: un desayuno en la sede de la Sociedad de Festeros en recuerdo de los festeros fallecidos. No hay espectáculo ni protocolo aparente, solo el gesto de empezar la celebración con la memoria puesta en quienes ya no están.
+          Desayuno en la sede de la Sociedad de Festeros en recuerdo de los festeros fallecidos. El primer acto del año festero, íntimo y sin protocolo.
         </li>
 
         <li>
-          <span class="dia-label">Domingo previo — Tercer domingo de agosto · Noche</span>
-          <strong>Pregón de Fiestas y Presentación de Cargos.</strong>
+          <span class="dia-label">Domingo previo · Noche</span>
+          <strong>Pregón y Presentación de Cargos.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Por la noche, la plaza del Ayuntamiento acoge el Pregón y la Presentación de Cargos: el momento en que las capitanías, abanderados y embajadores del año son presentados ante la ciudad. Es la declaración oficial de que la fiesta ya tiene nombre y cara.
+          En la plaza del Ayuntamiento, los Capitanes, Embajadores y Abanderados del año son presentados ante la ciudad. La fiesta ya tiene nombre y cara.
         </li>
 
         <li>
           <span class="dia-label">Jueves · Tarde</span>
           <strong>Entrada de Bandas.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          El acto que abre oficialmente la semana grande. Las bandas de música de todas las comparsas recorren el trayecto desde la Plaça de la Concepció hasta la Plaça Major. Al llegar, todas interpretan juntas Chimo — la marcha mora compuesta en 1964 por José María Ferrero Pastor — en una interpretación conjunta que en la edición de 2026, centenario del compositor, dirige Pilar Ferrero. Ese momento es la declaración sonora de que la fiesta ha comenzado.
+          Las bandas de todas las comparsas desfilan hasta la Plaça Major, donde interpretan juntas <em>Chimo</em>. En 2026, centenario del compositor, la dirige Pilar Ferrero.
         </li>
 
         <li>
           <span class="dia-label">Jueves · Noche</span>
           <strong>Gran Desfile de Alardos.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Las comparsas desafilan de noche por la Avenida Almaig, la Avenida Daniel Gil y la Plaça de la Concepció, pero sin el traje de gala: con disfraces y a ritmo de pasodoble. Es el lado más desenfadado de la fiesta — la misma disciplina festera de siempre pero con el disfraz puesto y el ambiente de noche de agosto.
+          Las comparsas desfilan sin traje de gala, con disfraces y a ritmo de pasodoble. El lado más desenfadado de la fiesta.
         </li>
 
         <li>
           <span class="dia-label">Viernes · Mañana</span>
           <strong>Entrada Infantil.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Los festeros de hasta 14 años toman la calle con el mismo rigor que los mayores, cada uno a su manera. Los más pequeños van en carroza acompañados por su madre, su padre o su abuela, tirando chuches al público. Los mayores desfilan en escuadra junto a su banda de música, con el traje puesto y el paso marcado. La fiesta no empieza cuando uno crece: empieza desde el primer año.
+          Los festeros de hasta 14 años toman la calle. Los más pequeños van en carroza tirando chuches; los mayores desfilan en escuadra con su banda. La fiesta empieza desde el primer año.
         </li>
 
         <li>
           <span class="dia-label">Viernes · Tarde</span>
           <strong>Entrada Cristiana.</strong>
           <span class="bando-tag bando-cristiano">Bando cristiano</span>
-          Las doce comparsas del ejército de la cruz desfilan por el centro de Ontinyent. Abre el desfile la comparsa que ostenta la Capitanía y lo cierra la que lleva el Abanderado y el Embajador. En medio, boatos elaborados, metales triunfales y el paso marcado de una tarde que abre los dos grandes desfiles del año. El recorrido y los horarios exactos los publica la Sociedad de Festeros.
+          Las doce comparsas del bando cristiano desfilan por el centro. Abre la Capitanía; la comparsa del Embajador y el Abanderado pasa al último lugar para un cierre más vistoso.
         </li>
 
         <li>
           <span class="dia-label">Viernes · Noche</span>
           <strong>Entrada Mora.</strong>
           <span class="bando-tag bando-moro">Bando moro</span>
-          El mismo esquema que la Entrada Cristiana — abre la Capitanía, cierra el Abanderado y el Embajador — pero con todo cambiado. Paso lento y solemne, marchas de aire oriental, trajes de mayor fantasía y el peso de la percusión mora golpeando la noche. Quien ve las dos entradas seguidas entiende la fiesta de golpe. El recorrido y los horarios exactos los publica la Sociedad de Festeros.
+          El mismo esquema, todo cambiado. Paso lento, marchas de aire oriental y trajes de mayor fantasía. Quien ve las dos entradas seguidas entiende la fiesta de golpe.
         </li>
 
         <li>
           <span class="dia-label">Sábado · Madrugada</span>
           <strong>Diana.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Antes de que la ciudad despierte del todo, las comparsas recorren el casco antiguo y el ensanche arrancando desde la Plaça de la Coronació hasta la Plaça Major. Es el aviso físico de que el día más intenso de la fiesta ha comenzado.
+          Las comparsas recorren el casco antiguo antes del amanecer. El aviso de que el día más intenso de la fiesta ha empezado.
         </li>
 
         <li>
           <span class="dia-label">Sábado · Mañana</span>
           <strong>El Contrabando.</strong>
           <span class="bando-tag bando-cristiano">Bando cristiano</span>
-          Las comparsas de Marineros y Contrabandistas —ambas del bando cristiano— escenifican en la Plaça Major una representación humorística de texto propio. Los Contrabandistas intentan introducir su mercancía en la villa ante el control de los Marineros. El tono es socarrón, el texto cambia cada año para incluir referencias a la actualidad local y nacional, y la plaza se llena de risas. Es el contrapunto cómico a la solemnidad que llega por la tarde.
+          Marineros y Contrabandistas escenifican en la Plaça Major una representación humorística con referencias a la actualidad. El contrapunto cómico a la tarde que viene.
         </li>
 
         <li>
           <span class="dia-label">Sábado · Tarde/Noche</span>
           <strong>Bajada del Cristo de la Agonía.</strong>
           <span class="bando-tag bando-religioso">Acto religioso-festero</span>
-          El acto más denso de la fiesta. A los pies de la ermita de Santa Ana, los embajadores de ambos bandos intercambian un parlamento solemne. Después, la batalla de arcabucería ocupa el camino de Santa Ana. Y después del ruido, el silencio: la imagen del Santísimo Cristo de la Agonía inicia su descenso a hombros de los anderos, recorriendo la Cantereria, la Plaça de Baix y la Plaça Major hasta la parroquia de Sant Carles. La fusión entre alardo histórico y procesión devocional no tiene equivalente en la fiesta festera española.
+          Parlamento de embajadores a los pies de la ermita de Santa Ana, batalla de arcabucería y después el Cristo bajando a hombros de los anderos hasta la parroquia de Sant Carles. El acto más denso de la fiesta.
         </li>
 
         <li>
           <span class="dia-label">Domingo · Mañana</span>
-          <strong>Misa de Campaña y Diana de Gala.</strong>
+          <strong>Diana de Gala y Misa Mayor.</strong>
           <span class="bando-tag bando-religioso">Acto religioso</span>
-          El Día del Cristo abre con la Misa de Campaña al amanecer y continúa con la Diana de Gala y la Misa Mayor. Es la jornada de mayor contenido devocional, en la que la fiesta frena su ritmo para recordar el origen de todo lo que la rodea.
+          La jornada de mayor contenido devocional. Los cargos acompañan la Misa Mayor y la fiesta frena su ritmo.
         </li>
 
         <li>
           <span class="dia-label">Domingo · Tarde</span>
           <strong>Procesión General.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Moros y cristianos acompañan juntos al Santísimo Cristo de la Agonía por las calles de Ontinyent. Es el único momento de los días grandes en que los dos bandos caminan en el mismo sentido, sin castillo de por medio ni embajada pendiente.
+          Moros y cristianos acompañan juntos al Cristo por las calles del centro. El único momento de los días grandes en que los dos bandos caminan en el mismo sentido.
         </li>
 
         <li>
           <span class="dia-label">Lunes · Mañana</span>
           <strong>Batalla de arcabucería.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Los moros avanzan desde la Cantereria y los cristianos desde el Puente de Santa Maria. La ciudad entera huele a pólvora antes de que lleguen las Embajadas. Es el preludio físico que prepara el terreno para los parlamentos de la tarde.
+          Los moros avanzan desde la Cantereria y los cristianos desde el Puente de Santa Maria. La ciudad entera huele a pólvora antes de las Embajadas.
         </li>
 
         <li>
-          <span class="dia-label">Lunes · Mañana</span>
-          <strong>Embajada Mora.</strong>
-          <span class="bando-tag bando-moro">Bando moro</span>
-          En la Plaça Major, el embajador moro reclama la plaza con los versos de Cervino de 1860. El bando cristiano cede el castillo. Las tropas moras desfilan después por el Carrer Maians y el Carrer Gomis.
-        </li>
-
-        <li>
-          <span class="dia-label">Lunes · Tarde</span>
-          <strong>Embajada Cristiana.</strong>
-          <span class="bando-tag bando-cristiano">Bando cristiano</span>
-          El cierre de la fiesta. El embajador cristiano recupera el castillo con los mismos textos que inauguraron la celebración moderna hace más de ciento sesenta años. Cuando termina el desfile final por el Carrer Maians y el Carrer Gomis hasta la Plaça de la Concepció, la fiesta ha acabado oficialmente.
+          <span class="dia-label">Lunes · Mañana y tarde</span>
+          <strong>Embajadas Mora y Cristiana.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Los embajadores de cada bando declaman en la Plaça Major los textos de Cervino de 1860, sin haber cambiado una coma. El castillo cambia de manos dos veces. Cuando termina el desfile final, la fiesta ha acabado.
         </li>
 
       </ul>
-
-      <!-- SECCIÓN 6: COMPARSAS POR BANDO -->
       <h2 class="section-title">Comparsas por bando</h2>
       <p>
         Las 24 comparsas son el tejido vivo de la fiesta. Doce del ejército cristiano, doce del moro. Cada una con su nombre, su traje, su banda y su manera de desfilar. Pasa el cursor sobre el nombre para más información.
@@ -509,13 +641,13 @@
             <li><span class="nombre-filae">Cruzados</span><span class="tooltip-filae">Comparsa Cruzados — Bando cristiano</span></li>
             <li><span class="nombre-filae">Contrabandistas</span><span class="tooltip-filae">Comparsa Contrabandistas — Bando cristiano. Protagonistas junto con los Marineros del acto humorístico El Contrabando, el sábado de fiestas.</span></li>
             <li><span class="nombre-filae">Fontanos</span><span class="tooltip-filae">Comparsa Fontanos — Bando cristiano</span></li>
-            <li><span class="nombre-filae">Almogàvers</span><span class="tooltip-filae">Comparsa Almogàvers — Bando cristiano</span></li>
+            <li><span class="nombre-filae">Almogàvers</span> <span class="cargo-2026">EMBAJADOR Y ABANDERADO 2026</span><span class="tooltip-filae">Comparsa Almogàvers — Bando cristiano. Ostenta los cargos de Embajador y Abanderado Cristiano en la edición 2026.</span></li>
             <li><span class="nombre-filae">Astures</span><span class="tooltip-filae">Comparsa Astures — Bando cristiano</span></li>
             <li><span class="nombre-filae">Llauradors</span><span class="tooltip-filae">Comparsa Llauradors — Bando cristiano</span></li>
             <li><span class="nombre-filae">Cides</span><span class="tooltip-filae">Comparsa Cides — Bando cristiano</span></li>
             <li><span class="nombre-filae">Marineros</span><span class="tooltip-filae">Comparsa Marineros — Bando cristiano. Protagonistas junto con los Contrabandistas del acto humorístico El Contrabando, el sábado de fiestas.</span></li>
             <li><span class="nombre-filae">Bucaneros</span><span class="tooltip-filae">Comparsa Bucaneros — Bando cristiano</span></li>
-            <li><span class="nombre-filae">Estudiants</span><span class="tooltip-filae">Comparsa Estudiants — Bando cristiano</span></li>
+            <li><span class="nombre-filae">Estudiants</span> <span class="cargo-2026">CAPITÁN CRISTIANO 2026</span><span class="tooltip-filae">Comparsa Estudiants — Bando cristiano. Ostenta el cargo de Capitán Cristiano en la edición 2026.</span></li>
             <li><span class="nombre-filae">Gusmans</span><span class="tooltip-filae">Comparsa Gusmans — Bando cristiano</span></li>
           </ul>
         </div>
@@ -527,13 +659,13 @@
             <li><span class="nombre-filae">Benimerins</span><span class="tooltip-filae">Comparsa Benimerins — Bando moro</span></li>
             <li><span class="nombre-filae">Abencerrajes</span><span class="tooltip-filae">Comparsa Abencerrajes — Bando moro</span></li>
             <li><span class="nombre-filae">Kábilas</span><span class="tooltip-filae">Comparsa Kábilas — Bando moro</span></li>
-            <li><span class="nombre-filae">Moros Espanyols</span><span class="tooltip-filae">Comparsa Moros Espanyols — Bando moro</span></li>
+            <li><span class="nombre-filae">Moros Espanyols</span> <span class="cargo-2026">EMBAJADOR Y ABANDERADO 2026</span><span class="tooltip-filae">Comparsa Moros Espanyols — Bando moro. Ostenta los cargos de Embajador y Abanderado Moro en la edición 2026.</span></li>
             <li><span class="nombre-filae">Saudites</span><span class="tooltip-filae">Comparsa Saudites — Bando moro</span></li>
             <li><span class="nombre-filae">Mudéjares</span><span class="tooltip-filae">Comparsa Mudéjares — Bando moro</span></li>
             <li><span class="nombre-filae">Mossàrabs</span><span class="tooltip-filae">Comparsa Mossàrabs — Bando moro. Nombre con origen histórico en las comunidades cristianas que vivían bajo dominio islámico; en Ontinyent es una denominación festera de tradición consolidada.</span></li>
             <li><span class="nombre-filae">Taifas</span><span class="tooltip-filae">Comparsa Taifas — Bando moro</span></li>
             <li><span class="nombre-filae">Moros Berberiscos</span><span class="tooltip-filae">Comparsa Moros Berberiscos — Bando moro</span></li>
-            <li><span class="nombre-filae">Moros Marinos</span><span class="tooltip-filae">Comparsa Moros Marinos — Bando moro</span></li>
+            <li><span class="nombre-filae">Moros Marinos</span> <span class="cargo-2026">CAPITÁN MORO 2026</span><span class="tooltip-filae">Comparsa Moros Marinos — Bando moro. Ostenta el cargo de Capitán Moro en la edición 2026.</span></li>
             <li><span class="nombre-filae">Chanos</span><span class="tooltip-filae">Comparsa Chanos — Bando moro</span></li>
           </ul>
         </div>
@@ -545,17 +677,18 @@
         <p>El nombre puede sorprender: históricamente, los mozárabes eran las comunidades cristianas que vivieron bajo dominio islámico en la península. Su adscripción al bando moro en Ontinyent responde a la lógica festera propia de la ciudad: la comparsa evoca la convivencia cultural del periodo andalusí, adoptando esa estética como identidad visual. Es una denominación de larga tradición local, sin connotación peyorativa, reconocida por la propia comunidad festera.</p>
       </div>
 
-      <!-- SECCIÓN 7: MÚSICA Y SONIDO -->
+      <details class="nota-rotacion">
+        <summary>¿Cómo se eligen las comparsas que ostentan cargo cada año?</summary>
+        <p>Los cargos rotan. La comparsa que ostenta la Capitanía un año, al siguiente va al final del orden festero, y todas las demás avanzan una posición. Como hay doce comparsas por bando, una comparsa tarda doce años en volver a llevar el cargo. Para los festeros, el año del cargo es uno de los más importantes de su vida en la comparsa.</p>
+      </details>
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <h3 style="color:#1d4ed8; margin-bottom:8px;">El año del Mestre Ferrero</h3>
         <p>En Ontinyent, cada comparsa lleva su propia banda de música. El resultado durante los días grandes es una ciudad que suena desde todas direcciones a la vez: marchas moras de paso lento y percusión densa, marchas cristianas con metales abiertos y ritmo más rápido, pasodobles que marcan el pulso del Gran Desfile de Alardos. El visitante nota físicamente el cambio de bando antes de ver los trajes.</p>
         <p>Pero hay un momento en que todo ese policoncierto se unifica. Al terminar la Entrada de Bandas del jueves, todas las bandas de todas las comparsas interpretan juntas <em>Chimo</em> en la Plaça Major. La marcha mora compuesta en 1964 por <strong>José María Ferrero Pastor</strong> —el Mestre Ferrero— es la pieza más reconocible de la fiesta y la que mejor define su sonido. Cuando arranca, la ciudad entera la reconoce.</p>
         <p>Distinta es la función del <strong>Himno a Onteniente</strong>, el himno oficial de las fiestas, con música de <strong>Rafael Martínez Valls</strong> y letra de <strong>Luis Fabrellas</strong>. Dos obras, dos momentos, dos papeles distintos dentro del calendario festero.</p>
-        <p style="margin-bottom:0;">La edición de 2026 coincide con el centenario del nacimiento del Mestre Ferrero, y el programa tiene ese hecho muy presente. La interpretación conjunta del <em>Chimo</em> en la Entrada de Bandas la dirige este año <strong>Pilar Ferrero</strong>, familiar del compositor. Además del <em>Chimo</em>, el catálogo de Ferrero incluye obras como <em>El Kábila</em>, la <em>Bonus Christianus</em>, <em>Brisas del Clariano</em> o <em>Reina de Fiestas 1960</em>, todas ellas parte del repertorio habitual de la fiesta.</p>
+        <p style="margin-bottom:0;">La edición de 2026 coincide con el centenario del nacimiento del Mestre Ferrero, y el programa tiene ese hecho muy presente. La interpretación conjunta del <em>Chimo</em> en la Entrada de Bandas la dirige este año <strong>Pilar Ferrero</strong>, familiar del compositor. Además del <em>Chimo</em>, el catálogo de Ferrero incluye obras como <em>Els Morocristians d'Ontinyent</em> (1972), la <em>Fantasia Muladiana</em> (1985), <em>Brisas del Clariano</em> o <em>Reina de Fiestas 1960</em>, todas ellas parte del repertorio habitual de la fiesta.</p>
       </div>
-
-      <!-- SECCIÓN 8: NO TE LO PUEDES PERDER -->
       <h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
@@ -600,8 +733,6 @@
         </div>
 
       </div>
-
-      <!-- SECCIÓN 9: CONSEJOS PRÁCTICOS -->
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
         <li><strong>Alojamiento.</strong> Ontinyent se llena durante la semana grande. Reserva con la máxima antelación posible. Si no encuentras plaza en la ciudad, los municipios cercanos de la comarca (Aielo de Malferit, Agullent, Bocairent) son alternativas a menos de veinte minutos.</li>
@@ -614,8 +745,6 @@
         <li><strong>Museo Fester.</strong> La sede de la Sociedad de Festeros (Plaça de Baix, 30) tiene una colección sobre la evolución del traje, los cargos y la historia de la fiesta. Dispone de acceso para personas con movilidad reducida. Muy recomendable antes de los días grandes.</li>
         <li><strong>Programa oficial.</strong> Descárgalo de la web de la Sociedad de Festeros antes de salir. Los actos se solapan y conviene planificar bien qué ver cada día, especialmente el jueves y el sábado.</li>
       </ul>
-
-      <!-- SECCIÓN 10: VOCABULARIO FESTERO -->
       <h2 class="section-title">Vocabulario festero</h2>
       <dl class="festero">
 
@@ -640,12 +769,19 @@
         <dt>Capitanía</dt>
         <dd>El cargo anual de mayor honor dentro de una comparsa, que recae en un festero o festera elegidos para representar a su agrupación durante el año. Las capitanías marcan el protocolo festero y el orden en los actos oficiales.</dd>
 
+        <dt>Casal / Kábila</dt>
+        <dd>Nombres con los que se conoce la sede de una comparsa, su local social. Funciona todo el año, no solo en fiestas: ahí se preparan los trajes, se ensayan las marchas y se reúne la comparsa. Ontinyent tiene además una comparsa mora llamada precisamente "Kábilas" — no hay que confundir el nombre genérico del local con el nombre propio de esa agrupación.</dd>
+
         <dt>Chimo</dt>
         <dd>Marcha mora compuesta en 1964 por José María Ferrero Pastor, el Mestre Ferrero. Por tradición, todas las bandas de todas las comparsas la interpretan juntas al terminar la Entrada de Bandas del jueves. Es la pieza más icónica de la fiesta y la más conocida del compositor, cuyo centenario de nacimiento celebra la edición de 2026.</dd>
 
-      </dl>
+        <dt>Morenet</dt>
+        <dd>Nombre popular con el que los ontinyentins se refieren al Santísimo Cristo de la Agonía, por el tono oscuro de la talla. Es la forma cariñosa y cotidiana de hablar de la imagen que protagoniza la Bajada del sábado.</dd>
 
-      <!-- SECCIÓN 11: GALERÍA -->
+        <dt>Primer Tró</dt>
+        <dd>El presidente o gestor interno de cada comparsa. A diferencia de los cargos máximos de la fiesta (Capitán, Embajador, Abanderado), que son representación pública y rotan año a año, el Primer Tró se ocupa de la organización del día a día de su comparsa durante todo el año festero.</dd>
+
+      </dl>
       <h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
         <img src="images/ontinyent/bajada-cristo-arcabuceria.jpg" alt="Batalla de arcabucería durante la Bajada del Cristo de la Agonía en los Moros y Cristianos de Ontinyent" />
@@ -653,8 +789,6 @@
         <img src="images/ontinyent/entrada-mora-avenida-daniel-gil.jpg" alt="Entrada Mora de las comparsas del bando moro por la Avenida Daniel Gil de Ontinyent" />
         <img src="images/ontinyent/entrada-bandas-chimo.jpg" alt="Interpretación conjunta de Chimo por todas las bandas en la Plaça Major durante la Entrada de Bandas de los Moros y Cristianos de Ontinyent" />
       </div>
-
-      <!-- SECCIÓN 12: ENLACES ÚTILES -->
       <h2 class="section-title">Enlaces útiles</h2>
       <ul>
         <li><a href="https://morosycristianos.eu" target="_blank" rel="noopener">Sociedad de Festeros del Santísimo Cristo de la Agonía — Web oficial</a></li>
@@ -663,36 +797,57 @@
         <li><a href="https://www.culturaydeporte.gob.es/patrimonio-inmaterial" target="_blank" rel="noopener">Portal del Patrimonio Cultural Inmaterial de España</a></li>
       </ul>
       <p class="fuente">Última verificación de enlaces: 2026-05-20. Comprueba la URL de la Sociedad de Festeros antes de publicar.</p>
-
-      <!-- SECCIÓN 13: PREGUNTAS FRECUENTES -->
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebran los Moros y Cristianos de Ontinyent en 2026?</dt>
-        <dd>Del 16 al 24 de agosto de 2026. La semana grande arranca el jueves 20 con la Entrada de Bandas. Los actos más esperados son la Bajada del Cristo (sábado 22) y las Embajadas del Moro y del Cristiano (lunes 24). El programa completo con horarios lo publica la Sociedad de Festeros en su web oficial.</dd>
+        <dd>Los días grandes son del 20 al 24 de agosto de 2026, de jueves a lunes. Los actos más esperados son las Entradas Cristiana y Mora del viernes y la Bajada del Cristo del sábado. El programa completo con horarios lo publica la Sociedad de Festeros en su web oficial.</dd>
 
         <dt>¿Por qué la edición de 2026 es especial?</dt>
-        <dd>Coincide con el centenario del nacimiento del Mestre Ferrero, José María Ferrero Pastor, compositor de Chimo. La interpretación conjunta en la Entrada de Bandas la dirige este año Pilar Ferrero, familiar del compositor. Es una edición con un significado añadido que no se volverá a repetir.</dd>
+        <dd>Coincide con el centenario del nacimiento del Mestre Ferrero, José María Ferrero Pastor, compositor de Chimo — la marcha mora más icónica de la fiesta. La interpretación conjunta en la Entrada de Bandas la dirige este año Pilar Ferrero, familiar del compositor. Es una edición con un significado añadido que no se volverá a repetir.</dd>
+
+        <dt>¿Qué es la Bajada del Cristo de la Agonía?</dt>
+        <dd>El acto más devocional y más esperado de la fiesta. El sábado por la tarde, el Santísimo Cristo de la Agonía — el Morenet — baja desde la Ermita de Sant Josep hasta la ciudad en procesión, con arcabucería de ambos bandos y el acompañamiento de todas las comparsas. Es el momento en que la fiesta detiene el espectáculo y se convierte en devoción colectiva.</dd>
 
         <dt>¿Se puede ver la fiesta sin pagar?</dt>
-        <dd>Los desfiles se pueden seguir de pie de forma gratuita en los recorridos. Para las tribunas y sillas existe un circuito gestionado por la organización. Consulta las fechas de venta y los sectores disponibles en la web de la Sociedad de Festeros antes del viaje.</dd>
+        <dd>Los desfiles se pueden seguir de pie de forma gratuita en los recorridos. Para las tribunas y sillas existe un circuito gestionado por la organización. Consulta fechas de venta y sectores disponibles en la web de la Sociedad de Festeros antes del viaje.</dd>
 
         <dt>¿Hay zonas habilitadas para personas con movilidad reducida?</dt>
-        <dd>El Ayuntamiento de Ontinyent habilita zonas accesibles para personas con movilidad reducida durante los actos principales. Para conocer su ubicación exacta en la edición de 2026, consulta la web municipal o contacta directamente con el Ayuntamiento antes de planificar el desplazamiento.</dd>
-
-        <dt>¿Se retransmite la fiesta en directo?</dt>
-        <dd>Los actos principales suelen tener cobertura a través de la emisora local y de À Punt, la televisión autonómica valenciana. Actualizaremos este apartado con los enlaces de retransmisión en cuanto estén disponibles.</dd>
-
-        <dt>¿Es apta para familias con niños?</dt>
-        <dd>Sí. Las Entradas son muy visuales y atractivas para todas las edades. La Entrada Infantil del viernes es especialmente emotiva para los más pequeños. Ten en cuenta que los actos de arcabucería —la Bajada del Cristo y la batalla del lunes— requieren protección auditiva para los niños.</dd>
-
-        <dt>¿Qué pasa si no encuentro alojamiento en Ontinyent?</dt>
-        <dd>Los municipios cercanos de la comarca —Aielo de Malferit, Agullent, Bocairent— son alternativas a menos de veinte minutos. Reserva con la máxima antelación posible, especialmente para los días de la Bajada del Cristo y las Embajadas.</dd>
-
-        <dt>¿Dónde puedo aparcar?</dt>
-        <dd>Durante los días grandes el centro de Ontinyent tiene el acceso restringido por los recorridos de los desfiles. Consulta la señalización municipal y los aparcamientos habilitados en la periferia del casco urbano. La web del Ayuntamiento suele publicar información de movilidad para las fiestas.</dd>
+        <dd>El Ayuntamiento de Ontinyent habilita zonas accesibles durante los actos principales. Consulta la web municipal o contacta con el Ayuntamiento antes del viaje para conocer la ubicación exacta en la edición de 2026.</dd>
 
       </dl>
+
+      <!-- ETIQUETAS VISIBLES -->
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Moros y Cristianos</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Comunitat Valenciana</span>
+        <span class="etiqueta">Valencia</span>
+        <span class="etiqueta">Ontinyent</span>
+        <span class="etiqueta">Agosto</span>
+        <span class="etiqueta">Bajada del Cristo</span>
+        <span class="etiqueta">Embajadas históricas</span>
+        <span class="etiqueta">Centenario Mestre Ferrero</span>
+      </div>
+
+      <!-- FICHAS RELACIONADAS -->
+      <section class="fichas-relacionadas" aria-labelledby="rel-title">
+        <h2 id="rel-title">Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Alicante · ITI · La cuna de la tradición festera</span>
+          </a>
+          <a href="moros-cristianos-elda.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Elda</strong>
+            <span>Alicante · ITI · 9 comparsas y devoción a San Antón</span>
+          </a>
+          <a href="moros-cristianos-bocairent.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Bocairent</strong>
+            <span>Valencia · ITN · Calles medievales y estruendo</span>
+          </a>
+        </div>
+      </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
