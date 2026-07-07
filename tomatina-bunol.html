@@ -22,6 +22,106 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
+  <style>
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+  </style>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -101,8 +201,17 @@
 
       <h1>La Tomatina de Buñol</h1>
       <p class="ficha-subtitle">
-        Buñol (Valencia) · Fiesta popular única en el mundo · Una celebración singular, participativa y de proyección internacional.
+        Buñol (Valencia) · «La batalla de tomates más famosa del mundo.»
       </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">26 de agosto de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Buñol · Valencia</span>
+          <span>⏱️ 1 hora de batalla</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
 
       <!-- RECONOCIMIENTOS -->
       <div class="badges" aria-label="Reconocimientos oficiales">
@@ -144,14 +253,18 @@
         El origen más aceptado de La Tomatina se sitúa en <strong>1945</strong>, cuando durante un ambiente festivo en la plaza se produjo un altercado espontáneo entre jóvenes que terminó con el lanzamiento de tomates de un puesto del mercado cercano. En los años siguientes la costumbre se repitió deliberadamente, atravesó etapas de prohibición durante la dictadura franquista, y acabó consolidándose como una tradición propia del municipio, celebrada de forma clandestina hasta su reconocimiento oficial.
       </p>
       <p>
-        En <strong>1980</strong> el Ayuntamiento de Buñol asumió su organización, y en <strong>2002</strong> la fiesta fue declarada Fiesta de Interés Turístico Internacional, un hito que confirmó su dimensión cultural y su proyección exterior. Hoy es una celebración que combina tradición local con participación global, y que Buñol gestiona con normas claras para garantizar una experiencia segura y ordenada para todos.
+        La costumbre no fue bien recibida por las autoridades: a principios de la década de 1950 la fiesta fue prohibida bajo el argumento de alteración del orden público, y quienes insistían en participar llegaron a ser detenidos. En 1957, como protesta ante una nueva cancelación, los vecinos de Buñol organizaron el <strong>«Entierro del Tomate»</strong>: una marcha fúnebre por las calles del pueblo, con banda de música incluida, portando un ataúd con un gran tomate dentro. La protesta pacífica surtió efecto y la fiesta quedó institucionalizada a partir de 1959.
+      </p>
+      <p>
+        Antes de que el Ayuntamiento asumiera su gestión, el suministro de tomates corrió primero a cargo de los propios vecinos y, desde 1975, de los Clavarios de San Luis Bertrán. En <strong>1980</strong> el Ayuntamiento de Buñol asumió su organización, y en <strong>2002</strong> la fiesta fue declarada Fiesta de Interés Turístico Internacional, un hito que confirmó su dimensión cultural y su proyección exterior. Hoy es una celebración que combina tradición local con participación global, y que Buñol gestiona con normas claras para garantizar una experiencia segura y ordenada para todos.
       </p>
 
       <!-- SECCIÓN 4: FECHAS Y CALENDARIO -->
       <h2 class="section-title">Fechas y calendario</h2>
       <p>
-        La Tomatina se celebra siempre el <strong>último miércoles de agosto</strong>. En 2026 será el <strong>26 de agosto</strong>. La batalla comienza sobre las 11:00 y termina a las 12:00. En torno a esa fecha, Buñol vive varios días de ambiente festivo con conciertos, concurso de paella, verbenas y actividades para todos los públicos. La programación concreta, los horarios y las condiciones de acceso pueden variar en cada edición, por lo que conviene revisar siempre la información oficial actualizada antes de asistir.
+        La Tomatina se celebra siempre el <strong>último miércoles de agosto</strong>. En 2026 será el <strong>26 de agosto</strong>. La batalla dura una hora y se celebra a media mañana. En torno a esa fecha, Buñol vive varios días de ambiente festivo con conciertos, concurso de paella, verbenas y actividades para todos los públicos.
       </p>
+      <p class="nota-grid">⚠️ La programación concreta, los horarios y las condiciones de acceso pueden variar en cada edición. Consulta siempre la información oficial actualizada antes de asistir.</p>
 
       <!-- SECCIÓN 5: NORMAS -->
       <h2 class="section-title">Normas de La Tomatina</h2>
@@ -221,18 +334,6 @@
           </details>
         </div>
 
-        <div class="must-see-card">
-          <h3>El Museo de La Tomatina</h3>
-          <span class="tag">Todo el año · Molino Galán, junto a la Oficina de Turismo</span>
-          <p>El museo dedicado a la fiesta permite conocer su historia desde 1945, su evolución y su proyección internacional mediante recursos inmersivos, fotografías y contenidos audiovisuales. Abierto durante todo el año, no depende del día de la batalla.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque aporta contexto y profundidad a una celebración que desde fuera puede parecer solo caos. Visitarlo antes o después de la batalla cambia la forma de entender lo que se ha vivido. Conviene reservar con antelación a través de la Oficina de Turismo de Buñol.</p>
-          </details>
-        </div>
-
-        <!-- Añade más tarjetas si lo necesitas. Máximo recomendado: 6 -->
-
       </div>
 
       <!-- SECCIÓN 8: CONSEJOS PRÁCTICOS -->
@@ -279,7 +380,7 @@
 
       <!-- SECCIÓN 10: GALERÍA -->
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+      <div class="galeria" style="display:none;">
         <img src="images/tomatina-bunol-1.jpg" alt="Vista aérea de la batalla de tomates en Buñol" />
         <img src="images/tomatina-bunol-2.jpg" alt="Participantes durante La Tomatina de Buñol" />
         <img src="images/tomatina-bunol-3.jpg" alt="Camión cargado de tomates entrando en el recorrido oficial" />
@@ -300,37 +401,49 @@
       <dl class="faq">
 
         <dt>¿Cuándo se celebra?</dt>
-        <dd>El último miércoles de agosto de cada año. En 2026, el 26 de agosto. La batalla dura exactamente una hora, de 11:00 a 12:00 aproximadamente.</dd>
-
-        <dt>¿Dónde tiene lugar?</dt>
-        <dd>En el municipio de Buñol, en la provincia de Valencia, a unos 40 kilómetros de la capital.</dd>
+        <dd>El último miércoles de agosto de cada año. En 2026, el 26 de agosto, a media mañana.</dd>
 
         <dt>¿Necesito entrada para participar?</dt>
         <dd>Sí, desde 2013 es obligatorio adquirir una entrada. El aforo es limitado y se agota con meses de antelación. Cómprala únicamente en la web oficial.</dd>
 
-        <dt>¿Cuál es el origen de la fiesta?</dt>
-        <dd>Su origen más aceptado se remonta a 1945, a partir de un altercado festivo en la plaza del pueblo que derivó en el lanzamiento espontáneo de tomates entre jóvenes.</dd>
-
-        <dt>¿Tiene reconocimiento oficial?</dt>
-        <dd>Sí. La Tomatina fue declarada Fiesta de Interés Turístico Internacional en 2002.</dd>
-
-        <dt>¿Es apta para niños?</dt>
-        <dd>La batalla oficial no está recomendada para menores de 16 años debido a las aglomeraciones y la intensidad física. Sin embargo, existe la <strong>Tomatina Infantil</strong>, una celebración específica y separada para niños de 4 a 14 años, con un formato más breve y seguro.</dd>
-
-        <dt>¿Es apta para personas con movilidad reducida?</dt>
-        <dd>La batalla principal no se considera adecuada para personas con movilidad reducida, debido a la gran aglomeración de público y las condiciones del recorrido. Para una experiencia más cómoda, es preferible disfrutar del ambiente del pueblo, asistir a actos complementarios o visitar el Museo de La Tomatina.</dd>
+        <dt>¿Es apta para niños o personas con movilidad reducida?</dt>
+        <dd>La batalla oficial no está recomendada para menores de 16 años ni para personas con movilidad reducida, debido a las aglomeraciones y la intensidad física. Existe la <strong>Tomatina Infantil</strong>, una celebración específica para niños de 4 a 14 años, con un formato más breve y seguro.</dd>
 
         <dt>¿Cómo llegar desde Valencia?</dt>
         <dd>Lo más recomendable es el tren de Cercanías desde la estación de Valencia Nord. El trayecto dura unos 40 minutos y evita el colapso de tráfico que se produce en las carreteras de acceso.</dd>
 
-        <dt>¿Dónde me cambio después de la batalla?</dt>
-        <dd>El Ayuntamiento habilita zonas de duchas y vestuarios en las afueras del pueblo. Lleva siempre ropa seca en una bolsa impermeable.</dd>
-
-        <dt>¿Se puede conocer la fiesta fuera del día de celebración?</dt>
-        <dd>Sí. Buñol cuenta con el Museo de La Tomatina, abierto durante todo el año, que permite descubrir la historia y evolución de la fiesta mediante recursos inmersivos y audiovisuales.</dd>
+        <dt>¿Tiene reconocimiento oficial?</dt>
+        <dd>Sí. La Tomatina fue declarada Fiesta de Interés Turístico Internacional en 2002, según la Resolución de 27 de agosto de 2002 de la Secretaría General de Turismo (BOE núm. 276).</dd>
 
       </dl>
 
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">La Tomatina</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Comunitat Valenciana</span>
+        <span class="etiqueta">Buñol</span>
+        <span class="etiqueta">Agosto</span>
+        <span class="etiqueta">Fiesta popular</span>
+        <span class="etiqueta">Batalla de tomates</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="san-fermin.html" class="relacionada-card">
+            <strong>Sanfermines de Pamplona</strong>
+            <span>Navarra · ITI · Otra gran fiesta popular con proyección internacional</span>
+          </a>
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Comunitat Valenciana · ITI · Fiesta de referencia de la región</span>
+          </a>
+          <a href="las-fallas-valencia.html" class="relacionada-card">
+            <strong>Las Fallas de Valencia</strong>
+            <span>Comunitat Valenciana · ITI/UNESCO · Otra gran fiesta popular valenciana</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -339,7 +452,7 @@
   <!-- PIE DE PÁGINA -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
