@@ -3,49 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Folklorius — Fiesta, tradición e historia</title>
-  <meta name="description" content="Folklorius: descubre las fiestas más emblemáticas de España contadas con respeto, emoción y rigor cultural. Fichas detalladas de tradiciones, historia y folklore." />
-  <link rel="canonical" href="https://folklorius.es/" />
+  <title>Sanfermines de Pamplona 2026: Encierro, Chupinazo y Peñas</title>
+  <meta name="description" content="Guía de los Sanfermines de Pamplona 2026 (6-14 julio). ITI. Encierro, Chupinazo, 16 peñas federadas y el Pobre de mí. Historia, fechas y consejos." />
+  <link rel="canonical" href="https://folklorius.es/san-fermin.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Folklorius — Fiesta, tradición e historia" />
-  <meta property="og:description" content="Guía cultural de las principales fiestas de España: historia, tradición y folklore." />
-  <meta property="og:image" content="https://folklorius.es/images/portada-folklorius.jpg" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sanfermines de Pamplona 2026 | Nueve días con la ciudad en la calle" />
+  <meta property="og:description" content="Encierro, Chupinazo, gigantes y 16 peñas con sus txarangas. Nueve días de julio en los que Pamplona no para. Guía completa 2026." />
+  <meta property="og:image" content="https://folklorius.es/images/san-fermin.jpg" />
+  <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
-
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 
-  <!-- JSON-LD del sitio -->
+  <style>
+
+    /* ── Peñas en 2 columnas simples ─────────────────────────── */
+    .penas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .penas-grid { grid-template-columns: 1fr; }
+    }
+    .penas-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .penas-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .penas-col ul li {
+      font-size: 0.88rem;
+      padding: 4px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+    }
+    .penas-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://folklorius.es/",
-    "name": "Folklorius",
-    "description": "Guía cultural de las principales fiestas de España.",
-    "url": "https://folklorius.es/",
-    "inLanguage": "es-ES",
-    "publisher": {
+    "@type": "Festival",
+    "@id": "https://folklorius.es/san-fermin.html",
+    "name": "Fiestas de San Fermín de Pamplona",
+    "startDate": "2027-07-06",
+    "endDate": "2027-07-14",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Pamplona",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pamplona",
+        "addressRegion": "Navarra",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.8188,
+        "longitude": -1.6444
+      }
+    },
+    "image": ["https://folklorius.es/images/san-fermin.jpg"],
+    "description": "Los Sanfermines de Pamplona, nueve días de fiesta en julio con el encierro, el Chupinazo, 16 peñas federadas y la procesión de San Fermín.",
+    "organizer": {
       "@type": "Organization",
-      "name": "Folklorius",
-      "url": "https://folklorius.es/"
+      "name": "Ayuntamiento de Pamplona",
+      "url": "https://www.pamplona.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
     }
   }
   </script>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
@@ -56,672 +238,313 @@
       </a>
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="#fiestas">Fiestas</a>
-        <a href="#glosario">Vocabulario</a>
-        <a href="#blog">Blog</a>
-        <a class="nav-cta" href="#fiestas">Explorar</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-cover" role="img" aria-label="Portada Folklorius: celebración tradicional en una plaza española">
-    <picture>
-      <source srcset="images/portada-folklorius.webp" type="image/webp" />
-      <img src="images/portada-folklorius.jpg" alt="Celebración tradicional en una plaza española" class="hero-image" />
-    </picture>
-    <div class="hero-overlay">
-      <div class="hero-inner">
-        <h1>Folklorius</h1>
-        <p class="hero-tag">Fiesta, tradición e historia</p>
-        <a class="hero-cta" href="#fiestas">Explorar fichas</a>
-      </div>
-    </div>
-  </section>
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiestas de San Fermín de Pamplona
+  </nav>
 
-  <main>
+  <div class="ficha-hero">
+    <img src="images/san-fermin.jpg" alt="Celebración del Chupinazo en la Plaza del Ayuntamiento de Pamplona" />
+  </div>
 
-    <!-- INTRO -->
-    <section class="intro" id="inicio" aria-labelledby="intro-title">
-      <h2 id="intro-title">Bienvenido a Folklorius</h2>
-      <p>
-        España es un país de fiestas vivas. Cada pueblo, cada ciudad, guarda tradiciones que llevan siglos celebrándose.
-        Aquí las contamos con rigor, con respeto y con el entusiasmo de quien sabe que la cultura popular merece ser conocida.
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Sanfermines de Pamplona</h1>
+      <p class="ficha-subtitle">
+        Pamplona · Navarra · «Nueve días en los que la ciudad no para.»
       </p>
-    </section>
 
-    <!-- FICHAS DESTACADAS -->
-    <section class="fiestas-section" id="fiestas" aria-labelledby="fiestas-title">
-      <h2 id="fiestas-title">Fichas destacadas</h2>
-      <ul class="fiestas-grid" role="list">
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 6 al 14 de julio de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Pamplona · Navarra</span>
+          <span>⏱️ 9 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
 
-        <li class="fiesta-card">
-          <a href="fallas-valencia.html">
-            <div class="card-img-wrap">
-              <img src="images/fallas-valencia.jpg" alt="Las Fallas de Valencia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Las Fallas de Valencia</span>
-              <span class="card-frase">Arte que arde, tradición que renace cada marzo.</span>
-              <span class="card-meta">Valencia · Marzo · Patrimonio UNESCO</span>
-            </div>
-          </a>
-        </li>
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
 
-        <li class="fiesta-card">
-  <a href="moros-cristianos-bocairent.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-bocairent.jpg"
-           alt="Festeros con farolillos y mantas bocairentinas en la Nit de les Caixes de Bocairent"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Bocairent</span>
-      <span class="card-frase">La fiesta del invierno, la manta y Sant Blai.</span>
-      <span class="card-meta">Bocairent · Valencia · Interés Turístico Nacional</span>
-    </div>
-  </a>
-</li>
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>El encierro no es un espectáculo para grabar sin más.</strong> Existe una ordenanza municipal estricta y un dispositivo de Protección Civil. Si decides correr, hazlo solo conociendo bien la normativa; si vas de espectador, sitúate en zonas habilitadas y no interrumpas el paso.</li>
+          <li><strong>Respeta los actos religiosos.</strong> La procesión y la misa mayor de San Fermín son actos de culto, no solo folclore. Mantén una actitud respetuosa durante su recorrido.</li>
+          <li><strong>Masificación real.</strong> El centro de Pamplona multiplica su población durante estos días. Respeta el descanso de los vecinos que no participan activamente en las zonas de bullicio nocturno.</li>
+        </ul>
+      </div>
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El cohete revienta a mediodía sobre la Plaza Consistorial y, durante nueve días, Pamplona deja de funcionar como el resto del año. El blanco de la ropa se llena de manchas de vino antes de que acabe la primera tarde. A primera hora de la mañana la ciudad vuelve a estar despierta antes de haberse acostado, con las txarangas todavía sonando en Jarauta. El pañuelico rojo no se anuda hasta que suena el cohete: hasta entonces, sigue en el bolsillo.
+      </p>
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      
+      <p>
+        Los Sanfermines duran nueve días, del 6 al 14 de julio, y combinan tres capas que llevan siglos conviviendo: el culto religioso a San Fermín, la feria comercial de origen medieval y la fiesta popular que hoy ocupa casi todo el protagonismo. El día arranca temprano con las dianas de la Pamplonesa recorriendo el Casco Viejo, sigue con el encierro a primera hora de la mañana, continúa con actos religiosos, gigantes y cabezudos durante el día, y se prolonga hasta bien entrada la noche con conciertos, txarangas y fuegos artificiales. Las peñas son quienes sostienen el pulso de la calle: cada una tiene su local, su banda y su manera de vivir la fiesta.
+      </p>
+      <p>
+        Para quien viene por primera vez, lo más práctico es no intentar verlo todo. Elige un encierro para verlo desde una zona elevada y segura, sitúate en la Plaza Consistorial para el Chupinazo si quieres vivirlo desde dentro, y deja hueco en el itinerario para las dianas de primera hora, mucho menos conocidas que el encierro y con un ambiente propio.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios exactos de cada acto los publica el Ayuntamiento de Pamplona en su programa oficial antes de cada edición.</p>
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen de los Sanfermines está en la unión de tres tradiciones distintas. La devoción a San Fermín de Amiens se consolidó en Pamplona en el siglo XII, tras el traslado de sus reliquias desde Francia en 1186. Originalmente su fiesta se celebraba en otoño. Por otro lado, la ciudad tenía ferias comerciales y corridas de toros de verano que nada tenían que ver con el santo.
+      </p>
+      <p>
+        El clima otoñal —frío y lluvioso— llevó a los pamploneses a pedir el traslado de la fiesta religiosa al verano. En 1591 se celebró por primera vez la unión oficial de los tres elementos: culto, feria y toros, sentando la base de lo que hoy son los Sanfermines.
+      </p>
+      <p>
+        Durante el siglo XX la fiesta se proyectó fuera de Navarra, en buena parte gracias a las crónicas de viajeros extranjeros y a escritores como Ernest Hemingway, que la hicieron conocida en medio mundo. El componente popular fue ganando terreno al religioso y al comercial hasta convertirse en el eje de la celebración actual, aunque la procesión y la misa en honor al santo se mantienen cada 7 de julio.
+      </p>
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Los Sanfermines se celebran siempre del <strong>6 al 14 de julio</strong>, con fechas fijas cada año. El día central es el <strong>7 de julio</strong>, festividad de San Fermín, con la procesión y la misa mayor. El primer y el último día concentran los momentos más simbólicos: el Chupinazo que abre la fiesta y el Pobre de mí que la cierra.
+      </p>
+      <p class="nota-grid">⚠️ Las fechas no varían de un año a otro, pero los horarios y detalles de cada acto sí pueden ajustarse edición tras edición. Consulta siempre el programa oficial del Ayuntamiento de Pamplona.</p>
+      <h2 class="section-title">Los actos principales</h2>
 
-        <li class="fiesta-card">
-          <a href="semana-santa-malaga.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Málaga</span>
-              <span class="card-frase">Fe, arte y emoción en cada trono.</span>
-              <span class="card-meta">Málaga · Marzo-Abril · Patrimonio Cultural</span>
-            </div>
-          </a>
-        </li>
+      <ul class="actos-list">
 
-        <li class="fiesta-card">
-          <a href="san-fermin.html">
-            <div class="card-img-wrap">
-              <img src="images/san-fermin.jpg" alt="Sanfermines de Pamplona" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Sanfermines de Pamplona</span>
-              <span class="card-frase">Encierro, Chupinazo y 16 peñas con sus txarangas.</span>
-              <span class="card-meta">Navarra · Julio · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-cadiz.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-cadiz1.png" alt="Carnaval de Cádiz" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Cádiz</span>
-              <span class="card-frase">La voz del pueblo hecha copla y sátira.</span>
-              <span class="card-meta">Cádiz · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Lunes 6 de julio · Mediodía</span>
+          <strong>El Chupinazo.</strong>
+          El cohete se lanza desde el balcón del Ayuntamiento y la Plaza Consistorial, abarrotada desde primera hora, estalla en un solo grito. Es el instante en que se anuda el pañuelico rojo, y no antes.
         </li>
 
-        <li class="fiesta-card">
-          <a href="carnaval-tenerife.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-tenerife.jpg" alt="Carnaval de Santa Cruz de Tenerife" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Santa Cruz de Tenerife</span>
-              <span class="card-frase">Donde la calle se disfraza de libertad.</span>
-              <span class="card-meta">Tenerife · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Lunes 6 de julio · Tarde</span>
+          <strong>El Riau-Riau, en su versión popular.</strong>
+          La celebración institucional lleva años suspendida por los bloqueos e incidentes que la rodearon, así que lo que se vive hoy es una versión no oficial organizada por peñas y colectivos de jubilados, que cantan el valsecillo de Astráin por las calles del centro.
         </li>
 
-        <li class="fiesta-card">
-          <a href="semana-santa-sevilla.html">
-            <div class="card-img-wrap">
-              <img src="images/sevilla-santa1.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Sevilla</span>
-              <span class="card-frase">Donde la fe se hace arte y el arte sale a la calle.</span>
-              <span class="card-meta">Sevilla · Marzo-Abril · Patrimonio UNESCO</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Del 7 al 14 de julio · Primera hora de la mañana</span>
+          <strong>El encierro.</strong>
+          Seis toros y varios cabestros recorren unos 850 metros desde los corrales de Santo Domingo hasta la plaza, con los corredores guiándose por su propio instinto y por las indicaciones de los pastores. Antes de que arranque, los mozos cantan frente a la hornacina del santo pidiendo protección.
         </li>
 
-        <li class="fiesta-card">
-          <a href="tomatina-bunol.html">
-            <div class="card-img-wrap">
-              <img src="images/tomatina1.jpg" alt="La Tomatina de Buñol" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">La Tomatina de Buñol</span>
-              <span class="card-frase">El caos más divertido que puedes vivir.</span>
-              <span class="card-meta">Valencia · Agosto · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Martes 7 de julio · Mañana</span>
+          <strong>Procesión y misa mayor de San Fermín.</strong>
+          El día central de la fiesta tiene su momento más solemne con el recorrido del Cabildo y la Corporación Municipal por el Casco Antiguo, con parada de los gigantes ante la Catedral.
         </li>
 
-        <li class="fiesta-card">
-          <a href="moros-cristianos-alcoi.html">
-            <div class="card-img-wrap">
-              <img src="images/alcoy1.jpg" alt="Moros y Cristianos de Alcoi" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Alcoi</span>
-              <span class="card-frase">Donde nació la tradición que se extendió por el mundo.</span>
-              <span class="card-meta">Alicante · Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Todos los días · Noche</span>
+          <strong>Fuegos artificiales.</strong>
+          Se lanzan desde la Ciudadela y cierran cada jornada antes de que las peñas y sus txarangas tomen las calles del Casco Viejo hasta la madrugada.
         </li>
 
-        <li class="fiesta-card">
-          <a href="semana-santa-cartagena.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-cartagena.jpg" alt="Semana Santa de Cartagena" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Cartagena</span>
-              <span class="card-frase">Diez días de orden, luces y tradición militar en el Mediterráneo.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-lorca.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-lorca.jpg" alt="Semana Santa de Lorca" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Lorca</span>
-              <span class="card-frase">Donde el bordado se hace piel y la historia galopa.</span>
-              <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-cuenca.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-cuenca.jpg" alt="Semana Santa de Cuenca" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Cuenca</span>
-              <span class="card-frase">Pasión vertical entre hoces, silencios y tambores roncos.</span>
-              <span class="card-meta">Cuenca · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-granada.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-granada.jpg" alt="Semana Santa de Granada" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Granada</span>
-              <span class="card-frase">Pasión entre el Albaicín, el Sacromonte y la Alhambra.</span>
-              <span class="card-meta">Granada · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Murcia</span>
-              <span class="card-frase">El genio de Salzillo esculpido en la tradición huertana.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-jumilla.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-jumilla.jpg" alt="Semana Santa de Jumilla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Jumilla</span>
-              <span class="card-frase">Más de seiscientos años de fe entre túnicas y viñedos.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-crevillent.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-crevillent.jpg" alt="Semana Santa de Crevillent" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Crevillent</span>
-              <span class="card-frase">El genio de Benlliure mecido por el canto polifónico.</span>
-              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-orihuela.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Orihuela</span>
-              <span class="card-frase">Un museo en la calle bañado de incienso y fervor.</span>
-              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-avila.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-avila.jpg" alt="Semana Santa de Ávila" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Ávila</span>
-              <span class="card-frase">Piedra, silencio y fe al abrigo de la muralla medieval.</span>
-              <span class="card-meta">Ávila · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-  <a href="semana-santa-leon.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-leon.jpg" alt="Semana Santa de León" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de León</span>
-      <span class="card-frase">El latido del tambor y el orgullo del papón.</span>
-      <span class="card-meta">León · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-       </li>
-       <li class="fiesta-card">
-  <a href="semana-santa-palencia.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-palencia.jpg" alt="Semana Santa de Palencia" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Palencia</span>
-      <span class="card-frase">Silencio roto por el lamento del Tararú.</span>
-      <span class="card-meta">Palencia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-valladolid.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Valladolid</span>
-      <span class="card-frase">Un museo de madera policromada bajo el cielo de Castilla.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-salamanca.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-salamanca.jpg" alt="Semana Santa de Salamanca" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Salamanca</span>
-      <span class="card-frase">Piedra viva, silencio estremecedor y pasión bajo el cielo charro.</span>
-      <span class="card-meta">Salamanca · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-zamora.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-zamora.jpg" alt="Cofrades de las Capas Pardas con linterna en las calles románicas de Zamora" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Zamora</span>
-      <span class="card-frase">Un museo románico donde el silencio, el frío y el canto desgarran el alma.</span>
-      <span class="card-meta">Zamora · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-medina-del-campo.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-medina-del-campo.jpg" alt="Procesión nocturna en la Semana Santa de Medina del Campo con el Castillo de la Mota al fondo" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Medina del Campo</span>
-      <span class="card-frase">Silencio castellano bajo cera y piedra antigua.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-medina-de-rioseco.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-medina-de-rioseco.jpg" alt="Paso a hombros por las calles empinadas de Medina de Rioseco durante la Semana Santa" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Medina de Rioseco</span>
-      <span class="card-frase">Madera al hombro, silencio y emoción castellana.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-caceres.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-caceres.jpg" alt="Procesión nocturna por las calles medievales de la Ciudad Monumental de Cáceres" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Cáceres</span>
-      <span class="card-frase">Piedra, silencio y cera en la penumbra.</span>
-      <span class="card-meta">Cáceres · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-merida.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-merida.jpg" alt="Vía Crucis en el Anfiteatro Romano de Mérida durante la Semana Santa" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Mérida</span>
-      <span class="card-frase">La Pasión de Cristo sobre la piedra de Roma.</span>
-      <span class="card-meta">Badajoz · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-ferrol.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-ferrol.jpg" alt="Procesión nocturna de Os Caladiños en las calles de A Magdalena de Ferrol" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Ferrol</span>
-      <span class="card-frase">Sobriedad, mar y silencio en las calles ilustradas.</span>
-      <span class="card-meta">A Coruña · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-viveiro.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-viveiro.jpg" alt="Procesión de Os Caladiños en Viveiro con fieles portando velas en silencio por el casco histórico" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Viveiro</span>
-      <span class="card-frase">Tambores de pasión y silencio en A Mariña.</span>
-      <span class="card-meta">Lugo · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-zaragoza.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-zaragoza.jpg" alt="Cofrades con bombos y tambores en la Semana Santa de Zaragoza" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Zaragoza</span>
-      <span class="card-frase">Cuatro mil metros de pasión a golpe de bombo y tambor.</span>
-      <span class="card-meta">Zaragoza · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-hellin.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-hellin.jpg" alt="Tamborada de Hellín" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa y Tamborada de Hellín</span>
-      <span class="card-frase">Donde la fe camina a hombros y el suelo retumba.</span>
-      <span class="card-meta">Hellín · Albacete · ITI + UNESCO</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-toledo.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-toledo.jpg" 
-           alt="Procesión nocturna bajo los cobertizos medievales de Toledo durante la Semana Santa" 
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Toledo</span>
-      <span class="card-frase">El silencio bajo los cobertizos.</span>
-      <span class="card-meta">Toledo · Castilla-La Mancha · ITI 2014</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-baena.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-baena.jpg"
-           alt="Turbas de Judíos Coliblancos y Colinegros en la Semana Santa de Baena"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Baena</span>
-      <span class="card-frase">El pueblo que reza a golpe de tambor.</span>
-      <span class="card-meta">Córdoba · Andalucía · ITI 2025</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="ruta-tambor-bombo.html">
-    <div class="card-img-wrap">
-      <img src="images/ruta-tambor-bombo.jpg"
-           alt="Tamborileros del Bajo Aragón en la Rompida de la Hora de la Ruta del Tambor y el Bombo"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Ruta del Tambor y el Bombo</span>
-      <span class="card-frase">Cuando el Bajo Aragón rompe la hora.</span>
-      <span class="card-meta">Bajo Aragón · Teruel · ITI 2014 + Patrimonio UNESCO 2018</span>
-    </div>
-  </a>
-</li>
-        <li class="fiesta-card">
-          <a href="domingo-ramos-elche.html">
-            <div class="card-img-wrap">
-              <img src="images/domingo-ramos-elche.jpg" alt="Procesión del Domingo de Ramos de Elche con miles de personas portando palmas blancas trenzadas" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Domingo de Ramos de Elche</span>
-              <span class="card-frase">Setenta mil palmas blancas bajo el sol levantino.</span>
-              <span class="card-meta">Elche · Alicante · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="corpus-christi-toledo.html">
-            <div class="card-img-wrap">
-              <img src="images/corpus-christi-toledo.jpg" alt="La Custodia de Arfe avanzando por las calles del casco histórico de Toledo durante el Corpus Christi" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Corpus Christi de Toledo</span>
-              <span class="card-frase">Oro, incienso y siete siglos que no pasan.</span>
-              <span class="card-meta">Toledo · Castilla-La Mancha · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-       
-        <li class="fiesta-card">
-  <a href="corpus-christi-ponteareas.html">
-    <div class="card-img-wrap">
-      <img src="images/corpus-christi-ponteareas.jpg"
-           alt="Alfombras florales cubriendo las calles de Ponteareas durante el Corpus Christi"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Corpus Christi de Ponteareas</span>
-      <span class="card-frase">Un pueblo entero dibujando con flores en la madrugada.</span>
-      <span class="card-meta">Ponteareas · Galicia · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-      <li class="fiesta-card">
-  <a href="corpus-christi-bejar.html">
-    <div class="card-img-wrap">
-      <img src="images/corpus-christi-bejar.jpg"
-           alt="Hombres de Musgo escoltando la Custodia en el Corpus Christi de Béjar"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Corpus Christi de Béjar</span>
-      <span class="card-frase">La leyenda que camina junto a la Custodia.</span>
-      <span class="card-meta">Béjar · Castilla y León · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-cieza.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-cieza.jpg" alt="El Tercio Romano de los Armaos en la Semana Santa de Cieza" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Cieza</span>
-      <span class="card-frase">Pasión en la calle, escultura levantina y el eco de los Armaos.</span>
-      <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="moros-cristianos-villajoyosa.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-villajoyosa.jpg"
-           alt="El Desembarc de Villajoyosa con embarcaciones moras atacando la Playa Centro al amanecer"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Villajoyosa</span>
-      <span class="card-frase">Cuando el mar se convierte en campo de batalla.</span>
-      <span class="card-meta">Villajoyosa · Alicante · ITI 2003</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="moros-cristianos-crevillent.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-crevillent.jpg"
-           alt="La Embajada al Rey Jaime I frente al Castillo Festero en la Plaza de la Constitución de Crevillent"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Crevillent</span>
-      <span class="card-frase">Vasallaje histórico y pacto pacífico en el Baix Vinalopó.</span>
-      <span class="card-meta">Crevillent · Alicante · ITI 2017</span>
-    </div>
-  </a>
-</li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-ontinyent.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-ontinyent.jpg"
-                   alt="Comparsas desfilando durante los Moros y Cristianos de Ontinyent"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Ontinyent</span>
-              <span class="card-frase">24 comparsas, la Bajada del Cristo y las Embajadas de 1860.</span>
-              <span class="card-meta">Ontinyent · Valencia · ITI 2025</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-elda.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-elda.jpg"
-                   alt="Comparsas desfilando durante las Entradas de los Moros y Cristianos de Elda"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Elda</span>
-              <span class="card-frase">Más de 7.000 festeros y devoción a San Antón.</span>
-              <span class="card-meta">Elda · Alicante · ITI 2026</span>
-            </div>
-          </a>
-        </li>
-<li class="fiesta-card">
-          <a href="moros-cristianos-almansa.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-almansa.jpg"
-                   alt="Desfile de Moros y Cristianos de Almansa con las comparsas cruzando la plaza bajo el castillo"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Almansa</span>
-              <span class="card-frase">Bajo el castillo que vio cambiar la historia.</span>
-              <span class="card-meta">Almansa · Albacete · ITI 2024</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-murcia.jpg"
-                   alt="Campamento Medieval de los Moros y Cristianos de Murcia junto al río Segura"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Murcia</span>
-              <span class="card-frase">Un campamento entero junto al Segura recrea la fundación de la ciudad.</span>
-              <span class="card-meta">Murcia · Septiembre · ITI 2025</span>
-            </div>
-          </a>
-        </li>
-<li class="fiesta-card">
-          <a href="moros-cristianos-caravaca.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-caravaca.jpg"
-                   alt="Desfile de Moros y Cristianos de Caravaca de la Cruz con la Basílica-Santuario de la Vera Cruz al fondo"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Caravaca de la Cruz</span>
-              <span class="card-frase">La devoción a la Vera Cruz hecha batalla, desfile y embajada.</span>
-              <span class="card-meta">Caravaca de la Cruz · Mayo · ITI 2004</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="caballos-del-vino-caravaca.html">
-            <div class="card-img-wrap">
-              <img src="images/caballos-del-vino-caravaca.jpg"
-                   alt="Carrera de los Caballos del Vino en la Cuesta del Castillo de Caravaca con los mozos agarrados al caballo enjaezado"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Caballos del Vino de Caravaca de la Cruz</span>
-              <span class="card-frase">Un año bordando para ocho segundos de carrera cuesta arriba.</span>
-              <span class="card-meta">Caravaca de la Cruz · 2 de mayo · UNESCO 2020</span>
-            </div>
-          </a>
+        <li>
+          <span class="dia-label">Martes 14 de julio · Medianoche</span>
+          <strong>El Pobre de mí.</strong>
+          Miles de personas, vela en mano, cantan la despedida en la Plaza Consistorial. El pañuelico se guarda hasta el año siguiente.
         </li>
 
       </ul>
-    </section>
+      <h2 class="section-title">Peñas sanfermineras</h2>
+      <p>
+        Pamplona cuenta con <strong>16 peñas oficiales</strong> federadas en la Federación de Peñas de Pamplona. Son el motor social de la fiesta: cada una tiene su local, su txaranga y su presencia propia en encierros, corridas y calles.
+      </p>
+      <p class="nota-grid">Las webs turísticas a veces mencionan 18 peñas, sumando a Mutilzarra y La Escalerica de San Fermín, populares pero no federadas. El dato oficial y federativo es 16.</p>
 
+      <div class="penas-grid">
+
+        <div class="penas-col">
+          <ul>
+            <li>Alegría de Iruña</li>
+            <li>Aldapa</li>
+            <li>Los del Bronce</li>
+            <li>La Jarana</li>
+            <li>El Bullicio Pamplonés</li>
+            <li>San Juan / Donibane</li>
+            <li>Anaitasuna</li>
+            <li>Armonía Txantreana</li>
+          </ul>
+        </div>
+
+        <div class="penas-col">
+          <ul>
+            <li>Irrintzi</li>
+            <li>Muthiko Alaiak</li>
+            <li>Oberena</li>
+            <li>Rotxapea</li>
+            <li>San Jorge / Sanduzelai</li>
+            <li>El Charco</li>
+            <li>La Única</li>
+            <li>7 de Julio San Fermín</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="nota-grid">Consulta el programa oficial del Ayuntamiento de Pamplona para horarios e itinerarios de cada peña en cada edición.</p>
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#b34700; margin-bottom:8px;">Dos sonidos, dos momentos del día</h3>
+        <p>Pamplona en julio suena distinto según la hora. Al amanecer, las dianas de la Pamplonesa —la banda municipal— recorren el Casco Viejo con pasodobles, y detrás de ella va una multitud cantando al mismo compás. Es un sonido madrugador, casi doméstico, muy distinto al del resto del día.</p>
+        <p>Por la tarde y la noche el protagonismo pasa a las txarangas de cada peña: metales y percusión sin pauta fija, pensados para acompañar y no para escucharse en silencio. En medio de ese ruido continuo aparece, en momentos puntuales, el sonido más antiguo de la fiesta: la gaita navarra y el txistu que acompañan el baile de los gigantes, agudos y penetrantes, muy distintos al metal de las txarangas.</p>
+        <p style="margin-bottom:0;">Para el contraste más claro entre los dos mundos sonoros de la fiesta, sitúate en la Plaza del Castillo a primera hora de la mañana para las dianas, y vuelve por la noche para ver cómo el mismo espacio se llena de txarangas.</p>
+      </div>
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El baile de los gigantes ante la Catedral</h3>
+          <span class="tag">7 de julio · Mañana · Atrio de la Catedral</span>
+          <p>Durante la procesión de San Fermín, los gigantes bailan al son de gaitas y txistus mientras repican las campanas. Es el cruce entre protocolo religioso, folclore y música que no se repite en ningún otro punto de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento en que la comparsa, la Catedral y la música tradicional coinciden en el mismo espacio y a la misma hora.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El canto de los mozos antes del encierro</h3>
+          <span class="tag">Del 7 al 14 de julio · Primera hora de la mañana · Cuesta de Santo Domingo</span>
+          <p>Minutos antes de que suelten a los toros, los corredores cantan frente a la hornacina de San Fermín pidiendo protección. El tono cambia de golpe cuando termina el cántico.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el ritual que antecede al encierro y que casi nadie que solo ve la carrera por televisión llega a presenciar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La salida de las peñas tras la corrida</h3>
+          <span class="tag">Del 7 al 14 de julio · Atardecer · Plaza de Toros al Casco Viejo</span>
+          <p>Las 16 peñas salen en bloque con sus txarangas y pancartas nada más terminar la corrida, tomando las calles en dirección al centro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento en que se ve mejor qué son realmente las peñas: el motor popular de la fiesta, no un decorado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La despedida de los gigantes</h3>
+          <span class="tag">14 de julio · Mañana · Plaza Consistorial o Plaza del Castillo</span>
+          <p>Las figuras bailan por última vez del año ante los niños de la ciudad, que en algunos casos les entregan objetos propios de la infancia como gesto de despedida.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el contrapunto familiar y tranquilo frente a la intensidad del resto de la fiesta, y marca simbólicamente que se acerca el final.</p>
+          </details>
+        </div>
+
+      </div>
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con mucha antelación, especialmente si buscas un balcón con vistas al recorrido del encierro o a la Plaza Consistorial: la demanda supera con creces la oferta desde meses antes.</li>
+        <li><strong>Cómo moverte.</strong> El centro queda cerrado al tráfico durante los días grandes. Usa las villavesas, el autobús urbano, para desplazamientos más largos.</li>
+        <li><strong>Dónde situarte para el encierro.</strong> Elige una zona elevada y segura del recorrido con antelación suficiente, porque los mejores puntos se llenan mucho antes de la hora de salida.</li>
+        <li><strong>Clima y ropa.</strong> Las mañanas pueden ser frescas, así que lleva algo de abrigo ligero para las dianas y el encierro, aunque a mediodía las temperaturas suban bastante.</li>
+        <li><strong>Si decides correr.</strong> Hazlo solo si conoces bien la normativa municipal y el protocolo de Protección Civil; no es un acto para improvisar.</li>
+        <li><strong>Gastronomía.</strong> No te vayas sin probar el almuerzo de magras con tomate, típico de media mañana entre acto y acto.</li>
+      </ul>
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Peña</dt>
+        <dd>Agrupación de socios con local propio, banda y presencia activa en la fiesta.</dd>
+
+        <dt>Chupinazo</dt>
+        <dd>Cohete que se lanza desde el balcón del Ayuntamiento y marca el inicio oficial de la fiesta.</dd>
+
+        <dt>Txaranga</dt>
+        <dd>Banda de música ambulante de las peñas, sin partitura fija, pensada para acompañar el bullicio callejero.</dd>
+
+        <dt>Villavesa</dt>
+        <dd>Nombre popular del autobús urbano de Pamplona.</dd>
+
+        <dt>Pastores</dt>
+        <dd>Personas encargadas de dirigir a los toros durante el encierro para que no se giren ni se detengan.</dd>
+
+        <dt>Pañuelico</dt>
+        <dd>Pañuelo rojo que se anuda al cuello justo después del Chupinazo y se guarda hasta el año siguiente.</dd>
+
+        <dt>Pobre de mí</dt>
+        <dd>Canción y acto con velas que cierra oficialmente la fiesta a medianoche del 14 de julio.</dd>
+
+      </dl>
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/san-fermin/chupinazo-plaza-consistorial.jpg" alt="Multitud celebrando el Chupinazo en la Plaza Consistorial de Pamplona el primer día de los Sanfermines" />
+        <img src="images/san-fermin/encierro-santo-domingo.jpg" alt="Corredores y toros durante el encierro por la Cuesta de Santo Domingo en Pamplona" />
+        <img src="images/san-fermin/gigantes-catedral.jpg" alt="Baile de los gigantes ante la Catedral de Pamplona durante la procesión de San Fermín" />
+        <img src="images/san-fermin/penas-txaranga.jpg" alt="Peña sanferminera desfilando con su txaranga por las calles del Casco Viejo de Pamplona" />
+      </div>
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.pamplona.es" target="_blank" rel="noopener">Ayuntamiento de Pamplona — Web oficial</a></li>
+        <li><a href="https://www.visitpamplona.es" target="_blank" rel="noopener">Oficina de Turismo de Pamplona</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-06</p>
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Sanfermines en 2026?</dt>
+        <dd>Del 6 al 14 de julio, con fechas fijas cada año. El Chupinazo abre la fiesta a mediodía del día 6 y el Pobre de mí la cierra a medianoche del día 14.</dd>
+
+        <dt>¿Es una fiesta apta para ir con niños?</dt>
+        <dd>Sí, hay muchos actos pensados para familias, como el paseo diario de los gigantes y cabezudos. El encierro y las zonas de mayor aglomeración nocturna no son recomendables para los más pequeños.</dd>
+
+        <dt>¿Puedo correr en el encierro sin experiencia previa?</dt>
+        <dd>No es recomendable. Requiere conocer bien la normativa municipal y el protocolo de seguridad. Infórmate a fondo antes de planteártelo, y nunca lo hagas bajo los efectos del alcohol.</dd>
+
+        <dt>¿Hay zonas accesibles para personas con movilidad reducida?</dt>
+        <dd>El Ayuntamiento de Pamplona habilita espacios accesibles en los principales actos de la fiesta. Consulta el plan de accesibilidad en su web oficial antes de tu visita.</dd>
+
+        <dt>¿Por qué a veces se habla de 18 peñas y otras de 16?</dt>
+        <dd>El dato oficial y federativo es 16. La cifra de 18 que aparece en algunas webs turísticas incluye a Mutilzarra y La Escalerica de San Fermín, agrupaciones populares pero no federadas.</dd>
+
+      </dl>
+
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">San Fermín</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Navarra</span>
+        <span class="etiqueta">Pamplona</span>
+        <span class="etiqueta">Julio</span>
+        <span class="etiqueta">Encierro</span>
+        <span class="etiqueta">Chupinazo</span>
+        <span class="etiqueta">Peñas</span>
+        <span class="etiqueta">Pobre de mí</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="la-tomatina-bunol.html" class="relacionada-card">
+            <strong>La Tomatina de Buñol</strong>
+            <span>Comunitat Valenciana · ITI · Fiesta popular sin componente religioso</span>
+          </a>
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Comunitat Valenciana · ITI · Filaes como eje organizativo</span>
+          </a>
+          <a href="las-fallas-valencia.html" class="relacionada-card">
+            <strong>Las Fallas de Valencia</strong>
+            <span>Comunitat Valenciana · ITI · Otra gran fiesta popular de proyección internacional</span>
+          </a>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
-      <p>
-        <a href="index.html">Inicio</a> ·
-        Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales
-      </p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
 
