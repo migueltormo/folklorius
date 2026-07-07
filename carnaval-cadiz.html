@@ -51,6 +51,38 @@
       background: #fff; border: 1px solid var(--border, #e8ddd4);
       border-radius: 999px; padding: 4px 12px;
     }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
     /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
     .agrupaciones-grid {
       display: grid;
@@ -269,13 +301,61 @@
       </p>
       <p class="nota-grid">🎵 Escucha con atención: el humor gaditano es rápido e irónico, y muchas letras requieren conocer la actualidad local para captar del todo la broma. No interrumpas a una agrupación en plena actuación callejera.</p>
 
-      <h2 class="section-title">Otros actos destacados</h2>
-      <ul>
-        <li><strong>Pregón del Carnaval:</strong> inicio oficial de la fiesta, a cargo de una figura vinculada a Cádiz o al carnaval.</li>
-        <li><strong>Cabalgata Magna:</strong> desfile festivo con carrozas, música y disfraces por las principales avenidas.</li>
-        <li><strong>Gran Final del Falla:</strong> el acto más esperado del COAC, seguido por miles de personas en el teatro y en la calle.</li>
-        <li><strong>Domingo de Piñata:</strong> último día oficial del carnaval, con la Quema de la Bruja Piti como cierre simbólico de la fiesta. El formato y el punto de la ciudad donde se celebra han ido cambiando en los últimos años, así que conviene consultar el programa de cada edición.</li>
+      <h2 class="section-title">Qué se celebra cada semana</h2>
+      <p>El carnaval gaditano se organiza en tres bloques bien diferenciados, útil si quieres planificar tu visita según lo que te interese ver:</p>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Semanas previas · Gran Teatro Falla</span>
+          <strong>Fases del COAC.</strong>
+          Preliminares, cuartos de final y semifinales se reparten a lo largo de varias semanas antes del inicio de la fiesta en la calle.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes previo al Miércoles de Ceniza</span>
+          <strong>Gran Final del COAC.</strong>
+          El evento cumbre del concurso, que da el pistoletazo de salida oficial al carnaval y se prolonga hasta bien entrada la madrugada.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado · Noche</span>
+          <strong>Pregón del Carnaval.</strong>
+          Tradicionalmente en la Plaza de San Antonio. A partir de aquí las agrupaciones callejeras toman La Viña, El Pópulo y el Mentidero.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo</span>
+          <strong>Carruseles de coros y Cabalgata Magna.</strong>
+          Por la mañana, carruseles de coros junto al Mercado Central; por la tarde, la Cabalgata Magna recorre la avenida principal de la ciudad.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes de Carnaval</span>
+          <strong>Coros y agrupaciones callejeras.</strong>
+          Protagonismo casi absoluto de las agrupaciones ilegales y los coros en las plazas históricas.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes de Carnaval</span>
+          <strong>Quema del Dios Momo.</strong>
+          Ceremonia simbólica que marca el ecuador de la fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles a viernes</span>
+          <strong>Carnaval en la calle.</strong>
+          La Viña, San Juan de Dios y El Mentidero mantienen el ambiente, algo más local y relajado que el fin de semana grande.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo de Piñata</span>
+          <strong>Cierre de fiesta.</strong>
+          Últimos carruseles de coros, fritos populares y la Quema de la Bruja Piti como colofón, con fuegos artificiales. El formato y el punto de la ciudad donde se celebra han ido cambiando en los últimos años, así que conviene consultar el programa de cada edición.
+        </li>
+
       </ul>
+      <p class="nota-grid">Curiosidad: el fin de semana siguiente al Domingo de Piñata, los más fieles al carnaval vuelven a las calles a cantar las coplas una última vez, en lo que popularmente se conoce como el «Carnaval de los Jartibles» o «Carnaval Chiquito».</p>
 
       <h2 class="section-title">No te lo puedes perder</h2>
       <ul>
@@ -314,6 +394,8 @@
         <dd>Medley final de temas populares adaptados con letras propias.</dd>
         <dt>COAC</dt>
         <dd>Concurso Oficial de Agrupaciones Carnavalescas, celebrado en el Gran Teatro Falla.</dd>
+        <dt>Dios Momo</dt>
+        <dd>Figura simbólica del carnaval que se quema el Martes de Carnaval, marcando el ecuador de la fiesta.</dd>
       </dl>
 
       <h2 class="section-title">Galería</h2>

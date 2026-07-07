@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carnaval de Santa Cruz de Tenerife — Folklorius</title>
-  <meta name="description" content="El Carnaval de Santa Cruz de Tenerife es una explosión de color, música y libertad creativa con proyección internacional. Murgas, comparsas, rondallas y el espectacular Coso Apoteosis llenan las calles de la isla." />
+  <title>Carnaval de Santa Cruz de Tenerife 2026 | Folklorius</title>
+  <meta name="description" content="Guía del Carnaval de Santa Cruz de Tenerife 2026. ITI desde 1980. Murgas, comparsas, rondallas, Gala de la Reina y Coso Apoteósico. Historia y consejos." />
   <link rel="canonical" href="https://folklorius.es/carnaval-tenerife.html" />
 
-  <meta property="og:title" content="Carnaval de Santa Cruz de Tenerife — Folklorius" />
+  <meta property="og:title" content="Carnaval de Santa Cruz de Tenerife 2026 | Donde la calle se disfraza de libertad" />
   <meta property="og:description" content="Guía cultural del Carnaval de Santa Cruz de Tenerife: murgas, comparsas, gala de la reina y Entierro de la Sardina." />
   <meta property="og:image" content="https://folklorius.es/images/carnaval-tenerife.jpg" />
   <meta property="og:type" content="article" />
@@ -19,6 +19,112 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #b34700);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+  </style>
 
   <script type="application/ld+json">
   {
@@ -94,8 +200,17 @@
 
       <h1>Carnaval de Santa Cruz de Tenerife</h1>
       <p class="ficha-subtitle">
-        Santa Cruz de Tenerife · Fiesta popular de tradición y proyección internacional · "Donde la calle se disfraza de libertad."
+        Santa Cruz de Tenerife · «Donde la calle se disfraza de libertad.»
       </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 16 de enero al 22 de febrero de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Santa Cruz de Tenerife · Canarias</span>
+          <span>⏱️ Más de 5 semanas de fiesta</span>
+          <span>🏅 Interés Turístico Internacional (1980)</span>
+        </div>
+      </div>
 
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
@@ -128,39 +243,111 @@
 
       <h2 class="section-title">Historia y significado</h2>
       <p>
-       El carnaval en Tenerife tiene sus orígenes en el siglo XVI, poco después de la conquista de la isla. Ligado al calendario cristiano como celebración previa a la Cuaresma, rápidamente adquirió carácter propio, marcado por la influencia portuaria y el contacto con América y Europa. Durante siglos fue una válvula de escape social que permitía la burla y el anonimato. En la dictadura franquista sobrevivió bajo el nombre de "Fiestas de Invierno", manteniendo viva la tradición de forma casi clandestina. Con la democracia resurgió con fuerza, profesionalizándose hasta convertirse en un evento de proyección internacional y motor cultural de la isla.
+        El carnaval en Tenerife tiene sus orígenes en el siglo XVI, poco después de la conquista de la isla, ligado al calendario cristiano como celebración previa a la Cuaresma. La primera referencia escrita conocida es de <strong>1778</strong>, en el diario de un militar que relata un baile en Santa Cruz con comparsas ya organizadas. Apenas cinco años después, en 1783, el Corregidor de la isla prohibió el uso de máscaras nocturnas: la primera censura documentada de una fiesta que ya entonces incomodaba a las autoridades. En 1891 se fundó la primera rondalla de la que hay registro, germen de las agrupaciones musicales actuales.
       </p>
-
-      <h2 class="section-title">Fechas y calendario 2026</h2>
       <p>
-       El Carnaval de Santa Cruz de Tenerife 2026 se celebra oficialmente del 16 de enero al 22 de febrero. La fiesta se divide en dos fases que se solapan parcialmente: el carnaval oficial, con concursos y galas en recintos específicos, y el carnaval en la calle, que arranca con la Cabalgata Anunciadora y alcanza su máxima intensidad en las semanas centrales.
+        El Carnaval fue prohibido a nivel nacional durante buena parte del franquismo. En Tenerife se celebraba a puerta cerrada, con las tradicionales «tapadas» escondiéndose en la intimidad de las casas. En <strong>1961</strong> el Ayuntamiento logró pactar su celebración bajo el nombre de <strong>Fiestas de Invierno</strong>, un eufemismo que permitió mantener y subvencionar los concursos de agrupaciones hasta 1976, cuando con la Transición la fiesta recuperó su nombre real. Desde entonces se ha profesionalizado hasta convertirse en un evento de proyección internacional y motor cultural de la isla.
       </p>
 
-      <h2 class="section-title">Actos destacados</h2>
-      <ul>
-        <li><strong>Gala de Elección de la Reina del Carnaval:</strong> evento central y mediático, con fantasías de gran tamaño y peso, auténticas obras de arte efímero (11 de febrero de 2026).</li>
-        <li><strong>Concursos de murgas:</strong> grupos que combinan canto, humor y crítica social. El alma satírica del carnaval</li>
-        <li><strong>Gala de la Reina Infantil y de los Mayores:</strong> reflejo del carácter intergeneracional de la fiesta.</li>
-        <li><strong>Concursos de comparsas:</strong> agrupaciones de baile y percusión con fuerte influencia afrocaribeña.</li>
-        <li><strong>Cabalgata Anunciadora:</strong> gran desfile que marca el inicio del carnaval en la calle.</li>
-        <li><strong>Cabalgata de Día (o Carnaval de Día):</strong> celebración diurna pensada para todos los públicos y especialmente para familias.</li>
-        <li><strong>Coso Apoteósico (o Coso de Carnaval):</strong> gran desfile triunfal que reúne comparsas, murgas, carrozas, reinas y miles de participantes.</li>
-        <li><strong>Entierro de la Sardina:</strong> acto simbólico que representa el fin del carnaval, con un cortejo fúnebre satírico y teatral.</li>
-      </ul>
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El Carnaval de Santa Cruz de Tenerife 2026 se celebró del 16 de enero al 22 de febrero. La fiesta se divide en dos fases que se solapan parcialmente: el carnaval oficial, con concursos y galas en recintos específicos, y el carnaval en la calle, que arranca con la Cabalgata Anunciadora y alcanza su máxima intensidad en las semanas centrales.
+      </p>
+      <p class="nota-grid">⚠️ Las fechas exactas cambian cada año según el calendario de Cuaresma. Consulta el programa oficial del Ayuntamiento de Santa Cruz de Tenerife antes de planificar tu visita.</p>
 
-      <h2 class="section-title">Música y sonido</h2>
-      <div class="music-block">
-        <p>
-        La música es el hilo conductor de todo el carnaval. Las murgas son agrupaciones vocales que interpretan canciones con letras cargadas de humor e ironía sobre la actualidad social y política. Su actuación combina música, interpretación y puesta en escena, y requiere meses de preparación. Las comparsas aportan otra dimensión, basada en la percusión y el movimiento, influenciadas por tradiciones afrocaribeñas y brasileñas. Las rondallas representan la vertiente más clásica, con piezas líricas e instrumentos de cuerda.
-        </p>
-        <p>
-          En el espacio urbano la música se diversifica aún más: orquestas, grupos de versiones, DJs y escenarios temáticos ofrecen desde música latina hasta electrónica, permitiendo que cada público encuentre su lugar dentro de la celebración.
-        </p>
-        <ul>
-          <li>Para entender el humor local, escucha una murga en directo: sus letras reflejan el año con mirada satírica.</li>
-          <li>El Carnaval de Día tiene un ambiente más familiar y accesible; por la noche la intensidad sube considerablemente.</li>
-        </ul>
+      <h2 class="section-title">Agrupaciones y música: el corazón del carnaval</h2>
+      <p>
+        En Tenerife, como en Cádiz, música y agrupación son la misma cosa. Cada modalidad tiene su propio estilo, su propio concurso y su propio papel dentro de la fiesta:
+      </p>
+
+      <div class="agrupaciones-grid">
+
+        <div class="agrupacion-card">
+          <h3>Murgas</h3>
+          <p>Agrupaciones vocales que interpretan canciones humorísticas y satíricas sobre la actualidad, con meses de ensayo detrás. El alma crítica del carnaval, la más parecida en espíritu a las chirigotas gaditanas.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Comparsas</h3>
+          <p>Centradas en el baile, la percusión y el desfile, con fuerte influencia afrocaribeña y brasileña. Aportan ritmo y espectacularidad al carnaval en la calle.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Rondallas</h3>
+          <p>La vertiente más clásica y musical, con piezas líricas e instrumentos de cuerda. La primera agrupación de este tipo se documenta ya en 1891.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Agrupaciones coreográficas</h3>
+          <p>Grupos centrados en el baile y la expresión corporal, con coreografías modernas o temáticas. Destacan por su impacto visual en concursos y galas.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Participación libre</h3>
+          <p>Miles de personas disfrazadas, en grupos improvisados o solas, que se suman al carnaval en la calle sin pertenecer a ninguna agrupación formal. Parte esencial del carácter abierto de la fiesta.</p>
+        </div>
+
       </div>
+
+      <p style="margin-top:1rem;">
+        La <strong>Gala de Elección de la Reina del Carnaval</strong> es el acto más mediático de la fiesta: candidatas luciendo fantasías de gran tamaño y peso, auténticas estructuras escultóricas que llevan meses de trabajo detrás. En la edición de 2026 la ganadora fue Carla Castro Castellano, con la fantasía «Icónica».
+      </p>
+      <p class="nota-grid">🎵 Escucha una murga en directo para entender de verdad el humor local: sus letras reflejan el año con mirada satírica. El Carnaval de Día tiene ambiente familiar; por la noche la intensidad sube considerablemente.</p>
+
+      <h2 class="section-title">Qué se celebra cada semana</h2>
+      <p>El carnaval se organiza en cuatro fases claramente diferenciadas, útil si quieres planificar tu visita según lo que te interese ver:</p>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Primeras semanas · Recinto Ferial</span>
+          <strong>Concursos de agrupaciones.</strong>
+          Arrancan los certámenes de murgas (infantiles y adultas), comparsas y rondallas, con fases y finales que se reparten en los fines de semana previos a las grandes galas.
+        </li>
+
+        <li>
+          <span class="dia-label">Semana previa a la calle</span>
+          <strong>Galas de la Reina.</strong>
+          Primero las galas de la Reina Infantil y de los Mayores, y a mitad de semana la Gran Gala de Elección de la Reina del Carnaval, el evento institucional más mediático de toda la fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes · Inicio de la semana grande</span>
+          <strong>Cabalgata Anunciadora.</strong>
+          Marca el arranque oficial del carnaval en la calle, dos días después de conocerse a la Reina.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo</span>
+          <strong>Primer Carnaval de Día.</strong>
+          Versión diurna y familiar de la fiesta, con ambiente mucho más tranquilo que las noches de la semana grande.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes de Carnaval · Noche</span>
+          <strong>La noche más intensa.</strong>
+          Verbenas y fiesta en las plazas de la ciudad hasta la madrugada.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes de Carnaval · Tarde</span>
+          <strong>Coso Apoteósico.</strong>
+          El gran desfile por la Avenida Francisco La Roche, con la Reina, carrozas y todas las agrupaciones. El acto más multitudinario y visual de la fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles de Ceniza · Noche</span>
+          <strong>Entierro de la Sardina.</strong>
+          Cortejo fúnebre satírico y teatral que marca el inicio de la Cuaresma, aunque no supone todavía el final de la fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado y domingo de Piñata</span>
+          <strong>Cierre de fiesta.</strong>
+          Segundo Carnaval de Día el sábado, y Domingo de Piñata como última jornada festiva que cierra oficialmente el calendario.
+        </li>
+
+      </ul>
 
       <h2 class="section-title">No te lo puedes perder</h2>
       <ul>
@@ -168,20 +355,7 @@
         <li>Escuchar una murga en directo para entender el humor local.</li>
         <li>La gala de la reina, aunque sea por televisión: las fantasías son espectaculares.</li>
         <li>El Carnaval de Día si viajas con niños: es más accesible y familiar.</li>
-        <li>El Entierro de la Sardina como cierre simbólico y teatral de la fiesta.</li>
       </ul>
-
-      <h2 class="section-title">Agrupaciones del Carnaval</h2>
-
-      <p><strong>Murgas:</strong> agrupaciones vocales que interpretan canciones humorísticas y satíricas sobre la actualidad. Ensayan durante meses y participan en concursos oficiales. Su actuación combina música, interpretación y puesta en escena.</p>
-
-      <p><strong>Comparsas:</strong> grupos centrados en el baile, la percusión y el desfile, con estilo influenciado por ritmos afrocaribeños y brasileños. Aportan ritmo, movimiento y espectacularidad al carnaval en la calle.</p>
-
-      <p><strong>Rondallas:</strong> la vertiente más musical y clásica del carnaval. Interpretan piezas líricas y canciones tradicionales con instrumentos de cuerda y voces solistas.</p>
-
-      <p><strong>Agrupaciones coreográficas:</strong> grupos centrados en el baile y la expresión corporal con coreografías modernas o temáticas. Destacan por su impacto visual en concursos y galas.</p>
-
-      <p><strong>Participación libre:</strong> miles de personas disfrazadas, en grupos improvisados o individuales, que son parte esencial del carácter abierto y popular de la fiesta.</p>
 
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
@@ -209,7 +383,7 @@
       </dl>
 
       <h2 class="section-title">Galería</h2>
-      <div class="galeria">
+      <div class="galeria" style="display:none;">
         <img src="images/carnaval-1.jpg" alt="Comparsas en desfile" />
         <img src="images/carnaval-2.jpg" alt="Gala del Carnaval de Tenerife" />
         <img src="images/carnaval-3.jpg" alt="Carnaval de día en Santa Cruz" />
@@ -221,7 +395,7 @@
         <li><a href="https://www.santacruzdetenerife.es" target="_blank" rel="noopener">Ayuntamiento de Santa Cruz de Tenerife</a></li>
         <li><a href="https://www.webtenerife.com" target="_blank" rel="noopener">Turismo de Tenerife</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2025-02-01</p>
+      <p class="fuente">Última verificación de enlaces: 2026-07-07</p>
 
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
@@ -229,8 +403,6 @@
         <dd>En 2026, del 16 de enero al 22 de febrero. Los actos centrales y más multitudinarios se concentran en las dos semanas previas al final.</dd>
         <dt>¿Es una fiesta familiar?</dt>
         <dd>Sí, especialmente los actos diurnos y el Carnaval de Día son aptos para niños y familias.</dd>
-        <dt>¿Hay que disfrazarse?</dt>
-        <dd>No es obligatorio, pero es muy recomendable para integrarse plenamente en la experiencia.</dd>
         <dt>¿Hay actos gratuitos?</dt>
         <dd>La mayoría de eventos en la calle son gratuitos. Algunos concursos y galas requieren entrada.</dd>
         <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
@@ -239,6 +411,34 @@
         <dd>En los canales oficiales del Ayuntamiento de Santa Cruz de Tenerife y la organización del carnaval.</dd>
       </dl>
 
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Carnaval de Tenerife</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Canarias</span>
+        <span class="etiqueta">Santa Cruz de Tenerife</span>
+        <span class="etiqueta">Febrero</span>
+        <span class="etiqueta">Murgas</span>
+        <span class="etiqueta">Comparsas</span>
+        <span class="etiqueta">Gala de la Reina</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="carnaval-cadiz.html" class="relacionada-card">
+            <strong>Carnaval de Cádiz</strong>
+            <span>Andalucía · ITI (1980) · Misma declaración, distinto estilo de carnaval</span>
+          </a>
+          <a href="san-fermin.html" class="relacionada-card">
+            <strong>Sanfermines de Pamplona</strong>
+            <span>Navarra · ITI (1980) · Otra fiesta de la misma resolución histórica</span>
+          </a>
+          <a href="las-fallas-valencia.html" class="relacionada-card">
+            <strong>Las Fallas de Valencia</strong>
+            <span>Comunitat Valenciana · ITI/UNESCO · Otra gran fiesta popular con proyección internacional</span>
+          </a>
+        </div>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
@@ -246,7 +446,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2025 Folklorius · Fiesta, tradición e historia</p>
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
