@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feria de Abril de Sevilla 2026: El Real y la Portada | Folklorius</title>
+  <meta name="description" content="Feria de Abril de Sevilla 2026: qué puedes hacer si vas sin conocer a nadie, el Real, las casetas públicas y la Portada. Interés Turístico Internacional." />
+  <link rel="canonical" href="https://folklorius.es/feria-abril-sevilla.html" />
+
+  <meta property="og:title" content="Feria de Abril de Sevilla 2026 | El Real, la Portada y las Casetas" />
+  <meta property="og:description" content="Qué puedes hacer en la Feria de Abril si no conoces a nadie en Sevilla: el Real, las casetas públicas, el Alumbrado y el Paseo de Caballos." />
+  <meta property="og:image" content="https://folklorius.es/images/feria-abril-sevilla.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    .tag-leyenda {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #2b5b8c;
+      background: #e6f0fa;
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin-bottom: 6px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    /* ── Casetas grid (bloque troncal de tipología Feria) ───────── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #b34700);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/feria-abril-sevilla.html",
+    "name": "Feria de Abril de Sevilla",
+    "startDate": "2026-04-21",
+    "endDate": "2026-04-26",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Real de la Feria, Los Remedios",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sevilla",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.3891,
+        "longitude": -5.9845
+      }
+    },
+    "image": ["https://folklorius.es/images/feria-abril-sevilla.jpg"],
+    "description": "La Feria de Abril de Sevilla: el Real, más de 1.000 casetas, la Portada, el Alumbrado y el Paseo de Caballos. Fiesta de Interés Turístico Internacional desde 1980.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Sevilla",
+      "url": "https://www.sevilla.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Feria de Abril de Sevilla",
+        "item": "https://folklorius.es/feria-abril-sevilla.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Puedo entrar en una caseta sin invitación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En las casetas particulares y de entidades, no: son de acceso privado y hay guardias en la puerta. El Ayuntamiento instala unas 15 casetas públicas (distritos municipales, sindicatos, partidos y la Caseta del Turista) donde cualquiera puede entrar libremente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el rebujito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La bebida indiscutible del Real: una mezcla de manzanilla o fino con refresco de lima-limón y mucho hielo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es la Feria de Abril en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del martes 21 al domingo 26 de abril de 2026. Las fechas dependen de la Semana Santa: la Feria empieza dos semanas después del Domingo de Resurrección."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia hay con la Feria de Jerez o de Málaga?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, la inmensa mayoría son privadas y de invitación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es obligatorio ir vestido de flamenca?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No es obligatorio, pero es la costumbre mayoritaria entre las mujeres. Los hombres a pie visten de traje de chaqueta; el traje corto solo se usa para montar a caballo o ir en coche de caballos de día."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Feria de Abril de Sevilla
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/feria-abril-sevilla.jpg" alt="La Portada iluminada de la Feria de Abril de Sevilla" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Feria de Abril de Sevilla</h1>
+      <p class="ficha-subtitle">
+        Sevilla, Andalucía · El Real, la Portada y más de mil casetas junto al Guadalquivir.
+      </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 21 al 26 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Real de la Feria, Los Remedios · Sevilla</span>
+          <span>⏱️ 6 días de feria</span>
+          <span>🏅 Interés Turístico Internacional (1980)</span>
+        </div>
+      </div>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El Alumbrado concentra a más de 100.000 personas frente a la Portada en pocos metros: se desaconseja acudir con niños muy pequeños o carritos, y conviene dispersarse rápido por las calles interiores tras el encendido.</li>
+          <li>Durante el Paseo de Caballos, los peatones deben ceder siempre el paso a los caballos en las calzadas de albero; los atropellos por despiste son el principal riesgo de las tardes de feria.</li>
+          <li>El aforo diario del Real puede rozar el medio millón de personas: fija un punto de encuentro si vas en grupo.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La Feria de Abril nació como un mercado de ganado y terminó siendo la semana más ritualizada del calendario sevillano. Durante seis días, el Real de Los Remedios se llena de albero, farolillos de papel y más de mil casetas con toldos a rayas. De día manda el Paseo de Caballos; de noche, las sevillanas y el rebujito. Y todo bajo una Portada nueva cada año que solo dura una semana en pie.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Imagina que, durante una semana, una ciudad entera monta más de mil tiendas de campaña de lona en un descampado junto al río, y cada una de esas tiendas funciona como el salón de una casa: dentro hay mesas, sillas, una barra, música y comida, y la gente entra a comer, beber, bailar y charlar con quien conoce. Eso es una <strong>caseta</strong>, y el terreno donde se instalan todas juntas es <strong>el Real</strong>. La Feria de Abril es, en el fondo, eso: una semana en la que Sevilla traslada su vida social a un recinto provisional de tela y luces que desaparece el lunes siguiente.
+      </p>
+      <p>
+        El día tiene dos ritmos muy distintos. Por la mañana y hasta media tarde, la gente se viste de traje de flamenca o de traje corto y pasea o monta a caballo por las calles del recinto: es el momento más fotogénico, con los caballos y los carruajes circulando entre las casetas. Al caer la tarde, muchos se cambian de ropa y el ambiente se traslada dentro de las casetas, donde se cena, se canta por sevillanas y se bebe rebujito hasta la madrugada.
+      </p>
+      <p>
+        El recinto en sí ocupa 450.000 metros cuadrados divididos en 15 calles con nombres de toreros históricos, y todas las casetas siguen el mismo código estético: toldos a rayas verdes o rojas y blanco, para que el conjunto se vea uniforme desde fuera aunque cada una sea un mundo privado por dentro.
+      </p>
+      <p>
+        Coincidiendo con la Feria, la Real Maestranza de Caballería celebra a diario corridas de toros desde el Domingo de Resurrección: es el ciclo taurino continuado más importante de España junto al de San Isidro, y para muchos sevillanos marca una pausa de tarde entre el paseo a caballo y la vuelta a la caseta por la noche.
+      </p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La Feria nació en <strong>1847</strong> como una feria anual de ganado, impulsada por dos concejales que, curiosamente, no eran sevillanos: el catalán Narciso Bonaplata y el vasco José María de Ybarra, que presentaron el proyecto al cabildo en 1846. El primer año se instalaron corrales para los tratos de ganado y unas carpas de lona improvisadas donde los tratantes comían y descansaban a la sombra.
+      </p>
+      <p>
+        A finales del siglo XIX, la parte lúdica (el vino, el cante, el baile) desplazó a la comercial. El Ayuntamiento empezó a decorar el recinto y la élite sevillana sustituyó a los tratantes de ganado, dando forma al modelo estético que hoy se reconoce como Feria de Abril. El Real se traslada de forma ininterrumpida al barrio de Los Remedios desde <strong>1973</strong>.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Feria de Abril de Sevilla 2026 se celebró del martes 21 al domingo 26 de abril, en su formato clásico de seis días.
+      </p>
+      <p class="nota-grid">⚠️ Las fechas dependen de la Semana Santa: la Feria empieza, por ordenanza municipal, dos semanas después del Domingo de Resurrección (o una semana, si el Ayuntamiento decide acortar el margen para no adentrarse demasiado en mayo). Consulta el calendario oficial antes de planificar tu visita.</p>
+
+      <h2 class="section-title">El Real y las casetas</h2>
+      <p>
+        El recinto cuenta con algo más de 1.050 casetas, repartidas en cuatro tipos según quién puede entrar:
+      </p>
+
+      <div class="agrupaciones-grid">
+
+        <div class="agrupacion-card">
+          <h3>Particulares y familiares</h3>
+          <p>La mayoría del recinto (cerca de 524 casetas). Pertenecen a familias o grupos de amigos. Acceso estrictamente por invitación, con seguridad en la puerta.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Entidades, peñas y empresas</h3>
+          <p>Alrededor de 513 casetas. Acceso restringido a socios o trabajadores, aunque las normas de entrada suelen relajarse a partir de cierta hora.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Partidos y sindicatos</h3>
+          <p>Casetas de formaciones políticas y sindicatos con acceso libre al público general durante casi todo el horario de apertura.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Públicas y municipales</h3>
+          <p>17 casetas de entrada 100% libre: los 6 distritos municipales, la caseta popular y la Caseta del Turista, con personal políglota.</p>
+        </div>
+
+      </div>
+
+      <p class="nota-grid">🎭 Cerca de 1.040 de las casi 1.060 casetas del Real son de acceso privado. Es el rasgo que más diferencia a Sevilla de Jerez o Málaga, donde la ordenanza obliga a que todas las casetas tengan las puertas abiertas.</p>
+
+      <h2 class="section-title">Portada y Alumbrado</h2>
+      <p>
+        La Portada es una estructura efímera de unos 40 metros de altura, construida cada año en la entrada principal del Real. Su diseño sale de un concurso público convocado por el Ayuntamiento y suele representar un edificio o episodio emblemático de la ciudad, iluminado con más de 28.000 bombillas.
+      </p>
+      <p>
+        El Alumbrado es el encendido oficial de la Portada y de los cientos de miles de farolillos que decoran las calles del Real, a medianoche del lunes al martes. Con ese gesto arrancan oficialmente los seis días de feria. La noche anterior, los socios de cada caseta celebran la Cena del Pescaíto, una cena privada de cazón, adobo y boquerones que recuerda a lo que comían los tratantes de ganado mientras se montaban las casetas.
+      </p>
+
+      <h2 class="section-title">Vestimenta tradicional</h2>
+      <p>
+        El traje de flamenca es la única indumentaria regional de España con moda propia, que cambia de tendencias cada año y tiene su propia pasarela (SIMOF). Nació a finales del siglo XIX, cuando las mujeres de etnia gitana y las tratantes de ganado que acudían a la feria vestían batas de faena con pequeños volantes; la burguesía sevillana adoptó esa silueta y la fue adornando hasta institucionalizarla tras la Exposición Iberoamericana de 1929.
+      </p>
+      <p>
+        El traje corto masculino, con pantalón ceñido, chaquetilla y sombrero de ala ancha, es la evolución del traje de campo andaluz. Se usa exclusivamente para montar a caballo o ir en coche de caballos de día: llevarlo de noche o a pie se considera una incorrección de protocolo. Si se va a pie, lo correcto para un hombre es el traje de chaqueta.
+      </p>
+
+      <h2 class="section-title">Qué se celebra en cada fase</h2>
+      <p>El programa se repite cada uno de los seis días con el mismo patrón, salvo el primer y el último día:</p>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Lunes · Noche</span>
+          <strong>Cena del Pescaíto.</strong>
+          Cena privada de socios en cada caseta, previa al Alumbrado.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes · Medianoche</span>
+          <strong>El Alumbrado.</strong>
+          Encendido oficial de la Portada y los farolillos: arranca oficialmente la feria.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles a sábado · Día</span>
+          <strong>Paseo de Caballos y Enganches.</strong>
+          Cerca de 1.400 carruajes y jinetes recorren las calles del Real, desde el mediodía hasta última hora de la tarde.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles a sábado · Tarde</span>
+          <strong>Corridas de toros en la Real Maestranza.</strong>
+          Muchos sevillanos abandonan el Real en coche de caballos para asistir y regresan por la noche.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles a sábado · Noche</span>
+          <strong>Sevillanas y rebujito en las casetas.</strong>
+          El ambiente nocturno del Real, con el cante y el baile como protagonistas.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo · Última hora de la noche</span>
+          <strong>Castillo de fuegos artificiales y cierre.</strong>
+          Junto al Guadalquivir, marca el fin oficial de la feria; después se apaga el alumbrado.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <ul>
+        <li>El Alumbrado, el momento fundacional de la feria cada año.</li>
+        <li>El Paseo de Caballos y Enganches por las calles del Real.</li>
+        <li>La Portada, distinta cada año y visible incluso sin entrar en ninguna caseta.</li>
+        <li>Las casetas públicas, la mejor forma de vivir sevillanas y rebujito en directo sin conocer a nadie.</li>
+      </ul>
+
+      <h2 class="section-title">Qué puedes hacer si vas de visita, sin conocer a nadie</h2>
+      <p>
+        A diferencia de un desfile de Moros y Cristianos o una procesión de Semana Santa, donde llegas y te colocas a ver pasar el acto, en la Feria hay tres formas distintas de participar, y conviene tenerlas claras antes de ir para no llevarte una sorpresa.
+      </p>
+      <p><strong>1. Actos que ves como espectador, gratis y en la calle.</strong> No necesitas entrada ni invitación: el Alumbrado, la Portada y el Paseo de Caballos ocurren en las calles del Real, y cualquiera puede colocarse a verlos igual que en un desfile.</p>
+      <p><strong>2. El único acto con entrada de pago.</strong> Las corridas de toros en la Real Maestranza son un espectáculo público normal: se compra entrada como en cualquier otro evento, sin depender de conocer a nadie.</p>
+      <p><strong>3. Sitios donde puedes entrar y quedarte un rato.</strong> Son las casetas públicas: los 6 distritos municipales, la caseta popular, la Caseta del Turista (con personal que habla varios idiomas) y las de sindicatos y partidos. Ahí sí puedes sentarte, pedir en la barra, escuchar sevillanas en directo y quedarte el tiempo que quieras, igual que en un bar.</p>
+      <p><strong>Lo que queda fuera de tu alcance sin invitación:</strong> las casetas particulares y familiares (la mayoría del recinto) y casi todas las de entidades y empresas. Tienen guardia en la puerta y no vas a poder entrar aunque las veas medio vacías; son propiedad privada esa semana, no bares con sitio libre.</p>
+      <p class="nota-grid">👨‍👩‍👧 Plan realista para una familia o grupo de amigos sin contactos en Sevilla: por la mañana o a media tarde, pasear el Real para ver la Portada y el Paseo de Caballos; a media tarde, si os gustan los toros, entrada para la Real Maestranza; y por la noche, instalaros en una o dos casetas públicas a cenar, tomar rebujito y escuchar sevillanas en directo. Con eso se cubre toda la fiesta que es accesible sin necesitar a nadie.</p>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li>Ve a última hora de la tarde o de noche si quieres probar suerte en alguna caseta de entidad: las normas de acceso suelen relajarse.</li>
+        <li>Camina siempre por el lado de la calle sin caballos si oyes cascos acercarse; el albero no avisa de frenazos.</li>
+        <li>Si llevas calzado de tacón, ten en cuenta que las calles son de albero (arena compactada), no asfalto.</li>
+        <li>Reserva alojamiento con mucha antelación: los precios en Sevilla se disparan esa semana.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+        <dt>El Real</dt>
+        <dd>El recinto ferial completo, por estar ubicado históricamente en terrenos de propiedad real.</dd>
+        <dt>Albero</dt>
+        <dd>La arena dorada y compactada que cubre todas las calles del Real, la misma que se usa en las plazas de toros.</dd>
+        <dt>La Portada</dt>
+        <dd>La estructura monumental y efímera que ilumina la entrada principal, distinta cada año.</dd>
+        <dt>El Alumbrao</dt>
+        <dd>El encendido oficial de las luces y la Portada, a medianoche del lunes al martes.</dd>
+        <dt>Rebujito</dt>
+        <dd>Mezcla de manzanilla o fino con refresco de lima-limón y hielo, la bebida indiscutible del Real.</dd>
+        <dt>Farolillos</dt>
+        <dd>Los globos de papel plisado, rojos, blancos y verdes, que decoran el techo de todas las calles.</dd>
+        <dt>Pescaíto</dt>
+        <dd>La cena inaugural y privada de la noche del lunes, solo para socios: cazón, adobo y boquerones.</dd>
+      </dl>
+
+      <p>
+        <span class="tag-leyenda">Cuenta la superstición</span><br />
+        Si llueve durante la Feria, los farolillos de papel (pensados para deshacerse con el agua) se desintegran y tiñen los toldos de las casetas. Si el cielo amenaza tormenta fuerte, el Ayuntamiento organiza un "rescate de farolillos" exprés antes de que se mojen.
+      </p>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/feria-sevilla-1.jpg" alt="La Portada de la Feria de Abril de Sevilla" />
+        <img src="images/feria-sevilla-2.jpg" alt="Paseo de Caballos por el Real" />
+        <img src="images/feria-sevilla-3.jpg" alt="Casetas del Real con toldos a rayas" />
+        <img src="images/feria-sevilla-4.jpg" alt="Trajes de flamenca en la Feria de Abril" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://visitasevilla.es/la-feria-de-abril/" target="_blank" rel="noopener">Turismo de Sevilla — Feria de Abril</a></li>
+        <li><a href="https://www.sevilla.org" target="_blank" rel="noopener">Ayuntamiento de Sevilla</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-08</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+        <dt>¿Puedo entrar en una caseta sin invitación?</dt>
+        <dd>En las casetas particulares y de entidades, no: son de acceso privado y hay guardias en la puerta. El Ayuntamiento instala unas 15 casetas públicas (distritos municipales, sindicatos, partidos y la Caseta del Turista) donde cualquiera puede entrar libremente.</dd>
+        <dt>¿Qué es el rebujito?</dt>
+        <dd>La bebida indiscutible del Real: una mezcla de manzanilla o fino con refresco de lima-limón y mucho hielo.</dd>
+        <dt>¿Cuándo es la Feria de Abril en 2026?</dt>
+        <dd>Del martes 21 al domingo 26 de abril de 2026. Las fechas dependen de la Semana Santa: la Feria empieza dos semanas después del Domingo de Resurrección.</dd>
+        <dt>¿Qué diferencia hay con la Feria de Jerez o de Málaga?</dt>
+        <dd>La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, la inmensa mayoría son privadas y de invitación.</dd>
+        <dt>¿Es obligatorio ir vestido de flamenca?</dt>
+        <dd>No es obligatorio, pero es la costumbre mayoritaria entre las mujeres. Los hombres a pie visten de traje de chaqueta; el traje corto solo se usa para montar a caballo o ir en coche de caballos de día.</dd>
+      </dl>
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Feria de Abril</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Andalucía</span>
+        <span class="etiqueta">Sevilla</span>
+        <span class="etiqueta">Abril</span>
+        <span class="etiqueta">El Real</span>
+        <span class="etiqueta">Casetas</span>
+        <span class="etiqueta">Traje de flamenca</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="semana-santa-sevilla.html" class="relacionada-card">
+            <strong>Semana Santa de Sevilla</strong>
+            <span>Andalucía · ITI (1980) / UNESCO · La otra gran cita del calendario sevillano, dos semanas antes</span>
+          </a>
+          <a href="san-fermin.html" class="relacionada-card">
+            <strong>San Fermín de Pamplona</strong>
+            <span>Navarra · ITI (1980) · Otra fiesta declarada en la misma resolución de 1980</span>
+          </a>
+          <a href="carnaval-cadiz.html" class="relacionada-card">
+            <strong>Carnaval de Cádiz</strong>
+            <span>Andalucía · ITI (1980) · Otra gran fiesta andaluza con su propio código estético</span>
+          </a>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
