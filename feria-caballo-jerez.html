@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feria del Caballo de Jerez 2026: Caballos y Vino | Folklorius</title>
+  <meta name="description" content="Feria del Caballo de Jerez 2026: casetas abiertas a todos, el Paseo de Caballos y Enganches, doma vaquera y los vinos del Marco de Jerez. ITI desde 1980." />
+  <link rel="canonical" href="https://folklorius.es/feria-caballo-jerez.html" />
+
+  <meta property="og:title" content="Feria del Caballo de Jerez 2026 | Caballos, Enganches y Vino de Jerez" />
+  <meta property="og:description" content="Qué puedes hacer en la Feria del Caballo de Jerez: casetas de acceso libre, el Paseo de Caballos y Enganches, doma vaquera y los vinos del Marco de Jerez." />
+  <meta property="og:image" content="https://folklorius.es/images/feria-caballo-jerez.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #b34700);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/feria-caballo-jerez.html",
+    "name": "Feria del Caballo de Jerez",
+    "startDate": "2026-05-09",
+    "endDate": "2026-05-16",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Parque González Hontoria",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jerez de la Frontera",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.6850,
+        "longitude": -6.1261
+      }
+    },
+    "image": ["https://folklorius.es/images/feria-caballo-jerez.jpg"],
+    "description": "La Feria del Caballo de Jerez: casetas de acceso público, el Paseo de Caballos y Enganches, doma vaquera y los vinos del Marco de Jerez. Fiesta de Interés Turístico Internacional desde 1980.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Jerez de la Frontera",
+      "url": "https://www.jerez.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Feria del Caballo de Jerez",
+        "item": "https://folklorius.es/feria-caballo-jerez.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Puedo entrar en cualquier caseta sin conocer a nadie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, casi siempre. La ordenanza municipal obliga a que las casetas tengan acceso público y gratuito, sujeto solo al aforo real. La única excepción es el 'día del socio', una jornada de la semana en la que cada caseta puede restringir la entrada a sus socios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia a la Feria de Jerez de la de Sevilla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acceso y el foco simbólico. En Jerez casi todas las casetas son públicas y el caballo es el eje central de la fiesta. En Sevilla la inmensa mayoría de casetas son privadas y el foco recae en la Portada y el ritual social urbano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es la Feria del Caballo en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del sábado 9 al sábado 16 de mayo de 2026, en el formato habitual de ocho días. Se celebra siempre antes de la Romería del Rocío."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la doma vaquera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una disciplina ecuestre de origen campero, basada en la conducción ágil del caballo para el trabajo con el ganado, que hoy se exhibe y compite dentro de la programación de la feria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede beber vino de Jerez en la feria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, y es parte central de la experiencia: los vinos del Marco de Jerez (finos, amontillados, olorosos, cream y Pedro Ximénez) tienen un peso identitario mayor aquí que en otras ferias andaluzas."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Feria del Caballo de Jerez
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/feria-caballo-jerez.jpg" alt="Paseo de Caballos y Enganches en la Feria del Caballo de Jerez" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Feria del Caballo de Jerez</h1>
+      <p class="ficha-subtitle">
+        Jerez de la Frontera, Andalucía · La feria donde el caballo, no la caseta, es el protagonista.
+      </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 9 al 16 de mayo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Parque González Hontoria · Jerez de la Frontera</span>
+          <span>⏱️ 8 días, de sábado a sábado</span>
+          <span>🏅 Interés Turístico Internacional (1980)</span>
+        </div>
+      </div>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Durante el Paseo de Caballos y Enganches conviven a diario caballos, carruajes y miles de peatones: sigue siempre las indicaciones de los cocheros y no te cruces de improviso delante de un caballo.</li>
+          <li>Es una feria con mucho consumo de vinos generosos (finos, olorosos), de mayor graduación que el vino habitual: modera el ritmo si no estás acostumbrado.</li>
+          <li>El dispositivo de seguridad incluye cortes de tráfico perimetrales por la afluencia de público y vehículos; llega con tiempo si vas en coche.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En Jerez, la feria no gira en torno a una portada monumental ni a quién tiene caseta propia: gira en torno al caballo. Durante ocho días, el parque González Hontoria se llena de enganches, jinetes y amazonas paseando entre casetas que, a diferencia de Sevilla, están abiertas a cualquiera que quiera entrar. Por las tardes manda el paseo ecuestre; por las noches, los vinos del Marco de Jerez y el cante.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Si nunca has ido, piensa en la Feria de Jerez como una versión abierta de la Feria de Abril de Sevilla: las mismas casetas de lona con música, comida y baile, pero aquí la norma es que puedas entrar en casi cualquiera sin conocer a nadie. La ordenanza municipal lo deja claro: el acceso es público, gratuito y solo limitado por el aforo real de cada caseta, salvo un único día (el "día del socio") en el que cada caseta puede restringir la entrada a sus miembros.
+      </p>
+      <p>
+        Lo que de verdad diferencia a Jerez es el protagonismo del caballo. No es un elemento decorativo: es el motivo que da nombre a la fiesta. Cada tarde, jinetes, amazonas y cocheros recorren el recinto en el Paseo de Caballos y Enganches, y en paralelo se celebran concursos de doma vaquera, morfológicos y de presentación de enganches, con entrega de premios el viernes.
+      </p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen de la feria se remonta a la <strong>Edad Media</strong>: tras la incorporación de Jerez al reino castellano, Alfonso X concedió a la ciudad dos ferias anuales, una de ellas en abril, antecedente directo de la actual. Esa feria original era un mercado ganadero y caballar, no una fiesta lúdica.
+      </p>
+      <p>
+        La forma moderna nace a principios del <strong>siglo XX</strong>, de la unión entre la feria de ganado de la Dehesa de Caulina y una feria festiva abierta a toda la población, con espectáculos y vida social. Desde <strong>1903</strong> se celebra de forma estable en el parque González Hontoria, lo que consolidó el formato que hoy conocemos.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Feria del Caballo de Jerez 2026 se celebró del 9 al 16 de mayo, en el formato habitual de ocho días, de sábado a sábado. Se celebra siempre antes de la Romería del Rocío.
+      </p>
+      <p class="nota-grid">⚠️ Las fechas exactas se fijan cada año por el Ayuntamiento. Consulta el calendario oficial en jerez.es/feria antes de planificar tu visita.</p>
+
+      <h2 class="section-title">El Real y las casetas</h2>
+      <p>
+        El recinto ferial, en el parque González Hontoria, es mucho más pequeño que el de Sevilla: en torno a 175 casetas, frente al millar largo del Real sevillano. Se reparten en tres tipos:
+      </p>
+
+      <div class="agrupaciones-grid">
+
+        <div class="agrupacion-card">
+          <h3>Tradicionales</h3>
+          <p>La mayoría del recinto (157 de 175 en la edición de 2026). Casetas con el formato clásico de lona, gestionadas por familias, entidades o peñas, pero de acceso público por ordenanza.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>No tradicionales</h3>
+          <p>Casetas con formatos distintos al clásico (13 en 2026), también sujetas a la misma norma de acceso abierto.</p>
+        </div>
+
+        <div class="agrupacion-card">
+          <h3>Municipales</h3>
+          <p>Casetas gestionadas directamente por el Ayuntamiento, siempre de acceso público y sin restricciones de socios.</p>
+        </div>
+
+      </div>
+
+      <p class="nota-grid">🚪 A diferencia de Sevilla, en Jerez la norma es la puerta abierta: la ordenanza prohíbe expresamente negar la entrada por no ser socio, salvo en el "día del socio", una única jornada de la semana que cada caseta puede fijar libremente dentro del calendario de feria.</p>
+
+      <h2 class="section-title">El Caballo</h2>
+      <p>
+        Es el eje real de la fiesta, no un adorno temático. Cada tarde se celebra el Paseo de Caballos y Enganches: jinetes, amazonas y cocheros recorren el recinto luciendo monturas y carruajes, en un desfile que combina tradición ganadera con exhibición social. En paralelo, la programación incluye doma vaquera (la disciplina de conducir al caballo para el trabajo con el ganado, hoy convertida en exhibición y competición) y concursos morfológicos centrados en el caballo de Pura Raza Española, el cartujano, de estirpe jerezana.
+      </p>
+      <p>
+        El viernes de la semana de feria se entregan los premios a los mejores enganches y caballistas del paseo, desde el templete municipal del recinto.
+      </p>
+
+      <h2 class="section-title">El vino de Jerez</h2>
+      <p>
+        Aquí el vino no es un acompañamiento más: es parte de la identidad de la fiesta. Los vinos del Marco de Jerez (fino, amontillado, oloroso, cream y Pedro Ximénez) tienen un peso mayor que el rebujito típico de otras ferias andaluzas, y se combinan con platos propios del ambiente ferial jerezano, como el consomé o el menudo.
+      </p>
+
+      <h2 class="section-title">El Alumbrado</h2>
+      <p>
+        La feria arranca con el encendido oficial del alumbrado del parque González Hontoria, seguido de un espectáculo de fuegos artificiales desde el templete municipal, la noche del primer sábado. A diferencia de Sevilla, en Jerez no hay una portada monumental como icono autónomo de la feria: el peso simbólico de la apertura recae en el propio encendido y, sobre todo, en el protagonismo del caballo durante toda la semana.
+      </p>
+
+      <h2 class="section-title">Vestimenta tradicional</h2>
+      <p>
+        Comparte base con el resto de ferias andaluzas: traje de flamenca para las mujeres y traje corto para los hombres. La diferencia jerezana está en el peso del protocolo ecuestre: el traje corto aparece ligado sobre todo a jinetes y cocheros que participan en el paseo, más que a una norma social generalizada para cualquier visitante.
+      </p>
+
+      <h2 class="section-title">Qué se celebra en cada fase</h2>
+      <p>El programa se repite con el mismo patrón cada uno de los ocho días, salvo el primero y el viernes de premios:</p>
+
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Primer sábado · Noche</span>
+          <strong>Inauguración y Alumbrado.</strong>
+          Encendido oficial desde el templete municipal, seguido de fuegos artificiales.
+        </li>
+
+        <li>
+          <span class="dia-label">Del segundo día al último · Tarde</span>
+          <strong>Paseo de Caballos y Enganches.</strong>
+          Jinetes, amazonas y coches de caballos recorren el recinto durante buena parte de la tarde.
+        </li>
+
+        <li>
+          <span class="dia-label">Durante toda la semana</span>
+          <strong>Casetas, atracciones y programación musical.</strong>
+          Funcionan a diario, con música flamenca y sevillanas por las noches.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes</span>
+          <strong>Entrega de premios del paseo ecuestre.</strong>
+          Valoración y premios a los mejores enganches y caballistas, desde el templete municipal.
+        </li>
+
+        <li>
+          <span class="dia-label">Último sábado</span>
+          <strong>Cierre de la feria.</strong>
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <ul>
+        <li>El Paseo de Caballos y Enganches, el acto que mejor resume la identidad de esta feria.</li>
+        <li>Una exhibición de doma vaquera, si coincide con tu visita.</li>
+        <li>Una cata de vinos del Marco de Jerez en cualquier caseta, parte central de la experiencia local.</li>
+        <li>El Alumbrado del primer sábado, con los fuegos artificiales de apertura.</li>
+      </ul>
+
+      <h2 class="section-title">Qué puedes hacer si vas de visita, sin conocer a nadie</h2>
+      <p>
+        Aquí la respuesta es mucho más sencilla que en Sevilla: prácticamente todo. Puedes entrar en casi cualquier caseta del recinto (tradicional, no tradicional o municipal), sentarte, pedir en la barra y quedarte el tiempo que quieras, sin necesitar invitación. La única salvedad es el "día del socio": si tu visita coincide con esa jornada en una caseta concreta, puede que te pidan ser socio para entrar en esa caseta en particular, pero el resto del recinto sigue abierto con normalidad.
+      </p>
+      <p class="nota-grid">👨‍👩‍👧 Plan realista para quien no conoce Jerez: por la tarde, sitúate cerca del recorrido del Paseo de Caballos y Enganches para verlo pasar; después, elige cualquier caseta que te guste por dentro y entra a tomar un fino o un rebujito con algo de picar; por la noche, prueba dos o tres casetas distintas, ya que aquí sí puedes moverte libremente entre ellas.</p>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li>Si vas al Paseo de Caballos, busca sitio con tiempo en las calles principales del recinto; es el acto más concurrido de la tarde.</li>
+        <li>Prueba el vino de Jerez con moderación si no estás acostumbrado a vinos generosos: tienen más graduación que un vino de mesa normal.</li>
+        <li>Evita ir en coche particular los días de mayor afluencia; hay cortes de tráfico perimetrales alrededor del recinto.</li>
+        <li>Si una caseta concreta te dice que es "día del socio", simplemente prueba en la de al lado: la norma general en Jerez es la puerta abierta.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+        <dt>Enganche</dt>
+        <dd>Carruaje tirado por caballos que participa en el paseo y en los concursos de presentación y elegancia.</dd>
+        <dt>Doma vaquera</dt>
+        <dd>Disciplina ecuestre de origen campero, basada en la conducción ágil del caballo para el trabajo con el ganado.</dd>
+        <dt>Cartujano</dt>
+        <dd>Caballo de Pura Raza Española de estirpe jerezana, protagonista de los concursos morfológicos de la feria.</dd>
+        <dt>Día del socio</dt>
+        <dd>Única jornada de la semana en la que una caseta puede restringir su acceso a sus socios; el resto de días es de acceso libre.</dd>
+        <dt>Fino / Oloroso</dt>
+        <dd>Vinos generosos del Marco de Jerez, protagonistas de la barra de las casetas junto al amontillado, el cream y el Pedro Ximénez.</dd>
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/feria-jerez-1.jpg" alt="Paseo de Caballos y Enganches en Jerez" />
+        <img src="images/feria-jerez-2.jpg" alt="Exhibición de doma vaquera" />
+        <img src="images/feria-jerez-3.jpg" alt="Caseta abierta en la Feria del Caballo" />
+        <img src="images/feria-jerez-4.jpg" alt="Cata de vinos del Marco de Jerez en una caseta" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.jerez.es/feria" target="_blank" rel="noopener">Ayuntamiento de Jerez — Feria del Caballo</a></li>
+        <li><a href="https://www.turismojerez.com" target="_blank" rel="noopener">Turismo de Jerez</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-08</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+        <dt>¿Puedo entrar en cualquier caseta sin conocer a nadie?</dt>
+        <dd>Sí, casi siempre. La ordenanza municipal obliga a que las casetas tengan acceso público y gratuito, sujeto solo al aforo real. La única excepción es el "día del socio", una jornada de la semana en la que cada caseta puede restringir la entrada a sus socios.</dd>
+        <dt>¿Qué diferencia a la Feria de Jerez de la de Sevilla?</dt>
+        <dd>El acceso y el foco simbólico. En Jerez casi todas las casetas son públicas y el caballo es el eje central de la fiesta. En Sevilla la inmensa mayoría de casetas son privadas y el foco recae en la Portada y el ritual social urbano.</dd>
+        <dt>¿Cuándo es la Feria del Caballo en 2026?</dt>
+        <dd>Del sábado 9 al sábado 16 de mayo de 2026, en el formato habitual de ocho días. Se celebra siempre antes de la Romería del Rocío.</dd>
+        <dt>¿Qué es la doma vaquera?</dt>
+        <dd>Una disciplina ecuestre de origen campero, basada en la conducción ágil del caballo para el trabajo con el ganado, que hoy se exhibe y compite dentro de la programación de la feria.</dd>
+        <dt>¿Se puede beber vino de Jerez en la feria?</dt>
+        <dd>Sí, y es parte central de la experiencia: los vinos del Marco de Jerez (finos, amontillados, olorosos, cream y Pedro Ximénez) tienen un peso identitario mayor aquí que en otras ferias andaluzas.</dd>
+      </dl>
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Feria del Caballo</span>
+        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+        <span class="etiqueta">Andalucía</span>
+        <span class="etiqueta">Jerez de la Frontera</span>
+        <span class="etiqueta">Mayo</span>
+        <span class="etiqueta">Caballos</span>
+        <span class="etiqueta">Enganches</span>
+        <span class="etiqueta">Vino de Jerez</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="feria-abril-sevilla.html" class="relacionada-card">
+            <strong>Feria de Abril de Sevilla</strong>
+            <span>Andalucía · ITI (1980) · El modelo cerrado de caseta, opuesto al de Jerez</span>
+          </a>
+          <a href="carnaval-cadiz.html" class="relacionada-card">
+            <strong>Carnaval de Cádiz</strong>
+            <span>Andalucía · ITI (1980) · Otra gran fiesta declarada en la misma resolución de 1980</span>
+          </a>
+          <a href="san-fermin.html" class="relacionada-card">
+            <strong>San Fermín de Pamplona</strong>
+            <span>Navarra · ITI (1980) · Otra fiesta con protagonismo animal en el centro de su identidad</span>
+          </a>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
