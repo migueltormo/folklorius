@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Romería del Rocío — Un millón de peregrinos a la Blanca Paloma</title>
+  <meta name="description" content="La Romería del Rocío (ITI 1980) reúne cada Pentecostés a más de un millón de peregrinos en El Rocío. Hermandades, camino por Doñana y el salto de la reja, explicados." />
+  <link rel="canonical" href="https://folklorius.es/romeria-rocio.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="El Rocío: cuando un millón de personas se pone en camino hacia la Blanca Paloma" />
+  <meta property="og:description" content="Arena, bueyes, cante y devoción. La romería más grande de España arranca semanas antes de Pentecostés, cuando las primeras carretas salen de sus pueblos hacia las marismas de Doñana." />
+  <meta property="og:image" content="https://folklorius.es/images/romeria-rocio.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* ── Hermandades (desplegable, patrón cofradia-col) ── */
+    .hermandades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .hermandad-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 0;
+      overflow: hidden;
+    }
+    .hermandad-col summary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hermandad-col summary::-webkit-details-marker { display: none; }
+    .hermandad-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .hermandad-col details[open] summary::after { content: "−"; }
+    .hermandad-col details[open] summary {
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .hermandad-col ul {
+      list-style: none;
+      padding: 10px 16px 14px;
+      margin: 0;
+    }
+    .hermandad-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+    }
+    .hermandad-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .hermandades-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Must-see (idéntico al de Orihuela) ── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    /* ── Fichas relacionadas (idéntico al de Orihuela) ── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── Etiquetas (idéntico al de Orihuela) ── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── Bloque datos clave (idéntico al de Orihuela) ── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/romeria-rocio.html",
+    "name": "Romería del Rocío",
+    "startDate": "2027-05-30",
+    "endDate": "2027-06-02",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Santuario de Nuestra Señora del Rocío",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/ Ermita, s/n",
+        "addressLocality": "El Rocío – Almonte",
+        "postalCode": "21750",
+        "addressRegion": "Huelva",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.130709,
+        "longitude": -6.485021
+      }
+    },
+    "image": ["https://folklorius.es/images/romeria-rocio.jpg"],
+    "description": "Peregrinación multitudinaria al Santuario de Nuestra Señora del Rocío en la aldea de El Rocío (Almonte, Huelva). Declarada Fiesta de Interés Turístico Internacional en 1980 y Bien de Interés Cultural por la Junta de Andalucía en 2023.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Pontificia, Real e Ilustre Hermandad Matriz de Ntra. Sra. del Rocío de Almonte",
+      "url": "https://hermandadmatrizrocio.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Romerías", "item": "https://folklorius.es/romerias.html" },
+      { "@type": "ListItem", "position": 3, "name": "Romería del Rocío", "item": "https://folklorius.es/romeria-rocio.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Romería del Rocío?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El fin de semana del Domingo de Pentecostés, cincuenta días después del Domingo de Resurrección. La fecha varía cada año entre mediados de mayo y principios de junio. Consulta las fechas exactas en hermandadmatrizrocio.org."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es la Romería del Rocío apta para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las presentaciones de las hermandades y el ambiente de la aldea durante el viernes y el sábado son accesibles para familias. La madrugada del lunes —el salto de la reja— implica aglomeraciones físicamente intensas que no son recomendables con niños pequeños."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si llueve durante la Romería del Rocío?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La romería no se suspende por lluvia. Las hermandades llevan días en camino cuando llegan a la aldea y no hay protocolo de cancelación. El barro en las calles de arena puede complicar el desplazamiento: lleva calzado adecuado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es accesible la Romería del Rocío para personas con movilidad reducida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las calles de arena de la aldea de El Rocío dificultan el desplazamiento con silla de ruedas o movilidad reducida. Consulta con el Ayuntamiento de Almonte las opciones disponibles en turismodealmonte.es."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las sevillanas rocieras y en qué se diferencian de las de feria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las sevillanas rocieras tienen un tempo más lento, una cadencia más recogida y la letra habla de la Virgen, del camino y de las marismas. Se reconocen a primera escucha si conoces las sevillanas de feria. Grupos como Ecos del Rocío o Los Romeros de la Puebla son los nombres de referencia."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Romería del Rocío
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/romeria-rocio.jpg" alt="Carreta del Simpecado tirada por bueyes atravesando los arenales del entorno del Parque Nacional de Doñana durante la Romería del Rocío" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Romería del Rocío</h1>
+      <p class="ficha-subtitle">
+        El Rocío · Almonte (Huelva) · Romería · "Un millón de peregrinos hacia la Blanca Paloma."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Bien de Interés Cultural · Andalucía 2023</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Domingo de Pentecostés · 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 El Rocío · Almonte (Huelva)</span>
+          <span>⛪ 127 hermandades filiales</span>
+          <span>👥 +1.000.000 peregrinos</span>
+          <span>🏅 ITI 1980 · BIC Andalucía 2023</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota para el visitante</strong>
+        <ul>
+          <li>La romería es un acto de devoción antes que una fiesta. Durante las presentaciones de las hermandades y la procesión de la Virgen, el comportamiento del visitante debe acompañar el tono del momento.</li>
+          <li>Las casas de hermandad son espacios privados. No entres sin invitación.</li>
+          <li>La madrugada del salto de la reja genera una aglomeración física extrema en el interior y el atrio de la ermita. Valora tu situación antes de acercarte demasiado.</li>
+        </ul>
+      </div>
+
+<h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Pasada la medianoche del lunes de Pentecostés, algo cambia en el interior de la ermita. Nadie sabe exactamente cuándo va a ocurrir. La gente lleva horas esperando, apretada, sudando, rezando. Y de repente la reja de hierro que separa la nave del presbiterio cede bajo el empuje de cientos de cuerpos. Los almonteños entran en tropel, se abalanzan sobre las andas y levantan a la Virgen en medio de un caos de gritos, llantos y empujones. En cuestión de segundos, la Blanca Paloma ya está en la calle.
+      </p>
+
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Romería del Rocío es una peregrinación multitudinaria al Santuario de Nuestra Señora del Rocío, en la aldea de El Rocío, dentro del municipio de Almonte (Huelva). Participan <strong>127 hermandades filiales</strong> reconocidas oficialmente, coordinadas por la Hermandad Matriz de Almonte, la única con potestad para admitir nuevas filiales. Consulta el programa oficial en <a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">hermandadmatrizrocio.org</a> antes de planificar tu visita.
+      </p>
+      <p>
+        Lo que diferencia esta romería de cualquier otra fiesta española es el camino. Las hermandades no aparecen el día de la celebración: llevan días o semanas en ruta, atravesando pinares, marismas y los arenales del entorno del Parque Nacional de Doñana. Cuando llegan a la aldea, lo hacen con sus carretas, sus caballos, sus músicos y su Simpecado al frente. El viernes y el sábado de Pentecostés se presentan ante la Virgen en orden estricto de antigüedad, y la aldea —que tiene unos 1.600 habitantes fijos— acoge durante esos días a más de un millón de personas.
+      </p>
+      <p>
+        Si vas por primera vez, llega el viernes o el sábado para ver las presentaciones de las hermandades ante el santuario. Es el momento más ordenado y más fotográfico. Si puedes quedarte hasta la madrugada del lunes, el salto de la reja es otra cosa completamente distinta: más caótica, más física, más difícil de prepararse para ella.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios exactos y el orden de presentación de las hermandades los publica la Hermandad Matriz antes de cada edición. Consúltalos en <a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">hermandadmatrizrocio.org</a>.</p>
+
+<h2 class="section-title">Historia y significado</h2>
+      <p>
+        La devoción a la Virgen del Rocío en la aldea de El Rocío tiene documentación desde al menos el siglo XIII, aunque la tradición popular sitúa el origen en el hallazgo de una imagen de la Virgen por un cazador de Almonte en un encinar cercano. La primera romería organizada data del siglo XVII, cuando la Hermandad Matriz empezó a formalizar la peregrinación anual.
+      </p>
+      <p>
+        En 1813, el pueblo de Almonte hizo voto de acción de gracias a la Virgen por haber sobrevivido sin represalias a la ocupación francesa de 1810. De ese voto nació el <strong>Rocío Chico</strong>, una celebración más recogida que se repite cada 18 y 19 de agosto en la aldea, sin las hermandades filiales ni los peregrinos de toda España. Es un acto de Almonte, para Almonte. Si buscas información sobre el Rocío y encuentras referencias a una celebración en agosto, no es un error ni otra fiesta: es esa.
+      </p>
+      <p>
+        La romería fue declarada Fiesta de Interés Turístico en 1965 y obtuvo la categoría de Interés Turístico Internacional en 1980. En 2023, la Junta de Andalucía la inscribió como Bien de Interés Cultural con la tipología de Actividad de Interés Etnológico. Hoy la romería organiza la vida de decenas de comunidades durante meses: los carros se restauran, los caballos se preparan, los hermanos ensayan las sevillanas rocieras que van a cantar en las paradas del camino.
+      </p>
+
+<h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Romería del Rocío se celebra el fin de semana del <strong>Domingo de Pentecostés</strong>, cincuenta días después del Domingo de Resurrección. Al depender del calendario de Semana Santa, la fecha varía cada año entre mediados de mayo y principios de junio.
+      </p>
+      <p>
+        Los tres momentos de mayor intensidad son la llegada y presentación de las hermandades (viernes y sábado de Pentecostés), la madrugada del lunes —cuando ocurre el salto de la reja— y la procesión de la Virgen por las calles de la aldea. Las salidas de las hermandades empiezan semanas antes: las más lejanas pueden llevar más de una semana en camino cuando llegan a El Rocío.
+      </p>
+      <p>
+        Comprueba las fechas exactas de cada edición en <a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">hermandadmatrizrocio.org</a> o en <a href="https://turismodealmonte.es" target="_blank" rel="noopener">turismodealmonte.es</a>.
+      </p>
+
+<h2 class="section-title">El camino</h2>
+      <p>
+        El camino es la mitad de la romería. Muchos peregrinos dirían que es la mejor mitad.
+      </p>
+      <p>
+        Cada hermandad sale de su localidad de origen con su <strong>Simpecado</strong> al frente —el estandarte bordado que lleva la imagen de la Virgen— montado sobre la Carreta del Simpecado, un carro tirado por bueyes o mulas, decorado con flores y plata repujada. Detrás van las carretas de los hermanos: cubiertas con toldos de lona, sirven para dormir, cocinar y convivir durante días. El resto del grupo va a pie o a caballo.
+      </p>
+      <p>
+        La duración del camino depende del punto de partida. Una hermandad de Huelva puede llegar en dos días. Las de Sevilla tardan entre tres y cuatro. Las de Madrid, Cataluña o Almería llevan más de una semana en ruta cuando entran en la aldea. Algunos tramos discurren por el entorno del Parque Nacional de Doñana: pinares, marismas, arena. El paso por la <strong>Raya Real</strong> —un cortafuegos de arena ancha dentro del parque— es el tramo más duro y el más recordado.
+      </p>
+      <p>
+        El ambiente durante el camino mezcla momentos de recogimiento —el rezo del Ángelus, la misa de alba— con paradas en las que se canta, se baila y se come. No hay horario fijo ni itinerario público: cada hermandad gestiona su propio camino.
+      </p>
+
+<h2 class="section-title">Las hermandades</h2>
+      <p>
+        Hay <strong>127 hermandades filiales</strong> reconocidas oficialmente por la Hermandad Matriz. La mayoría son andaluzas, con Sevilla como la provincia que más aporta. Fuera de Andalucía hay 15 hermandades repartidas por Madrid, Cataluña, Valencia y Baleares, entre otras comunidades. La única hermandad en el extranjero es la Hermandad del Rocío de Bruselas.
+      </p>
+      <p>
+        El orden en que las hermandades se presentan ante la Virgen sigue un criterio estricto de antigüedad, en orden inverso: las más jóvenes presentan primero y las más antiguas cierran. Las llamadas <strong>"Fundacionales"</strong> son siempre las últimas en presentarse. Hay además unas 48 asociaciones rocieras en proceso de adscripción.
+      </p>
+      <p>
+        La <strong>Hermandad Matriz de Almonte</strong> —nombre completo: Pontificia, Real e Ilustre Hermandad Matriz de Nuestra Señora del Rocío de Almonte— organiza los cultos, recibe a las filiales y tiene la potestad exclusiva de admitir nuevas hermandades. Los <em>hermanos</em> son los devotos inscritos formalmente, con cuota y medalla, que tienen derecho a participar en los actos oficiales.
+      </p>
+
+      <div class="hermandades-grid">
+        <div class="hermandad-col">
+          <details open>
+            <summary>Hermandades Fundacionales</summary>
+            <ul>
+              <li>Villamanrique de la Condesa</li>
+              <li>Pilas</li>
+              <li>La Palma del Condado</li>
+              <li>Moguer</li>
+              <li>Sanlúcar de Barrameda</li>
+            </ul>
+          </details>
+        </div>
+        <div class="hermandad-col">
+          <details>
+            <summary>Hermandades fuera de Andalucía</summary>
+            <ul>
+              <li>15 filiales reconocidas en Madrid, Cataluña, Valencia, Baleares y otras comunidades</li>
+              <li>Hermandad del Rocío de Bruselas (única en el extranjero)</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <p class="fuente">Fuente: <a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">Hermandad Matriz de Almonte</a> — última verificación: 2026-06-01</p>
+
+<h2 class="section-title">El santuario y la llegada</h2>
+      <p>
+        El Santuario de Nuestra Señora del Rocío está en la aldea de El Rocío, en el municipio de Almonte (Huelva), al borde de las marismas del Parque Nacional de Doñana. Las calles de la aldea son de arena —no están asfaltadas— para permitir el paso de caballos y carretas. Con unos 1.600 habitantes fijos, El Rocío es un lugar tranquilo el resto del año. Durante los días de romería, ese número se multiplica por cientos.
+      </p>
+      <p>
+        La llegada de cada hermandad es pública y gratuita. Las <strong>presentaciones ante el santuario</strong> ocurren el viernes y el sábado: cada hermandad entra en la aldea con su Simpecado al frente, entre polvo, cante, toque de campanas y el fervor de los que llevan días en camino. Es el momento más visual y más accesible para el visitante que llega sin pertenecer a ninguna hermandad.
+      </p>
+
+<h2 class="section-title">El salto de la reja</h2>
+      <p>
+        En la madrugada del lunes de Pentecostés ocurre lo que muchos consideran el momento más intenso de toda la romería.
+      </p>
+      <p>
+        La reja de hierro que protege el presbiterio de la ermita separa a la Virgen del resto del templo. Por tradición, solo los almonteños tienen el derecho de sacar a la Blanca Paloma en procesión, portarla por las calles de la aldea y devolverla a su sitio. No es una norma escrita en ningún reglamento: es algo que la propia gente mantiene con una convicción que tiene siglos.
+      </p>
+      <p>
+        No hay una hora fijada para que ocurra. El momento lo deciden los almonteños cuando el fervor llega a su punto. Lo que pasa entonces es difícil de describir con calma: la gente que lleva horas apretada en el interior de la ermita empieza a empujar hacia la reja. La presión aumenta. En un momento que nadie puede predecir exactamente, la reja cede o es superada, y los almonteños entran en tropel al presbiterio. Se abalanzan sobre las andas, las levantan entre gritos, llantos y empujones, y en cuestión de segundos la Virgen ya está fuera. El caos es total. La devoción también.
+      </p>
+      <p>
+        La procesión que sigue dura horas: la Virgen recorre todas las calles de la aldea, parando frente a las casas de cada una de las 127 hermandades filiales.
+      </p>
+
+<h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          Antes de escuchar nada, lo notas en el ambiente: hay algo en el aire de El Rocío que no suena igual que en ninguna feria. Las <strong>sevillanas rocieras</strong> tienen un tempo más pausado, una cadencia más recogida, y la letra no habla de amor ni de fiesta: habla de la Virgen, del camino, de las marismas. Son reconocibles para cualquiera que conozca las sevillanas de feria, pero suenan distintas. Más hacia adentro.
+        </p>
+        <p>
+          El instrumento que define el sonido del Rocío es la <strong>gaita rociera</strong> —una flauta de tres agujeros— tocada a la vez que el tamboril por la misma persona: el tamborilero. Con la mano izquierda toca la flauta y con la derecha golpea el tambor, que lleva colgado del brazo. Es el sonido que acompaña las procesiones, las paradas en el camino y las presentaciones ante el santuario. Junto a la gaita y el tamboril están las guitarras, las castañuelas, las panderetas y los cajones.
+        </p>
+        <p>
+          Los coros rocieros de las hermandades —como el histórico Coro de Huelva o el Coro de Triana— son los que mantienen vivo el repertorio. Grupos como Ecos del Rocío o Los Romeros de la Puebla forjaron su estilo en esta romería y siguen siendo referencia para quien quiera entrar en la música del Rocío antes de ir.
+        </p>
+      </div>
+
+<h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El salto de la reja</h3>
+          <span class="tag">Madrugada del lunes de Pentecostés · Ermita del Rocío</span>
+          <p>Sin hora fija. Los almonteños llevan horas esperando cuando la reja del presbiterio cede bajo su empuje y entran en masa a levantar las andas de la Virgen. Gritos, llantos, empujones. En segundos, la Blanca Paloma está en la calle.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el único acto de la romería en que la devoción y el desorden se funden en el mismo segundo. No se repite en ninguna otra fiesta española.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La presentación de una hermandad fundacional</h3>
+          <span class="tag">Viernes o sábado de Pentecostés · Puerta del Santuario</span>
+          <p>Las cinco hermandades más antiguas cierran siempre las presentaciones con un protocolo de siglos. El Simpecado llega entre polvo, campanas y cante, y la gente que lo ha visto cien veces lo sigue mirando como si fuera la primera.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El orden de antigüedad convierte esta presentación en el momento de mayor peso simbólico de las dos jornadas de llegadas. Las Fundacionales cierran siempre. Sitúate en la puerta del santuario con tiempo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El paso por la Raya Real</h3>
+          <span class="tag">Días previos a Pentecostés · Entorno del Parque Nacional de Doñana</span>
+          <p>El tramo más duro del camino para las hermandades de Sevilla: un cortafuegos de arena ancha dentro del parque donde los carros se hunden, los caballos sudan y la gente sigue andando.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el único tramo del Rocío que no puede verse desde la aldea. Hay que buscarlo. Los que lo hacen entienden mejor por qué la romería empieza mucho antes de la llegada.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La procesión de la Blanca Paloma</h3>
+          <span class="tag">Lunes de Pentecostés, desde el amanecer · Calles de la aldea</span>
+          <p>Después del salto de la reja, la Virgen recorre todas las calles de la aldea durante horas, parando frente a la casa de cada una de las 127 hermandades filiales. Los almonteños la llevan a hombros sin soltar las andas en todo el recorrido.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la única procesión de la romería y ocurre de día, lo que la hace accesible y fotográfica de una manera que el salto de la reja no es.</p>
+          </details>
+        </div>
+
+      </div>
+
+<h2 class="section-title">Qué puedes hacer si vas de visita sin conocer a nadie</h2>
+      <p>
+        <strong>Gratis y abierto para cualquiera.</strong> Todo lo que ocurre en la calle es público y gratuito: las presentaciones de las hermandades ante el santuario (viernes y sábado), el ambiente en las calles de arena, la procesión del lunes y el acceso a la ermita fuera de los momentos de máxima aglomeración. El salto de la reja también es abierto, aunque la afluencia en ese momento es extrema.
+      </p>
+      <p>
+        <strong>Las casas de hermandad</strong> funcionan de forma parecida a las casetas privadas de la Feria de Sevilla: son edificaciones en la aldea donde cada hermandad convive durante los días de romería. El acceso es para hermanos e invitados. Dicho esto, la hospitalidad rociera tiene fama de ser generosa: si alguien te invita a entrar, acepta. Si no, no insistas.
+      </p>
+      <p>
+        <strong>Alojamiento.</strong> Pernoctar en la aldea de El Rocío durante la romería es caro y requiere reserva con mucha antelación —se habla de años en algunos casos. La alternativa más práctica es alojarse en Matalascañas, Almonte o Huelva capital y desplazarte cada día en los autobuses lanzadera que organiza el Ayuntamiento de Almonte.
+      </p>
+      <p>
+        <strong>Plan para un visitante sin contactos.</strong> Llega el viernes por la tarde para ver las primeras presentaciones. Quédate el sábado para las hermandades fundacionales. Si tienes aguante para la madrugada del domingo al lunes, el salto de la reja es lo más difícil de ver bien pero también lo más difícil de olvidar. La procesión del lunes es el cierre: más tranquila y más accesible.
+      </p>
+
+<h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con mucha antelación. Matalascañas (a unos 12 km) y Almonte son las alternativas más prácticas si no encuentras nada en la aldea. Huelva capital también funciona si usas los transportes organizados.</li>
+        <li><strong>Cómo llegar.</strong> En coche hasta Almonte y desde allí en autobús lanzadera hasta la aldea. El Ayuntamiento de Almonte organiza transporte específico durante la romería. Rutas y horarios en <a href="https://turismodealmonte.es" target="_blank" rel="noopener">turismodealmonte.es</a>.</li>
+        <li><strong>Dónde situarse.</strong> Para las presentaciones, colócate en los aledaños de la puerta del santuario con tiempo. Para el salto de la reja, ten en cuenta que la aglomeración puede ser extrema: valora si prefieres verlo desde fuera de la ermita.</li>
+        <li><strong>Clima y ropa.</strong> Pentecostés cae entre mayo y junio en el sur de Andalucía, con calor a menudo intenso. Las calles son de arena: nada de tacones ni suela fina. Sombrero o gorra son imprescindibles de día.</li>
+        <li><strong>Vestimenta.</strong> Impera el traje campero y la moda flamenca. Las mujeres suelen llevar bata rociera o falda rociera, más ligera que el traje de feria y pensada para la arena y el calor. Los hombres, traje corto campero o ropa de campo con sombrero de ala ancha. No hay obligación si eres visitante, pero conviene saberlo de antemano.</li>
+        <li><strong>Respeto.</strong> La romería es un acto de devoción. Las casas de hermandad son espacios privados: no entres sin invitación.</li>
+        <li><strong>Gastronomía.</strong> La cocina de la romería es cocina de campo: potajes, guisos de carne, pescaíto frito en los bares de la aldea. El jamón de Huelva y el vino de la tierra están en cualquier parada del camino.</li>
+      </ul>
+
+<h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Blanca Paloma</dt>
+        <dd>Nombre con el que los devotos se dirigen a la Virgen del Rocío. No es un apodo informal: es el tratamiento habitual dentro de la romería.</dd>
+
+        <dt>Simpecado</dt>
+        <dd>El estandarte de cada hermandad. Lleva bordada la imagen de la Virgen y el lema en latín "Sine Labe Concepta" (Sin pecado concebida). La Carreta del Simpecado va al frente de la comitiva durante todo el camino.</dd>
+
+        <dt>Tamborilero</dt>
+        <dd>El músico que toca a la vez la gaita rociera —flauta de tres agujeros, con la mano izquierda— y el tamboril —colgado del brazo, golpeado con la mano derecha—. Una sola persona, dos instrumentos simultáneos. Es el sonido más reconocible de la romería.</dd>
+
+        <dt>Raya Real</dt>
+        <dd>Tramo de cortafuegos de arena ancha dentro del entorno del Parque de Doñana por el que pasan las hermandades de Sevilla. Es el paso más duro del camino.</dd>
+
+        <dt>Hermano/a</dt>
+        <dd>Devoto inscrito formalmente en una hermandad, con cuota y medalla. Tiene derecho a participar en los actos oficiales. No es lo mismo que un peregrino o un visitante.</dd>
+
+        <dt>Misa de Romeros</dt>
+        <dd>La eucaristía que celebran las hermandades antes de iniciar su camino, y también la misa matinal del domingo en el Real de la aldea.</dd>
+
+        <dt>Rocío Chico</dt>
+        <dd>Celebración del 18 y 19 de agosto en la aldea, distinta de la romería principal. Nació en 1813 como voto de Almonte a la Virgen por sobrevivir a la ocupación francesa. Es un acto local, sin hermandades filiales.</dd>
+
+      </dl>
+
+<h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/romeria-rocio-1.jpg" alt="Carreta del Simpecado tirada por bueyes atravesando los arenales de Doñana durante la Romería del Rocío" />
+        <img src="images/romeria-rocio-2.jpg" alt="Hermandad presentándose ante el Santuario de Nuestra Señora del Rocío en la aldea de El Rocío" />
+        <img src="images/romeria-rocio-3.jpg" alt="Peregrinos a caballo y a pie durante el camino hacia El Rocío en Pentecostés" />
+      </div>
+
+<h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">Hermandad Matriz de Almonte — Web oficial</a></li>
+        <li><a href="https://turismodealmonte.es" target="_blank" rel="noopener">Turismo de Almonte — Ayuntamiento</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-06-01</p>
+
+<h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Romería del Rocío?</dt>
+        <dd>El fin de semana del Domingo de Pentecostés, cincuenta días después del Domingo de Resurrección. La fecha varía cada año entre mediados de mayo y principios de junio. Consulta las fechas exactas en <a href="https://hermandadmatrizrocio.org" target="_blank" rel="noopener">hermandadmatrizrocio.org</a>.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Las presentaciones de las hermandades y el ambiente de la aldea durante el viernes y el sábado son accesibles para familias. La madrugada del lunes —el salto de la reja— implica aglomeraciones físicamente intensas que no son recomendables con niños pequeños. Si vas con niños, planifica la visita para las jornadas de día.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>La romería no se suspende por lluvia. Las hermandades llevan días en camino cuando llegan a la aldea y no hay protocolo de cancelación. El barro en las calles de arena puede complicar el desplazamiento: lleva calzado adecuado.</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>Las calles de arena de la aldea de El Rocío dificultan el desplazamiento con silla de ruedas o movilidad reducida. La afluencia de personas durante los días de romería añade dificultad adicional. Consulta con el Ayuntamiento de Almonte las opciones disponibles en <a href="https://turismodealmonte.es" target="_blank" rel="noopener">turismodealmonte.es</a>.</dd>
+
+        <dt>¿Qué son las sevillanas rocieras y en qué se diferencian de las de feria?</dt>
+        <dd>Las sevillanas rocieras tienen un tempo más lento, una cadencia más recogida y la letra habla de la Virgen, del camino y de las marismas, no de amor ni de fiesta. Se reconocen a primera escucha si conoces las sevillanas de feria. Grupos como Ecos del Rocío o Los Romeros de la Puebla son los nombres de referencia de este estilo.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Romería</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Bien de Interés Cultural</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Huelva</a>
+        <a href="#" class="etiqueta">Almonte</a>
+        <a href="#" class="etiqueta">Pentecostés</a>
+        <a href="#" class="etiqueta">Hermandades</a>
+        <a href="#" class="etiqueta">Doñana</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-rocio">
+        <h2 id="rel-title-rocio">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Feria de Abril de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">El modelo de caseta privada y acceso cerrado que contrasta con la apertura de la romería.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-sevilla.html" class="ficha-rel-card">
+            <img src="images/semana-santa-sevilla.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Sevilla</span>
+              <span class="rel-frase">Otra forma de vivir la devoción en la calle, en la misma ciudad de referencia andaluza.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="caballos-vino-caravaca.html" class="ficha-rel-card">
+            <img src="images/caballos-vino-caravaca.jpg" alt="Caballos del Vino de Caravaca de la Cruz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Caballos del Vino de Caravaca de la Cruz</span>
+              <span class="rel-frase">Devoción con elemento animal central y acceso abierto al visitante.</span>
+              <span class="rel-meta">Caravaca de la Cruz · Murcia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
