@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiestas del Pilar de Zaragoza — Devoción y jota en la calle</title>
+  <meta name="description" content="Fiestas del Pilar de Zaragoza (ITI 2019): 9 días con la Ofrenda de Flores, el Rosario de Cristal y las peñas tomando el Casco Histórico cada octubre." />
+  <link rel="canonical" href="https://folklorius.es/fiestas-pilar-zaragoza.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Un manto de flores de 200 metros para la Virgen del Pilar" />
+  <meta property="og:description" content="Cada 12 de octubre, más de 120.000 personas hacen cola durante horas en Zaragoza para dejar un ramo a los pies de la Virgen. Así arrancan las Fiestas del Pilar, nueve días de jota, peñas y devoción." />
+  <meta property="og:image" content="https://folklorius.es/images/fiestas-pilar-zaragoza.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* ── Programa por días (patrón cofradia-col adaptado) ── */
+    .programa-dias {
+      margin-top: 1rem;
+    }
+    .programa-dias details {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+    }
+    .programa-dias details[open] {
+      border-color: var(--brand, #8b1a1a);
+    }
+    .programa-dias summary {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .programa-dias summary::-webkit-details-marker { display: none; }
+    .programa-dias summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .programa-dias details[open] summary::after { content: "−"; }
+    .programa-dias details[open] summary {
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .programa-dias .dia-contenido {
+      padding: 12px 16px 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text, #2a2218);
+    }
+
+    /* ── Must-see ── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    /* ── Fichas relacionadas ── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── Etiquetas ── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── Bloque datos clave ── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiestas-pilar-zaragoza.html",
+    "name": "Fiestas del Pilar de Zaragoza",
+    "startDate": "2027-10-02",
+    "endDate": "2027-10-12",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Plaza del Pilar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zaragoza",
+        "addressRegion": "Zaragoza",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.656613,
+        "longitude": -0.878683
+      }
+    },
+    "image": ["https://folklorius.es/images/fiestas-pilar-zaragoza.jpg"],
+    "description": "Celebración anual de Zaragoza en honor a la Virgen del Pilar, patrona de la ciudad. Nueve o diez días en torno al 12 de octubre con la Ofrenda de Flores, la Ofrenda de Frutos, el Rosario de Cristal y actividad de peñas por todo el Casco Histórico. Declarada Fiesta de Interés Turístico Internacional en 2019.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Zaragoza",
+      "url": "https://zaragoza.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Fiestas mayores", "item": "https://folklorius.es/fiestas-mayores.html" },
+      { "@type": "ListItem", "position": 3, "name": "Fiestas del Pilar de Zaragoza", "item": "https://folklorius.es/fiestas-pilar-zaragoza.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Fiestas del Pilar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En torno al 12 de octubre, festividad de la Virgen del Pilar, durante nueve o diez días de fin de semana a fin de semana. Comprueba las fechas exactas de cada edición en zaragoza.es."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo participar en la Ofrenda de Flores sin pertenecer a ninguna asociación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Cualquier persona con traje regional, el que sea, puede apuntarse en el turno de oferentes particulares sin necesidad de pertenecer a ninguna peña o asociación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son las Fiestas del Pilar aptas para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. La Comparsa de Gigantes y Cabezudos, que desfila a diario, está especialmente pensada para el público infantil. La Ofrenda de Flores, por su duración y aglomeración, puede ser larga para niños pequeños si se sigue el recorrido completo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si llueve durante las Fiestas del Pilar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El programa de calle se mantiene salvo alerta meteorológica grave. La Ofrenda de Flores y el Rosario de Cristal han salido en años con lluvia moderada; solo se suspenden ante riesgo real para el patrimonio o la seguridad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la diferencia entre la Ofrenda de Flores y la Ofrenda de Frutos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La de Flores es el acto central y masivo del 12 de octubre, con más de 120.000 oferentes. La de Frutos ocurre al día siguiente, es más reducida, y su finalidad es benéfica: los alimentos entregados van a comedores sociales de Zaragoza."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiestas del Pilar de Zaragoza
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/fiestas-pilar-zaragoza.jpg" alt="Oferentes con traje regional depositando flores en la estructura piramidal de la Virgen del Pilar durante la Ofrenda de Flores en Zaragoza" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiestas del Pilar de Zaragoza</h1>
+      <p class="ficha-subtitle">
+        Zaragoza (Aragón) · Fiestas mayores · "Un manto de flores de 200 metros para la Virgen del Pilar."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional · BOE 2019</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">En torno al 12 de octubre · 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Plaza del Pilar, Zaragoza</span>
+          <span>📅 9-10 días</span>
+          <span>👥 +2,6 millones de asistentes acumulados</span>
+          <span>🌸 +120.000 oferentes en la Ofrenda de Flores</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota para el visitante</strong>
+        <ul>
+          <li>La Ofrenda de Flores y la Ofrenda de Frutos son actos de devoción popular. El comportamiento durante ambas debe acompañar el tono del momento, especialmente cerca de la Basílica.</li>
+          <li>Las Fiestas del Pilar son masivas: la Plaza del Pilar se satura por completo el 12 de octubre. Valora tu tolerancia a las aglomeraciones antes de decidir cuándo ir.</li>
+          <li>El alojamiento en Zaragoza se agota con antelación en torno al puente del 12 de octubre. Reserva con tiempo si tu visita coincide con esas fechas.</li>
+        </ul>
+      </div>
+
+<h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En la Plaza del Pilar de Zaragoza hay una pirámide de madera con la imagen de la Virgen en el centro. Durante horas, una fila de gente que no termina de verse el final va depositando flores a sus pies: gladiolos blancos y rojos, sobre todo, aunque cada oferente lleva lo que puede. Al final del día la pirámide entera queda cubierta de un manto floral que crece pieza a pieza, sin nadie dirigiendo el diseño. En 2025 la fila duró casi dieciocho horas seguidas. Nadie se fue.
+      </p>
+
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Fiestas del Pilar son la gran celebración anual de Zaragoza en honor a la Virgen del Pilar, patrona de la ciudad. Se extienden durante nueve o diez días en torno al 12 de octubre, mezclando devoción popular masiva con música, peñas y actividad de calle en el Casco Histórico. Consulta el programa oficial en <a href="https://zaragoza.es" target="_blank" rel="noopener">zaragoza.es</a> antes de planificar tu visita.
+      </p>
+      <p>
+        El acto que define la fiesta es la <strong>Ofrenda de Flores</strong>: cientos de grupos (asociaciones, peñas, casas regionales, delegaciones de otros países) y miles de personas a título particular desfilan hasta la Plaza del Pilar para depositar flores ante la Virgen. En 2025 participaron más de 120.000 oferentes. No hace falta pertenecer a ninguna asociación para sumarte: basta con llevar un traje regional, el que sea, y apuntarte en el turno de "particulares".
+      </p>
+      <p>
+        Alrededor de ese acto central se despliega una semana completa de programa: el Rosario de Cristal, la Ofrenda de Frutos, la Comparsa de Gigantes y Cabezudos a diario, y un ambiente de peñas que llena el Casco Histórico de charangas desde la mañana hasta la madrugada.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios exactos de cada acto y el programa completo los publica el Ayuntamiento de Zaragoza cada año. Consúltalos en <a href="https://zaragoza.es" target="_blank" rel="noopener">zaragoza.es</a> antes de organizar tu visita.</p>
+
+<h2 class="section-title">Historia y significado</h2>
+      <p>
+        La devoción a la Virgen del Pilar se remonta a una tradición que sitúa su origen en el año 40 d.C.: según el relato, la Virgen se apareció al apóstol Santiago a orillas del Ebro, sobre una columna de piedra, el pilar que da nombre a la basílica y a la fiesta.
+      </p>
+      <p>
+        La forma actual de las fiestas es mucho más reciente que esa tradición. La Ofrenda de Frutos arrancó hacia 1949 y la Ofrenda de Flores en 1958. Desde entonces, lo que empezó como un acto religioso se ha ido ensanchando hasta convertirse en la celebración ciudadana más grande de Aragón, con más de 2,6 millones de asistentes acumulados en la edición de 2025.
+      </p>
+      <p>
+        El Ministerio de Industria, Comercio y Turismo declaró las Fiestas del Pilar de Interés Turístico Internacional mediante resolución publicada en el BOE el 23 de septiembre de 2019. Es una de las tres declaraciones de este nivel que existen en Aragón.
+      </p>
+
+<h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Las Fiestas del Pilar giran en torno al <strong>12 de octubre</strong>, festividad de la Virgen del Pilar, y se extienden durante nueve o diez días, normalmente de un fin de semana a otro. En la edición de 2025, el programa fue del 4 al 13 de octubre.
+      </p>
+      <p>
+        Los tres días de mayor intensidad son el primer sábado (Pregón e inicio), el 12 de octubre (Ofrenda de Flores) y el 13 de octubre (Ofrenda de Frutos y Rosario de Cristal). El cierre coincide con el último domingo del programa.
+      </p>
+      <p class="fuente">Comprueba las fechas exactas de cada edición en <a href="https://zaragoza.es" target="_blank" rel="noopener">zaragoza.es</a>.</p>
+
+<h2 class="section-title">Programa por días</h2>
+      <div class="programa-dias">
+
+        <details open>
+          <summary>12 de octubre — Ofrenda de Flores</summary>
+          <div class="dia-contenido">
+            El día central de toda la fiesta. Desde primera hora de la mañana, oferentes de todo tipo (particulares, peñas, asociaciones, delegaciones internacionales) desfilan hasta la Plaza del Pilar para depositar flores ante la Virgen. Ver la sección "La Ofrenda de Flores" más abajo para el detalle completo.
+          </div>
+        </details>
+
+        <details>
+          <summary>Primer sábado — Pregón e inicio</summary>
+          <div class="dia-contenido">
+            Arranca con la cabalgata del Pregón, la lectura del pregón desde el balcón del Ayuntamiento y el disparo del cohete oficial que abre oficialmente las fiestas.
+          </div>
+        </details>
+
+        <details>
+          <summary>Días intermedios — Peñas, Gigantes y programa general</summary>
+          <div class="dia-contenido">
+            La Comparsa de Gigantes y Cabezudos recorre los barrios a diario. Las peñas organizan pasacalles, charangas y actividad en sus carpas por todo el Casco Histórico. En paralelo hay ferias de muestras, conciertos en la Plaza del Pilar y el Espacio Zity, teatro, y la feria taurina de El Pilar.
+          </div>
+        </details>
+
+        <details>
+          <summary>13 de octubre — Ofrenda de Frutos y Rosario de Cristal</summary>
+          <div class="dia-contenido">
+            Por la mañana, la Ofrenda de Frutos lleva productos agroalimentarios aragoneses hasta la Basílica con fines benéficos. Por la noche, el Rosario de Cristal recorre el casco antiguo con sus carrozas de vidrio iluminado. Ver las secciones correspondientes más abajo.
+          </div>
+        </details>
+
+        <details>
+          <summary>Último domingo — Cierre</summary>
+          <div class="dia-contenido">
+            La fiesta se despide en el Paseo de la Independencia con un canto coral multitudinario y un castillo de fuegos artificiales junto al Ebro.
+          </div>
+        </details>
+
+      </div>
+
+<h2 class="section-title">La Ofrenda de Flores</h2>
+      <p>
+        Es el acto más multitudinario de toda la fiesta y el que la define desde fuera de Zaragoza. En el centro de la Plaza del Pilar se levanta una estructura piramidal que sostiene la imagen de la Virgen. Durante todo el 12 de octubre, una fila continua de oferentes va depositando flores a sus pies hasta confeccionar, pieza a pieza, un manto floral de dimensiones gigantescas: principalmente gladiolos blancos y rojos.
+      </p>
+      <p>
+        Participan cientos de grupos organizados: peñas, casas regionales, instituciones, delegaciones de países hispanoamericanos y de otros lugares del mundo. También miles de personas a título particular, sin pertenecer a ninguna asociación. Todos los participantes desfilan con traje regional: el de Aragón, el de su comunidad de origen, o el de su país.
+      </p>
+      <p>
+        En 2025 participaron más de 120.000 oferentes y la plaza reunió a más de 472.000 espectadores a lo largo del día. Esa edición batió además un récord de duración, con la fila de oferentes prolongándose casi dieciocho horas hasta pasada la medianoche: una cifra puntual de esa edición, no un dato fijo cada año.
+      </p>
+
+<h2 class="section-title">La Ofrenda de Frutos</h2>
+      <p>
+        Es un acto distinto de la Ofrenda de Flores, con otro propósito. Se celebra el 13 de octubre a mediodía, con salida desde la Plaza de Santa Engracia hasta la Basílica del Pilar.
+      </p>
+      <p>
+        Los grupos participantes, organizados principalmente por la Federación de Casas Regionales de Zaragoza y también ataviados con trajes tradicionales, entregan productos típicos: melocotones de Calanda, vino, jamón, repostería. Todo lo recaudado, toneladas de alimentos, se destina a comedores sociales e instituciones asistenciales de la ciudad. En 2025 participaron unas 3.500 personas.
+      </p>
+
+<h2 class="section-title">El Rosario de Cristal</h2>
+      <p>
+        Es una de las procesiones más singulares de toda España. La noche del 13 de octubre, un desfile recorre el casco antiguo de Zaragoza iluminado por carrozas monumentales y faroles de mano, todos elaborados en cristal policromado y emplomado.
+      </p>
+      <p>
+        El desfile recrea las partes del rezo del Santo Rosario: las grandes carrozas representan los Misterios, mientras los devotos que caminan junto a ellas portan faroles menores que simbolizan Padrenuestros, Avemarías y Letanías.
+      </p>
+      <p>
+        El origen se remonta al siglo XIX: el arquitecto Ricardo Magdalena diseñó las primeras piezas y la Cofradía se fundó en 1889. Fuera de las fiestas, los faroles pueden verse expuestos en el Museo del Rosario de Cristal.
+      </p>
+
+<h2 class="section-title">Gigantes y Cabezudos</h2>
+      <p>
+        La Comparsa de Gigantes y Cabezudos desfila a diario durante toda la semana, recorriendo distintos barrios de la ciudad, y es uno de los elementos con más peso entre el público infantil.
+      </p>
+      <p>
+        Los cabezudos zaragozanos tienen nombre propio y una identidad local muy marcada: el Morico, el Tuerto, la Forana, el Verrugón, entre otros. Representan personajes históricos o populares del siglo XIX, y su papel en la calle es perseguir a los niños con un látigo suave mientras estos les cantan coplillas tradicionales dedicadas a cada personaje.
+      </p>
+
+<h2 class="section-title">Peñas y ambiente de calle</h2>
+      <p>
+        Las peñas son asociaciones culturales y recreativas locales, y son el corazón del tejido festivo zaragozano. Están agrupadas en federaciones (Interpeñas y la Unión Peñista de Zaragoza son las principales) y cada una organiza actividades en su propia carpa o pabellón durante toda la semana.
+      </p>
+      <p>
+        Entre sus actos más visibles están el Maratón de Charangas y el Arrejuntamiento Peñista, desfiles en los que las peñas recorren el centro con sus bandas de metales.
+      </p>
+      <p>
+        El ambiente festivo se concentra sobre todo en el Casco Histórico: la Plaza del Pilar, la Plaza de España, el Paseo de la Independencia y la zona de tapas conocida como El Tubo. Para conciertos y ocio nocturno, la actividad se traslada a recintos perimetrales como Valdespartera o el Espacio Zity.
+      </p>
+
+<h2 class="section-title">Música</h2>
+      <div class="music-block">
+        <p>
+          La jota aragonesa, canto y baile, es la banda sonora permanente de las Fiestas del Pilar. Durante la Ofrenda de Flores, decenas de grupos folclóricos la interpretan mientras desfilan y en los escenarios montados junto a la basílica, dando a toda la plaza un ritmo enérgico e inconfundible que no se detiene en todo el día.
+        </p>
+        <p>
+          El Certamen Oficial de Jota Aragonesa es otro de los actos destacados del programa, y reúne a algunos de los mejores intérpretes del género de toda la comunidad.
+        </p>
+      </div>
+
+<h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Ofrenda de Flores</h3>
+          <span class="tag">12 de octubre, todo el día · Plaza del Pilar</span>
+          <p>Más de 120.000 oferentes desfilan durante horas para depositar flores a los pies de la Virgen, confeccionando un manto floral que crece durante toda la jornada. Puedes participar tú mismo sin pertenecer a ninguna asociación: solo necesitas un traje regional y apuntarte en el turno de particulares.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el acto que define la fiesta y uno de los actos de devoción popular más multitudinarios de toda España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Ofrenda de Frutos</h3>
+          <span class="tag">13 de octubre, mediodía · De Plaza Santa Engracia a la Basílica</span>
+          <p>Grupos ataviados con trajes tradicionales entregan productos aragoneses (melocotón de Calanda, vino, jamón) que se destinan íntegramente a comedores sociales. Es la cara solidaria de la fiesta, menos multitudinaria que la Ofrenda de Flores pero igual de arraigada.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Combina tradición, gastronomía regional y una causa benéfica real, algo que no se ve en ningún otro acto del programa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Rosario de Cristal</h3>
+          <span class="tag">Noche del 13 de octubre · Casco antiguo de Zaragoza</span>
+          <p>Un desfile nocturno de carrozas y faroles de cristal policromado que ilumina las calles del centro histórico mientras recrea el rezo del Rosario. Único en España por su valor patrimonial y su puesta en escena.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>No hay otra procesión igual en el país. Verla de noche, con el cristal iluminado contra la piedra del casco antiguo, es una experiencia que no se repite en ninguna otra fiesta española.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Pregón de apertura</h3>
+          <span class="tag">Primer sábado · Balcón del Ayuntamiento y calles del centro</span>
+          <p>La cabalgata, la lectura del pregón y el cohete que dispara oficialmente el inicio de las fiestas. Es el momento en que Zaragoza entera se vuelca en la calle por primera vez esa semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Si organizas tu viaje para el primer fin de semana, es la mejor forma de sentir el arranque de la fiesta antes de que llegue la Ofrenda.</p>
+          </details>
+        </div>
+
+      </div>
+
+<h2 class="section-title">Experiencia del visitante</h2>
+      <p>
+        Prácticamente todo lo importante de las Fiestas del Pilar es gratuito y de acceso libre: la Ofrenda de Flores, la Ofrenda de Frutos, el Rosario de Cristal, la Comparsa de Gigantes y los grandes conciertos de la Plaza del Pilar no requieren entrada ni reserva.
+      </p>
+      <p>
+        <strong>Participar en la Ofrenda.</strong> Cualquier visitante que disponga de un traje tradicional, el que sea, no tiene que ser aragonés, puede sumarse a la Ofrenda de Flores en el turno de oferentes "particulares", sin pertenecer a ninguna asociación. Es de los pocos actos multitudinarios de este tipo en España abiertos a cualquiera sin filtro.
+      </p>
+      <p>
+        <strong>Saturación.</strong> Las Fiestas del Pilar son masivas: más de 2,6 millones de asistentes acumulados en la última edición. El alojamiento se satura con facilidad, especialmente en torno al puente del 12 de octubre. Reserva con mucha antelación si vas a coincidir con esas fechas.
+      </p>
+
+<h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Reserva con mucha antelación, sobre todo si tu visita coincide con el puente del 12 de octubre. La ciudad se llena por completo esos días.</li>
+        <li><strong>Cómo moverte.</strong> El Casco Histórico (Plaza del Pilar, Plaza de España, Paseo de la Independencia, El Tubo) concentra la mayor parte del ambiente y es totalmente peatonal. Para los recintos de conciertos (Valdespartera, Espacio Zity) necesitarás transporte público o taxi.</li>
+        <li><strong>La Ofrenda de Flores.</strong> Si quieres verla bien, llega con margen: la fila de oferentes se prolonga durante horas y la plaza se llena de espectadores desde primera hora. Si quieres participar tú mismo, apúntate con antelación en el turno de particulares a través de la web oficial.</li>
+        <li><strong>Traje regional.</strong> Si vas a participar en la Ofrenda, no hace falta que sea aragonés. Cualquier traje regional español o de otro país es válido.</li>
+        <li><strong>Clima.</strong> Octubre en Zaragoza puede ser fresco por la noche, especialmente durante el Rosario de Cristal. Lleva algo de abrigo para las horas nocturnas.</li>
+        <li><strong>Cuántos días necesitas.</strong> Con el 12 y el 13 de octubre cubres los actos centrales: Ofrenda de Flores, Ofrenda de Frutos y Rosario de Cristal. Si puedes añadir el primer sábado, verás también el Pregón de apertura.</li>
+      </ul>
+
+<h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Ofrenda</dt>
+        <dd>Acto masivo de entregar flores o frutos a la Virgen del Pilar. Existen dos, distintas entre sí: la de Flores y la de Frutos.</dd>
+
+        <dt>Manto</dt>
+        <dd>La estructura de gladiolos blancos y rojos que se confecciona pieza a pieza durante la Ofrenda de Flores, vistiendo a la Virgen.</dd>
+
+        <dt>Rosario de Cristal</dt>
+        <dd>Procesión nocturna de carrozas y faroles monumentales de cristal iluminado que recrea el rezo del Santo Rosario.</dd>
+
+        <dt>La Pilarica</dt>
+        <dd>Diminutivo popular y cariñoso con el que los zaragozanos se refieren a la Virgen del Pilar.</dd>
+
+        <dt>Jota</dt>
+        <dd>Género musical tradicional aragonés, cantado y bailado, que acompaña buena parte de los actos de la fiesta.</dd>
+
+        <dt>Peñas / Peñistas</dt>
+        <dd>Asociaciones vecinales y recreativas locales que organizan charangas, pasacalles y actividad en sus propias carpas durante toda la semana.</dd>
+
+      </dl>
+
+<h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiestas-pilar-zaragoza-1.jpg" alt="Manto floral confeccionado durante la Ofrenda de Flores en la Plaza del Pilar de Zaragoza" />
+        <img src="images/fiestas-pilar-zaragoza-2.jpg" alt="Carroza de cristal iluminada durante el Rosario de Cristal en el casco antiguo de Zaragoza" />
+        <img src="images/fiestas-pilar-zaragoza-3.jpg" alt="Comparsa de Gigantes y Cabezudos desfilando por las calles de Zaragoza durante las Fiestas del Pilar" />
+      </div>
+
+<h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://zaragoza.es/sede/portal/cultura/fiestas-pilar/" target="_blank" rel="noopener">Ayuntamiento de Zaragoza — Fiestas del Pilar</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-17</p>
+
+<h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Fiestas del Pilar?</dt>
+        <dd>En torno al 12 de octubre, festividad de la Virgen del Pilar, durante nueve o diez días de fin de semana a fin de semana. Comprueba las fechas exactas de cada edición en <a href="https://zaragoza.es" target="_blank" rel="noopener">zaragoza.es</a>.</dd>
+
+        <dt>¿Puedo participar en la Ofrenda de Flores sin pertenecer a ninguna asociación?</dt>
+        <dd>Sí. Cualquier persona con traje regional, el que sea, puede apuntarse en el turno de oferentes "particulares" sin necesidad de pertenecer a ninguna peña o asociación.</dd>
+
+        <dt>¿Es apta para familias con niños?</dt>
+        <dd>Sí. La Comparsa de Gigantes y Cabezudos, que desfila a diario, está especialmente pensada para el público infantil. La Ofrenda de Flores, por su duración y aglomeración, puede ser larga para niños pequeños si se sigue el recorrido completo.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>El programa de calle se mantiene salvo alerta meteorológica grave. La Ofrenda de Flores y el Rosario de Cristal han salido en años con lluvia moderada; solo se suspenden ante riesgo real para el patrimonio o la seguridad.</dd>
+
+        <dt>¿Cuál es la diferencia entre la Ofrenda de Flores y la Ofrenda de Frutos?</dt>
+        <dd>La de Flores es el acto central y masivo del 12 de octubre, con más de 120.000 oferentes. La de Frutos ocurre al día siguiente, es más reducida, y su finalidad es benéfica: los alimentos entregados van a comedores sociales de Zaragoza.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiestas mayores</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Aragón</a>
+        <a href="#" class="etiqueta">Zaragoza</a>
+        <a href="#" class="etiqueta">Octubre</a>
+        <a href="#" class="etiqueta">Ofrenda de Flores</a>
+        <a href="#" class="etiqueta">Rosario de Cristal</a>
+        <a href="#" class="etiqueta">Jota</a>
+        <a href="#" class="etiqueta">Peñas</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-pilar">
+        <h2 id="rel-title-pilar">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Feria de Abril de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">Otra gran fiesta de ciudad con ambiente de calle masivo, aunque con casetas en vez de peñas.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="romeria-rocio.html" class="ficha-rel-card">
+            <img src="images/romeria-rocio.jpg" alt="Romería del Rocío" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería del Rocío</span>
+              <span class="rel-frase">Otra forma de devoción mariana popular con cifras de participación comparables.</span>
+              <span class="rel-meta">El Rocío · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zaragoza.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zaragoza.jpg" alt="Semana Santa de Zaragoza" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zaragoza</span>
+              <span class="rel-frase">La otra gran declaración de la ciudad, con perfil procesional en vez de festivo.</span>
+              <span class="rel-meta">Zaragoza · Aragón</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
