@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Las Fallas de Valencia 2026: Guía Completa | Folklorius</title>
-  <meta name="description" content="Guía de Las Fallas de Valencia 2026 (15-19 marzo). ITI desde 1965, UNESCO desde 2016. Mascletà, Ofrenda, Sección Especial y la Cremà. Historia y consejos." />
+  <title>Las Fallas de Valencia — Arte que arde cada marzo</title>
+  <meta name="description" content="Las Fallas de Valencia: ITI desde 1965 y Patrimonio UNESCO desde 2016. Mascletà, Ofrenda de flores, 382 comisiones y la Cremà cada 19 de marzo." />
   <link rel="canonical" href="https://folklorius.es/fallas-valencia.html" />
 
   <meta property="og:title" content="Las Fallas de Valencia 2026 | Arte que arde cada marzo" />
@@ -59,6 +59,51 @@
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
     .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Must-see ─────────────────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
     /* ── Fichas relacionadas ─────────────────────────────────────── */
     .fichas-relacionadas { margin: 2rem 0 1.5rem; }
     .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
@@ -112,6 +157,67 @@
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Fallas", "item": "https://folklorius.es/fallas.html" },
+      { "@type": "ListItem", "position": 3, "name": "Las Fallas de Valencia", "item": "https://folklorius.es/fallas-valencia.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Fallas de Valencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 15 al 19 de marzo, con actos previos desde el 1 de marzo. El día clave es el 19, festividad de San José."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son las Fallas de Valencia aptas para familias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, hay actividades para todas las edades: mascletàs, pasacalles, desfiles y la sección infantil. Los actos pirotécnicos requieren precaución con los más pequeños."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay zonas para movilidad reducida en las Fallas de Valencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, el Ayuntamiento habilita zonas específicas en la Plaza del Ayuntamiento (mascletàs), Plaza de la Virgen (Ofrenda) y Jardín del Turia (Nit del Foc). Consulta el mapa de accesibilidad y el servicio de autobús adaptado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde informarse de cambios de última hora en las Fallas de Valencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la web del Ayuntamiento de Valencia y los canales oficiales de la Junta Central Fallera."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es de pago la entrada a las Fallas de Valencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, es una fiesta de calle, libre y gratuita. Solo se paga si se quiere acceder al recinto vallado de algunas fallas de Sección Especial para verlas de cerca con más comodidad."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -233,7 +339,7 @@
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <p>
-          Las bandas de música son fundamentales en las Fallas, no solo como acompañamiento sonoro sino como
+          Las bandas de música son fundamentales en las Fallas: acompañamiento sonoro, sí, pero también
           elemento identitario y de cohesión social. Animan actos como la despertà, la recogida de premios,
           la Ofrenda de flores y los pasacalles, tocando pasodobles clásicos como "Valencia", "El Fallero"
           o "Paquito el Chocolatero". Los instrumentos tradicionales como la dulzaina y el tabal, presentes
@@ -252,13 +358,63 @@
       </div>
 
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>Vivir una mascletà en la Plaza del Ayuntamiento y sentir el estruendo en el cuerpo.</li>
-        <li>Visitar la Plaza de la Virgen el día 19 por la mañana y admirar el manto de flores de la Ofrenda.</li>
-        <li>Probar la gastronomía: paella valenciana y buñuelos de calabaza con chocolate.</li>
-        <li>El castillo de fuegos de la Nit del Foc desde el viejo cauce del Turia junto a la Ciutat de les Arts.</li>
-        <li>Visitar el Museu Faller, donde se guardan los ninots indultats de todos los años.</li>
-      </ul>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La mascletà en la Plaza del Ayuntamiento</h3>
+          <span class="tag">Diario, mediodía · 1-19 de marzo</span>
+          <p>Un espectáculo pirotécnico diurno que se siente antes de oírse: la onda expansiva golpea el pecho de miles de personas apretadas en la plaza. No es ruido sin más, es un crescendo calculado que termina en un estruendo final.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el único acto que se repite cada día de la fiesta y el que mejor resume el carácter sonoro y físico de las Fallas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Ofrenda de flores a la Virgen</h3>
+          <span class="tag">17-18 de marzo, tarde-noche · Plaza de la Virgen</span>
+          <p>Miles de falleras y falleros con traje tradicional desfilan durante horas para completar un manto floral gigante sobre la estructura de la Virgen de los Desamparados. Es el momento más solemne de toda la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El contraste entre el estruendo de la mascletà y el silencio devocional de la Ofrenda muestra las dos caras de la misma fiesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Nit del Foc</h3>
+          <span class="tag">Noche del 18 al 19 de marzo · Viejo cauce del Turia</span>
+          <p>El castillo de fuegos artificiales más grande e impactante de toda la semana, lanzado desde el antiguo cauce del río junto a la Ciutat de les Arts i les Ciències.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el anuncio de que la Cremà está a horas de distancia: el último gran espectáculo antes de que todo empiece a arder.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Museu Faller</h3>
+          <span class="tag">Todo el año · Ciudad de las Ciencias</span>
+          <p>Aquí se conservan los ninots indultats: la única figura de cada edición que el público salva de la Cremà mediante votación popular. Es la manera de ver de cerca la artesanía fallera fuera de temporada.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el único lugar donde el arte fallero sobrevive al fuego, y permite entender la fiesta también fuera de marzo.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Experiencia del visitante</h2>
+      <p>
+        Prácticamente todo lo esencial de las Fallas es gratuito y de acceso libre: la mascletà diaria, la Ofrenda de flores, la Nit del Foc y la Cremà de la inmensa mayoría de los monumentos no requieren entrada ni reserva.
+      </p>
+      <p>
+        <strong>Recintos de pago.</strong> Algunas comisiones de la Sección Especial habilitan un espacio vallado alrededor de su falla durante los días de plantà, con entrada de pago, para verla de cerca con más comodidad y sin las aglomeraciones de la calle. No es necesario pagarlo para ver el monumento: solo ofrece mejor visibilidad.
+      </p>
+      <p>
+        <strong>El Museu Faller</strong> tiene entrada de pago durante todo el año. Consulta el precio y horario actualizados en la web del Ayuntamiento de Valencia antes de ir.
+      </p>
+      <p>
+        <strong>Saturación.</strong> La semana grande (15-19 de marzo) satura por completo el centro de Valencia, especialmente la Plaza del Ayuntamiento durante la mascletà y la Plaza de la Virgen durante la Ofrenda. Reserva alojamiento con mucha antelación si tu visita coincide con esas fechas.
+      </p>
 
       <h2 class="section-title">Monumentos de la Sección Especial 2026</h2>
       <p>La Sección Especial reúne cada año a las comisiones con mayor presupuesto y espectacularidad. En 2026 la componen 9 fallas:</p>
@@ -274,9 +430,9 @@
         <li>Cuba - Literato Azorín</li>
       </ul>
       <p style="margin-top:10px;padding:12px;background:#f3f4f6;border-radius:8px;">
-        En 2026 hay <strong>382 comisiones falleras</strong> activas en Valencia, lo que supone un total de <strong>764 monumentos</strong> plantados en la ciudad: 382 fallas mayores y 382 infantiles, uno de cada tipo por comisión. Más allá de la Sección Especial, encontrarás monumentos falleros en prácticamente cada barrio.
+        En 2026 hay <strong>382 comisiones falleras</strong> activas en Valencia, lo que supone un total de <strong>764 monumentos</strong> plantados en la ciudad: 382 fallas mayores y 382 infantiles, uno de cada tipo por comisión. Más allá de la Sección Especial, encontrarás monumentos falleros en prácticamente cada barrio. El censo fallero de 2026 asciende a 128.675 falleros y falleras, cifra récord histórica, lo que convierte al mundo fallero en el movimiento asociativo más numeroso de la ciudad.
       </p>
-      <p class="fuente">Fuente: <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">Junta Central Fallera</a> — última verificación: 2026-07-07</p>
+      <p class="fuente">Fuente: <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">Junta Central Fallera</a> y Ayuntamiento de Valencia — última verificación: 2026-07-21</p>
 
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
