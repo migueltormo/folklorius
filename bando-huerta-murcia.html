@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bando de la Huerta de Murcia 2026: guía del gran desfile huertano</title>
+  <meta name="description" content="El Bando de la Huerta de Murcia 2026: desfile de más de 80 carrozas, trajes bordados, soflamas panochas y gastronomía en la calle. Primer martes tras Semana Santa." />
+  <link rel="canonical" href="https://folklorius.es/bando-huerta-murcia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Murcia se viste de huerta y sale a la calle en el Bando" />
+  <meta property="og:description" content="Zaragüelles, refajos, carrozas y paparajotes: un martes al año Murcia entera huele a tierra de huerta." />
+  <meta property="og:image" content="https://folklorius.es/images/bando-huerta-murcia.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/bando-huerta-murcia.html",
+    "name": "Bando de la Huerta de Murcia",
+    "startDate": "2027-03-30",
+    "endDate": "2027-03-30",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Murcia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Murcia",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.9838,
+        "longitude": -1.1284
+      }
+    },
+    "image": ["https://folklorius.es/images/bando-huerta-murcia.jpg"],
+    "description": "El Bando de la Huerta es el gran desfile festero de Murcia: más de 80 carrozas, trajes huertanos bordados, soflamas panochas y gastronomía repartida en la calle. Declarado Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Federación de Peñas Huertanas de la Región de Murcia",
+      "url": "https://www.fphuertanas.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bando de la Huerta de Murcia",
+        "item": "https://folklorius.es/bando-huerta-murcia.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Bando de la Huerta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El primer martes después de Semana Santa. En 2026 fue el 7 de abril. La fecha cambia cada año según el calendario litúrgico — consulta el programa oficial del Ayuntamiento de Murcia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es el Bando de la Huerta apto para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, es una de las fiestas más familiares de Murcia. El Bando Infantil se celebra el Domingo de Resurrección, días antes del desfile principal, y las barracas están abiertas a todo el público durante toda la semana."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las barracas del Bando de la Huerta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Son recintos instalados por las peñas huertanas en plazas y jardines de la ciudad donde se sirve gastronomía murciana tradicional, se hacen actuaciones folclóricas y se recrea el ambiente de la huerta. Están abiertas durante toda la semana de Fiestas de Primavera. En los días de mayor afluencia conviene reservar con antelación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ver el desfile de pie sin pagar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ver el desfile de pie a lo largo del recorrido es completamente gratuito. Se instalan sillas de pago a lo largo del trayecto que solo se pueden comprar el mismo día del desfile, en el lugar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es una soflama panocha?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un texto satírico en verso escrito en panocho — el habla vernácula de la Huerta de Murcia — que se recita en voz alta durante el desfile. Critica con humor la actualidad local y los usos de la ciudad. El bando panocho está declarado Bien de Interés Cultural inmaterial por la Región de Murcia desde 2025."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Bando de la Huerta de Murcia
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/bando-huerta-murcia.jpg" alt="Desfile del Bando de la Huerta de Murcia con carrozas y vecinos en traje huertano recorriendo el centro de la ciudad" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Bando de la Huerta de Murcia</h1>
+      <p class="ficha-subtitle">
+        Murcia · Desfile festero popular · "Un martes al año Murcia entera huele a tierra de huerta."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">BIC Inmaterial — Bando Panocho (Región de Murcia, 2025)</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Martes 7 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Murcia · Región de Murcia</span>
+          <span>⏱️ 1 día de desfile · semana de barracas</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Un martes al año, Murcia deja de ser una ciudad corriente. Los vecinos se ponen los zaragüelles y los refajos que guardan durante doce meses, los bares sacan las mesas a la calle, y el centro se llena de carrozas que lanzan al público habas, morcillas y longanizas mientras pasan. No hay escenario. El recorrido entero es la fiesta, y quien está en la calle es parte de ella.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Bando de la Huerta es el gran desfile festero de Murcia: más de 80 carrozas, grupos de baile, carros tirados por bueyes, rondallas, animales de razas autóctonas y estampas de los oficios de la huerta recorren el centro de la ciudad por la tarde. Las carrozas de las peñas huertanas cierran el desfile repartiendo gastronomía típica — habas, embutido, vino — directamente al público que bordea el recorrido.
+      </p>
+      <p>
+        Durante toda la semana de Fiestas de Primavera, las peñas huertanas instalan sus <strong>barracas</strong> en plazas y jardines de la ciudad: recintos abiertos donde se sirve comida murciana, se baila y se recrea el ambiente de la huerta. Son de acceso libre, aunque en los días más concurridos conviene reservar con antelación. La mañana del martes arranca con pasacalles y una ofrenda floral a la Virgen de la Fuensanta en la Plaza del Cardenal Belluga, junto a la Catedral.
+      </p>
+      <p>
+        Ese día el Ayuntamiento autoriza los bares en la calle por toda la ciudad. Es la única jornada del año en que eso ocurre en Murcia.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ El recorrido exacto y el programa completo los publica cada año el Ayuntamiento de Murcia. Consúltalos antes de tu visita.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El Bando nació en 1851 de la iniciativa de cuatro amigos que se reunían en una botica de la calle Vidrieros, en el barrio de San Antolín: el cura Miguel Ortega, el boticario Miguel Rubio Arróniz, el médico Juan Antonio Soriano y el estudiante Joaquín López. Querían alargar el Carnaval y decidieron salir a la calle disfrazados de campesinos huertanos — lo que entonces era una parodia de las gentes que bajaban a vender al mercado. De aquella broma de botica surgieron también el Entierro de la Sardina y la tradición del bando panocho.
+      </p>
+      <p>
+        Lo que empezó como una sátira se fue convirtiendo con el tiempo en todo lo contrario: un acto de orgullo por las raíces agrícolas de la ciudad. Hoy es la fiesta que más murcianos saca a la calle en todo el año, con la huerta como protagonista en lugar de objeto de burla. En 2026 la edición cumplió su 175 aniversario.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El desfile principal fue el <strong>martes 7 de abril de 2026</strong>, el primer martes tras la Semana Santa. Las barracas permanecieron abiertas durante toda la semana de Fiestas de Primavera, desde el Domingo de Resurrección hasta el domingo siguiente. La fecha del Bando cambia cada año según el calendario litúrgico. En 2027 se celebra el <strong>martes 30 de marzo</strong>.
+      </p>
+
+      <h2 class="section-title">El día del Bando</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Mañana · Pasacalles y ofrenda floral</span>
+          Desde primera hora de la mañana, parrandas, cuadrillas y grupos folclóricos recorren el centro animando las calles. El momento más solemne de la jornada llega con la <strong>ofrenda floral a la Virgen de la Fuensanta</strong>, patrona de Murcia, en la Plaza del Cardenal Belluga junto a la Catedral. Terminada la ofrenda, fuegos artificiales desde la terraza del edificio Moneo cierran los actos de la mañana.
+        </li>
+
+        <li>
+          <span class="dia-label">Tarde · El gran desfile</span>
+          El desfile arranca desde la Avenida San Juan de la Cruz y cruza el centro histórico hasta la Avenida de la Constitución. Lo abre la banda de música, seguida de gigantes y cabezudos, grupos de danzas, carros tirados por bueyes con recreaciones de oficios agrícolas y animales de razas autóctonas — chato murciano, cabra celtibérica, gallina murciana. Intercaladas entre las estampas huertanas, las peñas recitan las <strong>soflamas panochas</strong>: textos satíricos en verso sobre la actualidad local, escritos en panocho. Lo cierran las carrozas de las peñas huertanas, que lanzan al público embutido, habas, vino y productos de la tierra.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <p>
+        La banda sonora del Bando la marcan las <strong>postizas</strong> — las castañuelas murcianas — que suenan en cada grupo de baile a lo largo del recorrido. Las cuadrillas y rondallas interpretan jotas y parrandas murcianas, el repertorio folclórico propio de la huerta. El contraste más marcado se da entre el bullicio del desfile y el silencio que cae en la Plaza del Cardenal Belluga durante la ofrenda floral: dos momentos del mismo día separados por el tempo de la ciudad.
+      </p>
+      <p>
+        Para escuchar las soflamas panochas con claridad, sitúate en un tramo ancho del recorrido cuando pase la peña que las recita. En calle estrecha, el ruido del público las tapa.
+      </p>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El reparto desde las carrozas</h3>
+          <span class="tag">Tarde · A lo largo del recorrido</span>
+          <p>Las carrozas de las peñas que cierran el desfile lanzan al público habas, morcillas, longanizas, salchichas y vino. No es decorativo: es gastronomía real repartida en plena calle. Colócate en primera fila en el tramo final del recorrido para aprovecharlo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es uno de los pocos desfiles de España donde el público recibe comida de verdad desde las carrozas. Lo que hace décadas era símbolo de abundancia agrícola hoy es el momento más festivo y caótico de todo el día.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las soflamas panochas</h3>
+          <span class="tag">Tarde · Durante el desfile</span>
+          <p>Textos satíricos en verso, escritos y recitados en panocho por las peñas huertanas durante el desfile. Critican con humor la actualidad de la ciudad: política local, vecinos ilustres, costumbres del año. El bando panocho está declarado BIC inmaterial por la Región de Murcia desde 2025.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la voz satírica de Murcia, con 175 años de historia. Entender el panocho no es imprescindible para disfrutarlo: el tono y el público que ríe lo dicen todo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La ofrenda floral a la Fuensanta</h3>
+          <span class="tag">Mañana · Plaza del Cardenal Belluga</span>
+          <p>Peñas y asociaciones vestidas de huertano depositan flores ante la imagen de la Virgen de la Fuensanta en la plaza que preside la fachada barroca de la Catedral. Es el único momento solemne de un día por lo demás completamente festivo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El contraste entre el recogimiento de la ofrenda y el bullicio del resto del día hace que este momento destaque con fuerza. La plaza y la Catedral son el mejor escenario de la ciudad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las barracas huertanas</h3>
+          <span class="tag">Toda la semana · Plazas y jardines</span>
+          <p>Recintos de las peñas repartidos por la ciudad donde se sirve zarangollo, michirones, pastel de carne y paparajotes, con actuaciones folclóricas en directo. A diferencia del desfile, las barracas permiten sentarse, comer y ver el ambiente sin prisas, durante toda la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Son el único sitio donde probar la gastronomía huertana con calma, sin el caos del desfile. Si llegas a Murcia antes del martes, las barracas ya están abiertas desde el Domingo de Resurrección.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>El desfile es de pie y dura horas.</strong> Lleva calzado cómodo. Si quieres silla, se vende en el lugar el mismo día del desfile — no hay venta anticipada online.</li>
+        <li><strong>Cómo llegar.</strong> Murcia tiene buenas conexiones en tren y autobús desde Valencia, Alicante y Madrid. El centro se restringe al tráfico el día del desfile — aparca en zonas periféricas y entra andando.</li>
+        <li><strong>El día del Bando, reserva en las barracas.</strong> Están abiertas toda la semana, pero el martes se llenan. Si quieres comer sentado, reserva con antelación en la barraca que te interese.</li>
+        <li><strong>Vístete de huertano si quieres.</strong> No es obligatorio, pero es bien recibido. Muchas tiendas y peñas alquilan trajes durante las fiestas. Si no, ropa cómoda y de colores.</li>
+        <li><strong>Gastronomía.</strong> Prueba los <em>paparajotes</em> — hojas de limonero rebozadas en masa frita y azucaradas — el dulce más singular de la fiesta. Y el <em>zarangollo</em>, que es calabacín con huevo, habitual en todas las barracas.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Zaragüelles</dt>
+        <dd>Calzón amplio, ancho y blanco de origen árabe, pieza central de la vestimenta masculina huertana. Es la prenda más reconocible del traje tradicional murciano.</dd>
+
+        <dt>Refajo</dt>
+        <dd>Falda tradicional femenina de vivos colores, rica ornamentación y bordados. Con el delantal y el mantón, forma el conjunto del traje de huertana.</dd>
+
+        <dt>Montera huertana</dt>
+        <dd>Gorro tradicional masculino que remata el traje huertano. Junto a los zaragüelles, identifica a los festeros en el desfile.</dd>
+
+        <dt>Postizas</dt>
+        <dd>Las castañuelas murcianas. Las usan cuadrillas y rondallas para marcar el ritmo de las jotas y parrandas durante el desfile y en las barracas.</dd>
+
+        <dt>Panocho</dt>
+        <dd>El habla vernácula tradicional de la Huerta de Murcia, utilizada históricamente para los bandos satíricos. Declarado BIC inmaterial en 2025 por la Región de Murcia.</dd>
+
+        <dt>Soflama panocha</dt>
+        <dd>Texto satírico en verso escrito en panocho y recitado en voz alta durante el desfile. Critica con humor la actualidad local y los usos de la ciudad. Es el equivalente murciano de las coplas de Carnaval.</dd>
+
+        <dt>Barraca</dt>
+        <dd>Recinto instalado por cada peña huertana en plazas y jardines durante la semana de Fiestas de Primavera. Sirve gastronomía típica, organiza actuaciones folclóricas y recrea el ambiente de la huerta.</dd>
+
+        <dt>Paparajote</dt>
+        <dd>Dulce típico murciano: hoja de limonero rebozada en masa frita, rebozada en azúcar y canela. La hoja no se come — se chupa y se deja. Es el dulce más asociado al Bando.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/bando-huerta-murcia-1.jpg" alt="Vecinos de Murcia en traje huertano desfilando con carrozas durante el Bando de la Huerta" />
+        <img src="images/bando-huerta-murcia-2.jpg" alt="Ofrenda floral a la Virgen de la Fuensanta en la Plaza del Cardenal Belluga de Murcia durante el Bando de la Huerta" />
+        <img src="images/bando-huerta-murcia-3.jpg" alt="Barraca huertana con gastronomía murciana durante las Fiestas de Primavera de Murcia" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.fphuertanas.es" target="_blank" rel="noopener">Federación de Peñas Huertanas de la Región de Murcia</a></li>
+        <li><a href="https://www.turismodemurcia.es" target="_blank" rel="noopener">Turismo de Murcia — Ayuntamiento</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-21</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Bando de la Huerta?</dt>
+        <dd>El primer martes después de Semana Santa. En 2026 fue el 7 de abril; en 2027 será el 30 de marzo. La fecha cambia cada año — consulta el programa oficial del Ayuntamiento de Murcia.</dd>
+
+        <dt>¿Es apto para familias con niños?</dt>
+        <dd>Sí, es una de las fiestas más familiares de Murcia. El Bando Infantil se celebra el Domingo de Resurrección, días antes del desfile principal, y las barracas están abiertas a todo el público durante toda la semana.</dd>
+
+        <dt>¿Qué son las barracas del Bando de la Huerta?</dt>
+        <dd>Recintos instalados por las peñas huertanas en plazas y jardines de la ciudad donde se sirve gastronomía murciana tradicional, se hacen actuaciones folclóricas y se recrea el ambiente de la huerta. Abiertas durante toda la semana de Fiestas de Primavera. En los días de mayor afluencia conviene reservar con antelación.</dd>
+
+        <dt>¿Se puede ver el desfile sin pagar?</dt>
+        <dd>Sí. Ver el desfile de pie a lo largo del recorrido es gratuito. Se instalan sillas de pago que solo se pueden comprar el mismo día, en el lugar.</dd>
+
+        <dt>¿Qué es una soflama panocha?</dt>
+        <dd>Un texto satírico en verso escrito en panocho — el habla vernácula de la Huerta de Murcia — que se recita durante el desfile. Critica con humor la actualidad local. El bando panocho está declarado BIC inmaterial por la Región de Murcia desde 2025.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Desfile Festero</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Murcia</a>
+        <a href="#" class="etiqueta">Abril</a>
+        <a href="#" class="etiqueta">Huerta Murciana</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">Gastronomía</a>
+        <a href="#" class="etiqueta">Fiestas de Primavera</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-bando">
+        <h2 id="rel-title-bando">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-murcia.html" class="ficha-rel-card">
+            <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Murcia</span>
+              <span class="rel-frase">El reino de Salzillo y la imaginería levantina.</span>
+              <span class="rel-meta">Murcia · Región de Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-murcia.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-murcia.jpg" alt="Moros y Cristianos de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Murcia</span>
+              <span class="rel-frase">Un campamento entero junto al Segura recrea la fundación de la ciudad.</span>
+              <span class="rel-meta">Murcia · Septiembre · ITI 2025</span>
+            </div>
+          </a>
+
+          <a href="caballos-del-vino-caravaca.html" class="ficha-rel-card">
+            <img src="images/caballos-del-vino-caravaca.jpg" alt="Caballos del Vino de Caravaca de la Cruz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Caballos del Vino de Caravaca</span>
+              <span class="rel-frase">Un año bordando para ocho segundos de carrera cuesta arriba.</span>
+              <span class="rel-meta">Caravaca de la Cruz · Mayo · UNESCO 2020</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
