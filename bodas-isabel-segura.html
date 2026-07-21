@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bodas de Isabel de Segura 2026: los Amantes de Teruel</title>
+  <meta name="description" content="Del 19 al 22 de febrero, Teruel revive la leyenda de los Amantes en las calles. Guía de los cuatro días de la recreación y cómo vivirla." />
+  <link rel="canonical" href="https://folklorius.es/bodas-isabel-segura.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Teruel se convierte en villa medieval por la leyenda de los Amantes" />
+  <meta property="og:description" content="Cuatro días, cien escenas, y una ciudad entera representando la historia de amor más triste de Aragón." />
+  <meta property="og:image" content="https://folklorius.es/images/bodas-isabel-segura.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/bodas-isabel-segura.html",
+    "name": "Bodas de Isabel de Segura",
+    "startDate": "2027-02-18",
+    "endDate": "2027-02-21",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Teruel",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Teruel",
+        "addressRegion": "Aragón",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.3456,
+        "longitude": -1.1065
+      }
+    },
+    "image": ["https://folklorius.es/images/bodas-isabel-segura.jpg"],
+    "description": "Recreación histórico-teatral de la leyenda de los Amantes de Teruel. Cada febrero, la ciudad vuelve al siglo XIII con más de un centenar de actos en sus plazas y calles. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Fundación Bodas de Isabel",
+      "url": "https://www.bodasdeisabel.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bodas de Isabel de Segura",
+        "item": "https://folklorius.es/bodas-isabel-segura.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Bodas de Isabel de Segura?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 19 al 22 de febrero de 2026, el tercer fin de semana del mes. Las fechas cambian cada año — consulta el programa oficial de la Fundación Bodas de Isabel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son las Bodas de Isabel de Segura aptas para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El jueves incluye un cuentacuentos infantil, y el ambiente de mercado y campamentos vale para todas las edades. La escena de la muerte de Diego, el sábado, puede resultar intensa para los más pequeños más por la aglomeración de gente que por el contenido."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si hace mal tiempo durante las Bodas de Isabel de Segura?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No hay protocolo oficial verificado de suspensión por lluvia o nieve. Sigue los canales de la Fundación el mismo día si el tiempo se pone feo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son accesibles las Bodas de Isabel de Segura para personas con movilidad reducida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No hay información oficial verificada sobre accesibilidad de las distintas plazas. Se recomienda contactar con la Fundación Bodas de Isabel o el Ayuntamiento de Teruel antes de la visita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué Isabel no le da el beso a Diego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque ya está casada con Pedro de Azagra cuando Diego vuelve. La fuerza de la leyenda está en esa negativa: la fidelidad de Isabel es lo que desencadena la tragedia, no un rechazo sentimental."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Bodas de Isabel de Segura
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/bodas-isabel-segura.jpg" alt="Comitiva nupcial atravesando las calles medievales de Teruel durante las Bodas de Isabel de Segura" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Bodas de Isabel de Segura</h1>
+      <p class="ficha-subtitle">
+        Teruel (Aragón) · Recreación histórica · "Cuatro días, cien escenas, y una ciudad entera representando la historia de amor más triste de Aragón."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 19 al 22 de febrero de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Teruel · Aragón</span>
+          <span>⏱️ 4 días de recreación</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Diego pide un beso. Isabel se lo niega por lealtad al esposo que no eligió. Él muere ahí mismo, en mitad de la plaza, rodeado de cientos de vecinos vestidos de siglo XIII que contienen la respiración con él. Ese es el momento que sostiene toda la recreación que cada febrero convierte las calles de Teruel en el escenario de la leyenda de amor más conocida de Aragón.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Imagina que Teruel, durante cuatro días, decide dejar de ser una ciudad normal. Los comercios cambian sus escaparates, las plazas se llenan de tiendas de campaña medievales y por las calles aparecen herreros, juglares, soldados y novias con tocado del siglo XIII. No hay escenario con público separado: la ciudad entera es el escenario, y el visitante camina dentro.
+      </p>
+      <p>
+        La historia que se cuenta es la de Diego e Isabel: él se va a la guerra para ganar fortuna y poder casarse con ella; vuelve un día tarde, ella ya tiene marido, y lo que ocurre después es lo que da nombre a la fiesta. Esa historia se representa en escenas que van ocurriendo a lo largo del fin de semana en distintas plazas, con actores profesionales y cerca de 200 figurantes con texto. El viernes es la boda de Isabel con otro. El sábado, la vuelta de Diego y el momento central de la leyenda. El domingo, el funeral.
+      </p>
+      <p>
+        Mientras tanto, por todo el centro histórico, 147 campamentos montados por asociaciones de vecinos recrean la vida cotidiana de la época: cada uno tiene su oficio, su ambientación, su propia pequeña historia. Se puede entrar y salir libremente, sin horario. El visitante puede elegir seguir la trama principal de principio a fin, o simplemente perderse por el mercado medieval de 250 puestos y ver qué encuentra. La mayoría acaba haciendo las dos cosas.
+      </p>
+      <p>
+        Consulta el programa oficial en <a href="https://www.bodasdeisabel.com" target="_blank" rel="noopener">bodasdeisabel.com</a> antes de planificar tu visita.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Los horarios y el recorrido exacto de cada escena los publica cada año la Fundación Bodas de Isabel. Consúltalos antes de ir.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La leyenda se sitúa en el siglo XIII. Diego de Marcilla parte a la guerra para hacer fortuna y poder casarse con Isabel de Segura; su padre le concede cinco años de plazo. Isabel espera, pero al cumplirse el plazo su familia la casa con Pedro de Azagra. Diego vuelve un día tarde, pide un último beso a Isabel ya casada, ella se lo niega por fidelidad, y él muere de dolor delante de ella. Isabel muere al día siguiente, durante el funeral de Diego, al besar por fin su cadáver.
+      </p>
+      <p>
+        La recreación la puso en marcha Raquel Esteban, licenciada en Bellas Artes y Arte Dramático, y desde 2008 la organiza la Fundación Bodas de Isabel, cuyo patronato integra el Ayuntamiento de Teruel, la Confederación de Empresarios Turolenses y Caja Rural de Teruel. La edición de 2026 cumple la trigésima edición y es la primera que se celebra con el reconocimiento de Fiesta de Interés Turístico Internacional.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Del jueves 19 al domingo 22 de febrero, el tercer fin de semana del mes. El viernes trae la boda de Isabel; el sábado, la muerte de Diego y el momento central de la leyenda. Las fechas se fijan cada año — comprueba siempre el calendario antes de organizar el viaje.
+      </p>
+
+      <h2 class="section-title">Los cuatro actos</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Jueves · Apertura</span>
+          La ciudad despierta al siglo XIII con un cuentacuentos infantil por la tarde en la Plaza de la Catedral. Entrada la noche, dos escenas cortas dan paso a la <strong>Procesión de las Ánimas</strong>, que recorre el centro histórico y abre oficialmente la recreación.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes · La boda</span>
+          Por la mañana, la comitiva nupcial parte desde <strong>La Andaquilla</strong> hasta la Catedral, donde se escenifica la boda de Isabel con Pedro de Azagra, seguida del pregón oficial desde el balcón del Ayuntamiento. La tarde se llena de escenas de ambiente en la Plaza de la Catedral — pícaros, frailes, monjas, huérfanos — y al atardecer llega la recepción al rey Jaime I y el desfile hasta la Plaza del Torico. Cierra el día el espectáculo de fuego <strong>«El ritual de Farralis»</strong>.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado · La muerte de Diego</span>
+          El día central, y el más concurrido. Por la mañana y mediodía, el <strong>Toro Nupcial</strong> y el <strong>Torneo del Rey</strong> llenan la Plaza de Toros y el Tozal. Al atardecer llega el tramo de la leyenda: la entrada de las tropas de Aragón, el encuentro de Diego con sus padres y, en la Plaza del Torico, la Petición del Beso, la muerte de Diego y el lamento de Isabel. La jornada sigue con la Procesión de las Ánimas acompañando al difunto y un desfile benéfico de antorchas que termina en los Jardines de la Escalinata con el rito fúnebre <strong>«La vela del Capitán»</strong>.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo · El funeral</span>
+          La comitiva de los funerales de Diego recorre el centro histórico hasta la Catedral. Se representan las exequias y la muerte de Isabel. La recreación se cierra en la Plaza del Seminario con el <strong>Romance del Ciego</strong> y la <strong>Oda a los Amantes</strong>.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Más allá del guion</h2>
+      <p>
+        El <strong>mercado medieval</strong> — unos 250 puestos entre la Plaza de la Catedral, la Glorieta, el Paseo del Óvalo y el Parque de los Fueros — y los campamentos de la Federación se pueden visitar sin seguir ninguna escena concreta. Es la parte de la fiesta sin horario: se pasea entre haimas y puestos a cualquier hora del día.
+      </p>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <p>
+        La edición 2026 es la más musical de la trayectoria de la fiesta. Los pregoneros, <strong>Nacho del Río y Beatriz Bernad</strong>, son referentes de la jota aragonesa con treinta años de carrera conjunta, y su voz aparece repartida en distintos momentos de la recreación, no solo en el pregón.
+      </p>
+      <p>
+        El contraste más marcado se da entre el bullicio del mercado — música de calle, animación constante — y el silencio que cae sobre la Plaza del Torico en el instante de la Petición del Beso, cuando cientos de personas dejan de hablar a la vez. Para vivir ese silencio, sitúate en la Plaza del Torico el sábado al atardecer con margen de tiempo.
+      </p>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Petición del Beso</h3>
+          <span class="tag">Sábado al atardecer · Plaza del Torico</span>
+          <p>Diego regresa de la guerra, encuentra a Isabel casada y le pide un beso. Ella lo rechaza. Él muere. Todo sucede en la plaza, rodeado de cientos de personas que lo presencian en silencio. Es el momento central de la leyenda y el de mayor carga emocional de toda la recreación.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El silencio que cae sobre la Plaza del Torico en ese instante no se planifica: ocurre solo. No se repite en ninguna otra fiesta española.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La comitiva nupcial</h3>
+          <span class="tag">Viernes por la mañana · Desde La Andaquilla</span>
+          <p>La boda de Isabel con Pedro de Azagra recorre las calles hasta la Catedral con una comitiva de actores, músicos y figurantes vestidos de época. Es la escena más visual de la recreación y la que mejor transmite la ambientación medieval de la ciudad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Ver la comitiva descender por La Andaquilla da contexto a todo lo que viene después: Isabel va a esa boda sabiendo que Diego puede volver.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El mercado y las haimas</h3>
+          <span class="tag">Viernes a domingo · Centro histórico</span>
+          <p>250 puestos medievales y 147 campamentos de recreación de la Federación distribuidos por las plazas y paseos de Teruel. No sigue ningún horario fijo: se entra y se sale libremente, y cada haima recrea un oficio o escena de vida del siglo XIII.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es la única parte de la fiesta sin guion ni hora: el visitante camina y se encuentra con la Edad Media sin previo aviso.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Torneo del Rey</h3>
+          <span class="tag">Sábado por la tarde · Plaza de Toros</span>
+          <p>Combates ecuestres y a pie en la Plaza de Toros, con la recreación de la llegada de Diego de Marcilla como telón de fondo. Es el único acto de la fiesta que usa la Plaza de Toros como escenario, con el graderío como tribuna natural para el público.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La Plaza de Toros da escala al espectáculo: la misma leyenda que en las calles resulta íntima, aquí se convierte en gran formato.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>El frío de febrero en Teruel es real.</strong> Teruel es una de las capitales más frías de España en invierno. Lleva abrigo de verdad, no una chaqueta ligera, especialmente para las escenas nocturnas del jueves y el sábado.</li>
+        <li><strong>Cómo llegar.</strong> En tren de media distancia desde Zaragoza (algo más de dos horas) o desde Valencia (algo menos de tres horas). No hay AVE ni aeropuerto en Teruel. En coche, la A-23 es la vía principal desde ambas ciudades.</li>
+        <li><strong>Para la muerte de Diego, llega con margen.</strong> La Plaza del Torico se llena con antelación el sábado al atardecer. Si llegas sobre la hora, la escena ya estará en marcha y el acceso será difícil.</li>
+        <li><strong>El Mausoleo de los Amantes puede cambiar su horario.</strong> Está en la iglesia de San Pedro y puede alterar su apertura habitual durante los días de la fiesta. Confírmalo antes de ir en la web de la Fundación Amantes de Teruel.</li>
+        <li><strong>Respeta el espacio escénico.</strong> Las escenas se representan en plazas y calles abiertas. Mantén distancia del espacio de actuación y no cruces por en medio de las comitivas en movimiento.</li>
+        <li><strong>Gastronomía.</strong> Los <em>suspiros de amante</em> son el dulce que Teruel dedica a su propia leyenda. No te vayas sin probarlos.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Recreación histórica</dt>
+        <dd>Puesta en escena teatral de un hecho, episodio o leyenda del pasado, con actores y vecinos caracterizados de época.</dd>
+
+        <dt>Fundación Bodas de Isabel</dt>
+        <dd>Entidad organizadora de las escenas principales y de la parte teatral de la fiesta.</dd>
+
+        <dt>Federación</dt>
+        <dd>Conjunto de asociaciones vecinales que ambientan la ciudad con sus propias haimas y campamentos, complementando el guion principal. Coordina 147 haimas repartidas por el centro histórico.</dd>
+
+        <dt>Haima</dt>
+        <dd>Campamento de recreación medieval instalado por los grupos de la Federación para ambientar la ciudad durante la fiesta.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/bodas-isabel-segura-1.jpg" alt="Comitiva nupcial descendiendo por La Andaquilla durante las Bodas de Isabel de Segura en Teruel" />
+        <img src="images/bodas-isabel-segura-2.jpg" alt="Escena de la Petición del Beso en la Plaza del Torico durante las Bodas de Isabel de Segura" />
+        <img src="images/bodas-isabel-segura-3.jpg" alt="Campamentos medievales de la Federación en el centro histórico de Teruel durante las Bodas de Isabel de Segura" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.bodasdeisabel.com" target="_blank" rel="noopener">Fundación Bodas de Isabel — web oficial de la fiesta</a></li>
+        <li><a href="https://turismo.teruel.es" target="_blank" rel="noopener">Turismo de Teruel — Ayuntamiento</a></li>
+        <li><a href="https://www.turismodearagon.com" target="_blank" rel="noopener">Turismo de Aragón</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-21</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Bodas de Isabel de Segura?</dt>
+        <dd>Del 19 al 22 de febrero de 2026, el tercer fin de semana del mes. Las fechas cambian cada año — consulta el programa oficial de la Fundación Bodas de Isabel.</dd>
+
+        <dt>¿Son aptas para familias con niños?</dt>
+        <dd>Sí. El jueves incluye un cuentacuentos infantil, y el ambiente de mercado y campamentos vale para todas las edades. La muerte de Diego, el sábado al atardecer, puede resultar intensa para los más pequeños más por la aglomeración de gente que por el contenido.</dd>
+
+        <dt>¿Qué pasa si hace mal tiempo?</dt>
+        <dd>No hay protocolo oficial verificado de suspensión por lluvia o nieve. Sigue los canales de la Fundación el mismo día si el tiempo se pone feo.</dd>
+
+        <dt>¿Es accesible para personas con movilidad reducida?</dt>
+        <dd>No hay información oficial verificada sobre accesibilidad de las distintas plazas. Contacta con la Fundación Bodas de Isabel o el Ayuntamiento de Teruel antes de la visita.</dd>
+
+        <dt>¿Por qué Isabel no le da el beso a Diego?</dt>
+        <dd>Porque ya está casada con Pedro de Azagra cuando Diego vuelve. La fuerza de la leyenda está en esa negativa: la fidelidad de Isabel es lo que desencadena la tragedia, no un rechazo sentimental.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta">Aragón</a>
+        <a href="#" class="etiqueta">Teruel</a>
+        <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">4 días</a>
+        <a href="#" class="etiqueta">Amantes de Teruel</a>
+        <a href="#" class="etiqueta">Mercado Medieval</a>
+        <a href="#" class="etiqueta">Teatro de calle</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-bodas">
+        <h2 id="rel-title-bodas">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fallas-valencia.html" class="ficha-rel-card">
+            <img src="images/fallas-valencia.jpg" alt="Fallas de Valencia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fallas de Valencia</span>
+              <span class="rel-frase">Fuego, monumentos y una ciudad entera en la calle.</span>
+              <span class="rel-meta">Valencia · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-zaragoza.html" class="ficha-rel-card">
+            <img src="images/semana-santa-zaragoza.jpg" alt="Semana Santa de Zaragoza" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Zaragoza</span>
+              <span class="rel-frase">Tambores y procesiones bajo la sombra del Pilar.</span>
+              <span class="rel-meta">Zaragoza · Aragón</span>
+            </div>
+          </a>
+
+          <a href="feria-albacete.html" class="ficha-rel-card">
+            <img src="images/feria-albacete.jpg" alt="Feria de Albacete" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Albacete</span>
+              <span class="rel-frase">La feria más antigua de España, con mercado histórico incluido.</span>
+              <span class="rel-meta">Albacete · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
