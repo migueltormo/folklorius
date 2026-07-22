@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Entierro de la Sardina de Murcia: el desfile más pagano de la primavera</title>
+  <meta name="description" content="El Entierro de la Sardina de Murcia (ITI 2006): carrozas olímpicas, el dragón de Conte, el Testamento de Doña Sardina y la quema final. El sábado siguiente a Semana Santa." />
+  <link rel="canonical" href="https://folklorius.es/entierro-sardina-murcia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Murcia entierra la Cuaresma con un desfile de dioses, dragones y fuego" />
+  <meta property="og:description" content="Carrozas olímpicas, un dragón que echa fuego, miles de juguetes lanzados desde la calle y una sardina gigante que arde a medianoche. El Entierro de Murcia no se parece a ningún otro." />
+  <meta property="og:image" content="https://folklorius.es/images/entierro-sardina-murcia.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/entierro-sardina-murcia.html",
+    "name": "Entierro de la Sardina de Murcia",
+    "startDate": "2027-04-03",
+    "endDate": "2027-04-03",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Murcia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Murcia",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.9838,
+        "longitude": -1.1284
+      }
+    },
+    "image": ["https://folklorius.es/images/entierro-sardina-murcia.jpg"],
+    "description": "El Entierro de la Sardina de Murcia es un gran desfile de carrozas dedicadas a los dioses del Olimpo que culmina con la quema de una sardina gigante a medianoche. Se celebra el sábado siguiente a Semana Santa y está declarado Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Agrupación Sardinera de Murcia",
+      "url": "https://entierrodelasardina.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Entierro de la Sardina de Murcia",
+        "item": "https://folklorius.es/entierro-sardina-murcia.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Entierro de la Sardina de Murcia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El sábado siguiente al Domingo de Resurrección. En 2026 fue el 11 de abril. La fecha cambia cada año según el calendario litúrgico — consulta el programa oficial de la Agrupación Sardinera."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el Entierro de la Sardina de Murcia se celebra en primavera y no en Carnaval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la mayoría de España el entierro de la sardina marca el fin del Carnaval, en Miércoles de Ceniza. En Murcia la tradición evolucionó de forma distinta: la celebración se desplazó hasta el sábado siguiente a Semana Santa, donde actúa como cierre festivo de las Fiestas de Primavera. El resultado es una fiesta de tono opuesto al luto cuaresmal: luminosa, pagana y con un desfile de dioses olímpicos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es el Entierro de la Sardina de Murcia apto para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Las carrozas reparten miles de juguetes al público durante el desfile, lo que convierte este tramo en uno de los momentos más esperados por los niños. El desfile es largo y transcurre de tarde-noche, así que conviene llevar abrigo si se queda hasta la quema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ver el desfile del Entierro de la Sardina sin pagar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ver el desfile de pie a lo largo del recorrido es gratuito. Se instalan sillas de pago que se venden el mismo día del desfile en el lugar. Consulta el programa oficial para el recorrido exacto de cada edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Testamento de Doña Sardina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un texto satírico que se lee en voz alta la noche anterior al desfile desde el balcón del Ayuntamiento de Murcia. Repasa con humor los hechos más destacados del año en política y vida social de la ciudad. Es el equivalente murciano de las coplas de Carnaval o las soflamas panochas del Bando de la Huerta."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Entierro de la Sardina de Murcia
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/entierro-sardina-murcia.jpg" alt="Gran desfile del Entierro de la Sardina de Murcia con carrozas iluminadas y público en las calles del centro histórico" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Entierro de la Sardina de Murcia</h1>
+      <p class="ficha-subtitle">
+        Murcia · Desfile festero · "Murcia entierra la Cuaresma con dioses olímpicos, un dragón y fuego."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Sábado 11 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Murcia · Región de Murcia</span>
+          <span>⏱️ 1 noche de desfile</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El Entierro de la Sardina es una fiesta de tono pagano y satírico. El Testamento de Doña Sardina y las soflamas de los Grupos Sardineros critican con humor la actualidad política y social de la ciudad. Es una tradición con 175 años de historia — recibir esa sátira como lo que es, y no como una provocación, forma parte de entender la fiesta.</li>
+          <li>El desfile discurre por calles abiertas y puede concentrar mucho público en tramos estrechos. No cruces el recorrido mientras pasan las carrozas ni te interpongas en el paso del cortejo.</li>
+          <li>La quema de la sardina se produce a medianoche con fuego real y fuegos artificiales. Respeta los cordones de seguridad y las indicaciones de los servicios de emergencia presentes en el lugar.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El resto de España entierra la sardina en Miércoles de Ceniza, con cara larga y empezando la Cuaresma. Murcia lo hace en primavera, la noche del sábado siguiente a Semana Santa, con dioses del Olimpo en carroza, un dragón articulado que lleva décadas echando fuego por la boca y miles de juguetes lanzados al público desde ambos lados del recorrido. La sardina que acaba ardiendo a medianoche no anuncia ningún ayuno: cierra una semana entera de fiestas. Y lo hace con fuego y cohetes.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Entierro de la Sardina es el gran desfile nocturno que cierra las Fiestas de Primavera de Murcia. Los Grupos Sardineros — las asociaciones que organizan y animan la fiesta durante toda la semana — forman el cortejo que recorre el centro de la ciudad por la tarde y la noche. El desfile tiene dos partes bien diferenciadas: una cabecera con charangas, comparsas, gigantes y cabezudos y el dragón articulado de Conte; y una segunda parte con las carrozas dedicadas a los dioses del Olimpo, que acompañan a la Sardina hasta el lugar de la quema. Desde las carrozas se reparten miles de juguetes — entre ellos el pito sardinero, el regalo más característico de la fiesta — al público que bordea el recorrido.
+      </p>
+      <p>
+        La noche anterior al desfile, desde el balcón del Ayuntamiento, se lee el <strong>Testamento de Doña Sardina</strong>: un texto satírico que repasa con humor los hechos del año en política y vida social. Es el aperitivo que calienta la ciudad antes del plato fuerte.
+      </p>
+      <p>
+        El desfile termina con la <strong>quema de la Sardina</strong> — un monumento de cartón piedra de grandes dimensiones, similar en construcción a una falla valenciana — bajo un castillo de fuegos artificiales. La quema cierra las Fiestas de Primavera y devuelve Murcia a su ritmo habitual hasta el año siguiente.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ El recorrido exacto y el programa completo los publica cada año la Agrupación Sardinera. Consúltalos en <a href="https://entierrodelasardina.com" target="_blank" rel="noopener">entierrodelasardina.com</a> antes de tu visita.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El Entierro de la Sardina nació en el mismo año y en el mismo lugar que el <a href="bando-huerta-murcia.html">Bando de la Huerta</a>: 1851, en la botica de la calle Vidrieros del barrio de San Antolín. Aquel grupo de amigos que salió a la calle parodiando la prohibición cuaresmal de comer carne inventó ese mismo año las dos fiestas más importantes de Murcia. La sardina era el símbolo del ayuno; enterrarla era un gesto de liberación. Con el tiempo, la celebración fue ganando escala, complejidad y público hasta convertirse en el cierre de las Fiestas de Primavera tal como se conoce hoy.
+      </p>
+      <p>
+        El salto al formato actual — con carrozas olímpicas, dragón articulado y quema de una falla gigante — es fruto de décadas de crecimiento. La declaración de Fiesta de Interés Turístico Internacional llegó en 2006. En 2026, la edición conmemoró el 175 aniversario de la fiesta.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El desfile principal fue el <strong>sábado 11 de abril de 2026</strong>, el sábado siguiente al Domingo de Resurrección. Los actos previos — pasacalles, Testamento de Doña Sardina — se distribuyen durante la semana de Fiestas de Primavera, que comparte con el <a href="bando-huerta-murcia.html">Bando de la Huerta</a>. La fecha del Entierro cambia cada año según el calendario litúrgico — en 2027 será el <strong>sábado 3 de abril</strong>.
+      </p>
+
+      <h2 class="section-title">El gran desfile</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Noche previa · El Testamento</span>
+          Desde el balcón del Ayuntamiento, la figura de <strong>Doña Sardina</strong> — una personalidad elegida cada año por los Grupos Sardineros — lee el Testamento: un texto satírico que repasa con humor los hechos más destacados del año en la vida política y social de Murcia. Es el equivalente local de las coplas de Carnaval, y marca el arranque oficial de la cuenta atrás.
+        </li>
+
+        <li>
+          <span class="dia-label">Tarde · La cabecera del desfile</span>
+          Charangas, comparsas, gigantes, cabezudos y grupos de animación abren el cortejo. El elemento más icónico de esta parte es el <strong>dragón articulado de Conte</strong>, que lleva décadas recorriendo las calles de Murcia echando fuego por la boca y presidiendo el inicio del desfile.
+        </li>
+
+        <li>
+          <span class="dia-label">Noche · Las carrozas olímpicas</span>
+          Cada carroza va dedicada a una divinidad o figura de la mitología clásica. Desde ellas, los Grupos Sardineros lanzan al público miles de juguetes — el <strong>pito sardinero</strong> entre ellos, el regalo más esperado por los niños — durante todo el recorrido. Esta es la parte más larga y multitudinaria del desfile.
+        </li>
+
+        <li>
+          <span class="dia-label">Medianoche · La quema</span>
+          Al llegar al punto final del recorrido, la <strong>Sardina</strong> — un gran monumento de cartón piedra construido para la ocasión — arde bajo un castillo de fuegos artificiales. Con la quema se cierran las Fiestas de Primavera de Murcia.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <p>
+        El Entierro tiene una banda sonora de fiesta popular: charangas tocando sin parar durante horas, el rugido del dragón de Conte sobre el gentío, y el ruido constante de los pitos sardineros que el público toca desde que los recibe. No hay un solo momento de silencio en todo el recorrido. El contraste llega al final, cuando la música para y la sardina empieza a arder — ese instante previo a los fuegos artificiales es el único momento de quietud de toda la noche.
+      </p>
+      <p>
+        Para vivir bien el desfile, sitúate en un tramo amplio del recorrido con tiempo. Los tramos más estrechos concentran más ambiente pero también más aglomeración; en los ensanches se respira mejor y se ven pasar las carrozas con más comodidad.
+      </p>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El dragón de Conte</h3>
+          <span class="tag">Tarde · Cabecera del desfile</span>
+          <p>Un dragón articulado de grandes dimensiones que lleva décadas abriendo el Entierro echando fuego por la boca. Es el elemento más reconocible de la cabecera y uno de los símbolos visuales de la fiesta por los que generaciones de murcianos han esperado en la calle desde niños.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>No es un elemento decorativo: lleva décadas siendo parte de la fiesta y tiene su propio lugar en la memoria colectiva de la ciudad. Verlo pasar es entender por qué el Entierro de Murcia no se parece a ningún otro.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El reparto de juguetes desde las carrozas</h3>
+          <span class="tag">Noche · A lo largo del recorrido</span>
+          <p>Las carrozas olímpicas lanzan miles de juguetes al público durante todo el recorrido. El pito sardinero es el más esperado, pero el reparto incluye todo tipo de objetos. Colócate en primera fila en un tramo ancho si quieres aprovecharlo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es uno de los pocos desfiles de España donde el público recibe juguetes reales desde las carrozas. Lo que empezó como gesto de generosidad festiva se ha convertido en parte irrenunciable de la experiencia.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Testamento de Doña Sardina</h3>
+          <span class="tag">Noche previa · Balcón del Ayuntamiento</span>
+          <p>La lectura del Testamento desde el balcón del Ayuntamiento es el acto que abre oficialmente la cuenta atrás. Un texto satírico en clave de humor que repasa la actualidad local del año — política, vecinos ilustres, costumbres de la ciudad — ante el público congregado en la plaza.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el momento más murciano de toda la fiesta: la ciudad mirándose a sí misma con humor antes de arder. No requiere conocer todos los referentes locales para disfrutarlo — el tono lo dice todo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La quema de la Sardina</h3>
+          <span class="tag">Medianoche · Final del recorrido</span>
+          <p>Una falla gigante con forma de sardina arde bajo un castillo de fuegos artificiales. Es el cierre de las Fiestas de Primavera y el momento de mayor tensión visual de la noche: el silencio previo al fuego, y luego todo a la vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El Entierro de la Sardina es la única fiesta de España donde la quema final no anuncia penitencia sino libertad. Ese cambio de significado — respecto al resto de entierros de sardina del país — se hace visible en este momento más que en ningún otro.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>El desfile es largo y nocturno.</strong> Empieza por la tarde y la quema puede prolongarse hasta pasada la medianoche. Lleva ropa de abrigo — abril en Murcia puede refrescar por la noche — y calzado cómodo.</li>
+        <li><strong>Cómo llegar.</strong> Murcia tiene buenas conexiones en tren y autobús desde Valencia, Alicante y Madrid. El centro se restringe al tráfico el día del desfile — aparca en zonas periféricas y entra andando o en transporte público.</li>
+        <li><strong>Para las sillas, el mismo día.</strong> Se instalan a lo largo del recorrido y se venden el mismo día del desfile en el lugar — no hay venta anticipada online. Si prefieres ver el desfile de pie, es completamente gratuito.</li>
+        <li><strong>Si llevas niños, sitúate bien.</strong> El reparto de juguetes desde las carrozas es el momento más esperado. Colócate en primera fila en un tramo ancho del recorrido con tiempo suficiente antes del paso de las carrozas.</li>
+        <li><strong>El Testamento, la noche anterior.</strong> Si quieres vivir la fiesta entera, no te pierdas la lectura desde el balcón del Ayuntamiento la noche previa — es un acto breve, gratuito y muy murciano.</li>
+        <li><strong>Gastronomía.</strong> Las barracas de las peñas huertanas siguen abiertas durante la semana de Fiestas de Primavera. Si no fuiste el martes del <a href="bando-huerta-murcia.html">Bando de la Huerta</a>, aún puedes probar paparajotes y zarangollo antes del Entierro.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Grupos Sardineros</dt>
+        <dd>Asociaciones organizadoras del Entierro de la Sardina. Se encargan de animar la ciudad durante la semana previa con pasacalles y de formar el cortejo del desfile. La Agrupación Sardinera coordina el conjunto.</dd>
+
+        <dt>Doña Sardina</dt>
+        <dd>Personalidad elegida cada año por los Grupos Sardineros para encarnar a la sardina que será enterrada. Lee el Testamento desde el balcón del Ayuntamiento la noche previa al desfile y preside los actos oficiales.</dd>
+
+        <dt>Gran Pez</dt>
+        <dd>Figura masculina de honor que ejerce de padrino simbólico de la fiesta junto a Doña Sardina.</dd>
+
+        <dt>Testamento de Doña Sardina</dt>
+        <dd>Texto satírico leído en voz alta desde el balcón del Ayuntamiento la noche anterior al desfile. Repasa con humor la actualidad política y social del año en Murcia.</dd>
+
+        <dt>Dragón de Conte</dt>
+        <dd>Dragón articulado de grandes dimensiones que encabeza la parte popular del desfile desde hace décadas. Su paso echando fuego por la boca es uno de los momentos más esperados de la cabecera.</dd>
+
+        <dt>Pito sardinero</dt>
+        <dd>Juguete característico que las carrozas reparten al público durante el desfile. Su sonido acompaña el paso del cortejo a lo largo de todo el recorrido.</dd>
+
+        <dt>Carrozas olímpicas</dt>
+        <dd>Las carrozas de los Grupos Sardineros van dedicadas cada año a divinidades y figuras de la mitología clásica. Forman la segunda parte del desfile, tras la cabecera popular.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/entierro-sardina-murcia-1.jpg" alt="Dragón articulado de Conte en la cabecera del Gran Desfile del Entierro de la Sardina de Murcia" />
+        <img src="images/entierro-sardina-murcia-2.jpg" alt="Carrozas olímpicas del Entierro de la Sardina de Murcia iluminadas por la noche en el centro de la ciudad" />
+        <img src="images/entierro-sardina-murcia-3.jpg" alt="Quema de la Sardina con fuegos artificiales durante el Entierro de la Sardina de Murcia" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://entierrodelasardina.com" target="_blank" rel="noopener">Agrupación Sardinera — web oficial de la fiesta</a></li>
+        <li><a href="https://www.turismodemurcia.es" target="_blank" rel="noopener">Turismo de Murcia — Ayuntamiento</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Entierro de la Sardina de Murcia?</dt>
+        <dd>El sábado siguiente al Domingo de Resurrección. En 2026 fue el 11 de abril; en 2027 será el 3 de abril. La fecha cambia cada año — consulta el programa oficial de la Agrupación Sardinera.</dd>
+
+        <dt>¿Por qué se celebra en primavera y no en Carnaval como en el resto de España?</dt>
+        <dd>En la mayoría de España el entierro de la sardina cierra el Carnaval en Miércoles de Ceniza. En Murcia la tradición evolucionó de forma distinta: la celebración se desplazó al sábado siguiente a Semana Santa, donde actúa como cierre de las Fiestas de Primavera. El resultado es una fiesta de tono opuesto al luto cuaresmal: luminosa, pagana y con carrozas de dioses olímpicos.</dd>
+
+        <dt>¿Es apto para familias con niños?</dt>
+        <dd>Sí. Las carrozas reparten miles de juguetes al público durante el desfile, lo que convierte ese tramo en uno de los momentos más esperados por los niños. El desfile es largo y termina tarde — conviene llevar abrigo si se queda hasta la quema.</dd>
+
+        <dt>¿Se puede ver el desfile sin pagar?</dt>
+        <dd>Sí. Ver el desfile de pie a lo largo del recorrido es gratuito. Se instalan sillas de pago que se venden el mismo día en el lugar. Consulta el programa oficial para el recorrido exacto de cada edición.</dd>
+
+        <dt>¿Qué es el Testamento de Doña Sardina?</dt>
+        <dd>Un texto satírico que se lee desde el balcón del Ayuntamiento la noche anterior al desfile. Repasa con humor los hechos más destacados del año en política y vida social de Murcia. Es el equivalente local de las coplas de Carnaval.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Desfile Festero</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Murcia</a>
+        <a href="#" class="etiqueta">Abril</a>
+        <a href="#" class="etiqueta">Fiestas de Primavera</a>
+        <a href="#" class="etiqueta">Fuego</a>
+        <a href="#" class="etiqueta">Sátira</a>
+        <a href="#" class="etiqueta">Mitología</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-sardina">
+        <h2 id="rel-title-sardina">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="bando-huerta-murcia.html" class="ficha-rel-card">
+            <img src="images/bando-huerta-murcia.jpg" alt="Bando de la Huerta de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bando de la Huerta de Murcia</span>
+              <span class="rel-frase">La otra fiesta que nació en la misma botica, el mismo año.</span>
+              <span class="rel-meta">Murcia · Abril · ITI</span>
+            </div>
+          </a>
+
+          <a href="hogueras-san-juan-alicante.html" class="ficha-rel-card">
+            <img src="images/hogueras-san-juan-alicante.jpg" alt="Hogueras de San Juan de Alicante" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Hogueras de San Juan de Alicante</span>
+              <span class="rel-frase">Otra fiesta donde meses de trabajo terminan ardiendo en una noche.</span>
+              <span class="rel-meta">Alicante · Junio · ITI</span>
+            </div>
+          </a>
+
+          <a href="caballos-del-vino-caravaca.html" class="ficha-rel-card">
+            <img src="images/caballos-del-vino-caravaca.jpg" alt="Caballos del Vino de Caravaca de la Cruz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Caballos del Vino de Caravaca</span>
+              <span class="rel-frase">La otra gran fiesta de la Región de Murcia con declaración internacional.</span>
+              <span class="rel-meta">Caravaca de la Cruz · Mayo · UNESCO</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
