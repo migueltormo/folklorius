@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Carthagineses y Romanos de Cartagena: la Segunda Guerra Púnica en la calle</title>
+  <meta name="description" content="Carthagineses y Romanos de Cartagena (ITI): 50 tropas y legiones recrean la Segunda Guerra Púnica durante 9 días en septiembre. Bodas de Aníbal, desembarco romano y Gran Desfile." />
+  <link rel="canonical" href="https://folklorius.es/carthagineses-romanos-cartagena.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cartagena revive la guerra que cambió el mundo mediterráneo" />
+  <meta property="og:description" content="50 agrupaciones, 9 días de recreación y una ciudad que fue el epicentro de la Segunda Guerra Púnica. Bodas de Aníbal, desembarco de Escipión y el Gran Desfile del sábado." />
+  <meta property="og:image" content="https://folklorius.es/images/carthagineses-romanos-cartagena.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Grid de tropas y legiones ─────────────────────────── */
+    .tropas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .tropas-grid { grid-template-columns: 1fr; }
+    }
+    .tropa-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .tropa-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .tropa-col .sub-grupo {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted, #666);
+      margin: 10px 0 4px;
+    }
+    .tropa-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tropa-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      line-height: 1.45;
+    }
+    .tropa-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── Actos con etiqueta de bando ───────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .actos-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+      line-height: 1.6;
+    }
+    .actos-list li:last-child { border-bottom: none; }
+    .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 4px;
+    }
+    .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .bando-cart { background: #fef3c7; color: #92400e; }
+    .bando-rom  { background: #dbeafe; color: #1e3a8a; }
+    .bando-ambos { background: #f0fdf4; color: #166534; }
+
+    /* ── Must-see ──────────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    /* ── Resto de componentes ──────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/carthagineses-romanos-cartagena.html",
+    "name": "Carthagineses y Romanos de Cartagena",
+    "startDate": "2027-09-18",
+    "endDate": "2027-09-26",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Cartagena",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cartagena",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6035,
+        "longitude": -0.9862
+      }
+    },
+    "image": ["https://folklorius.es/images/carthagineses-romanos-cartagena.jpg"],
+    "description": "Recreación histórica de la Segunda Guerra Púnica en Cartagena: 50 tropas y legiones durante 9 días en septiembre. Bodas de Aníbal e Himilce, desembarco de Escipión y Gran Desfile final. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Federación de Tropas y Legiones de Cartagena",
+      "url": "https://cartaginesesyromanos.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Carthagineses y Romanos de Cartagena",
+        "item": "https://folklorius.es/carthagineses-romanos-cartagena.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran Carthagineses y Romanos de Cartagena?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Durante la segunda quincena de septiembre, 9 días en total. En 2026 fue del 19 al 27 de septiembre. La fecha se fija cada año — consulta el programa oficial de la Federación de Tropas y Legiones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué historia recrean Carthagineses y Romanos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Segunda Guerra Púnica (siglos III-II a.C.), el conflicto entre Cartago y Roma por el control del Mediterráneo. Cartagena — la antigua Qart-Hadasht, fundada por el general cartaginés Asdrúbal en 227 a.C. — fue el enclave clave de la contienda. La fiesta recorre ese arco narrativo: desde la fundación de la ciudad hasta su conquista por el romano Escipión en el año 209 a.C."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuántas tropas y legiones participan en Carthagineses y Romanos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Federación integra 50 agrupaciones en total: 25 Tropas Carthaginesas y 25 Legiones Romanas, organizadas en subgrupos según su especialidad bélica o carácter (civil, militar o naval)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ver el Gran Desfile del sábado sin pagar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ver el desfile de pie a lo largo del recorrido es gratuito. Algunos actos teatrales como el Gran Circo Romano requieren entrada de pago. Consulta el programa oficial de cada edición para el detalle de accesos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué patrimonio arqueológico puede visitar el viajero en Cartagena además de la fiesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cartagena conserva un patrimonio excepcional de esa época: el Teatro Romano, el Museo del Foro Romano y la Muralla Púnica (que data del año 227 a.C., cuando Asdrúbal fundó la ciudad). Durante los días de la fiesta el Ayuntamiento organiza rutas guiadas y accesos especiales a estos espacios a través del programa Puerto de Culturas."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Carthagineses y Romanos de Cartagena
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/carthagineses-romanos-cartagena.jpg" alt="Gran Desfile de Carthagineses y Romanos de Cartagena con tropas cartaginesas y legiones romanas recorriendo las calles del centro histórico" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Carthagineses y Romanos de Cartagena</h1>
+      <p class="ficha-subtitle">
+        Cartagena · Región de Murcia · «La ciudad que fue el centro del mundo revive la guerra que lo cambió.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 19 al 27 de septiembre de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cartagena · Región de Murcia</span>
+          <span>⏱️ 9 días de recreación</span>
+          <span>🏛️ 50 tropas y legiones</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Carthagineses y Romanos recrea una contienda histórica real con dos bandos enfrentados, pero la fiesta celebra por igual la herencia de ambas culturas. Cartagena es hoy lo que es gracias a cartagineses y romanos: ningún bando es el villano de la historia.</li>
+          <li>Los actos teatrales — Bodas de Aníbal, Senado Romano, Desembarco de Escipión — se representan en espacios abiertos de la ciudad. No cruces el espacio escénico ni interrumpas las representaciones en curso.</li>
+          <li>El Gran Desfile del sábado discurre por calles abiertas. Respeta el recorrido y no cortes el paso de las columnas en movimiento.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Hace 2.200 años, Cartagena era el enclave más estratégico del Mediterráneo occidental. La fundó un general cartaginés, la convirtió en capital de los territorios hispanos de Cartago, y la tomó un romano con 25 años que después sería conocido como Escipión el Africano. Lo que ocurrió en estas calles entre los siglos III y II a.C. cambió el equilibrio del mundo antiguo. Cada septiembre, 50 agrupaciones de cartageneros salen a recrearlo.
+      </p>
+      <p>
+        No hay castillos de cartón ni batalles simbólicas. Hay desembarcos en el puerto, bodas con escenografía en la explanada, senados con votación del público y una batalla final por la ciudad. Durante nueve días, Cartagena es simultáneamente una ciudad del siglo XXI y Qart-Hadasht.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Carthagineses y Romanos es una recreación histórica a gran escala que narra, en orden cronológico y a lo largo de nueve días, los acontecimientos de la Segunda Guerra Púnica en Cartagena: la fundación de la ciudad púnica, las alianzas de Aníbal, la intervención de Roma y la conquista final por Escipión. Cada día corresponde a un episodio del relato, con actos protagonizados alternativamente por un bando u otro según lo dicta la historia.
+      </p>
+      <p>
+        La Federación de Tropas y Legiones agrupa a las 50 agrupaciones festeras que dan vida a la fiesta: 25 Tropas Carthaginesas y 25 Legiones Romanas, organizadas por especialidad bélica o carácter. Son el equivalente de las filaes de los Moros y Cristianos, con la misma lógica de identidad, traje propio y pertenencia generacional. Cada tropa y cada legión tiene su nombre, su historia y su manera de entender la fiesta.
+      </p>
+      <p>
+        Al margen de los actos teatrales, el Campamento Festero — instalado durante toda la semana en un recinto de la ciudad — funciona como punto de encuentro entre bandos, con música, gastronomía y ambiente nocturno.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ El programa completo con días, horarios y ubicaciones exactas de cada acto lo publica cada año la Federación de Tropas y Legiones. Consúltalo en <a href="https://cartaginesesyromanos.es" target="_blank" rel="noopener">cartaginesesyromanos.es</a> antes de planificar tu visita.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        En el año 227 a.C., el general cartaginés Asdrúbal fundó en el sureste peninsular una ciudad a la que llamó Qart-Hadasht — Ciudad Nueva en fenicio. Su posición era excepcional: puerto natural protegido, minas de plata en los alrededores y acceso directo a las rutas del Mediterráneo. En pocas décadas se convirtió en la capital de los territorios hispanos bajo control cartaginés y en la base desde la que Aníbal Barca planificó su campaña contra Roma, incluida la alianza con los pueblos íberos que selló con su boda con la princesa Himilce.
+      </p>
+      <p>
+        En el año 209 a.C., el joven general romano Publio Cornelio Escipión tomó la ciudad en un solo día, sorprendiendo a su guarnición. La rebautizó como Carthago Nova y la convirtió en base romana para la conquista del resto de la península. De aquel episodio nacería la ciudad que hoy es Cartagena — y la fiesta que la recrea cada septiembre.
+      </p>
+      <p>
+        Carthagineses y Romanos nació en 1990 por iniciativa de un grupo de cartageneros que querían poner en valor ese pasado extraordinario. En 2017 recibió la declaración de Fiesta de Interés Turístico Internacional. La edición de 2026 es la XXXVII.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Del <strong>viernes 19 al domingo 27 de septiembre de 2026</strong>, nueve días en la segunda quincena del mes. El día grande es el sábado 26, con el Gran Desfile General por la tarde. Las fechas se fijan cada año en la segunda quincena de septiembre — consulta el programa oficial antes de organizar el viaje.
+      </p>
+
+      <h2 class="section-title">Los nueve días</h2>
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Viernes · Apertura</span>
+          <strong>Llegada del Fuego Sagrado y pregón.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El Fuego Sagrado se enciende en el Molinete y es trasladado al Campamento Festero, donde permanece encendido durante toda la fiesta. El pregón oficial desde el balcón del Palacio Consistorial abre la edición. Esa misma noche se inaugura el Campamento.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado · Día carthaginés</span>
+          <strong>Fundación de Qart-Hadasht.</strong>
+          <span class="bando-tag bando-cart">Carthagineses</span>
+          En la Plaza Mayor se escenifica la llegada de Asdrúbal y la fundación de la ciudad púnica en el año 227 a.C. Es el punto de partida del relato que se irá desplegando a lo largo de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo · Día romano</span>
+          <strong>Comicios Centuriados, Destrucción de Sagunto y Sesión Plenaria del Senado.</strong>
+          <span class="bando-tag bando-rom">Romanos</span>
+          El Senado Romano se reúne en la Plaza Mayor en una sesión teatralizada que culmina con la declaración de guerra a Cartago. El público vota a mano alzada el <strong>Premio Brutus del Año</strong>, el reconocimiento humorístico y satírico al hecho o personaje del año más destacado.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes · Día carthaginés</span>
+          <strong>Bodas de Aníbal e Himilce.</strong>
+          <span class="bando-tag bando-cart">Carthagineses</span>
+          En la explanada del puerto, se escenifica el matrimonio entre el general Aníbal Barca y la princesa íbera Himilce — la alianza que consolidó el dominio cartaginés sobre la península antes de la gran campaña contra Roma. Es el acto más espectacular en términos de escenografía y participación de tropas.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes</span>
+          <strong>Oráculo de la Diosa Tanit.</strong>
+          <span class="bando-tag bando-cart">Carthagineses</span>
+          La divinidad protectora de Cartago presagia el destino de la ciudad y de Aníbal. Acto de ambiente y transición narrativa entre la alianza púnica y la llegada de Roma.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles</span>
+          <strong>Mercado de Época y Gran Circo Romano.</strong>
+          <span class="bando-tag bando-rom">Romanos</span>
+          El mercado recrea el comercio de la época con puestos de artesanía y productos de inspiración antigua. Por la tarde y noche, el Gran Circo Romano en la Cuesta del Batel ofrece combates de gladiadores y espectáculos de época — este es uno de los actos con entrada de pago.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes · La conquista</span>
+          <strong>Batalla Marítima, Desembarco y Batalla por la ciudad.</strong>
+          <span class="bando-tag bando-rom">Romanos</span>
+          El día más intenso de la semana. Por la mañana, la batalla marítima se desarrolla en la bahía de Cartagena. Por la tarde, las tropas de Escipión desembarcan en el puerto en una escenificación a gran escala. La jornada culmina con la Batalla por la Conquista de Qart-Hadasht en la Cuesta del Batel.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado · El día grande</span>
+          <strong>Homenaje a los Caídos y Gran Desfile General.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El Gran Desfile General es el equivalente al Dia dels Trons de los Moros y Cristianos: todas las tropas y legiones desfilan juntas por el centro de Cartagena. Sale desde el Palacio Consistorial, recorre la Calle Mayor, Puertas de Murcia, Calle del Carmen, Plaza de España y Alameda de San Antón hasta el Campamento Festero.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo · Cierre</span>
+          <strong>Apagado del Fuego Sagrado y castillo de fuegos artificiales.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El mismo fuego que encendió la fiesta el viernes de apertura se apaga en el Campamento Festero, cerrando el ciclo narrativo. Un castillo de fuegos artificiales pone el punto final a la edición.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Tropas y Legiones</h2>
+      <p>
+        La Federación integra 50 agrupaciones: 25 Tropas Carthaginesas y 25 Legiones Romanas. Cada una tiene nombre, especialidad propia y una identidad que sus miembros construyen y transmiten año tras año. La composición completa y actualizada de cada bando la publica la Federación en <a href="https://cartaginesesyromanos.es" target="_blank" rel="noopener">cartaginesesyromanos.es</a>.
+      </p>
+      <p class="nota-grid">La información oficial de cada tropa y legión, incluyendo su historia e indumentaria, la publica la Federación de Tropas y Legiones.</p>
+
+      <div class="tropas-grid">
+
+        <div class="tropa-col">
+          <h3>⚔️ Tropas Carthaginesas · 25</h3>
+
+          <p class="sub-grupo">La Guardia de Aníbal</p>
+          <ul>
+            <li>Mercenarios de Lobetania</li>
+            <li>Guardia de Tanit</li>
+            <li>Tropa de Tiro</li>
+          </ul>
+
+          <p class="sub-grupo">La Caballería</p>
+          <ul>
+            <li>Honderos Baleares</li>
+            <li>Caballería Numida</li>
+          </ul>
+
+          <p class="sub-grupo">La Infantería Fuerte</p>
+          <ul>
+            <li>Tropas de Baal-Hammon</li>
+            <li>Tropas de Adherbal</li>
+            <li>Mercenarios Ilergetes</li>
+            <li>Mercenarios Celtíberos</li>
+            <li>Navegantes de Bomílcar</li>
+            <li>Guerreros de Uxama</li>
+            <li>Infantería Fuerte de Aníbal</li>
+          </ul>
+
+          <p class="sub-grupo">Infantería Ligera y Otros</p>
+          <ul>
+            <li>Fundadores de Qart-Hadasht</li>
+            <li>Lanceros Libios</li>
+            <li>Tropas de Tiro</li>
+            <li>Tropas de Himilcón</li>
+            <li>Príncipes de la Paz</li>
+            <li>Tropas de Baal-Safón</li>
+            <li>Quart-Hadast</li>
+            <li>Maestranza de Qart-Hadasht</li>
+            <li>Tropas de Magón</li>
+            <li>Conserjes de Qart-Hadasht</li>
+            <li>Lanceros Libi-Fenicios</li>
+            <li>Seguidores de Amílcar Barca</li>
+            <li>Guerreros de Carthago</li>
+          </ul>
+        </div>
+
+        <div class="tropa-col">
+          <h3>🦅 Legiones Romanas · 25</h3>
+
+          <p class="sub-grupo">Civile Legio</p>
+          <ul>
+            <li>Senado Romano</li>
+            <li>Pueblo de Roma</li>
+            <li>Magistrados de Roma</li>
+            <li>Ara Pacis</li>
+            <li>Amazonas de Capadocia</li>
+            <li>Dioses y Mitos de Roma</li>
+            <li>Universitas</li>
+            <li>Triunviros de Roma</li>
+            <li>Recreadores de Roma</li>
+            <li>Collegium de Roma</li>
+          </ul>
+
+          <p class="sub-grupo">Militaris Legio</p>
+          <ul>
+            <li>Legión de Escipión</li>
+            <li>Legio IV Quinto Ennio</li>
+            <li>Legio XV Harpastum</li>
+            <li>Legio Magna Roma</li>
+            <li>Legión de Sagunto</li>
+            <li>Legión de Cayo Lelio</li>
+            <li>Legión de Vernácula</li>
+            <li>Legio Segunda</li>
+            <li>Centuriones de Roma</li>
+            <li>Pretorianos de Roma</li>
+            <li>Legio X</li>
+            <li>Legio III</li>
+            <li>Guardia Pretoriana</li>
+          </ul>
+
+          <p class="sub-grupo">Navalis Legio</p>
+          <ul>
+            <li>Fuerzas de Choque Extraordinarii</li>
+            <li>Fuerzas Navales de Roma</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          Carthagineses y Romanos no tiene marchas festeras propias como las de Alcoi, pero el sonido de la fiesta tiene una identidad clara. Las tropas carthaginesas desfilan con percusión y viento de influencia oriental y norteafricana — tambores de marco, chirimías, ritmos sincopados — mientras las legiones romanas marchan con la cadencia marcial del ejército romano: tuba, cornu y paso acompasado. El contraste entre ambos no es tan marcado como en los Moros y Cristianos, pero quien presta atención lo escucha.
+        </p>
+        <p>
+          El momento de mayor densidad sonora es el Gran Desfile del sábado, cuando las 50 agrupaciones recorren juntas el centro de la ciudad. Para escuchar los dos bandos en su registro más diferenciado, sitúate en la Calle Mayor durante el desfile y observa el cambio de sonido entre bloque carthaginés y bloque romano.
+        </p>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Las Bodas de Aníbal e Himilce</h3>
+          <span class="tag">Lunes · Explanada del Puerto</span>
+          <p>El matrimonio entre el general cartaginés y la princesa íbera se representa en el puerto de Cartagena con escenografía de época, todas las tropas carthaginesas y un espacio que duplica la escala de cualquier otro acto de la semana. Es el momento más visualmente espectacular de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El puerto como escenario da a este acto una dimensión que ninguna plaza puede reproducir. Y la historia que cuenta — la alianza que consolidó el dominio cartaginés en la península — es el gozne narrativo de toda la fiesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Desembarco Romano de Escipión</h3>
+          <span class="tag">Segundo viernes · Puerto de Cartagena</span>
+          <p>Las tropas romanas desembarcan en el puerto de Cartagena recreando la conquista del año 209 a.C. Es el único acto de la fiesta que usa el mar como escenario activo — antes, por la mañana, se libra la batalla marítima en la bahía.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Un desembarco real en el puerto donde ocurrió el hecho histórico hace 2.200 años. Hay pocas fiestas en España donde la geografía y la historia encajen con tanta exactitud.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Sesión Plenaria del Senado Romano</h3>
+          <span class="tag">Domingo · Plaza Mayor</span>
+          <p>El Senado romano debate y vota la declaración de guerra a Cartago en clave teatral, satírica y con participación del público. Al final, la audiencia vota a mano alzada el Premio Brutus del Año — el reconocimiento humorístico al hecho o personaje más destacado de la actualidad local.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Es el acto más singular de los nueve días: una recreación histórica que cada año se reescribe para hablar de la actualidad de Cartagena. El guion cambia, el Senado permanece.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Gran Desfile General</h3>
+          <span class="tag">Sábado por la tarde · Centro histórico</span>
+          <p>Las 50 tropas y legiones recorren juntas el centro de Cartagena desde el Palacio Consistorial hasta el Campamento Festero. Es el equivalente al gran desfile final de los Moros y Cristianos: el momento donde la fiesta entera se ve junta por primera y única vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Ver las 50 agrupaciones en movimiento es la única manera de entender la escala real de la fiesta. Los días anteriores, los actos van bando a bando. El sábado, Carthago y Roma desfilan juntas.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Cartagena más allá de la fiesta</h2>
+      <p>
+        Cartagena conserva hoy un patrimonio arqueológico excepcional de la época que la fiesta recrea. El <strong>Teatro Romano</strong>, el <strong>Museo del Foro Romano</strong> y la <strong>Muralla Púnica</strong> — que data del año 227 a.C., cuando Asdrúbal fundó la ciudad — permiten al visitante completar la experiencia de la fiesta con los vestigios reales de aquella Qart-Hadasht. Durante los días de Carthagineses y Romanos, el Ayuntamiento organiza rutas guiadas, visitas teatralizadas y accesos especiales a estos espacios a través del programa <strong>Puerto de Culturas</strong> — consulta la programación en la web de turismo del Ayuntamiento antes de tu visita.
+      </p>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Elige bien qué días ir.</strong> Son nueve días con actos muy distintos. Si solo puedes ir un fin de semana, el primero tiene la Fundación de Qart-Hadasht (sábado) y el Senado Romano (domingo); el segundo, el Desembarco de Escipión (viernes) y el Gran Desfile (sábado). Para las Bodas de Aníbal, el lunes es imprescindible.</li>
+        <li><strong>Cómo llegar.</strong> Cartagena tiene conexión por AVE y autobús desde Murcia, Valencia y Madrid. El casco histórico se recorre a pie sin problema.</li>
+        <li><strong>Gran Circo Romano, con entrada.</strong> Es el único acto principal de pago. Consulta la disponibilidad y precio en la web oficial antes de ir.</li>
+        <li><strong>Combina fiesta y patrimonio.</strong> El Teatro Romano, el Foro Romano y la Muralla Púnica están en el centro histórico. Durante la fiesta hay accesos y visitas especiales — consúltalos en turismo.cartagena.es.</li>
+        <li><strong>Septiembre en Cartagena.</strong> Calor mediterráneo durante el día, noches más agradables. Ropa ligera para las escenas diurnas y una capa si te quedas al Campamento Festero de noche.</li>
+        <li><strong>Gastronomía.</strong> El Campamento Festero tiene oferta de comida durante toda la semana. Para restaurantes del centro, reserva con antelación en los días del Gran Desfile.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Tropa</dt>
+        <dd>Agrupación festera del bando carthaginés, con nombre, especialidad bélica o étnica propia e identidad colectiva. Equivalente a la filà de los Moros y Cristianos.</dd>
+
+        <dt>Legión</dt>
+        <dd>Agrupación festera del bando romano, organizada según su carácter civil, militar o naval. Equivalente a la filà del bando contrario.</dd>
+
+        <dt>Federación de Tropas y Legiones</dt>
+        <dd>Entidad organizadora que agrupa a las 50 agrupaciones festeras y gestiona el programa oficial de la fiesta.</dd>
+
+        <dt>Campamento Festero</dt>
+        <dd>Recinto instalado durante los nueve días de fiesta donde se alojan las agrupaciones, se celebran actos nocturnos y se concentra el ambiente entre bandos.</dd>
+
+        <dt>Fuego Sagrado</dt>
+        <dd>Llama encendida en el Molinete al inicio de la fiesta y trasladada al Campamento Festero, donde permanece hasta el acto de cierre del último día.</dd>
+
+        <dt>Qart-Hadasht</dt>
+        <dd>Nombre original en fenicio de la ciudad fundada por Asdrúbal en 227 a.C., que significa «Ciudad Nueva». Los romanos la llamaron Carthago Nova; hoy es Cartagena.</dd>
+
+        <dt>Premio Brutus del Año</dt>
+        <dd>Reconocimiento satírico que el público vota a mano alzada al final de la Sesión Plenaria del Senado Romano. El guion se reescribe cada año para incluir la actualidad local.</dd>
+
+        <dt>Puerto de Culturas</dt>
+        <dd>Programa del Ayuntamiento de Cartagena que gestiona las visitas al patrimonio arqueológico de la ciudad. Durante la fiesta organiza rutas y accesos especiales.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/carthagineses-romanos-cartagena-1.jpg" alt="Tropas carthaginesas durante el Gran Desfile de Carthagineses y Romanos de Cartagena" />
+        <img src="images/carthagineses-romanos-cartagena-2.jpg" alt="Bodas de Aníbal e Himilce en la explanada del puerto de Cartagena durante Carthagineses y Romanos" />
+        <img src="images/carthagineses-romanos-cartagena-3.jpg" alt="Desembarco romano de Escipión en el puerto de Cartagena durante las fiestas de Carthagineses y Romanos" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://cartaginesesyromanos.es" target="_blank" rel="noopener">Federación de Tropas y Legiones — web oficial de la fiesta</a></li>
+        <li><a href="https://turismo.cartagena.es" target="_blank" rel="noopener">Turismo de Cartagena — Ayuntamiento</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran Carthagineses y Romanos de Cartagena?</dt>
+        <dd>Durante la segunda quincena de septiembre, 9 días en total. En 2026, del 19 al 27 de septiembre. La fecha se fija cada año — consulta el programa oficial de la Federación de Tropas y Legiones.</dd>
+
+        <dt>¿Qué historia recrean Carthagineses y Romanos?</dt>
+        <dd>La Segunda Guerra Púnica, el conflicto entre Cartago y Roma por el control del Mediterráneo occidental. Cartagena — la antigua Qart-Hadasht, fundada por el general cartaginés Asdrúbal en 227 a.C. — fue el enclave clave de la contienda. La fiesta narra ese arco: desde la fundación de la ciudad hasta su conquista por el romano Escipión en 209 a.C.</dd>
+
+        <dt>¿Cuántas tropas y legiones participan?</dt>
+        <dd>La Federación integra 50 agrupaciones: 25 Tropas Carthaginesas y 25 Legiones Romanas, organizadas en subgrupos según su especialidad bélica o carácter.</dd>
+
+        <dt>¿Se puede ver el Gran Desfile del sábado sin pagar?</dt>
+        <dd>Ver el desfile de pie a lo largo del recorrido es gratuito. El Gran Circo Romano requiere entrada de pago. Consulta el programa oficial para el detalle de cada acto.</dd>
+
+        <dt>¿Qué patrimonio arqueológico puede visitar el viajero además de la fiesta?</dt>
+        <dd>El Teatro Romano, el Museo del Foro Romano y la Muralla Púnica están en el centro histórico. Durante los días de la fiesta el Ayuntamiento organiza rutas guiadas y accesos especiales a través del programa Puerto de Culturas — consúltalos en turismo.cartagena.es.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Cartagena</a>
+        <a href="#" class="etiqueta">Septiembre</a>
+        <a href="#" class="etiqueta">Segunda Guerra Púnica</a>
+        <a href="#" class="etiqueta">Romanos</a>
+        <a href="#" class="etiqueta">Cartagineses</a>
+        <a href="#" class="etiqueta">9 días</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cart">
+        <h2 id="rel-title-cart">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="bodas-isabel-segura.html" class="ficha-rel-card">
+            <img src="images/bodas-isabel-segura.jpg" alt="Bodas de Isabel de Segura de Teruel" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bodas de Isabel de Segura</span>
+              <span class="rel-frase">Otra ciudad que convierte su historia en teatro de calle durante días.</span>
+              <span class="rel-meta">Teruel · Aragón · ITI</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-cartagena.html" class="ficha-rel-card">
+            <img src="images/semana-santa-cartagena.jpg" alt="Semana Santa de Cartagena" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cartagena</span>
+              <span class="rel-frase">La otra gran fiesta de Cartagena: procesiones con los tercios y la Legión.</span>
+              <span class="rel-meta">Cartagena · Región de Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-alcoi.jpg" alt="Moros y Cristianos de Alcoi" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Alcoi</span>
+              <span class="rel-frase">La misma lógica de dos bandos, 28 filaes y la tradición festera más antigua de España.</span>
+              <span class="rel-meta">Alcoi · Alicante · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
