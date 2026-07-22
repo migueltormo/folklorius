@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Arde Lucus de Lugo: cuando la ciudad romana vuelve a arder</title>
+  <meta name="description" content="Arde Lucus (ITI 2023): cuatro días en junio en los que Lugo vuelve a ser Lucus Augusti. Legiones romanas, tribus castreñas, gladiadores y el Gran Desfile por la Muralla UNESCO." />
+  <link rel="canonical" href="https://folklorius.es/arde-lucus-lugo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lugo vuelve a ser romana — y también castreña" />
+  <meta property="og:description" content="Cuatro días en junio en los que romanos y castreños se enfrentan dentro de la única muralla romana del mundo que sigue en pie y habitable." />
+  <meta property="og:image" content="https://folklorius.es/images/arde-lucus-lugo.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/arde-lucus-lugo.html",
+    "name": "Arde Lucus",
+    "startDate": "2027-06-17",
+    "endDate": "2027-06-20",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Lugo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lugo",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.0097,
+        "longitude": -7.5567
+      }
+    },
+    "image": ["https://folklorius.es/images/arde-lucus-lugo.jpg"],
+    "description": "Arde Lucus es la recreación histórica del origen romano y castrexo de Lugo. Cuatro días en junio en los que legiones romanas y tribus galaicas conviven dentro de la Muralla Romana de Lugo, Patrimonio Mundial UNESCO. Declarada Fiesta de Interés Turístico Internacional en 2023.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Lugo",
+      "url": "https://ardelucus.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Arde Lucus",
+        "item": "https://folklorius.es/arde-lucus-lugo.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Arde Lucus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El tercer fin de semana de junio, cuatro días de jueves a domingo. En 2026 fue del 18 al 21 de junio. Las fechas cambian ligeramente cada año — consulta el programa oficial en ardelucus.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Arde Lucus exactamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una recreación histórica del origen de Lugo durante la época romana. Lo singular es que no solo recrea el mundo romano: también el mundo castrexo (galaico prerromano), y los dos conviven y se enfrentan durante cuatro días dentro y alrededor de la Muralla Romana de Lugo, Patrimonio Mundial UNESCO desde 2000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién puede participar caracterizado en el Arde Lucus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cualquier persona puede asistir al Arde Lucus con vestimenta de época — romana o castreña — y participar del ambiente. Las actividades organizadas (campamentos, actos de las asociaciones) las gestionan los grupos y asociaciones de recreación histórica. La web oficial ardelucus.com publica cada año las vías de participación disponibles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Todos los actos del Arde Lucus son gratuitos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La mayoría de los actos son gratuitos y en espacios abiertos. El Circvs Maximvs — gladiadores y espectáculos en la explanada del Pabellón Municipal — requiere entrada de pago (6€ en 2026). Las entradas se venden a través de entradaslugo.es."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué queda de la época romana en Lugo que el visitante pueda ver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Muralla Romana de Lugo (Patrimonio Mundial UNESCO desde 2000) es la única muralla romana del mundo que conserva su perímetro completo y es accesible en toda su longitud. Además, Lugo conserva las Termas Romanas, el Foro Romano (en parte visible bajo el edificio del Concello) y varios yacimientos arqueológicos en el casco histórico."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Arde Lucus
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/arde-lucus-lugo.jpg" alt="Legionarios romanos y guerreros castreños durante el Gran Desfile del Arde Lucus recorriendo la Ronda de la Muralla Romana de Lugo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Arde Lucus</h1>
+      <p class="ficha-subtitle">
+        Lugo · Galicia · Recreación histórica · «Lugo vuelve a ser romana — y también castreña.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional — BOE-A-2023-7542</span>
+        <span class="badge badge-oficial">Festa de Interese Turístico Galego · 2011</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 18 al 21 de junio de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Lugo · Galicia</span>
+          <span>⏱️ 4 días</span>
+          <span>🏛️ 25º aniversario</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El Arde Lucus recrea el encuentro entre dos culturas — la romana y la castreña — sin declarar vencedores ni vencidos. Las dos tienen el mismo protagonismo. El visitante llega sin asumir que Roma es la protagonista: la historia de Lugo es también la historia de los pueblos galaicos que vivían aquí antes.</li>
+          <li>Los actos se desarrollan en plazas, calles y sobre la propia Muralla Romana. No interrumpas las representaciones en curso ni cruces los desfiles en movimiento.</li>
+          <li>La Muralla de Lugo es Patrimonio Mundial UNESCO. Caminar sobre ella durante la fiesta es parte de la experiencia — hazlo con el respeto que merece un bien de esa categoría.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En el año 25 a.C., las legiones de Roma fundaron Lucus Augusti en territorio galaico, en el noroeste más remoto del Imperio. Construyeron una ciudad, la rodearon de una muralla de más de dos kilómetros y convivieron — no siempre en paz — con las tribus castreñas que llevaban siglos viviendo en esos montes. Esa muralla sigue en pie. Y cada junio, Lugo la vuelve a llenar de romanos y castreños.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Arde Lucus es una recreación histórica que no tiene un único hilo narrativo: es una ciudad entera volviendo a dos épocas al mismo tiempo. Durante cuatro días, decenas de asociaciones de recreación histórica instalan sus campamentos dentro y alrededor de la Muralla Romana — unos de romanos, otros de castreños — y los dos mundos conviven, se enfrentan y se mezclan en las plazas y calles del casco histórico de Lugo.
+      </p>
+      <p>
+        La diferencia con otras recreaciones romanas está ahí: el Arde Lucus no es solo romana. Los <strong>castrexos</strong> — los pueblos galaicos prerromanos — tienen el mismo peso que las legiones. Sus campamentos, sus rituales, sus oficios y sus batallas contra Roma son tan parte de la fiesta como los gladiadores o el Senado. En el Gran Desfile del sábado, romanos y castreños desfilan juntos por la Ronda de la Muralla; al final se abrazan.
+      </p>
+      <p>
+        El visitante puede entrar en la fiesta a cualquier hora y en cualquier punto del casco histórico: siempre hay algo ocurriendo — un combate de gladiadores en la Praza de Santa María, una asamblea galaica en la Praza Maior, bautizos celtas, teatro de calle, artesanos trabajando en los campamentos. No hace falta seguir un orden. Quien quiera el programa completo lo encontrará en <a href="https://ardelucus.com" target="_blank" rel="noopener">ardelucus.com</a>.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ El Circvs Maximvs (gladiadores en el Pabellón Municipal) requiere entrada de pago. El resto de actos son gratuitos. Consulta disponibilidad y precios en <a href="https://entradaslugo.es" target="_blank" rel="noopener">entradaslugo.es</a>.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Lucus Augusti fue fundada en torno al año 25 a.C. como capital del convento jurídico romano del noroeste peninsular. Su posición estratégica — en la confluencia de varias vías romanas — la convirtió en un nudo comercial y administrativo de primer orden. La muralla que la rodea, construida a finales del siglo III d.C., tiene 2.117 metros de longitud, 71 torreones y cuatro puertas originales. En el año 2000, la UNESCO la declaró Patrimonio Mundial — la única muralla romana del mundo que conserva su perímetro completo y es accesible en toda su longitud.
+      </p>
+      <p>
+        El Arde Lucus nació en 2002, impulsado por el Concello de Lugo y las asociaciones de recreación histórica locales, con la intención de poner en valor ese patrimonio excepcional. En 2011 obtuvo el reconocimiento de Festa de Interese Turístico Galego; en 2017, el de Fiesta de Interés Turístico Nacional; y en 2023, el de Fiesta de Interés Turístico Internacional (BOE-A-2023-7542). La edición de 2026 celebró el 25º aniversario.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Del <strong>jueves 18 al domingo 21 de junio de 2026</strong>. El sábado 20 es el día grande, con el Gran Desfile por la Ronda de la Muralla y el Circvs Maximvs nocturno. Las fechas se fijan cada año en el tercer fin de semana de junio, pero pueden variar para no coincidir con el Corpus Christi y la Ofrenda del Antiguo Reino de Galicia.
+      </p>
+
+      <h2 class="section-title">Los cuatro días</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">Jueves · La llegada</span>
+          La fiesta arranca al atardecer en el Paseo Fluvial del Miño, con el <strong>acto de inicio</strong> junto al Ponte Romana. Desde allí, las legiones romanas comandadas por el general <strong>Caio Antistio el Viejo</strong> entran en la ciudad por el puente y toman Lucus Augusti. La noche continúa con el <strong>Rito a la diosa Diana</strong> en la Praza de Santa María y el <strong>Encendido del Fuego Sagrado de Vesta</strong> por las Vestales en el fondo de la Praza Maior, donde permanecerá encendido hasta el domingo.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes · Dos mundos en tensión</span>
+          El día más intenso en actividad simultánea. Por la mañana y tarde, los campamentos abren al público con talleres, artesanía, combates de gladiadores en la Praza de Santa María y el <strong>Macellum</strong> — el mercado romano. Al atardecer, las asociaciones castreñas celebran la <strong>Asamblea Galaica</strong> en la Praza de Santa María, donde declaran formalmente la guerra a Roma. Por la noche, el <strong>Senado de Lucus Augusti</strong> se reúne en la Praza Maior para debatir y votar; fuera de las murallas, los mercenarios galaicos celebran el ritual del <strong>Wicker Man</strong> en la Horta do Seminario.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado · El día grande</span>
+          Por la mañana, la ciudad recibe a tropas y tribus de fuera — asociaciones de Asturias, La Rioja, Rumanía, Cartagena y otras ciudades — en la <strong>Recepción de tropas extranjeras</strong> y el nombramiento de los <strong>Civitas Honoris</strong>. A mediodía, nueva sesión del Senado. A media tarde, el <strong>Asalto al monte Medulio</strong> enfrenta a la Guardia Pretoriana con las tribus castreñas. Al atardecer, el <strong>Gran Desfile</strong> recorre la Ronda de la Muralla desde la Porta de Santiago — romanos y castreños juntos, durante una hora y media, por encima y junto a la muralla que separa sus mundos. La noche cierra con el <strong>Circvs Maximvs Nocturno</strong> (entrada de pago) y un concierto de música celta.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo · El cierre</span>
+          La jornada más familiar. Por la mañana, el <strong>Desfile de los Scholarum</strong> — los colegios de Lugo caracterizados — recorre la Praza Maior y la Ronda de la Muralla. A lo largo del día, venta de esclavos teatralizada, escuela de gladiadores, talleres infantiles y el <strong>Nacimiento de un pueblo galaico-romano</strong> en la Ronda de la Muralla. Al atardecer, el <strong>Apagado del Fuego Sagrado de Vesta</strong> cierra el ciclo narrativo que se abrió el jueves.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">La Muralla y el patrimonio romano de Lugo</h2>
+      <p>
+        La <strong>Muralla Romana de Lugo</strong> no es el telón de fondo del Arde Lucus: es el escenario. Los desfiles discurren por su Ronda, los actos se ubican junto a sus puertas y el visitante camina sobre ella durante los cuatro días de fiesta. Es la única muralla romana del mundo que conserva su perímetro completo — 2.117 metros, 71 torreones, cuatro puertas — y que puede recorrerse en su totalidad. La UNESCO la declaró Patrimonio Mundial en el año 2000.
+      </p>
+      <p>
+        Además de la Muralla, Lugo conserva las <strong>Termas Romanas</strong> y restos del <strong>Foro Romano</strong> en el casco histórico. Durante los días del Arde Lucus, el Concello suele organizar visitas guiadas y accesos especiales a estos espacios — consulta la programación en la web oficial antes de la visita.
+      </p>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <p>
+        El Arde Lucus tiene dos registros sonoros muy distintos. De día, los campamentos funcionan cada uno con su propio sonido: percusión castreña en un extremo, martillos de artesano en otro, espadas chocando en la Praza de Santa María. No hay un escenario central; el sonido cambia según donde estés. De noche, el tono cambia: los espectáculos de fuego en la Praza Maior, el ritual del Wicker Man y los conciertos de música celta le dan a la fiesta un registro más oscuro y envolvente.
+      </p>
+      <p>
+        El momento de mayor intensidad sonora es el Gran Desfile del sábado: la percusión de las columnas castreñas y el paso marcial de las legiones recorriendo la Ronda de la Muralla durante hora y media. Para escucharlo bien, sitúate en un punto elevado de la Muralla o en la Praza Maior al paso del cortejo.
+      </p>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Gran Desfile por la Muralla</h3>
+          <span class="tag">Sábado por la tarde · Ronda de la Muralla</span>
+          <p>Romanos y castreños desfilan juntos durante hora y media por la Ronda de la Muralla desde la Porta de Santiago. Es el único momento en que los dos bandos que llevan cuatro días enfrentados comparten el mismo espacio y el mismo paso. Al final, se abrazan.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Un desfile de recreación histórica sobre una muralla romana del siglo III declarada Patrimonio Mundial UNESCO. No hay otro escenario igual en ninguna otra fiesta de España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Asamblea Galaica y la Declaración de Guerra</h3>
+          <span class="tag">Viernes al atardecer · Praza de Santa María</span>
+          <p>Las asociaciones castreñas se reúnen en asamblea para debatir y votar la declaración de guerra a Roma. Es el acto más político de la fiesta y el que mejor explica por qué el Arde Lucus no es una recreación romana al uso: los galaicos tienen voz propia, su propio ceremonial y sus propias razones.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La mayoría de recreaciones históricas de temática romana presentan a Roma como protagonista indiscutible. Aquí, la Asamblea Galaica pone en cuestión esa lectura cada viernes por la noche.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Encendido y Apagado del Fuego de Vesta</h3>
+          <span class="tag">Jueves noche y domingo tarde · Praza Maior</span>
+          <p>Las Vestales de Lucus Augusti encienden el Fuego Sagrado de Vesta el jueves por la noche en el fondo de la Praza Maior. La llama permanece encendida durante los cuatro días. El domingo, las mismas Vestales la apagan, cerrando el ciclo. Son los dos únicos actos en los que la fiesta guarda silencio de verdad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El Encendido y el Apagado enmarcan la fiesta entera. Ver los dos — el jueves y el domingo — es la única manera de sentir que se ha vivido el Arde Lucus de principio a fin.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Wicker Man</h3>
+          <span class="tag">Viernes a medianoche · Horta do Seminario</span>
+          <p>Los Mercenarios Galaicos queman una figura de mimbre en un ritual nocturno de origen céltico que tiene lugar fuera de las murallas, en la Horta do Seminario. Es el acto más oscuro y más alejado del centro de la fiesta — y por eso, el menos conocido y el más memorable para quien lo encuentra.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El Wicker Man no está en el programa principal, ocurre a medianoche y fuera del circuito habitual. Quien lo busca, lo encuentra. Quien no lo busca, no lo encuentra. Así de sencillo.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Puedes venir caracterizado.</strong> El Arde Lucus acepta y anima a los visitantes a venir con vestimenta de época — romana o castreña. Varias tiendas de Lugo alquilan trajes durante los días previos a la fiesta.</li>
+        <li><strong>Cómo llegar.</strong> Lugo tiene buenas conexiones en tren y autobús desde A Coruña, Santiago de Compostela y Madrid. El casco histórico se recorre a pie; la Muralla es el principal eje de movimiento.</li>
+        <li><strong>El Circvs Maximvs, con reserva.</strong> Las entradas (6€) se ponen a la venta con días de antelación en entradaslugo.es y se agotan rápido. Si quieres verlo, no esperes al último momento.</li>
+        <li><strong>Los hoteles se llenan.</strong> El Arde Lucus dispara la ocupación hotelera de Lugo. Reserva con semanas de antelación si vas el fin de semana grande.</li>
+        <li><strong>La Muralla, a cualquier hora.</strong> Subir a la Muralla y recorrerla es gratuito y puede hacerse en cualquier momento de los cuatro días. De noche, con la fiesta en marcha en las plazas del casco histórico, tiene una luz y un ambiente que de día no tiene.</li>
+        <li><strong>Gastronomía.</strong> Lugo es conocida por las tapas gratuitas con cada consumición en la Rúa da Cruz. Durante el Arde Lucus, los bares del centro adaptan su oferta con referencias romanas y castreñas, pero el pulpo á feira y el lacón con grelos son los platos que no pueden faltar en ninguna visita a la ciudad.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Castrexo / Castreño</dt>
+        <dd>Perteneciente a la cultura castreña, la civilización prerromana de los pueblos galaicos que vivían en castros — poblados fortificados en altura — antes y durante la llegada de Roma. En el Arde Lucus, los grupos castreños recrean esa cultura con el mismo nivel de rigor que los romanos.</dd>
+
+        <dt>Lucus Augusti</dt>
+        <dd>Nombre romano de Lugo, fundada en torno al año 25 a.C. como capital del convento jurídico del noroeste peninsular. El nombre significa «bosque sagrado de Augusto».</dd>
+
+        <dt>Vestales de Lucus Augusti</dt>
+        <dd>Asociación local que encarna a las sacerdotisas de Vesta en el Arde Lucus. Son las responsables del Fuego Sagrado que se enciende el jueves y se apaga el domingo.</dd>
+
+        <dt>Macellum</dt>
+        <dd>Mercado romano. En el Arde Lucus, el Macellum es el espacio de artesanía y gastronomía de inspiración romana y castreña que permanece abierto durante los cuatro días de fiesta.</dd>
+
+        <dt>Circvs Maximvs</dt>
+        <dd>El espectáculo de gladiadores y acrobacias que se celebra en la explanada del Pabellón Municipal los días de mayor afluencia. Requiere entrada de pago.</dd>
+
+        <dt>Civitas Honoris</dt>
+        <dd>Distinción que el Senado de Lucus Augusti otorga cada año a personas o entidades que han contribuido de forma destacada a la fiesta o a la ciudad.</dd>
+
+        <dt>Wicker Man</dt>
+        <dd>Ritual de origen céltico en el que los Mercenarios Galaicos queman una figura de mimbre. Se celebra a medianoche del viernes en la Horta do Seminario, fuera del circuito principal de la fiesta.</dd>
+
+        <dt>Scholarum</dt>
+        <dd>Término latino para referirse a los colegios. El Desfile de los Scholarum del domingo es el desfile de los centros educativos de Lugo, cuyos alumnos participan caracterizados de época.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/arde-lucus-lugo-1.jpg" alt="Gran Desfile del Arde Lucus con legionarios romanos y guerreros castreños recorriendo la Ronda de la Muralla Romana de Lugo" />
+        <img src="images/arde-lucus-lugo-2.jpg" alt="Gladiadores combatiendo en la Praza de Santa María durante el Arde Lucus de Lugo" />
+        <img src="images/arde-lucus-lugo-3.jpg" alt="Vestales encendiendo el Fuego Sagrado de Vesta en la Praza Maior de Lugo durante el Arde Lucus" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://ardelucus.com" target="_blank" rel="noopener">Arde Lucus — web oficial de la fiesta</a></li>
+        <li><a href="https://entradaslugo.es" target="_blank" rel="noopener">Entradas Lugo — Circvs Maximvs y actos de pago</a></li>
+        <li><a href="https://turismo.lugo.gal" target="_blank" rel="noopener">Turismo de Lugo — Concello</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — Xunta</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Arde Lucus?</dt>
+        <dd>El tercer fin de semana de junio, cuatro días de jueves a domingo. En 2026 fue del 18 al 21 de junio. Las fechas pueden variar ligeramente — consulta el programa oficial en ardelucus.com.</dd>
+
+        <dt>¿Qué es el Arde Lucus exactamente?</dt>
+        <dd>Una recreación histórica del origen de Lugo durante la época romana. Lo singular es que no solo recrea el mundo romano: también el mundo castrexo (galaico prerromano), y los dos conviven y se enfrentan durante cuatro días dentro y alrededor de la Muralla Romana de Lugo, Patrimonio Mundial UNESCO desde 2000.</dd>
+
+        <dt>¿Quién puede participar caracterizado?</dt>
+        <dd>Cualquier persona puede asistir con vestimenta de época — romana o castreña. Las actividades organizadas las gestionan las asociaciones de recreación histórica. La web oficial publica cada año las vías de participación disponibles.</dd>
+
+        <dt>¿Todos los actos son gratuitos?</dt>
+        <dd>La mayoría sí. El Circvs Maximvs requiere entrada de pago (6€ en 2026). Las entradas se venden en entradaslugo.es y se agotan con días de antelación.</dd>
+
+        <dt>¿Qué queda de la época romana en Lugo?</dt>
+        <dd>La Muralla Romana (Patrimonio Mundial UNESCO, 2000) es la única del mundo con perímetro completo accesible. Lugo conserva además las Termas Romanas y restos del Foro Romano en el casco histórico.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Lugo</a>
+        <a href="#" class="etiqueta">Junio</a>
+        <a href="#" class="etiqueta">Roma</a>
+        <a href="#" class="etiqueta">Castrexo</a>
+        <a href="#" class="etiqueta">Muralla UNESCO</a>
+        <a href="#" class="etiqueta">4 días</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-arde">
+        <h2 id="rel-title-arde">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="carthagineses-romanos-cartagena.html" class="ficha-rel-card">
+            <img src="images/carthagineses-romanos-cartagena.jpg" alt="Carthagineses y Romanos de Cartagena" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carthagineses y Romanos de Cartagena</span>
+              <span class="rel-frase">La otra gran recreación romana de España, con 50 tropas y 9 días de historia.</span>
+              <span class="rel-meta">Cartagena · Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="bodas-isabel-segura.html" class="ficha-rel-card">
+            <img src="images/bodas-isabel-segura.jpg" alt="Bodas de Isabel de Segura de Teruel" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bodas de Isabel de Segura</span>
+              <span class="rel-frase">Teatro de calle durante cuatro días en otra ciudad con historia medieval en la piel.</span>
+              <span class="rel-meta">Teruel · Aragón · ITI</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-viveiro.html" class="ficha-rel-card">
+            <img src="images/semana-santa-viveiro.jpg" alt="Semana Santa de Viveiro" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Viveiro</span>
+              <span class="rel-frase">La otra gran fiesta gallega declarada de Interés Turístico Internacional.</span>
+              <span class="rel-meta">Viveiro · Galicia · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
