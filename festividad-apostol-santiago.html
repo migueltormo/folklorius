@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Festividad del Apóstol Santiago 2026: Botafumeiro y Ofrenda</title>
+  <meta name="description" content="Festividad del Apóstol Santiago 2026: Botafumeiro, Ofrenda Nacional y Fuegos del Apóstol el 24 de julio en Santiago de Compostela. ITI desde 2001." />
+  <link rel="canonical" href="https://folklorius.es/festividad-apostol-santiago.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Festividad del Apóstol Santiago: el 25 de julio en el fin del Camino" />
+  <meta property="og:description" content="La noche del 24 de julio, la Plaza del Obradoiro explota en luz. El día 25, el Botafumeiro surca el transepto de la Catedral a 68 km/h. Santiago de Compostela en su momento más grande." />
+  <meta property="og:image" content="https://folklorius.es/images/festividad-apostol-santiago.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/festividad-apostol-santiago.html",
+    "name": "Festividad del Apóstol Santiago",
+    "startDate": "2026-07-15",
+    "endDate": "2026-07-31",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Santiago de Compostela",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago de Compostela",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.8782,
+        "longitude": -8.5448
+      }
+    },
+    "image": ["https://folklorius.es/images/festividad-apostol-santiago.jpg"],
+    "description": "La Festividad del Apóstol Santiago reúne cada 25 de julio la Ofrenda Nacional, la Misa Solemne con el vuelo del Botafumeiro y los Fuegos del Apóstol en Santiago de Compostela. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Santiago de Compostela",
+      "url": "https://www.santiagodecompostela.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Festividad del Apóstol Santiago",
+        "item": "https://folklorius.es/festividad-apostol-santiago.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Festividad del Apóstol Santiago en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El día grande es el 25 de julio de 2026, festividad de Santiago Apóstol y Día de Galicia. Los actos de la víspera, incluidos los Fuegos del Apóstol, se celebran la noche del 24 de julio. El programa oficial del Concello arranca aproximadamente a mediados de julio y se extiende hasta finales de mes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo funciona el Botafumeiro en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Botafumeiro funciona con seguridad el 25 de julio en la Misa Solemne del Día del Apóstol. También puede verse en otras once solemnidades del calendario litúrgico de la Catedral, y en cualquier misa ordinaria si un grupo de peregrinos lo solicita y cubre los gastos correspondientes. Consulta el calendario litúrgico en la web de la Catedral de Santiago."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son los Fuegos del Apóstol y dónde se ven en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los Fuegos del Apóstol son el espectáculo pirotécnico que inaugura la noche del 24 de julio. En 2026 se lanzan desde tres puntos de la ciudad — la Alameda, la Cidade da Cultura y el Parque de Carlomagno — para distribuir el público y evitar la concentración histórica en la Plaza del Obradoiro. La fachada de la Catedral se ilumina con proyecciones de luz. El acceso es libre y gratuito."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede entrar libremente a la Catedral el 25 de julio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Catedral de Santiago tiene entrada libre en general, pero la capacidad del templo es limitada y el 25 de julio hay una afluencia excepcional. Para asistir a la Misa Solemne con el Botafumeiro conviene llegar con bastante antelación. Los actos de la Ofrenda Nacional tienen carácter institucional y el aforo del presbiterio no está disponible para el público general."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Año Santo Compostelano y habrá uno en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Año Santo Compostelano, o Xacobeo, se produce cuando el 25 de julio cae en domingo, permitiendo al peregrino ganar el Jubileo completo. En 2026 no hay Año Santo — el próximo será 2027. Aun así, la festividad del 25 de julio mantiene toda su solemnidad y atrae a peregrinos y visitantes de todo el mundo."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Festividad del Apóstol Santiago
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/festividad-apostol-santiago.jpg" alt="Plaza del Obradoiro iluminada durante los Fuegos del Apóstol en la víspera del 25 de julio en Santiago de Compostela" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Festividad del Apóstol Santiago</h1>
+      <p class="ficha-subtitle">
+        Santiago de Compostela (A Coruña) · Fiesta patronal y religiosa · "El fin de todos los caminos."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">25 de julio de 2026 · Día del Apóstol</div>
+        <div class="datos-secundarios">
+          <span>📍 Santiago de Compostela · A Coruña</span>
+          <span>⏱️ Programa del 15 al 31 de julio</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La Misa Solemne del 25 de julio es un acto litúrgico, no una exhibición turística. El Botafumeiro tiene una función religiosa — simboliza las oraciones que suben al cielo — y el templo merece el mismo silencio que cualquier celebración eucarística.</li>
+          <li>La Ofrenda Nacional al Apóstol es un acto institucional con siglos de historia. El presbiterio durante ese momento no es un espacio para el público general: sigue el acto desde las naves laterales o a través de las pantallas que el Concello suele habilitar en la plaza.</li>
+          <li>El 25 de julio es Día de Galicia, festividad autonómica con una carga identitaria importante para los gallegos. La fiesta es de todos, pero tiene un significado propio para quienes la viven desde dentro — peregrinos que cierran meses de camino, familias que llevan generaciones celebrándola.</li>
+          <li>La Plaza del Obradoiro el 24 de julio por la noche concentra decenas de miles de personas. Vigila tus pertenencias, mantén a los niños cerca y respeta las zonas reservadas para los actos oficiales.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La noche del 24 de julio, la fachada barroca de la Catedral cobra vida en luz. Proyecciones que la hacen arder sin quemarla, fuegos que suben desde tres puntos de la ciudad y decenas de miles de personas mirando hacia arriba con la misma expectación desde hace siglos. Cuando bajan las luces y llega el silencio, Santiago ya sabe que es el 25 de julio. Por la mañana, ocho hombres tensan las cuerdas del Botafumeiro y el incensario más grande del mundo empieza a ganar altura en el transepto de la Catedral, llenando el templo de humo blanco y de ese sonido inconfundible — el aire cortado a 68 kilómetros por hora. En la misma ciudad donde llegan cada día peregrinos desde todos los rincones del mundo, este es el momento en que el fin del camino tiene forma, olor y sonido.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Festividad del Apóstol Santiago es la celebración más importante del año en la capital gallega. Tiene lugar el <strong>25 de julio</strong>, festividad litúrgica de Santiago el Mayor, patrón de España y de Galicia, y día festivo en toda la comunidad autónoma. La fiesta combina actos religiosos de primer orden — la Misa Solemne con el vuelo del Botafumeiro y la Ofrenda Nacional al Apóstol — con un programa cultural y festivo que el Concello extiende durante las dos últimas semanas de julio con conciertos, folclore gallego, teatro de calle y actividades para todos los públicos.
+      </p>
+      <p>
+        El eje de todo es la <strong>Catedral de Santiago de Compostela</strong>, meta del Camino de Santiago y uno de los grandes centros de peregrinación del mundo cristiano. El 25 de julio la Catedral vive su momento litúrgico más solemne del año: la <strong>Misa Solemne</strong>, presidida por el Arzobispo, en la que el Botafumeiro recorre el transepto de extremo a extremo describiendo arcos de casi 65 metros. Es también el día en que la representación del Estado — habitualmente los Reyes de España — realiza la <strong>Ofrenda Nacional al Apóstol</strong>, un acto instituido por Felipe IV en 1643 que se ha celebrado ininterrumpidamente desde entonces.
+      </p>
+      <p>
+        La víspera, el <strong>24 de julio</strong>, es la noche grande de la fiesta popular. Los <strong>Fuegos del Apóstol</strong> — espectáculo de pirotecnia y proyecciones de luz sobre la Catedral — inauguran oficialmente la celebración. Para el visitante, la fiesta ofrece acceso libre y gratuito a prácticamente todos sus actos: la entrada a la Catedral es libre, los fuegos son en espacios abiertos y los conciertos del programa municipal no requieren entrada.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios y el programa exacto de cada edición los publica el <a href="https://www.santiagodecompostela.gal" target="_blank" rel="noopener">Concello de Santiago de Compostela</a> antes de cada celebración.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La celebración del 25 de julio en Compostela arranca de la tradición cristiana que sitúa los restos del apóstol Santiago el Mayor bajo el altar mayor de la Catedral. Según la leyenda, el descubrimiento de la tumba en el siglo IX bajo el obispado de Teodomiro impulsó la construcción del primer santuario y convirtió a Compostela en uno de los tres grandes destinos de peregrinación del mundo medieval, junto con Roma y Jerusalén. El <strong>Camino de Santiago</strong> — hoy Patrimonio de la Humanidad — nació de ese flujo de peregrinos que no ha cesado desde entonces.
+      </p>
+      <p>
+        El privilegio del <strong>Año Santo Compostelano</strong> — el Xacobeo — fue otorgado en torno a 1122 por el papa Calixto II y confirmado en 1179 por la bula <em>Regis aeterni</em> de Alejandro III: cuando el 25 de julio cae en domingo, el peregrino puede ganar el Jubileo completo visitando la Catedral y recibiendo los sacramentos. Los Años Santos siguen una secuencia irregular de 6, 5, 6 y 11 años. El próximo será <strong>2027</strong> — en 2026, la celebración mantiene toda su solemnidad sin el componente jubilar.
+      </p>
+      <p>
+        La <strong>Ofrenda Nacional al Apóstol</strong> fue instituida por Felipe IV en 1643 y desde entonces la realizan los Reyes de España o representantes del Estado en la Misa del 25 de julio. Es uno de los actos de ceremonial religioso-institucional más antiguos que se conservan vivos en Europa. Los <strong>Fuegos del Apóstol</strong> tienen una historia paralela: la primera referencia documental de iluminación festiva en la plaza del Obradoiro data de 1545, y la quema de castillos pirotécnicos frente a la Catedral es una tradición que se extendió durante los siglos XVII y XVIII. Hoy el formato ha evolucionado hacia proyecciones y fuegos descentralizados, pero la fecha y el sentido son los mismos.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El día central es el <strong>sábado 25 de julio de 2026</strong>. La víspera, el <strong>viernes 24 de julio</strong>, concentra los Fuegos del Apóstol y el inicio de los actos más festivos. El programa oficial del Concello arranca aproximadamente a mediados de julio y se extiende hasta el 31, con conciertos, folclore y actividades durante las dos últimas semanas del mes. El 25 de julio es festivo en toda Galicia como <strong>Día de Galicia</strong>. Las fechas son fijas cada año — siempre el 25 de julio — pero el programa detallado de cada edición hay que consultarlo en la web oficial del Concello.
+      </p>
+
+      <h2 class="section-title">Actos más destacados</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Mediados de julio · Inicio del programa</span>
+          El Concello inaugura las fiestas con el Pregón desde el balcón del Pazo de Raxoi, en la Plaza del Obradoiro. A partir de ahí, dos semanas de conciertos en la Praza da Quintana y la Alameda, espectáculos de folclore gallego, pasacalles con gigantes y cabezudos, teatro de calle y programación infantil llenan la ciudad hasta el día 31.
+        </li>
+        <li>
+          <span class="dia-label">Víspera · 24 de julio · Entrada la noche</span>
+          Los <strong>Fuegos del Apóstol</strong> marcan el inicio de la noche grande. Desde 2026, la pirotecnia se lanza simultáneamente desde tres puntos de la ciudad — la Alameda, la Cidade da Cultura y el Parque de Carlomagno — para que el espectáculo sea visible desde todos los barrios. La Plaza del Obradoiro acoge proyecciones de luz sobre la fachada de la Catedral. Anteriormente, la tradición era quemar una fachada neomedieval de madera y paja directamente frente al templo, pero los daños causados por los fuegos a los edificios históricos de la plaza llevaron a cambiar el formato. El espectáculo es gratuito y de acceso libre.
+        </li>
+        <li>
+          <span class="dia-label">Día del Apóstol · 25 de julio · Por la mañana</span>
+          La <strong>Misa Solemne</strong> en la Catedral es el acto litúrgico central del año. La preside el Arzobispo de Santiago y en ella se realiza la <strong>Ofrenda Nacional al Apóstol</strong>, representada habitualmente por los Reyes de España. En esta misa el <strong>Botafumeiro</strong> recorre el transepto de extremo a extremo colgado de un sistema de poleas a 20 metros de altura, impulsado por ocho <em>tiraboleiros</em> hasta alcanzar los 68 km/h. El humo blanco del incienso llena el templo y el sonido del incensario cortando el aire es difícil de olvidar. Hay que llegar con tiempo: el aforo de la Catedral es limitado y el día 25 la demanda supera la capacidad del templo.
+        </li>
+        <li>
+          <span class="dia-label">Día del Apóstol · 25 de julio · A lo largo del día</span>
+          El resto del día combina actos institucionales — el Concello y la Xunta celebran sus propios actos del Día de Galicia — con la continuación del programa festivo popular: conciertos, verbenas y la <strong>Retreta Militar</strong>, desfile nocturno de músicas militares por el casco histórico que cierra la jornada. La Misa del Peregrino se celebra a diario en la Catedral y el 25 de julio tiene una carga especial: la lectura de los peregrinos llegados en las últimas 24 horas desde todos los puntos de partida del Camino.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El Botafumeiro</h2>
+      <div class="music-block">
+        <p>
+          El Botafumeiro es el incensario más grande del mundo en uso litúrgico activo. Pesa 53 kg, mide 1,50 metros de altura y está fabricado en latón — el ejemplar actual data de 1851, obra del platero José Losada. Cuelga del crucero de la Catedral mediante un complejo sistema de poleas a 20 metros de altura. Para ponerlo en movimiento hacen falta ocho <em>tiraboleiros</em> que, coordinados por el <em>tiraboleiro mayor</em>, tensan y sueltan las cuerdas en el ritmo exacto que hace crecer el arco de oscilación. Necesita 17 recorridos completos para alcanzar la velocidad máxima: 68 km/h, describiendo arcos de casi 65 metros que barren las naves laterales de extremo a extremo.
+        </p>
+        <p>
+          El olor a incienso que llena el templo cuando el Botafumeiro está en vuelo es el sonido olfativo de la Catedral. La primera referencia documental al <em>Turibulum Magnum</em> aparece en una nota marginal del siglo XIV del Códice Calixtino. Su función original era litúrgica — el incienso que sube simboliza la oración elevándose — aunque la leyenda popular añade que el tamaño respondía también a la necesidad de purificar el aire del templo donde los peregrinos medievales dormían. Funciona con seguridad en doce solemnidades anuales, entre ellas el 25 de julio. El resto del año puede verse en cualquier misa si un grupo de peregrinos lo solicita a la Oficina de Acogida al Peregrino.
+        </p>
+        <ul>
+          <li>Para ver el vuelo del Botafumeiro, sitúate en los brazos del transepto — los laterales de la Catedral — no en la nave central. Desde ahí el arco pasa casi rozando las cabezas y la experiencia es completamente distinta a verlo desde lejos.</li>
+          <li>Llega al menos una hora antes del inicio de la Misa Solemne del 25 de julio. La Catedral llena su aforo rápido y una vez cerrado el acceso ya no se puede entrar.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El vuelo del Botafumeiro en la Misa Solemne</h3>
+          <span class="tag">25 de julio · Por la mañana · Catedral de Santiago</span>
+          <p>Ocho hombres ponen en movimiento 53 kg de latón hasta los 68 km/h. El arco barre las naves laterales de extremo a extremo a 20 metros de altura, llenando el templo de humo blanco. No hay nada igual en ninguna otra catedral del mundo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el acto litúrgico más singular de Europa en uso regular activo: el incensario más grande del mundo, funcionando desde el siglo XIV en la misma catedral. Sitúate en los brazos del transepto para verlo pasar casi a la altura de los hombros. Llega con una hora de antelación mínima.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los Fuegos del Apóstol · Noche del 24</h3>
+          <span class="tag">24 de julio · Entrada la noche · Varios puntos de la ciudad</span>
+          <p>Proyecciones de luz sobre la fachada barroca de la Catedral y pirotecnia simultánea desde la Alameda, la Cidade da Cultura y el Parque de Carlomagno. El espectáculo es visible desde casi cualquier punto de la ciudad y lleva celebrándose — en distintos formatos — desde el siglo XVI.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la apertura de la noche más grande del año en Santiago y tiene la ventaja de verse desde múltiples puntos sin concentrarse en un solo espacio. La Alameda es el punto con mejor panorámica de la pirotecnia y acceso más cómodo. Llega con tiempo: la ciudad se llena.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Ofrenda Nacional al Apóstol</h3>
+          <span class="tag">25 de julio · Por la mañana · Catedral de Santiago</span>
+          <p>Desde 1643, los Reyes de España o representantes del Estado se presentan ante el Apóstol en la Misa Solemne. Es uno de los actos de ceremonial religioso-institucional más antiguos que se celebran de manera ininterrumpida en Europa.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque condensa en un solo acto la relación entre la Corona española, el Estado y la tradición jacobea: más de tres siglos de historia que se repiten cada 25 de julio. Desde las naves de la Catedral o a través de las pantallas habilitadas en la plaza, el momento en que la ofrenda se deposita ante el Apóstol tiene un peso histórico difícil de igualar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Abrazo al Apóstol</h3>
+          <span class="tag">Todo el año · Catedral de Santiago · Detrás del altar mayor</span>
+          <p>Detrás del altar mayor, una escalera sube hasta la imagen sedente del Apóstol. El peregrino que llega al final del Camino puede abrazar la figura por la espalda. El 25 de julio, con los peregrinos llegados de todo el mundo, ese abrazo concentra una emoción difícil de describir a quien no lo ha vivido.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el ritual que cierra el Camino de Santiago para millones de peregrinos desde la Edad Media. No hace falta haber caminado para subir: está abierto a cualquier visitante. El 25 de julio la espera puede ser larga, pero el momento es único — especialmente si llevas días o semanas llegando desde algún punto del Camino.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento con mucha antelación.</strong> El 25 de julio es la noche más demandada del año en Santiago. Si no reservas con meses de antelación, es probable que no encuentres nada en el casco histórico. Las localidades cercanas — Padrón, A Estrada, O Grove — son alternativas razonables en coche.</li>
+        <li><strong>Cómo llegar.</strong> El aeropuerto de Lavacolla está a 12 km del centro con autobús regular. La estación de tren en la calle Hórreo conecta con Madrid, Barcelona y las principales ciudades gallegas. Por carretera, las vías principales son la A-6, la A-52 y la AP-9. El casco histórico es peatonal — aparca en las zonas periféricas y entra a pie.</li>
+        <li><strong>Dónde situarse el 24 de julio.</strong> Para los fuegos, la Alameda ofrece la mejor panorámica con más espacio que la plaza del Obradoiro. Si quieres ver las proyecciones sobre la Catedral, el Obradoiro es el punto, pero tendrás que llegar horas antes para conseguir sitio.</li>
+        <li><strong>El tiempo en julio.</strong> Santiago en julio combina sol y lluvia de manera impredecible. Lleva siempre un chubasquero ligero aunque el día amanezca despejado — las tormentas vespertinas son habituales en verano y los actos al aire libre continúan bajo la lluvia.</li>
+        <li><strong>Respeta el ritmo de la Catedral.</strong> La Catedral tiene horarios de visita turística y horarios de culto. El 25 de julio los actos litúrgicos tienen prioridad absoluta. Consulta los horarios en la web de la Catedral antes de planificar tu visita.</li>
+        <li><strong>Gastronomía compostelana.</strong> El pulpo á feira, el lacón con grelos y la tarta de Santiago son los platos que no pueden faltar. En las fiestas el Concello suele organizar una feria gastronómica en alguna de las plazas del casco histórico. El Albariño y el Ribeiro son los vinos de referencia de la zona.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario jacobeo</h2>
+      <dl class="festero">
+
+        <dt>Botafumeiro</dt>
+        <dd>Del gallego <em>bota fumeiro</em>, "el que echa humo". El incensario gigante de la Catedral: 53 kg de latón, 1,50 m de altura, ocho <em>tiraboleiros</em> para moverlo. Funciona en doce solemnidades anuales y puede activarse por encargo en cualquier misa. Tiene dos ejemplares: el de latón de 1851 que se usa habitualmente, y una réplica en plata donada en 1971.</dd>
+
+        <dt>Tiraboleiro</dt>
+        <dd>Cada uno de los ocho hombres encargados de poner en movimiento el Botafumeiro. El <em>tiraboleiro mayor</em> coordina el ritmo y marca el punto en que los demás tensan o sueltan la cuerda. La sincronización es milimétrica: un error puede hacer que el incensario pierda el arco.</dd>
+
+        <dt>Año Santo Compostelano · Xacobeo</dt>
+        <dd>El año en que el 25 de julio cae en domingo. En esos años el peregrino puede ganar el Jubileo completo — la indulgencia plenaria — visitando la Catedral y recibiendo la penitencia y la comunión. Los Años Santos siguen una secuencia de 6, 5, 6 y 11 años. El próximo es 2027. En años no santos, como 2026, la celebración tiene la misma solemnidad pero sin el componente jubilar.</dd>
+
+        <dt>Compostela</dt>
+        <dd>El certificado que acredita haber completado el Camino de Santiago a pie, en bicicleta o a caballo, recorriendo al menos los últimos 100 km. Se recoge en la Oficina del Peregrino, en la Rúa das Carretas. El 25 de julio la cola para recogerla puede durar horas.</dd>
+
+        <dt>Ofrenda Nacional</dt>
+        <dd>El acto por el que la Corona española, o representantes del Gobierno, se presentan ante el Apóstol en la Misa Solemne del 25 de julio. Fue instituida por Felipe IV en 1643 y se ha celebrado sin interrupciones desde entonces. La ofrenda se deposita ante la imagen del Apóstol en el altar mayor.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/festividad-apostol-santiago-1.jpg" alt="El Botafumeiro en vuelo por el transepto de la Catedral de Santiago de Compostela durante la Misa Solemne del 25 de julio" loading="lazy" />
+        <img src="images/festividad-apostol-santiago-2.jpg" alt="Fuegos del Apóstol con proyecciones de luz sobre la fachada barroca de la Catedral en la Plaza del Obradoiro la noche del 24 de julio" loading="lazy" />
+        <img src="images/festividad-apostol-santiago-3.jpg" alt="Peregrinos en la Plaza del Obradoiro de Santiago de Compostela al llegar al final del Camino de Santiago" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.santiagodecompostela.gal" target="_blank" rel="noopener">Concello de Santiago de Compostela — programa oficial de fiestas</a></li>
+        <li><a href="https://catedraldesantiago.es" target="_blank" rel="noopener">Catedral de Santiago de Compostela — liturgia y Botafumeiro</a></li>
+        <li><a href="https://oficinadelperegrino.com" target="_blank" rel="noopener">Oficina del Peregrino — Compostela y Botafumeiro por encargo</a></li>
+        <li><a href="https://www.santiagoturismo.com" target="_blank" rel="noopener">Turismo de Santiago — información práctica y alojamiento</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Festividad del Apóstol Santiago en 2026?</dt>
+        <dd>El día grande es el <strong>25 de julio de 2026</strong>, festividad del Apóstol y Día de Galicia. Los Fuegos del Apóstol se celebran la noche del 24 de julio. El programa oficial del Concello arranca aproximadamente a mediados de julio y se extiende hasta el 31.</dd>
+
+        <dt>¿Cuándo funciona el Botafumeiro en 2026?</dt>
+        <dd>El Botafumeiro funciona con seguridad el <strong>25 de julio</strong> en la Misa Solemne del Día del Apóstol. También puede verse en otras once solemnidades del calendario litúrgico de la Catedral. Fuera de esas fechas, cualquier grupo de peregrinos puede solicitarlo previo encargo a la Oficina de Acogida al Peregrino.</dd>
+
+        <dt>¿Qué son los Fuegos del Apóstol y dónde se ven en 2026?</dt>
+        <dd>Son el espectáculo de pirotecnia y proyecciones de luz que inaugura la noche del 24 de julio. En 2026 se lanzan desde tres puntos — la Alameda, la Cidade da Cultura y el Parque de Carlomagno — distribuyendo el público por la ciudad. La Catedral se ilumina con proyecciones. El acceso es libre y gratuito.</dd>
+
+        <dt>¿Se puede entrar libremente a la Catedral el 25 de julio?</dt>
+        <dd>La entrada a la Catedral es libre, pero el aforo es limitado y el 25 de julio la demanda es excepcional. Para la Misa Solemne con el Botafumeiro conviene llegar con al menos una hora de antelación. El área del presbiterio durante la Ofrenda Nacional no es accesible para el público general.</dd>
+
+        <dt>¿Qué es el Año Santo Compostelano y habrá uno en 2026?</dt>
+        <dd>El Año Santo, o Xacobeo, se produce cuando el 25 de julio cae en domingo: el peregrino puede ganar el Jubileo completo visitando la Catedral. <strong>En 2026 no hay Año Santo</strong> — el próximo será 2027. Aun así, la festividad del 25 de julio mantiene toda su solemnidad y la afluencia de peregrinos es muy alta.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Patronal</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Santiago de Compostela</a>
+        <a href="#" class="etiqueta">Julio</a>
+        <a href="#" class="etiqueta">Botafumeiro</a>
+        <a href="#" class="etiqueta">Camino de Santiago</a>
+        <a href="#" class="etiqueta">Ofrenda Nacional</a>
+        <a href="#" class="etiqueta">Fuegos del Apóstol</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-santiago">
+        <h2 id="rel-title-santiago">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="arde-lucus-lugo.html" class="ficha-rel-card">
+            <img src="images/arde-lucus-lugo.jpg" alt="Arde Lucus de Lugo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arde Lucus</span>
+              <span class="rel-frase">Roma y los castros vuelven a la ciudad amurallada.</span>
+              <span class="rel-meta">Lugo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="romeria-rocio.html" class="ficha-rel-card">
+            <img src="images/romeria-rocio.jpg" alt="Romería del Rocío" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería del Rocío</span>
+              <span class="rel-frase">El camino, la devoción y el Simpecado en el Almonte.</span>
+              <span class="rel-meta">Huelva · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="corpus-christi-toledo.html" class="ficha-rel-card">
+            <img src="images/corpus-christi-toledo.jpg" alt="Corpus Christi de Toledo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Corpus Christi de Toledo</span>
+              <span class="rel-frase">La custodia más grande del mundo procesiona por la ciudad imperial.</span>
+              <span class="rel-meta">Toledo · Castilla-La Mancha</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Catedral de Santiago, Concello de Santiago, Turismo de Galicia y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
