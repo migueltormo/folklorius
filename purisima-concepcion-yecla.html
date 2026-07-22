@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiestas de la Purísima Concepción de Yecla: soldadesca y arcabuces desde 1642</title>
+  <meta name="description" content="Las Fiestas de la Purísima Concepción de Yecla (ITI 2024): 16 escuadras de soldados disparan arcabuces mientras bajan a la Virgen del castillo. Del 5 al 8 de diciembre." />
+  <link rel="canonical" href="https://folklorius.es/purisima-concepcion-yecla.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="En Yecla, la devoción huele a pólvora desde 1642" />
+  <meta property="og:description" content="Soldados de milicias históricas bajan a la Virgen del castillo disparando arcabuces. Una fiesta patronal que lleva casi cuatro siglos sin apenas cambiar." />
+  <meta property="og:image" content="https://folklorius.es/images/purisima-concepcion-yecla.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/purisima-concepcion-yecla.html",
+    "name": "Fiestas de la Purísima Concepción de Yecla",
+    "startDate": "2027-12-05",
+    "endDate": "2027-12-08",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Yecla",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yecla",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6138,
+        "longitude": -1.1147
+      }
+    },
+    "image": ["https://folklorius.es/images/purisima-concepcion-yecla.jpg"],
+    "description": "Fiesta patronal de Yecla celebrada del 5 al 8 de diciembre. 16 escuadras de soldados con arcabuces de avancarga escoltan a la Virgen del Castillo en su bajada y procesión. Origen en 1642. Declarada Fiesta de Interés Turístico Internacional en 2024.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación de Mayordomos de la Purísima Concepción de Yecla",
+      "url": "https://fiestasdelavirgenyecla.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiestas de la Purísima Concepción de Yecla",
+        "item": "https://folklorius.es/purisima-concepcion-yecla.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Fiestas de la Purísima Concepción de Yecla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 5 al 8 de diciembre, con el día grande el 8, festividad de la Purísima Concepción. Las fechas son fijas cada año. Consulta el programa oficial de la Asociación de Mayordomos para los horarios exactos de cada edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son los tiraores?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los tiraores son los miembros de las escuadras que disparan arcabuces de avancarga durante los actos principales de la fiesta — la Bajada, la Procesión y la Subida de la Virgen. Van acompañados de cargadores que recargan el arma tras cada disparo. Su presencia y el estruendo continuo de los disparos son la seña de identidad sonora de la fiesta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué se celebran las Fiestas de la Virgen en Yecla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La tradición arranca en 1642, cuando un grupo de soldados yeclanos que volvían sanos y salvos de la guerra ascendieron al Santuario del Castillo para dar gracias a la Virgen. Ese gesto de gratitud se repitió al año siguiente, y al siguiente, hasta convertirse en la fiesta que se celebra hoy, casi sin cambios, casi cuatro siglos después."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son las Fiestas de la Purísima Concepción de Yecla aptas para familias con niños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, aunque hay que tener en cuenta que los disparos continuos de arcabuz producen un ruido muy intenso. Para niños pequeños o sensibles al sonido fuerte, es recomendable llevar protección auditiva y situarse en tramos del recorrido con más distancia a las escuadras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Paso de la Bandera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el momento en que el Mayordomo de la Bandera juega — ondea con movimientos reglamentados — la bandera de la Compañía ante la imagen de la Virgen en dos puntos concretos del recorrido: a la salida del Santuario del Castillo y a la entrada a la Basílica de la Purísima. En ese instante, los arcabuces intensifican sus disparos simultáneamente."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiestas de la Purísima Concepción de Yecla
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/purisima-concepcion-yecla.jpg" alt="Escuadras de tiraores disparando arcabuces durante la Bajada de la Virgen en las Fiestas de la Purísima Concepción de Yecla" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiestas de la Purísima Concepción de Yecla</h1>
+      <p class="ficha-subtitle">
+        Yecla · Región de Murcia · «En Yecla, la devoción huele a pólvora desde 1642.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Bien de Interés Cultural Inmaterial</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 5 al 8 de diciembre de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Yecla · Región de Murcia</span>
+          <span>⏱️ 4 días</span>
+          <span>🏛️ 16 escuadras</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las Fiestas de la Purísima son ante todo un acto de fe. Las escuadras, los Mayordomos y los Pajes participan por devoción personal o familiar, muchos desde niños. El visitante entra en ese contexto como invitado, con el respeto que merece un acto religioso de casi cuatro siglos de historia.</li>
+          <li>Los disparos de arcabuz son continuos durante la Bajada, la Procesión y la Subida. El sonido es muy intenso y puede resultar impactante si no se espera. No interrumpas el paso de las escuadras ni te acerques a los tiraores mientras disparan.</li>
+          <li>La procesión del 8 de diciembre recorre las calles de Yecla con la imagen de la Virgen. No cruces el cortejo en movimiento ni accedas a espacios reservados al desfile.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        A primera hora de la mañana del 7 de diciembre, las escuadras de soldados se concentran en el atrio de la Basílica de la Purísima. Suben al castillo disparando arcabuces. Bajan con la Virgen disparando arcabuces. El Mayordomo ondea la bandera ante la imagen en el momento exacto de la salida del Santuario, y los disparos se intensifican. El ruido, el humo y la pólvora lo llenan todo. Esto lleva ocurriendo en Yecla, con interrupciones contadas, desde 1642.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Fiestas de la Purísima son una fiesta patronal con una estructura que mezcla ceremonial religioso y milicia histórica. Durante cuatro días, 16 escuadras de soldados — los <strong>tiraores</strong> con sus arcabuces de avancarga y sus <strong>cargadores</strong> — acompañan a la Virgen del Castillo en su bajada desde el Santuario hasta la Basílica, en la procesión del día grande y en su regreso al Santuario. El disparo del arcabuz no es decorativo: es el lenguaje con el que Yecla le habla a su patrona desde el siglo XVII.
+      </p>
+      <p>
+        La Asociación de Mayordomos organiza la fiesta y agrupa a todos los participantes. Su estructura de mando son dos insignias — la <strong>Bandera</strong> y el <strong>Bastón</strong> — cada una con su Mayordomo, su Oficial y su Paje. Las 16 Agrupaciones de Escuadra se dividen entre ambas insignias y son las que dan cuerpo a la soldadesca. Cualquier persona devota puede pertenecer a la Asociación aunque no integre una escuadra de tiraores.
+      </p>
+      <p>
+        Para el visitante, la fiesta se vive desde la calle: los actos son procesiones y desfiles en espacios abiertos, gratuitos y sin reserva. El programa completo con horarios exactos lo publica cada año la Asociación de Mayordomos en <a href="https://fiestasdelavirgenyecla.es" target="_blank" rel="noopener">fiestasdelavirgenyecla.es</a>.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Los horarios exactos de cada acto los publica cada año la Asociación de Mayordomos. Consúltalos antes de tu visita.
+      </div>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        En 1642, un grupo de soldados yeclanos volvía sano y salvo de la guerra. Como acción de gracias, subieron al Santuario de la Virgen del Castillo — el cerro que domina la ciudad — y rezaron ante la imagen de la Purísima. Al año siguiente repitieron el gesto. Y al siguiente. Lo que empezó como un acto espontáneo de gratitud se fue codificando con el tiempo en un ceremonial con ordenanzas, rangos y rituales propios. Las Ordenanzas de 1786 — cuyo predecesor está en los reglamentos del siglo XVII — fijaron por escrito la estructura de la soldadesca que se conserva hoy. Las actuales Ordenanzas de 1984 regulan la fiesta en 209 artículos.
+      </p>
+      <p>
+        La fiesta solo se ha interrumpido en dos ocasiones: la Guerra Civil y la pandemia de COVID-19. La Asociación de Mayordomos, fundada formalmente en 1932, lleva la continuidad de la celebración desde entonces. La declaración de Fiesta de Interés Turístico Nacional llegó en 2002; la de Interés Turístico Internacional, en 2024.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Del <strong>5 al 8 de diciembre de 2026</strong>. Las fechas son fijas cada año — siempre culminan el 8, festividad de la Inmaculada Concepción. El día grande es el 8 de diciembre, con la Procesión solemne por las calles de Yecla. Consulta el programa oficial para los horarios exactos de cada edición.
+      </p>
+
+      <h2 class="section-title">Los cuatro días</h2>
+      <ul class="procesiones-list">
+
+        <li>
+          <span class="dia-label">5 de diciembre · El Beneplácito</span>
+          El presidente de la Asociación de Mayordomos solicita formalmente permiso a la primera autoridad municipal para iniciar la festividad. Es el acto protocolario que abre oficialmente los cuatro días de fiesta.
+        </li>
+
+        <li>
+          <span class="dia-label">6 de diciembre · Misa de Pajes y Beso de la Bandera</span>
+          Por la mañana se celebra la <strong>Misa de Pajes</strong>, con los niños y niñas que representan a las dos insignias de la Compañía. Por la tarde, el <strong>Beso de la Bandera</strong> congrega a la soldadesca en un acto de juramento y devoción colectiva previo a los días centrales.
+        </li>
+
+        <li>
+          <span class="dia-label">7 de diciembre · La Alborada y la Bajada</span>
+          El día más intenso en términos de pólvora y recorrido. A primera hora de la mañana, las escuadras se concentran en el atrio de la Basílica para la <strong>Alborada</strong> y ascienden disparando al Santuario del Castillo. Desde allí, acompañan a la Virgen en su <strong>Bajada</strong> hasta la Basílica, con los arcabuces sonando sin interrupción durante todo el trayecto. El <strong>Paso de la Bandera</strong> — el Mayordomo ondeando la bandera ante la imagen en los momentos clave del recorrido — es el instante en que los disparos se intensifican. Por la tarde, las escuadras recorren las calles del centro en la <strong>Ofrenda de Flores</strong>.
+        </li>
+
+        <li>
+          <span class="dia-label">8 de diciembre · El día grande</span>
+          La festividad de la Purísima Concepción concentra los actos más solemnes. Por la mañana, la función religiosa en la Basílica reúne a autoridades, Mayordomos, Pajes, tiraores y devotos. A su término, en la plaza junto a la Iglesia Vieja, tiene lugar la <strong>Proclamación de Clavarios</strong> — el nombramiento de los Mayordomos que asumirán el cargo el año siguiente — entre disparos de arcabuz y aplausos. Por la tarde, la <strong>Procesión solemne</strong> de la Virgen recorre las calles de Yecla con el Mayordomo repitiendo el Paso de la Bandera a la salida y a la entrada de la Basílica, en medio del estruendo continuo de los arcabuces. A mitad del itinerario, en la Placeta de San Cayetano, los <strong>castillicos</strong> — fuegos artificiales — marcan el punto central del recorrido.
+        </li>
+
+        <li>
+          <span class="dia-label">Días posteriores · Minerva y Subida</span>
+          La <strong>Minerva</strong> y la <strong>Subida</strong> de la Virgen a su Santuario del Castillo cierran el ciclo festivo, repitiendo con el mismo protocolo de disparos el camino inverso al de la Bajada. La imagen regresa al cerro hasta el año siguiente.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <p>
+        El sonido de las Fiestas de la Purísima no es música: es pólvora. Los arcabuces de avancarga disparan en cadena durante toda la Bajada, la Procesión y la Subida, con los cargadores recargando el arma tras cada tiro para que el fuego no pare. El resultado es un estruendo continuo, denso y envolvente que llena las calles de Yecla de humo blanco durante horas.
+      </p>
+      <p>
+        El contraste más marcado de los cuatro días se da entre ese estruendo y el silencio de la función religiosa del 8 de diciembre en la Basílica — el único momento en que los arcabuces callan y la fiesta respira. Para escuchar los disparos en su momento de mayor intensidad, sitúate en el Paso de la Bandera: es cuando el Mayordomo ondea la bandera ante la Virgen y las escuadras concentran todos sus tiros al mismo tiempo.
+      </p>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Bajada de la Virgen</h3>
+          <span class="tag">7 de diciembre · Desde el Santuario del Castillo</span>
+          <p>Las escuadras descienden del cerro con la imagen de la Virgen entre disparos continuos de arcabuz. El Mayordomo ondea la bandera en el Paso de la Bandera — a la salida del Santuario y a la entrada a la Basílica — mientras los tiraores intensifican el fuego. Es el tramo más largo y más intenso de toda la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Ver bajar a la Virgen desde el castillo entre humo y disparos, con el cerro de fondo y las escuadras en formación, es ver la fiesta en su forma más original — la misma escena que lleva repitiéndose desde 1642.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Paso de la Bandera</h3>
+          <span class="tag">7 y 8 de diciembre · Salida del Santuario y entrada a la Basílica</span>
+          <p>El Mayordomo de la Bandera ondea la insignia de la Compañía ante la imagen de la Virgen en movimientos reglamentados que llevan siglos sin cambiar. En ese instante exacto, los arcabuces de todas las escuadras disparan a la vez. El ruido, el humo y el gesto juntos son el símbolo visual de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El Paso de la Bandera es el momento en que la fiesta concentra en un solo gesto — devoción, milicia e historia — todo lo que lleva casi cuatro siglos siendo. Ocurre dos veces en la Bajada y dos en la Procesión del 8.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Proclamación de Clavarios</h3>
+          <span class="tag">8 de diciembre · Plaza junto a la Iglesia Vieja</span>
+          <p>Tras la función religiosa de la mañana, la Asociación de Mayordomos nombra oficialmente a los responsables de la fiesta del año siguiente. Aplausos, disparos de arcabuz y música en la plaza. Es el único acto en el que el peso del futuro se mezcla con la celebración del presente.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La Proclamación muestra cómo funciona la continuidad de la fiesta por dentro: el cargo no se hereda ni se compra — se designa. Ver ese momento es entender por qué esta celebración lleva casi cuatro siglos sin detenerse.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los castillicos en la Procesión</h3>
+          <span class="tag">8 de diciembre por la tarde · Placeta de San Cayetano</span>
+          <p>A mitad del recorrido de la Procesión solemne, los fuegos artificiales — llamados popularmente castillicos — estallan en la Placeta de San Cayetano. Es el único momento en que el fuego de la pólvora toma forma distinta a la de los arcabuces, y marca el punto central del día grande.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Los castillicos no cierran la fiesta — la parten por la mitad. Situarse en la Placeta de San Cayetano mientras pasa la Procesión permite ver juntos los dos fuegos de la fiesta: el de los arcabuces y el de los artificiales.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Protección auditiva.</strong> Los arcabuces disparan sin interrupción durante horas. Si eres sensible al ruido intenso o vas con niños pequeños, lleva tapones o protectores auditivos — no es opcional, es necesario.</li>
+        <li><strong>Cómo llegar.</strong> Yecla está en el norte de la Región de Murcia, bien comunicada por carretera desde Murcia, Alicante y Albacete. No hay tren directo — el acceso en coche o autobús es lo habitual.</li>
+        <li><strong>Ropa de abrigo.</strong> Diciembre en el interior de Murcia es frío, con noches que pueden bajar de cero. Para los actos al aire libre del 7 y el 8, especialmente la Bajada de madrugada y la Procesión de tarde, lleva ropa de abrigo real.</li>
+        <li><strong>Sitúate con tiempo.</strong> Para el Paso de la Bandera en la entrada a la Basílica — el momento de mayor densidad de disparos — el espacio se llena de personas. Llega con margen y elige posición antes de que empiece el cortejo.</li>
+        <li><strong>Los actos son gratuitos.</strong> Todos los actos principales de la fiesta se celebran en espacios abiertos y son de acceso libre y gratuito.</li>
+        <li><strong>Gastronomía.</strong> Las <em>gachasmigas</em> son el plato más vinculado a la fiesta: un guiso de harina frita con tocino y chorizo que se prepara en la calle durante los días festivos y es uno de los actos de mayor participación popular de la semana.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Tiraor</dt>
+        <dd>Miembro de las escuadras que dispara el arcabuz durante los actos principales de la fiesta. Va acompañado de un cargador que recarga el arma tras cada disparo para mantener el fuego continuo.</dd>
+
+        <dt>Arcabuz de avancarga</dt>
+        <dd>Arma de fuego histórica que se carga por el cañón con pólvora y perdigones. Los tiraores de Yecla los usan en las mismas condiciones que en el siglo XVII — el sonido y el humo forman parte del ritual.</dd>
+
+        <dt>Escuadra</dt>
+        <dd>Cada una de las 16 agrupaciones de tiraores y cargadores que integran la soldadesca. Se dividen entre las dos insignias — Bandera y Bastón — y son las que dan cuerpo al ceremonial de la fiesta.</dd>
+
+        <dt>Bandera y Bastón</dt>
+        <dd>Las dos insignias que estructuran el mando de la Compañía. La Bandera la porta el Oficial Alférez abanderado; el Bastón, el Capitán. Cada una tiene su Mayordomo, su Oficial y su Paje.</dd>
+
+        <dt>Mayordomo</dt>
+        <dd>Cargo de honor de la fiesta, designado cada año por la Asociación. Es el responsable ceremonial de la insignia que le corresponde durante los cuatro días de celebración.</dd>
+
+        <dt>Paso de la Bandera</dt>
+        <dd>Momento en que el Mayordomo de la Bandera ondea la insignia ante la imagen de la Virgen con movimientos reglamentados. Ocurre a la salida del Santuario y a la entrada a la Basílica, y coincide con la intensificación simultánea de todos los disparos.</dd>
+
+        <dt>Alborada</dt>
+        <dd>Acto con el que se inicia la jornada del 7 de diciembre: las escuadras se concentran en el atrio de la Basílica al amanecer antes de ascender al Santuario del Castillo.</dd>
+
+        <dt>Castillicos</dt>
+        <dd>Nombre popular de los fuegos artificiales que se lanzan a mitad de la Procesión del 8 de diciembre, en la Placeta de San Cayetano.</dd>
+
+        <dt>Clavario</dt>
+        <dd>Cargo designado durante la Proclamación del 8 de diciembre para asumir la mayordomía de la fiesta en la edición siguiente.</dd>
+
+        <dt>Gachasmigas</dt>
+        <dd>Plato tradicional yeclano de harina frita con tocino y chorizo, preparado en la calle durante los días de fiesta. Es el acto gastronómico con mayor participación popular de la semana.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/purisima-concepcion-yecla-1.jpg" alt="Tiraores disparando arcabuces durante la Bajada de la Virgen en las Fiestas de la Purísima Concepción de Yecla" />
+        <img src="images/purisima-concepcion-yecla-2.jpg" alt="Paso de la Bandera ante la imagen de la Virgen durante la Procesión del 8 de diciembre en Yecla" />
+        <img src="images/purisima-concepcion-yecla-3.jpg" alt="Escuadras en formación durante la Proclamación de Clavarios en las Fiestas de la Purísima Concepción de Yecla" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://fiestasdelavirgenyecla.es" target="_blank" rel="noopener">Asociación de Mayordomos — web oficial de la fiesta</a></li>
+        <li><a href="https://turismo.yecla.es" target="_blank" rel="noopener">Turismo de Yecla — Ayuntamiento</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Fiestas de la Purísima Concepción de Yecla?</dt>
+        <dd>Del 5 al 8 de diciembre, con el día grande el 8, festividad de la Inmaculada Concepción. Las fechas son fijas cada año. Consulta el programa oficial de la Asociación de Mayordomos para los horarios exactos.</dd>
+
+        <dt>¿Qué son los tiraores?</dt>
+        <dd>Los miembros de las escuadras que disparan arcabuces de avancarga durante los actos principales. Van acompañados de cargadores que recargan el arma tras cada disparo. Su presencia y el estruendo continuo de los disparos son la seña de identidad sonora de la fiesta.</dd>
+
+        <dt>¿Por qué se celebran estas fiestas?</dt>
+        <dd>La tradición arranca en 1642, cuando un grupo de soldados yeclanos que volvían sanos y salvos de la guerra subieron al Santuario del Castillo para dar gracias a la Virgen. Ese gesto se repitió al año siguiente, y al siguiente, hasta convertirse en la fiesta que se celebra hoy, casi sin cambios, casi cuatro siglos después.</dd>
+
+        <dt>¿Son aptas para familias con niños?</dt>
+        <dd>Sí, aunque los disparos continuos de arcabuz producen un ruido muy intenso. Para niños pequeños o sensibles al sonido fuerte, se recomienda llevar protección auditiva y situarse en tramos del recorrido con más distancia a las escuadras.</dd>
+
+        <dt>¿Qué es el Paso de la Bandera?</dt>
+        <dd>El momento en que el Mayordomo ondea la bandera de la Compañía ante la imagen de la Virgen en dos puntos concretos del recorrido: a la salida del Santuario y a la entrada a la Basílica. En ese instante los arcabuces de todas las escuadras disparan simultáneamente.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Patronal</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Yecla</a>
+        <a href="#" class="etiqueta">Diciembre</a>
+        <a href="#" class="etiqueta">Arcabuces</a>
+        <a href="#" class="etiqueta">Soldadesca</a>
+        <a href="#" class="etiqueta">Bien de Interés Cultural</a>
+        <a href="#" class="etiqueta">Desde 1642</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-yecla">
+        <h2 id="rel-title-yecla">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-murcia.html" class="ficha-rel-card">
+            <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Murcia</span>
+              <span class="rel-frase">La otra gran procesión de la Región de Murcia, con Salzillo como protagonista.</span>
+              <span class="rel-meta">Murcia · Región de Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="bando-huerta-murcia.html" class="ficha-rel-card">
+            <img src="images/bando-huerta-murcia.jpg" alt="Bando de la Huerta de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bando de la Huerta de Murcia</span>
+              <span class="rel-frase">La otra cara de Murcia: festera, huertana y sin pólvora.</span>
+              <span class="rel-meta">Murcia · Abril · ITI</span>
+            </div>
+          </a>
+
+          <a href="caballos-del-vino-caravaca.html" class="ficha-rel-card">
+            <img src="images/caballos-del-vino-caravaca.jpg" alt="Caballos del Vino de Caravaca de la Cruz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Caballos del Vino de Caravaca</span>
+              <span class="rel-frase">Otra fiesta de devoción profunda en la Región de Murcia, con UNESCO.</span>
+              <span class="rel-meta">Caravaca de la Cruz · Mayo · UNESCO</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
