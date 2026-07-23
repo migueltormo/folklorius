@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Romería Vikinga de Catoira: drakkars en el río Ulla</title>
+  <meta name="description" content="Romería Vikinga de Catoira 2026: cada primer domingo de agosto los vecinos desembarcan en drakkars por el Ulla y asaltan las Torres del Oeste. ITI 2002." />
+  <link rel="canonical" href="https://folklorius.es/romeria-vikinga-catoira.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Romería Vikinga de Catoira: cuando el Ulla vuelve a tener miedo" />
+  <meta property="og:description" content="Las velas rojas aparecen en la ría. Suenan los cuernos. Los drakkars avanzan hacia las Torres del Oeste. Catoira revivirá el primer domingo de agosto." />
+  <meta property="og:image" content="https://folklorius.es/images/romeria-vikinga-catoira.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/romeria-vikinga-catoira.html",
+    "name": "Romería Vikinga de Catoira",
+    "startDate": "2027-08-01",
+    "endDate": "2027-08-01",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Torres do Oeste (Castellum Honesti)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Catoira",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6766,
+        "longitude": -8.7261
+      }
+    },
+    "image": ["https://folklorius.es/images/romeria-vikinga-catoira.jpg"],
+    "description": "La Romería Vikinga de Catoira es una recreación histórica declarada Fiesta de Interés Turístico Internacional. Cada primer domingo de agosto, los vecinos de Catoira navegan el río Ulla en drakkars y asaltan las Torres do Oeste recordando las incursiones normandas medievales.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Catoira",
+      "url": "https://www.catoira.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Romería Vikinga de Catoira",
+        "item": "https://folklorius.es/romeria-vikinga-catoira.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Romería Vikinga de Catoira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El primer domingo de agosto. En 2026, el 2 de agosto. La semana previa incluye actividades desde el 27 de julio, con el Xantar Vikingo el sábado 1 de agosto. La fecha exacta puede variar cada año — consulta el Concello de Catoira para el programa actualizado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es gratuita la Romería Vikinga?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acceso al recinto, el desembarco vikingo, el mercado medieval y los conciertos son gratuitos. El Xantar Vikingo del sábado previo requiere entrada de pago y disfraz medieval o vikingo obligatorio. Consulta al Concello de Catoira para disponibilidad y precio de la cena."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo llegar a Catoira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Catoira conecta con Santiago de Compostela, Vigo y A Coruña por tren regional. Desde Santiago, el trayecto dura unos 33 minutos. En coche, se accede por la AP-9 dirección Padrón y salida hacia Catoira. El día del evento el aparcamiento en el centro es muy limitado — se recomienda el tren o aparcar en zonas periféricas y caminar hasta las Torres do Oeste."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se come y se bebe en la romería?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La tradición gastronómica del día del desembarco son los mejillones frescos y el vino tinto del Ulla, servidos en puestos del mercado antes y después de la batalla. Es uno de los rasgos más característicos de la fiesta y parte indisociable del ambiente del recinto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el grito '¡Úrsula!' y por qué se corea en la romería?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Úrsula es el nombre del drakkar noruego que protagoniza el desembarco desde 1968. Cuando la embarcación aparece en la ría con sus velas rojas y negras, el público empieza a corear '¡ÚR-SU-LA! ¡ÚR-SU-LA! ¡UH! ¡UH! ¡UH!' hasta que los guerreros saltan a tierra. Es el momento más reconocible de la fiesta y quien la ha vivido no lo olvida."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Romería Vikinga de Catoira
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/romeria-vikinga-catoira.jpg" alt="Drakkar con velas rojas navegando el río Ulla hacia las Torres do Oeste durante la Romería Vikinga de Catoira" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Romería Vikinga de Catoira</h1>
+      <p class="ficha-subtitle">
+        Catoira (Pontevedra) · Recreación histórica · "El primer domingo de agosto el Ulla vuelve a tener miedo."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Domingo 2 de agosto de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Torres do Oeste · Catoira · Pontevedra</span>
+          <span>⏱️ 1 día (semana previa con actividades)</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La romería es la fiesta del pueblo de Catoira. Los vecinos que navegan en los drakkars o defienden las Torres no son actores contratados: son los mismos que al día siguiente abren el bar o recogen la cosecha. El visitante llega como invitado a algo que lleva décadas construyéndose desde dentro.</li>
+          <li>El recinto de las Torres do Oeste es un monumento histórico nacional del siglo IX. El ambiente festivo no cambia lo que es: piedra medieval que ha sobrevivido a mil años de ría. Trátenla como tal.</li>
+          <li>El desembarco es una escena en movimiento. No cruzar entre los guerreros que avanzan desde el agua ni interrumpir la recreación para fotografiarse con ellos en mitad del acto.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Alguien grita desde la orilla. En el fondo de la ría aparecen dos manchas rojas y negras sobre el agua. Poco a poco toman forma: son velas. Debajo, el casco de madera de la Úrsula cortando la corriente del Ulla con los remos al ritmo de un cuerno de guerra. El grito se propaga entre los miles de personas apretadas en la orilla hasta convertirse en un coro que retumba entre las piedras medievales: <em>¡ÚR-SU-LA! ¡ÚR-SU-LA! ¡UH! ¡UH! ¡UH!</em> Los guerreros saltan al agua antes de que el barco toque tierra. Los defensores gallegos los reciben con lanzas y escudos. Lo que fue una batalla de verdad hace más de mil años dura ahora una hora, acaba con todos empapados de vino y barro, y se lleva el verano por delante.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Romería Vikinga de Catoira es una recreación histórica organizada por el <strong>Concello de Catoira</strong> en la que los propios vecinos del municipio rememoran las incursiones normandas medievales que amenazaron durante siglos la ruta fluvial hacia Santiago de Compostela. No es una compañía de recreación histórica externa: el Concello publica cada año un <strong>listado de tripulantes</strong> oficial para quienes quieren navegar a bordo de los drakkars, y son los habitantes de la localidad quienes se reparten entre invasores y defensores.
+      </p>
+      <p>
+        El acto central es el <strong>desembarco vikingo</strong>. Los drakkars aparecen en la ría con sus velas características y se acercan remando a las Torres do Oeste. Cuando los guerreros saltan al agua — armados con hachas, lanzas y escudos, empapados de vino desde antes de tocar tierra — el recinto se convierte en algo difícil de describir sin haberlo vivido: miles de personas apretadas en la orilla, barro, gritos, salpicaduras. Los defensores gallegos los reciben con lanzas. La batalla simulada dura lo que dura, y termina igual que en el siglo IX: los locales ganan. Desde primera hora, el recinto acoge un <strong>mercado medieval</strong> con artesanía y puestos de mejillones y vino tinto del Ulla. Por la tarde y la noche continúa el programa con conciertos de grupos como Troula y Upsala Medieval, y el espectáculo de fuego Ragnarok.
+      </p>
+      <p>
+        Para el visitante, el mejor puesto es junto a la orilla, a la altura donde los guerreros desembarcan. Llegar con antelación al desembarco es imprescindible: con más de 50.000 personas en el recinto, el espacio frente al río se llena antes de que la Úrsula aparezca en la ría.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ El programa detallado, los horarios exactos del desembarco y cualquier cambio de última hora los publica el <a href="https://www.catoira.gal" target="_blank" rel="noopener">Concello de Catoira</a>. La hora del desembarco depende de las mareas — puede variar de un año a otro.
+      </div>
+
+      <h2 class="section-title">Historia y origen</h2>
+      <p>
+        Las Torres do Oeste, conocidas históricamente como <em>Castellum Honesti</em>, son los restos de una fortaleza levantada en el siglo IX por el rey Alfonso III para cerrar el paso a las expediciones normandas y sarracenas que remontaban el río Ulla con Santiago de Compostela como destino. La posición era estratégica: quien controlara la desembocadura del Ulla controlaba la entrada más directa desde el mar hasta el corazón de Galicia. Las crónicas medievales recogen incursiones escandinavas en estas tierras durante los siglos IX y X. El conjunto alcanzó en el siglo XII su mayor extensión, con siete torres y una gran muralla; hoy se conservan dos torres y tramos de la muralla, declarados Monumento Histórico-Artístico Nacional desde 1931.
+      </p>
+      <p>
+        La romería nació en 1961 por iniciativa del Ateneo del Ullán, un grupo de amigos reunidos en la cantina de la estación ferroviaria que quiso recordar el papel histórico de Catoira como baluarte defensivo. El primer drakkar navegó el Ulla en 1968. Lo que empezó como una iniciativa local con pocos participantes creció hasta que en 2002 el Ministerio la declaró Fiesta de Interés Turístico Internacional.
+      </p>
+
+      <h2 class="section-title">Fecha 2026</h2>
+      <p>
+        La Romería Vikinga se celebra siempre el <strong>primer domingo de agosto</strong>. En 2026 corresponde al <strong>2 de agosto</strong>. La semana previa incluye actividades desde el 27 de julio. El <strong>Xantar Vikingo</strong> es el sábado 1 de agosto y requiere entrada de pago y disfraz medieval o vikingo obligatorio. La hora exacta del desembarco dominical depende de las mareas y se publica en el programa oficial del Concello.
+      </p>
+
+      <h2 class="section-title">El programa del día</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Mañana</span>
+          El recinto de las Torres do Oeste abre con el mercado medieval y los puestos de mejillones y vino tinto del Ulla. Pasacalles por el pueblo con grupos de música tradicional y medieval. En el muelle, los guerreros vikingos se concentran para embarcar.
+        </li>
+        <li>
+          <span class="dia-label">Mediodía — el desembarco</span>
+          Los drakkars aparecen en la ría con sus velas rojas y negras. Suenan los cuernos. La Úrsula y las demás embarcaciones avanzan hacia las Torres mientras el público corea su nombre. Los guerreros saltan al agua y asaltan el recinto; los defensores gallegos los reciben. La batalla simulada acaba con todos empapados de vino y barro. Es el momento cumbre de la fiesta.
+        </li>
+        <li>
+          <span class="dia-label">Tarde y noche</span>
+          Conciertos en el recinto con grupos bajo nombres nórdicos, pasacalles continuos por el pueblo y el espectáculo de fuego Ragnarok que cierra la jornada entrada la noche.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La romería tiene dos registros sonoros muy distintos. El que precede al desembarco es el de las gaitas y los pasacalles: música tradicional gallega mezclada con grupos de sonido medieval que recorren el pueblo desde primera hora y crean un ambiente de mercado animado. El ruido es constante, caótico, festivo. Pero hay un momento en que todo cambia.
+        </p>
+        <p>
+          Cuando la Úrsula aparece en la ría, el sonido de los cuernos de guerra llega antes que la embarcación. Es grave, largo, inconfundible. El público lo reconoce instintivamente y empieza a corear. Los gritos de los guerreros, el choque de escudos, el agua salpicando: durante el desembarco el volumen sube a otro nivel. Y después, cuando la batalla termina y los últimos guerreros salen del río con la ropa empapada de vino, las gaitas vuelven a tomar el recinto.
+        </p>
+        <ul>
+          <li>Para escuchar los cuernos antes que nadie y ver llegar los drakkars desde la distancia, sitúate en la orilla río arriba, mirando hacia la ría de Arousa. Tendrás la escena completa — las velas rojas emergiendo del agua — antes de que la Úrsula llegue al punto de desembarco.</li>
+          <li>Para estar en el corazón del desembarco, bájate a la orilla a la altura de las Torres. Es donde los guerreros saltan al agua. Llega con al menos una hora de antelación.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La llegada de la Úrsula</h3>
+          <span class="tag">Mediodía · Orilla del río Ulla</span>
+          <p>El drakkar noruego que navega el Ulla desde 1968 aparece en la ría con sus velas rojas y negras mientras los cuernos de guerra suenan sobre el agua. Es el único momento de la fiesta en que miles de personas callan al mismo tiempo antes de estallar en el mismo grito.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la imagen del drakkar acercándose a las Torres medievales es lo que define visualmente esta fiesta desde hace más de medio siglo. Para verla entera — las velas, el casco de madera, los remos — sitúate en la orilla mirando hacia la ría con antelación suficiente. Una vez que empieza el coro, moverse entre la multitud es casi imposible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El desembarco y la batalla</h3>
+          <span class="tag">Mediodía · Junto a las Torres do Oeste</span>
+          <p>Los guerreros saltan al agua antes de que los barcos toquen tierra. Los defensores gallegos los reciben con lanzas y escudos. En diez minutos, el recinto se convierte en un hervidero de barro, vino y gritos. Nadie sale seco.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la razón por la que 50.000 personas se concentran en un pueblo de 3.000 habitantes cada primer domingo de agosto. Sitúate junto a la orilla, en la zona donde los guerreros desembarcan, y no te separes hasta que el último vikingo haya salido del río. Si llevas cámara, están avisados: llevarán vino.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las Torres do Oeste al amanecer</h3>
+          <span class="tag">Antes del desembarco · Recinto histórico</span>
+          <p>Las ruinas del Castellum Honesti llevan en pie desde el siglo IX, con el río Ulla y la ría de Arousa al fondo. Antes de que el recinto se llene, las Torres merecen un rato sin multitudes.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contexto histórico es lo que da sentido a todo lo demás. El Centro de Activación Cultural junto a las Torres — diseñado con forma de nave vikinga por el arquitecto César Portela — tiene una exposición permanente sobre las incursiones normandas y la historia del Castellum. Llegar antes del mediodía permite verlo antes del desembarco.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Mejillones y vino tinto del Ulla</h3>
+          <span class="tag">Todo el día · Mercado medieval</span>
+          <p>No hay comida vikinga en la romería. Lo que hay son mejillones frescos de las rías y vino tinto del Ulla — en cuencos de barro o en cuernos de plástico, según el presupuesto — con las Torres medievales detrás y el río delante. Eso es todo. Y es suficiente.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el escenario convierte algo muy sencillo en algo que no ocurre en ningún otro sitio. Los puestos abren desde primera hora; si llegas cerca del mediodía, cuando el ambiente ya está caliente y el desembarco es inminente, habrá cola. Comer antes del desembarco es mejor estrategia que intentarlo después, cuando el recinto ya es un hervidero.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> El tren regional es la opción más cómoda el día del evento. Desde Santiago de Compostela el trayecto dura unos 33 minutos; desde Vigo, algo más. En coche, la AP-9 con salida hacia Catoira. El aparcamiento en el centro del pueblo se colapsa — aparcar en zonas periféricas y caminar hasta las Torres es lo habitual. Consulta Renfe para horarios del día.</li>
+        <li><strong>Llega antes del mediodía.</strong> El desembarco ocurre a mediodía, según mareas, pero el recinto se llena mucho antes. Llegar a primera hora permite ver el mercado con calma, desayunar mejillones y elegir sitio en la orilla antes de que sea imposible moverse.</li>
+        <li><strong>Ropa que pueda mojarse.</strong> Si te acercas a la orilla durante el desembarco, existe la posibilidad real de que los guerreros te salpiquen vino o agua del río. No es un accidente: es parte de la fiesta. Ropa que no importe es la mejor opción.</li>
+        <li><strong>El Xantar Vikingo del sábado.</strong> La cena del sábado previo requiere entrada de pago y disfraz medieval o vikingo obligatorio. Consulta disponibilidad y precio directamente en el <a href="https://www.catoira.gal" target="_blank" rel="noopener">Concello de Catoira</a> — las plazas se agotan.</li>
+        <li><strong>Disfraces y material vikingo.</strong> Hay puestos en el pueblo que venden cuernos, cascos, capas y todo lo necesario para entrar en el papel. No es obligatorio, pero quien va disfrazado disfruta la fiesta de otra manera.</li>
+        <li><strong>Alojamiento.</strong> Catoira es un municipio pequeño. Para el primer fin de semana de agosto, el alojamiento en Vilagarcía de Arousa, Padrón o la propia ciudad de Pontevedra es una alternativa habitual.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de la romería</h2>
+      <dl class="festero">
+
+        <dt>Romaría Viquinga / Vikinga</dt>
+        <dd>El nombre oficial de la fiesta, en gallego <em>Romaría Viquinga</em>. Los habitantes de Catoira la llaman así, con la variante galleguizada <em>viquinga</em>, que convive con la versión castellana en carteles y programa oficial.</dd>
+
+        <dt>Drakkar</dt>
+        <dd>Las embarcaciones de proa y popa elevadas que navegan el Ulla durante la recreación. El más conocido es la <strong>Úrsula</strong>, un drakkar noruego que lleva participando en la romería desde 1968 y que da nombre al grito colectivo del desembarco: <em>¡ÚR-SU-LA! ¡UH! ¡UH! ¡UH!</em>. Cuando sus velas rojas y negras aparecen en la ría, el recinto entero lo sabe antes de que nadie lo anuncie.</dd>
+
+        <dt>Xantar Vikingo</dt>
+        <dd>La cena de pago que se celebra el sábado previo al desembarco. Requiere disfraz medieval o vikingo y entrada comprada con antelación. Es la única actividad de pago del fin de semana.</dd>
+
+        <dt>Viquinguiña</dt>
+        <dd>El programa de actividades adaptadas a los más pequeños durante la semana previa a la romería. Talleres, juegos y recreaciones pensados para que los niños se acerquen a la historia del Castellum Honesti.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/romeria-vikinga-catoira-1.jpg" alt="Drakkar con velas rojas navegando el río Ulla hacia las Torres do Oeste durante el desembarco vikingo" loading="lazy" />
+        <img src="images/romeria-vikinga-catoira-2.jpg" alt="Guerreros vikingos saltando al agua desde los drakkars durante el asalto a las Torres do Oeste de Catoira" loading="lazy" />
+        <img src="images/romeria-vikinga-catoira-3.jpg" alt="Ruinas medievales de las Torres do Oeste junto al río Ulla en Catoira, Pontevedra" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.catoira.gal" target="_blank" rel="noopener">Concello de Catoira — programa oficial y listado de tripulantes</a></li>
+        <li><a href="https://turismoriasbaixas.com" target="_blank" rel="noopener">Turismo Rías Baixas</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — Xunta de Galicia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-23</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Romería Vikinga de Catoira?</dt>
+        <dd>El primer domingo de agosto. En 2026, el 2 de agosto. La semana previa incluye actividades desde el 27 de julio, con el Xantar Vikingo el sábado 1 de agosto. La fecha exacta puede variar cada año — consulta el Concello de Catoira para el programa actualizado.</dd>
+
+        <dt>¿Es gratuita la Romería Vikinga?</dt>
+        <dd>El acceso al recinto, el desembarco vikingo, el mercado medieval y los conciertos son gratuitos. El Xantar Vikingo del sábado previo requiere entrada de pago y disfraz medieval o vikingo obligatorio. Consulta al Concello de Catoira para disponibilidad y precio de la cena.</dd>
+
+        <dt>¿Cómo llegar a Catoira?</dt>
+        <dd>Catoira conecta con Santiago de Compostela, Vigo y A Coruña por tren regional. Desde Santiago, el trayecto dura unos 33 minutos. En coche, se accede por la AP-9 dirección Padrón y salida hacia Catoira. El día del evento el aparcamiento en el centro es muy limitado — se recomienda el tren o aparcar en zonas periféricas y caminar hasta las Torres do Oeste.</dd>
+
+        <dt>¿Qué se come y se bebe en la romería?</dt>
+        <dd>La tradición gastronómica del día del desembarco son los mejillones frescos y el vino tinto del Ulla, servidos en puestos del mercado antes y después de la batalla. Es uno de los rasgos más característicos de la fiesta y parte indisociable del ambiente del recinto.</dd>
+
+        <dt>¿Qué es el grito «¡Úrsula!» y por qué se corea en la romería?</dt>
+        <dd>La Úrsula es el nombre del drakkar noruego que protagoniza el desembarco desde 1968. Cuando la embarcación aparece en la ría con sus velas rojas y negras, el público empieza a corear «¡ÚR-SU-LA! ¡ÚR-SU-LA! ¡UH! ¡UH! ¡UH!» hasta que los guerreros saltan a tierra. Es el momento más reconocible de la fiesta y quien la ha vivido no lo olvida.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Vikingos</a>
+        <a href="#" class="etiqueta">Rías Baixas</a>
+        <a href="#" class="etiqueta">1 día</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-catoira">
+        <h2 id="rel-title-catoira">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="arde-lucus-lugo.html" class="ficha-rel-card">
+            <img src="images/arde-lucus-lugo.jpg" alt="Gran Desfile del Arde Lucus por la Muralla Romana de Lugo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arde Lucus</span>
+              <span class="rel-frase">Lugo vuelve a ser romana — y también castreña.</span>
+              <span class="rel-meta">Lugo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="rapa-das-bestas-sabucedo.html" class="ficha-rel-card">
+            <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores inmovilizando a mano un caballo salvaje en el curro de Sabucedo durante la Rapa das Bestas" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Rapa das Bestas de Sabucedo</span>
+              <span class="rel-frase">Tres aloitadores. Un caballo. Sin cuerdas.</span>
+              <span class="rel-meta">Sabucedo · A Estrada · Galicia</span>
+            </div>
+          </a>
+
+          <a href="carthagineses-romanos-cartagena.html" class="ficha-rel-card">
+            <img src="images/semana-santa-cartagena.jpg" alt="Recreación histórica de Carthagineses y Romanos en Cartagena" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carthagineses y Romanos</span>
+              <span class="rel-frase">La Segunda Guerra Púnica revive cada septiembre en Cartagena.</span>
+              <span class="rel-meta">Cartagena · Región de Murcia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
