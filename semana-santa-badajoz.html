@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semana Santa de Badajoz: costaleros, Alcazaba y madrugadas</title>
+  <meta name="description" content="Semana Santa de Badajoz 2026: 11 cofradías, costaleros, madrugadas en el Casco Antiguo y la Patrona en la Plaza de la Soledad. ITI desde enero 2025." />
+  <link rel="canonical" href="https://folklorius.es/semana-santa-badajoz.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Semana Santa de Badajoz: donde Extremadura sale a la calle de madrugada" />
+  <meta property="og:description" content="Once cofradías, costaleros, el Casco Antiguo y la Patrona de la ciudad. Badajoz lleva cinco siglos celebrando su Semana Santa sin interrupción." />
+  <meta property="og:image" content="https://folklorius.es/images/semana-santa-badajoz.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 0;
+      overflow: hidden;
+    }
+    .cofradia-col summary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 10px 16px 14px;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/semana-santa-badajoz.html",
+    "name": "Semana Santa de Badajoz",
+    "startDate": "2026-03-29",
+    "endDate": "2026-04-05",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Badajoz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Badajoz",
+        "addressRegion": "Extremadura",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.8794,
+        "longitude": -6.9706
+      }
+    },
+    "image": ["https://folklorius.es/images/semana-santa-badajoz.jpg"],
+    "description": "La Semana Santa de Badajoz reúne 11 cofradías y más de 10.000 cofrades en un Casco Antiguo de calles estrechas y escaleras empinadas. Declarada Fiesta de Interés Turístico Internacional en 2025, lleva más de 500 años de historia ininterrumpida.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Agrupación de Hermandades y Cofradías de Penitencia y Gloria de Badajoz",
+      "url": "https://semanasanta.aytobadajoz.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Semana Santa de Badajoz",
+        "item": "https://folklorius.es/semana-santa-badajoz.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Semana Santa de Badajoz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril. Los días de mayor intensidad procesional son el Jueves Santo y el Viernes Santo, con salidas tanto de tarde como pasada la medianoche."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es necesario pagar para ver las procesiones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Todas las procesiones de la Semana Santa de Badajoz transcurren por la vía pública y el acceso como espectador es gratuito. La Agrupación de Hermandades publica el programa en su web oficial con los recorridos orientativos de cada cofradía."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia a la Semana Santa de Badajoz de otras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tres cosas la hacen singular: los pasos van a costaleros por calles muy estrechas y con escaleras del Casco Antiguo, lo que convierte cada salida en un ejercicio técnico exigente; la Patrona de la ciudad, Nuestra Señora de la Soledad, es protagonista de una de las procesiones más recogidas; y la cofradía de la Vera Cruz recupera figuras barrocas del siglo XVI como el Muñidor, con nazarenos que hacen voto de silencio y no pueden girarse durante el recorrido."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo llegar a Badajoz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Badajoz está en la frontera con Portugal, a unos 90 km de Elvas y 260 km de Lisboa por la A-6. Desde Madrid, unos 400 km por la A-5. Desde Sevilla, unos 220 km por la A-66. La ciudad tiene conexión de autobús con las principales ciudades españolas y con Lisboa. El Casco Antiguo, donde se concentran los recorridos, es accesible a pie desde el centro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Muñidor y por qué abre la procesión de la Vera Cruz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Muñidor es una figura histórica de los cortejos procesionales barrocos del siglo XVI: el encargado de convocar a los hermanos para la procesión, golpeando con un bastón en las puertas de sus casas. La cofradía de la Santa Vera Cruz lo ha recuperado como parte de su cortejo, junto a los Regidores y el Guía o Cabecera, rescatando el ceremonial de la Semana Santa pacense de hace cuatrocientos años."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Semana Santa de Badajoz
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/semana-santa-badajoz.jpg" alt="Costaleros portando un paso por las calles estrechas del Casco Antiguo de Badajoz durante la Semana Santa" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Semana Santa de Badajoz</h1>
+      <p class="ficha-subtitle">
+        Badajoz (Extremadura) · Semana Santa · "Cinco siglos de fe en las calles más estrechas de Extremadura."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-interes">Fiesta de Interés Turístico Nacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 29 de marzo al 5 de abril de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Badajoz · Extremadura</span>
+          <span>⏱️ 8 días</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las procesiones de Badajoz son actos de devoción de quienes las viven desde dentro, muchos de ellos cumpliendo un voto personal. El visitante presencia algo que pertenece a la ciudad antes que al turismo.</li>
+          <li>Las calles del Casco Antiguo son estrechas y algunas tienen escaleras. Los costaleros trabajan en condiciones exigentes y con visibilidad limitada. No obstruir el paso de los pasos ni acercarse a los portadores mientras están en movimiento.</li>
+          <li>La cofradía de la Santa Vera Cruz guarda silencio estricto durante su recorrido: sus nazarenos no pueden girarse ni hablar. Si el cortejo pasa cerca, ese silencio merece el mismo respeto que piden ellos mismos.</li>
+          <li>Algunas procesiones salen pasada la medianoche. El ambiente nocturno en el Casco Antiguo puede ser recogido o intensamente emotivo según el momento — adaptarse al registro de cada acto es parte de entender la fiesta.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Pasada la medianoche del Jueves Santo, el Casco Antiguo de Badajoz se queda sin coches, sin ruido y casi sin luz. Por una calle que apenas deja pasar a dos personas de frente, cuarenta costaleros sacan a hombros un paso que pesa más que ellos. No hay música. Solo el chirrido de la madera, el roce de los pies sobre el adoquín y el aliento contenido de quienes miran desde los portales. Badajoz lleva más de quinientos años haciendo esto. No lo hace para que lo vean — aunque quien lo ve no lo olvida.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Semana Santa de Badajoz la organizan <strong>once cofradías</strong> agrupadas bajo la Agrupación de Hermandades y Cofradías de Penitencia y Gloria, con más de <strong>10.000 cofrades y costaleros</strong>. Los pasos van a hombros en la tradición costalera, lo que en el Casco Antiguo pacense se convierte en un desafío técnico real: calles con pendiente, escaleras, esquinas imposibles que exigen ajuste continuo entre el capataz y los portadores que trabajan sin ver adónde van.
+      </p>
+      <p>
+        El eje de los recorridos es la <strong>Plaza de España</strong>, junto a la Catedral de San Juan Bautista, y la <strong>Plaza de la Soledad</strong>, donde tiene su sede la Patrona de la ciudad. Cada cofradía traza su propio itinerario por el Casco Antiguo, con las salidas y entradas como los momentos de mayor concentración de público. El programa de cada edición, con los recorridos orientativos y los días exactos de cada hermandad, lo publica la Agrupación en su web oficial.
+      </p>
+      <p>
+        Un detalle que distingue esta Semana Santa del resto: la <strong>cofradía de la Santa Vera Cruz</strong> recuperó figuras del ceremonial barroco del siglo XVI — el Muñidor, los Regidores, el Guía o Cabecera — que abren su cortejo antes de que salga el primer paso. Sus nazarenos hacen voto de silencio durante todo el recorrido y no pueden girarse ni mirar hacia atrás. Es una procesión que parece sacada de cuatro siglos atrás porque en parte lo está.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Los horarios exactos, recorridos e itinerarios de cada cofradía los publica la <a href="https://semanasanta.aytobadajoz.es" target="_blank" rel="noopener">Agrupación de Hermandades y Cofradías de Badajoz</a>. Ante riesgo de lluvia, las salidas pueden suspenderse para proteger el patrimonio escultórico.
+      </div>
+
+      <h2 class="section-title">Historia y origen</h2>
+      <p>
+        Badajoz celebra su Semana Santa de forma ininterrumpida desde el siglo XVI, con más de quinientos años documentados de procesiones en la ciudad. La hermandad más antigua con fecha verificada es la del <strong>Prendimiento</strong>, fundada el 12 de octubre de 1693, aunque otras cofradías tienen raíces anteriores que la documentación no ha podido precisar con exactitud. La Agrupación de Hermandades, que coordina hoy las once cofradías, se constituyó en 1948 bajo el obispo José María Alcaraz y Alenda.
+      </p>
+      <p>
+        La ciudad de Badajoz tiene una historia marcada por su posición fronteriza con Portugal y por los conflictos militares que la convirtieron en plaza fuerte durante siglos. Esa historia pesa en el tejido urbano del Casco Antiguo, con sus calles estrechas, sus muros gruesos y su Alcazaba árabe — y pesa también en la forma en que la ciudad vive su Semana Santa: sin grandes avenidas donde lucirse, sino en un laberinto de callejones donde cada salida de un paso es una negociación entre la fe y la arquitectura.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La Semana Santa de Badajoz en 2026 se celebra del <strong>domingo 29 de marzo</strong>, Domingo de Ramos, al <strong>domingo 5 de abril</strong>, Domingo de Resurrección. Las procesiones de mayor intensidad se concentran entre el <strong>Jueves Santo</strong> y el <strong>Viernes Santo</strong>, con salidas tanto de tarde como pasada la medianoche. Las fechas cambian cada año según el calendario litúrgico — consulta la web oficial de la Agrupación para el programa actualizado de cada edición.
+      </p>
+
+      <h2 class="section-title">Procesiones destacadas</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Domingo de Ramos</span>
+          La <strong>Hermandad de la Entrada Triunfal</strong> abre la semana con el Cristo Rey, el Cristo de la Paz y la Virgen de la Palma. Una de las pocas procesiones con ambiente de mañana festiva antes de que el tono cambie.
+        </li>
+        <li>
+          <span class="dia-label">Lunes Santo</span>
+          La <strong>Hermandad del Prendimiento</strong>, la más antigua con fecha verificada — fundada en 1693 — protagoniza la primera procesión nocturna. Sus andas de madera tallada y dorada de estilo barroco son obra de artesanos pacenses.
+        </li>
+        <li>
+          <span class="dia-label">Martes Santo</span>
+          Doblete procesional: la <strong>Hermandad de la Angustia</strong> y la <strong>Hermandad de Jesús de la Espina</strong>. Dos salidas distintas en una misma noche marcan el ritmo creciente de la semana.
+        </li>
+        <li>
+          <span class="dia-label">Miércoles Santo</span>
+          La <strong>Hermandad del Descendimiento</strong> y la <strong>Hermandad del Dulce Nombre de Jesús</strong> llenan la noche de mitad de semana, con los pasos del Cristo de la Fe y la Virgen del Mayor Dolor entre los más seguidos de la ciudad.
+        </li>
+        <li>
+          <span class="dia-label">Jueves Santo — tarde y madrugada</span>
+          Jornada doble. Por la tarde sale la <strong>Hermandad de la Resurrección</strong>. Pasada la medianoche, la <strong>Hermandad del Prendimiento</strong> vuelve a las calles con el paso de Jesús en el Huerto — cuarenta costaleros, silencio absoluto, Casco Antiguo vacío. Es el momento que los pacenses guardan como el más íntimo de toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo — madrugada, tarde y noche</span>
+          La madrugada del Viernes pertenece a la <strong>Hermandad de Jesús Obrero</strong>, con su vía crucis en silencio. Por la tarde, el <strong>Santo Entierro</strong> reúne a la ciudad entera en torno al Cristo Yacente, la Virgen de las Lágrimas y el Santiago Apóstol. Al caer la noche, la <strong>Hermandad del Ecce-Homo y la Soledad</strong> cierra el Viernes con la Patrona de Badajoz, Nuestra Señora de la Soledad, cuya imagen del siglo XVII recorre las calles entre velas y silencio.
+        </li>
+        <li>
+          <span class="dia-label">Viernes Santo — procesión singular</span>
+          La <strong>Hermandad de la Santa Vera Cruz</strong> recupera el ceremonial barroco del siglo XVI: el Muñidor abre el cortejo, los Regidores ordenan la procesión y los nazarenos — de ruan negro, cinturón de esparto y capirote alto — hacen voto de silencio y no pueden girarse durante todo el recorrido.
+        </li>
+        <li>
+          <span class="dia-label">Domingo de Resurrección</span>
+          La <strong>Hermandad de la Resurrección</strong> cierra la semana con el Cristo de la Caridad y la Virgen de la Aurora. El domingo rompe el tono penitencial y devuelve la alegría a las calles.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Cofradías por día</h2>
+      <p>
+        La Semana Santa de Badajoz cuenta con <strong>11 cofradías</strong> integradas en la Agrupación de Hermandades y Cofradías de Penitencia y Gloria. Consulta el programa oficial de la Agrupación para horarios e itinerarios exactos de cada edición.
+      </p>
+
+      <div class="cofradias-grid">
+
+        <details class="cofradia-col">
+          <summary>Domingo de Ramos</summary>
+          <ul>
+            <li>Hermandad y Cofradía de la Entrada Triunfal de Cristo en Jerusalén (Santísimo Cristo Rey), Santísimo Cristo de la Paz y Nuestra Señora de la Palma</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col">
+          <summary>Lunes Santo</summary>
+          <ul>
+            <li>Hermandad y Cofradía de Nuestro Padre Jesús de la Humildad, Nuestro Padre Jesús del Prendimiento y María Santísima de los Dolores</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col">
+          <summary>Martes Santo</summary>
+          <ul>
+            <li>Hermandad Sacramental del Santísimo Cristo de la Angustia y María Santísima de la Misericordia</li>
+            <li>Pontificia Hermandad y Cofradía de Nuestro Padre Jesús de la Espina y María Santísima de la Amargura</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col">
+          <summary>Miércoles Santo</summary>
+          <ul>
+            <li>Cofradía del Santísimo Cristo del Descendimiento, María Santísima de la Piedad y Nuestra Señora de la Esperanza</li>
+            <li>Pontificia Hermandad y Cofradía de Penitencia del Dulce Nombre de Jesús, Nuestro Padre Jesús Nazareno del Amparo, Santísimo Cristo de la Fe, Nuestra Señora de la Piedad y María Santísima del Mayor Dolor</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col" open>
+          <summary>Jueves Santo</summary>
+          <ul>
+            <li>Hermandad y Cofradía de la Sagrada Resurrección de Nuestro Señor Jesucristo, Santísimo Cristo de la Caridad en su Sentencia y María Santísima de la Aurora, Madre de la Iglesia (tarde)</li>
+            <li>Hermandad y Cofradía de Nuestro Padre Jesús de la Humildad, Nuestro Padre Jesús del Prendimiento y María Santísima de los Dolores (madrugada)</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col">
+          <summary>Viernes Santo</summary>
+          <ul>
+            <li>Hermandad de Jesús Obrero y Nuestra Señora del Dulce Nombre (madrugada)</li>
+            <li>Hermandad y Cofradía de la Santa Vera Cruz, Santísimo Cristo del Amor y Nuestra Señora de la Consolación</li>
+            <li>Pontificia y Real Hermandad y Cofradía de Nuestro Señor Jesucristo Yacente (Santo Entierro), Nuestra Señora de las Lágrimas y Santiago Apóstol (tarde)</li>
+            <li>Pontificia y Real Hermandad y Cofradía de Nuestro Padre Jesús de la Humildad y Paciencia, Santísimo Cristo de la Humillación Ecce-Homo y Nuestra Señora de la Soledad, Patrona de Badajoz (noche)</li>
+          </ul>
+        </details>
+
+        <details class="cofradia-col">
+          <summary>Domingo de Resurrección</summary>
+          <ul>
+            <li>Hermandad y Cofradía de la Sagrada Resurrección de Nuestro Señor Jesucristo, Santísimo Cristo de la Caridad en su Sentencia y María Santísima de la Aurora, Madre de la Iglesia</li>
+          </ul>
+        </details>
+
+      </div>
+      <p class="fuente">Fuente: <a href="https://semanasanta.aytobadajoz.es/hermandades-y-cofradias/" target="_blank" rel="noopener">Agrupación de Hermandades y Cofradías de Badajoz</a> — última verificación: 2026-07-23</p>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La Semana Santa de Badajoz no tiene un sonido único: tiene varios, y cada uno pertenece a un momento distinto. Las procesiones de tarde llevan bandas de música y cornetas que llenan la Plaza de España con marchas procesionales — el sonido rebota en la piedra de la Catedral y se expande por las bocacalles del Casco Antiguo. Es denso, solemne, con ese punto de vibración en el pecho que tienen los cobres cuando tocan de cerca.
+        </p>
+        <p>
+          Las madrugadas son otra cosa. El Prendimiento del Jueves Santo sale sin música. Lo que se escucha es el chirrido de las andas, el roce de los pies de los costaleros sobre el adoquín y, de vez en cuando, la voz seca del capataz dando instrucciones. El Viernes Santo por la noche, la Soledad — la Patrona — recorre el Casco Antiguo acompañada únicamente por el rezo del rosario y el paso de cientos de personas con velas. No hay banda. El silencio hace el trabajo.
+        </p>
+        <ul>
+          <li>Para escuchar las bandas en su mejor momento, sitúate en la Plaza de España cuando los pasos cruzan frente a la Catedral. La acústica de la plaza amplifica el sonido de los cobres de una manera que en las calles estrechas no ocurre.</li>
+          <li>Para la madrugada del Prendimiento, busca una calle angosta del Casco Antiguo antes de que el paso llegue. El silencio que precede a la procesión — y que se rompe solo con el ruido de la madera — es lo más difícil de olvidar.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La madrugada del Prendimiento</h3>
+          <span class="tag">Jueves Santo · Casco Antiguo</span>
+          <p>Pasada la medianoche, cuarenta costaleros sacan a hombros el paso del Huerto de Getsemaní por calles que apenas los dejan pasar. Sin música, sin acompañamiento. Solo el paso, el capataz y el silencio del Casco Antiguo vacío.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento que los pacenses reservan cuando alguien les pregunta qué tiene su Semana Santa que no tenga ninguna otra. Sitúate en una de las calles estrechas con escaleras del Casco Antiguo — cuanto más angosta, mejor — y llega antes de que el paso llegue. Cuando los costaleros doblan una esquina imposible en silencio absoluto, se entiende por qué esta fiesta lleva quinientos años.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La procesión de la Vera Cruz</h3>
+          <span class="tag">Viernes Santo · Casco Antiguo</span>
+          <p>El Muñidor abre el cortejo golpeando el suelo con su bastón. Detrás, nazarenos de ruan negro con capirote alto que han hecho voto de no girarse ni hablar durante todo el recorrido. Es la única procesión de Badajoz que recupera el ceremonial barroco del siglo XVI tal como era.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no existe otra procesión igual en Extremadura y pocas en España. El Muñidor, los Regidores, el Guía — figuras que desaparecieron de la mayoría de cortejos hace siglos — abren aquí cada año. La cofradía los rescató del olvido hace décadas y no los ha soltado. Sitúate en el recorrido antes de que salga y observa la cabeza del cortejo antes de que llegue el primer paso.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Soledad, Patrona de Badajoz</h3>
+          <span class="tag">Viernes Santo · Noche · Plaza de la Soledad</span>
+          <p>Nuestra Señora de la Soledad, imagen del siglo XVII de rodillas sobre el paso, recorre el Casco Antiguo en la noche del Viernes Santo sin banda de música. Solo el rosario rezado en voz baja y el silencio de quienes la acompañan con velas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la Patrona de la ciudad — no solo una imagen cofrade — y la relación de los pacenses con ella es de otro orden. La salida desde la iglesia de la Soledad y la entrada de madrugada son los dos momentos de máxima emoción. Sitúate en la Plaza de la Soledad para verla salir; si puedes quedarte hasta la entrada, verás a la ciudad despedirse de ella hasta el año siguiente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los costaleros en las calles imposibles</h3>
+          <span class="tag">Jueves y Viernes Santo · Casco Antiguo</span>
+          <p>Badajoz no tiene las avenidas de Sevilla ni las rampas de Málaga. Tiene escaleras, esquinas de noventa grados y callejones donde el paso raspa las fachadas. Ver a los costaleros negociar esos pasos con el capataz — sin verle la cara a nadie — es entender que la dificultad es parte de la devoción.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en pocas ciudades españolas el entorno urbano forma parte del espectáculo de esta manera. Busca una de las calles con escaleras del Casco Antiguo y espera a que un paso llegue a ese punto. El silencio que se hace entre el público cuando los costaleros empiezan a subir los peldaños es la mejor descripción posible de lo que es esta Semana Santa.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Badajoz está en la frontera con Portugal. Desde Madrid, unos 400 km por la A-5. Desde Sevilla, unos 220 km por la A-66. Desde Lisboa, unos 260 km por la A-6. La ciudad tiene conexión de autobús con las principales ciudades españolas y portuguesas. El Casco Antiguo, donde se concentran los recorridos, es accesible a pie desde el centro.</li>
+        <li><strong>Dónde situarse.</strong> La Plaza de España, junto a la Catedral, es el punto de referencia para las procesiones de tarde. Para las madrugadas, el Casco Antiguo alto — con sus calles estrechas y escaleras — es donde la Semana Santa de Badajoz tiene más personalidad. Llega con tiempo para elegir sitio antes de que el paso llegue.</li>
+        <li><strong>Las madrugadas.</strong> Algunas de las procesiones más intensas salen pasada la medianoche. Si solo puedes estar un día, el Jueves Santo cubre tanto la tarde como la madrugada con dos salidas de distinto carácter.</li>
+        <li><strong>Calzado.</strong> El Casco Antiguo tiene calles con adoquín irregular y pendientes pronunciadas. Calzado cómodo y con suela gruesa, especialmente para las madrugadas.</li>
+        <li><strong>Alojamiento.</strong> Badajoz es la ciudad más grande de Extremadura. Para Semana Santa conviene reservar con antelación, especialmente para el Jueves y Viernes Santo. Las localidades cercanas de la comarca también tienen oferta hotelera.</li>
+        <li><strong>Programa oficial.</strong> Los recorridos exactos, horarios y cualquier cambio de última hora los publica la <a href="https://semanasanta.aytobadajoz.es" target="_blank" rel="noopener">Agrupación de Hermandades y Cofradías</a>. Ante riesgo de lluvia, las salidas pueden cancelarse para proteger el patrimonio escultórico.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario cofrade</h2>
+      <dl class="festero">
+
+        <dt>Costalero</dt>
+        <dd>Los portadores que sacan los pasos a hombros en Badajoz siguiendo la tradición andaluza. Trabajan bajo las andas sin ver adónde van, guiados exclusivamente por la voz del capataz. En el Casco Antiguo pacense, con sus calles estrechas y sus escaleras, el trabajo de los costaleros es especialmente exigente.</dd>
+
+        <dt>Capataz</dt>
+        <dd>El responsable de dirigir a los costaleros durante el recorrido. Da instrucciones con una voz seca y precisa — levanta, camina, para — que los portadores ejecutan en bloque. En las esquinas imposibles del Casco Antiguo, la coordinación entre el capataz y los costaleros es lo que permite que el paso salga y entre sin dañar nada.</dd>
+
+        <dt>Muñidor</dt>
+        <dd>Figura histórica del ceremonial barroco del siglo XVI, recuperada por la cofradía de la Santa Vera Cruz. Era el encargado de convocar a los hermanos para la procesión, golpeando con su bastón en las puertas de sus casas. Hoy abre el cortejo de la Vera Cruz como lo hacía hace cuatrocientos años.</dd>
+
+        <dt>Andas</dt>
+        <dd>La estructura sobre la que se asienta la imagen o el grupo escultórico que forma el paso. En Badajoz, algunas andas son piezas históricas de madera tallada y dorada de estilo barroco, como las de la Hermandad del Prendimiento, obra de artesanos pacenses.</dd>
+
+        <dt>Pacense</dt>
+        <dd>El gentilicio de Badajoz. Lo encontrarás en la prensa local y en los programas de la Agrupación para referirse a la Semana Santa, los cofrades y la ciudad en general.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/semana-santa-badajoz-1.jpg" alt="Costaleros portando un paso por una calle estrecha del Casco Antiguo de Badajoz durante la Semana Santa" loading="lazy" />
+        <img src="images/semana-santa-badajoz-2.jpg" alt="Procesión nocturna de la Hermandad de la Vera Cruz por las calles de Badajoz con nazarenos de capirote negro" loading="lazy" />
+        <img src="images/semana-santa-badajoz-3.jpg" alt="Nuestra Señora de la Soledad, Patrona de Badajoz, en procesión durante el Viernes Santo" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://semanasanta.aytobadajoz.es" target="_blank" rel="noopener">Semana Santa de Badajoz — Agrupación de Hermandades y Cofradías</a></li>
+        <li><a href="https://www.aytobadajoz.es" target="_blank" rel="noopener">Ayuntamiento de Badajoz — Turismo</a></li>
+        <li><a href="https://www.turismobadajoz.es" target="_blank" rel="noopener">Turismo de Extremadura</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-23</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Semana Santa de Badajoz?</dt>
+        <dd>Del Domingo de Ramos al Domingo de Resurrección, en fecha variable según el calendario litúrgico. En 2026, del 29 de marzo al 5 de abril. Los días de mayor intensidad procesional son el Jueves Santo y el Viernes Santo, con salidas tanto de tarde como pasada la medianoche.</dd>
+
+        <dt>¿Es necesario pagar para ver las procesiones?</dt>
+        <dd>No. Todas las procesiones de la Semana Santa de Badajoz transcurren por la vía pública y el acceso como espectador es gratuito. La Agrupación de Hermandades publica el programa en su web oficial con los recorridos orientativos de cada cofradía.</dd>
+
+        <dt>¿Qué diferencia a la Semana Santa de Badajoz de otras?</dt>
+        <dd>Tres cosas la hacen singular: los pasos van a costaleros por calles muy estrechas y con escaleras del Casco Antiguo, lo que convierte cada salida en un ejercicio técnico exigente; la Patrona de la ciudad, Nuestra Señora de la Soledad, es protagonista de una de las procesiones más recogidas; y la cofradía de la Vera Cruz recupera figuras barrocas del siglo XVI como el Muñidor, con nazarenos que hacen voto de silencio y no pueden girarse durante el recorrido.</dd>
+
+        <dt>¿Cómo llegar a Badajoz?</dt>
+        <dd>Badajoz está en la frontera con Portugal, a unos 90 km de Elvas y 260 km de Lisboa por la A-6. Desde Madrid, unos 400 km por la A-5. Desde Sevilla, unos 220 km por la A-66. La ciudad tiene conexión de autobús con las principales ciudades españolas y con Lisboa. El Casco Antiguo, donde se concentran los recorridos, es accesible a pie desde el centro.</dd>
+
+        <dt>¿Qué es el Muñidor y por qué abre la procesión de la Vera Cruz?</dt>
+        <dd>El Muñidor es una figura histórica de los cortejos procesionales barrocos del siglo XVI: el encargado de convocar a los hermanos para la procesión, golpeando con un bastón en las puertas de sus casas. La cofradía de la Santa Vera Cruz lo ha recuperado como parte de su cortejo, junto a los Regidores y el Guía o Cabecera, rescatando el ceremonial de la Semana Santa pacense de hace cuatrocientos años.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Semana Santa</a>
+        <a href="#" class="etiqueta">Extremadura</a>
+        <a href="#" class="etiqueta">Badajoz</a>
+        <a href="#" class="etiqueta">Marzo-Abril</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Costaleros</a>
+        <a href="#" class="etiqueta">Madrugadas</a>
+        <a href="#" class="etiqueta">8 días</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-badajoz">
+        <h2 id="rel-title-badajoz">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-caceres.html" class="ficha-rel-card">
+            <img src="images/semana-santa-caceres.jpg" alt="Procesión nocturna por las calles medievales de la Ciudad Monumental de Cáceres" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cáceres</span>
+              <span class="rel-frase">Procesiones en la Ciudad Monumental, Patrimonio de la Humanidad.</span>
+              <span class="rel-meta">Cáceres · Extremadura</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-merida.html" class="ficha-rel-card">
+            <img src="images/semana-santa-merida.jpg" alt="Vía Crucis en el Anfiteatro Romano de Mérida durante la Semana Santa" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Mérida</span>
+              <span class="rel-frase">El Teatro Romano y el Anfiteatro como escenario de Semana Santa.</span>
+              <span class="rel-meta">Mérida · Extremadura</span>
+            </div>
+          </a>
+
+          <a href="semana-santa-sevilla.html" class="ficha-rel-card">
+            <img src="images/semana-santa-sevilla.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Sevilla</span>
+              <span class="rel-frase">La referencia del modelo costalero que Badajoz adoptó como propio.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
