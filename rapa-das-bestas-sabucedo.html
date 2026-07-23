@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rapa das Bestas de Sabucedo: aloitadores y curro sin cuerdas</title>
+  <meta name="description" content="Rapa das Bestas de Sabucedo 2026: caballos salvajes inmovilizados a mano por los aloitadores. Primer fin de semana de julio en A Estrada. ITI 2007." />
+  <link rel="canonical" href="https://folklorius.es/rapa-das-bestas-sabucedo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rapa das Bestas de Sabucedo: caballos salvajes, manos desnudas y tres siglos de tradición" />
+  <meta property="og:description" content="En Sabucedo, cada julio, los mozos de la aldea bajan del monte los caballos salvajes y los inmovilizan en el curro solo con las manos. Sin cuerdas, sin palos. Llevan haciéndolo al menos tres siglos." />
+  <meta property="og:image" content="https://folklorius.es/images/rapa-das-bestas-sabucedo.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/rapa-das-bestas-sabucedo.html",
+    "name": "Rapa das Bestas de Sabucedo",
+    "startDate": "2026-07-03",
+    "endDate": "2026-07-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Sabucedo, A Estrada",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sabucedo",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.58826,
+        "longitude": -8.41475
+      }
+    },
+    "image": ["https://folklorius.es/images/rapa-das-bestas-sabucedo.jpg"],
+    "description": "La Rapa das Bestas de Sabucedo reúne cada julio a los aloitadores de la aldea para bajar del monte los caballos salvajes e inmovilizarlos en el curro con las manos desnudas, sin cuerdas ni palos. Tradición de más de tres siglos. ITI 2007 y BIC Inmaterial de Galicia 2025.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación Rapa das Bestas de Sabucedo",
+      "url": "https://www.rapadasbestas.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rapa das Bestas de Sabucedo",
+        "item": "https://folklorius.es/rapa-das-bestas-sabucedo.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Rapa das Bestas de Sabucedo en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 3 al 6 de julio de 2026 (viernes a lunes). La fiesta se celebra siempre el primer fin de semana de julio. Las fechas exactas de cada edición las publica la Asociación Rapa das Bestas de Sabucedo en rapadasbestas.gal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es apta para niños la Rapa das Bestas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La fiesta es familiar, pero el curro implica caballos salvajes inmovilizados a mano en un espacio reducido. La tensión física es real y visible. Los niños pueden asistir, pero conviene que los adultos sepan de antemano lo que van a ver y lo expliquen antes de entrar al recinto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si llueve durante la Rapa das Bestas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La fiesta se celebra con cualquier tiempo, incluyendo lluvia. Los caballos bajan del monte y el curro funciona con independencia de las condiciones meteorológicas. El monte en julio puede tener niebla matinal. Lleva ropa impermeable y calzado para terreno mojado si vas a seguir la baixa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo llegar a Sabucedo durante la fiesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sabucedo está a 37 km de Pontevedra y a 42 km de Santiago de Compostela. El acceso rodado al núcleo se cierra desde la tarde del viernes. La organización habilita aparcamientos gratuitos en los alrededores desde los que se llega a pie. Consulta el plan de tráfico especial en rapadasbestas.gal antes de salir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué en Sabucedo los aloitadores no usan cuerdas ni palos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el rasgo que distingue a Sabucedo de todas las demás rapas das bestas de Galicia. En otras celebraciones similares se usan cuerdas para sujetar a los caballos. En Sabucedo, la inmovilización es cuerpo a cuerpo: tres aloitadores actúan sobre cada animal con las manos desnudas. Esta técnica se transmite de generación en generación entre los mozos de la parroquia y es la razón por la que la Xunta de Galicia la declaró Bien de Interés Cultural Inmaterial en 2025."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Rapa das Bestas de Sabucedo
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores inmovilizando a mano un caballo salvaje en el curro durante la Rapa das Bestas de Sabucedo, A Estrada, Galicia" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Rapa das Bestas de Sabucedo</h1>
+      <p class="ficha-subtitle">
+        Sabucedo · A Estrada (Pontevedra) · Tradición etnográfica · "Tres aloitadores. Un caballo. Sin cuerdas."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-bic">Bien de Interés Cultural Inmaterial · Galicia 2025</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 3 al 6 de julio de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Sabucedo · A Estrada · Pontevedra</span>
+          <span>⏱️ 4 días · Primer fin de semana de julio</span>
+          <span>🏅 Interés Turístico Internacional · BIC Galicia</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El curro es un enfrentamiento físico real entre hombres y caballos salvajes. No es una representación ni un espectáculo de doma. Los animales pesan varios cientos de kilos y la tensión en el recinto es tangible. Quien va a Sabucedo sabiendo esto tiene una experiencia muy distinta a quien llega sin contexto.</li>
+          <li>La Rapa das Bestas genera debate sobre el bienestar animal. Folklorius no toma partido: informa sobre una tradición con más de tres siglos de historia que la administración gallega ha elevado al máximo nivel de protección patrimonial autonómica. El visitante saca sus propias conclusiones.</li>
+          <li>Los aloitadores son los mozos de Sabucedo que ejecutan la rapa. Lo que hacen en el curro no es improvisado ni espontáneo. El respeto por su trabajo y por los animales es la actitud que corresponde al visitante.</li>
+          <li>La baixa del viernes, la bajada de los caballos desde el monte, atraviesa caminos y zonas abiertas. Los animales van sueltos. Mantén la distancia que te indique la organización y no intentes acercarte a los caballos fuera del recinto.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Primero llega el sonido de los cascos en el monte. Después el polvo, y las bestas aparecen por el horizonte bajando hacia Sabucedo en grupo. Cuando entran al curro, el silencio del público dura un segundo justo: el que tarda un aloitador en saltar sobre el lomo del primer caballo. Tres hombres. Un animal de varios cientos de kilos. Las manos desnudas. En ningún otro sitio de Galicia se hace así, y llevan haciéndolo desde antes de que nadie lo escribiera.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Rapa das Bestas de Sabucedo es una <strong>tradición etnográfica</strong> en la que los caballos salvajes que viven libres en los montes de Montouto bajan al pueblo, entran al curro y los aloitadores les cortan las crines y marcan a los potros jóvenes antes de devolverlos al monte. La fiesta dura cuatro días, del primer viernes al lunes de julio, y tiene como momento central el enfrentamiento entre los <em>aloitadores</em> y los caballos en el recinto del curro.
+      </p>
+      <p>
+        Lo que distingue a Sabucedo de todas las demás rapas das bestas de Galicia es la técnica: aquí la inmovilización es <strong>cuerpo a cuerpo, sin cuerdas ni palos</strong>, ejecutada por los <em>aloitadores</em>, los mozos de la parroquia que llevan toda la vida aprendiendo el oficio. Cómo funciona exactamente, lo explica la sección <a href="#aloitadores">Los aloitadores y el curro</a>.
+      </p>
+      <p>
+        La fiesta tiene cuatro jornadas: la <strong>baixa</strong> del viernes (la bajada de los caballos desde el monte), los <em>curros</em> del sábado y el domingo (los enfrentamientos en el recinto) y la suelta del lunes, cuando los animales vuelven al monte. El visitante puede seguir la baixa desde los caminos y los curros desde el graderío.
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de cada edición lo publica la <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">Asociación Rapa das Bestas de Sabucedo</a> antes de la celebración.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La Xunta de Galicia dejó escrito en la incoación del BIC que la Rapa das Bestas de Sabucedo es "una de las fiestas más antiguas de Galicia" y le reconoce una historia de <strong>al menos tres siglos</strong>. La primera referencia documental que se maneja sitúa la tradición a principios del siglo XVIII, aunque hay quienes sostienen — y algunos investigadores lo han recogido — que el vínculo entre los habitantes de Sabucedo y los caballos del monte es anterior, posiblemente prerromano: en la zona se han localizado petróglifos con representaciones de jinetes que podrían apuntar a una relación muy antigua entre la comunidad y los équidos del Montouto.
+      </p>
+      <p>
+        En 1963 la fiesta recibió la declaración de Fiesta de Interés Turístico Nacional, y en 2007 la de <strong>Interés Turístico Internacional</strong> (BOE-A-2007-14205). En julio de 2025 el Diario Oficial de Galicia publicó la declaración como <strong>Bien de Interés Cultural del Patrimonio Inmaterial de Galicia</strong>, el máximo nivel de protección patrimonial autonómica. La razón explícita de ese reconocimiento fue precisamente la singularidad de la técnica de Sabucedo: la inmovilización sin cuerdas ni instrumentos es una práctica que no existe igual en ningún otro lugar.
+      </p>
+      <p>
+        Sabucedo es una parroquia de poco más de sesenta habitantes. Que una comunidad tan pequeña sostenga durante siglos una tradición de esta envergadura, con la implicación directa de sus mozos y sus familias, es parte del argumento que la Xunta usó para protegerla: sin la comunidad, la rapa no existe.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La edición de 2026 se celebra del <strong>viernes 3 al lunes 6 de julio</strong>. La baixa arranca el viernes por la mañana, los curros tienen lugar el sábado y el domingo, y el lunes es la suelta de las bestas al monte. Las fechas son fijas en el calendario (primer fin de semana de julio) pero el programa exacto de cada edición hay que consultarlo en <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">rapadasbestas.gal</a>.
+      </p>
+
+      <h2 class="section-title">Los cuatro días</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes 3 de julio · A primera hora de la mañana</span>
+          La jornada empieza con una misa en honor a San Lourenzo, patrón de Sabucedo, antes de subir al monte. Después arranca la <strong>baixa</strong>: vecinos, aloitadores y visitantes suben en grupos a los montes de Montouto para reunir las manadas. Los caballos bajan sueltos por los caminos y atraviesan el pueblo. Las bestas pasan la noche en las inmediaciones del curro.
+        </li>
+        <li>
+          <span class="dia-label">Sábado 4 y domingo 5 de julio · A mediodía</span>
+          Los dos días de <strong>curro</strong>. Los caballos entran al recinto y los aloitadores se enfrentan a ellos con las manos, de uno en uno, hasta inmovilizarlos para cortarles las crines y marcar a los potros jóvenes. El sábado concentra mayor afluencia de público. El domingo es más tranquilo y permite ver el mismo acto con menos presión. Por la noche de ambos días, festival de música.
+        </li>
+        <li>
+          <span class="dia-label">Lunes 6 de julio · Por la tarde</span>
+          Suelta de las bestas. Los caballos son conducidos fuera del recinto y devueltos al monte de Montouto, donde vivirán en libertad hasta la próxima edición. Es el cierre. Para los vecinos que llevan cuatro días con los animales, es también una despedida hasta el año siguiente.
+        </li>
+      </ul>
+
+      <h2 class="section-title" id="aloitadores">Los aloitadores y el curro</h2>
+      <div class="music-block">
+        <p>
+          El curro es un recinto de mampostería en el centro de Sabucedo con graderío para el público. Cuando los caballos entran, el espacio se comprime: varios cientos de kilos de animal salvaje, el olor a tierra y sudor, el ruido de los cascos sobre la piedra. Los aloitadores esperan. Son mozos de la parroquia (solo ellos pueden serlo) y llevan toda la vida aprendiendo lo que van a hacer en los siguientes segundos. La técnica es de tres: dos van a la cabeza del caballo y uno al rabo. Uno de los de la cabeza salta sobre el lomo del animal y cabalga sobre él mientras el del rabo lo desequilibra. Cuando el caballo cae, los tres lo sujetan hasta que queda inmóvil. Entonces llegan los niños con las cestas para recoger las crines que se van cortando.
+        </p>
+        <p>
+          El silencio que precede a cada enfrentamiento es el sonido más característico de Sabucedo. No el ruido — el silencio. El momento en que el caballo y los tres hombres se miran y ninguno se ha movido todavía. Después viene el golpe, el polvo, el grito del público. Pero ese segundo previo es el que se graba. La técnica no tiene nombre oficial propio en la documentación consultada: se describe simplemente como la inmovilización con las manos, sin cuerdas ni palos, lo que la diferencia de todas las demás rapas gallegas donde sí se usan instrumentos de sujeción.
+        </p>
+        <ul>
+          <li>Para ver el curro con perspectiva, sitúate en las gradas antes de que entren los caballos. Una vez empieza el acto el movimiento de público es mínimo.</li>
+          <li>Si quieres seguir la baixa del viernes, súbete al monte en grupo desde el punto de salida que indique la organización. Es la parte más silenciosa y más larga de la fiesta, y la menos masificada.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La baixa — los caballos bajando del monte</h3>
+          <span class="tag">Viernes · Por la mañana · Montes de Montouto</span>
+          <p>Las bestas bajan en manada desde los sesenta kilómetros cuadrados del monte, sueltas, atravesando caminos y aldeas hasta llegar a Sabucedo. El sonido de los cascos en tierra y el polvo que levantan antes de verlos es el primer aviso de que la fiesta empieza.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento en que los caballos se mueven sin recinto ni control. No hay graderío, no hay separación entre el público y los animales — solo el monte, los vecinos y las manadas bajando. La organización marca el punto de salida cada año; confirma el lugar exacto en <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">rapadasbestas.gal</a> antes de ir.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El primer curro del sábado</h3>
+          <span class="tag">Sábado · A mediodía · Curro de Sabucedo</span>
+          <p>Tres aloitadores de la parroquia se enfrentan a cada caballo con las manos desnudas hasta inmovilizarlo. Sin cuerdas ni palos. El silencio que precede a cada enfrentamiento y el ruido que viene después son el ritmo de la tarde.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en todas las demás rapas das bestas de Galicia se usan cuerdas para sujetar los caballos. En Sabucedo no. Vale la pena entender la técnica antes de entrar al recinto: lo que parece confuso en texto es inmediato cuando se ve.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los niños recogiendo las crines</h3>
+          <span class="tag">Sábado y domingo · Durante el curro · Recinto</span>
+          <p>Cuando el caballo queda inmovilizado, los niños de Sabucedo entran al recinto con cestas para recoger las crines que se cortan. Los que hoy llevan las cestas serán los aloitadores de dentro de diez años.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no hay institución que sostenga esta tradición: la sostienen las familias de Sabucedo. Los niños con las cestas son la prueba más visible de cómo funciona eso en la práctica.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La suelta del lunes</h3>
+          <span class="tag">Lunes · Por la tarde · Sabucedo y alrededores</span>
+          <p>Las bestas salen del recinto y desaparecen monte arriba. El pueblo recupera el silencio que tenía antes del viernes. Si la baixa abre la fiesta con movimiento y ruido, la suelta la cierra con lo contrario.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque los mismos animales que el sábado estaban inmovilizados bajo tres hombres vuelven ahora al monte solos. Ese contraste, visto en directo, cierra el relato de la Rapa de una manera que ninguna otra jornada puede hacer.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Llega el viernes.</strong> La baixa del viernes es la parte menos masificada y más singular de la fiesta. Si solo puedes ir un día, el sábado es el más intenso en el curro, pero el viernes es el que tiene menos público y más monte.</li>
+        <li><strong>Cómo llegar.</strong> Sabucedo está a 37 km de Pontevedra y a 42 km de Santiago de Compostela. El aeropuerto más cercano es el de Lavacolla (Santiago), a 49 km, y el de Vigo-Peinador, a 73 km. El acceso rodado al núcleo queda cerrado desde la tarde del viernes. La organización habilita aparcamientos gratuitos en los alrededores y acampada gratuita junto al curro. Consulta el plan de tráfico en <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">rapadasbestas.gal</a> antes de salir.</li>
+        <li><strong>Alojamiento.</strong> Sabucedo es una parroquia de sesenta habitantes: no hay alojamiento en la aldea. A Estrada, a pocos kilómetros, tiene oferta de hoteles y casas rurales. Santiago de Compostela y Pontevedra son las alternativas más cómodas si quieres más opciones. Reserva con antelación: el primer fin de semana de julio tiene mucha demanda en toda la comarca.</li>
+        <li><strong>El tiempo en julio.</strong> El interior de Pontevedra en julio puede tener calor durante el día y descensos de temperatura por la noche, especialmente en el monte. Para la baixa del viernes, lleva ropa cómoda para caminar por terreno irregular, calzado cerrado y algo de abrigo ligero para la mañana temprano.</li>
+        <li><strong>En el curro.</strong> El recinto tiene graderío. Sitúate antes de que entren los caballos: una vez empieza el acto el movimiento de público es muy limitado. Mantén la distancia que indique la organización. Los caballos fuera del recinto van sueltos y no son animales domesticados.</li>
+        <li><strong>Gastronomía.</strong> La organización habilita zona de bar y comida junto al campo de la fiesta durante los cuatro días. A Estrada y las localidades cercanas tienen restaurantes con cocina gallega de temporada. El primer fin de semana de julio es época de mariscos del Atlántico y empanada gallega en toda la comarca.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de Sabucedo</h2>
+      <dl class="festero">
+
+        <dt>Baixa</dt>
+        <dd>La bajada de las bestas desde los montes de Montouto hasta Sabucedo. Arranca el viernes por la mañana: vecinos, aloitadores y visitantes suben en grupos al monte para reunir las manadas dispersas y conducirlas hacia la aldea. Los caballos bajan sueltos por los caminos. La baixa puede durar toda la jornada hasta que los últimos animales llegan al curro.</dd>
+
+        <dt>Curro</dt>
+        <dd>El recinto donde se desarrolla el acto central de la rapa. En Sabucedo es una construcción de mampostería con graderío para el público en el que se celebran los enfrentamientos entre aloitadores y bestas. El término se usa también para referirse a cada una de las jornadas del recinto (el curro del sábado, el curro del domingo).</dd>
+
+        <dt>Aloitador</dt>
+        <dd>El hombre que inmoviliza al caballo en el curro. Solo pueden ser mozos de Sabucedo, y aprenden la técnica desde niños por transmisión directa de los mayores de la parroquia. Actúan en grupos de tres: dos a la cabeza del animal y uno al rabo. La palabra viene del gallego <em>aloitar</em>, luchar.</dd>
+
+        <dt>Besta</dt>
+        <dd>El caballo salvaje que vive libre en los montes de Montouto durante todo el año. No son animales asilvestrados ni abandonados: tienen propietarios entre los vecinos de la comarca que los cuidan a distancia y que los reúnen cada julio para la rapa. El término es el gallego para "bestia" en su sentido original de animal de carga o de monte, sin connotación peyorativa.</dd>
+
+        <dt>Montouto</dt>
+        <dd>El conjunto de montes que rodean Sabucedo y las parroquias vecinas, con una extensión de unos sesenta kilómetros cuadrados, donde viven libres las bestas durante todo el año. No pertenece a un solo municipio: abarca varias parroquias de distintos ayuntamientos. Es el territorio del que bajan los caballos cada julio y al que vuelven cada lunes de la Rapa.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/rapa-das-bestas-sabucedo-1.jpg" alt="Aloitadores inmovilizando a mano un caballo salvaje en el curro de Sabucedo durante la Rapa das Bestas, A Estrada, Pontevedra" loading="lazy" />
+        <img src="images/rapa-das-bestas-sabucedo-2.jpg" alt="Manada de caballos salvajes bajando del monte de Montouto hacia Sabucedo durante la baixa del viernes en la Rapa das Bestas" loading="lazy" />
+        <img src="images/rapa-das-bestas-sabucedo-3.jpg" alt="Vista general del curro de Sabucedo con el público en las gradas durante la Rapa das Bestas de A Estrada" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">Asociación Rapa das Bestas de Sabucedo — programa oficial y plan de tráfico</a></li>
+        <li><a href="https://www.turismo.aestrada.gal" target="_blank" rel="noopener">Turismo de A Estrada — alojamiento y comarca</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turgalicia — información turística de Galicia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-23</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Rapa das Bestas de Sabucedo en 2026?</dt>
+        <dd>Del <strong>3 al 6 de julio de 2026</strong> (viernes a lunes). La fiesta se celebra siempre el primer fin de semana de julio. El programa exacto lo publica la Asociación en <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">rapadasbestas.gal</a>.</dd>
+
+        <dt>¿Es apta para niños?</dt>
+        <dd>La fiesta es familiar, pero el curro implica caballos salvajes inmovilizados a mano en un espacio reducido. La tensión física es real y visible. Los niños pueden asistir, pero conviene que los adultos sepan de antemano lo que van a ver y lo expliquen antes de entrar al recinto.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>La fiesta se celebra con cualquier tiempo. Los caballos bajan del monte y el curro funciona con independencia de las condiciones meteorológicas. El monte en julio puede tener niebla matinal. Lleva ropa impermeable y calzado para terreno mojado si vas a seguir la baixa.</dd>
+
+        <dt>¿Cómo llegar sin coche propio?</dt>
+        <dd>Sabucedo está a 37 km de Pontevedra y a 42 km de Santiago de Compostela. El acceso rodado al núcleo queda restringido durante la fiesta. Consulta el plan de tráfico especial en <a href="https://www.rapadasbestas.gal" target="_blank" rel="noopener">rapadasbestas.gal</a> antes de salir.</dd>
+
+        <dt>¿Por qué en Sabucedo los aloitadores no usan cuerdas?</dt>
+        <dd>En todas las demás rapas das bestas de Galicia se usan cuerdas para sujetar los caballos. En Sabucedo no: la inmovilización es cuerpo a cuerpo, con las manos, y solo pueden ejecutarla los mozos de la parroquia. Esa singularidad fue el argumento central de la declaración como BIC Inmaterial de Galicia en 2025.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Tradición Etnográfica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Julio</a>
+        <a href="#" class="etiqueta">Caballos Salvajes</a>
+        <a href="#" class="etiqueta">Aloitadores</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">A Estrada</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-rapa">
+        <h2 id="rel-title-rapa">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="arde-lucus-lugo.html" class="ficha-rel-card">
+            <img src="images/arde-lucus-lugo.jpg" alt="Arde Lucus de Lugo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arde Lucus</span>
+              <span class="rel-frase">Roma y los castros vuelven a la ciudad amurallada.</span>
+              <span class="rel-meta">Lugo · Galicia · ITI</span>
+            </div>
+          </a>
+
+          <a href="festividad-apostol-santiago.html" class="ficha-rel-card">
+            <img src="images/festividad-apostol-santiago.jpg" alt="Festividad del Apóstol Santiago en Santiago de Compostela" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festividad del Apóstol Santiago</span>
+              <span class="rel-frase">El Botafumeiro, la Ofrenda Nacional y los Fuegos del Apóstol.</span>
+              <span class="rel-meta">Santiago de Compostela · Galicia · ITI</span>
+            </div>
+          </a>
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Fiesta de la Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Pontevedra · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Asociación Rapa das Bestas de Sabucedo, Turismo de Galicia, Xunta de Galicia y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
