@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiesta de la Lamprea de Arbo 2026: Guía, recetas y pesqueiras</title>
+  <meta name="description" content="Fiesta de la Lamprea de Arbo 2026: 66ª edición, 24-26 de abril. Lamprea a la arbense, pesqueiras del Miño y vinos del Condado do Tea. ITI desde 2023." />
+  <link rel="canonical" href="https://folklorius.es/fiesta-lamprea-arbo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fiesta de la Lamprea de Arbo: el manjar del Miño en su 66ª edición" />
+  <meta property="og:description" content="En Arbo, cada abril, el Miño lleva lampreas y el pueblo las cocina con su propia sangre y vino tinto. Una fiesta gastronómica con 66 años de historia y un pez que lleva milenios remontando el mismo río." />
+  <meta property="og:image" content="https://folklorius.es/images/fiesta-lamprea-arbo.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiesta-lamprea-arbo.html",
+    "name": "Fiesta de la Lamprea de Arbo",
+    "startDate": "2026-04-24",
+    "endDate": "2026-04-26",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Arbo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Arbo",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.117,
+        "longitude": -8.317
+      }
+    },
+    "image": ["https://folklorius.es/images/fiesta-lamprea-arbo.jpg"],
+    "description": "La Fiesta de la Lamprea de Arbo celebra cada abril el pez migratorio que remonta el río Miño y la tradición culinaria que lo cocina con su propia sangre. 66ª edición en 2026. Declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Arbo",
+      "url": "https://www.concellodearbo.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiesta de la Lamprea de Arbo",
+        "item": "https://folklorius.es/fiesta-lamprea-arbo.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Fiesta de la Lamprea de Arbo en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 24 al 26 de abril de 2026 (viernes a domingo). Es la 66ª edición. La fiesta se celebra tradicionalmente el último fin de semana de abril, que coincide con el final de la temporada de pesca de la lamprea en el río Miño (enero-abril)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es necesario reservar para comer lamprea en la fiesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la Arbomostra (la carpa ferial del Concello) el acceso es libre y las raciones se compran mediante tickets en los puestos. Para los restaurantes del municipio, que preparan sus propias recetas durante los días de fiesta, es muy recomendable reservar con antelación, ya que la demanda supera con frecuencia la oferta disponible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la lamprea a la arbense y en qué se diferencia de otras preparaciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La lamprea a la arbense (también llamada a la bordalesa) es un guiso a fuego lento en el que el pez se cocina troceado con su propia sangre, vino tinto gallego, aceite, cebolla, ajo, perejil y coñac. La reducción del alcohol produce una salsa oscura y densa que se sirve con arroz blanco y pan frito. Es la receta canónica de Arbo y la que define la fiesta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo llegar a Arbo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Arbo está en el sur de la provincia de Pontevedra, con acceso por carretera y tren. Desde Portugal se puede cruzar por el puente internacional sobre el Miño. Consulta rutas y horarios actualizados en los operadores de transporte habituales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué las pesqueiras del Miño son un patrimonio único?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las pesqueiras son construcciones de bloques de granito (los poios) que se adentran perpendicularmente en el cauce del Miño. Las primeras referencias documentales datan del siglo XII, cuando pertenecían al monasterio de Melón. En ellas se colocan redes cónicas llamadas buiturón para capturar las lampreas en su remonte hacia las zonas de desove. Algunas estructuras son de origen romano, lo que las convierte en uno de los sistemas pesqueros con mayor continuidad histórica de Europa."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiesta de la Lamprea de Arbo
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense en cazuela de barro con la salsa oscura característica, preparada durante la Fiesta de la Lamprea de Arbo en el río Miño" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiesta de la Lamprea de Arbo</h1>
+      <p class="ficha-subtitle">
+        Arbo (Pontevedra) · Fiesta gastronómica · "El pez del Miño cocinado con su propia sangre."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 24 al 26 de abril de 2026 · 66ª edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Arbo · Pontevedra · Galicia</span>
+          <span>⏱️ 3 días</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La lamprea a la arbense se cocina con la propia sangre del pez. Es una técnica culinaria ancestral, no un rasgo accidental. Quien se acerque a la fiesta con curiosidad gastronómica real encontrará un plato de sabor intenso y perfil muy distinto al pescado convencional — merece la pena probarlo con esa disposición.</li>
+          <li>Las pesqueiras del Miño son un patrimonio pesquero vivo con más de ocho siglos de historia documentada. Los pescadores que trabajan en ellas durante la temporada de captura están ejerciendo un oficio heredado de generaciones — no una atracción turística. Obsérvalo con esa conciencia.</li>
+          <li>La fiesta atrae a miles de visitantes en un municipio de poco más de mil habitantes. Los vecinos viven su celebración más importante del año — compórtate como corresponde a quien está de visita en casa ajena.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El olor llega antes que el sonido. Desde la calle ya huele a guiso oscuro, a vino tinto reducido, a algo que se cocina a fuego lento. Después vienen las gaitas y el murmullo de la Arbomostra. En las cazuelas hay un pez sin mandíbula que remontó el Miño — lleva haciendo ese viaje desde antes de Roma — y que se cocina con su propia sangre según una receta que Arbo lleva seis décadas defendiendo. Hay platos que no se pueden separar del lugar donde nacieron.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Fiesta de la Lamprea de Arbo es una <strong>exaltación gastronómica</strong> dedicada a uno de los peces más antiguos del planeta y a la tradición culinaria que lo rodea en el Baixo Miño. Cada último fin de semana de abril, cuando la temporada de pesca de la lamprea toca su fin, el municipio de Arbo recibe a miles de visitantes que vienen a probar el plato en su lugar de origen, junto al río donde nace la tradición. En 2026 celebra su <strong>66ª edición</strong>.
+      </p>
+      <p>
+        El centro de la fiesta es la <strong>Arbomostra</strong>, una carpa ferial de acceso gratuito instalada en el recinto ferial, donde conviven puestos de lamprea en todas sus preparaciones, bodegas de la D.O. Rías Baixas y artesanía local. Los restaurantes del municipio participan en paralelo con sus propias propuestas. La fiesta no tiene actos religiosos ni procesiones: es una celebración popular centrada en el producto, en la cocina y en el orgullo de un territorio que lleva más de seis décadas poniendo la lamprea en el centro de su identidad.
+      </p>
+      <p>
+        Arbo comparte frontera con Portugal a través del río Miño y las mismas pesqueiras de granito que los romanos ya frecuentaban. Esa posición fronteriza — entre Galicia y el norte luso, entre el río y la viña — da a la fiesta un carácter propio que no tiene equivalente en ningún otro punto del Camino gastronómico gallego.
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de cada edición lo publica el <a href="https://www.concellodearbo.es" target="_blank" rel="noopener">Concello de Arbo</a> antes de la celebración.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La lamprea lleva en el Miño mucho más tiempo que la fiesta. Los romanos ya la capturaban y la enviaban a Roma como manjar de lujo. Las <strong>pesqueiras</strong> — las construcciones de piedra granítica que se adentran en el río para capturarla — aparecen documentadas por primera vez en el siglo XII, cuando varias de ellas pertenecían al monasterio de Melón. Algunas estructuras son anteriores, de origen romano, lo que las convierte en uno de los sistemas pesqueros con mayor continuidad histórica de Europa.
+      </p>
+      <p>
+        La fiesta como tal arrancó en <strong>1961</strong>, según la tradición popular, a partir de los primeros guisos organizados en un hospedaje cercano a la estación de tren de Arbo. Lo que comenzó como una reunión en torno a la mesa se fue formalizando hasta convertirse en la celebración más importante del municipio. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó primero; la de <strong>Interés Turístico Internacional</strong>, en enero de 2023 (BOE-A-2023-2809). La lamprea y la vid aparecen también en el escudo del municipio, lo que dice mucho del peso identitario de ambos productos para Arbo.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La 66ª edición se celebra del <strong>viernes 24 al domingo 26 de abril de 2026</strong>. La fiesta coincide deliberadamente con el final de la temporada de pesca de la lamprea en el Miño, que transcurre entre enero y abril. El sábado es el día de mayor afluencia: concentra el Pregón y el <em>Xantar da Lamprea</em>. Las fechas pueden variar ligeramente cada año — consulta el programa oficial en la web del Concello antes de planificar el viaje.
+      </p>
+      <p>
+        Existe también una <strong>Fiesta de la Lamprea Seca</strong> en agosto (del 7 al 9 en 2026), dedicada a la versión curada y ahumada del pez, rellena de huevo y jamón — una técnica de conservación ancestral que permite consumir la lamprea fuera de su temporada natural.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Viernes 24 de abril · Por la tarde</span>
+          Inauguración de la <strong>Arbomostra</strong> y apertura de los puestos de degustación. La Banda de Música Municipal de Arbo y agrupaciones de gaitas recorren las calles en pasacalles que marcan el inicio de la fiesta. Por la noche, orquesta de verbena en el recinto ferial.
+        </li>
+        <li>
+          <span class="dia-label">Sábado 25 de abril · A mediodía</span>
+          Día grande. Un personaje invitado lee el <strong>Pregón</strong> desde el balcón consistorial. A continuación, el <strong>Xantar da Lamprea</strong> — el almuerzo popular en torno al plato — concentra la mayor afluencia de visitantes del fin de semana. Es el momento de mayor demanda en la Arbomostra y en los restaurantes: llega con tiempo o reserva con antelación. Por la noche, orquesta de verbena.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 26 de abril · A mediodía</span>
+          Cierre de la fiesta con la Arbomostra en pleno funcionamiento. El ambiente es más tranquilo que el sábado y es una buena alternativa para quien quiera comer lamprea sin la presión del día grande. Por la tarde, últimas actuaciones de folclore gallego y cierre del recinto.
+        </li>
+      </ul>
+
+      <h2 class="section-title">La lamprea y sus recetas</h2>
+      <div class="music-block">
+        <p>
+          La lamprea (<em>Petromyzon marinus</em>) es un pez primitivo sin mandíbula — un agnato — que pasa la mayor parte de su vida en el mar y remonta los ríos entre enero y abril para desovar en las zonas de agua dulce. Su aspecto es el de una anguila con ventosa: un tubo muscular de entre 60 y 90 cm con una boca circular provista de dientes. No tiene escamas ni espinas internas reconocibles. Su carne es grasa, oscura y de sabor intenso, muy distinta a cualquier otro pescado. No es un producto para todos los paladares — y eso, lejos de ser un problema, es exactamente lo que la hace especial.
+        </p>
+        <p>
+          La receta canónica de Arbo es la <strong>lamprea a la arbense</strong>, también llamada a la bordalesa: el pez se trocea y se guisa a fuego lento con su propia sangre, vino tinto gallego, aceite, cebolla, ajo, perejil y un chorro de coñac que se reduce lentamente hasta producir una salsa oscura y densa. Se sirve con arroz blanco y pan frito para mojar en la salsa. El vino tinto entra en la cazuela, pero en la mesa la tradición manda vinos blancos de la subzona <strong>Condado do Tea</strong> de la D.O. Rías Baixas — los que se cultivan en las mismas laderas que rodean el Miño. En la Arbomostra también se puede probar la <strong>empanada de lamprea</strong>, la lamprea asada a la brasa, rebozada o con fideos y tirabeques. Y en agosto, la <strong>lamprea seca</strong>: curada, ahumada y rellena de huevo y jamón.
+        </p>
+        <ul>
+          <li>Si es tu primera vez con la lamprea, empieza por la versión a la arbense en la Arbomostra: el formato de ración con ticket es perfecto para probar sin comprometerte con un menú completo.</li>
+          <li>Para entender el contexto del plato, acércate a las pesqueiras del Miño antes o después de comer. Ver las estructuras de granito y el río donde se captura el pez cambia la manera de sentarse a la mesa.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Xantar da Lamprea del sábado</h3>
+          <span class="tag">Sábado · A mediodía · Arbomostra y restaurantes</span>
+          <p>El almuerzo popular del sábado es el momento central de la fiesta. Miles de personas en torno a la lamprea a la arbense, los vinos del Condado do Tea y la música de gaitas. El olor a guiso y a vino tinto reducido impregna toda la plaza.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la celebración gastronómica más antigua de Galicia alrededor de un solo producto, en el lugar donde ese producto tiene su historia y su río. La Arbomostra y los restaurantes están en pleno rendimiento el sábado a mediodía — llega pronto o reserva mesa con días de antelación.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las pesqueiras del río Miño</h3>
+          <span class="tag">Todo el año · Orillas del Miño · Arbo</span>
+          <p>Construcciones de bloques de granito que se adentran perpendicularmente en el cauce del río. Las hay documentadas desde el siglo XII y algunas son de origen romano. En temporada de lamprea, los pescadores colocan en ellas los buiturón — las redes cónicas donde quedan atrapados los peces en su remonte.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque son uno de los sistemas pesqueros en activo con mayor continuidad histórica de Europa, y están en el río, al alcance de cualquiera que se acerque a la orilla. Ver las pesqueiras desde la ribera del Miño — con Portugal al otro lado — convierte la lamprea en algo más que un plato.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La lamprea a la arbense en la Arbomostra</h3>
+          <span class="tag">Los tres días · Por la tarde · Recinto ferial</span>
+          <p>La carpa ferial del Concello concentra los puestos donde se cocina y se sirve la lamprea en todas sus versiones: a la arbense, en empanada, asada, rebozada. Acceso libre y raciones por tickets. El olor a guiso de sangre y vino tinto que sale de las cazuelas es el sonido olfativo de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único sitio donde puedes probar todas las preparaciones en el mismo espacio, sin reserva previa, con el ambiente de la fiesta alrededor. Para quien no quiera lamprea, la Arbomostra también tiene puestos de otros productos gallegos y bodegas del Condado do Tea.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los vinos del Condado do Tea</h3>
+          <span class="tag">Los tres días · Arbomostra y bodegas locales</span>
+          <p>La subzona Condado do Tea de la D.O. Rías Baixas se cultiva en las laderas del Miño, a pocos kilómetros de donde se captura la lamprea. Sus blancos — Albariño principalmente — son el maridaje tradicional del plato en la mesa, aunque el guiso lleve vino tinto en la cazuela.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pocos productos tienen tanto sentido de lugar como el Condado do Tea bebido en Arbo, junto al río donde crece la vid y donde vive la lamprea. Las bodegas locales presentes en la Arbomostra permiten catar antes de comprar.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Reserva mesa si quieres restaurante.</strong> Los restaurantes de Arbo se llenan durante la fiesta, especialmente el sábado. Llama con varios días de antelación — algunos establecimientos agotan la lamprea antes de que acabe el servicio del mediodía.</li>
+        <li><strong>Cómo llegar.</strong> Arbo está en el sur de la provincia de Pontevedra, bien conectada por carretera y con estación de tren. Desde Portugal el acceso es por el puente internacional sobre el Miño. Consulta horarios y rutas en los operadores de transporte habituales.</li>
+        <li><strong>Alojamiento en la comarca.</strong> Arbo es un municipio pequeño con opciones de alojamiento limitadas. Las localidades cercanas de A Cañiza, Salvaterra de Miño o Tui tienen más oferta. También puedes alojarte en Vigo y desplazarte en el día.</li>
+        <li><strong>El tiempo en abril.</strong> El clima del Baixo Miño en primavera es cambiante: días templados y soleados que pueden convertirse en lluvia sin mucho aviso. Lleva siempre algo de abrigo y un impermeable ligero.</li>
+        <li><strong>El domingo es más tranquilo.</strong> Si prefieres evitar la máxima afluencia del sábado, el domingo sigue siendo un buen día para comer lamprea y ver la fiesta con más calma — los restaurantes tienen algo más de disponibilidad y el ambiente es más relajado.</li>
+        <li><strong>Más allá de la lamprea.</strong> Si tienes tiempo, acércate a las riberas del Miño para ver las pesqueiras. El contraste entre la escala del río, las estructuras de granito y el paisaje de viñedos al fondo vale el desvío.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del Miño</h2>
+      <dl class="festero">
+
+        <dt>Pesqueira</dt>
+        <dd>Construcción de bloques de granito (los <em>poios</em>) que se adentra perpendicularmente en el cauce del Miño. Se usa desde época romana para canalizar el flujo del río y facilitar la captura de la lamprea durante su remonte. Las pesqueiras de Arbo están documentadas desde el siglo XII.</dd>
+
+        <dt>Buiturón</dt>
+        <dd>Red cónica o nasa que se coloca en los canales de las pesqueiras. Las lampreas, al remontar el río, quedan atrapadas en su interior. El buiturón es el elemento activo de pesca; la pesqueira es la estructura fija que lo sostiene.</dd>
+
+        <dt>Poios</dt>
+        <dd>Los bloques de piedra granítica paralelos que forman la estructura de la pesqueira. Se alinean perpendicularmente al cauce creando canales por donde circula el agua y donde se instalan los buiturón.</dd>
+
+        <dt>Lamprea a la arbense / bordalesa</dt>
+        <dd>La receta canónica de Arbo: lamprea troceada y guisada a fuego lento con su propia sangre, vino tinto, aceite, cebolla, ajo, perejil y coñac reducido. Produce una salsa oscura y densa. Se sirve con arroz blanco y pan frito. La denominación "arbense" es la versión local; "bordalesa" es el término más extendido en Galicia.</dd>
+
+        <dt>Lamprea seca</dt>
+        <dd>Técnica de conservación ancestral: la lamprea se cura, ahúma y rellena de huevo y jamón, lo que permite consumirla fuera de la temporada de pesca (enero-abril). Es la protagonista de la Fiesta de la Lamprea Seca de agosto.</dd>
+
+        <dt>Xantar da Lamprea</dt>
+        <dd>El almuerzo popular del sábado de fiesta. <em>Xantar</em> es el término gallego para el almuerzo o la comida del mediodía. El Xantar da Lamprea concentra la mayor afluencia de visitantes de todo el fin de semana.</dd>
+
+        <dt>Condado do Tea</dt>
+        <dd>Subzona de la D.O. Rías Baixas cuya viticultura se extiende por las laderas del río Miño, en la misma comarca de Arbo. Sus vinos blancos, principalmente Albariño, son el maridaje tradicional de la lamprea en la mesa.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiesta-lamprea-arbo-1.jpg" alt="Lamprea a la arbense en cazuela de barro con salsa oscura de sangre y vino tinto durante la Fiesta de la Lamprea de Arbo" loading="lazy" />
+        <img src="images/fiesta-lamprea-arbo-2.jpg" alt="Pesqueiras de granito del río Miño en Arbo con las construcciones ancestrales adentrándose en el cauce" loading="lazy" />
+        <img src="images/fiesta-lamprea-arbo-3.jpg" alt="Ambiente festivo en la Arbomostra con visitantes degustando lamprea y vinos del Condado do Tea en Arbo" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.concellodearbo.es" target="_blank" rel="noopener">Concello de Arbo — programa oficial de la fiesta</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turgalicia — información turística de Galicia</a></li>
+        <li><a href="https://www.turismoriasbaixas.com" target="_blank" rel="noopener">Turismo Rías Baixas — comarca y alojamiento</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-22</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Fiesta de la Lamprea de Arbo en 2026?</dt>
+        <dd>Del <strong>24 al 26 de abril de 2026</strong> (viernes a domingo). Es la 66ª edición. La fiesta coincide con el final de la temporada de pesca de la lamprea en el Miño.</dd>
+
+        <dt>¿Es necesario reservar para comer lamprea?</dt>
+        <dd>En la Arbomostra el acceso es libre y las raciones se compran con tickets en los puestos. Para los restaurantes del municipio es muy recomendable reservar con días de antelación, especialmente para el sábado a mediodía, que es el momento de mayor demanda.</dd>
+
+        <dt>¿Qué es la lamprea a la arbense?</dt>
+        <dd>Un guiso a fuego lento en el que la lamprea se cocina troceada con su propia sangre, vino tinto, aceite, cebolla, ajo, perejil y coñac reducido. La salsa resultante es oscura y densa. Se sirve con arroz blanco y pan frito. Es la receta canónica de la fiesta.</dd>
+
+        <dt>¿Cómo llegar a Arbo?</dt>
+        <dd>Arbo está a 56 km de Vigo (unos 50 minutos por la A-52) y tiene estación de tren con conexión directa a Vigo, Ourense y Madrid. Desde Portugal, el acceso es por el puente internacional de Melgaço. El aeropuerto más cercano es el de Vigo-Peinador, a unos 46 km.</dd>
+
+        <dt>¿Por qué las pesqueiras son patrimonio único de Arbo?</dt>
+        <dd>Son construcciones de granito que se adentran en el Miño para capturar la lamprea, documentadas desde el siglo XII y con estructuras de origen romano. Combinan la ingeniería hidráulica ancestral con una práctica pesquera que sigue viva hoy. No existe nada comparable en el resto de la Península.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Abril</a>
+        <a href="#" class="etiqueta">Lamprea</a>
+        <a href="#" class="etiqueta">Río Miño</a>
+        <a href="#" class="etiqueta">Pesqueiras</a>
+        <a href="#" class="etiqueta">Rías Baixas</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-lamprea">
+        <h2 id="rel-title-lamprea">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="festividad-apostol-santiago.html" class="ficha-rel-card">
+            <img src="images/festividad-apostol-santiago.jpg" alt="Festividad del Apóstol Santiago en Santiago de Compostela" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festividad del Apóstol Santiago</span>
+              <span class="rel-frase">El Botafumeiro, la Ofrenda Nacional y los Fuegos del Apóstol.</span>
+              <span class="rel-meta">Santiago de Compostela · Galicia</span>
+            </div>
+          </a>
+
+          <a href="arde-lucus-lugo.html" class="ficha-rel-card">
+            <img src="images/arde-lucus-lugo.jpg" alt="Arde Lucus de Lugo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arde Lucus</span>
+              <span class="rel-frase">Roma y los castros vuelven a la ciudad amurallada.</span>
+              <span class="rel-meta">Lugo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="romeria-rocio.html" class="ficha-rel-card">
+            <img src="images/romeria-rocio.jpg" alt="Romería del Rocío" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería del Rocío</span>
+              <span class="rel-frase">El camino, la devoción y el Simpecado en el Almonte.</span>
+              <span class="rel-meta">Huelva · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Concello de Arbo, Turgalicia, Turismo Rías Baixas y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
