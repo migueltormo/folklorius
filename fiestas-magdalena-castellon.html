@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiestas de la Magdalena de Castellón: gaiatas y romería</title>
+  <meta name="description" content="Fiestas de la Magdalena de Castellón 2027: 19 monumentos de luz, la Romeria de les Canyes al cerro fundacional y pólvora. ITI 2010, dos declaraciones BIC." />
+  <link rel="canonical" href="https://folklorius.es/fiestas-magdalena-castellon.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="La Magdalena de Castellón: cuando una ciudad entera sube al cerro donde nació" />
+  <meta property="og:description" content="Cada año, más de 165.000 personas suben al Castell Vell con una caña verde y una cinta. No van de excursión. Van a recordar que Castellón existe porque alguien bajó de allí en 1252." />
+  <meta property="og:image" content="https://folklorius.es/images/fiestas-magdalena-castellon.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .gaiatas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .gaiata-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .gaiata-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .gaiata-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .gaiata-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .gaiata-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .gaiata-card details { margin-top: 10px; }
+    .gaiata-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .gaiata-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .gaiata-card details[open] summary::after { content: " ↑"; }
+    .gaiata-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiestas-magdalena-castellon.html",
+    "name": "Fiestas de la Magdalena de Castellón",
+    "startDate": "2027-02-27",
+    "endDate": "2027-03-07",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Castellón de la Plana",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Castellón de la Plana",
+        "addressRegion": "Comunitat Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.98600,
+        "longitude": -0.03700
+      }
+    },
+    "image": ["https://folklorius.es/images/fiestas-magdalena-castellon.jpg"],
+    "description": "Las Fiestas de la Magdalena de Castellón son las fiestas fundacionales de la ciudad, declaradas Fiesta de Interés Turístico Internacional desde 2010. Durante nueve días, 19 sectores gaiateros iluminan la ciudad con sus monumentos de luz y más de 165.000 personas suben al cerro de la Magdalena rememorando el traslado de 1252.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Junta de Festes de Castelló",
+      "url": "https://www.juntafestes.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiestas de la Magdalena de Castellón",
+        "item": "https://folklorius.es/fiestas-magdalena-castellon.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Fiestas de la Magdalena de Castellón?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Fiestas de la Magdalena se celebran siempre durante nueve días, a partir del tercer domingo de Cuaresma. En 2027, del 27 de febrero al 7 de marzo. Las fechas cambian cada año con el calendario litúrgico — consulta la Junta de Festes de Castelló para el programa actualizado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es una gaiata y cuántas hay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una gaiata es un monumento de luz construido por cada uno de los 19 sectores gaiateros de Castellón. El nombre evoca los gaiatos (cayados) con los que, según la tradición, los primeros pobladores se alumbraron al bajar del cerro de la Magdalena en 1252. Desde 2024, el Desfile de Gaiatas es Bien de Interés Cultural Inmaterial de la Generalitat Valenciana."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Romeria de les Canyes y puedo participar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Romeria de les Canyes es la romería fundacional de Castellón, declarada BIC en 2017. Se celebra el primer domingo de las fiestas: los romeros reciben una caña verde y una cinta en el Mercado Central, asisten a una misa y suben al Castell Vell en el cerro de la Magdalena, rememorando el traslado fundacional de 1252. Cualquiera puede participar — es un acto público y gratuito."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es gratuita la Magdalena?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La mayor parte de los actos son gratuitos: la Romeria de les Canyes, el Desfile de Gaiatas, las mascletàs y los castillos de fuegos artificiales. Algunos actos puntuales (verbenas, conciertos nocturnos) pueden tener entrada. Consulta el programa oficial de la Junta de Festes para cada edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se come en la Magdalena que no se encuentre en otro sitio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El ximo es el aperitivo por excelencia de la Magdalena: un panecillo frito rebozado relleno de pisto y atún que se vende en puestos callejeros durante las fiestas. También son propias de la romería la figa (buñuelo relleno de higo), la tortilla de habas y la mistela. En la llegada a la ermita de la Magdalena se reparten los rollos, un pan dulce tradicional."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiestas de la Magdalena de Castellón
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/fiestas-magdalena-castellon.jpg" alt="Monumento de luz de una gaiata iluminado en la noche durante el Desfile de Gaiatas de las Fiestas de la Magdalena de Castellón" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiestas de la Magdalena de Castellón</h1>
+      <p class="ficha-subtitle">
+        Castellón de la Plana (Comunitat Valenciana) · Fiestas Mayores · "Nueve días para recordar que la ciudad existe porque alguien bajó de un cerro en 1252."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-bic">BIC Inmaterial — Romeria de les Canyes (2017)</span>
+        <span class="badge badge-bic">BIC Inmaterial — Desfile de Gaiatas (2024)</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2027">
+        <div class="fechas-grandes">Del 27 de febrero al 7 de marzo de 2027</div>
+        <div class="datos-secundarios">
+          <span>📍 Castellón de la Plana · Comunitat Valenciana</span>
+          <span>⏱️ 9 días</span>
+          <span>🏅 Interés Turístico Internacional · 2 BIC Inmaterial</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La Romeria de les Canyes es un acto de memoria colectiva, no una excursión. Quien sube al cerro forma parte del rito: lleva la caña, guarda el silencio en los momentos solemnes y comparte la parada del almuerzo con los romeros de toda la vida. El visitante sube como uno más, no a observar desde fuera.</li>
+          <li>Las gaiatas son el resultado de meses de trabajo vecinal. Cada una pertenece a un sector de la ciudad y la construyen sus vecinos. Son arte popular con raíces en la identidad de Castellón — no decoración de calle.</li>
+          <li>La pólvora es parte central de las fiestas. Las mascletàs y los castillos de fuegos artificiales tienen sus propias normas de seguridad y recintos específicos. Seguir las indicaciones de la organización en todo momento.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Antes de que amanezca del todo, el Mercado Central de Castellón ya tiene cola. La gente espera su caña verde y su cinta. Cuando las tiene, se une a la columna que empieza a subir hacia el cerro — el mismo cerro del que bajaron sus antepasados en 1252 para fundar la ciudad donde ahora viven. Más de 165.000 personas hacen ese camino cada año. Algunos lo hacen en silencio. Otros cantan. Arriba, en la ermita, reparten rollos y suena la mascletà. Bajar ya es otra cosa: es la Tornà, el camino de vuelta con la ciudad iluminada debajo y diecinueve monumentos de luz esperando en las plazas.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Fiestas de la Magdalena son las <strong>fiestas fundacionales de Castellón de la Plana</strong>, organizadas por la <strong>Junta de Festes de Castelló</strong> con la participación de los <strong>19 sectores gaiateros</strong> en que se divide la ciudad. Durante nueve días, cada sector compite con su gaiata —un monumento de luz construido durante meses por los vecinos del barrio— mientras la ciudad vive la semana grande del año. Las dos piezas centrales de las fiestas tienen declaración de Bien de Interés Cultural Inmaterial por la Generalitat Valenciana: la <strong>Romeria de les Canyes</strong> desde 2017 y el <strong>Desfile de Gaiatas</strong> desde 2024.
+      </p>
+      <p>
+        La Magdalena no tiene un bando, no quema nada ni tiene costaleros. Lo que tiene es una ciudad que cada año repite el mismo gesto fundacional: subir al cerro de donde vino, recordar por qué bajó y volver a casa con la certeza de que la ciudad sigue siendo suya. El programa combina actos solemnes (el Pregó del sábado de apertura, la misa en la ermita) con pólvora diaria, el concurso de gaiatas, el Mesón del Vino y conciertos nocturnos.
+      </p>
+      <p>
+        Para el visitante, las dos grandes citas son la <strong>Romeria de les Canyes</strong> del primer domingo y el <strong>Desfile de Gaiatas</strong>, que es cuando los 19 monumentos de luz desfilan por la ciudad antes de instalarse en las plazas de sus sectores. El programa completo y actualizado lo publica la <a href="https://www.juntafestes.com" target="_blank" rel="noopener">Junta de Festes de Castelló</a>.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Los horarios exactos, recorridos e itinerarios de cada acto los publica la <a href="https://www.juntafestes.com" target="_blank" rel="noopener">Junta de Festes de Castelló</a> antes de cada edición. Los actos de pólvora tienen recintos y horarios específicos que pueden variar.
+      </div>
+
+      <h2 class="section-title">Historia y origen</h2>
+      <p>
+        Castellón de la Plana existe porque en 1252 sus habitantes bajaron de un cerro. El privilegio de traslado lo otorgó la corona de Aragón bajo Jaume I, que autorizó el descenso desde el <strong>Castell Vell</strong> —la fortaleza medieval en la cima del cerro de la Magdalena— hasta la llanura de la Plana, donde la ciudad creció hasta hoy. La ermita de la Magdalena, en el cerro, quedó como testigo del origen y como destino anual de la romería que recuerda aquel traslado.
+      </p>
+      <p>
+        Las fiestas modernas, con la estructura que hoy conocemos —reinas, gaiatas monumentales y programa cívico de nueve días— arrancaron en <strong>1945</strong>. Ese mismo año nació la gaiata moderna tal como se conoce: el monumento de luz que evoca los faroles y gaiatos (cayados) con los que, según la tradición, los primeros pobladores se alumbraron durante su bajada nocturna. En 2010 las fiestas obtuvieron la declaración de <strong>Fiesta de Interés Turístico Internacional</strong> (BOE-A-2010-5463). La acumulación de reconocimientos se completó en 2024, cuando el Desfile de Gaiatas se sumó a la declaración BIC que la Romeria de les Canyes tenía desde 2017.
+      </p>
+
+      <h2 class="section-title">Fechas 2027</h2>
+      <p>
+        Las Fiestas de la Magdalena se celebran siempre durante <strong>nueve días</strong>, a partir del <strong>tercer domingo de Cuaresma</strong>. En 2027, del <strong>27 de febrero al 7 de marzo</strong>. La Romeria de les Canyes se celebra el primer domingo de las fiestas. Las fechas cambian cada año con el calendario litúrgico — consulta la <a href="https://www.juntafestes.com" target="_blank" rel="noopener">Junta de Festes</a> para el programa de cada edición.
+      </p>
+
+      <h2 class="section-title">El programa de la semana</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Sábado de apertura — El Pregó</span>
+          El gran desfile costumbrista e histórico que abre las fiestas oficialmente. Recorre las calles del centro con carrozas, grupos de danza y representaciones del traslado fundacional de 1252. Es el anuncio formal de que la semana grande ha comenzado.
+        </li>
+        <li>
+          <span class="dia-label">Primer domingo — Romeria de les Canyes</span>
+          El acto central de las fiestas. A primera hora de la mañana, los romeros recogen su caña verde y su cinta en el Mercado Central. Después de una misa, la columna empieza a subir hacia el Castell Vell: primero la parada en la ermita de Sant Roc para almorzar, luego la llegada a la ermita de la Magdalena donde se reparten los rollos y suena la mascletà en el cerro. La vuelta a la ciudad al atardecer es la Tornà.
+        </li>
+        <li>
+          <span class="dia-label">Durante toda la semana — Gaiatas y pólvora</span>
+          Los 19 monumentos de luz permanecen iluminados en las plazas de sus sectores. El concurso oficial determina la Gaiata de la Ciutat de la edición siguiente. Castillos de fuegos artificiales diarios organizados por la Junta de Festes. El Mesón del Vino, espacio festivo de referencia de la Magdalena, abre durante toda la semana.
+        </li>
+        <li>
+          <span class="dia-label">Desfile de Gaiatas — BIC Inmaterial</span>
+          Los 19 monumentos de luz desfilan por la ciudad antes de instalarse en sus plazas. Es el acto más visual de las fiestas y el que concentra mayor asistencia de público foráneo. Con la declaración BIC de 2024, el desfile tiene la misma protección patrimonial que la Romeria.
+        </li>
+        <li>
+          <span class="dia-label">L'Encesa</span>
+          El encendido simultáneo de las 19 gaiatas en sus plazas. Ocurre de noche. Es el momento en que la ciudad entera enciende la luz al mismo tiempo y los sectores se llenan de vecinos que salen a ver su monumento iluminado por primera vez.
+        </li>
+      </ul>
+
+
+      <h2 class="section-title">Música</h2>
+      <div class="music-block">
+        <p>
+          La Magdalena tiene dos registros musicales que conviven durante toda la semana y no se parecen entre sí. El primero es el de la <strong>dolçaina i el tabal</strong>: el instrumento más antiguo de la fiesta, con un homenaje propio en la Plaza Mayor organizado por la Colla de Dolçainers, Tabaleters i Trabucaires Xaloc y la Federació de Colles de Castelló. Las colles locales — Escola Primer Molí, Escola Municipal, Escola Xaloc, El Soroll, Xarançaina, Castalia, Dolçainers del Grau — llenan la plaza con el sonido que Castellón lleva siglos usando para anunciar que hay fiesta. Es el registro más de raíz, el más identitario.
+        </p>
+        <p>
+          El segundo es el del <strong>Festival Internacional de Música de Festa</strong>, que en 2026 celebró su XXXV edición y trajo seis bandas internacionales de América, Asia y Europa junto a la Banda Municipal de Castelló. El programa combina marching bands, pipe bands escocesas, bandas sinfónicas y agrupaciones de samba en un mismo espacio — la Plaza Mayor — El cierre suena a todo a la vez: metales de banda, percusión de marching band, timbres de gaita y ritmos internacionales en el mismo espacio. La pieza que cierra el festival cada año es <em>Rotllo i Canya</em>, la más asociada a la Magdalena de todas las que suenan en las fiestas.
+        </p>
+        <ul>
+          <li>Para el sonido más valenciano y más antiguo, el Homenaje a la Dolçaina i el Tabal en la Plaza Mayor. Es un acto de las colles locales, no del festival internacional, y tiene una escala y un ambiente completamente distintos.</li>
+          <li>Para el cierre del Festival Internacional, sitúate en la Plaza Mayor antes de que empiece. La confluencia de bandas internacionales con la Banda Municipal en ese espacio es el momento de mayor volumen y más variedad sonora de toda la semana.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">Las gaiatas: luz, trabajo y barrio</h2>
+      <div class="music-block">
+        <p>
+          Una gaiata es las dos cosas a la vez: el monumento y la gente que lo construye. Cada uno de los 19 sectores gaiateros de Castellón tiene su comisión de vecinos, su local social, su reina y sus madrinas — y cada año, su gaiata. El nombre viene de <em>gaiato</em>, el cayado con el que los primeros castellonenses se apoyaron y se alumbraron al bajar del cerro. La gaiata moderna, nacida en 1945, convierte esa antorcha primitiva en un monumento de varios metros de altura que ilumina la plaza del barrio durante toda la semana de fiestas.
+        </p>
+        <p>
+          El concurso oficial, regido por el Patronato Municipal de Fiestas y la Junta de Festes, determina cada año cuál es la mejor. La ganadora se convierte en la <strong>Gaiata de la Ciutat</strong> y representa a Castellón durante la edición siguiente. Ver las 19 gaiatas juntas en el Desfile es ver un año entero de trabajo vecinal moviéndose por las calles de noche.
+        </p>
+        <ul>
+          <li>Para ver las gaiatas de cerca y con calma, recorre los sectores durante los primeros días de la semana, antes de que el desfile concentre todo el público en el centro. Cada plaza tiene su monumento iluminado y su ambiente propio de barrio.</li>
+          <li>Para el Desfile, sitúate en el recorrido central con antelación. La noche del desfile es la de mayor afluencia de toda la semana.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="gaiatas-grid">
+
+        <div class="gaiata-card">
+          <h3>La subida al cerro con la caña verde</h3>
+          <span class="tag">Primer domingo · Romeria de les Canyes</span>
+          <p>Más de 165.000 personas hacen el mismo camino: recoger la caña en el Mercado Central y subir al Castell Vell donde nació la ciudad. No hay otro acto en España donde tanta gente repita cada año el gesto físico que fundó su ciudad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Romeria de les Canyes es BIC desde 2017 y el acto más auténtico de las fiestas — el que los castellonenses harían aunque no hubiera turistas. Recoge tu caña en el Mercado Central a primera hora, únete a la columna y sube. La parada en Sant Roc para almorzar es parte del rito: lleva algo de comida o cómprate una tortilla de habas en los puestos del camino.</p>
+          </details>
+        </div>
+
+        <div class="gaiata-card">
+          <h3>L'Encesa: diecinueve plazas encendiéndose a la vez</h3>
+          <span class="tag">Noche · Las 19 plazas de los sectores</span>
+          <p>Las 19 gaiatas se encienden simultáneamente en sus plazas. Es el momento en que cada barrio sale a ver su monumento por primera vez iluminado. No hay un solo punto de vista: hay 19 plazas encendiéndose al mismo tiempo por toda la ciudad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque L'Encesa es el único acto de las fiestas donde el protagonismo es del barrio, no del centro. Elige un sector, sitúate en su plaza antes del encendido y quédate hasta que los vecinos terminen de celebrarlo. Después puedes recorrer otras plazas a pie — la ciudad entera está iluminada y los sectores están a distancias cortas.</p>
+          </details>
+        </div>
+
+        <div class="gaiata-card">
+          <h3>El ximo y los rollos de la ermita</h3>
+          <span class="tag">Durante las fiestas · Puestos callejeros y ermita</span>
+          <p>El ximo es el aperitivo de la Magdalena: panecillo frito rebozado con pisto y atún, específico de estas fiestas. En la romería también hay figa (buñuelo de higo), tortilla de habas y mistela. En la ermita reparten rollos al llegar. No se comen en ninguna otra fiesta española.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la gastronomía de la Magdalena no es un menú festivo genérico — cada plato tiene su momento y su lugar. El ximo se come en los puestos callejeros durante toda la semana. Los rollos solo se reparten en la ermita al final de la subida. La figa y la mistela son de la romería, no del resto de las fiestas. Saber cuándo y dónde comer cada cosa es parte de entender la fiesta.</p>
+          </details>
+        </div>
+
+        <div class="gaiata-card">
+          <h3>La mascletà en el cerro</h3>
+          <span class="tag">Primer domingo · Ermita de la Magdalena</span>
+          <p>La mascletà de la Magdalena no se dispara en una plaza urbana: se dispara en el cerro donde nació la ciudad, al final de la romería, con las vistas de Castellón abajo. El sonido rebota contra la piedra de la ermita y baja por el monte.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la única mascletà de la Comunitat Valenciana que se dispara en un cerro histórico, con el paisaje de la Plana al fondo. Si has subido la romería, ya estás allí. Si no, el momento de la mascletà es razón suficiente para hacer la subida.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento con mucha antelación.</strong> La Magdalena genera una ocupación hotelera superior al 90% en Castellón durante la semana de fiestas. Para el primer fin de semana — el de la Romeria — reservar con meses de antelación. Las localidades cercanas de Benicàssim, Vila-real o la propia capital de la provincia son alternativas si Castellón está completo.</li>
+        <li><strong>Cómo llegar.</strong> Castellón tiene buena conexión por tren y carretera desde Valencia, Barcelona y Madrid. El centro de la ciudad es accesible a pie desde la estación.</li>
+        <li><strong>Para la Romeria, empieza temprano.</strong> La cola para recoger la caña en el Mercado Central empieza a primera hora de la mañana. Quien llega tarde a la salida, sube detrás de la columna principal. Lleva calzado cómodo para el cerro y algo de comida para la parada de Sant Roc.</li>
+        <li><strong>La ropa de la pólvora.</strong> Las mascletàs y los castillos de fuegos artificiales son eventos de pólvora real. Ropa que no importe en los actos pirotécnicos — especialmente si te sitúas en primera fila de la mascletà.</li>
+        <li><strong>El Mesón del Vino.</strong> El espacio festivo de referencia de la Magdalena, instalado durante toda la semana. Es uno de los puntos de encuentro habituales de las fiestas, con ambiente de todo el día y parte de la noche.</li>
+        <li><strong>Programa oficial.</strong> El programa detallado, horarios y recintos de cada acto los publica la <a href="https://www.juntafestes.com" target="_blank" rel="noopener">Junta de Festes de Castelló</a>. Para los actos de pólvora, consultar siempre los recintos oficiales antes de ir.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario magdalener</h2>
+      <dl class="festero">
+
+        <dt>Gaiata</dt>
+        <dd>Tiene dos significados que conviven. Es el monumento de luz que cada sector construye durante meses y expone durante las fiestas. Y es también la propia agrupación vecinal —la comisión del sector— que lo construye. Cuando un castellonense dice "soy de la gaiata del Raval", habla del barrio y de la gente, no solo del objeto.</dd>
+
+        <dt>Canyes / Canyota</dt>
+        <dd>Las cañas verdes atadas con la cinta característica de Castellón que todos los romeros portan durante la Romeria de les Canyes. Se reparten en el Mercado Central a primera hora del primer domingo. Llevar la caña es la señal de que eres romero, no espectador.</dd>
+
+        <dt>L'Encesa</dt>
+        <dd>El encendido simultáneo de las 19 gaiatas en sus plazas. Es el momento que los magdaleners esperan cada año — cuando el barrio ve por primera vez su monumento iluminado. Ocurre de noche y cada sector lo vive en su propia plaza.</dd>
+
+        <dt>Tornà</dt>
+        <dd>El camino de vuelta desde el cerro de la Magdalena a la ciudad al atardecer, después de la romería. Tiene su propia cadencia y su propio ambiente: el de una ciudad que baja junta después de haber subido junta.</dd>
+
+        <dt>Ximo</dt>
+        <dd>El aperitivo festivo por excelencia de la Magdalena: un panecillo frito rebozado relleno de pisto y atún. Se vende en puestos callejeros durante toda la semana de fiestas. Fuera de la Magdalena no existe.</dd>
+
+        <dt>Magdalener / Fester</dt>
+        <dd>Cómo se llama a sí misma la gente de Castellón implicada en las fiestas. Magdalener tiene un matiz más específico de la fiesta fundacional; fester es el término más genérico para quien participa activamente en la organización y los actos.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiestas-magdalena-castellon-1.jpg" alt="Monumento de luz de una gaiata iluminado en la noche durante las Fiestas de la Magdalena de Castellón" loading="lazy" />
+        <img src="images/fiestas-magdalena-castellon-2.jpg" alt="Romeros subiendo al cerro de la Magdalena con cañas verdes durante la Romeria de les Canyes de Castellón" loading="lazy" />
+        <img src="images/fiestas-magdalena-castellon-3.jpg" alt="Ermita de la Magdalena en el Castell Vell de Castellón de la Plana" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.juntafestes.com" target="_blank" rel="noopener">Junta de Festes de Castelló — programa oficial</a></li>
+        <li><a href="https://castellonturismo.org" target="_blank" rel="noopener">Castellón Turismo — información práctica</a></li>
+        <li><a href="https://www.turismocomunitat.es" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-24</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Fiestas de la Magdalena de Castellón?</dt>
+        <dd>Las Fiestas de la Magdalena se celebran siempre durante nueve días, a partir del tercer domingo de Cuaresma. En 2027, del 27 de febrero al 7 de marzo. Las fechas cambian cada año con el calendario litúrgico — consulta la Junta de Festes de Castelló para el programa actualizado.</dd>
+
+        <dt>¿Qué es una gaiata y cuántas hay?</dt>
+        <dd>Una gaiata es un monumento de luz construido por cada uno de los 19 sectores gaiateros de Castellón. El nombre evoca los gaiatos (cayados) con los que, según la tradición, los primeros pobladores se alumbraron al bajar del cerro de la Magdalena en 1252. Desde 2024, el Desfile de Gaiatas es Bien de Interés Cultural Inmaterial de la Generalitat Valenciana.</dd>
+
+        <dt>¿Qué es la Romeria de les Canyes y puedo participar?</dt>
+        <dd>La Romeria de les Canyes es la romería fundacional de Castellón, declarada BIC en 2017. Se celebra el primer domingo de las fiestas: los romeros reciben una caña verde y una cinta en el Mercado Central, asisten a una misa y suben al Castell Vell en el cerro de la Magdalena, rememorando el traslado fundacional de 1252. Cualquiera puede participar — es un acto público y gratuito.</dd>
+
+        <dt>¿Es gratuita la Magdalena?</dt>
+        <dd>La mayor parte de los actos son gratuitos: la Romeria de les Canyes, el Desfile de Gaiatas, las mascletàs y los castillos de fuegos artificiales. Algunos actos puntuales pueden tener entrada. Consulta el programa oficial de la Junta de Festes para cada edición.</dd>
+
+        <dt>¿Qué se come en la Magdalena que no se encuentre en otro sitio?</dt>
+        <dd>El ximo es el aperitivo por excelencia de la Magdalena: un panecillo frito rebozado relleno de pisto y atún que se vende en puestos callejeros durante las fiestas. También son propias de la romería la figa (buñuelo relleno de higo), la tortilla de habas y la mistela. En la llegada a la ermita se reparten los rollos, un pan dulce tradicional.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiestas Mayores</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Castellón</a>
+        <a href="#" class="etiqueta">Febrero-Marzo</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">Romería</a>
+        <a href="#" class="etiqueta">9 días</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-magdalena">
+        <h2 id="rel-title-magdalena">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fallas-valencia.html" class="ficha-rel-card">
+            <img src="images/fallas-valencia.jpg" alt="Falla monumental iluminada en la noche durante las Fallas de Valencia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fallas de Valencia</span>
+              <span class="rel-frase">Otra ciudad que convierte el fuego y la luz en identidad.</span>
+              <span class="rel-meta">Valencia · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="hogueras-san-juan-alicante.html" class="ficha-rel-card">
+            <img src="images/hogueras-san-juan-alicante.jpg" alt="Hoguera monumental iluminada durante las Hogueras de San Juan de Alicante" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Hogueras de San Juan de Alicante</span>
+              <span class="rel-frase">El mismo sistema de sectores y monumentos, otro mes, otro mar.</span>
+              <span class="rel-meta">Alicante · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-alcoi.jpg" alt="Desfile de Moros y Cristianos por las calles de Alcoi durante las fiestas patronales" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Alcoi</span>
+              <span class="rel-frase">La otra fiesta mayor de la Comunitat que no entiende de espectadores.</span>
+              <span class="rel-meta">Alcoi · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
