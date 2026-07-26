@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Habaneras de Torrevieja: certamen coral desde 1955</title>
+  <meta name="description" content="Certamen de Habaneras de Torrevieja 2026: 700 coralistas de 13 países, 47.500€ en premios, tradición marinera desde 1955. ITI 1994." />
+  <link rel="canonical" href="https://folklorius.es/certamen-habaneras-polifonia-torrevieja.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Torrevieja: la ciudad donde los marineros trajeron Cuba en la voz" />
+  <meta property="og:description" content="Cada julio, 700 coralistas de cuatro continentes cantan habaneras en la ciudad que las adoptó en el siglo XIX. El certamen lleva 72 ediciones sin perderse una." />
+  <meta property="og:image" content="https://folklorius.es/images/certamen-habaneras-polifonia-torrevieja.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/certamen-habaneras-polifonia-torrevieja.html",
+    "name": "Certamen Internacional de Habaneras y Polifonía de Torrevieja",
+    "startDate": "2026-07-19",
+    "endDate": "2026-07-25",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Teatro Municipal de Torrevieja",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza Miguel Hernández, 3",
+        "addressLocality": "Torrevieja",
+        "addressRegion": "Comunitat Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.9785,
+        "longitude": -0.6822
+      }
+    },
+    "image": ["https://folklorius.es/images/certamen-habaneras-polifonia-torrevieja.jpg"],
+    "description": "El Certamen Internacional de Habaneras y Polifonía de Torrevieja es el festival coral especializado en habaneras más antiguo del mundo, celebrado ininterrumpidamente desde 1955. Declarado Fiesta de Interés Turístico Internacional en 1994, reúne cada julio a más de 700 coralistas de cuatro continentes en la ciudad que adoptó la habanera en el siglo XIX.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Patronato Municipal de Habaneras de Torrevieja",
+      "url": "https://www.habaneras.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "8",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.habaneras.org"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Certamen Internacional de Habaneras y Polifonía de Torrevieja",
+        "item": "https://folklorius.es/certamen-habaneras-polifonia-torrevieja.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Certamen de Habaneras de Torrevieja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El certamen se celebra cada año durante la última semana de julio, con siete galas repartidas entre la noche inaugural, las noches de competición y la gala de clausura con entrega de premios. En 2026 tuvo lugar del 19 al 25 de julio. Consulta el Patronato Municipal de Habaneras para las fechas de la siguiente edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es una habanera y por qué se canta en Torrevieja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La habanera es un género musical de origen antillano con ritmo sincopado característico. Torrevieja la adoptó en el siglo XIX: su histórica industria salinera enviaba barcos cargados de sal hasta Cuba, y los marineros que volvían traían consigo los ritmos y cantos que habían escuchado en las Antillas. La habanera arraigó en el acervo popular de la ciudad y nunca se fue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona la competición del certamen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El certamen no tiene eliminatorias. Cada agrupación participa en una única gala donde interpreta una habanera obligada —la misma para todos los coros de esa edición—, dos habaneras libres a su elección y dos obras polifónicas. Un jurado de cinco especialistas internacionales puntúa las actuaciones. Los premios totalizan 47.500 euros, con el Primer Premio de Habaneras 'Ricardo Lafuente' como máximo galardón."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede asistir como público a las galas del certamen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Todas las galas —las de competición y la inaugural y de clausura— son abiertas al público con entrada. Las entradas para las noches de competición cuestan alrededor de 8 euros; la gala inaugural algo más. También existen abonos semanales. Las entradas se venden en taquilla y en la web del Patronato Municipal de Habaneras. Además, el Patronato instala una pantalla gigante en el Paseo Vista Alegre para seguir el certamen al aire libre de forma gratuita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se celebra el certamen? ¿Qué son las Eras de la Sal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La sede histórica del certamen son las Eras de la Sal, un conjunto industrial salinero del siglo XVIII junto al puerto de Torrevieja con un auditorio al aire libre llamado el tornavoz. Desde 2023, el certamen se celebra en el Teatro Municipal (Plaza Miguel Hernández, 3) por los trabajos de reforma arqueológica de las Eras. La vuelta a la sede original dependerá de cuándo finalicen las obras."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Certamen Internacional de Habaneras y Polifonía de Torrevieja
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/certamen-habaneras-polifonia-torrevieja.jpg" alt="Coro internacional actuando en el Certamen de Habaneras y Polifonía de Torrevieja frente al auditorio lleno" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Certamen Internacional de Habaneras y Polifonía de Torrevieja</h1>
+      <p class="ficha-subtitle">
+        Torrevieja (Alicante · Comunitat Valenciana) · Festival Musical · "La ciudad que adoptó Cuba en el siglo XIX no ha parado de cantar desde entonces."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-interes">Medalla al Mérito Cultural — Generalitat Valenciana</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 19 al 25 de julio de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Teatro Municipal · Torrevieja · Alicante</span>
+          <span>⏱️ 7 galas · Última semana de julio</span>
+          <span>🏅 Interés Turístico Internacional desde 1994</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las galas del certamen son competición musical en directo. Los coros llevan meses preparando su actuación — el silencio durante las interpretaciones no es un protocolo de sala, es el respeto que merece el trabajo de cientos de coralistas venidos de cuatro continentes.</li>
+          <li>La habanera es un género con raíces populares profundas en Torrevieja. Para los torrevejenses, el certamen no es un evento cultural más: es la cita más importante del año y la expresión de una identidad musical que llevan más de un siglo construyendo.</li>
+          <li>Las actuaciones en la calle durante la semana del certamen son informales y participativas. En ese contexto, el ambiente cambia radicalmente respecto a las galas oficiales: espontáneo, cercano, a veces improvisado. Las dos caras del certamen se complementan.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La habanera tiene un ritmo que entra despacio. No aturde ni sorprende: se instala. Cuando un coro de sesenta voces la canta en sala, el sonido no sube al escenario — baja desde él, se extiende entre las butacas y llega al cuerpo antes de llegar al oído. Torrevieja lleva escuchando eso desde 1955 y, antes de que hubiera certamen, desde el siglo XIX, cuando los marineros de la sal volvían de Cuba con canciones en la garganta. La ciudad que los recibió nunca quiso olvidarlas. Setenta y dos ediciones después, tampoco lo ha conseguido.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Certamen Internacional de Habaneras y Polifonía de Torrevieja es un concurso coral especializado que el <strong>Patronato Municipal de Habaneras</strong> organiza cada año durante la última semana de julio. En la edición de 2026 — la 72ª — participaron <strong>15 agrupaciones corales</strong> de 13 países de Europa, América y Asia, con más de <strong>700 coralistas</strong>. Los premios totalizan <strong>47.500 euros</strong>, distribuidos en nueve galardones.
+      </p>
+      <p>
+        El certamen no tiene eliminatorias. Cada coro participa en una única gala donde interpreta un repertorio fijo: primero la <strong>habanera obligada</strong> — la misma para todos los participantes de esa edición, elegida por la Comisión Técnica cada año —, después dos habaneras libres a su elección y, para cerrar, dos obras polifónicas. Un <strong>jurado de cinco especialistas internacionales</strong> puntúa las actuaciones. El <strong>Primer Premio de Habaneras "Ricardo Lafuente"</strong> es el galardón más alto, con 12.000 euros. El Premio Especial de la Diputación de Alicante añade 10.000 euros adicionales. El certamen también premia al mejor director o directora de la edición.
+      </p>
+      <p>
+        Junto a las galas oficiales, la semana incluye actuaciones corales en las calles peatonales del centro histórico y conciertos en distintos espacios de la ciudad, de acceso libre. La programación completa la publica el <a href="https://www.habaneras.org" target="_blank" rel="noopener">Patronato Municipal de Habaneras</a>.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Las fechas exactas y el programa de cada edición los publica el <a href="https://www.habaneras.org" target="_blank" rel="noopener">Patronato Municipal de Habaneras de Torrevieja</a>. Las entradas se ponen a la venta en taquilla y en la web del Patronato a partir de finales de junio.
+      </div>
+
+      <h2 class="section-title">Historia y origen</h2>
+      <p>
+        La relación de Torrevieja con la habanera viene de antes que el certamen. En el siglo XIX, la <strong>industria salinera</strong> de la ciudad enviaba barcos cargados de sal desde su puerto hasta Cuba y otras islas antillanas. Los marineros que volvían traían consigo los ritmos y cantos que habían absorbido al otro lado del Atlántico. La habanera — con su compás sincopado característico y sus letras de mar, ausencia y añoranza — encajó naturalmente en una ciudad que vivía mirando al puerto y esperando que sus barcos regresaran.
+      </p>
+      <p>
+        En 1955, Juan Aparicio — entonces Delegado Nacional de Prensa — impulsó el primer certamen bajo el nombre de <em>Certamen Nacional de Habaneras de Torrevieja</em>. Desde esa primera edición, el certamen no ha dejado de celebrarse ni un solo verano. Con el tiempo amplió su alcance internacional y adoptó el nombre actual. En 1994 obtuvo la declaración de <strong>Fiesta de Interés Turístico Internacional</strong> (Resolución de 31 de mayo de 1994, BOE núm. 151). En 2005, la Generalitat Valenciana le concedió la <strong>Medalla al Mérito Cultural</strong>.
+      </p>
+      <p>
+        El compositor local <strong>Ricardo Lafuente</strong> es la figura musical de referencia del certamen: creó el himno a Torrevieja, una de las melodías más identificativas de la ciudad, y da nombre al primer premio desde hace décadas.
+      </p>
+
+      <h2 class="section-title">Las Eras de la Sal — la sede que define el certamen</h2>
+      <p>
+        La sede histórica del certamen no es un teatro ni un auditorio convencional. Las <strong>Eras de la Sal</strong> son un conjunto industrial salinero construido en 1777 junto al puerto de Torrevieja, donde durante siglos los salineros cargaban la sal en barcazas hasta los barcos anclados en la bahía. El recinto tiene un auditorio al aire libre conocido como el <strong>tornavoz</strong>: escuchar una habanera allí, con la brisa del Mediterráneo y el sonido del puerto cerca, es una experiencia que los que la conocen describen como la razón definitiva para volver cada año.
+      </p>
+      <p>
+        Desde 2023, el certamen se celebra en el <strong>Teatro Municipal</strong> (Plaza Miguel Hernández, 3) por los trabajos de reforma arqueológica integral de las Eras. El Patronato instala butacas y una pantalla gigante en el <strong>Paseo Vista Alegre</strong>, frente a las propias Eras, para que quien quiera pueda seguir las galas al aire libre de forma gratuita. La vuelta a las Eras dependerá de cuándo finalicen las obras — hasta entonces, el Paseo Vista Alegre es la mejor forma de recuperar parte de ese ambiente original.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La 72ª edición del certamen se celebró del <strong>19 al 25 de julio de 2026</strong>. El certamen se celebra siempre durante la <strong>última semana de julio</strong>. Las fechas de la edición siguiente las confirma el <a href="https://www.habaneras.org" target="_blank" rel="noopener">Patronato Municipal de Habaneras</a> en su web oficial.
+      </p>
+
+      <h2 class="section-title">El programa de la semana</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Noche inaugural — fuera de concurso</span>
+          La semana arranca con una gala inaugural en la que la <strong>Unión Musical Torrevejense</strong> y el <strong>Coro Sinfonía de la Escuela Coral Municipal</strong> interpretan los himnos oficiales antes de dar paso a un artista o agrupación invitada. En 2026, la soprano Ainhoa Arteta fue la protagonista de esa primera noche. Es la gala de mayor precio de entrada y la que concentra mayor atención mediática.
+        </li>
+        <li>
+          <span class="dia-label">Noches de competición — del martes al viernes</span>
+          Cada noche compiten entre tres y cuatro coros. El orden de actuación está preestablecido. Cada agrupación interpreta la habanera obligada de la edición, dos habaneras libres y dos piezas polifónicas. El jurado puntúa en sala. El público puede asistir a todas las noches con entrada.
+        </li>
+        <li>
+          <span class="dia-label">Galas paralelas — coros locales de Torrevieja</span>
+          Una de las noches de la semana está dedicada a las agrupaciones corales locales de Torrevieja, fuera de concurso. Es la noche más cercana al público torrevejense y la que mejor refleja la dimensión comunitaria del certamen.
+        </li>
+        <li>
+          <span class="dia-label">Gala de clausura — sábado</span>
+          Los coros ganadores repiten sus actuaciones ante el público y se entrega la dotación económica de los nueve premios. Es la noche de mayor afluencia de la semana. Las galas empiezan a última hora de la tarde, entrada la noche.
+        </li>
+        <li>
+          <span class="dia-label">Durante toda la semana — en la calle</span>
+          Actuaciones corales en las calles peatonales del centro histórico y conciertos en distintos espacios de la ciudad, de acceso libre. Las Jornadas Internacionales de la Habanera y el Canto Coral se celebran en paralelo a las galas oficiales.
+        </li>
+      </ul>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Una noche de competición en sala</h3>
+          <span class="tag">Martes a viernes · Teatro Municipal</span>
+          <p>Tres o cuatro coros internacionales, el mismo punto de partida — la habanera obligada — y resultados completamente distintos. La competición no está en el marcador: está en cómo cada coro de un país distinto interpreta la misma melodía con su propio acento, su propia respiración, su propio peso.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque escuchar la misma habanera en cuatro versiones distintas en una sola noche es la forma más directa de entender qué es este género y qué puede hacer con él una agrupación coral de primer nivel. Las noches de competición tienen el mejor precio de entrada de toda la semana y el nivel artístico más alto. Compra con antelación — el Teatro Municipal tiene un aforo de unos 650 espectadores.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La pantalla del Paseo Vista Alegre</h3>
+          <span class="tag">Todas las noches · Frente a las Eras de la Sal</span>
+          <p>Mientras duren las obras en las Eras, el Patronato retransmite las galas en una pantalla gigante instalada en el Paseo Vista Alegre, justo frente a la sede histórica. Al aire libre, junto al mar, con las Eras de la Sal detrás. No es lo mismo que estar en sala, pero es gratuito y es lo más cerca que se puede estar del escenario original.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Paseo Vista Alegre con el certamen en la pantalla y el puerto al fondo da una idea de lo que debía ser escuchar habaneras en el tornavoz de las Eras: al aire libre, con brisa, sin el protocolo de sala. Lleva algo para sentarte y llega antes de que empiece la gala — el espacio se llena.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las habaneras en la calle</h3>
+          <span class="tag">Durante toda la semana · Centro histórico</span>
+          <p>Las agrupaciones que participan en el certamen actúan también en las calles peatonales del centro durante la semana. Sin escenario, sin jurado, sin protocolo. A veces se detienen en una plaza y cantan para quien pase. Es el certamen sin la competición — y a veces es el mejor momento de toda la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en la calle desaparece la distancia entre el coro y el oyente. Un coro de Indonesia o de Venezuela cantando una habanera en una calle de Torrevieja a las once de la noche de julio no tiene descripción posible. Solo hay que estar allí cuando ocurre.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las Eras de la Sal — la catedral del género</h3>
+          <span class="tag">Todo el año · Paseo Vistalegre s/n</span>
+          <p>Las Eras de la Sal son el recinto industrial salinero del siglo XVIII donde nació el certamen y donde volvió a celebrarse durante décadas. Aunque estén en obras, el conjunto sigue siendo visitable y es imposible entender el certamen sin ver el lugar donde se celebró durante más de sesenta años.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque las Eras explican por qué Torrevieja y la habanera son inseparables: el mismo recinto donde se cargaba la sal que iba a Cuba es donde se canta la música que Cuba mandó de vuelta. Antes de ir al certamen, pasa por el Paseo Vistalegre. El contexto cambia la escucha.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Entradas.</strong> Las noches de competición cuestan alrededor de 8 euros; la gala inaugural algo más. Los abonos semanales rondan los 50 euros. Se venden en taquilla y en la web del Patronato. Salen a la venta a finales de junio — conviene no esperar, el Teatro Municipal tiene aforo limitado.</li>
+        <li><strong>La pantalla gratuita.</strong> El Patronato instala una pantalla gigante en el Paseo Vista Alegre para seguir las galas al aire libre sin entrada. Es la alternativa para quien no consiga entrada o prefiera el ambiente exterior.</li>
+        <li><strong>Cómo llegar.</strong> Torrevieja tiene buena conexión por carretera desde Alicante, Murcia y Valencia. Hay servicio de autobús regular desde Alicante y Murcia capital.</li>
+        <li><strong>Alojamiento.</strong> Torrevieja es una ciudad costera con amplia oferta hotelera, pero julio es temporada alta. Reservar con semanas de antelación para la semana del certamen.</li>
+        <li><strong>Emisión en televisión.</strong> Las galas se graban para TVE (La 2 y Canal Internacional) y la clausura se emite en directo por À Punt, la televisión pública valenciana.</li>
+        <li><strong>Programa completo.</strong> El Patronato Municipal de Habaneras publica el programa detallado en <a href="https://www.habaneras.org" target="_blank" rel="noopener">habaneras.org</a> antes de cada edición.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del certamen</h2>
+      <dl class="festero">
+
+        <dt>Habanera</dt>
+        <dd>Género musical de origen antillano con ritmo sincopado en compás de dos por cuatro. El nombre viene de La Habana. En Torrevieja tiene raíces históricas propias: los marineros de la sal la trajeron de Cuba en el siglo XIX y la ciudad la hizo suya. Una habanera no se escucha igual en ningún otro sitio que en Torrevieja.</dd>
+
+        <dt>Habanera obligada</dt>
+        <dd>La pieza que todos los coros participantes deben interpretar en su gala. La Comisión Técnica del Patronato la elige cada año — es siempre una obra nueva o poco conocida, para evitar que los coros lleguen con interpretaciones ya preparadas de ediciones anteriores. En 2026 la obra obligada fue <em>Habanera de sal</em>, con letra de Belén Puente y música de Antoni Mas.</dd>
+
+        <dt>Tornavoz</dt>
+        <dd>El auditorio natural de las Eras de la Sal: el espacio al aire libre con el mar al fondo donde el certamen se celebró durante décadas. El tornavoz es el lugar que los torrevejenses recuerdan cuando hablan de lo que era el certamen en sus mejores noches — la brisa, el puerto, las voces subiendo sin techo que las contuviera.</dd>
+
+        <dt>Ricardo Lafuente</dt>
+        <dd>El compositor torrevejense de referencia del certamen. Dio nombre al primer premio — el Primer Premio de Habaneras "Ricardo Lafuente" — y compuso el himno a Torrevieja, una de las melodías más identificativas de la ciudad. Su figura es inseparable de la historia del certamen desde sus primeras ediciones.</dd>
+
+        <dt>Polifonía</dt>
+        <dd>La segunda categoría del certamen. Mientras la sección de habaneras evalúa el dominio del género antillano, la polifonía mide la capacidad técnica del coro con obras a múltiples voces del repertorio coral internacional. Cada coro interpreta dos piezas polifónicas en su gala, después de las habaneras.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/certamen-habaneras-polifonia-torrevieja-1.jpg" alt="Coro internacional actuando en el Certamen de Habaneras y Polifonía de Torrevieja ante el público del Teatro Municipal" loading="lazy" />
+        <img src="images/certamen-habaneras-polifonia-torrevieja-2.jpg" alt="Vista nocturna de las Eras de la Sal de Torrevieja junto al puerto, sede histórica del Certamen de Habaneras" loading="lazy" />
+        <img src="images/certamen-habaneras-polifonia-torrevieja-3.jpg" alt="Pantalla gigante en el Paseo Vista Alegre de Torrevieja con retransmisión del Certamen de Habaneras al aire libre" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.habaneras.org" target="_blank" rel="noopener">Patronato Municipal de Habaneras de Torrevieja — programa y entradas</a></li>
+        <li><a href="https://torrevieja.es" target="_blank" rel="noopener">Ayuntamiento de Torrevieja</a></li>
+        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-25</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Certamen de Habaneras de Torrevieja?</dt>
+        <dd>El certamen se celebra cada año durante la última semana de julio, con siete galas repartidas entre la noche inaugural, las noches de competición y la gala de clausura con entrega de premios. En 2026 tuvo lugar del 19 al 25 de julio. Consulta el Patronato Municipal de Habaneras para las fechas de la siguiente edición.</dd>
+
+        <dt>¿Qué es una habanera y por qué se canta en Torrevieja?</dt>
+        <dd>La habanera es un género musical de origen antillano con ritmo sincopado característico. Torrevieja la adoptó en el siglo XIX: su histórica industria salinera enviaba barcos cargados de sal hasta Cuba, y los marineros que volvían traían consigo los ritmos y cantos que habían escuchado en las Antillas. La habanera arraigó en el acervo popular de la ciudad y nunca se fue.</dd>
+
+        <dt>¿Cómo funciona la competición del certamen?</dt>
+        <dd>Sin eliminatorias: cada coro actúa una sola vez. El repertorio es fijo — habanera obligada, dos habaneras libres y dos obras polifónicas — y un jurado de cinco especialistas decide los ganadores. El primer premio lleva el nombre del compositor torrevejense Ricardo Lafuente y está dotado con 12.000 euros.</dd>
+
+        <dt>¿Se puede asistir como público a las galas del certamen?</dt>
+        <dd>Sí. Todas las galas son abiertas al público con entrada. Las entradas para las noches de competición cuestan alrededor de 8 euros; la gala inaugural algo más. También existen abonos semanales. Las entradas se venden en taquilla y en la web del Patronato. Además, el Patronato instala una pantalla gigante en el Paseo Vista Alegre para seguir el certamen al aire libre de forma gratuita.</dd>
+
+        <dt>¿Dónde se celebra el certamen? ¿Qué son las Eras de la Sal?</dt>
+        <dd>La sede histórica del certamen son las Eras de la Sal, un conjunto industrial salinero del siglo XVIII junto al puerto de Torrevieja con un auditorio al aire libre llamado el tornavoz. Desde 2023, el certamen se celebra en el Teatro Municipal (Plaza Miguel Hernández, 3) por los trabajos de reforma arqueológica de las Eras. La vuelta a la sede original dependerá de cuándo finalicen las obras.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Festival Musical</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Alicante</a>
+        <a href="#" class="etiqueta">Julio</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Música Coral</a>
+        <a href="#" class="etiqueta">Habanera</a>
+        <a href="#" class="etiqueta">7 días</a>
+        <a href="#" class="etiqueta">Costa Blanca</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-torrevieja">
+        <h2 id="rel-title-torrevieja">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="hogueras-san-juan-alicante.html" class="ficha-rel-card">
+            <img src="images/hogueras-san-juan-alicante.jpg" alt="Hoguera oficial ardiendo en la Plaza del Ayuntamiento de Alicante durante la Nit de la Cremà" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Hogueras de San Juan de Alicante</span>
+              <span class="rel-frase">La otra gran fiesta de la provincia, con otro lenguaje y otro fuego.</span>
+              <span class="rel-meta">Alicante · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="caballos-del-vino-caravaca.html" class="ficha-rel-card">
+            <img src="images/caballos-del-vino-caravaca.jpg" alt="Carrera de los Caballos del Vino en la Cuesta del Castillo de Caravaca con los mozos agarrados al caballo enjaezado" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Caballos del Vino de Caravaca</span>
+              <span class="rel-frase">A media hora, una tradición que no se parece a nada más.</span>
+              <span class="rel-meta">Caravaca de la Cruz · Murcia</span>
+            </div>
+          </a>
+
+          <a href="purisima-concepcion-yecla.html" class="ficha-rel-card">
+            <img src="images/purisima-concepcion-yecla.jpg" alt="Fiestas de la Purísima Concepción de Yecla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Purísima Concepción de Yecla</span>
+              <span class="rel-frase">La fiesta de la comarca que el certamen nunca ha eclipsado.</span>
+              <span class="rel-meta">Yecla · Murcia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
