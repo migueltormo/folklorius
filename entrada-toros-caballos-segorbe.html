@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Entrada de Toros y Caballos de Segorbe: 40 segundos únicos</title>
+  <meta name="description" content="Entrada de Toros y Caballos de Segorbe 2026: 6 toros, 12 jinetes, 500 metros sin barreras. ITI 2005, BIC Inmaterial 2011. Segunda semana de septiembre." />
+  <link rel="canonical" href="https://folklorius.es/entrada-toros-caballos-segorbe.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Segorbe: cuando los toros y los caballos pasan a medio metro de ti" />
+  <meta property="og:description" content="Sin barreras. La calle entera se convierte en muralla humana durante cuarenta segundos. Seis toros y doce jinetes llevan corriendo ese mismo tramo desde el siglo XIV." />
+  <meta property="og:image" content="https://folklorius.es/images/entrada-toros-caballos-segorbe.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/entrada-toros-caballos-segorbe.html",
+    "name": "Entrada de Toros y Caballos de Segorbe",
+    "startDate": "2026-09-06",
+    "endDate": "2026-09-12",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Calle Colón, Segorbe",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Segorbe",
+        "addressRegion": "Comunitat Valenciana",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.85300,
+        "longitude": -0.48700
+      }
+    },
+    "image": ["https://folklorius.es/images/entrada-toros-caballos-segorbe.jpg"],
+    "description": "La Entrada de Toros y Caballos de Segorbe es un encierro diario sin barreras en el que seis toros bravos y doce jinetes por sorteo recorren 500 metros de la calle Colón con el público formando el pasillo. Declarada Fiesta de Interés Turístico Internacional en 2005 y BIC Inmaterial en 2011.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Segorbe",
+      "url": "https://www.segorbe.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Entrada de Toros y Caballos de Segorbe",
+        "item": "https://folklorius.es/entrada-toros-caballos-segorbe.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Entrada de Toros y Caballos de Segorbe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Entrada se celebra de lunes a domingo durante la segunda semana de las Fiestas Patronales, que tiene lugar en la segunda semana de septiembre. En 2026, las fechas proyectadas son del 6 al 12 de septiembre, pendientes de confirmación oficial. Consulta el Ayuntamiento de Segorbe para el programa actualizado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuántos toros y jinetes participan en cada Entrada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En cada Entrada participan seis toros bravos acompañados de doce jinetes escogidos por sorteo entre los caballistas de Segorbe. Los jinetes llevan el garrote —un bastón— y el pañuelo rojo al cuello como elementos identificativos de la tradición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay barreras o vallas en la Entrada de Segorbe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. La Entrada de Segorbe no tiene barreras ni vallado en el recorrido. Son los propios espectadores quienes forman el pasillo por el que pasan los toros y los caballos, abriéndose a medida que la manada se acerca y cerrando el paso tras ella. El público está a metros de los animales sin ninguna barrera entre ellos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto dura la Entrada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La carrera en sí dura entre 40 y 50 segundos desde que los toros inician el recorrido hasta que entran en la plaza. El recorrido cubre unos 500 metros por la calle Colón. La señal de inicio es una carcasa pirotécnica que suena a mediodía."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Desde qué siglo se celebra la Entrada de Toros y Caballos en Segorbe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las fuentes oficiales sitúan el origen de la Entrada en el siglo XIV, lo que la convierte en una de las tradiciones taurinas más antiguas de España. La forma actual del festejo, con jinetes conduciendo la manada sin barreras por la calle Colón, apenas ha cambiado en siglos."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Entrada de Toros y Caballos de Segorbe
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/entrada-toros-caballos-segorbe.jpg" alt="Jinetes conduciendo toros bravos por la calle Colón de Segorbe sin barreras durante la Entrada de Toros y Caballos" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Entrada de Toros y Caballos de Segorbe</h1>
+      <p class="ficha-subtitle">
+        Segorbe (Castellón · Comunitat Valenciana) · Tradición Taurina · "Cuarenta segundos. Sin barreras. Desde el siglo XIV."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-interes">Fiesta de Interés Turístico Nacional</span>
+        <span class="badge badge-bic">BIC Inmaterial — Generalitat Valenciana (2011)</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 6 al 12 de septiembre de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Segorbe · Castellón · Comunitat Valenciana</span>
+          <span>⏱️ 7 días · Una entrada diaria a mediodía</span>
+          <span>🏅 ITI · ITN · BIC Inmaterial</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La Entrada implica toros bravos y caballos a galope sin ninguna barrera entre los animales y el público. Quien se sitúa en la calle Colón sabe de antemano lo que va a ver. Moverse en el momento equivocado no es una anécdota: puede ser peligroso.</li>
+          <li>El público que forma el pasillo es parte del mecanismo de la Entrada, no un decorado. Quien está en la calle participa en la tradición aunque no lo sepa.</li>
+          <li>La Entrada es el eje de las Fiestas Patronales de Segorbe. Los actos religiosos de la semana — dedicados a tres patronas — tienen su propio registro y merecen el mismo respeto que cualquier celebración de devoción.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Suena la carcasa. El sonido llega antes que cualquier otra señal. En la calle Colón, el público aprieta los cuerpos contra las fachadas. Silencio breve. Luego el ruido de los cascos sobre el asfalto — primero los caballos, después los toros — creciendo desde el fondo de la calle hasta que la manada pasa a medio metro. Cuarenta segundos. Sin vallado, sin barreras, sin nada entre los seis toros bravos y la gente que los mira. Cuando el último caballo dobla hacia la plaza, la calle explota. Llevan haciendo esto en Segorbe desde el siglo XIV.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Entrada de Toros y Caballos de Segorbe es un encierro diario sin barreras en el que <strong>seis toros bravos</strong> recorren unos <strong>500 metros de la calle Colón</strong> conducidos por <strong>doce jinetes</strong> escogidos por sorteo entre los caballistas de la ciudad. El recorrido arranca desde la plaza de los Mesones, baja por la calle Colón y termina en el ruedo provisional de la plaza de la Cueva Santa. La señal de inicio es una <strong>carcasa pirotécnica</strong> que suena a mediodía. La carrera dura entre cuarenta y cincuenta segundos.
+      </p>
+      <p>
+        El elemento que distingue a Segorbe de cualquier otro encierro español es la <strong>ausencia total de vallado</strong>. No hay barreras ni vallas a lo largo del recorrido. Son los propios espectadores quienes forman el pasillo: a medida que los jinetes y las reses se aproximan al galope, la multitud se abre para dejarlos pasar y se cierra tras ellos. El público está a metros de los animales. Los jinetes llevan el <strong>garrote</strong> — un bastón — y el <strong>pañuelo rojo</strong> al cuello como elementos identificativos de la tradición.
+      </p>
+      <p>
+        La Entrada no es un acto aislado: es el eje de las <strong>Fiestas Patronales de Segorbe</strong>, dedicadas a la Virgen de la Esperanza, la Virgen de la Cueva Santa y la Virgen del Loreto. Durante la semana taurina se celebra una entrada cada día, siete en total. La organización la lleva el <a href="https://www.segorbe.es" target="_blank" rel="noopener">Ayuntamiento de Segorbe</a>, que publica el programa completo antes de cada edición.
+      </p>
+
+      <div class="nota-grid" role="note">
+        ⚠️ Las fechas exactas, el recorrido y cualquier cambio de programa los publica el <a href="https://turismo.segorbe.es" target="_blank" rel="noopener">Portal de Turismo de Segorbe</a>. Las fechas de 2026 (6-12 septiembre) son la proyección habitual, pendientes de confirmación oficial.
+      </div>
+
+      <h2 class="section-title">Historia y origen</h2>
+      <p>
+        Las fuentes oficiales sitúan el origen de la Entrada en el <strong>siglo XIV</strong>, lo que la convierte en una de las tradiciones taurinas documentadas más antiguas de España. Nació del traslado de reses desde el río Palancia hasta la plaza donde se celebraban las corridas: en ese recorrido, los toros iban conducidos a caballo por las calles de la ciudad. Con el tiempo, ese traslado se convirtió en la carrera que hoy existe. La forma actual del festejo, con jinetes conduciendo la manada sin barreras por la calle Colón, apenas ha evolucionado en siglos.
+      </p>
+      <p>
+        En 1985 la Administración española reconoció la singularidad de la Entrada con la declaración de <strong>Fiesta de Interés Turístico Nacional</strong>. Veinte años después, en diciembre de 2005, la Secretaría General de Turismo le otorgó la categoría de <strong>Fiesta de Interés Turístico Internacional</strong>. En febrero de 2011, la Generalitat Valenciana completó el reconocimiento declarándola <strong>Bien de Interés Cultural Inmaterial</strong> mediante el Decreto 6/2011 del Consell — la misma categoría que tienen las Fallas de Valencia o los Moros y Cristianos de Alcoi.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La semana taurina de la Entrada de Toros y Caballos se celebra durante la <strong>segunda semana de las Fiestas Patronales</strong>, en septiembre. En 2026, las fechas proyectadas son del <strong>6 al 12 de septiembre</strong>, con una entrada diaria a mediodía. Las fechas exactas las confirma el Ayuntamiento de Segorbe en su programa oficial — consulta <a href="https://turismo.segorbe.es" target="_blank" rel="noopener">turismo.segorbe.es</a> antes de planificar el viaje.
+      </p>
+
+      <h2 class="section-title">El programa de la semana</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Primera semana — Fiestas Patronales</span>
+          La semana anterior a la taurina está dedicada a los actos patronales: proclamación de las Reinas Mayor e Infantil con la Banda Sinfónica de la Sociedad Musical de Segorbe, ofrendas florales a las tres patronas, el Desfile de Gigantes y Cabezudos y actos religiosos en honor a la Virgen de la Esperanza, la Virgen de la Cueva Santa y la Virgen del Loreto.
+        </li>
+        <li>
+          <span class="dia-label">Segunda semana — La Entrada, de lunes a domingo</span>
+          Cada día a mediodía, la carcasa pirotécnica anuncia el inicio. Seis toros y doce jinetes salen desde la plaza de los Mesones, bajan por la calle Colón y entran en el ruedo de la plaza de la Cueva Santa. Cuarenta segundos. Siete veces en siete días.
+        </li>
+        <li>
+          <span class="dia-label">Durante la semana — Música y ambiente festero</span>
+          El Festival de Bandas de Música en el Auditorio Salvador Seguí, el concierto de Pasodobles Taurinos con la Banda Sinfónica y las peñas taurinas en los recintos habituales de la ciudad. La Feria del Jamón del Alto Palancia se instala durante los días de fiesta como polo gastronómico central.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Música</h2>
+      <div class="music-block">
+        <p>
+          La Entrada en sí misma no lleva música. Lo que suena durante los cuarenta segundos de la carrera es la carcasa que la anuncia, los cascos de doce caballos sobre el asfalto, el ruido de los toros y los gritos del público abriendo el paso. No hay banda, no hay corneta, no hay nada que compita con ese sonido. La música llega antes y después, no durante.
+        </p>
+        <p>
+          El resto de la semana, la <strong>Banda Sinfónica de la Sociedad Musical de Segorbe</strong> lleva el peso musical de las fiestas: actúa en la proclamación de las reinas, acompaña las ofrendas florales, protagoniza el concierto de <strong>Pasodobles Taurinos</strong> y participa en el <strong>Festival de Bandas de Música</strong> del Auditorio Salvador Seguí. Entre los pasodobles compuestos para Segorbe y sus fiestas destacan <em>Caballos y Toros en Segorbe</em>, <em>Peña Taurina de Segorbe</em> y <em>Sociedad Musical de Segorbe</em>. La dolçaina i tabal no tiene un acto propio documentado en estas fiestas — el peso musical recae claramente en la banda sinfónica.
+        </p>
+        <ul>
+          <li>Para el silencio previo a la carcasa — el momento en que la calle entera aguanta la respiración — sitúate en la calle Colón con tiempo. Lo que ocurre en los segundos anteriores al disparo es casi tan intenso como la carrera.</li>
+          <li>Para el Concierto de Pasodobles Taurinos, el Auditorio Salvador Seguí es el escenario. Es el acto musical más vinculado al espíritu de la semana taurina y el que mejor resume la relación de Segorbe con su tradición.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Los cuarenta segundos de la calle Colón</h3>
+          <span class="tag">Mediodía · Calle Colón</span>
+          <p>Seis toros y doce caballos cubriendo 500 metros sin barreras. El público forma el pasillo con sus cuerpos. La carrera dura menos de un minuto pero lo que se siente en esos cuarenta segundos no tiene equivalente en ningún otro encierro español.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la ausencia de barreras no es un detalle: es lo que define la Entrada de Segorbe y la diferencia de cualquier otra. Sitúate en la calle Colón con antelación suficiente — en cuanto suena la carcasa, moverse ya no es una opción. Elige un punto en el tramo recto central, donde la velocidad de la manada es máxima y la distancia con los animales mínima.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La carcasa que lo anuncia todo</h3>
+          <span class="tag">Mediodía · Plaza de los Mesones</span>
+          <p>El disparo de la carcasa pirotécnica a mediodía es la señal. En ese momento la calle entera cambia: los que estaban hablando se callan, los que estaban moviéndose se quedan quietos. Hay un silencio de pocos segundos entre la carcasa y el primer ruido de cascos que es difícil de describir.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el momento previo a la carrera tiene una tensión que la propia carrera no siempre tiene. Estar en la calle Colón cuando suena la carcasa y sentir cómo miles de personas reaccionan al unísono — apretándose contra las fachadas, dejando el pasillo libre — es una experiencia que la mayoría de visitantes no anticipan hasta que la viven.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los jinetes y el sorteo</h3>
+          <span class="tag">Semana taurina · Segorbe</span>
+          <p>Los doce jinetes que corren cada entrada no son los mismos todos los días. Son caballistas de Segorbe escogidos por sorteo, muchos de ellos con años de participación. El garrote y el pañuelo rojo al cuello son los elementos que los identifican. Hay familias en las que varias generaciones han pasado por ese sorteo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque los jinetes son la pieza que convierte un encierro en una tradición. Sin ellos, los toros correrían solos. Con ellos, la manada tiene una cadencia, una dirección, un orden que se mantiene desde el siglo XIV. Fijarse en cómo trabajan — cómo conducen, cómo se sitúan respecto a los toros — es la diferencia entre ver la Entrada y entenderla.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Feria del Jamón del Alto Palancia</h3>
+          <span class="tag">Durante la semana · Segorbe</span>
+          <p>La gastronomía de la semana festiva de Segorbe se concentra en la Feria del Jamón, donde el jamón y los embutidos del Alto Palancia son los protagonistas. Es el encuentro gastronómico de referencia de la comarca y funciona en paralelo a la Entrada durante toda la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Alto Palancia tiene una tradición chacinera propia que la Feria pone en valor durante los días de más afluencia del año. Es el contrapunto tranquilo a la intensidad de la calle Colón: mismo pueblo, otro ritmo, otra forma de entender la semana de fiestas.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Segorbe tiene conexión por tren desde Valencia y por carretera desde Sagunto y Teruel. Es una ciudad pequeña — oriéntate desde la estación hacia el centro y la calle Colón está cerca.</li>
+        <li><strong>Dónde situarse.</strong> La calle Colón es el recorrido central. El tramo recto de unos 500 metros desde la plaza de los Mesones hasta la plaza de la Cueva Santa es donde ocurre todo. Llega con antelación suficiente: en cuanto suena la carcasa, la calle ya no se puede cruzar.</li>
+        <li><strong>Balcones.</strong> Algunos vecinos alquilan sus balcones durante la semana taurina. La gestión es privada y directa con los propietarios — el Ayuntamiento no tiene un portal oficial de reservas para esto. Preguntar en la ciudad o buscar a través de asociaciones locales.</li>
+        <li><strong>Alojamiento.</strong> Segorbe es una ciudad pequeña. Para la semana taurina, reservar con antelación. Sagunto, Castellón de la Plana o Valencia son alternativas con más oferta hotelera y buena conexión.</li>
+        <li><strong>Programa completo.</strong> Los actos de las Fiestas Patronales — proclamación de reinas, ofrendas, Festival de Bandas — los publica el <a href="https://www.segorbe.es" target="_blank" rel="noopener">Ayuntamiento de Segorbe</a> antes de cada edición.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de la Entrada</h2>
+      <dl class="festero">
+
+        <dt>Garrote</dt>
+        <dd>El bastón que llevan los jinetes durante la Entrada. Es uno de los dos elementos que los identifican visualmente junto al pañuelo rojo. Su uso está ligado a la tradición del manejo de reses a caballo — el instrumento con el que el jinete puede influir en la dirección o el ritmo de la manada.</dd>
+
+        <dt>Pañuelo rojo</dt>
+        <dd>El pañuelo que los jinetes llevan al cuello durante la Entrada. Junto al garrote, forma parte de la indumentaria identificativa de los caballistas de Segorbe. Es el sello visual que distingue a los participantes del público.</dd>
+
+        <dt>Carcasa</dt>
+        <dd>El disparo pirotécnico que anuncia el inicio de la Entrada cada día a mediodía. Es la señal que todo el mundo en la calle Colón está esperando. Cuando suena, la carrera empieza en cuestión de segundos.</dd>
+
+        <dt>Rialé</dt>
+        <dd>El recorrido previo que hace la manada desde el río Palancia hasta el punto de inicio de la carrera en la plaza de los Mesones. El Rialé es el momento en que los toros llegan a la ciudad antes de la Entrada propiamente dicha.</dd>
+
+        <dt>Caballista</dt>
+        <dd>El jinete que participa en la Entrada. Los caballistas de Segorbe forman una asociación y participan en el sorteo que determina quiénes corren cada día de la semana taurina. La tradición se transmite entre familias — no es raro que padre e hijo hayan corrido la misma Entrada en distintas ediciones.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/entrada-toros-caballos-segorbe-1.jpg" alt="Jinetes conduciendo toros bravos por la calle Colón de Segorbe sin barreras durante la Entrada de Toros y Caballos" loading="lazy" />
+        <img src="images/entrada-toros-caballos-segorbe-2.jpg" alt="Público formando muralla humana en la calle Colón de Segorbe durante la Entrada de Toros y Caballos" loading="lazy" />
+        <img src="images/entrada-toros-caballos-segorbe-3.jpg" alt="Vista de la calle Colón de Segorbe llena de espectadores momentos antes de la Entrada de Toros y Caballos" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://turismo.segorbe.es" target="_blank" rel="noopener">Portal de Turismo de Segorbe — programa y fechas oficiales</a></li>
+        <li><a href="https://www.segorbe.es" target="_blank" rel="noopener">Ayuntamiento de Segorbe</a></li>
+        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-25</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Entrada de Toros y Caballos de Segorbe?</dt>
+        <dd>La Entrada se celebra de lunes a domingo durante la segunda semana de las Fiestas Patronales, en septiembre. En 2026, las fechas proyectadas son del 6 al 12 de septiembre, pendientes de confirmación oficial. Consulta el Ayuntamiento de Segorbe para el programa actualizado.</dd>
+
+        <dt>¿Cuántos toros y jinetes participan en cada Entrada?</dt>
+        <dd>En cada Entrada participan seis toros bravos acompañados de doce jinetes escogidos por sorteo entre los caballistas de Segorbe. Los jinetes llevan el garrote y el pañuelo rojo al cuello como elementos identificativos de la tradición.</dd>
+
+        <dt>¿Hay barreras o vallas en la Entrada de Segorbe?</dt>
+        <dd>No. La Entrada de Segorbe no tiene barreras ni vallado en el recorrido. Son los propios espectadores quienes forman el pasillo por el que pasan los toros y los caballos, abriéndose a medida que la manada se acerca y cerrando el paso tras ella. El público está a metros de los animales sin ninguna barrera entre ellos.</dd>
+
+        <dt>¿Cuánto dura la Entrada?</dt>
+        <dd>La carrera en sí dura entre 40 y 50 segundos desde que los toros inician el recorrido hasta que entran en la plaza. El recorrido cubre unos 500 metros por la calle Colón. La señal de inicio es una carcasa pirotécnica que suena a mediodía.</dd>
+
+        <dt>¿Desde qué siglo se celebra la Entrada de Toros y Caballos en Segorbe?</dt>
+        <dd>Las fuentes oficiales sitúan el origen de la Entrada en el siglo XIV, lo que la convierte en una de las tradiciones taurinas más antiguas de España. La forma actual del festejo, con jinetes conduciendo la manada sin barreras por la calle Colón, apenas ha cambiado en siglos.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Tradición Taurina</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Castellón</a>
+        <a href="#" class="etiqueta">Septiembre</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">Alto Palancia</a>
+        <a href="#" class="etiqueta">7 días</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-segorbe">
+        <h2 id="rel-title-segorbe">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fiestas-magdalena-castellon.html" class="ficha-rel-card">
+            <img src="images/fiestas-magdalena-castellon.jpg" alt="Monumento de luz de una gaiata iluminado durante las Fiestas de la Magdalena de Castellón" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiestas de la Magdalena de Castellón</span>
+              <span class="rel-frase">Las fiestas mayores de la capital de la provincia, con otro tipo de emoción.</span>
+              <span class="rel-meta">Castellón · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-alcoi.jpg" alt="Desfile de Moros y Cristianos por las calles de Alcoi durante las fiestas patronales" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Alcoi</span>
+              <span class="rel-frase">La otra fiesta valenciana declarada BIC que no admite espectadores pasivos.</span>
+              <span class="rel-meta">Alcoi · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Drakkar con velas rojas navegando el río Ulla hacia las Torres do Oeste durante la Romería Vikinga de Catoira" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Otra tradición que dura cuarenta segundos y lleva siglos repitiéndose.</span>
+              <span class="rel-meta">Catoira · Galicia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
