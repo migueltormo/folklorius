@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fira de Tots Sants de Cocentaina 2026: la feria más antigua</title>
+  <meta name="description" content="Fira de Tots Sants de Cocentaina 2026: 680 ediciones, 140.000 m², 750 expositores. ITI 2019, BIC Inmaterial. Del 31 de octubre al 2 de noviembre en Alicante." />
+  <link rel="canonical" href="https://folklorius.es/fira-tots-sants-cocentaina.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cocentaina: la feria que lleva leyéndose el mismo privilegio desde 1346" />
+  <meta property="og:description" content="Cada 1 de noviembre, desde el balcón del Palau Comtal, alguien lee en voz alta el documento de un rey medieval. Abajo, medio millón de personas escuchan. Llevan haciéndolo 680 años." />
+  <meta property="og:image" content="https://folklorius.es/images/fira-tots-sants-cocentaina.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .programa-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .programa-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .programa-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .programa-list li:last-child { padding-bottom: 0; }
+    .programa-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "Fira de Tots Sants de Cocentaina",
+    "description": "Feria histórica fundada en 1346 por privilegio real. Declarada Fiesta de Interés Turístico Internacional y BIC Inmaterial. Celebrada en torno al 1 de noviembre en Cocentaina, Alicante.",
+    "startDate": "2026-10-31",
+    "endDate": "2026-11-02",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": true,
+    "location": {
+      "@type": "Place",
+      "name": "Cocentaina",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cocentaina",
+        "addressRegion": "Alicante",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.7441,
+        "longitude": -0.4398
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Cocentaina",
+      "url": "https://www.firadecocentaina.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fira de Tots Sants de Cocentaina",
+        "item": "https://folklorius.es/fira-tots-sants-cocentaina.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Fira de Tots Sants de Cocentaina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Fira se celebra en torno al 1 de noviembre, Día de Todos los Santos. En 2026, las fechas son del 31 de octubre al 2 de noviembre. El programa completo lo publica el Ayuntamiento de Cocentaina en firadecocentaina.org."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Desde cuándo se celebra la Fira de Tots Sants?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El origen documentado es el 12 de mayo de 1346, cuando el rey Pere IV de Aragón, Pere el Cerimoniós, concedió a Cocentaina el privilegio para celebrar la feria. La edición de 2026 es la 680ª."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la lectura del Privilegi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el acto que inaugura oficialmente la Fira cada 1 de noviembre. Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina elegido para la ocasión lee íntegramente el documento por el que Pere el Cerimoniós concedió a la villa el derecho a celebrar la feria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se siguen haciendo tratos orales en la Fira de Cocentaina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. En la zona ganadera y ecuestre de la Fira, la compraventa de animales se sigue cerrando con un apretón de manos, sin documento escrito. Es uno de los rituales comerciales más antiguos que siguen funcionando en España."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué la Fira de Tots Sants es única entre las ferias declaradas ITI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el único certamen comercial en España con declaración de Fiesta de Interés Turístico Internacional. Todas las demás ITI son fiestas de carácter festivo-religioso o recreativo. La Fira obtuvo esta distinción en 2019 por ser un evento económico vivo con continuidad desde el siglo XIV."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+          <picture>
+            <source srcset="images/logo-folklorius.webp" type="image/webp" />
+            <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+          </picture>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#fiestas">Fiestas</a></li>
+          <li><a href="index.html#vocabulario">Vocabulario</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#explorar">Explorar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <nav aria-label="Ruta de navegación" class="breadcrumb">
+      <a href="index.html">Inicio</a> › Fira de Tots Sants de Cocentaina
+    </nav>
+
+    <article>
+
+      <h1>Fira de Tots Sants de Cocentaina</h1>
+      <p class="ficha-subtitulo">Cocentaina (Alicante · Comunitat Valenciana) · Feria Histórica · <em>"Desde 1346. El mismo privilegio. El mismo balcón."</em></p>
+
+      <div class="nota-grid" role="note">
+        <span class="declaracion-badge">Fiesta de Interés Turístico Internacional</span>
+        <span class="declaracion-badge">Fiesta de Interés Turístico Nacional</span>
+        <span class="declaracion-badge">BIC Inmaterial — Generalitat Valenciana</span>
+      </div>
+
+      <div class="ficha-datos-clave">
+        <div class="fechas-grandes">31 de octubre al 2 de noviembre de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cocentaina · Alicante · Comunitat Valenciana</span>
+          <span>⏱️ 3 días · 680ª edición</span>
+          <span>🏅 ITI · ITN · BIC Inmaterial</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La lectura del Privilegi el 1 de noviembre es un acto institucional solemne. El balcón del Palau Comtal y la plaza que lo rodea se llenan de silencio cuando empieza la lectura: el visitante entra en ese registro.</li>
+          <li>La zona ganadera y ecuestre es un espacio de trabajo, no un espectáculo. Las compraventas que se cierran allí son transacciones reales: observar sin interrumpir.</li>
+          <li>La Fira atrae entre 400.000 y 500.000 personas en tres días a un pueblo de unos 11.000 habitantes. Los accesos al casco histórico y al Arrabal medieval se saturan. Orientarse antes de llegar ahorra tiempo y fricciones.</li>
+        </ul>
+      </div>
+
+      <h2>La esencia de la fiesta</h2>
+      <p>Desde el balcón del Palau Comtal, alguien empieza a leer en voz alta. Abajo, la plaza se ha ido llenando desde primera hora. El humo de las brasas de longaniza llega desde los puestos del Porrat. La dolçaina y el tabal han ido abriendo paso a las autoridades por las calles estrechas del pueblo. Y entonces el lector pronuncia las primeras palabras del documento de Pere el Cerimoniós — el mismo de 1346 — y la plaza se queda quieta. Cuatro días así, con medio millón de personas que vienen a comprar, a mirar, a comer y a escuchar cómo un rey medieval les dio permiso para hacer exactamente eso.</p>
+
+      <h2>¿En qué consiste?</h2>
+      <p>La Fira de Tots Sants es una feria comercial fundada en 1346 por privilegio real. En eso se diferencia de cualquier otra fiesta del catálogo: no nació como celebración religiosa ni como recreación histórica, sino como mercado. Un mercado con salvoconducto real: el rey garantizaba la seguridad de quienes viajaran a vender o comprar. Con el tiempo se ha convertido en el certamen al aire libre más grande de la Comunitat Valenciana.</p>
+
+      <p>Hoy ocupa unos 140.000 metros cuadrados con más de 750 expositores repartidos en sectores que han ido sumándose a lo largo de los siglos. El recinto moderno concentra los sectores comerciales de siempre: vehículos, maquinaria agrícola e industrial, piscinas de fibra, hogar y alimentación. Es la feria en su versión más contemporánea, con tratos que se cierran igual que en cualquier certamen del país.</p>
+
+      <p>Pero la Fira tiene otro flanco. El barrio histórico acoge el mercado medieval, el zoco árabe y la judería: tres espacios diferenciados con artesanos en traje de época, músicos callejeros, herreros trabajando en la calle y oficios que no existen fuera de este contexto. La plaza del Palau Comtal es el escenario de las actuaciones de música medieval e interpretaciones teatrales — la programación varía cada edición, pero el marco es siempre el mismo: con un palacio del siglo XV detrás. El recinto ferial incluye también una zona de atracciones para los más jóvenes. Y aparte de todo eso, la zona de animales: ganado y caballos donde la compraventa se cierra todavía con un apretón de manos, sin papel. En los sectores de vehículos o maquinaria esa formalidad ya no existe.</p>
+
+      <p>Es el único certamen comercial de España con la declaración de Fiesta de Interés Turístico Internacional. La distinción llegó en 2019, reconociendo algo que Cocentaina lleva haciendo sin interrupción desde el siglo XIV. La organización corre a cargo del <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a>, que publica el programa completo antes de cada edición.</p>
+
+      <div class="nota-grid" role="note">
+        <p>⚠️ Las fechas exactas, el mapa del recinto y la programación cultural los publica el <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a> antes de cada edición. Los datos aquí recogidos corresponden a la edición de 2026.</p>
+      </div>
+
+      <h2>Historia y origen</h2>
+      <p>El 12 de mayo de 1346, Pere IV de Aragón, Pere el Cerimoniós, firmó a petición de su tío Alfons Roger de Llúria, señor feudal de Cocentaina, el privilegio que autorizaba la celebración de una feria anual. El documento fijaba algo práctico además del permiso: el rey garantizaba la protección de los vendedores y compradores en sus viajes hacia la villa. En una época en que los caminos no eran seguros, esa garantía era el argumento de venta de la feria.</p>
+
+      <p>Nació como feria ganadera, agrícola y de artesanía (hierro, lana, pan) celebrada originalmente en torno a San Miguel, a finales de septiembre, durante quince días. Entre 1671 y 1795 sufrió varios intentos de cambio de fecha por crisis y malas cosechas hasta que la insistencia popular la asentó alrededor del 1 de noviembre, Día de Todos los Santos, donde lleva desde entonces. En el siglo XIX estuvo a punto de desaparecer: un brote de cólera en 1865 y varias malas cosechas la pusieron contra las cuerdas. Se recuperó.</p>
+
+      <p>El mercado medieval del Arrabal, que hoy transforma el barrio histórico en un zoco con artesanos en traje de época, herreros y músicos callejeros, se incorporó en 1996 coincidiendo con el 650 aniversario. No es una tradición secular sino una incorporación moderna que ha funcionado.</p>
+
+      <p>En 2012 el Ministerio de Cultura le concedió la declaración de Fiesta de Interés Turístico Nacional. En abril de 2019 obtuvo la de Interés Turístico Internacional — la primera feria comercial de sus características en conseguirla.</p>
+
+      <h2>Fechas 2026</h2>
+      <p>La 680ª edición de la Fira de Tots Sants se celebra del <strong>31 de octubre al 2 de noviembre de 2026</strong>, en torno al Día de Todos los Santos. La inauguración oficial, con la lectura del Privilegi desde el balcón del Palau Comtal, tiene lugar el 1 de noviembre por la mañana. Las fechas exactas y el programa completo los confirma el Ayuntamiento de Cocentaina en <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">firadecocentaina.org</a>.</p>
+
+      <h2>El programa</h2>
+      <ul class="programa-list">
+        <li>
+          <span class="dia-label">Víspera — 31 de octubre</span>
+          Apertura del recinto ferial. El Porrat de dulces, frutos secos y pequeños regalos ocupa las calles del casco urbano. La zona de atracciones abre ya desde la víspera. Ambiente nocturno en el Arrabal medieval con músicos callejeros y artesanos.
+        </li>
+        <li>
+          <span class="dia-label">1 de noviembre — Día central</span>
+          Por la mañana, la Colla de Dolçaines i Tabals abre paso a las autoridades hasta la plaza del Pla. Desde el balcón del Palau Comtal, lectura íntegra del Privilegi por un ciudadano ilustre elegido para la ocasión. A continuación, apertura oficial de todos los sectores. Zona ecuestre y ganadera en pleno funcionamiento: exhibiciones de doma y compraventa de animales. Durante los días de la Fira, la plaza del Palau Comtal acoge actuaciones de música medieval e interpretaciones teatrales; la programación concreta la publica el Ayuntamiento antes de cada edición.
+        </li>
+        <li>
+          <span class="dia-label">2 de noviembre — Día del cierre</span>
+          Jornada de máxima afluencia en el recinto. Espectáculo de clausura por la tarde. Las dos bandas de música de Cocentaina participan en los actos de cierre.
+        </li>
+        <li>
+          <span class="dia-label">8 de noviembre — Certamen Coral</span>
+          El Certamen Coral Fira de Tots Sants, de ámbito nacional, extiende la agenda cultural de la villa una semana después de la feria principal.
+        </li>
+      </ul>
+
+      <h2>Música y sonido</h2>
+      <p>El sonido que abre la Fira no viene del recinto ferial: viene de las calles del pueblo. La Colla de Dolçaines i Tabals precede a las autoridades el 1 de noviembre por la mañana, con el golpe seco del tabal rebotando en las fachadas de piedra. Cuando llegan al Palau Comtal y empieza la lectura del Privilegi, la dolçaina para. Lo que queda es la voz del lector y el silencio de la plaza.</p>
+
+      <p>Cocentaina tiene dos bandas de música propias que participan en los actos festivos de la Fira y en el cierre. El Certamen Coral, que se celebra la semana siguiente, añade otro registro: voces, no instrumentos, en un formato que lleva décadas siendo el contrapunto culto a la feria comercial. Para escuchar la dolçaina en su contexto más concentrado, el momento previo a la lectura del Privilegi, cuando las autoridades atraviesan el casco histórico, es el mejor de la Fira.</p>
+
+      <h2>No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La lectura del Privilegi</h3>
+          <span class="tag">1 de noviembre · Palau Comtal</span>
+          <p>Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina lee íntegramente el Privilegi original. La plaza del Pla se llena antes de que empiece. Cuando el lector abre el texto, el bullicio de la feria desaparece.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento de la Fira en que toda esa historia se concentra en un acto de dos minutos. El mismo privilegio, el mismo balcón, el mismo pueblo. Llegar con tiempo para tener sitio en la plaza — una vez que empieza la lectura el espacio ya no se mueve.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los tratos orales en la zona ganadera</h3>
+          <span class="tag">Durante la Fira · Zona ecuestre</span>
+          <p>En la zona de ganado y caballos, la compraventa se cierra con un trato oral sin papel. Igual que en el siglo XIV, igual que esta misma mañana si hay un comprador y un vendedor que se ponen de acuerdo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en ninguna otra feria del país funciona hoy un sistema de compraventa medieval. Las exhibiciones de doma son el espectáculo visible, pero los tratos son lo que diferencia esta zona de cualquier feria equestre moderna.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El mercado del Arrabal</h3>
+          <span class="tag">Durante la Fira · Barrio histórico</span>
+          <p>El barrio histórico se transforma en un zoco con artesanos en traje de época, herreros trabajando en la calle, músicos callejeros y oficios que ya no existen fuera de este contexto. Tres o cuatro días al año el Arrabal vuelve a ser lo que fue.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el contrapunto al recinto ferial moderno. Misma feria, otro ritmo, otro siglo. La transición entre los 750 expositores de maquinaria agrícola y las calles medievales del Arrabal es uno de los contrastes más llamativos de la Fira.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La gastronomía de la Fira</h3>
+          <span class="tag">Durante la Fira · Recinto ferial</span>
+          <p>El recinto ferial tiene su propia zona de restauración con feriantes especializados: carnes a la brasa, arroces, embutidos y frituras. El olor a brasa es uno de los más presentes en los días de la Fira. La pericana, pimiento seco con bacalao y aceite de oliva, es el plato frío de la comarca que aparece en las mesas de la zona cuando hay algo que celebrar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la oferta gastronómica de la Fira refleja la comarca: productos del Comtat y l'Alcoià en un formato de feria al aire libre. Si vas a comer en el recinto, ten en cuenta que los precios son los propios de un evento de esta escala y afluencia.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Cocentaina tiene conexión por tren en la línea Alcoy–Xàtiva–València. Renfe suele reforzar los servicios durante los días de la Fira. En coche, los accesos al pueblo se saturan: hay parkings disuasorios en los alrededores con autobuses lanzadera gratuitos hasta el recinto.</li>
+        <li><strong>Cuándo ir.</strong> El 1 de noviembre es el día de la lectura del Privilegi y el de mayor concentración de actividad. Si el objetivo es ver la zona ganadera y el Arrabal con menos gente, la víspera o el 2 de noviembre dan más margen.</li>
+        <li><strong>Alojamiento.</strong> Cocentaina es un pueblo de unos 11.000 habitantes. Para los días de la Fira, reservar con mucha antelación. Alcoi, a diez minutos en coche, tiene más oferta y buena conexión con la feria.</li>
+        <li><strong>Programa completo.</strong> El Ayuntamiento publica antes de cada edición el programa detallado, el mapa del recinto y las novedades en <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">firadecocentaina.org</a>.</li>
+      </ul>
+
+      <h2>Vocabulario de la Fira</h2>
+      <dl class="festero">
+
+        <dt>Privilegi</dt>
+        <dd>El documento original de 1346 por el que Pere el Cerimoniós concedió a Cocentaina el derecho a celebrar la feria. Se lee íntegro desde el balcón del Palau Comtal cada 1 de noviembre. Los locals lo llaman así, en valenciano, independientemente de si hablan en castellano o en valenciano.</dd>
+
+        <dt>Porrat</dt>
+        <dd>El mercado callejero de dulces, frutos secos y pequeños regalos que ocupa las calles del casco urbano durante la Fira. Denominación tradicional valenciana para este tipo de mercadillo festivo. En Cocentaina el Porrat convive con el recinto ferial moderno y con el mercado medieval del Arrabal.</dd>
+
+        <dt>Pericana</dt>
+        <dd>Plato frío típico de las comarcas del Comtat y l'Alcoià: pimiento seco, bacalao desmenuzado y aceite de oliva. No es exclusivo de Cocentaina pero sí de esta franja de la provincia de Alicante. En las mañanas de la Fira aparece como entrante antes del bocadillo caliente de longaniza.</dd>
+
+        <dt>Contestà / Contestano</dt>
+        <dd>El gentilicio de Cocentaina en valenciano es contestà (femenino: contestana). Los contestanos son quienes organizan, participan y viven la Fira de dentro hacia fuera — los que conocen los puestos de siempre, los que saben dónde están los mejores bocadillos, los que han ido cada año desde pequeños.</dd>
+
+        <dt>Fira de Fires</dt>
+        <dd>Así llaman los locals a la Fira de Tots Sants: la feria de ferias. El nombre refleja que aglutina en el mismo recinto sectores tan distintos como maquinaria agrícola, automóviles, artesanía, gastronomía y ganado — algo que ninguna otra feria de la región hace a esa escala.</dd>
+
+      </dl>
+
+      <h2>Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fira-tots-sants-cocentaina-1.jpg" alt="Lectura del Privilegi desde el balcón del Palau Comtal de Cocentaina durante la inauguración de la Fira de Tots Sants" loading="lazy" />
+        <img src="images/fira-tots-sants-cocentaina-2.jpg" alt="Mercado medieval del Arrabal de Cocentaina con artesanos en traje de época durante la Fira de Tots Sants" loading="lazy" />
+        <img src="images/fira-tots-sants-cocentaina-3.jpg" alt="Zona ecuestre de la Fira de Tots Sants de Cocentaina con exhibición de doma y jinetes" loading="lazy" />
+      </div>
+
+      <h2>Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Web oficial de la Fira de Tots Sants — programa y recinto</a></li>
+        <li><a href="https://www.cocentaina.es" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a></li>
+        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-26</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Fira de Tots Sants de Cocentaina?</dt>
+        <dd>La Fira se celebra en torno al 1 de noviembre, Día de Todos los Santos. En 2026, las fechas son del 31 de octubre al 2 de noviembre. El programa completo lo publica el Ayuntamiento de Cocentaina en firadecocentaina.org.</dd>
+
+        <dt>¿Desde cuándo se celebra la Fira de Tots Sants?</dt>
+        <dd>El origen documentado es el 12 de mayo de 1346, cuando el rey Pere IV de Aragón, Pere el Cerimoniós, concedió a Cocentaina el privilegio para celebrar la feria. La edición de 2026 es la 680ª.</dd>
+
+        <dt>¿Qué es la lectura del Privilegi?</dt>
+        <dd>Es el acto que inaugura oficialmente la Fira cada 1 de noviembre. Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina elegido para la ocasión lee íntegramente el documento por el que Pere el Cerimoniós concedió a la villa el derecho a celebrar la feria.</dd>
+
+        <dt>¿Se siguen haciendo tratos orales en la Fira de Cocentaina?</dt>
+        <dd>Sí. En la zona ganadera y ecuestre de la Fira, la compraventa de animales se sigue cerrando con un apretón de manos, sin documento escrito. Es uno de los rituales comerciales más antiguos que siguen funcionando en España.</dd>
+
+        <dt>¿Por qué la Fira de Tots Sants es única entre las fiestas declaradas ITI?</dt>
+        <dd>Es el único certamen comercial en España con declaración de Fiesta de Interés Turístico Internacional. Todas las demás ITI son fiestas de carácter festivo-religioso o recreativo. La Fira obtuvo esta distinción en 2019 por ser un evento económico vivo con continuidad desde el siglo XIV.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Feria Histórica</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Alicante</a>
+        <a href="#" class="etiqueta">Noviembre</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">El Comtat</a>
+        <a href="#" class="etiqueta">3 días</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cocentaina">
+        <h2 id="rel-title-cocentaina">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-alcoi.jpg" alt="Desfile de Moros y Cristianos por las calles de Alcoi durante las fiestas patronales" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Alcoi</span>
+              <span class="rel-frase">La fiesta mayor de la comarca, a diez minutos de Cocentaina.</span>
+              <span class="rel-meta">Alcoi · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="entrada-toros-caballos-segorbe.html" class="ficha-rel-card">
+            <img src="images/entrada-toros-caballos-segorbe.jpg" alt="Jinetes conduciendo toros bravos por la calle Colón de Segorbe sin barreras durante la Entrada de Toros y Caballos" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Entrada de Toros y Caballos de Segorbe</span>
+              <span class="rel-frase">Otra tradición valenciana que lleva igual desde el siglo XIV.</span>
+              <span class="rel-meta">Segorbe · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Casetas y farolillos de la Feria de Abril de Sevilla al atardecer" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">La otra gran feria declarada ITI. Otro siglo, otra escala, otro sur.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
