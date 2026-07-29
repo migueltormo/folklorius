@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>El Cascamorras de Baza y Guadix 2026: la carrera imposible</title>
+  <meta name="description" content="Cascamorras 2026: 6 sept. en Baza, 9 en Guadix. Una porra, 2.500 kilos de pintura y una Virgen que nadie ha conseguido llevarse en 530 años. ITI 2013." />
+  <link rel="canonical" href="https://folklorius.es/cascamorras-baza-guadix.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="El Cascamorras: sale de Guadix sabiendo que va a perder" />
+  <meta property="og:description" content="Cada 6 de septiembre, un hombre disfrazado de arlequín recorre Baza bajo 2.500 kilos de pintura negra intentando llegar limpio a una iglesia. Lleva más de 530 años sin conseguirlo." />
+  <meta property="og:image" content="https://folklorius.es/images/cascamorras-baza-guadix.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .programa-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .programa-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .programa-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .programa-list li:last-child { padding-bottom: 0; }
+    .programa-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "El Cascamorras de Baza y Guadix",
+    "description": "Ritual festivo de más de 530 años declarado Fiesta de Interés Turístico Internacional. Cada 6 de septiembre, el Cascamorras recorre Baza bajo 2.500 kilos de pintura negra intentando llegar limpio a la Iglesia de la Merced. El 9 de septiembre repite en Guadix.",
+    "startDate": "2026-09-06",
+    "endDate": "2026-09-09",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": true,
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Baza",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Baza",
+          "addressRegion": "Granada",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.48886,
+          "longitude": -2.77098
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Guadix",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guadix",
+          "addressRegion": "Granada",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.30069,
+          "longitude": -3.13520
+        }
+      }
+    ],
+    "organizer": [
+      {
+        "@type": "Organization",
+        "name": "Ayuntamiento de Baza"
+      },
+      {
+        "@type": "Organization",
+        "name": "Hermandad de la Virgen de la Piedad de Guadix"
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "El Cascamorras de Baza y Guadix",
+        "item": "https://folklorius.es/cascamorras-baza-guadix.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Cascamorras en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Cascamorras se celebra en dos fechas distintas: el 6 de septiembre de 2026 en Baza, cuando el personaje intenta llegar limpio a la Iglesia de la Merced, y el 9 de septiembre de 2026 en Guadix, cuando regresa a su ciudad y sus vecinos lo reciben manchándolo también."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es exactamente el Cascamorras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Cascamorras es un personaje disfrazado de arlequín multicolor elegido cada año por la Hermandad de la Virgen de la Piedad de Guadix. Su misión es viajar a Baza y llegar limpio a la Iglesia de la Merced para reclamar la imagen de la Virgen. Porta una porra de madera con una bola de trapo atada, con la que reparte mamporros para abrirse paso entre la multitud que intenta mancharlo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El Cascamorras ha conseguido alguna vez llegar limpio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. En más de 530 años de historia documentada, el Cascamorras nunca ha conseguido llegar limpio a la Iglesia de la Merced de Baza. Miles de personas aguardan en el recorrido con pintura ecológica negra para impedirlo desde el primer instante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué se llama Cascamorras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El nombre viene del instrumento que porta el personaje: una porra de madera de la que cuelga una bola de trapo o badajo de cuero. Con ella reparte mamporros (golpes inofensivos) para abrirse paso. Cascamorras deriva de cascar (golpear) y porra o morra (cabeza)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué hay dos celebraciones, una en Baza y otra en Guadix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque la disputa es entre los dos pueblos. El 6 de septiembre el Cascamorras va a Baza a intentar recuperar la imagen de la Virgen de la Piedad, que se custodia en la Iglesia de la Merced. El 9 de septiembre regresa a Guadix sin haberlo conseguido, y sus propios vecinos lo reciben con pintura como castigo simbólico por volver con las manos vacías."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+          <picture>
+            <source srcset="images/logo-folklorius.webp" type="image/webp" />
+            <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+          </picture>
+        </a>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#vocabulario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#explorar">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ficha-hero">
+    <img src="images/cascamorras-baza-guadix.jpg" alt="El Cascamorras cubierto de pintura negra abriéndose paso con su porra entre la multitud en Baza durante la fiesta del 6 de septiembre" />
+  </div>
+
+  <main class="container" role="main">
+    <nav aria-label="Ruta de navegación" class="breadcrumb">
+      <a href="index.html">Inicio</a> › El Cascamorras de Baza y Guadix
+    </nav>
+
+    <article>
+
+      <h1>El Cascamorras de Baza y Guadix</h1>
+      <p class="ficha-subtitulo">Baza y Guadix (Granada · Andalucía) · Recreación Histórica · <em>"Lleva más de 530 años intentándolo. Nunca lo ha conseguido."</em></p>
+
+      <div class="nota-grid" role="note">
+        <span class="declaracion-badge">Fiesta de Interés Turístico Internacional · 2013</span>
+        <span class="declaracion-badge">Fiesta de Interés Turístico Nacional · 2006</span>
+        <span class="declaracion-badge">BIC Actividad de Interés Etnológico · Junta de Andalucía · 2019</span>
+      </div>
+
+      <div class="ficha-datos-clave">
+        <div class="fechas-grandes">6 de septiembre en Baza · 9 de septiembre en Guadix</div>
+        <div class="datos-secundarios">
+          <span>📍 Baza y Guadix · Granada · Andalucía</span>
+          <span>⏱️ Dos celebraciones · 47 km de distancia</span>
+          <span>🏅 ITI · ITN · BIC Etnológico</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La pintura ecológica negra mancha todo lo que alcanza: ropa, pelo, piel, cámaras. Quien se sitúa en el recorrido del Cascamorras entra en el juego. No hay zona de observación limpia cerca del trayecto.</li>
+          <li>El Cascamorras reparte mamporros con su porra para abrirse paso. Son golpes inofensivos y forman parte del ritual, pero quien esté en primera fila debe esperarlos.</li>
+          <li>La Virgen de la Piedad es la patrona de Baza y objeto de devoción real para los bastetanos. La rivalidad con Guadix es festiva, no religiosa, pero la imagen tiene un peso devocional que el visitante reconoce.</li>
+        </ul>
+      </div>
+
+      <h2>La esencia de la fiesta</h2>
+      <p>Sale disfrazado de arlequín, con una porra de madera en la mano y una misión que lleva más de cinco siglos sin cumplir. En Baza lo esperan veinte mil personas con pintura negra. Él lo sabe. Ellos lo saben. Y aun así sale.</p>
+
+      <h2>¿En qué consiste?</h2>
+      <p>La fiesta tiene una regla tan simple como imposible: el Cascamorras, un vecino de Guadix elegido cada año por la Hermandad de la Virgen de la Piedad, debe recorrer Baza y llegar limpio a la Iglesia de la Merced. Si lo consigue, puede llevarse la imagen de la Virgen a Guadix. Si no, la Virgen se queda donde está. En más de 530 años, siempre se ha quedado donde está.</p>
+
+      <p>El 6 de septiembre, el Cascamorras parte del paraje de Las Arrodeas con su traje de arlequín multicolor y su porra: un palo de madera del que cuelga una cuerda atada a una bola de trapo o badajo de cuero. Con ella se abre paso a mamporros entre la multitud mientras los bastetanos le lanzan pintura ecológica negra desde el primer metro. Son unos 4 kilómetros de recorrido, unas dos horas y media de carrera, y unos 2.500 kilos de pintura. El tamborilero que siempre lo acompaña marca el paso con su tambor por encima del griterío.</p>
+
+      <p>Tres días después, el 9 de septiembre, el Cascamorras vuelve a Guadix. Sin la Virgen. Sus propios vecinos lo reciben de la misma manera: con pintura. El castigo simbólico por volver con las manos vacías. Él vuelve a repartir mamporros con la porra para abrirse paso hasta la parroquia de San Miguel, donde termina su recorrido. La lógica de la fiesta es la misma en los dos pueblos: el personaje siempre pierde. El ritual siempre se repite.</p>
+
+      <p>La organización corre a cargo del Ayuntamiento de Baza y la Hermandad de la Virgen de la Piedad de Guadix, que es quien elige cada año al vecino que encarnará al personaje. El 8 de septiembre, entre los dos actos, el Cascamorras ya aseado participa en la procesión de la patrona de Baza.</p>
+
+      <div class="nota-grid" role="note">
+        <p>⚠️ Las fechas del Cascamorras son fijas: 6 de septiembre en Baza y 9 de septiembre en Guadix todos los años. El programa completo lo publican el Ayuntamiento de Baza y el Ayuntamiento de Guadix antes de cada edición.</p>
+      </div>
+
+      <h2>Historia y origen</h2>
+      <p>Cuenta la leyenda que a finales del siglo XV, recién terminada la Reconquista, un obrero mozárabe de Guadix llamado Juan Pedernal trabajaba derribando los muros de una antigua mezquita en Baza. Al golpear la piedra, escuchó una voz que decía "¡Baza, Guadix, tened piedad de mí!" y al retirar los escombros encontró una talla de la Virgen con un rasguño en la mejilla, marca del golpe de su herramienta. Juan Pedernal quiso llevársela a Guadix argumentando que él la había descubierto. Los bastetanos la reclamaron porque estaba en su tierra. El pleito llegó hasta la justicia y la sentencia fue salomónica: la Virgen se quedaría en Baza, pero Guadix tendría derecho a reclamarla un día al año.</p>
+
+      <p>De ese derecho nació el ritual. Cada año, un enviado de Guadix intenta ejercerlo. Cada año, los bastetanos se lo impiden. La fiesta lleva más de cinco siglos repitiéndolo sin interrupción documentada, aunque la forma actual — con el traje de arlequín, la porra y la pintura — evolucionó del bufón medieval original a lo largo de los siglos.</p>
+
+      <p>En 2006 obtuvo la declaración de Fiesta de Interés Turístico Nacional. En 2013, la Resolución de 31 de julio de la Secretaría de Estado de Turismo (BOE-A-2013-8914) le concedió la de Interés Turístico Internacional. En 2019 la Junta de Andalucía la inscribió en el Catálogo General del Patrimonio Histórico Andaluz como Actividad de Interés Etnológico.</p>
+
+      <h2>Fechas 2026</h2>
+      <p>El Cascamorras se celebra en fechas fijas: <strong>6 de septiembre de 2026 en Baza</strong> y <strong>9 de septiembre de 2026 en Guadix</strong>. En Baza, el personaje parte de Las Arrodeas a última hora de la tarde. El recorrido dura aproximadamente dos horas y media. En Guadix, la celebración sigue un esquema similar. El 8 de septiembre, entre los dos actos, el Cascamorras participa en la procesión de la Virgen de la Piedad en Baza.</p>
+
+      <h2>El programa</h2>
+      <ul class="programa-list">
+        <li>
+          <span class="dia-label">6 de septiembre · Baza</span>
+          El Cascamorras parte del paraje de Las Arrodeas a última hora de la tarde. El tamborilero arranca. Miles de bastetanos lo esperan en el recorrido con pintura ecológica negra. Cuatro kilómetros, dos horas y media, 2.500 kilos de pintura. Objetivo: llegar limpio a la Iglesia de la Merced. Resultado: el de siempre.
+        </li>
+        <li>
+          <span class="dia-label">8 de septiembre · Baza</span>
+          El Cascamorras, ya aseado, participa en la procesión de la Virgen de la Piedad, patrona de Baza. El tono cambia: es un acto de devoción, no de ritual festivo.
+        </li>
+        <li>
+          <span class="dia-label">9 de septiembre · Guadix</span>
+          El Cascamorras regresa a su ciudad sin la Virgen. Sus vecinos lo reciben con pintura, igual que los bastetanos tres días antes. Él vuelve a repartir mamporros con la porra para llegar a la parroquia de San Miguel. El castigo simbólico cierra el ciclo.
+        </li>
+      </ul>
+
+      <h2>No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La salida desde Las Arrodeas</h3>
+          <span class="tag">6 de septiembre · Baza · Tarde</span>
+          <p>El momento en que el Cascamorras aparece con su traje de arlequín intacto y la porra en la mano. Dura lo que tarda en llegar la primera mancha de pintura, que es poco. A partir de ahí el traje multicolor desaparece bajo el negro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único instante en que el personaje existe tal como se concibió: limpio, con colores, con la misión por delante. Todo lo demás es la derrota. Ver la salida es ver al Cascamorras antes de que Baza lo convierta en otra cosa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La primera avalancha de pintura</h3>
+          <span class="tag">6 de septiembre · Recorrido · Tarde</span>
+          <p>Los primeros metros del recorrido concentran la mayor densidad de pintura. El olor a aceite ecológico, el griterío, el tambor del tamborilero y el primer golpe de porra del Cascamorras para abrirse paso ocurren casi al mismo tiempo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la experiencia física de estar cerca en ese momento no tiene equivalente en ninguna otra fiesta del catálogo: el sonido, el olor, el contacto con la pintura si estás en primera fila. Quien quiera verlo desde lejos tiene esa opción. Quien quiera estar dentro, debe asumir las consecuencias en la ropa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La llegada a la Iglesia de la Merced</h3>
+          <span class="tag">6 de septiembre · Baza · Tarde-noche</span>
+          <p>El Cascamorras llega a la iglesia completamente negro, sin rastro del traje original. Los bastetanos han cumplido su parte. La imagen de la Virgen sigue donde siempre ha estado. El ritual se cierra igual que lleva cerrándose cinco siglos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento en que la lógica completa de la fiesta se hace visible: el personaje que nunca gana llega al punto donde debería ganar y no gana. No hay drama, no hay decepción. Todo el mundo lo sabía desde el principio. Esa es la gracia.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La recepción en Guadix</h3>
+          <span class="tag">9 de septiembre · Guadix · Tarde</span>
+          <span class="tag">47 km de Baza</span>
+          <p>Tres días después, el Cascamorras vuelve a casa sin la Virgen. Sus propios vecinos lo reciben con pintura. El que fue a reclamar algo para Guadix vuelve manchado por los suyos. La fiesta se cierra con la misma lógica con la que empezó: nadie gana, todos participan.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la celebración de Guadix tiene otro registro que la de Baza. En Baza es la defensa del territorio. En Guadix es el castigo al enviado que volvió sin cumplir la misión. Son el mismo ritual con distinta carga emocional, y verlos los dos en el mismo año da una dimensión que ninguno de los dos da por separado.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li><strong>Ropa.</strong> Si vas a estar cerca del recorrido, lleva ropa que no importe que acabe negra. La pintura ecológica sale con agua pero impregna todo. Calzado también.</li>
+        <li><strong>Cómo llegar.</strong> Baza y Guadix están en la provincia de Granada, unidas por la autovía A-92. Baza está a unos 120 km de Granada capital, Guadix a unos 57 km. Hay servicios de autobús con ALSA desde Granada, aunque los refuerzos especiales para los días del Cascamorras dependen de cada edición — conviene confirmarlo antes.</li>
+        <li><strong>Alojamiento.</strong> Ambas ciudades tienen oferta hotelera propia, aunque limitada. Reservar con antelación. Granada capital es la alternativa con más opciones y buena conexión por autovía con los dos municipios.</li>
+        <li><strong>Los dos actos.</strong> Baza (6 de septiembre) y Guadix (9 de septiembre) son dos fiestas distintas con tres días de diferencia y 47 kilómetros de distancia. Se pueden ver las dos en el mismo viaje planificando bien los días.</li>
+      </ul>
+
+      <h2>Vocabulario del Cascamorras</h2>
+      <dl class="festero">
+
+        <dt>Cascamorras</dt>
+        <dd>El personaje y la fiesta. El nombre viene de cascar (golpear) y porra o morra (cabeza). El Cascamorras es literalmente el que casca cabezas con su porra — un nombre que describe exactamente lo que hace para abrirse paso entre la multitud.</dd>
+
+        <dt>La porra</dt>
+        <dd>El instrumento del Cascamorras: un palo de madera del que cuelga una cuerda atada a una bola de trapo o badajo de cuero. Con ella reparte mamporros para avanzar entre la gente que lo espera con pintura. Es el elemento definitorio del personaje — sin la porra no hay Cascamorras.</dd>
+
+        <dt>Mamporro</dt>
+        <dd>El golpe inofensivo que reparte el Cascamorras con su porra para abrirse paso. No es agresión: es parte del ritual. Quien está en primera fila lo sabe y lo asume. Los mamporros son la respuesta del personaje a la pintura — su única herramienta de avance.</dd>
+
+        <dt>Bastetano / Accitano</dt>
+        <dd>El gentilicio de los naturales de Baza es bastetano. El de Guadix, accitano. La rivalidad entre bastetanos y accitanos es el motor de la fiesta: amistosa, ritualizada, con más de cinco siglos de historia detrás. Fuera del Cascamorras los dos pueblos conviven sin conflicto.</dd>
+
+        <dt>Las Arrodeas</dt>
+        <dd>El paraje de Baza desde donde parte el Cascamorras cada 6 de septiembre. Es el punto de inicio del recorrido — donde el traje todavía tiene colores y la misión todavía parece posible.</dd>
+
+        <dt>Juan Pedernal</dt>
+        <dd>El obrero mozárabe de Guadix que, según la leyenda, descubrió la imagen de la Virgen de la Piedad al derribar un muro en Baza a finales del siglo XV. Su intento de llevársela a Guadix y el pleito que siguió son el origen del ritual. Cada Cascamorras es, en cierto modo, el sucesor de Juan Pedernal.</dd>
+
+      </dl>
+
+      <h2>Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/cascamorras-baza-guadix-1.jpg" alt="El Cascamorras cubierto de pintura negra avanzando con su porra entre la multitud en Baza" loading="lazy" />
+        <img src="images/cascamorras-baza-guadix-2.jpg" alt="Bastetanos lanzando pintura ecológica al Cascamorras durante su recorrido por las calles de Baza el 6 de septiembre" loading="lazy" />
+        <img src="images/cascamorras-baza-guadix-3.jpg" alt="El Cascamorras llegando a la Iglesia de la Merced de Baza completamente cubierto de pintura negra" loading="lazy" />
+      </div>
+
+      <h2>Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.baza.es" target="_blank" rel="noopener">Ayuntamiento de Baza</a></li>
+        <li><a href="https://www.guadix.es" target="_blank" rel="noopener">Ayuntamiento de Guadix</a></li>
+        <li><a href="https://www.andalucia.org" target="_blank" rel="noopener">Turismo Andalucía</a></li>
+      </ul>
+      <p class="fuente">Última verificación de datos: 2026-07-29. Declaración ITI: BOE-A-2013-8914, Resolución 31 de julio de 2013.</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Cascamorras en 2026?</dt>
+        <dd>El Cascamorras se celebra en dos fechas distintas: el 6 de septiembre de 2026 en Baza, cuando el personaje intenta llegar limpio a la Iglesia de la Merced, y el 9 de septiembre de 2026 en Guadix, cuando regresa a su ciudad y sus vecinos lo reciben manchándolo también.</dd>
+
+        <dt>¿Qué es exactamente el Cascamorras?</dt>
+        <dd>El Cascamorras es un personaje disfrazado de arlequín multicolor elegido cada año por la Hermandad de la Virgen de la Piedad de Guadix. Su misión es viajar a Baza y llegar limpio a la Iglesia de la Merced para reclamar la imagen de la Virgen. Porta una porra de madera con una bola de trapo atada, con la que reparte mamporros para abrirse paso entre la multitud que intenta mancharlo.</dd>
+
+        <dt>¿El Cascamorras ha conseguido alguna vez llegar limpio?</dt>
+        <dd>No. En más de 530 años de historia documentada, el Cascamorras nunca ha conseguido llegar limpio a la Iglesia de la Merced de Baza. Miles de personas aguardan en el recorrido con pintura ecológica negra para impedirlo desde el primer instante.</dd>
+
+        <dt>¿Por qué se llama Cascamorras?</dt>
+        <dd>El nombre viene del instrumento que porta el personaje: una porra de madera de la que cuelga una bola de trapo o badajo de cuero. Con ella reparte mamporros (golpes inofensivos) para abrirse paso. Cascamorras deriva de cascar (golpear) y porra o morra (cabeza).</dd>
+
+        <dt>¿Por qué hay dos celebraciones, una en Baza y otra en Guadix?</dt>
+        <dd>Porque la disputa es entre los dos pueblos. El 6 de septiembre el Cascamorras va a Baza a intentar recuperar la imagen de la Virgen de la Piedad, que se custodia en la Iglesia de la Merced. El 9 de septiembre regresa a Guadix sin haberlo conseguido, y sus propios vecinos lo reciben con pintura como castigo simbólico por volver con las manos vacías.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Granada</a>
+        <a href="#" class="etiqueta">Septiembre</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">BIC Etnológico</a>
+        <a href="#" class="etiqueta">Dos ciudades</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+        <a href="#" class="etiqueta">Participativa</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cascamorras">
+        <h2 id="rel-title-cascamorras">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-baena.html" class="ficha-rel-card">
+            <img src="images/semana-santa-baena.jpg" alt="Procesión de Semana Santa en Baena con Judíos y Romanos" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Baena</span>
+              <span class="rel-frase">Otra fiesta andaluza donde el personaje y la rivalidad lo son todo.</span>
+              <span class="rel-meta">Baena · Córdoba · ITI</span>
+            </div>
+          </a>
+
+          <a href="bodas-isabel-segura.html" class="ficha-rel-card">
+            <img src="images/bodas-isabel-segura.jpg" alt="Representación histórica de las Bodas de Isabel de Segura en Teruel" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bodas de Isabel de Segura</span>
+              <span class="rel-frase">Otra recreación histórica ITI con personaje central y leyenda de fondo.</span>
+              <span class="rel-meta">Teruel · Aragón · ITI</span>
+            </div>
+          </a>
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Vikingos desembarcando en las Torres del Oeste durante la Romería Vikinga de Catoira" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Recreación histórica en el extremo opuesto del mapa. Otro personaje, otra lógica.</span>
+              <span class="rel-meta">Catoira · Galicia · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
