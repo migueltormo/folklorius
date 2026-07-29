@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Festival del Cante de las Minas de La Unión 2026: flamenco</title>
+  <meta name="description" content="Festival Cante de las Minas 2026: 29 julio–8 agosto en La Unión, Murcia. El concurso de flamenco más prestigioso del mundo. ITI 2006, BIC Inmaterial." />
+  <link rel="canonical" href="https://folklorius.es/festival-cante-minas-union.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="La Unión: donde el flamenco nació en el fondo de una mina" />
+  <meta property="og:description" content="En el siglo XIX, los mineros andaluces que llegaron a La Unión convirtieron su sufrimiento en cante. Lo que crearon allí abajo lleva 65 años sonando en una catedral de hierro y cristal." />
+  <meta property="og:image" content="https://folklorius.es/images/festival-cante-minas-union.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .programa-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .programa-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .programa-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .programa-list li:last-child { padding-bottom: 0; }
+    .programa-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "Festival Internacional del Cante de las Minas",
+    "description": "El concurso de flamenco más prestigioso del mundo, celebrado desde 1961 en La Unión, Murcia. Declarado Fiesta de Interés Turístico Internacional en 2006. Especializado en los cantes mineros y de Levante nacidos en las minas del sureste español en el siglo XIX.",
+    "startDate": "2026-07-29",
+    "endDate": "2026-08-08",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": false,
+    "location": {
+      "@type": "Place",
+      "name": "Antiguo Mercado Público de La Unión — Catedral del Cante",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "La Unión",
+        "addressRegion": "Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.61667,
+        "longitude": -0.87778
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Fundación Cante de las Minas",
+      "url": "https://www.festivalcantedelasminas.org"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Festival Internacional del Cante de las Minas",
+        "item": "https://folklorius.es/festival-cante-minas-union.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es el Festival del Cante de las Minas en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La 65ª edición del Festival del Cante de las Minas se celebra del 29 de julio al 8 de agosto de 2026 en La Unión, Murcia. El programa incluye galas flamencas con artistas consagrados, noches de semifinal del concurso y la Gran Final el último sábado. El programa completo se publica en festivalcantedelasminas.org."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Lámpara Minera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Lámpara Minera es el trofeo máximo del Festival del Cante de las Minas, otorgado al ganador absoluto del concurso de cante. Su nombre remite a las lámparas que usaban los mineros en los pozos. Los otros trofeos del concurso son el Bordón Minero (guitarra), el Desplante (baile) y el Filón (instrumento flamenco)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia hay entre la Taranta y la Minera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Taranta es el palo más libre y virtuoso de los cantes mineros: sin compás fijo, exige un registro vocal muy amplio y permite al cantaor desplegar toda su técnica. La Minera es el palo propio de La Unión, más trágico y sobrio, con una elevación característica en el tercio central. Ambos nacieron en las minas del sureste español en el siglo XIX."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el Festival del Cante de las Minas se celebra en La Unión?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque los cantes mineros nacieron allí. En el siglo XIX, la Sierra Minera de Cartagena-La Unión atrajo a miles de trabajadores andaluces que fusionaron sus fandangos con el folclore local para crear palos nuevos que hablaban del trabajo en los pozos. Cuando las minas entraron en declive, un grupo de aficionados fundó el festival en 1961 para que esos cantes no desaparecieran."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el temple en el flamenco minero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El temple son los lamentos o tercios introductorios, los 'ayyyy' con los que el cantaor calienta la voz y construye la atmósfera antes de entrar a la copla. En los cantes mineros, el temple es especialmente largo e intenso: el cantaor necesita establecer el registro trágico del palo antes de pronunciar la primera palabra."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+          <picture>
+            <source srcset="images/logo-folklorius.webp" type="image/webp" />
+            <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+          </picture>
+        </a>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#vocabulario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#explorar">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ficha-hero">
+    <img src="images/festival-cante-minas-union.jpg" alt="Cantaor en el escenario del Antiguo Mercado de La Unión durante el Festival Internacional del Cante de las Minas, con la bóveda de hierro y cristal al fondo" />
+  </div>
+
+  <main class="container" role="main">
+    <nav aria-label="Ruta de navegación" class="breadcrumb">
+      <a href="index.html">Inicio</a> › Festival Internacional del Cante de las Minas
+    </nav>
+
+    <article>
+
+      <h1>Festival Internacional del Cante de las Minas</h1>
+      <p class="ficha-subtitulo">La Unión (Murcia · Región de Murcia) · Festival Musical · <em>"El concurso de flamenco más prestigioso del mundo. Nació para salvar un cante que nacío en los pozos."</em></p>
+
+      <div class="nota-grid" role="note">
+        <span class="declaracion-badge">Fiesta de Interés Turístico Internacional · 2006</span>
+        <span class="declaracion-badge">Fiesta de Interés Turístico Nacional · 1984</span>
+        <span class="declaracion-badge">BIC Inmaterial · Región de Murcia · 2010</span>
+      </div>
+
+      <div class="ficha-datos-clave">
+        <div class="fechas-grandes">29 de julio al 8 de agosto de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 La Unión · Región de Murcia</span>
+          <span>⏱️ 11 días · 65ª edición</span>
+          <span>🏅 ITI · ITN · BIC Inmaterial</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El concurso de flamenco es un acto de alta concentración para el público y los cantaores. El silencio durante el cante no es protocolo: es el marco sin el que el cante minero no existe. Aplaudir entre tercios rompe el temple del cantaor.</li>
+          <li>La Lámpara Minera y los demás trofeos son el resultado de años de trabajo de los concursantes. El público que asiste al concurso entra en ese marco de respeto al oficio, no solo al espectáculo.</li>
+          <li>Las entradas para las noches de concurso y las galas son de pago y se agotan con antelación. La agenda cultural diurna, con casi cincuenta actividades, es gratuita y accesible sin reserva previa.</li>
+        </ul>
+      </div>
+
+      <h2>La esencia de la fiesta</h2>
+      <p>Una bóveda de hierro y cristal. El cantaor abre la boca y el "ayyy" se alarga, rebota en el metal, llena el espacio antes de que llegue la primera palabra. La guitarra toca por arriba, tensa, sin marcar compás. Y el público, quieto, espera. Lo que suena ahí dentro lo crearon los mineros del siglo XIX en el fondo de los pozos. Lleva 65 años saliendo a la superficie.</p>
+
+      <h2>¿En qué consiste?</h2>
+      <p>El Festival del Cante de las Minas es dos cosas a la vez: un festival con galas de artistas consagrados y el concurso de flamenco más prestigioso del mundo. Las dos conviven durante once días en el Antiguo Mercado Público de La Unión, un edificio de bóveda metálica y cristal de principios del siglo XX que los aficionados llaman la Catedral del Cante.</p>
+
+      <p>El concurso tiene cuatro categorías: cante, toque (guitarra), baile e instrumentista flamenco. Los aspirantes deben demostrar su dominio de los cantes mineros y de Levante — Minera, Taranta, Taranto, Cartagenera, Murciana y Levantica — que son el núcleo obligatorio del concurso. No se puede ganar la Lámpara Minera sin pasar por esos palos. Son el ADN de La Unión y la razón de que el festival exista.</p>
+
+      <p>Además del concurso, el festival despliega cada año una agenda cultural con cerca de cincuenta actividades gratuitas: conferencias, presentaciones de libros, exposiciones, clases magistrales y entregas de premios en el Ayuntamiento y la Plaza Joaquín Costa. Para quien quiere entrar en el festival sin comprar una entrada de noche, la agenda diurna es la puerta.</p>
+
+      <p>La organización corre a cargo de la Fundación Cante de las Minas, cuyo patronato preside el alcalde de La Unión, con participación de la Comunidad Autónoma y el Ministerio de Cultura. El programa completo de cada edición se publica en <a href="https://www.festivalcantedelasminas.org" target="_blank" rel="noopener">festivalcantedelasminas.org</a>.</p>
+
+      <div class="nota-grid" role="note">
+        <p>⚠️ Las entradas para las noches de concurso y las galas flamencas se agotan con meses de antelación. Consultar disponibilidad en la web oficial antes de planificar el viaje. Las actividades diurnas de la agenda cultural son gratuitas y no requieren reserva.</p>
+      </div>
+
+      <h2>Historia y origen</h2>
+      <p>En el siglo XIX, la Sierra Minera de Cartagena-La Unión era la California del Sur: plomo, zinc, plata. Llegaron miles de trabajadores desde Almería y el resto de Andalucía. Trajeron sus fandangos. Y allí abajo, en los pozos, con el eco de la roca y la penuria del trabajo, los fandangos se transformaron. Los nuevos cantes hablaban de derrumbes, de explosiones, de la falta de luz, de la muerte cerca. Así nació la taranta, la minera, el taranto. Palos que no existían antes de que alguien bajara a esas minas.</p>
+
+      <p>Cuando el auge minero se fue apagando, los cantes corrieronel mismo riesgo. En octubre de 1961, un grupo de intelectuales y aficionados locales encabezados por Asensio Sáez fundó el festival con una misión concreta: que esos palos no desaparecieran. Desde entonces se ha celebrado sin interrupción — salvo la edición de 2020, que se adaptó por la pandemia. La figura histórica que más contribuyó a darle forma definitiva a estos cantes fue Antonio Grau Mora, El Rojo el Alpargatero, cantaor asentado en La Unión que aflamencó el fandango minero hasta convertirlo en lo que es hoy. Han ganado la Lámpara Minera cantaores como Miguel Poveda, Mayte Martín o Vicente Soto Sordera.</p>
+
+      <p>En 1984 obtuvo la declaración de Fiesta de Interés Turístico Nacional. En 2006, la Resolución de 16 de noviembre de la Secretaría de Estado de Turismo le concedió la de Interés Turístico Internacional. En 2010 la Región de Murcia declaró los Cantes Mineros y de Levante como BIC Inmaterial.</p>
+
+      <h2>Fechas 2026</h2>
+      <p>La <strong>65ª edición</strong> del Festival del Cante de las Minas se celebra del <strong>29 de julio al 8 de agosto de 2026</strong>. Once días con galas flamencas, noches de semifinal del concurso y la Gran Final el último sábado. El programa detallado — artistas, horarios y disponibilidad de entradas — se publica en <a href="https://www.festivalcantedelasminas.org" target="_blank" rel="noopener">festivalcantedelasminas.org</a>.</p>
+
+      <h2>El programa</h2>
+      <ul class="programa-list">
+        <li>
+          <span class="dia-label">29 julio – primeros días</span>
+          Apertura del festival con las primeras galas flamencas en la Catedral del Cante. Arranque de la agenda cultural gratuita: conferencias, exposiciones y clases magistrales en el Ayuntamiento y la Plaza Joaquín Costa.
+        </li>
+        <li>
+          <span class="dia-label">Noches de semifinal</span>
+          Los aspirantes al concurso se miden en las cuatro categorías: cante, guitarra, baile e instrumento. Los palos mineros y de Levante son el examen obligatorio. El público de las semifinales es el más experto y el silencio durante el temple es absoluto.
+        </li>
+        <li>
+          <span class="dia-label">Último sábado — Gran Final</span>
+          La noche de la Lámpara Minera. Los finalistas de cante buscan el trofeo máximo del festival. El cantaor que consiga rematar una minera o una taranta con el nivel exigido por el jurado se lleva el premio más codiciado del flamenco. También se entregan el Bordón Minero, el Desplante y el Filón.
+        </li>
+      </ul>
+
+      <h2>Los palos mineros</h2>
+      <p>Los cantes mineros y de Levante son palos del flamenco que no existen fuera de este territorio. Nacieron en las minas y llevan grabada esa procedencia en su forma:</p>
+
+      <p>La <strong>Taranta</strong> es el palo más libre: sin compás fijo, la voz se despliega con total autonomía sobre la guitarra. Exige un registro vocal amplio y una técnica depurada. Es el género madre del que derivan los demás cantes mineros. La <strong>Minera</strong> es el palo propio de La Unión: más trágico y sobrio que la taranta, con una elevación característica en el tercio central que la hace especialmente difícil de rematar. El <strong>Taranto</strong> es la versión con compás — sigue el ritmo binario de los tangos y, a diferencia de los otros dos, se puede bailar. La guitarra en los tres palos toca "por arriba": una afinación y una posición que crea una atmósfera metálica, tensa, que no se parece a nada del resto del flamenco.</p>
+
+      <h2>No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Gran Final — la noche de la Lámpara Minera</h3>
+          <span class="tag">Último sábado · Catedral del Cante</span>
+          <p>El momento más tenso del festival. Los finalistas de cante se juegan el trofeo más codiciado del flamenco. El silencio en la bóveda de hierro durante el temple del cantaor es físico: se puede medir.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Gran Final concentra en una noche todo lo que el festival representa: el nivel más alto del cante minero, el jurado más exigente del flamenco y un público que lleva años esperando ese momento. Las entradas se agotan antes que ninguna otra noche. Comprar con mucha antelación.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Una noche de semifinal del concurso</h3>
+          <span class="tag">Noches de concurso · Catedral del Cante</span>
+          <p>Las semifinales tienen un público diferente al de las galas: más experto, más silencioso, más exigente. El temple de los aspirantes en la bóveda del Antiguo Mercado suena distinto a cualquier otro escenario de flamenco en el mundo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en una semifinal se ve al cantaor más desnudo que en una gala: sin red, jugándose el paso a la final, con el jurado tomando notas. La tensión entre cantaor y público durante el cante minero no tiene equivalente en ningún otro festival de flamenco.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El temple antes de la copla</h3>
+          <span class="tag">Durante el concurso · Cualquier noche</span>
+          <p>El "ayyy" inicial con el que el cantaor construye la atmósfera antes de pronunciar la primera palabra. En la Catedral del Cante, ese lamento rebota en el hierro y el cristal y llena el espacio antes de que nadie haya dicho nada. Es el momento más flamenco del festival.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el temple en los cantes mineros es especialmente largo e intenso: el cantaor necesita establecer el registro trágico del palo antes de entrar a la letra. Y la acústica de la bóveda metálica multiplica ese efecto. Quien no conoce el flamenco minero, el temple es la mejor puerta de entrada.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La agenda cultural gratuita</h3>
+          <span class="tag">Durante el festival · Plaza Joaquín Costa y Ayuntamiento</span>
+          <p>Cerca de cincuenta actividades diurnas sin entrada: conferencias, exposiciones, presentaciones de libros, clases magistrales y entregas de premios institucionales. La agenda gratuita es la forma de entrar en el festival sin billete de noche.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque las conferencias y clases magistrales acercan los palos mineros a quien no los conoce sin presupuesto para las noches de pago. Y la entrega del Castillete de Oro — reconocimiento institucional del festival — es un acto que refleja el peso cultural del Cante de las Minas más allá del concurso.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li><strong>Entradas.</strong> Las noches de concurso y las galas flamencas son de pago y se agotan con meses de antelación. Revisar disponibilidad en <a href="https://www.festivalcantedelasminas.org" target="_blank" rel="noopener">festivalcantedelasminas.org</a> en cuanto se abra la venta. La agenda cultural diurna es gratuita.</li>
+        <li><strong>Cómo llegar.</strong> La Unión está a 15 km de Cartagena por la autovía CT-32 y la N-332, y a 55 km de Murcia capital. Hay servicio de cercanías entre Cartagena y La Unión, con refuerzos habituales durante el festival. Los servicios de autobús ALSA también cubren el trayecto.</li>
+        <li><strong>Alojamiento.</strong> La Unión es un municipio pequeño. La oferta hotelera está en Cartagena, a 15 minutos, que tiene conexión directa y buena frecuencia de transporte durante los días del festival.</li>
+        <li><strong>Si es tu primer festival de flamenco.</strong> La agenda gratuita diurna, con conferencias y clases magistrales sobre los palos mineros, es el mejor punto de partida antes de asistir a una noche de concurso. Entender el temple, la minera y la taranta antes de escucharlos en vivo cambia la experiencia.</li>
+      </ul>
+
+      <h2>Vocabulario del cante minero</h2>
+      <dl class="festero">
+
+        <dt>Lámpara Minera</dt>
+        <dd>El trofeo máximo del festival, otorgado al ganador absoluto del concurso de cante. Su nombre remite a las lámparas de carburo que usaban los mineros en los pozos — la misma luz que alumbró el nacimiento de estos palos. Es el premio más codiciado del flamenco.</dd>
+
+        <dt>Temple</dt>
+        <dd>Los lamentos introductorios con los que el cantaor calienta la voz y construye la atmósfera antes de entrar a la copla. El "ayyy" que abre el cante. En los palos mineros, el temple es especialmente largo e intenso: el cantaor necesita establecer el registro trágico antes de pronunciar la primera palabra. En la Catedral del Cante, ese "ayyy" rebota en la bóveda de hierro.</dd>
+
+        <dt>Catedral del Cante</dt>
+        <dd>El nombre con el que los aficionados conocen el Antiguo Mercado Público de La Unión, sede del festival. Un edificio de bóveda metálica y cristal de principios del siglo XX con una acústica peculiar: el eco del hierro alarga las notas de la guitarra y amplifica el quejío del cantaor de una manera que no existe en ningún otro recinto de flamenco.</dd>
+
+        <dt>Bordón Minero · Desplante · Filón</dt>
+        <dd>Los trofeos del concurso para las categorías de guitarra, baile e instrumento flamenco, respectivamente. El Bordón Minero recibe su nombre de la cuerda grave de la guitarra — la que más resuena en los cantes por arriba. El Desplante es el gesto brusco y resolutivo con el que el bailaor cierra una frase. El Filón, la veta de mineral: lo que el instrumentista va a buscar en su interpretación.</dd>
+
+        <dt>Por arriba</dt>
+        <dd>La afinación y posición en la que toca la guitarra en los cantes mineros. Crea una atmósfera metálica y de tensión disonante que imita, según la tradición, el eco y la dureza del trabajo en los pozos. No es una forma de tocar que se use igual en otros palos del flamenco.</dd>
+
+        <dt>El reparo</dt>
+        <dd>La bebida tradicional de los mineros de La Unión: café, anís y coñac con azúcar. Un reparador para el cuerpo después de una jornada en el pozo. Durante los días del festival, sigue sirviéndose en las terrazas del municipio como parte del tejido cotidiano de la fiesta.</dd>
+
+      </dl>
+
+      <h2>Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/festival-cante-minas-union-1.jpg" alt="Cantaor en el escenario del Antiguo Mercado de La Unión con la bóveda de hierro y cristal al fondo durante el Festival del Cante de las Minas" loading="lazy" />
+        <img src="images/festival-cante-minas-union-2.jpg" alt="Guitarrista acompañando un cante minero en la Catedral del Cante durante el concurso del Festival de La Unión" loading="lazy" />
+        <img src="images/festival-cante-minas-union-3.jpg" alt="Vista interior de la Catedral del Cante durante una noche de concurso del Festival Internacional del Cante de las Minas" loading="lazy" />
+      </div>
+
+      <h2>Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.festivalcantedelasminas.org" target="_blank" rel="noopener">Web oficial del Festival del Cante de las Minas — entradas y programa</a></li>
+        <li><a href="https://www.launion.es" target="_blank" rel="noopener">Ayuntamiento de La Unión</a></li>
+        <li><a href="https://www.regmurcia.com" target="_blank" rel="noopener">Región de Murcia — Turismo</a></li>
+      </ul>
+      <p class="fuente">Última verificación de datos: 2026-07-29. Declaración ITI: Resolución 16 de noviembre de 2006, Secretaría de Estado de Turismo.</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo es el Festival del Cante de las Minas en 2026?</dt>
+        <dd>La 65ª edición se celebra del 29 de julio al 8 de agosto de 2026 en La Unión, Murcia. El programa incluye galas flamencas con artistas consagrados, noches de semifinal del concurso y la Gran Final el último sábado. El programa completo se publica en festivalcantedelasminas.org.</dd>
+
+        <dt>¿Qué es la Lámpara Minera?</dt>
+        <dd>La Lámpara Minera es el trofeo máximo del Festival del Cante de las Minas, otorgado al ganador absoluto del concurso de cante. Su nombre remite a las lámparas que usaban los mineros en los pozos. Los otros trofeos del concurso son el Bordón Minero (guitarra), el Desplante (baile) y el Filón (instrumento flamenco).</dd>
+
+        <dt>¿Qué diferencia hay entre la Taranta y la Minera?</dt>
+        <dd>La Taranta es el palo más libre y virtuoso de los cantes mineros: sin compás fijo, exige un registro vocal muy amplio. La Minera es el palo propio de La Unión, más trágico y sobrio, con una elevación característica en el tercio central. Ambos nacieron en las minas del sureste español en el siglo XIX.</dd>
+
+        <dt>¿Por qué el Festival del Cante de las Minas se celebra en La Unión?</dt>
+        <dd>Porque los cantes mineros nacieron allí. En el siglo XIX, la Sierra Minera atrajo a miles de trabajadores andaluces que crearon palos nuevos en los pozos. Cuando las minas entraron en declive, un grupo de aficionados fundó el festival en 1961 para que esos cantes no desaparecieran.</dd>
+
+        <dt>¿Qué es el temple en el flamenco minero?</dt>
+        <dd>El temple son los lamentos introductorios con los que el cantaor calienta la voz y construye la atmósfera antes de entrar a la copla. En los cantes mineros, el temple es especialmente largo e intenso: el cantaor necesita establecer el registro trágico del palo antes de pronunciar la primera palabra.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Festival Musical</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Murcia</a>
+        <a href="#" class="etiqueta">Julio · Agosto</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">BIC Inmaterial</a>
+        <a href="#" class="etiqueta">Flamenco</a>
+        <a href="#" class="etiqueta">11 días</a>
+        <a href="#" class="etiqueta">Concurso</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-minas">
+        <h2 id="rel-title-minas">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="semana-santa-cartagena.html" class="ficha-rel-card">
+            <img src="images/semana-santa-cartagena.jpg" alt="Procesión de Semana Santa en Cartagena con cofrades de negro" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Cartagena</span>
+              <span class="rel-frase">A 15 minutos de La Unión. La Semana Santa más romana de España.</span>
+              <span class="rel-meta">Cartagena · Región de Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="noche-tambores-mula.html" class="ficha-rel-card">
+            <img src="images/noche-tambores-mula.jpg" alt="Tamboristas con túnica negra en la plaza del Ayuntamiento de Mula" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Noche de los Tambores de Mula</span>
+              <span class="rel-frase">Otra fiesta murciana ITI construida sobre el sonido. Otro mundo.</span>
+              <span class="rel-meta">Mula · Región de Murcia · ITI · UNESCO</span>
+            </div>
+          </a>
+
+          <a href="certamen-habaneras-polifonia-torrevieja.html" class="ficha-rel-card">
+            <img src="images/certamen-habaneras-polifonia-torrevieja.jpg" alt="Coro internacional en el Certamen de Habaneras de Torrevieja" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Certamen de Habaneras de Torrevieja</span>
+              <span class="rel-frase">El otro gran certamen musical ITI del Mediterráneo.</span>
+              <span class="rel-meta">Torrevieja · Alicante · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
