@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Otoño Mágico Valle del Ambroz 2026: bosques y calbotá</title>
+  <meta name="description" content="Otoño Mágico del Valle del Ambroz 2026: XXIX edición, octubre-diciembre. Seis fines de semana, 8 pueblos, robles y castaños en llamas. ITI desde 2024." />
+  <link rel="canonical" href="https://folklorius.es/otono-magico-valle-ambroz.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Otoño Mágico del Valle del Ambroz: ocho pueblos, seis o siete fines de semana y los bosques más vistosos de Extremadura" />
+  <meta property="og:description" content="En noviembre, el Valle del Ambroz huele a tierra húmeda y castañas asadas. Los robles y castaños tiñen de ocre ocho pueblos de la sierra cacereña. Una comarca que lleva casi treinta años convirtiendo el otoño en su fiesta más importante." />
+  <meta property="og:image" content="https://folklorius.es/images/otono-magico-valle-ambroz.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/otono-magico-valle-ambroz.html",
+    "name": "Otoño Mágico del Valle del Ambroz",
+    "startDate": "2026-10-24",
+    "endDate": "2026-12-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Valle del Ambroz, Hervás",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hervás",
+        "addressRegion": "Extremadura",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.2739,
+        "longitude": -5.8658
+      }
+    },
+    "image": ["https://folklorius.es/images/otono-magico-valle-ambroz.jpg"],
+    "description": "El Otoño Mágico del Valle del Ambroz es un festival de naturaleza, gastronomía y cultura que se celebra durante seis fines de semana entre octubre y diciembre en ocho municipios del norte de Cáceres. XXIX edición en 2026. Declarado Fiesta de Interés Turístico Internacional en 2024.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación para el Desarrollo Integral del Valle del Ambroz (DIVA)",
+      "url": "https://www.otonoMagico.org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Otoño Mágico del Valle del Ambroz",
+        "item": "https://folklorius.es/otono-magico-valle-ambroz.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Otoño Mágico del Valle del Ambroz en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Durante seis fines de semana entre finales de octubre y principios de diciembre de 2026. Es la XXIX edición. Las fechas exactas las publica DIVA antes de cada edición en otonomagico.org. El festival no tiene un día único: se distribuye por los ocho municipios del valle durante un mes y medio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Gran Calbotá y cuándo se celebra?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Gran Calbotá es el acto más popular del Otoño Mágico: una fiesta al aire libre donde vecinos y visitantes se reúnen para comer castañas asadas (calbotes), higos secos y sangría con música tradicional. Se celebra el primer fin de semana del festival, habitualmente a finales de octubre. La entrada es gratuita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuántos municipios forman el Valle del Ambroz y qué ofrece cada uno?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El valle lo forman ocho municipios: Hervás (capital y sede de las galas inaugurales, con el barrio judío mejor conservado de Extremadura), Baños de Montemayor (termas y Otoño de Bienestar), Casas del Monte (ruta de los castaños centenarios), La Garganta (marchas senderistas), Segura de Toro (rutas botánicas y castaños monumentales), Abadía, Aldeanueva del Camino y Gargantilla. Cada fin de semana del festival uno o varios municipios concentran la programación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay que pagar para participar en las actividades del Otoño Mágico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La mayoría de actividades al aire libre, como mercados, la Gran Calbotá y los conciertos, son gratuitas. Las rutas senderistas guiadas, la Marcha BTT Caminos del Ambroz y la Carrera por Montaña Subida a los Campanarios requieren inscripción previa y algunas tienen cuota técnica por motivos de seguro y control de aforo ambiental. Consulta el programa actualizado en otonomagico.org."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué los bosques del Valle del Ambroz son especialmente vistosos en otoño?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El valle está protegido por las montañas del Sistema Central, lo que genera un microclima suave y húmedo que favorece grandes extensiones de bosque caducifolio: robles melojosos (Quercus pyrenaica), castaños centenarios (Castanea sativa), alisos y hayas en las zonas más altas. En otoño todos mudan simultáneamente a amarillo, ocre y rojo, produciendo un espectáculo cromático que dura varias semanas y que es el fundamento visual del festival."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Otoño Mágico del Valle del Ambroz
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/otono-magico-valle-ambroz.jpg" alt="Bosque de castaños y robles del Valle del Ambroz en otoño con tonos amarillos y ocres en los municipios de la comarca cacereña" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Otoño Mágico del Valle del Ambroz</h1>
+      <p class="ficha-subtitle">
+        Valle del Ambroz (Cáceres) · Tradición etnográfica · «Ocho pueblos, hasta siete fines de semana y los bosques más vistosos de Extremadura.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Octubre – diciembre de 2026 · XXIX edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Valle del Ambroz · Cáceres · Extremadura</span>
+          <span>⏱️ 6-7 fines de semana · 8 municipios</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El Otoño Mágico no es un festival con recinto y perímetro: es una comarca de ocho pueblos vivos que celebra su temporada más vistosa. Los vecinos no organizan un espectáculo para visitantes — comparten su territorio y su otoño.</li>
+          <li>Las rutas senderistas pasan por terreno natural protegido. Algunas tienen aforo limitado por motivos ambientales. Respeta la señalización, no salgas del sendero marcado y no cojas setas ni castañas fuera de los espacios habilitados para ello.</li>
+          <li>El barrio judío de Hervás es un Conjunto Histórico-Artístico habitado, con vecinos que viven en él. No es un museo al aire libre — es un barrio.</li>
+          <li>La calbotá del primer fin de semana congrega a cientos de personas en un espacio natural abierto. El fuego de las hogueras donde se asan las castañas tiene sus propias normas de seguridad que la organización comunica en cada edición.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Antes de ver nada ya hueles a tierra mojada y a humo dulce. Alguien está asando castañas. Los robles y los castaños llevan semanas mudando de verde a amarillo, de amarillo a ocre, de ocre a rojo, y el valle entero ha cambiado de color sin que nadie lo haya organizado. Eso es lo que esta comarca lleva casi treinta años convirtiendo en fiesta: no un escenario montado, sino un paisaje que cambia solo, en ocho pueblos que se sientan a verlo cambiar juntos. En noviembre, el Valle del Ambroz huele a lo que huele el otoño cuando todavía sabe a otoño.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Otoño Mágico del Valle del Ambroz es un <strong>festival de naturaleza, gastronomía y cultura</strong> que se celebra durante seis o siete fines de semana entre finales de octubre y principios de diciembre en los ocho municipios de la comarca: Abadía, Aldeanueva del Camino, Baños de Montemayor, Casas del Monte, La Garganta, Gargantilla, Hervás y Segura de Toro. En 2026 celebra su <strong>XXIX edición</strong>. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó por resolución de la Secretaría de Estado de Turismo publicada en el BOE el 4 de septiembre de 2024 (BOE-A-2024-17920).
+      </p>
+      <p>
+        No hay un recinto único ni un acto central que lo resuma todo. El festival se distribuye por el territorio: cada fin de semana uno o varios municipios concentran la programación, con más de setenta actividades por edición. Rutas de senderismo guiadas, marchas en bici de montaña, jornadas micológicas, mercados de otoño, conciertos, teatro, monólogos, concursos de repostería y la <strong>Gran Calbotá</strong> — la fiesta popular de castañas asadas del primer fin de semana — componen un programa que cada año renueva el contenido pero mantiene el mismo hilo: el otoño del valle como protagonista. La organización corre íntegramente a cargo de <strong>DIVA</strong> (Asociación para el Desarrollo Integral del Valle del Ambroz).
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de cada edición lo publica DIVA antes de la celebración en <a href="https://www.otonomagico.org" target="_blank" rel="noopener">otonomagico.org</a> y <a href="https://www.visitambroz.es" target="_blank" rel="noopener">visitambroz.es</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        La primera edición fue en <strong>1998</strong>, impulsada por DIVA al calor de los primeros fondos europeos del programa PRODER que llegaron a la comarca de la mano de su presidente, Juan Ramón Ferreira Díaz. La idea era sencilla: el Valle del Ambroz tenía un activo natural espectacular en otoño — los bosques de castaños y robles cambiando de color — que quedaba fuera del calendario turístico habitual, orientado al verano. El festival nació para desestacionalizar el turismo de una comarca de ocho pueblos y unos 8.000 habitantes, y para recuperar tradiciones otoñales propias como la calbotá.
+      </p>
+      <p>
+        El reconocimiento llegó en etapas: <strong>Fiesta de Interés Turístico Regional</strong> en 2011 (dato no verificado oficialmente contra fuente primaria autonómica), <strong>Fiesta de Interés Turístico Nacional</strong> en diciembre de 2017, y <strong>Fiesta de Interés Turístico Internacional</strong> en agosto de 2024 — la cuarta celebración extremeña en alcanzar ese rango, tras la Semana Santa de Cáceres, la Semana Santa de Mérida y el Carnaval de Badajoz.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La XXIX edición transcurre entre <strong>finales de octubre y principios de diciembre de 2026</strong>. El festival arranca habitualmente el último fin de semana de octubre y cierra en torno al puente de la Constitución. Las fechas exactas se publican antes de cada edición — consulta el programa en <a href="https://www.otonomagico.org" target="_blank" rel="noopener">otonomagico.org</a> antes de planificar el viaje.
+      </p>
+
+      <h2 class="section-title">Los seis fines de semana</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Primer fin de semana · Finales de octubre</span>
+          Arranque del festival con la calbotá comunitaria del valle: hogueras al aire libre, castañas asadas, higos secos y sangría con música tradicional. Es el acto más esperado del año y marca el tono de lo que viene. Gratuito.
+        </li>
+        <li>
+          <span class="dia-label">Segundo y tercer fin de semana · Primeros de noviembre</span>
+          Los fines de semana centrales concentran la mayor densidad de actividades: rutas senderistas guiadas por los bosques de robles y castaños, jornadas de setas silvestres, la <strong>Marcha BTT Caminos del Ambroz</strong> y las primeras representaciones teatrales y conciertos. Cada municipio protagoniza sus propias actividades.
+        </li>
+        <li>
+          <span class="dia-label">Cuarto y quinto fin de semana · Mediados de noviembre</span>
+          <strong>Baños de Montemayor</strong> acoge el Otoño de Bienestar (yoga, meditación, actividades termales). La <strong>Carrera por Montaña Subida a los Campanarios</strong> y el Campeonato Ibérico de Orientación atraen participantes de fuera de la comarca. Mercados de productores locales en varios municipios.
+        </li>
+        <li>
+          <span class="dia-label">Sexto fin de semana · Principios de diciembre</span>
+          Cierre del festival con actuaciones de mayor formato — conciertos, espectáculos de humor, teatro — y el último mercado agroalimentario de la temporada. El ambiente es más festivo y menos centrado en la naturaleza; los árboles ya han perdido buena parte del color.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El valle y sus bosques</h2>
+      <div class="music-block">
+        <p>
+          Lo que hace singular al Valle del Ambroz en otoño es su microclima. Las montañas del Sistema Central rodean el valle y lo protegen — algunas superan los 2.000 metros de altitud — creando condiciones húmedas y suaves que favorecen extensiones de bosque caducifolio poco habituales en Extremadura: <strong>robles melojosos</strong> (<em>Quercus pyrenaica</em>), <strong>castaños centenarios</strong> (<em>Castanea sativa</em>), alisos junto a los arroyos y hayas en las zonas más altas. Cuando llega octubre, todos mudan a la vez: el amarillo de los castaños, el rojo encendido de los robles, el marrón dorado de las hayas. El espectáculo dura semanas y cubre los ocho municipios de la comarca.
+        </p>
+        <p>
+          Cada pueblo tiene su propio acceso al bosque. <strong>Casas del Monte</strong> es la puerta a los castaños centenarios monumentales. <strong>Segura de Toro</strong> concentra rutas botánicas por los <em>Castaños del Temblar</em>. <strong>La Garganta</strong> es el punto de salida de marchas senderistas de larga distancia. <strong>Hervás</strong> ofrece el <em>Camino de la Chorrera</em>, una ruta que termina en una cascada de más de treinta metros de caída sobre roca. El río Ambroz y sus afluentes suenan por todas partes — engrosados por las lluvias de otoño, el agua corre con más fuerza que en ninguna otra época del año.
+        </p>
+        <ul>
+          <li>Las rutas con aforo limitado se agotan. Si quieres hacer senderismo guiado, inscríbete en cuanto salga el programa — algunas plazas desaparecen en horas.</li>
+          <li>El mejor momento para el color es el segundo o tercer fin de semana de noviembre. El primero puede ser pronto; el último, tarde.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Gran Calbotá</h3>
+          <span class="tag">Primer fin de semana · Al atardecer · Al aire libre</span>
+          <p>La fiesta popular más antigua del festival: hogueras en el campo, castañas asando, higos secos, sangría y música tradicional. Vecinos y visitantes juntos alrededor del fuego. Huele a humo dulce y a tierra mojada. Es gratuita y no requiere inscripción.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento del festival donde la tradición de la calbotá — asar castañas al fuego como se ha hecho en este valle durante siglos — se celebra en comunidad real, sin escenario ni protocolo. El primer fin de semana marca el carácter de todo lo que viene después.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Ruta de los Castaños del Temblar</h3>
+          <span class="tag">Noviembre · Segura de Toro · Senderismo</span>
+          <p>El sendero lleva a castaños monumentales centenarios en Segura de Toro, algunos con troncos que tres personas no abarcan con los brazos. En noviembre los árboles están en su momento cromático máximo. Es la imagen más icónica del Otoño Mágico.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver un castaño centenario en otoño no tiene comparación con ninguna foto. La escala del árbol, el olor a tierra húmeda y a hoja en descomposición, el sonido del viento entre las ramas — es una experiencia que no cabe en ningún programa de actividades. Llega al municipio con tiempo para caminar sin prisa.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El barrio judío de Hervás</h3>
+          <span class="tag">Todo el festival · Hervás · Patrimonio</span>
+          <p>Uno de los barrios judíos mejor conservados de España, declarado Conjunto Histórico-Artístico. Calles estrechas, casas de adobe, madera de castaño y teja. En otoño, con los árboles del entorno cambiando de color, el barrio tiene una luz que no tiene en ninguna otra época del año.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque Hervás tiene una judería que no imita ni reconstruye — está ahí, con sus casas originales y sus vecinos. Combinarla con una vuelta por los miradores del Ambroz al atardecer, cuando la luz de noviembre da de lado sobre el valle, es una de las mejores tardes que ofrece el festival.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Chorrera de Hervás</h3>
+          <span class="tag">Noviembre · Hervás · Senderismo</span>
+          <p>Una cascada de más de treinta metros que cae sobre roca en el Camino de la Chorrera, una ruta desde Hervás por bosque de ribera. En otoño el caudal es máximo — las lluvias de los meses anteriores engordan el salto y el sonido del agua se escucha mucho antes de llegar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la mejor síntesis del valle en otoño: agua, bosque caducifolio en color máximo y silencio. La ruta no es técnicamente difícil y permite llegar a la cascada en menos de una hora desde el centro de Hervás. El regreso al atardecer, con el bosque a contraluz, es la postal del festival.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cuándo ir.</strong> El segundo o tercer fin de semana de noviembre ofrece el color máximo de los bosques. El primer fin de semana tiene la calbotá popular pero los árboles pueden estar todavía verdes. El último fin de semana tiene más ambiente festivo pero menos color natural.</li>
+        <li><strong>Inscripciones.</strong> Las rutas senderistas guiadas, la BTT y las carreras requieren inscripción previa — algunas con cuota técnica de seguro. Las plazas se agotan rápido. Consulta el programa en <a href="https://www.otonomagico.org" target="_blank" rel="noopener">otonomagico.org</a> en cuanto salga publicado.</li>
+        <li><strong>Actividades gratuitas.</strong> La calbotá del primer fin de semana, los mercados de productores, los conciertos en plaza y la mayoría de las representaciones teatrales son de acceso libre. El barrio judío de Hervás y las cascadas se visitan sin coste.</li>
+        <li><strong>Base de operaciones.</strong> Hervás es la mejor base por infraestructura hotelera y servicios, y está bien comunicada con todos los municipios del valle. Baños de Montemayor es la segunda opción, con oferta termal añadida.</li>
+        <li><strong>Cómo llegar.</strong> El Valle del Ambroz está en el norte de la provincia de Cáceres, con acceso por la A-66 (Autovía de la Plata). Hervás está a unos 90 km de Cáceres y a unos 200 km de Madrid. El coche es el transporte más práctico para moverse entre los ocho municipios.</li>
+        <li><strong>Alojamiento.</strong> Los fines de semana de noviembre se llenan — el festival atrae a toda la región. Reserva con semanas de antelación, especialmente para el segundo y tercer fin de semana.</li>
+        <li><strong>Ropa y calzado.</strong> Noviembre en la sierra cacereña es húmedo y frío. Botas de agua o senderismo, ropa de abrigo y chubasquero son imprescindibles para las rutas. El microclima del valle es suave respecto al entorno, pero el frío llega igual.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del valle</h2>
+      <dl class="festero">
+
+        <dt>Calbote</dt>
+        <dd>La castaña asada en el vocabulario extremeño. El término es específico de la región y distingue la castaña cocida al fuego de otras preparaciones. Durante el Otoño Mágico, el calbote es el producto gastronómico más presente — en hogueras callejeras, puestos de mercado y restaurantes de la comarca.</dd>
+
+        <dt>Calbotá</dt>
+        <dd>La fiesta popular de asar y comer castañas al fuego, acompañadas de higos secos y vino o sangría. Es una tradición otoñal extendida por Extremadura y el oeste peninsular, equivalente al magosto gallego o a la castañada catalana. En el Valle del Ambroz la calbotá es el acto fundacional del festival.</dd>
+
+        <dt>Gran Calbotá</dt>
+        <dd>El nombre propio del acto central del primer fin de semana del Otoño Mágico: la calbotá comunitaria más grande del festival, celebrada al aire libre con hogueras, música tradicional y acceso gratuito. Atrae a cientos de personas y marca el arranque de la temporada festiva del valle.</dd>
+
+        <dt>Paisaje y Paisanaje</dt>
+        <dd>El nombre de las rutas senderistas del Otoño Mágico que combinan la visita al entorno natural con el encuentro con pastores, artesanos y lugareños en activo. El nombre refleja la filosofía del festival: el paisaje del valle y las personas que lo habitan son igual de relevantes para el visitante.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/otono-magico-valle-ambroz-1.jpg" alt="Bosque de castaños centenarios en otoño con tonos dorados y ocres en el Valle del Ambroz, Cáceres" loading="lazy" />
+        <img src="images/otono-magico-valle-ambroz-2.jpg" alt="Gran Calbotá del Otoño Mágico del Valle del Ambroz con hogueras y vecinos asando castañas al aire libre" loading="lazy" />
+        <img src="images/otono-magico-valle-ambroz-3.jpg" alt="Barrio judío de Hervás con calles estrechas y casas de adobe y madera de castaño durante el Otoño Mágico" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.otonomagico.org" target="_blank" rel="noopener">Otoño Mágico — programa oficial y actividades</a></li>
+        <li><a href="https://www.visitambroz.es" target="_blank" rel="noopener">Visit Ambroz — turismo en el Valle del Ambroz</a></li>
+        <li><a href="https://www.turismoextremadura.com" target="_blank" rel="noopener">Turismo Extremadura — información regional</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-31</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Otoño Mágico del Valle del Ambroz en 2026?</dt>
+        <dd>Durante <strong>seis fines de semana entre finales de octubre y principios de diciembre de 2026</strong>. Es la XXIX edición. Las fechas exactas se publican antes de la celebración en otonomagico.org.</dd>
+
+        <dt>¿Qué es la Gran Calbotá?</dt>
+        <dd>La fiesta popular del primer fin de semana del festival: hogueras al aire libre, castañas asadas (<em>calbotes</em>), higos secos, sangría y música tradicional. Gratuita y sin inscripción previa. Es el acto más antiguo y más esperado del Otoño Mágico.</dd>
+
+        <dt>¿Cuántos municipios forman el Valle del Ambroz?</dt>
+        <dd>Ocho: Abadía, Aldeanueva del Camino, Baños de Montemayor, Casas del Monte, La Garganta, Gargantilla, Hervás y Segura de Toro. Cada municipio tiene actividades propias durante el festival y un carácter diferente dentro del valle.</dd>
+
+        <dt>¿Hay que pagar para participar?</dt>
+        <dd>La mayoría de actividades al aire libre — mercados, Gran Calbotá, conciertos — son gratuitas. Las rutas senderistas guiadas, la BTT y las carreras de montaña requieren inscripción previa y algunas tienen cuota técnica. Consulta el programa actualizado en otonomagico.org.</dd>
+
+        <dt>¿Por qué los bosques del valle cambian de color tan intensamente en otoño?</dt>
+        <dd>El valle está protegido por las montañas del Sistema Central, lo que genera un microclima húmedo que favorece grandes extensiones de robles melojosos y castaños centenarios. Cuando llegan las primeras heladas de octubre, todos mudan a la vez — amarillo, ocre y rojo — y el espectáculo cromático dura varias semanas.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Tradición Etnográfica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Extremadura</a>
+        <a href="#" class="etiqueta">Cáceres</a>
+        <a href="#" class="etiqueta">Octubre-Diciembre</a>
+        <a href="#" class="etiqueta">Naturaleza</a>
+        <a href="#" class="etiqueta">Senderismo</a>
+        <a href="#" class="etiqueta">Gastronomía</a>
+        <a href="#" class="etiqueta">Castaños</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-ambroz">
+        <h2 id="rel-title-ambroz">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="rapa-das-bestas-sabucedo.html" class="ficha-rel-card">
+            <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores en el curro de Sabucedo durante la Rapa das Bestas" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Rapa das Bestas de Sabucedo</span>
+              <span class="rel-frase">Los caballos salvajes del monte y los aloitadores a mano limpia.</span>
+              <span class="rel-meta">Sabucedo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense durante la Fiesta de la Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="fira-tots-sants-cocentaina.html" class="ficha-rel-card">
+            <img src="images/fira-tots-sants-cocentaina.jpg" alt="Fira de Tots Sants de Cocentaina con el mercado histórico medieval" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fira de Tots Sants de Cocentaina</span>
+              <span class="rel-frase">La feria medieval más antigua del País Valenciano, el 1 de noviembre.</span>
+              <span class="rel-meta">Cocentaina · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: DIVA · BOE · Ministerio de Turismo · organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
