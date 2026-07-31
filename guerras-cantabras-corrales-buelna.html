@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Guerras Cántabras de Los Corrales de Buelna 2026: ITI</title>
+  <meta name="description" content="Guerras Cántabras 2026: agosto en Los Corrales de Buelna. Más de 1.500 recreadores, 13 tribus y 13 legiones romanas. La guerra que obligó a Augusto a venir. ITI 2019." />
+  <link rel="canonical" href="https://folklorius.es/guerras-cantabras-corrales-buelna.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Los Corrales de Buelna: la batalla que obligó a Augusto a venir en persona" />
+  <meta property="og:description" content="Durante diez años, los cántabros resistieron al ejército más poderoso del mundo. Roma tuvo que mandar al propio emperador. Cada agosto, más de 1.500 personas lo vuelven a vivir." />
+  <meta property="og:image" content="https://folklorius.es/images/guerras-cantabras-corrales-buelna.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .programa-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .programa-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .programa-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .programa-list li:last-child { padding-bottom: 0; }
+    .programa-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "Guerras Cántabras de Los Corrales de Buelna",
+    "description": "Recreación histórica declarada Fiesta de Interés Turístico Internacional en 2019. Cada agosto, más de 1.500 recreadores divididos en 13 tribus cántabras y 13 legiones romanas escenifican los enfrentamientos del 29 al 19 a.C. en Los Corrales de Buelna, Cantabria.",
+    "startDate": "2026-08-21",
+    "endDate": "2026-08-30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": true,
+    "location": {
+      "@type": "Place",
+      "name": "Los Corrales de Buelna",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Corrales de Buelna",
+        "addressRegion": "Cantabria",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.26189,
+        "longitude": -4.06649
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Asociación Guerras Cántabras (AGUECAN)",
+      "url": "https://www.guerrascantabras.net"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guerras Cántabras de Los Corrales de Buelna",
+        "item": "https://folklorius.es/guerras-cantabras-corrales-buelna.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Guerras Cántabras en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las Guerras Cántabras de Los Corrales de Buelna se celebran en agosto de 2026, con fechas aproximadas del 21 al 30 de agosto. Las fechas exactas y el programa completo los publica la Asociación Guerras Cántabras en guerrascantabras.net antes de cada edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se recrea exactamente en las Guerras Cántabras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se recrea el periodo histórico entre el 29 y el 19 a.C., cuando las tribus cántabras resistieron durante una década la conquista romana. La recreación incluye combates en el Anfiteatro, el enfrentamiento entre el caudillo Corocotta y el César Augusto, una boda cántabra, un mercado romano y el desfile general de las 26 agrupaciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién fue Corocotta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Corocotta fue el caudillo cántabro que lideró la resistencia frente al ejército romano durante las Guerras Cántabras. Las fuentes romanas lo describen como un guerrero de tal reputación que el propio Augusto ofreció una recompensa por su captura. Según la leyenda, Corocotta se presentó voluntariamente ante Augusto para cobrarla él mismo. Es el personaje central de la recreación de Los Corrales de Buelna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuántos participantes tiene la recreación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Participan más de 1.500 recreadores divididos en 13 tribus cántabras y 13 legiones romanas, con 83 personajes con texto y diálogo. La fiesta convoca a más de 50.000 visitantes a lo largo de sus días en un municipio de unos 11.500 habitantes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué se celebran las Guerras Cántabras en Los Corrales de Buelna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque el Valle de Buelna y la comarca del Besaya conservan múltiples vestigios arqueológicos de la época de las Guerras Cántabras. El municipio está enclavado en un territorio con presencia documentada de asentamientos cántabros y pasos romanos. La Asociación AGUECAN fundó la recreación en 2001 para poner en valor ese patrimonio histórico."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+          <picture>
+            <source srcset="images/logo-folklorius.webp" type="image/webp" />
+            <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+          </picture>
+        </a>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#vocabulario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#explorar">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ficha-hero">
+    <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Combate entre cántabros y legionarios romanos en el Anfiteatro de Los Corrales de Buelna durante las Guerras Cántabras" />
+  </div>
+
+  <main class="container" role="main">
+    <nav aria-label="Ruta de navegación" class="breadcrumb">
+      <a href="index.html">Inicio</a> › Guerras Cántabras de Los Corrales de Buelna
+    </nav>
+
+    <article>
+
+      <h1>Guerras Cántabras de Los Corrales de Buelna</h1>
+      <p class="ficha-subtitulo">Los Corrales de Buelna (Cantabria) · Recreación Histórica · <em>"La única guerra que obligó a Augusto a venir en persona."</em></p>
+
+      <div class="nota-grid" role="note">
+        <span class="declaracion-badge">Fiesta de Interés Turístico Internacional · 2019</span>
+        <span class="declaracion-badge">Fiesta de Interés Turístico Nacional · 2008</span>
+        <span class="declaracion-badge">Fiesta de Interés Turístico Regional · Cantabria · 2003</span>
+      </div>
+
+      <div class="ficha-datos-clave">
+        <div class="fechas-grandes">Agosto 2026 · Los Corrales de Buelna</div>
+        <div class="datos-secundarios">
+          <span>📍 Los Corrales de Buelna · Cantabria</span>
+          <span>⚔️ +1.500 recreadores · 26 agrupaciones</span>
+          <span>🏅 ITI · ITN · ITR Cantabria</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Los combates en el Anfiteatro son teatro histórico con armas de atrezo. El público asiste desde las gradas: el perímetro del campo de batalla es de los recreadores durante la escena.</li>
+          <li>Los desfiles por el casco urbano ocupan las calles del pueblo. Quien quiera ver el paso de las 26 agrupaciones necesita llegar antes para encontrar sitio en el recorrido.</li>
+          <li>La recreación tiene un fuerte componente nocturno con hogueras y antorchas. El ambiente en el campamento de noche es diferente al del día: más denso, más próximo al espíritu de la fiesta.</li>
+        </ul>
+      </div>
+
+      <h2>La esencia de la fiesta</h2>
+      <p>Los cuernos de guerra suenan antes de que empiece el choque. En el Anfiteatro, las 13 tribus cántabras y las 13 legiones romanas se miran desde sus flancos. Huele a hoguera y a tierra. Corocotta levanta la espada. Y durante diez días, un pueblo de 11.500 habitantes vive dentro de la única guerra que obligó al propio Augusto a cruzar los Alpes.</p>
+
+      <h2>¿En qué consiste?</h2>
+      <p>Las Guerras Cántabras de Los Corrales de Buelna son un festival histórico a gran escala del último conflicto que tuvo que librar Roma para completar la conquista de Hispania. No es un desfile con trajes: es un macro-festival de diez días con más de 1.500 participantes, 26 agrupaciones, 83 personajes con texto y diálogo, y una estructura dramática que va mucho más allá del combate.</p>
+
+      <p>El núcleo es el Anfiteatro, un recinto con gradas instalado en el casco urbano donde se desarrollan los combates entre cántabros y legionarios, los juicios, los discursos de Augusto y los enfrentamientos con Corocotta. Alrededor del Anfiteatro conviven dos mundos: el campamento cántabro, con chozas de madera y hogueras, y el campamento romano, con tiendas militares y la disciplina del ejército imperial. Ambos están abiertos al público durante toda la fiesta.</p>
+
+      <p>La fiesta alterna los momentos de batalla con escenas que dan cuerpo histórico al conflicto: el Consejo de Tribus donde los cántabros deciden su estrategia, la boda cántabra, el mercado de esclavos romano, los combates de gladiadores en el Circo Máximo y el momento más legendario — el de Corocotta presentándose ante Augusto para cobrar él mismo la recompensa que Roma había puesto por su cabeza.</p>
+
+      <p>La indumentaria y el armamento están supervisados por la Asociación AGUECAN bajo criterios de arqueología experimental: lorica segmentata, gladius y escudos romanos frente a túnicas de lana, pieles, espadas de antenas y caetras cántabras, todo respondiendo al siglo I a.C.</p>
+
+      <p>La organización corre a cargo de la Asociación Guerras Cántabras (AGUECAN), con el apoyo del Ayuntamiento y el Gobierno de Cantabria. El programa completo se publica en <a href="https://www.guerrascantabras.net" target="_blank" rel="noopener">guerrascantabras.net</a> antes de cada edición.</p>
+
+      <div class="nota-grid" role="note">
+        <p>⚠️ Las fechas exactas de 2026 no están confirmadas oficialmente en el momento de redactar esta ficha. En 2025 la fiesta se celebró del 22 al 31 de agosto. Para 2026 se estima un periodo similar. Confirma las fechas en <a href="https://www.guerrascantabras.net" target="_blank" rel="noopener">guerrascantabras.net</a> antes de planificar el viaje.</p>
+      </div>
+
+      <h2>Historia y origen</h2>
+      <p>Las Guerras Cántabras históricas se desarrollaron entre el 29 y el 19 a.C. Fue el último conflicto armado que tuvo que librar Roma para completar la conquista de la Península Ibérica. Los pueblos cántabros y astures resistieron durante una década al ejército más poderoso del mundo conocido — y esa resistencia fue tan tenaz que el propio emperador Augusto tuvo que viajar a Hispania para dirigir el frente. Era la única guerra que Roma no podía permitirse perder. Al final, los cántabros fueron sometidos, pero no doblados: conservaron buena parte de su identidad, y el mar que baña el norte peninsular lleva su nombre.</p>
+
+      <p>El Valle de Buelna y la comarca del Besaya conservan múltiples vestigios arqueológicos de ese periodo. En 2001, un grupo de vecinos de Los Corrales fundó la Asociación Guerras Cántabras (AGUECAN) con la voluntad de poner en valor ese patrimonio. La primera edición contó con 300 participantes. En 2003 la Consejería de Cultura de Cantabria le concedió la declaración de Fiesta de Interés Turístico Regional. En 2008 obtuvo la de Interés Turístico Nacional. En 2019, con la XXIII edición y más de 1.800 participantes, llegó la de Interés Turístico Internacional.</p>
+
+      <h2>Fechas 2026</h2>
+      <p>Las Guerras Cántabras se celebran en agosto. Hasta 2024 el formato cruzaba el último fin de semana de agosto con el primero de septiembre; desde 2025 la fiesta se condensa íntegramente en la segunda quincena de agosto para facilitar la afluencia turística estival. En 2025 se celebró del 22 al 31 de agosto. Para 2026 se estima un periodo similar, en torno al <strong>21 al 30 de agosto</strong> (dato no confirmado oficialmente). Las fechas exactas y el programa completo los publica AGUECAN en <a href="https://www.guerrascantabras.net" target="_blank" rel="noopener">guerrascantabras.net</a>.</p>
+
+      <h2>El programa</h2>
+      <ul class="programa-list">
+        <li>
+          <span class="dia-label">Durante toda la fiesta · Campamentos</span>
+          Los campamentos cántabro y romano permanecen abiertos al público durante todos los días de la fiesta. En el campamento cántabro: chozas de madera, hogueras, talleres de arqueología y vida cotidiana del siglo I a.C. En el romano: tiendas militares, organización legionaria y demostraciones de equipamiento.
+        </li>
+        <li>
+          <span class="dia-label">Durante toda la fiesta · Macellum y Tabernacullum</span>
+          El Macellum, el gran mercado romano instalado en la calle Los Pedriscos, concentra artesanía, productos de época y el ambiente comercial del Imperio. El Tabernacullum es la zona gastronómica donde cada agrupación compite en el Concurso de Cocina Cántabro-Romana.
+        </li>
+        <li>
+          <span class="dia-label">Noches de función · Anfiteatro</span>
+          Los combates entre cántabros y legionarios, los juicios, los discursos y las escenas dramáticas se desarrollan en el Anfiteatro con el público en gradas. Cada noche tiene su propia secuencia de escenas: el Consejo de Tribus, la boda cántabra, el mercado de esclavos, los gladiadores y el enfrentamiento entre Corocotta y Augusto.
+        </li>
+        <li>
+          <span class="dia-label">Desfile general · Último domingo</span>
+          Las 26 agrupaciones marchan juntas por las calles del pueblo en el desfile general. Es el momento de mayor concentración visual y sonora de toda la fiesta: más de 1.500 personas, los dos ejércitos, los cuernos de guerra y los tambores a la vez.
+        </li>
+      </ul>
+
+      <h2>No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El combate en el Anfiteatro</h3>
+          <span class="tag">Noches de función · Anfiteatro</span>
+          <p>Cántabros y legionarios se enfrentan a pocos metros del público. Los cuernos de guerra, los gritos de carga y el choque de los escudos en un recinto con gradas y techo tienen una intensidad que ningún desfile al aire libre puede igualar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Anfiteatro concentra en cada función la dramaturgia completa del conflicto: el combate, los personajes, los discursos y las escenas que dan sentido histórico a la batalla están todos ahí. Ver solo el desfile es ver la mitad de la fiesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Corocotta ante Augusto</h3>
+          <span class="tag">Noche de función · Anfiteatro</span>
+          <p>La escena más legendaria de la recreación. Según las fuentes romanas, Corocotta se presentó voluntariamente ante el César para cobrar él mismo la recompensa que Roma había puesto por su captura. El momento en que el caudillo cántabro se planta ante el hombre más poderoso del mundo es el clímax dramático de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento de toda la recreación donde los dos bandos comparten el mismo espacio sin combatir. La tensión entre Corocotta y Augusto, con los dos ejércitos de fondo, es el instante en que la historia y el teatro coinciden completamente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Los campamentos de noche</h3>
+          <span class="tag">Noches · Campamento cántabro y romano</span>
+          <p>De noche, el campamento cántabro con sus hogueras y el romano con sus antorchas son dos mundos distintos a pocos metros el uno del otro. El olor a leña, el sonido de la bíbula y la oscuridad fuera del perímetro hacen que la distancia entre el siglo XXI y el I a.C. se haga más pequeña que de día.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el campamento de día es un espacio expositivo. El de noche es otra cosa: los recreadores están en personaje, el fuego marca los límites, y el ambiente tiene una densidad que las fotos no transmiten. Es la parte de la fiesta que menos gente planifica y más recuerda.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El desfile general</h3>
+          <span class="tag">Último domingo · Calles del pueblo</span>
+          <p>Las 26 agrupaciones marchan juntas. Cántabros y romanos, los dos ejércitos, los músicos con sus cuernos y tambores, los personajes con sus trajes supervisados hasta el último detalle. Es el único momento en que toda la escala de la fiesta se hace visible de una sola vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque más de 1.500 personas en movimiento por las calles de un pueblo de 11.500 habitantes tiene una proporción que no existe en ninguna otra recreación histórica de España. Llegar con tiempo para encontrar sitio en el recorrido — el desfile no espera.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2>Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Los Corrales de Buelna está a 40 km de Santander por la autovía A-67. El tren de Cercanías Renfe C-1 conecta Santander con Los Corrales de Buelna de forma directa — es la opción más cómoda para evitar el colapso de aparcamiento durante los días de desfile.</li>
+        <li><strong>El Anfiteatro.</strong> Las funciones nocturnas en el Anfiteatro tienen aforo limitado. Consultar en guerrascantabras.net si hay entradas o si el acceso es libre según la edición.</li>
+        <li><strong>Cuándo ir.</strong> El desfile general del último domingo es el momento de mayor afluencia y el más fotogénico. Si solo puedes ir un día, ese es. Si puedes ir más, una noche de función en el Anfiteatro da la dimensión dramática que el desfile no tiene.</li>
+        <li><strong>Alojamiento.</strong> Los Corrales de Buelna tiene oferta limitada. Torrelavega, a 8 km, y Santander, a 40 km, son las alternativas con más opciones. Reservar con mucha antelación para los días del desfile general.</li>
+      </ul>
+
+      <h2>Vocabulario de la recreación</h2>
+      <dl class="festero">
+
+        <dt>Corocotta</dt>
+        <dd>El caudillo cántabro que protagoniza la recreación. Las fuentes romanas lo describen como el guerrero más temido de las Guerras Cántabras — tanto que Augusto ofreció una recompensa de 200.000 sestercios por su captura. Según la leyenda, Corocotta se presentó voluntariamente ante el César para cobrarla él mismo, y Augusto lo perdonó por la audacia. Es el personaje central de todas las funciones en el Anfiteatro.</dd>
+
+        <dt>Festeros</dt>
+        <dd>Así se llaman a sí mismos los participantes de la recreación. No son actores profesionales: son vecinos de Los Corrales y recreadores de toda España que llevan meses preparando indumentaria, armas y personajes para la fiesta. El término marca la diferencia entre quien solo viene a ver y quien forma parte de la fiesta desde dentro.</dd>
+
+        <dt>Anfiteatro / Circo Máximo</dt>
+        <dd>El recinto vallado con gradas instalado en el casco urbano para las funciones nocturnas. El escenario principal de los combates, los discursos y las escenas dramáticas. La acústica del recinto, cerrado y con gradas elevadas, amplifica el sonido del choque de escudos y los cuernos de guerra de una forma que sorprende a quien lo escucha por primera vez.</dd>
+
+        <dt>Macellum</dt>
+        <dd>El mercado romano del festival, instalado en la calle Los Pedriscos. Artesanía, productos de época y ambiente comercial del Imperio Romano. El contrapunto al campamento cántabro: dos formas de vida del siglo I a.C. separadas por pocos metros.</dd>
+
+        <dt>Bíbula</dt>
+        <dd>El cuerno de guerra cántabro. El instrumento que abre las funciones antes del combate. Su sonido es grave y prolongado, llena el Anfiteatro antes de que empiece el primer movimiento de las tropas. Es el sonido más específico de las Guerras Cántabras — el que no se escucha igual en ninguna otra recreación histórica.</dd>
+
+        <dt>Tessera Hospitalis</dt>
+        <dd>El galardón que entrega AGUECAN cada edición a personalidades que han contribuido a la difusión de la historia cántabra o del patrimonio de la comarca. Su nombre viene del objeto romano — una tablilla partida en dos que dos personas guardaban como prueba de hospitalidad mutua. Aquí es el símbolo de los lazos que la fiesta tiende fuera del Valle de Buelna.</dd>
+
+      </dl>
+
+      <h2>Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/guerras-cantabras-corrales-buelna-1.jpg" alt="Combate entre cántabros y legionarios romanos en el Anfiteatro de Los Corrales de Buelna" loading="lazy" />
+        <img src="images/guerras-cantabras-corrales-buelna-2.jpg" alt="Desfile general de las 26 agrupaciones de las Guerras Cántabras por las calles de Los Corrales de Buelna" loading="lazy" />
+        <img src="images/guerras-cantabras-corrales-buelna-3.jpg" alt="Campamento cántabro con hogueras durante las Guerras Cántabras de Los Corrales de Buelna" loading="lazy" />
+      </div>
+
+      <h2>Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.guerrascantabras.net" target="_blank" rel="noopener">Web oficial de las Guerras Cántabras — programa y entradas</a></li>
+        <li><a href="https://www.loscorralesdebuelna.es" target="_blank" rel="noopener">Ayuntamiento de Los Corrales de Buelna</a></li>
+        <li><a href="https://turismodecantabria.com" target="_blank" rel="noopener">Turismo de Cantabria</a></li>
+      </ul>
+      <p class="fuente">Última verificación de datos: 2026-07-30. Declaración ITI: BOE 21 de junio de 2019. ITN: BOE 21 de julio de 2008.</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Guerras Cántabras en 2026?</dt>
+        <dd>Las Guerras Cántabras se celebran en agosto de 2026, con fechas aproximadas del 21 al 30 de agosto. Las fechas exactas y el programa completo los publica la Asociación Guerras Cántabras en guerrascantabras.net antes de cada edición.</dd>
+
+        <dt>¿Qué se recrea exactamente en las Guerras Cántabras?</dt>
+        <dd>Se recrea el periodo histórico entre el 29 y el 19 a.C., cuando las tribus cántabras resistieron durante una década la conquista romana. La recreación incluye combates en el Anfiteatro, el enfrentamiento entre el caudillo Corocotta y el César Augusto, una boda cántabra, un mercado de esclavos romano y el desfile general de las 26 agrupaciones.</dd>
+
+        <dt>¿Quién fue Corocotta?</dt>
+        <dd>Corocotta fue el caudillo cántabro que lideró la resistencia frente al ejército romano. Las fuentes romanas lo describen como un guerrero de tal reputación que el propio Augusto ofreció una recompensa por su captura. Según la leyenda, Corocotta se presentó voluntariamente ante Augusto para cobrarla él mismo. Es el personaje central de la recreación.</dd>
+
+        <dt>¿Cuántos participantes tiene la recreación?</dt>
+        <dd>Participan más de 1.500 recreadores divididos en 13 tribus cántabras y 13 legiones romanas, con 83 personajes con texto y diálogo. La fiesta convoca a más de 50.000 visitantes a lo largo de sus días en un municipio de unos 11.500 habitantes.</dd>
+
+        <dt>¿Por qué se celebran las Guerras Cántabras en Los Corrales de Buelna?</dt>
+        <dd>Porque el Valle de Buelna y la comarca del Besaya conservan múltiples vestigios arqueológicos de la época de las Guerras Cántabras. La Asociación AGUECAN fundó la recreación en 2001 para poner en valor ese patrimonio histórico local.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta">Cantabria</a>
+        <a href="#" class="etiqueta">Los Corrales de Buelna</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Roma</a>
+        <a href="#" class="etiqueta">Siglo I a.C.</a>
+        <a href="#" class="etiqueta">Familiar</a>
+        <a href="#" class="etiqueta">Gratuita</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cantabras">
+        <h2 id="rel-title-cantabras">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Vikingos desembarcando en las Torres del Oeste durante la Romería Vikinga de Catoira" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Otra recreación histórica ITI del norte. Otra invasión. Otro pueblo que resiste.</span>
+              <span class="rel-meta">Catoira · Galicia · ITI</span>
+            </div>
+          </a>
+
+          <a href="cascamorras-baza-guadix.html" class="ficha-rel-card">
+            <img src="images/cascamorras-baza-guadix.jpg" alt="El Cascamorras cubierto de pintura negra en Baza" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">El Cascamorras de Baza y Guadix</span>
+              <span class="rel-frase">Otro ritual con dos bandos enfrentados. Otra lógica, otro sur.</span>
+              <span class="rel-meta">Baza y Guadix · Granada · ITI</span>
+            </div>
+          </a>
+
+          <a href="bodas-isabel-segura.html" class="ficha-rel-card">
+            <img src="images/bodas-isabel-segura.jpg" alt="Representación histórica de las Bodas de Isabel de Segura en Teruel" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bodas de Isabel de Segura</span>
+              <span class="rel-frase">Recreación histórica ITI en Aragón. Otra época, otra historia, la misma entrega.</span>
+              <span class="rel-meta">Teruel · Aragón · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
