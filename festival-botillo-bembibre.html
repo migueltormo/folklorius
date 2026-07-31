@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Festival del Botillo de Bembibre 2026: la exaltación del Bierzo</title>
+  <meta name="description" content="Festival del Botillo de Bembibre 2026: LIII edición, 7 de febrero. El banquete de 1.200 comensales, la IGP berciana y el rito del ciego. ITI desde 2026." />
+  <link rel="canonical" href="https://folklorius.es/festival-botillo-bembibre.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Festival del Botillo de Bembibre: el manjar del Bierzo en su 53ª edición internacional" />
+  <meta property="og:description" content="En febrero, Bembibre monta el mayor banquete de invierno de Castilla y León: 1.200 comensales, el olor a pimentón ahumado y el tintineo de los cuchillos abriendo el ciego. Un embutido, un pueblo, cincuenta años de exaltación." />
+  <meta property="og:image" content="https://folklorius.es/images/festival-botillo-bembibre.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/festival-botillo-bembibre.html",
+    "name": "Festival de Exaltación del Botillo de Bembibre",
+    "startDate": "2026-02-07",
+    "endDate": "2026-02-07",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Pabellón Municipal Manuel Marqués Patarita, Bembibre",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bembibre",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6153,
+        "longitude": -6.4201
+      }
+    },
+    "image": ["https://folklorius.es/images/festival-botillo-bembibre.jpg"],
+    "description": "El Festival de Exaltación del Botillo de Bembibre celebra cada febrero el embutido más emblemático del Bierzo. LIII edición en 2026. Declarado Fiesta de Interés Turístico Internacional por el BOE del 28 de enero de 2026.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Bembibre",
+      "url": "https://www.aytobembibre.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "45",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/LimitedAvailability"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Festival de Exaltación del Botillo de Bembibre",
+        "item": "https://folklorius.es/festival-botillo-bembibre.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Festival del Botillo de Bembibre en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El sábado 7 de febrero de 2026. Es la LIII edición y la primera con el título de Fiesta de Interés Turístico Internacional. El festival se celebra cada año el sábado anterior al sábado de Carnaval, lo que lo vincula al ciclo del Entroido berciano y a la temporada de matanza invernal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es posible asistir al banquete central del festival?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Las entradas para el banquete son públicas y de pago, con un precio aproximado de 45 euros por comensal. Se ponen a la venta semanas antes a través de la web del Ayuntamiento de Bembibre y en taquilla. Las plazas son limitadas — la sala tiene capacidad para entre 1.200 y 1.500 personas — y se agotan con rapidez."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es exactamente el botillo del Bierzo y en qué se diferencia de otros embutidos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El botillo del Bierzo es un embutido con IGP elaborado con costilla de cerdo (entre el 65% y el 90%), rabo (entre el 10% y el 20%) y proporciones variables de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón, embutido en el intestino ciego del cerdo y ahumado con leña de roble o encina durante un mínimo de 15 días. Se diferencia de otros embutidos peninsulares precisamente por ese ahumado prolongado y por llevar hueso, lo que obliga a cocinarlo cocido en olla durante dos horas o más antes de servir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Feria Agroalimentaria y cuándo se celebra?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Feria Agroalimentaria de la Villa de Bembibre se celebra en el Bembibre Arena, el recinto anexo al pabellón principal, durante el fin de semana del festival. Productores de la comarca con Denominación de Origen o marcas de calidad del Bierzo — vinos, pimientos asados, castañas, peras, miel — exponen y venden sus productos. Es el complemento natural al banquete para quien quiere llevarse el Bierzo a casa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el festival se celebra el sábado anterior al Carnaval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque el botillo es un embutido de invierno y de matanza. La primera edición fue en junio de 1973, aprovechando la Salida del Santo — la procesión del Ecce-Homo que solo ocurre cada siete años en Bembibre. Desde la segunda edición se trasladó a febrero, cuando el botillo está en su momento óptimo tras el ahumado y la semicuración. El sábado anterior al Entroido quedó fijado como fecha permanente."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Festival de Exaltación del Botillo de Bembibre
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/festival-botillo-bembibre.jpg" alt="Banquete central del Festival de Exaltación del Botillo de Bembibre con cientos de comensales en mesas largas en el Pabellón Municipal" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Festival de Exaltación del Botillo de Bembibre</h1>
+      <p class="ficha-subtitle">
+        Bembibre (León) · Fiesta gastronómica · «El mayor banquete de invierno del Bierzo.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Sábado 7 de febrero de 2026 · LIII edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Bembibre · León · Castilla y León</span>
+          <span>⏱️ 1 día (fin de semana festivo)</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El banquete del festival es un acto de identidad comarcal, no una cena de restaurante. Los comensales bercianos celebran algo que llevan más de cincuenta años construyendo. El visitante entra como invitado en ese rito colectivo.</li>
+          <li>El discurso del mantenedor tiene el peso de un pregón formal. No es entretenimiento de fondo: es el momento central de la gala. El recinto guarda silencio mientras dura.</li>
+          <li>El botillo que se sirve en el festival cumple la IGP al pie de la letra — costilla, rabo, ahumado de roble o encina durante quince días y larga cocción. Compararlo con versiones industriales equivale a comparar un vino de cosecha con un vino de garrafa.</li>
+          <li>Las Jornadas de Pinchos previas al festival son una competición seria entre bares del municipio. Los que participan lo hacen con orgullo berciano, no como reclamo turístico.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El olor llega antes de entrar. Pimentón ahumado y vapor de repollo cocido en grasa de cerdo — cientos de fuentes saliendo de la cocina al mismo tiempo. Dentro, el Pabellón Manuel Marqués «Patarita» se ha convertido en un comedor para más de mil doscientas personas sentadas en mesas largas. Cuando llega el botillo a cada mesa, alguien coge el cuchillo y corta la tripa con un gesto transversal limpio. El tintineo del cuchillo contra el plato se multiplica por cien mesas a la vez. Dentro hay costilla, rabo y ahumado de encina. Fuera, febrero en El Bierzo.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Festival de Exaltación del Botillo de Bembibre es una <strong>celebración gastronómica e institucional</strong> centrada en el embutido más representativo de El Bierzo. Cada febrero, el sábado anterior al sábado de Carnaval, la capital del Bierzo Alto reúne a más de mil doscientos comensales en un banquete de gala en el que el botillo del Bierzo con IGP es el protagonista absoluto. En 2026 celebra su <strong>LIII edición</strong> — la primera con el título de Fiesta de Interés Turístico Internacional, concedido por resolución de la Secretaría de Estado de Turismo publicada en el BOE el 28 de enero de 2026.
+      </p>
+      <p>
+        El festival tiene dos dimensiones que se solapan durante el fin de semana. La primera es la <strong>gala central del sábado</strong>: recepción de autoridades, discurso del mantenedor, actuación musical y banquete. La segunda, extendida desde el viernes hasta el domingo, incluye la <strong>Semana Cultural</strong> — mesas redondas, el Certamen Literario del Botillo y representaciones en la Casa de las Culturas — y la <strong>Feria Agroalimentaria</strong> en el Bembibre Arena, donde productores con denominación de origen o marcas de calidad del Bierzo exponen vinos, pimientos asados, castañas, peras y miel. Los días previos, las <strong>Jornadas de Pinchos del Botillo</strong> convierten los bares de Bembibre en una competición gastronómica informal donde el ingrediente obligatorio es, siempre, el botillo.
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de cada edición lo publica el <a href="https://www.aytobembibre.es" target="_blank" rel="noopener">Ayuntamiento de Bembibre</a> antes de la celebración.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        La semilla llegó de Madrid. El <strong>26 de febrero de 1970</strong>, dos vecinos de Bembibre — Baldomero Ferrero Gago y Reinerio Gago González — asistieron al XXV aniversario de la exaltación del botillo que los emigrantes bercianos celebraban en la capital. Volvieron con la idea de hacer algo así en casa. Tres años después, el alcalde Alberto Blanco Riego y una comisión de vecinos pusieron en marcha la primera edición: el <strong>10 de junio de 1973</strong>, aprovechando la Salida del Santo — la procesión del Ecce-Homo que baja desde el Santuario hasta la Iglesia de San Pedro Apóstol y que solo ocurre cada siete años. Duró poco en junio: desde la segunda edición, el festival se trasladó a febrero porque el botillo es un alimento de invierno, ligado al ciclo de la matanza, y su momento óptimo es el que sigue al ahumado y la semicuración. El sábado anterior al Carnaval berciano — el Entroido — quedó fijado como fecha permanente.
+      </p>
+      <p>
+        En <strong>1984</strong> se incorporó la Semana Cultural para dar al festival una dimensión más allá de la gastronomía. En el año <strong>2000</strong> se añadió la Feria Agroalimentaria, que amplió el escaparate a toda la producción de calidad de la comarca. A partir de <strong>1995</strong> los banquetes pasaron a celebrarse en pabellones deportivos municipales; desde <strong>2007</strong> la sede fija es el Pabellón Manuel Marqués «Patarita» — con la única excepción de 2011, cuando la inauguración del Bembibre Arena lo acogió de forma puntual. El reconocimiento como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en 2008. En octubre de 2025, la Secretaría de Estado de Turismo concedió la declaración de <strong>Fiesta de Interés Turístico Internacional</strong>, que el BOE publicó el 28 de enero de 2026 — días antes de que la LIII edición abriese las puertas del pabellón.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La LIII edición se celebra el <strong>sábado 7 de febrero de 2026</strong>. La Semana Cultural y las Jornadas de Pinchos comienzan días antes, y la Feria Agroalimentaria permanece abierta el fin de semana completo. La fecha varía cada año — consulta el programa oficial en la web del Ayuntamiento antes de planificar el viaje.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Semana previa · Tarde</span>
+          Inicio de la <strong>Semana Cultural</strong> en la Casa de las Culturas de Bembibre: mesas redondas, representaciones teatrales y el Certamen Literario del Botillo. Durante los mismos días, los bares del municipio participan en las <strong>Jornadas de Pinchos del Botillo</strong> — tapas de elaboración propia con botillo como ingrediente obligatorio.
+        </li>
+        <li>
+          <span class="dia-label">Viernes · Tarde y noche</span>
+          Apertura de la <strong>Feria Agroalimentaria</strong> en el Bembibre Arena con productores de Denominación de Origen del Bierzo. Por la noche, actuaciones en la villa.
+        </li>
+        <li>
+          <span class="dia-label">Sábado 7 de febrero · Tarde</span>
+          Recepción de autoridades y del mantenedor en el Ayuntamiento. A continuación, gala en el Pabellón Municipal Manuel Marqués «Patarita»: presentación de la edición, <strong>discurso del mantenedor</strong> y actuación musical de cabecera. Después, el <strong>banquete central</strong> con botillo del Bierzo IGP, berza, cachelos y chorizos frescos para más de mil doscientos comensales.
+        </li>
+        <li>
+          <span class="dia-label">Domingo · Mañana y mediodía</span>
+          La Feria Agroalimentaria cierra con los últimos productores en el Bembibre Arena. El municipio mantiene el ambiente festivo hasta el mediodía. Buen momento para comer botillo en la hostelería local con más calma que el sábado.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El botillo del Bierzo</h2>
+      <div class="music-block">
+        <p>
+          El botillo del Bierzo es un embutido con <strong>Indicación Geográfica Protegida</strong> elaborado exclusivamente con piezas del despiece del cerdo: la IGP exige entre el 65% y el 90% de costilla, entre el 10% y el 20% de rabo, y proporciones variables de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón — dulce o picante según el productor — y se embute en el intestino <em>ciego</em> del cerdo, que le da su forma característica de saco ovalado. El paso diferencial es el <strong>ahumado con leña de roble o encina</strong> durante un mínimo de quince días, que le imprime el toque oscuro y terroso que ningún otro embutido peninsular tiene exactamente igual. Después viene la semicuración.
+        </p>
+        <p>
+          Para servir el botillo hay que cocerlo en olla a fuego lento durante unas dos horas. En los últimos cuarenta y cinco minutos entran en el mismo caldo la <strong>berza</strong>, los <strong>cachelos</strong> y los <strong>chorizos frescos</strong> — ese conjunto es el plato, y no se sirve de otra manera en Bembibre. La textura que resulta es untuosa: la carne de costilla se desprende del hueso sin esfuerzo, y la mezcla de pimentón ahumado con el amargor de la berza mojada en el caldo graso es lo que hace que quien lo prueba una vez vuelva a buscarlo en febrero.
+        </p>
+        <ul>
+          <li>Si es la primera vez que comes botillo, empieza con las Jornadas de Pinchos previas al festival — los bares de Bembibre sirven versiones creativas que permiten familiarizarse con el sabor antes del banquete.</li>
+          <li>En el banquete, el momento de abrir el ciego en mesa es el único de la noche donde el ruido para un instante. Presta atención.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El corte del ciego en mesa</h3>
+          <span class="tag">Sábado · Noche · Pabellón Patarita</span>
+          <p>Cuando el botillo llega a cada mesa, alguien lo abre con un corte transversal limpio sobre el intestino ciego. El tintineo del cuchillo contra el plato se repite en cien mesas al mismo tiempo. Es el sonido más propio del festival y dura apenas un instante.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no existe ese sonido en ningún otro sitio. El ciego se abre, sale el vapor con el olor a pimentón y ahumado, y la costilla aparece entera dentro. Es el momento en que todo lo que se ha explicado del producto cobra sentido físico. Siéntate cerca del centro de la mesa para ver el gesto bien.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El discurso del mantenedor</h3>
+          <span class="tag">Sábado · Tarde · Pabellón Patarita</span>
+          <p>El mantenedor es la figura de honor de cada edición: una personalidad — periodista, escritor, político, artista — a quien se encarga el pregón de la gala. Su discurso exalta el botillo, el Bierzo y la identidad comarcal. El recinto guarda silencio mientras habla.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento de la noche en que mil doscientas personas callan a la vez. Ha habido ediciones en que el pabellón ha llorado a media frase y otras en que el aplauso ha llegado antes de que acabara. El silencio previo es siempre el mismo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las Jornadas de Pinchos del Botillo</h3>
+          <span class="tag">Semana previa · Bares de Bembibre</span>
+          <p>Días antes del festival, los bares del municipio compiten con tapas propias en las que el botillo es ingrediente obligatorio. Croquetas, montaditos, elaboraciones con berza o cachelos — cada local interpreta el producto a su manera. El nivel es desigual pero el recorrido es parte de la experiencia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la manera más accesible de entender qué se puede hacer con el botillo más allá del plato canónico. Y porque los bares de Bembibre se vuelcan en serio — no es un escaparate turístico, es una competición entre vecinos con orgullo local en juego. Pregunta en el Ayuntamiento qué bares participan esa edición.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Feria Agroalimentaria del Bierzo</h3>
+          <span class="tag">Viernes a domingo · Bembibre Arena</span>
+          <p>El recinto anexo al pabellón concentra productores de la comarca con DO o marcas de calidad: vinos del Bierzo, pimientos asados, castañas, peras, miel y chacinas. La entrada es libre. Es el escaparate más completo de la producción de calidad de El Bierzo en un solo lugar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el botillo no existe sin su entorno. Los vinos del Bierzo que se beben en el banquete, los pimientos que aparecen en la carta de los restaurantes locales, la miel que se lleva de recuerdo — todo viene de la misma comarca que produce el embutido. La feria lo pone todo junto.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Entradas para el banquete.</strong> Las plazas son limitadas — entre 1.200 y 1.500 según la edición — y se agotan semanas antes. Salen a la venta en la web del <a href="https://www.aytobembibre.es" target="_blank" rel="noopener">Ayuntamiento de Bembibre</a> y en taquilla. El precio ronda los 45 euros por comensal. Si quieres sentarte a la gala, compra con antelación.</li>
+        <li><strong>Alternativa sin entrada.</strong> Si no consigues plaza para el banquete, la Feria Agroalimentaria y las Jornadas de Pinchos son acceso libre y cubren bien el fin de semana. La hostelería local también sirve botillo durante esos días.</li>
+        <li><strong>Cuándo llegar.</strong> El sábado es el día central, con la máxima afluencia. El domingo el ambiente baja de intensidad y permite visitar la Feria con más calma. Los días de Semana Cultural son los más tranquilos de toda la semana.</li>
+        <li><strong>Cómo llegar.</strong> Bembibre está en la comarca de El Bierzo, provincia de León, con acceso por la A-6 (Madrid-A Coruña). La localidad más cercana con servicios de tren es Ponferrada, a unos 20 km. Consulta horarios y rutas en los operadores de transporte habituales.</li>
+        <li><strong>Alojamiento.</strong> Bembibre tiene oferta hotelera propia, pero el fin de semana del festival se llena. Ponferrada, a 20 km, tiene más opciones. Reserva con semanas de antelación si viajas en febrero.</li>
+        <li><strong>Más allá del festival.</strong> El Bierzo tiene denominación de origen vinícola propia y una comarca con paisaje de montaña y viñedo. Si tienes un día más, el Castillo de los Templarios de Ponferrada o el tramo del Camino de Santiago que cruza la comarca valen el tiempo.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario berciano</h2>
+      <dl class="festero">
+
+        <dt>Botillo</dt>
+        <dd>Embutido berciano con IGP elaborado con costilla, rabo y otras piezas del cerdo, adobadas con pimentón y ahumadas con roble o encina. Se embute en el intestino ciego del cerdo — el <em>ciego</em> — y requiere cocción lenta prolongada antes de servir. Es el producto central del festival y el más representativo de la gastronomía de El Bierzo.</dd>
+
+        <dt>Ciego</dt>
+        <dd>El tramo del intestino grueso del cerdo que se usa como tripa natural para embutir el botillo. Le da su forma característica de saco ovalado o abultado. Abrirlo en mesa con un corte transversal es el gesto ritual del banquete.</dd>
+
+        <dt>Cachelos</dt>
+        <dd>Trozos grandes de patata cocida en el mismo caldo donde se ha cocido el botillo. Son guarnición inseparable del plato junto con la berza y los chorizos frescos. El término es compartido con Galicia, con quien El Bierzo comparte buena parte del vocabulario culinario.</dd>
+
+        <dt>Entroido</dt>
+        <dd>El Carnaval en el vocabulario berciano y gallego. El festival se celebra antes del Entroido porque ese momento marca el final del ciclo invernal y el punto óptimo de consumo del botillo.</dd>
+
+        <dt>Bertón</dt>
+        <dd>La hoja de la berza en berciano. La sopa de bertones es un plato tradicional de invierno en la comarca. En el banquete del festival, la berza entera — no solo las hojas — entra cocida en el caldo del botillo y forma parte del plato canónico.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/festival-botillo-bembibre-1.jpg" alt="Banquete central del Festival del Botillo de Bembibre con filas de comensales en el Pabellón Manuel Marqués Patarita" loading="lazy" />
+        <img src="images/festival-botillo-bembibre-2.jpg" alt="Botillo del Bierzo recién cocido sobre plato con berza, cachelos y chorizos frescos" loading="lazy" />
+        <img src="images/festival-botillo-bembibre-3.jpg" alt="Puestos de la Feria Agroalimentaria de Bembibre con productores del Bierzo durante el festival" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.aytobembibre.es" target="_blank" rel="noopener">Ayuntamiento de Bembibre — programa oficial y entradas</a></li>
+        <li><a href="https://www.turismocastillayleon.com" target="_blank" rel="noopener">Turismo Castilla y León — comarca del Bierzo</a></li>
+        <li><a href="https://www.do-bierzo.es" target="_blank" rel="noopener">Denominación de Origen Bierzo — vinos de la comarca</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-31</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Festival del Botillo de Bembibre en 2026?</dt>
+        <dd>El <strong>sábado 7 de febrero de 2026</strong>. Es la LIII edición y la primera con el título de Fiesta de Interés Turístico Internacional. La fecha cambia cada año según el calendario del Carnaval.</dd>
+
+        <dt>¿Es posible asistir al banquete central?</dt>
+        <dd>Sí. Las entradas son públicas y de pago — alrededor de 45 euros por comensal — y se venden en la web del Ayuntamiento y en taquilla semanas antes. La sala tiene capacidad para entre 1.200 y 1.500 personas y las plazas se agotan. Compra con antelación.</dd>
+
+        <dt>¿Qué es el botillo del Bierzo y en qué se diferencia de otros embutidos?</dt>
+        <dd>Un embutido con IGP elaborado con costilla de cerdo (65–90%), rabo (10–20%) y otras piezas, adobado con pimentón y ahumado con leña de roble o encina durante al menos quince días. Lo diferencia el ahumado prolongado y el hecho de llevar hueso, lo que obliga a cocinarlo cocido en olla durante dos horas antes de servir.</dd>
+
+        <dt>¿Qué hay además del banquete?</dt>
+        <dd>Una semana de actos culturales previos (mesas redondas, Certamen Literario del Botillo), las Jornadas de Pinchos en los bares de Bembibre durante los días anteriores, y la Feria Agroalimentaria en el Bembibre Arena con productores de DO del Bierzo — entrada libre todo el fin de semana.</dd>
+
+        <dt>¿Por qué el festival se celebra siempre en febrero?</dt>
+        <dd>La primera edición fue en junio de 1973, aprovechando la Salida del Santo — la procesión del Ecce-Homo que solo ocurre cada siete años en Bembibre. Desde la segunda edición se trasladó a febrero, cuando el botillo está en su momento óptimo tras el ahumado y la semicuración. El sábado anterior al Carnaval berciano — el Entroido — quedó fijado como fecha permanente.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Castilla y León</a>
+        <a href="#" class="etiqueta">León</a>
+        <a href="#" class="etiqueta">El Bierzo</a>
+        <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta">Botillo</a>
+        <a href="#" class="etiqueta">Gastronomía</a>
+        <a href="#" class="etiqueta">IGP</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-botillo">
+        <h2 id="rel-title-botillo">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Fiesta de la Lamprea de Arbo en el río Miño" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="fiesta-vendimia-jerez.html" class="ficha-rel-card">
+            <img src="images/fiesta-vendimia-jerez.jpg" alt="Fiesta de la Vendimia de Jerez de la Frontera" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Vendimia de Jerez</span>
+              <span class="rel-frase">La primera uva pisada y el mosto nuevo en la capital del Jerez.</span>
+              <span class="rel-meta">Jerez de la Frontera · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="festival-cante-minas-union.html" class="ficha-rel-card">
+            <img src="images/festival-cante-minas-union.jpg" alt="Festival del Cante de las Minas de La Unión" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festival del Cante de las Minas</span>
+              <span class="rel-frase">El flamenco minero y la Lámpara Minera en La Unión.</span>
+              <span class="rel-meta">La Unión · Murcia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Ayuntamiento de Bembibre, BOE, Turismo Castilla y León y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
