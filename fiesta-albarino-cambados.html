@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiesta del Albariño de Cambados 2026: el vino, el Pazo y la ría</title>
+  <meta name="description" content="Fiesta del Albariño Cambados 2026: 74ª edición, 28 jul–2 ago. La fiesta de vino más antigua de Galicia, 150.000 visitantes y el Capítulo Serenísimo. ITI 2018." />
+  <link rel="canonical" href="https://folklorius.es/fiesta-albarino-cambados.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fiesta del Albariño de Cambados: la apuesta de 1953 que se convirtió en la fiesta de vino más importante de Galicia" />
+  <meta property="og:description" content="Todo empezó con un desafío entre dos bodegueros en 1953. Hoy, 150.000 personas llenan Cambados cada primer fin de semana de agosto para beber albariño en el paseo de A Calzada, ver cómo el Pazo de Fefiñáns inviste Caballeros y escuchar gaiteros con la ría de Arousa de fondo." />
+  <meta property="og:image" content="https://folklorius.es/images/fiesta-albarino-cambados.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiesta-albarino-cambados.html",
+    "name": "Fiesta del Vino Albariño de Cambados",
+    "startDate": "2026-07-28",
+    "endDate": "2026-08-02",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Cambados, Pontevedra",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cambados",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.5057,
+        "longitude": -8.8014
+      }
+    },
+    "image": ["https://folklorius.es/images/fiesta-albarino-cambados.jpg"],
+    "description": "La Fiesta del Vino Albariño de Cambados es la fiesta de vino más antigua de Galicia y la segunda de España. Celebrada cada año la primera semana de agosto en Cambados (Pontevedra), reúne más de 150.000 visitantes en cinco días. 74ª edición en 2026. Declarada Fiesta de Interés Turístico Internacional en 2018.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Cambados",
+      "url": "https://www.cambados.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Acceso gratuito al paseo de A Calzada. Copa oficial (catavinos) de pago para consumir en las casetas."
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiesta del Vino Albariño de Cambados",
+        "item": "https://folklorius.es/fiesta-albarino-cambados.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Fiesta del Albariño de Cambados en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del martes 28 de julio al domingo 2 de agosto de 2026. Es la 74ª edición. La fiesta se celebra cada año la primera semana de agosto, con el domingo de cierre como día central del Capítulo Serenísimo en el Pazo de Fefiñáns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se bebe el albariño en la fiesta? ¿Hay que pagar entrada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acceso al paseo de A Calzada es gratuito. Para consumir, hay que comprar la copa oficial de la fiesta — el catavinos — en los stands del Ayuntamiento. Con esa copa, el visitante paga cada consumición directamente en la caseta de la bodega que elija. Los precios varían según bodega, generalmente entre 2 y 4 euros por copa de vinos jóvenes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Capítulo Serenísimo del Albariño?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una cofradía báquica fundada en 1969 con el objetivo de proteger y promover el albariño. El acto central de la fiesta es la investidura de nuevos Caballeros y Damas — Donas e Cabaleiros — que tiene lugar al mediodía del domingo de cierre en el Patio de Armas del Pazo de Fefiñáns. Felipe VI fue investido Caballero del Capítulo el 18 de septiembre de 1998, siendo Príncipe de Asturias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué la Fiesta del Albariño nació en Cambados y no en otro lugar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque Cambados es la capital del albariño dentro de la DO Rías Baixas, subzona Val do Salnés. El origen de la fiesta fue una apuesta privada: el 28 de agosto de 1953, Bernardino Quintanilla Álvarez retó a Ernesto Zárate para ver quién elaboraba el mejor albariño de la cosecha de 1952. La primera cata-cena tuvo 50 comensales y 9 bodegueros. El ganador no fue ninguno de los dos retadores sino José Rodiño Oubiña."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las ruinas de Santa Mariña Dozo y qué tienen que ver con la fiesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Son los arcos góticos desnudos de una iglesia del siglo XVI que albergan un cementerio activo en la ladera del monte de A Pastora, sobre Cambados. Monumento Nacional desde 1943. Álvaro Cunqueiro — uno de los impulsores intelectuales de la Fiesta del Albariño — las llamó 'el cementerio más melancólico del mundo'. No forman parte del programa oficial de la fiesta, pero están a pocos minutos del centro y merecen la visita."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiesta del Vino Albariño de Cambados
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/fiesta-albarino-cambados.jpg" alt="Casetas de bodegas en el paseo de A Calzada de Cambados durante la Fiesta del Albariño con el Pazo de Fefiñáns al fondo y visitantes con copa de vino blanco" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiesta del Vino Albariño de Cambados</h1>
+      <p class="ficha-subtitle">
+        Cambados (Pontevedra) · Fiesta gastronómica · «La fiesta de vino más antigua de Galicia.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">28 de julio – 2 de agosto de 2026 · 74ª edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Cambados · Pontevedra · Galicia</span>
+          <span>⏱️ 6 días · +150.000 visitantes</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El acto del Capítulo Serenísimo en el Patio de Armas del Pazo de Fefiñáns es una ceremonia formal de una cofradía con más de cincuenta años de historia. Los Caballeros y Damas que se invisten lo hacen con un compromiso real de defensa del albariño. El tono es solemne — no es un espectáculo de apertura de la fiesta popular.</li>
+          <li>Las peñas de Cambados son grupos organizados de cambadeses que participan activamente en la vida de la fiesta con sus camisetas identificativas. No son grupos de animación contratados para entretener al visitante — son parte de la identidad de la fiesta. Respeta su espacio.</li>
+          <li>Las ruinas de Santa Mariña Dozo son un cementerio activo donde hay cambadeses enterrados. Se visitan con el mismo respeto que cualquier lugar de reposo y memoria.</li>
+          <li>Cambados es una villa gallega con vida propia fuera de la fiesta. El casco histórico, el Pazo de Fefiñáns y la ría de Arousa existen todo el año — la fiesta es la excusa para conocerlos, no el único motivo para ir.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Huele a mosto, a marisco recién cocido y a salitre. El paseo de A Calzada está lleno de gente con un catavinos en la mano moviéndose de caseta en caseta. Cada caseta es una bodega de la DO Rías Baixas. El albariño se sirve frío, cortante, con esa acidez que limpia el paladar y deja un rastro salino que recuerda que la ría de Arousa está a unos pasos. Al fondo del paseo, el Pazo de Fefiñáns lleva desde el siglo XVI mirando esta escena. Todo empezó con una apuesta entre dos amigos en 1953. Ahora vienen ciento cincuenta mil personas.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Fiesta del Vino Albariño de Cambados es la <strong>fiesta de vino más antigua de Galicia y la segunda de España</strong> — solo por detrás de la Fiesta de la Vendimia de Jerez, de 1948. Cada año, la primera semana de agosto, Cambados reúne a más de <strong>150.000 visitantes</strong> en torno al vino más representativo de las Rías Baixas. En 2026 celebra su <strong>74ª edición</strong>, del 28 de julio al 2 de agosto. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó mediante resolución de 31 de agosto de 2018 publicada en el BOE el 15 de septiembre de ese año (BOE-A-2018-12619).
+      </p>
+      <p>
+        La fiesta tiene dos corazones que no se parecen en nada entre sí. El <strong>corazón solemne</strong> es el Pazo de Fefiñáns y el acto del Capítulo Serenísimo del Albariño — la cofradía báquica que cada año inviste a nuevos Caballeros y Damas en el Patio de Armas. El <strong>corazón popular</strong> es el paseo de A Calzada, donde las bodegas de la DO Rías Baixas instalan sus casetas y las peñas cambadesas llenan las calles con sus camisetas de colores y sus lemas satíricos sobre el vino. Entre los dos, Cambados.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo de la 74ª edición lo publica el Ayuntamiento de Cambados en <a href="https://www.cambados.es" target="_blank" rel="noopener">cambados.es</a> y en <a href="https://www.fiestadelalbariño.com" target="_blank" rel="noopener">fiestadelalbariño.com</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El origen no está en una feria comercial ni en una iniciativa municipal. Está en una apuesta. El <strong>28 de agosto de 1953</strong>, Bernardino Quintanilla Álvarez — abogado con una pequeña viña en Tragove — retó a Ernesto Zárate, terrateniente con una viña mayor en Padrenda, para ver quién elaboraba el mejor albariño de la cosecha de 1952. La cena de resolución se celebró en la finca de Ángel Botana Gómez con 50 comensales y 9 bodegueros. El ganador no fue ninguno de los dos retadores, sino <strong>José Rodiño Oubiña</strong>.
+      </p>
+      <p>
+        La apuesta se convirtió en cita anual. En sus primeras décadas, el escritor <strong>Álvaro Cunqueiro</strong>, el poeta <strong>Ramón Cabanillas</strong> y el político <strong>Manuel Fraga</strong> le dieron prestigio literario y proyección pública. En <strong>1969</strong> se fundó el Capítulo Serenísimo del Albariño, la cofradía que desde entonces protege y promueve el vino. En <strong>1970</strong> arrancó el Trofeo Ciclista del Albariño, al que se fueron sumando otras disciplinas deportivas. En <strong>1977</strong>, con motivo del 25 aniversario, la fiesta obtuvo la primera declaración de Interés Turístico. En <strong>1990</strong> ascendió a Interés Turístico Nacional (BOE-A-1990-23132). En <strong>2018</strong> llegó el rango de <strong>Interés Turístico Internacional</strong>.
+      </p>
+      <p>
+        Entre los Caballeros más conocidos del Capítulo está <strong>Felipe VI</strong>, investido el 18 de septiembre de 1998 siendo Príncipe de Asturias. Charles de Gaulle, Julio Iglesias, Alejandro Sanz o Juanes también han pasado por la fiesta a lo largo de su historia.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La <strong>74ª edición</strong> se celebra del <strong>martes 28 de julio al domingo 2 de agosto de 2026</strong>. El domingo de cierre es el día del Capítulo Serenísimo en el Pazo de Fefiñáns — el acto más solemne de toda la semana. Las casetas de A Calzada abren a lo largo de los días previos. El programa completo se publica antes de la fiesta en la web oficial.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Martes 28 de julio · Pé de Cuba</span>
+          Arranque informal de la fiesta — el «Pé de Cuba» — con los primeros actos del programa y la apertura de las casetas en el paseo de A Calzada. Inaugura los seis días reales de celebración antes de los días grandes del fin de semana. Primeras jornadas con las casetas de bodegas en el paseo de A Calzada. Arrancan también las actividades paralelas: exposiciones, conciertos, actividades deportivas y jornadas técnicas con enólogos.
+        </li>
+        <li>
+          <span class="dia-label">A lo largo de la semana · Todo el día</span>
+          El paseo de A Calzada es el epicentro popular: las bodegas de la DO Rías Baixas sirven sus vinos con el catavinos oficial. Las <strong>peñas</strong> — grupos de cambadeses con camisetas identificativas y lemas satíricos — animan las calles y los bares. Bandas, gaiteros y charangas recorren el centro. El <strong>Trofeo Ciclista del Albariño</strong> y otras competiciones deportivas tienen lugar en distintas jornadas.
+        </li>
+        <li>
+          <span class="dia-label">Durante la fiesta · Xantar do Albariño</span>
+          La comida oficial de la fiesta, donde se abre notarialmente el sobre con los vinos ganadores del concurso del año — la <strong>Cata Prima</strong> (vinos jóvenes) y la <strong>Cata Postrera</strong> (vinos con crianza).
+        </li>
+        <li>
+          <span class="dia-label">Domingo 2 de agosto · Mañana · Avenida de Madrid</span>
+          Desfile de autoridades y cofradías gastronómicas invitadas por la Avenida de Madrid. El cortejo precede al acto central del Capítulo.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 2 de agosto · Mediodía · Pazo de Fefiñáns y Parque de Torrado</span>
+          Investidura de nuevos <em>Donas e Cabaleiros</em> por el <strong>Capítulo Serenísimo del Albariño</strong> en el Patio de Armas del Pazo de Fefiñáns. Después, la <strong>Comida oficial del Albariño</strong> en el Parque de Torrado, donde se entregan los premios a los vinos ganadores del concurso. Es el cierre institucional de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 2 de agosto · Noche · Paseo Marítimo</span>
+          Los fuegos artificiales sobre el Paseo Marítimo cierran la 74ª edición.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El albariño y las casetas</h2>
+      <div class="music-block">
+        <p>
+          El albariño de Cambados crece en la subzona <strong>Val do Salnés</strong> de la DO Rías Baixas. La proximidad al Atlántico y a la ría de Arousa le da un microclima húmedo que produce un vino blanco de acidez pronunciada, aromas frutales y un toque salino que no tiene otro vino de la misma uva cultivada más tierra adentro. Se bebe muy frío — entre 8 y 10 grados — y el maridaje natural es el marisco de la ría. En la fiesta, la experiencia empieza en los stands del Ayuntamiento donde se compra el <em>catavinos</em>: la copa oficial sin la que no se sirve en ninguna caseta. Después, la elección es libre — cada bodega tiene su propio precio y su propio vino.
+        </p>
+        <p>
+          El paseo de A Calzada es un paseo arbolado junto al centro de Cambados donde se concentran las casetas. El sonido dominante es el tintineo del cristal de miles de copas y la música en directo de bandas y gaiteros. El olor mezcla mosto fermentado, marisco cocido en los puestos cercanos y el salitre que llega desde la ría. La imagen más característica de la fiesta no la pone el vino sino las peñas: grupos de cambadeses con camisetas de colores idénticos, diseñadas cada año con lemas satíricos sobre el vino y la fiesta.
+        </p>
+        <ul>
+          <li>Compra el catavinos al llegar — sin él no puedes consumir en ninguna caseta. Los stands del Ayuntamiento están en el acceso al paseo.</li>
+          <li>Las casetas de las bodegas más pequeñas suelen tener los vinos más interesantes y las colas más cortas. Las primeras horas de la tarde son las más tranquilas para moverse entre puestos.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Capítulo Serenísimo en el Pazo de Fefiñáns</h3>
+          <span class="tag">Domingo 2 de agosto · Al mediodía · Patio de Armas</span>
+          <p>La investidura de nuevos Caballeros y Damas del Capítulo Serenísimo del Albariño en el Patio de Armas del Pazo renacentista del siglo XVI. La cofradía lleva desde 1969 nombrando embajadores del albariño. Felipe VI recibió la capa aquí en 1998.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ninguna otra fiesta de vino española tiene una ceremonia de investidura de este rango en un pazo del siglo XVI. El Patio de Armas del Pazo de Fefiñáns es uno de los espacios más fotogénicos de las Rías Baixas, y el acto es el único momento de la semana donde la fiesta baja el volumen y sube el protocolo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El paseo de A Calzada con catavinos en mano</h3>
+          <span class="tag">Toda la semana · Paseo de A Calzada</span>
+          <p>El corazón popular de la fiesta: el paseo arbolado con decenas de casetas de bodegas de la DO Rías Baixas. Compra el catavinos oficial, elige bodega y bebe albariño frío con el sonido de los gaiteros y la ría de Arousa a pocos metros.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es donde se entiende por qué Cambados es la capital del albariño: todas las subzonas de las Rías Baixas reunidas en un paseo, cada bodega con su carácter y su precio. No es una feria comercial — es un concurso popular en tiempo real donde el cliente es el jurado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las ruinas de Santa Mariña Dozo</h3>
+          <span class="tag">Todo el año · Monte de A Pastora · Cambados</span>
+          <p>Los arcos góticos desnudos de una iglesia del siglo XVI que alberga un cementerio activo en la ladera sobre la villa. Monumento Nacional desde 1943. Álvaro Cunqueiro — impulsor de la fiesta — las llamó «el cementerio más melancólico del mundo».</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque no existe otro lugar igual en Galicia: una iglesia sin techo, con los arcos góticos abiertos al cielo, rodeada de cipreses y con tumbas entre las columnas. La misma persona que ayudó a convertir una apuesta privada de 1953 en la fiesta de vino más importante de Galicia dejó escrito que este era el lugar más melancólico que había visto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las peñas cambadesas</h3>
+          <span class="tag">Toda la semana · Calles de Cambados</span>
+          <p>Grupos organizados de cambadeses que cada año diseñan camisetas de colores idénticos con lemas satíricos sobre el vino y la fiesta. Son el tejido social de la celebración — sin ellos el paseo de A Calzada sería solo un mercado de vinos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque las peñas son la prueba de que la fiesta no ha perdido su base local a pesar de los 150.000 visitantes. Cada camiseta es un chiste, una referencia, una declaración de pertenencia. Son el humor de Cambados puesto en ropa, y el ruido de sus cencerros y charangas es el sonido más propio de la semana.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>El catavinos.</strong> Compra la copa oficial nada más llegar — sin ella no puedes consumir en ninguna caseta de A Calzada. Los stands del Ayuntamiento están en el acceso al paseo. El precio de cada copa de albariño varía por bodega, generalmente entre 2 y 4 euros.</li>
+        <li><strong>El mejor momento en A Calzada.</strong> Las primeras horas de la tarde son las más tranquilas. Por la noche el ambiente es más festivo pero las colas aumentan. Si quieres probar vinos con calma y hablar con los bodegueros, ve temprano.</li>
+        <li><strong>El Capítulo del domingo.</strong> El Patio de Armas del Pazo de Fefiñáns tiene aforo limitado para el acto de investidura. Llega con tiempo si quieres verlo desde dentro — el acceso es libre pero el espacio es el del patio de un pazo del siglo XVI.</li>
+        <li><strong>Santa Mariña Dozo.</strong> Las ruinas están en la ladera del monte de A Pastora, a un paseo corto desde el centro. El acceso es libre. Vale la pena ir al atardecer — la luz de agosto entre los arcos góticos justifica el desvío.</li>
+        <li><strong>Cómo llegar.</strong> Cambados está a 30 minutos de Pontevedra por la AG-41 y VRG-4.1, y a unos 45 minutos de Vigo por la AP-9. Desde Santiago, algo más de una hora por la AP-9. El coche es la opción más práctica, aunque en los días de mayor afluencia el tráfico se complica — consulta los servicios de autobús especiales que habilita el Ayuntamiento.</li>
+        <li><strong>Alojamiento.</strong> Cambados tiene oferta hotelera y de casas rurales, pero la semana de la fiesta se llena con meses de antelación. Pontevedra o Vilagarcía de Arousa tienen más opciones a menos de 30 minutos.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del albariño</h2>
+      <dl class="festero">
+
+        <dt>Catavinos</dt>
+        <dd>La copa oficial de la Fiesta del Albariño. Se compra en los stands del Ayuntamiento al acceder al paseo de A Calzada y es el único recipiente con el que se sirve en las casetas de las bodegas. Cada año tiene un diseño diferente y muchos visitantes se la llevan como recuerdo. Sin catavinos, sin albariño.</dd>
+
+        <dt>Donas e Cabaleiros</dt>
+        <dd>Las Damas y Caballeros del Capítulo Serenísimo del Albariño. Son los miembros investidos por la cofradía durante el acto central del domingo. Reciben la capa de la orden y el encargo permanente de difundir y defender el albariño de Cambados. Felipe VI fue investido Caballero el 18 de septiembre de 1998.</dd>
+
+        <dt>Capítulo Serenísimo</dt>
+        <dd>La cofradía báquica fundada en Cambados en 1969 para proteger y promover el albariño. Organiza el concurso anual de vinos, la Cata Prima y la Cata Postrera, y protagoniza el acto de investidura en el Pazo de Fefiñáns cada domingo de cierre de la fiesta.</dd>
+
+        <dt>Val do Salnés</dt>
+        <dd>La subzona de la Denominación de Origen Rías Baixas donde se produce el albariño de Cambados. La proximidad a la ría de Arousa y al Atlántico le da al vino su acidez marcada y sus toques salinos. Es la subzona más extensa y prestigiosa de la DO, y Cambados es su capital.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiesta-albarino-cambados-1.jpg" alt="Visitantes con catavinos en el paseo de A Calzada de Cambados durante la Fiesta del Albariño con casetas de bodegas de la DO Rías Baixas" loading="lazy" />
+        <img src="images/fiesta-albarino-cambados-2.jpg" alt="Acto de investidura del Capítulo Serenísimo del Albariño en el Patio de Armas del Pazo de Fefiñáns de Cambados" loading="lazy" />
+        <img src="images/fiesta-albarino-cambados-3.jpg" alt="Ruinas góticas de la iglesia de Santa Mariña Dozo con arcos abiertos al cielo y el cementerio entre las columnas en Cambados" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.fiestadelalbariño.com" target="_blank" rel="noopener">Fiesta del Albariño — web oficial</a></li>
+        <li><a href="https://www.cambados.es" target="_blank" rel="noopener">Ayuntamiento de Cambados — programa e información municipal</a></li>
+        <li><a href="https://www.doriasbaixas.com" target="_blank" rel="noopener">DO Rías Baixas — bodegas y subzonas</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-02</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Fiesta del Albariño de Cambados en 2026?</dt>
+        <dd>Del <strong>martes 28 de julio al domingo 2 de agosto de 2026</strong>. Es la 74ª edición. El domingo de cierre es el día del Capítulo Serenísimo en el Pazo de Fefiñáns.</dd>
+
+        <dt>¿Cómo se bebe el albariño en la fiesta?</dt>
+        <dd>Comprando el <em>catavinos</em> — la copa oficial — en los stands del Ayuntamiento. Con esa copa, el visitante paga cada consumición en la caseta de la bodega que elija. El acceso al paseo de A Calzada es gratuito. El precio por copa varía entre 2 y 4 euros según bodega.</dd>
+
+        <dt>¿Qué es el Capítulo Serenísimo del Albariño?</dt>
+        <dd>Una cofradía báquica fundada en 1969 que protege y promueve el albariño. Cada año inviste a nuevos Caballeros y Damas — <em>Donas e Cabaleiros</em> — en el Patio de Armas del Pazo de Fefiñáns. Felipe VI fue investido aquí en 1998 siendo Príncipe de Asturias.</dd>
+
+        <dt>¿Por qué nació la fiesta en Cambados?</dt>
+        <dd>Por una apuesta privada del 28 de agosto de 1953 entre Bernardino Quintanilla Álvarez y Ernesto Zárate sobre quién hacía el mejor albariño de la cosecha de 1952. La primera cata tuvo 50 comensales. El ganador fue José Rodiño Oubiña, que no era ninguno de los dos retadores.</dd>
+
+        <dt>¿Qué son las ruinas de Santa Mariña Dozo?</dt>
+        <dd>Los arcos góticos de una iglesia del siglo XVI sin techo que albergan un cementerio activo en la ladera sobre Cambados. Monumento Nacional desde 1943. Álvaro Cunqueiro — uno de los impulsores de la fiesta — las llamó «el cementerio más melancólico del mundo».</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Julio-Agosto</a>
+        <a href="#" class="etiqueta">Vino</a>
+        <a href="#" class="etiqueta">Albariño</a>
+        <a href="#" class="etiqueta">Rías Baixas</a>
+        <a href="#" class="etiqueta">DO Rías Baixas</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-albarino">
+        <h2 id="rel-title-albarino">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fiesta-vendimia-jerez.html" class="ficha-rel-card">
+            <img src="images/fiesta-vendimia-jerez.jpg" alt="Fiesta de la Vendimia de Jerez de la Frontera" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Vendimia de Jerez</span>
+              <span class="rel-frase">La primera uva pisada y el mosto nuevo en la capital del Jerez.</span>
+              <span class="rel-meta">Jerez de la Frontera · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Fiesta de la Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Romería Vikinga de Catoira en las Torres del Oeste" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Los vikingos asaltan las Torres del Oeste en la ría de Arousa.</span>
+              <span class="rel-meta">Catoira · Galicia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Ayuntamiento de Cambados, BOE, DO Rías Baixas y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
