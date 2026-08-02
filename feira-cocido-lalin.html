@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Feira do Cocido de Lalín 2026: cocido gallego e ITI</title>
+  <meta name="description" content="Feira do Cocido de Lalín 2026: 8 de febrero, LVIII edición. Cocido gallego, Encomenda y Mes do Cocido. Primera fiesta gastronómica ITI de España." />
+  <link rel="canonical" href="https://folklorius.es/feira-cocido-lalin.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Feira do Cocido de Lalín: el cocido gallego que conquistó el título de fiesta más internacional de la gastronomía española" />
+  <meta property="og:description" content="En febrero, Lalín huele a carballo ardiendo, a pimentón de chorizo y a cerdo ahumado hirviendo a fuego lento. El cocido más rotundo de Galicia, la comarca del Deza y una fiesta que lleva desde 1969 demostrando que el invierno tiene su propio banquete." />
+  <meta property="og:image" content="https://folklorius.es/images/feira-cocido-lalin.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/feira-cocido-lalin.html",
+    "name": "Feira do Cocido de Lalín",
+    "startDate": "2026-02-08",
+    "endDate": "2026-02-08",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Lalín, Pontevedra",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lalín",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6603,
+        "longitude": -8.1125
+      }
+    },
+    "image": ["https://folklorius.es/images/feira-cocido-lalin.jpg"],
+    "description": "La Feira do Cocido de Lalín es el mayor evento gastronómico del cocido gallego, celebrado cada año el domingo anterior al domingo de Carnaval en Lalín (Pontevedra). LVIII edición en 2026. Primera fiesta gastronómica de España declarada Fiesta de Interés Turístico Internacional.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Lalín",
+      "url": "https://www.lalin.gal"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Feira do Cocido de Lalín",
+        "item": "https://folklorius.es/feira-cocido-lalin.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Feira do Cocido de Lalín en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El domingo 8 de febrero de 2026, domingo anterior al domingo de Carnaval. Es la LVIII edición. El Mes do Cocido — con el plato en carta en decenas de restaurantes de Lalín — transcurre del 15 de enero al 14 de febrero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Encomenda do Cocido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acto institucional central de la feria. Cada edición se nombran nuevos Comendadores — personalidades del deporte, la cultura o la política — que reciben una capa tradicional y juran defender y difundir el nombre del cocido de Lalín. Es el equivalente al pregón de otras fiestas gastronómicas, pero con rango de embajada permanente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué Lalín es la capital del cocido gallego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque la comarca del Deza, conocida como el kilómetro cero de Galicia, es históricamente uno de los núcleos de producción ganadera porcina más intensos de Galicia. Esa materia prima local — cerdo criado en la comarca, curado y ahumado — es la razón por la que el cocido de esta localidad tiene una identidad diferenciada. La feria nació en 1969 precisamente para poner en valor esa producción."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué lleva el cocido de Lalín?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El cocido de Lalín incluye piezas curadas y ahumadas de cerdo — cacheira (careta), lacón, soá (espinazo), patas, rabo, orejas, morros, costilla y panceta — junto con chorizos frescos y ceboleiros. Se completa con falda o jarrete de ternera gallega y gallina. La huerta aporta grelos, cachelos, garbanzos y habas. El unto — grasa curada del abdomen del cerdo — va al caldo y le da el toque ahumado y rancio que caracteriza el plato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Mes do Cocido de Lalín?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una iniciativa gastronómica que extiende la feria a todo un mes: del 15 de enero al 14 de febrero, decenas de restaurantes de Lalín sirven el cocido gallego a diario en sus cartas. El lema que lo resume es el dicho local: «De San Amaro a San Valentín, Mes do Cocido en Lalín». Es la manera de vivir la fiesta sin coincidir con el día grande."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Feira do Cocido de Lalín
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/feira-cocido-lalin.jpg" alt="Fuentes de cocido gallego con lacón, grelos, cachelos y chorizos servidas en la Feira do Cocido de Lalín durante el día grande de febrero" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Feira do Cocido de Lalín</h1>
+      <p class="ficha-subtitle">
+        Lalín (Pontevedra) · Fiesta gastronómica · «La primera fiesta gastronómica de España declarada de Interés Turístico Internacional.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Domingo 8 de febrero de 2026 · LVIII edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Lalín · Pontevedra · Galicia</span>
+          <span>⏱️ 1 día grande + Mes do Cocido (15 ene – 14 feb)</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El cocido de Lalín es un plato de ciclo ganadero y de matanza: las piezas principales son de cerdo criado, curado y ahumado en la comarca. Comerlo en Lalín en febrero no es lo mismo que comerlo fuera de temporada en otro sitio — el grelo, la verdura clave del plato, tiene temporada invernal estricta y cambia completamente el carácter del guiso.</li>
+          <li>La Encomenda do Cocido es un acto institucional con peso real, no un espectáculo paralelo a la comida. Las personas que reciben la capa de Comendador lo hacen con el encargo de representar el cocido gallego fuera de la comarca. El acto merece la misma atención que cualquier nombramiento público.</li>
+          <li>El desfile de carrozas del día grande abre oficialmente el Entroido en Lalín. No es el telón de fondo de la feria gastronómica — es una celebración con entidad propia que discurre en paralelo.</li>
+          <li>Los restaurantes del Mes do Cocido ofrecen el plato durante un mes entero con reservas que se agotan. Si planeas ir un día que no sea el domingo grande, reserva con semanas de antelación.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Antes de llegar al centro, ya hueles qué día es. Leña de carballo ardiendo, pimentón del chorizo abriéndose en el caldo caliente, cerdo ahumado que lleva horas en la olla. Dentro de la carpa, el ruido metálico de las cacerolas se mezcla con las gaitas y las charangas que entran desde la calle. Es febrero en la comarca del Deza — el kilómetro cero de Galicia — y el invierno tiene su propio banquete. Un banquete con cincuenta y ocho años de historia y la distinción de haber sido la primera fiesta gastronómica de España en alcanzar el rango de Interés Turístico Internacional.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Feira do Cocido de Lalín es el <strong>mayor evento gastronómico del cocido gallego</strong>, celebrado cada año el domingo anterior al domingo de Carnaval en Lalín, capital de la comarca del Deza (Pontevedra). En 2026 la cita es el <strong>8 de febrero</strong> — la <strong>LVIII edición</strong>. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó por resolución publicada en el BOE el 11 de febrero de 2020 (BOE-A-2020-1978), convirtiéndola en la primera fiesta gastronómica de España en alcanzar ese rango.
+      </p>
+      <p>
+        El día grande concentra el grueso de la feria: el acto institucional de la <strong>Encomenda do Cocido</strong>, el desfile de carrozas de Carnaval por las calles de Lalín y la degustación del cocido en restaurantes locales y en la <strong>Carpa do Cocido</strong> habilitada en el centro del municipio. Pero la feria desborda el día grande. El <strong>Mes do Cocido</strong> — del 15 de enero al 14 de febrero — extiende la celebración durante un mes entero: decenas de restaurantes de Lalín sirven el plato a diario, con el dicho local como referencia: <em>«De San Amaro a San Valentín, Mes do Cocido en Lalín»</em>. A lo largo del mes se entrega también el <strong>Premio Nacional de Periodismo Gastronómico Álvaro Cunqueiro</strong>, que convierte la feria en un referente cultural más allá de la gastronomía.
+      </p>
+      <p>A lo largo de la feria, las calles de Lalín acogen <strong>«los cerditos del cocido»</strong>: figuras decoradas de cerdo que se distribuyen por el espacio público como instalación artística. Conectan visualmente la gastronomía con el ambiente festivo de la villa.</p>
+
+      <p class="nota-grid">⚠️ El programa completo y la información sobre reservas en la Carpa do Cocido lo publica el <a href="https://www.lalin.gal" target="_blank" rel="noopener">Concello de Lalín</a> y la web oficial <a href="https://feiradococido.lalin.gal" target="_blank" rel="noopener">feiradococido.lalin.gal</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        La iniciativa partió de <strong>Luis González Taboada</strong> (1918-2009), alcalde de Lalín entre 1957 y 1979, quien en 1968 promovió una estrategia para poner en valor la producción ganadera y agrícola del Deza — comarca históricamente uno de los núcleos porcinos más intensos de Galicia. La primera edición de la feria se celebró en <strong>1969</strong>.
+      </p>
+      <p>
+        El crecimiento fue constante. En <strong>1999</strong> obtuvo la declaración de Fiesta de Interés Turístico de Galicia (DOG nº 131, 9 de julio). En <strong>2010</strong> llegó la de Fiesta de Interés Turístico Nacional (BOE nº 156, 28 de junio). Y en <strong>2020</strong>, la declaración de <strong>Fiesta de Interés Turístico Internacional</strong> — la primera que recibía en toda España una fiesta de carácter exclusivamente gastronómico. El Concello trabaja desde entonces en un paso más: proponer el cocido gallego como <strong>Patrimonio Cultural Inmaterial de la UNESCO</strong>, siguiendo el camino que ya recorren otras gastronomías europeas de identidad regional.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El día grande es el <strong>domingo 8 de febrero de 2026</strong> — domingo anterior al domingo de Carnaval. El <strong>Mes do Cocido</strong> transcurre del <strong>15 de enero al 14 de febrero</strong>, con el cocido en carta en decenas de restaurantes de Lalín. El programa exacto lo publica el Concello antes de la celebración en <a href="https://feiradococido.lalin.gal" target="_blank" rel="noopener">feiradococido.lalin.gal</a>.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">15 enero – 14 febrero · Mes do Cocido</span>
+          Decenas de restaurantes de Lalín sirven el cocido gallego a diario en sus cartas. Es la manera de vivir la feria sin coincidir con el día grande. Las reservas se agotan — consulta qué locales participan en la web oficial antes de planificar la visita.
+        </li>
+        <li>
+          <span class="dia-label">A lo largo del mes · Premio Álvaro Cunqueiro</span>
+          Entrega del <strong>Premio Nacional de Periodismo Gastronómico Álvaro Cunqueiro</strong>, que reconoce el trabajo periodístico sobre gastronomía gallega y española. Es el acto que más visibilidad intelectual da a la feria más allá del plato.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 8 de febrero · Mañana</span>
+          Acto de la <strong>Encomenda do Cocido</strong>: nombramiento de los Comendadores de la edición — personalidades que reciben la capa tradicional y el encargo de difundir el cocido de Lalín. A continuación, desfile de carrozas de Carnaval, comparsas y charangas por las calles del municipio, marcando el arranque oficial del Entroido en la villa.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 8 de febrero · Mediodía</span>
+          Degustación del cocido en la <strong>Carpa do Cocido</strong> y en los restaurantes locales. Las plazas en la carpa son limitadas — se agotan con semanas de antelación. La hostelería de Lalín también trabaja a pleno rendimiento este día.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El cocido gallego de Lalín</h2>
+      <div class="music-block">
+        <p>
+          El cocido de Lalín es un plato de invierno y de matanza que no admite atajos. Las piezas principales son de cerdo criado en la comarca, curado y ahumado: <strong>cacheira</strong> (careta entera), lacón, <strong>soá</strong> (espinazo), patas, rabo, orejas, morros, costilla y panceta. Se añaden chorizos frescos de carne y <em>ceboleiros</em> — chorizos con cebolla — junto con falda o jarrete de ternera gallega y gallina de casa. La huerta aporta <strong>grelos</strong>, cachelos, garbanzos y habas. El ingrediente que lo diferencia de cualquier otro cocido español es el <strong>unto</strong>: la grasa curada del abdomen del cerdo, que va directamente al caldo y le da el toque ahumado y ligeramente rancio que lo hace inconfundible.
+        </p>
+        <p>
+          La preparación requiere planificación. Las piezas saladas — el lacón y la cacheira — necesitan tres días de desalado en agua fría con varios cambios. La cocción dura entre dos y tres horas, con verduras y legumbres cociendo por separado para evitar que los sabores se mezclen antes de tiempo. El grelo — la verdura clave, con un amargor terroso que contrarresta la grasa animal — solo está en temporada entre enero y febrero. Como dicen en la comarca: el grelo ayuda a seguir comiendo. Sin grelo de temporada, el plato cambia de carácter.
+        </p>
+        <ul>
+          <li>Si quieres entender el plato antes del día grande, el Mes do Cocido ofrece cuatro semanas para probarlo con calma en la hostelería local — sin las aglomeraciones del domingo grande.</li>
+          <li>El caldo del cocido — untuoso, ahumado, con el perfume del unto — se sirve como primer plato antes de la fuente principal. No lo saltes: es donde está el alma del guiso.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Encomenda do Cocido</h3>
+          <span class="tag">Domingo 8 de febrero · Mañana · Acto institucional</span>
+          <p>El nombramiento de los Comendadores de la edición: personalidades que reciben una capa tradicional y el encargo formal de defender y difundir el cocido de Lalín. Es el acto con más carga simbólica de la feria y el que mejor resume por qué esta fiesta superó el ámbito local.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ninguna otra fiesta gastronómica española tiene un sistema de embajadores con rango institucional como este. El Comendador no es un pregonero de temporada — adquiere un compromiso permanente. Verlo en el acto de nombramiento es entender que Lalín trata el cocido como un asunto de Estado comarcal.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El desfile de Carnaval del día grande</h3>
+          <span class="tag">Domingo 8 de febrero · Mañana · Calles de Lalín</span>
+          <p>El día grande de la feria es también el arranque oficial del Entroido lalinense. Carrozas, comparsas y charangas recorren las calles de Lalín antes de que empiece el servicio del cocido. La feria y el Carnaval nacen juntos ese mismo día.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el vínculo entre el cocido y el Carnaval no es casual — el cocido de invierno y el ciclo del Entroido llevan siglos ligados en la cultura gallega. Ver el desfile antes de sentarte a comer da el contexto que el plato necesita para entenderse del todo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Mes do Cocido</h3>
+          <span class="tag">15 enero – 14 febrero · Restaurantes de Lalín</span>
+          <p>Cuatro semanas en las que decenas de restaurantes de Lalín sirven el cocido gallego a diario. Es la alternativa al día grande para quien quiere vivir la feria con calma, sin aglomeraciones y con tiempo para hablar con los cocineros sobre el plato.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Mes do Cocido es donde la feria muestra su dimensión cotidiana. Los cocineros que llevan décadas haciendo el plato lo explican mejor en una mesa tranquila de enero que en el bullicio del domingo grande. Y el grelo de enero, recién cogido, tiene un amargor diferente al de febrero.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El monumento al cerdo en el centro de Lalín</h3>
+          <span class="tag">Todo el año · Centro urbano de Lalín</span>
+          <p>En el centro de Lalín hay una escultura de bronce dedicada al cerdo — el animal que sostiene la ganadería del Deza y el origen de todos los ingredientes principales del cocido. Es el único monumento de su tipo en Galicia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pocas localidades españolas tienen el valor de poner un monumento en el centro urbano al animal que define su gastronomía e identidad. La escultura dice más sobre la relación de Lalín con su tierra que cualquier cartel turístico. Búscala antes o después del día grande.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Reserva con meses de antelación.</strong> Las plazas en la Carpa do Cocido del día grande se agotan con semanas — a veces meses — de antelación. Consulta disponibilidad en <a href="https://feiradococido.lalin.gal" target="_blank" rel="noopener">feiradococido.lalin.gal</a> en cuanto salga el programa.</li>
+        <li><strong>Alternativa: el Mes do Cocido.</strong> Si no consigues plaza para el día grande, cualquier día entre el 15 de enero y el 14 de febrero puedes comer el cocido en la hostelería local. Los menús rondan los 37 euros en 2026. Reserva con antelación — los restaurantes participantes también se llenan.</li>
+        <li><strong>Cómo llegar.</strong> Lalín está en el centro de Galicia, bien comunicado por la AP-53 desde Santiago de Compostela (unos 35 minutos) y desde Ourense (unos 35 minutos). Desde Vigo y Pontevedra por la AP-53 y la N-525.</li>
+        <li><strong>Alojamiento.</strong> Lalín tiene oferta hotelera propia, pero el fin de semana del día grande se llena. Santiago de Compostela, a 35 minutos, tiene más opciones.</li>
+        <li><strong>El grelo tiene temporada.</strong> El cocido de Lalín con grelo fresco solo existe entre enero y febrero. Fuera de ese periodo, los restaurantes lo sustituyen por repollo — el plato cambia. Si quieres el cocido canónico, ven en temporada.</li>
+        <li><strong>Candidatura UNESCO.</strong> El Concello trabaja en proponer el cocido gallego para la lista de Patrimonio Cultural Inmaterial de la UNESCO. Si te interesa el estado de la candidatura, la información actualizada está en la web oficial del Concello.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario do Deza</h2>
+      <dl class="festero">
+
+        <dt>Cacheira</dt>
+        <dd>La careta o cabeza entera del cerdo, curada y ahumada. Es una de las piezas más características del cocido de Lalín y la que más gelatina aporta al caldo. En gallego también se usa <em>cachola</em>. Su presencia en la fuente — entera o en trozos grandes — es uno de los rasgos que distinguen el cocido lalinense de versiones más reducidas del plato.</dd>
+
+        <dt>Soá</dt>
+        <dd>El espinazo del cerdo, salado y curado. Da sabor al caldo durante la cocción y se sirve como pieza en la fuente. El término es específico del gallego y del vocabulario de la matanza del interior de Galicia — no tiene equivalente exacto en castellano.</dd>
+
+        <dt>Unto</dt>
+        <dd>La grasa curada del abdomen del cerdo, enrollada y ahumada. Va al caldo durante la cocción y le da el toque rancio y ahumado que define el cocido gallego. Sin unto, el caldo pierde la untuosidad y el perfume que lo hacen inconfundible. Es el ingrediente más difícil de encontrar fuera de Galicia.</dd>
+
+        <dt>Encomenda</dt>
+        <dd>El acto central de la Feira do Cocido: el nombramiento de los Comendadores de la edición. La palabra viene del gallego y del castellano antiguo — una encomienda, un encargo con peso formal. Los Comendadores no son embajadores honoríficos de temporada: adquieren el compromiso de difundir el cocido de Lalín de forma permanente.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/feira-cocido-lalin-1.jpg" alt="Fuente de cocido gallego de Lalín con lacón, cacheira, grelos, cachelos y chorizos durante el día grande de la Feira do Cocido" loading="lazy" />
+        <img src="images/feira-cocido-lalin-2.jpg" alt="Acto de la Encomenda do Cocido con nombramiento de Comendadores en la Feira do Cocido de Lalín" loading="lazy" />
+        <img src="images/feira-cocido-lalin-3.jpg" alt="Desfile de carrozas de Carnaval por las calles de Lalín durante el día grande de la Feira do Cocido" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://feiradococido.lalin.gal" target="_blank" rel="noopener">Feira do Cocido — web oficial con programa y reservas</a></li>
+        <li><a href="https://www.lalin.gal" target="_blank" rel="noopener">Concello de Lalín — información municipal</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — comarca del Deza</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-31</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Feira do Cocido de Lalín en 2026?</dt>
+        <dd>El <strong>domingo 8 de febrero de 2026</strong>, domingo anterior al domingo de Carnaval. Es la LVIII edición. El Mes do Cocido — con el plato en carta en decenas de restaurantes — va del 15 de enero al 14 de febrero.</dd>
+
+        <dt>¿Qué es la Encomenda do Cocido?</dt>
+        <dd>El acto institucional de la feria: cada edición se nombran Comendadores — personalidades del deporte, la cultura o la política — que reciben una capa tradicional y el encargo de difundir el cocido de Lalín. Es el acto con más carga simbólica del día grande.</dd>
+
+        <dt>¿Por qué Lalín es la capital del cocido gallego?</dt>
+        <dd>Porque la comarca del Deza es históricamente un núcleo de producción porcina intenso — el cerdo criado, curado y ahumado aquí es la materia prima del plato. La feria nació en 1969 para poner en valor esa producción, y lleva más de cincuenta años consolidando esa identidad.</dd>
+
+        <dt>¿Qué lleva el cocido de Lalín?</dt>
+        <dd>Piezas curadas y ahumadas de cerdo — cacheira, lacón, soá, patas, rabo, orejas, morros, costilla, panceta — más chorizos, ternera gallega y gallina. La huerta aporta grelos, cachelos, garbanzos y habas. El unto va al caldo y le da el toque ahumado que lo define.</dd>
+
+        <dt>¿Qué es el Mes do Cocido y cómo funciona?</dt>
+        <dd>Del 15 de enero al 14 de febrero, decenas de restaurantes de Lalín sirven el cocido a diario. El lema local lo resume: <em>«De San Amaro a San Valentín, Mes do Cocido en Lalín»</em>. Es la alternativa al día grande para quien quiere el plato con calma y sin aglomeraciones.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta">Cocido</a>
+        <a href="#" class="etiqueta">Carnaval</a>
+        <a href="#" class="etiqueta">Gastronomía</a>
+        <a href="#" class="etiqueta">Comarca del Deza</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-lalin">
+        <h2 id="rel-title-lalin">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fiesta-pulpo-carballino.html" class="ficha-rel-card">
+            <img src="images/fiesta-pulpo-carballino.jpg" alt="Pulpeiras con caldeiros en el Parque Municipal de O Carballiño durante la Fiesta del Pulpo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta del Pulpo de O Carballiño</span>
+              <span class="rel-frase">80.000 kilos de pulpo á feira y el chasquido de las tijeras en el Arenteiro.</span>
+              <span class="rel-meta">O Carballiño · Galicia</span>
+            </div>
+          </a>
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense durante la Fiesta de la Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="festival-botillo-bembibre.html" class="ficha-rel-card">
+            <img src="images/festival-botillo-bembibre.jpg" alt="Banquete central del Festival del Botillo de Bembibre" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festival del Botillo de Bembibre</span>
+              <span class="rel-frase">El mayor banquete de invierno del Bierzo. Mil doscientos comensales y el ciego.</span>
+              <span class="rel-meta">Bembibre · Castilla y León</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Concello de Lalín, BOE, Turismo de Galicia y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
