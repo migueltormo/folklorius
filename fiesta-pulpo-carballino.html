@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiesta del Pulpo O Carballiño 2026: pulpeiras y caldeiros</title>
+  <meta name="description" content="Fiesta del Pulpo O Carballiño 2026: 9 de agosto. 80.000 kilos de pulpo á feira, las pulpeiras, el caldeiro de cobre y el Parque del Arenteiro. ITI 2022." />
+  <link rel="canonical" href="https://folklorius.es/fiesta-pulpo-carballino.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fiesta del Pulpo de O Carballiño: 60 años de tijeras, caldeiros y pimentón en el parque del Arenteiro" />
+  <meta property="og:description" content="Cada segundo domingo de agosto, O Carballiño consume 80.000 kilos de pulpo á feira bajo los árboles del río Arenteiro. Más de 100.000 personas, decenas de pulpeiras y el chasquido de las tijeras contra la tabla de madera. La capital gallega del pulpo lleva desde 1964 demostrando por qué." />
+  <meta property="og:image" content="https://folklorius.es/images/fiesta-pulpo-carballino.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiesta-pulpo-carballino.html",
+    "name": "Fiesta del Pulpo de O Carballiño",
+    "startDate": "2026-08-09",
+    "endDate": "2026-08-09",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Parque Municipal de O Carballiño, Ourense",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "O Carballiño",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.4276,
+        "longitude": -8.0853
+      }
+    },
+    "image": ["https://folklorius.es/images/fiesta-pulpo-carballino.jpg"],
+    "description": "La Fiesta del Pulpo de O Carballiño es la romería gastronómica más multitudinaria de Galicia. Cada segundo domingo de agosto, más de 100.000 personas se reúnen en el Parque Municipal para comer pulpo á feira cocinado por las pulpeiras. Entre 60.000 y 80.000 kilos de pulpo según la edición. Declarada Fiesta de Interés Turístico Internacional en 2022.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de O Carballiño",
+      "url": "https://www.carballino.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiesta del Pulpo de O Carballiño",
+        "item": "https://folklorius.es/fiesta-pulpo-carballino.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Fiesta del Pulpo de O Carballiño en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El domingo 9 de agosto de 2026, segundo domingo de agosto. Es la fecha inamovible del día grande. Los actos culturales y las semanas gastronómicas previas arrancan desde finales de julio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las pulpeiras y por qué son importantes en la fiesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las pulpeiras son las artesanas especializadas en cocer y servir pulpo á feira. El oficio nació en la parroquia de Santa María de Arcos, en O Carballiño, en el siglo XVII, cuando las mujeres de la comarca aprendieron a preparar el pulpo que los arrieiros traían seco desde la costa. La fiesta nació en 1964 precisamente para homenajear este oficio. Cada pulpeira trabaja con su propio caldeiro de cobre, su técnica personal para asustar o pulpo y sus tijeras, que son la herramienta de corte — nunca un cuchillo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto pulpo se consume en la Fiesta del Pulpo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En torno a 80.000 kilos de pulpo durante los días de la fiesta, con más de 100.000 visitantes en el recinto del Parque Municipal. Es la concentración de consumo de pulpo á feira más grande del mundo en un solo evento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué consiste la técnica de asustar o pulpo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Asustar o pulpo es la operación previa a la cocción: la pulpeira sujeta el pulpo por la cabeza y lo sumerge en el agua hirviendo durante unos cinco segundos, lo extrae y repite el proceso tres veces. Este gesto contrae los tentáculos, los riza y evita que la piel se desprenda durante la cocción. Después, el pulpo se cuece a fuego medio unos veinte minutos por kilo y reposa en el propio caldo caliente entre quince y treinta minutos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué O Carballiño y no otro pueblo gallego es la capital del pulpo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque el oficio de pulpeira nació aquí. En el siglo XVII, los arrieiros — muleros que transportaban vino desde el interior gallego hacia la costa — traían pulpo seco en el viaje de vuelta. En la parroquia de Santa María de Arcos, dentro del municipio de O Carballiño, las mujeres de la comarca desarrollaron el arte de cocerlo y venderlo en las ferias de toda Galicia. Ese oficio especializado, transmitido de generación en generación, es el origen de todo."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiesta del Pulpo de O Carballiño
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/fiesta-pulpo-carballino.jpg" alt="Pulpeiras con caldeiros de cobre en el Parque Municipal de O Carballiño durante la Fiesta del Pulpo, con miles de comensales bajo los árboles del río Arenteiro" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiesta del Pulpo de O Carballiño</h1>
+      <p class="ficha-subtitle">
+        O Carballiño (Ourense) · Fiesta gastronómica · «La romería del pulpo más grande de Galicia.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Domingo 9 de agosto de 2026 · 64ª edición</div>
+        <div class="datos-secundarios">
+          <span>📍 O Carballiño · Ourense · Galicia</span>
+          <span>⏱️ 1 día central + semana gastronómica previa</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Las pulpeiras son artesanas con un oficio transmitido de generación en generación. La fiesta nació para homenajearlas a ellas, no al producto. Observar su trabajo con atención es parte de la experiencia; interrumpirlas cuando trabajan con el caldeiro, no.</li>
+          <li>El Parque Municipal del Arenteiro es un espacio natural de 32 hectáreas con 140 especies botánicas. Durante la fiesta lo ocupan más de 100.000 personas. Respeta la vegetación, no te salgas de los espacios habilitados y no dejes basura en el parque.</li>
+          <li>El pulpo á feira es un plato artesanal con técnica precisa. Si lo pides, espera a que la pulpeira lo sirva como corresponde — con la tabla de madera, la sal gruesa, el pimentón y el aceite. Compararlo con versiones industriales o precocinadas es malentender de qué va la fiesta.</li>
+          <li>El día grande en agosto es uno de los eventos más concurridos de Galicia. La logística de transporte y aparcamiento requiere planificación previa.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Antes de ver nada, el olor ya te ha llegado. Humo de leña, pimentón ahumado disolviéndose en aceite caliente y la humedad densa del parque fluvial. Luego viene el sonido: el chasquido rítmico de unas tijeras metálicas cortando tentáculos contra una tabla de madera redonda. Se repite en decenas de puestos a la vez, bajo los árboles del Arenteiro, con más de cien mil personas sentadas a las mesas. Cada segundo domingo de agosto, O Carballiño demuestra que lleva desde el siglo XVII haciendo una sola cosa mejor que nadie.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Fiesta del Pulpo de O Carballiño — <em>Festa do Pulpo do Carballiño</em> — es la <strong>romería gastronómica más multitudinaria de Galicia</strong>. Cada segundo domingo de agosto, el Parque Municipal del río Arenteiro se convierte en el mayor comedor de pulpo á feira del mundo: decenas de pulpeiras instalan sus caldeiros de cobre desde primera hora de la mañana, y más de cien mil visitantes se sientan bajo la arboleda a comer raciones de pulpo, carne ao caldeiro, pan de Cea y vino del Ribeiro, con queimada y cañas de crema — el postre local — para cerrar la mesa. En 2026 la cita es el <strong>9 de agosto</strong>.
+      </p>
+      <p>
+        El día grande no llega solo. Desde finales de julio, O Carballiño celebra semanas gastronómicas y actos culturales previos, incluyendo la elaboración de la tapa de pulpo más grande del mundo en la Plaza Mayor — un plato de madera de más de cinco metros de diámetro donde las pulpeiras cortan cientos de kilos en tiempo récord. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó por resolución de la Secretaría de Estado de Turismo publicada en el BOE el 18 de julio de 2022 (BOE-A-2022-12052).
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de cada edición lo publica el <a href="https://www.carballino.gal" target="_blank" rel="noopener">Ayuntamiento de O Carballiño</a> y la web oficial <a href="https://www.festadopulpodocarballino.com" target="_blank" rel="noopener">festadopulpodocarballino.com</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El origen del oficio de pulpeira en O Carballiño es medieval. El <strong>Monasterio de Oseira</strong>, cercano a la villa, poseía el priorato costero de Marín, en Pontevedra. Los pescadores pagaban sus diezmos a los monjes entregando pulpo, y los monjes lo distribuían entre sus feligreses del interior. Con el tiempo, en el siglo XVII, los <em>arrieiros</em> — los muleros que bajaban el vino del Ribeiro hacia la costa — emprendían el viaje de vuelta con pulpo seco en las alforjas. En las parroquias de <strong>Santa María de Arcos</strong> y <strong>San Xoán de Arcos</strong>, dentro del municipio de O Carballiño — ambas vinculadas históricamente al Monasterio de Oseira — las mujeres de la comarca desarrollaron la técnica de cocerlo y venderlo en las ferias de toda Galicia. Ese oficio especializado, que pasó de madres a hijas durante generaciones, es la razón por la que esta localidad —y no otra— es la capital gallega del pulpo.
+      </p>
+      <p>
+        La primera edición de la fiesta como tal fue el <strong>20 de septiembre de 1964</strong>. Nació de una reunión informal en 1962 entre un grupo de amigos — entre ellos Ramón Valeiras, Felipe Luís López y el alcalde Héctor González — que querían homenajear el oficio de pulpeira al final de las fiestas patronales de San Cibrao. La primera edición reunió doce comensales. La fiesta creció rápido: se trasladó al Parque Municipal y se fijó en agosto, y en <strong>1969</strong> obtuvo el primer reconocimiento oficial como Fiesta de Interés Turístico. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en 2012 (BOE-A-2012-9319) y la de <strong>Interés Turístico Internacional</strong> en 2022. Desde los años ochenta, cada edición se dedica a una ciudad o país diferente para homenajear a la comunidad gallega de la diáspora — una tradición que convierte el día grande en un reconocimiento global al gallego emigrante.
+      </p>
+      <p>
+        En julio de 2010, en plena fiebre por las predicciones del pulpo Paul durante el Mundial de Fútbol de Sudáfrica, el Ayuntamiento nombró al célebre cefalópodo del acuario de Oberhausen como <strong>Amigo de Honra</strong> de O Carballiño, con entrega de placa y estatuilla de bronce en Alemania. La villa tiene dos monumentos permanentes al pulpo: una estatua de bronce de una pulpeira con su caldeiro y tijeras en la Plaza Mayor, y una escultura de un pulpo de cinco metros de altura y 900 kilos en la entrada de la localidad, obra del escultor Acisclo Novo.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        El día grande es el <strong>domingo 9 de agosto de 2026</strong> — segundo domingo de agosto, fecha inamovible desde los primeros años del festival. Los actos culturales y la semana gastronómica previa arrancan desde finales de julio. Consulta el programa completo en <a href="https://www.festadopulpodocarballino.com" target="_blank" rel="noopener">festadopulpodocarballino.com</a>.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Finales de julio · Semana gastronómica</span>
+          Jornadas previas en O Carballiño con menús de pulpo en la hostelería local y actividades culturales. El martes anterior al domingo grande, las pulpeiras elaboran en la Plaza Mayor la <strong>tapa de pulpo más grande del mundo</strong> — un plato de madera de más de cinco metros de diámetro con cientos de kilos de pulpo cortado en tiempo récord.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 9 de agosto · A primera hora</span>
+          Las pulpeiras instalan sus caldeiros de cobre en el Parque Municipal y encienden el fuego. El agua tarda en hervir. La gente llega antes de que estén listos los primeros pulpos. El parque se llena despacio, con el olor a humo de leña marcando el ritmo.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 9 de agosto · Mañana y mediodía</span>
+          Momento central del día: las pulpeiras trabajan a pleno rendimiento, <em>asustando</em> los pulpos, cociendo y cortando sin parar. Las mesas bajo los árboles del Arenteiro se llenan de raciones de pulpo á feira, carne ao caldeiro, pan de Cea y vino del Ribeiro. Música de gaitas, panderetas y tamboriles recorre el parque. Más de cien mil personas en 32 hectáreas.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 9 de agosto · Tarde y noche</span>
+          Conciertos y actuaciones en el escenario central del parque. El ambiente gastronómico cede paso al festivo. La fiesta se prolonga hasta la noche con música en directo.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Las pulpeiras y el caldeiro</h2>
+      <div class="music-block">
+        <p>
+          El pulpo á feira es un plato de tres ingredientes — pulpo, pimentón y aceite — y de una técnica que no admite atajos. La pulpeira trabaja con un <em>caldeiro</em> de cobre: el material retiene y distribuye el calor de forma homogénea y evita que la piel del pulpo se desprenda durante la cocción. El agua hierve sin sal — la sal gruesa se añade exclusivamente al final, sobre la tabla, nunca durante la cocción. Cuando los borbotones son constantes, llega el momento de <strong>asustar o pulpo</strong>: la pulpeira sujeta el cefalópodo por la cabeza y lo sumerge en el agua hirviendo durante cinco segundos, lo extrae y repite el gesto tres veces. Ese movimiento contrae los tentáculos, los riza y sella la piel. Después, el pulpo entra en el caldeiro para cocer a fuego medio — unos veinte minutos por kilo — y reposa en el propio caldo caliente entre quince y treinta minutos más.
+        </p>
+        <p>
+          El corte se hace con tijeras, nunca con cuchillo: rodajas de aproximadamente un centímetro de los tentáculos, sobre un plato redondo de madera de pino previamente humedecido con el caldo para que no absorba el aceite. El orden del aderezo importa: primero la sal gruesa marina, luego el pimentón — mezcla de dulce con un toque de picante — y por último un chorro generoso de aceite de oliva virgen extra. El resultado debe tener textura <em>triscona</em>: una leve resistencia crujiente al diente antes de deshacerse, sin ser blando ni gomoso. Si el pulpo se deshace solo, está pasado. Si hay que masticar con esfuerzo, no está listo.
+        </p>
+        <ul>
+          <li>Si es la primera vez, pide la ración en uno de los puestos del parque durante la mañana — cuando las pulpeiras llevan horas trabajando y tienen el ritmo cogido. Las raciones de primera hora pueden ser irregulares.</li>
+          <li>El vino del Ribeiro — blanco, ligero, con acidez — es el maridaje tradicional. No lo sustituyas por cerveza si quieres entender el plato completo.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El chasquido de las tijeras</h3>
+          <span class="tag">Mañana · Parque del Arenteiro</span>
+          <p>El sonido más propio de la fiesta: las tijeras metálicas de las pulpeiras cortando tentáculos contra la tabla de madera, repetido en decenas de puestos a la vez bajo los árboles del río. No se escucha igual en ningún otro sitio de Galicia.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ese sonido en cadena — rítmico, metálico, multiplicado — es la mejor manera de entender que estás en la fiesta más grande de pulpo del mundo. Busca un puesto donde la pulpeira trabaje a la vista del público y quédate un momento antes de pedir tu ración.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Asustar o pulpo en directo</h3>
+          <span class="tag">Primera hora · Puestos del parque</span>
+          <p>Ver a una pulpeira sujetar el pulpo por la cabeza y sumergirlo tres veces en el agua hirviendo es el gesto técnico más fotogénico y más antiguo de la fiesta. Llega temprano — a primera hora del día las pulpeiras están cociendo los primeros lotes y es el momento de verlo bien.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único instante en que el oficio de pulpeira se muestra en toda su dimensión técnica. El gesto de sujetar el pulpo por la cabeza y sumergirlo en el agua a borbotones lleva haciéndose igual desde el siglo XVII. Verlo cambia cómo entiendes el plato cuando te lo sirven.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La escultura del pulpo de Acisclo Novo</h3>
+          <span class="tag">Todo el día · Entrada de la villa N-541</span>
+          <p>A la entrada de O Carballiño por la N-541 se levanta una escultura de bronce de cinco metros de altura y 900 kilos, obra del escultor Acisclo Novo. Es la primera imagen de la villa. En la Plaza Mayor, otra estatua de bronce retrata a una pulpeira de tamaño natural con su caldeiro y tijeras.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pocas localidades españolas tienen dos monumentos permanentes dedicados a un producto gastronómico y al oficio que lo prepara. Juntas, las dos esculturas cuentan la historia de O Carballiño mejor que cualquier texto: el pulpo es el símbolo, la pulpeira es el origen.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La tapa más grande del mundo</h3>
+          <span class="tag">Semana previa · Plaza Mayor</span>
+          <p>El martes anterior al día grande, las pulpeiras elaboran en la Plaza Mayor la tapa de pulpo más grande del mundo: un plato de madera de más de cinco metros de diámetro con cientos de kilos de pulpo cortado. Es uno de los actos más fotogénicos del festival y el que marca el arranque oficial de la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver a varias pulpeiras trabajando simultáneamente sobre un plato de cinco metros cambia la escala de todo lo que vendrá después en el parque. Si puedes llegar un día antes del domingo, merece la pena quedarse para este acto.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Llega temprano.</strong> El parque se llena a lo largo de la mañana. Si llegas a mediodía, encontrarás mesas libres difíciles y colas largas. A primera hora tienes el parque tranquilo y las pulpeiras empezando a trabajar.</li>
+        <li><strong>Transporte.</strong> O Carballiño está a 28 km de Ourense por la AG-53 y N-541, a 80 km de Santiago por la AP-53 y a 85 km de Vigo por la A-52 y AG-53. El día grande el tráfico en la N-541 puede congestionarse — consulta los servicios de autobús especiales que habilita el Ayuntamiento desde las capitales de provincia.</li>
+        <li><strong>Acceso gratuito.</strong> El Parque Municipal es de acceso libre y gratuito. Las raciones de pulpo se pagan en cada puesto — el precio lo fija cada pulpeira.</li>
+        <li><strong>Además del pulpo.</strong> La carne ao caldeiro — ternera gallega cocida en el mismo tipo de caldeiro que el pulpo — es el acompañamiento clásico. El pan de Cea y el vino del Ribeiro completan la mesa.</li>
+        <li><strong>El Parque del Arenteiro.</strong> Con 32 hectáreas y más de 140 especies botánicas a lo largo del río Arenteiro, merece una visita con calma antes o después de la fiesta. Diseñado en 1928 por el arquitecto Conde Fidalgo, es uno de los parques fluviales más notables de Galicia.</li>
+        <li><strong>Alojamiento.</strong> O Carballiño tiene oferta hotelera propia, pero el fin de semana de la fiesta se llena semanas antes. Ourense, a 28 km, tiene más opciones.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario gallego de la fiesta</h2>
+      <dl class="festero">
+
+        <dt>Pulpeira</dt>
+        <dd>La artesana especializada en cocer y servir pulpo á feira. El oficio nació en la parroquia de Santa María de Arcos, en O Carballiño, en el siglo XVII y se ha transmitido de madres a hijas durante generaciones. La pulpeira trabaja con su propio caldeiro de cobre, sus tijeras y su técnica personal. La fiesta de 1964 nació precisamente para homenajear este oficio.</dd>
+
+        <dt>Caldeiro</dt>
+        <dd>La olla de cobre en la que se cuece el pulpo á feira. El cobre distribuye el calor de forma homogénea y evita que la piel del pulpo se desprenda durante la cocción. Es el símbolo visual más reconocible de la fiesta y el instrumento de trabajo central de la pulpeira.</dd>
+
+        <dt>Asustar o pulpo</dt>
+        <dd>La técnica previa a la cocción: sujetar el pulpo por la cabeza y sumergirlo en el agua hirviendo durante cinco segundos, extraerlo y repetir el gesto tres veces. El movimiento contrae los tentáculos, los riza y sella la piel para que no se desprenda durante la cocción. Sin este paso, el pulpo á feira no tiene la textura correcta.</dd>
+
+        <dt>Triscar</dt>
+        <dd>El término gallego que define la textura perfecta del pulpo á feira: una leve resistencia crujiente al diente antes de deshacerse, sin ser blando ni gomoso. Un pulpo bien hecho <em>trisca</em>. Si el término lo usa la pulpeira para describir su trabajo, es que sabe lo que hace.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiesta-pulpo-carballino-1.jpg" alt="Pulpeira con caldeiro de cobre humeante sirviendo pulpo á feira en el Parque Municipal de O Carballiño durante la Fiesta del Pulpo" loading="lazy" />
+        <img src="images/fiesta-pulpo-carballino-2.jpg" alt="Raciones de pulpo á feira sobre tabla de madera con pimentón y aceite en la Fiesta del Pulpo de O Carballiño" loading="lazy" />
+        <img src="images/fiesta-pulpo-carballino-3.jpg" alt="Vista general del Parque Municipal del Arenteiro en O Carballiño con miles de comensales durante el día grande de la Fiesta del Pulpo" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.festadopulpodocarballino.com" target="_blank" rel="noopener">Festa do Pulpo — web oficial del festival</a></li>
+        <li><a href="https://www.carballino.gal" target="_blank" rel="noopener">Ayuntamiento de O Carballiño — información municipal</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — información regional</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-31</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Fiesta del Pulpo de O Carballiño en 2026?</dt>
+        <dd>El <strong>domingo 9 de agosto de 2026</strong>, segundo domingo de agosto. Los actos culturales y la semana gastronómica previa arrancan desde finales de julio.</dd>
+
+        <dt>¿Qué son las pulpeiras y por qué son el centro de la fiesta?</dt>
+        <dd>Las artesanas especializadas en cocer y servir pulpo á feira. El oficio nació en O Carballiño en el siglo XVII y la fiesta se creó en 1964 para homenajearlas. Cada una trabaja con su propio caldeiro de cobre y sus tijeras — el corte se hace siempre con tijeras, nunca con cuchillo.</dd>
+
+        <dt>¿Cuánto pulpo se consume en la fiesta?</dt>
+        <dd>Entre <strong>60.000 y 80.000 kilos</strong> de pulpo durante los días de la fiesta según la edición, con más de 100.000 visitantes en el Parque Municipal del Arenteiro el día grande.</dd>
+
+        <dt>¿En qué consiste asustar o pulpo?</dt>
+        <dd>La operación previa a la cocción: sumergir el pulpo en agua hirviendo durante cinco segundos, extraerlo y repetir tres veces. Contrae los tentáculos y sella la piel para que no se desprenda. Después se cuece a fuego medio unos veinte minutos por kilo.</dd>
+
+        <dt>¿Por qué O Carballiño es la capital gallega del pulpo?</dt>
+        <dd>Porque el oficio de pulpeira nació aquí en el siglo XVII, cuando los arrieiros que bajaban el vino del Ribeiro a la costa volvían con pulpo seco. Las mujeres de la parroquia de Santa María de Arcos desarrollaron la técnica de cocerlo y venderlo en ferias de toda Galicia. Ese oficio especializado, transmitido de generación en generación, es el origen de todo.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Ourense</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta">Pulpo</a>
+        <a href="#" class="etiqueta">Gastronomía</a>
+        <a href="#" class="etiqueta">Oficio Artesanal</a>
+        <a href="#" class="etiqueta">Ribeiro</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-pulpo">
+        <h2 id="rel-title-pulpo">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense en cazuela durante la Fiesta de la Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="rel-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="festival-botillo-bembibre.html" class="ficha-rel-card">
+            <img src="images/festival-botillo-bembibre.jpg" alt="Banquete central del Festival del Botillo de Bembibre" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festival del Botillo de Bembibre</span>
+              <span class="rel-frase">El mayor banquete de invierno del Bierzo. Mil doscientos comensales y el ciego.</span>
+              <span class="rel-meta">Bembibre · Castilla y León</span>
+            </div>
+          </a>
+
+          <a href="fiesta-vendimia-jerez.html" class="ficha-rel-card">
+            <img src="images/fiesta-vendimia-jerez.jpg" alt="Fiesta de la Vendimia de Jerez de la Frontera" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Fiesta de la Vendimia de Jerez</span>
+              <span class="rel-frase">La primera uva pisada y el mosto nuevo en la capital del Jerez.</span>
+              <span class="rel-meta">Jerez de la Frontera · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Ayuntamiento de O Carballiño, BOE, Turismo de Galicia y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
