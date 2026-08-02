@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Encierros de Cuéllar 2026: los más antiguos de España en el pinar</title>
+  <meta name="description" content="Encierros de Cuéllar 2026: 30 agosto–3 septiembre. Los más antiguos de España, 6,5 km por pinares y murallas mudéjares. Documentados desde 1215. ITI 2018." />
+  <link rel="canonical" href="https://folklorius.es/encierros-cuellar.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Encierros de Cuéllar: 800 años de toros en el pinar segoviano, la ordenanza de 1499 y el olor a resina al amanecer" />
+  <meta property="og:description" content="Antes de los Sanfermines existían los encierros de Cuéllar. Cinco días, cinco encierros, 6,5 kilómetros entre pinos centenarios y murallas mudéjares. El ganado sale al amanecer desde el río Cega. La historia más antigua del encierro español tiene aquí su origen documentado." />
+  <meta property="og:image" content="https://folklorius.es/images/encierros-cuellar.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/encierros-cuellar.html",
+    "name": "Encierros de Cuéllar",
+    "startDate": "2026-08-30",
+    "endDate": "2026-09-03",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Cuéllar, Segovia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cuéllar",
+        "addressRegion": "Castilla y León",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.4009,
+        "longitude": -4.3136
+      }
+    },
+    "image": ["https://folklorius.es/images/encierros-cuellar.jpg"],
+    "description": "Los Encierros de Cuéllar son los encierros documentados más antiguos de España, celebrados cada año en las fiestas en honor a la Virgen del Rosario. Cinco encierros consecutivos, 6,5 km por pinares y casco histórico mudéjar. Declarados Fiesta de Interés Turístico Internacional en 2018.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Cuéllar",
+      "url": "https://www.cuellar.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Encierros de Cuéllar",
+        "item": "https://folklorius.es/encierros-cuellar.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran los Encierros de Cuéllar en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del domingo 30 de agosto al jueves 3 de septiembre de 2026. Se corren cinco encierros consecutivos, uno por día, dentro de las fiestas en honor a la Virgen del Rosario, patrona de la villa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué los Encierros de Cuéllar son los más antiguos de España?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque su existencia está documentada desde 1215, cuando un sínodo convocado por el obispo de Segovia prohibió a los clérigos asistir a los juegos de toros en Cuéllar. El Acuerdo del Regimiento de 1484 recoge el primer gasto municipal por la compra de toros para el encierro. La Ordenanza de 1499, firmada por Francisco Fernández de la Cueva, II Duque de Alburquerque, es la primera norma legal escrita que regula un encierro en España."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es el recorrido del encierro de Cuéllar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El recorrido total es de aproximadamente 6,5 kilómetros en dos fases muy distintas. La primera es el encierro de campo: el ganado sale al amanecer desde los corrales en la ribera del río Cega y recorre 5 kilómetros por el pinar comunal, conducido por garrochistas a caballo. La segunda es el encierro urbano: la manada baja por El Embudo — una ladera de arena — y recorre 1,5 kilómetros por las calles del casco histórico hasta la plaza de toros."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué se diferencian los encierros de Cuéllar de los de Pamplona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En casi todo. Los de Pamplona son un recorrido 100% urbano y una carrera frenética de pocos minutos. Los de Cuéllar combinan 5 kilómetros de traslado logístico por pinar — con garrochistas a caballo que controlan el ritmo del ganado — con un encierro urbano posterior. La fase de campo no tiene equivalente en ningún otro encierro español de ese rango."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Probadilla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Probadilla es la capea tradicional que tiene lugar en la plaza de toros tras la llegada del ganado al final del encierro. Los aficionados locales — los más valientes — torean a las reses en el ruedo. El acceso a la plaza para la Probadilla requiere entrada. Es el acto que cierra cada mañana de encierro antes de los festejos taurinos de tarde."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Encierros de Cuéllar
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/encierros-cuellar.jpg" alt="Manada de toros bravos corriendo entre los pinos del encierro de campo de Cuéllar al amanecer, con garrochistas a caballo controlando el ganado" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Encierros de Cuéllar</h1>
+      <p class="ficha-subtitle">
+        Cuéllar (Segovia) · Encierro · «Los encierros documentados más antiguos de España.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">30 de agosto – 3 de septiembre de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Cuéllar · Segovia · Castilla y León</span>
+          <span>⏱️ 5 días · 5 encierros consecutivos</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El encierro de campo transcurre por el pinar comunal de Cuéllar sin gradas ni vallado de separación fijo. Los espectadores se colocan en los taludes de arena naturales. Hay zonas perimetradas que deben respetarse estrictamente — el ganado bravo está en movimiento y los garrochistas tienen autoridad sobre el recorrido.</li>
+          <li>Los garrochistas que conducen el ganado por el pinar llevan décadas haciendo ese trabajo. Su función no es decorativa: frenan, dirigen y agrupan a las reses durante 5 kilómetros. No los interrumpas ni te pongas en su línea de trabajo.</li>
+          <li>Los toros que corren por la mañana se lidian por la tarde en la plaza. La fiesta es un ciclo completo — el encierro y el festejo taurino son dos partes del mismo acto, no actividades separadas.</li>
+          <li>El casco histórico de Cuéllar es un conjunto histórico con murallas y arquitectura mudéjar en uso. Los corredores del encierro urbano discurren por calles reales con vecinos. El visitante está en una fiesta de una villa viva, no en un recinto montado para turistas.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Huele a resina. El pinar todavía está en penumbra cuando el ganado sale de los corrales del río Cega. No hay asfalto, no hay multitud apretada, no hay ningún ruido de ciudad: solo el crujido de la pinocha bajo los cascos, el relinchar de los caballos y el sonido sordo de los toros moviéndose entre los pinos. Los garrochistas los dirigen al trote durante cinco kilómetros. Luego viene El Embudo, la ladera de arena por donde la manada baja levantando una nube de polvo hacia las calles amuralladas. El encierro documentado más antiguo de España lleva así desde 1215.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Los Encierros de Cuéllar son los encierros de toros bravos <strong>documentados más antiguos de España</strong>, celebrados cada año en las fiestas en honor a la Virgen del Rosario, patrona de la villa. Durante <strong>cinco días consecutivos</strong> — del último domingo de agosto al jueves siguiente — se corre un encierro diario con diferente hierro de ganado. En 2026 las fiestas van del <strong>30 de agosto al 3 de septiembre</strong>.
+      </p>
+      <p>
+        Cada encierro tiene dos fases que no se parecen en nada entre sí. En la <strong>fase de campo</strong>, el ganado — <strong>6 toros bravos y 10 cabestros</strong> — sale al amanecer desde los corrales en la ribera del río Cega y recorre 5 kilómetros por el pinar comunal de la villa, conducido por un grupo de <em>garrochistas</em> a caballo. En la <strong>fase urbana</strong>, la manada baja por <em>El Embudo</em> — una ladera de arena — y recorre 1,5 kilómetros por las calles del casco histórico hasta la plaza de toros, donde tiene lugar la <em>Probadilla</em>. Los toros que corren por la mañana se lidian esa misma tarde.
+      </p>
+      <p class="nota-grid">⚠️ El programa detallado de las fiestas — encierros, festejos taurinos y actos religiosos — lo publica el <a href="https://www.cuellar.es" target="_blank" rel="noopener">Ayuntamiento de Cuéllar</a> antes de cada edición.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        La primera referencia documental es de <strong>diciembre de 1215</strong>: el sínodo convocado por el obispo de Segovia don Gerardo prohibió a los clérigos asistir a los «<em>lúdos taurórum</em>» en Cuéllar. Que la prohibición existiera implica que los festejos llevaban tiempo celebrándose. En <strong>1484</strong>, los Acuerdos del Regimiento recogen el primer gasto municipal documentado por la compra y encierro de toros. El documento clave llegó en <strong>1499</strong>: la Ordenanza firmada por Francisco Fernández de la Cueva, II Duque de Alburquerque, que regula por primera vez de forma escrita el encierro para evitar conflictos entre ganaderos y corredores. Es la norma legal más antigua conservada que organiza un encierro en España. En 1999 se celebró el V Centenario de esa ordenanza.
+      </p>
+      <p>
+        La <strong>Casa de Alburquerque</strong>, iniciada por Beltrán de la Cueva — valido del rey Enrique IV — fue durante siglos la gran impulsora y protectora de los encierros, cediendo los terrenos para el paso de la manada y ratificando su celebración. La reina Leonor, esposa de Juan I de Castilla y señora de Cuéllar, ya había respondido en su tiempo a las quejas de hidalgos y pecheros reconociendo la «costumbre inmemorial» de encerrar toros en la villa. Hasta <strong>1921</strong>, las fiestas se celebraban en julio, coincidiendo con las de San Juan. Ese año se trasladaron a finales de agosto, integrándolas en las fiestas patronales de la Virgen del Rosario y en el cierre del ciclo agrario de cosechas. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en junio de 2008 y la de <strong>Fiesta de Interés Turístico Internacional</strong> mediante resolución del 12 de marzo de 2018.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Las fiestas en honor a la Virgen del Rosario se celebran del <strong>domingo 30 de agosto al jueves 3 de septiembre de 2026</strong>. Cinco días, cinco encierros, ganado diferente cada mañana. El programa completo — festejos taurinos de tarde, actos religiosos y actividades paralelas — lo publica el <a href="https://www.cuellar.es" target="_blank" rel="noopener">Ayuntamiento de Cuéllar</a> antes de las fiestas.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Sábado previo · Por la tarde · Plaza Mayor</span>
+          Inicio protocolario de las fiestas con el <strong>pregón</strong> desde el balcón del Ayuntamiento en la Plaza Mayor. Marca el comienzo oficial de los cinco días de encierros y festejos en honor a la Virgen del Rosario.
+        </li>
+
+        <li>
+          <span class="dia-label">Cada mañana · Al amanecer · Fase de campo</span>
+          El ganado sale de los corrales del río Cega y recorre <strong>5 kilómetros por el pinar comunal</strong> conducido por los garrochistas a caballo. El recorrido transcurre por caminos de arena entre pinos resineros. Los espectadores se sitúan en los taludes naturales. No hay gradas ni vallado fijo en esta fase.
+        </li>
+        <li>
+          <span class="dia-label">Cada mañana · Media mañana · El Embudo y fase urbana</span>
+          La manada llega a <strong>El Embudo</strong> — la gran ladera de arena que da paso al casco histórico — y baja levantando una nube de polvo. Desde ahí, 1,5 kilómetros por las calles amuralladas de Cuéllar, con <em>talanqueras</em> de madera en el recorrido urbano, hasta la plaza de toros.
+        </li>
+        <li>
+          <span class="dia-label">Cada mañana · Llegada a plaza · La Probadilla</span>
+          Tras el encierro, los aficionados locales más atrevidos toman el ruedo para torear a las reses en la <strong>Probadilla</strong>, la capea tradicional de Cuéllar. Requiere entrada a la plaza de toros.
+        </li>
+        <li>
+          <span class="dia-label">Cada tarde · Festejo taurino</span>
+          Los toros que han corrido por la mañana se lidian esa tarde en la plaza en diferentes formatos: corridas, novilladas, festejos de rejones o concursos de cortes, según la programación de cada día.
+        </li>
+        <li>
+          <span class="dia-label">A lo largo de las fiestas · Actos religiosos</span>
+          Las fiestas son en honor a la Virgen del Rosario, patrona de Cuéllar. Los actos religiosos — procesiones, misas solemnes — forman parte del programa oficial junto a los festejos taurinos.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El encierro: dos mundos en 6,5 kilómetros</h2>
+      <div class="music-block">
+        <p>
+          El encierro de Cuéllar no tiene comparación directa con ningún otro. La <strong>fase de campo</strong> es la más singular: cinco kilómetros por el pinar comunal de la villa, con el ganado al trote entre troncos de pino resinero, conducido por garrochistas a caballo. Un garrochista porta una garrocha — un palo largo con punta de hierro — para frenar, dirigir y reagrupar a las reses. En ediciones recientes, el número de garrochistas inscritos ha rondado los doscientos. A mitad del recorrido hay una parada oficial — el <strong>descansadero</strong> — donde los jinetes hacen un alto para tomar dulces y anís antes de continuar. El olor es resina fresca y arena levantada. El sonido, relinchar de caballos y pinocha crujiendo. No hay multitud apretada ni ruido de asfalto.
+        </p>
+        <p>
+          La <strong>fase urbana</strong> comienza en El Embudo: la ladera de arena donde el pinar se acaba y el casco histórico empieza. La manada baja a la carrera, levantando una nube de polvo visible desde lejos, y toma las calles del casco histórico — entre ellas la <strong>calle de las Parras</strong> y la <strong>Cuesta de San Francisco</strong> — flanqueadas por las murallas de ladrillo mudéjar. Las <em>talanqueras</em> — vallas de madera pesada de doble fondo — delimitan el recorrido hasta la plaza de toros. Aquí el encierro se parece más a lo que conoce quien ha visto Pamplona, aunque la escala es diferente y el recorrido mucho más corto.
+        </p>
+        <ul>
+          <li>Para ver la fase de campo, llega antes de que amanezca y sitúate en los taludes naturales del pinar. Respeta estrictamente las zonas perimetradas — el ganado está en movimiento y los garrochistas necesitan espacio para trabajar.</li>
+          <li>El Embudo es el punto visual más fotogénico del encierro: la nube de polvo, la bajada de arena y la transición entre los dos mundos del recorrido. Llega con tiempo para encontrar sitio.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El encierro por el pinar al amanecer</h3>
+          <span class="tag">Cada mañana · Al amanecer · Pinar comunal</span>
+          <p>Cinco kilómetros de ganado bravo entre pinos resineros, conducido por garrochistas a caballo. El olor a resina, el crujido de la pinocha bajo los cascos y el relinchar de los caballos. No existe esto en ningún otro encierro de España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la fase que hace únicos a los encierros de Cuéllar. Pamplona es urbano y frenético. Cuéllar tiene un prólogo de cinco kilómetros en silencio de pinar donde el encierro es todavía un traslado de ganado, no una carrera. Si solo ves la fase urbana, has visto la mitad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Embudo</h3>
+          <span class="tag">Cada mañana · Media mañana · Ladera de arena</span>
+          <p>La ladera de arena donde el pinar se acaba y el casco histórico empieza. La manada baja levantando una nube de polvo que se ve desde lejos. Es el momento en que los dos mundos del encierro — campo y ciudad — se tocan.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el instante más visual del encierro: la manada bajando a la carrera por la arena con el casco histórico al fondo. No tiene equivalente en ningún otro encierro español. Llega temprano para buscar sitio en los márgenes de la ladera.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Probadilla</h3>
+          <span class="tag">Cada mañana · Tras el encierro · Plaza de toros</span>
+          <p>La capea tradicional de Cuéllar: tras la llegada del ganado a la plaza, los aficionados locales torean a las reses en el ruedo. Es un acto con siglos de tradición, completamente diferente al festejo taurino formal de la tarde.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Probadilla es el momento en que la fiesta pertenece exclusivamente a los cuellaranos. No es un espectáculo organizado — es la respuesta espontánea de los aficionados locales al encierro que acaban de correr. Requiere entrada a la plaza, pero el precio es asequible.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Castillo-Palacio de los Duques de Alburquerque</h3>
+          <span class="tag">Todo el año · Casco histórico de Cuéllar</span>
+          <p>La fortaleza medieval y renacentista que vigiló los encierros durante siglos desde lo alto de la villa. Hoy alberga el Archivo Histórico de la Casa de Alburquerque — donde están los documentos originales de la Ordenanza de 1499 — y abre al público con visitas teatralizadas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la Ordenanza de 1499 que regula el primer encierro escrito de España se firmó aquí, por el II Duque de Alburquerque. Visitar el castillo durante las fiestas es leer el origen de lo que acabas de presenciar por la mañana en el pinar. Las visitas teatralizadas son la mejor manera de acceder.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Para ver el encierro de campo.</strong> Llega antes del amanecer y sitúate en los taludes naturales del pinar respetando las zonas perimetradas. El encierro de campo no tiene gradas — el público se coloca en los márgenes de tierra elevados. Ropa oscura y calzado cómodo para terreno de arena.</li>
+        <li><strong>Para ver El Embudo.</strong> Es el punto más concurrido del recorrido. Llega con tiempo — los mejores sitios se ocupan antes de que llegue la manada. Es también el lugar con más fotografías posibles del encierro.</li>
+        <li><strong>La Probadilla y festejos de tarde.</strong> Requieren entrada a la plaza de toros. Las entradas se venden en taquilla y, en algunas ediciones, en preventa online. Consulta la web del Ayuntamiento.</li>
+        <li><strong>Acceso libre.</strong> La participación como espectador en el pinar y en la fase urbana es gratuita. No así el acceso a la plaza de toros para la Probadilla o los festejos de tarde.</li>
+        <li><strong>Cómo llegar.</strong> Cuéllar está a 60 km de Segovia y a 50 km de Valladolid, por la Autovía de Pinares (A-601). Desde Madrid, unos 150 km por la A-1 o la A-6 pasando por Segovia. Hay servicios de autobús desde Segovia y Valladolid — consulta horarios en los operadores antes del viaje.</li>
+        <li><strong>Alojamiento.</strong> Cuéllar tiene oferta hotelera propia, limitada para los cinco días de fiestas. Segovia y Valladolid ofrecen más opciones a menos de una hora. Reserva con semanas de antelación.</li>
+        <li><strong>El casco histórico.</strong> Las murallas mudéjares de Cuéllar y el Castillo-Palacio de los Duques de Alburquerque merecen una visita con calma antes o después del encierro. El conjunto histórico es uno de los más importantes de Castilla y León.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del encierro</h2>
+      <dl class="festero">
+
+        <dt>El Embudo</dt>
+        <dd>La gran ladera de arena que conecta el pinar comunal con el casco histórico de Cuéllar. Es el punto de transición entre la fase de campo y la fase urbana del encierro: la manada baja por ella a la carrera, levantando una nube de polvo visible desde lejos. No existe topónimo equivalente en ningún otro encierro español.</dd>
+
+        <dt>Pinocha</dt>
+        <dd>La hojarasca de pino — agujas secas, piñas, ramas caídas — que cubre el suelo del pinar comunal por donde transcurre el encierro de campo. Su crujido bajo los cascos de caballos y toros es el sonido más característico de la fase de campo, el que distingue a Cuéllar de cualquier encierro urbano.</dd>
+
+        <dt>Garrochista</dt>
+        <dd>El jinete que porta una garrocha — un palo largo con punta de hierro — para conducir, frenar y agrupar al ganado durante los cinco kilómetros de encierro por el pinar. Los garrochistas de Cuéllar tienen autoridad sobre el recorrido de campo; en ediciones recientes han participado cerca de doscientos inscritos.</dd>
+
+        <dt>Talanquera</dt>
+        <dd>La valla de madera pesada de doble fondo que delimita el recorrido del encierro urbano en las calles de Cuéllar. Protege a los espectadores y permite a los corredores saltar a ellas si lo necesitan. En la fase de campo no hay talanqueras — el espacio es abierto y los taludes naturales hacen de separación.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/encierros-cuellar-1.jpg" alt="Garrochistas a caballo conduciendo la manada de toros bravos por el pinar comunal de Cuéllar al amanecer durante el encierro de campo" loading="lazy" />
+        <img src="images/encierros-cuellar-2.jpg" alt="Manada de toros bajando por El Embudo, la ladera de arena que conecta el pinar con el casco histórico de Cuéllar, levantando una nube de polvo" loading="lazy" />
+        <img src="images/encierros-cuellar-3.jpg" alt="Corredores y toros en las calles del casco histórico de Cuéllar con las murallas mudéjares al fondo durante la fase urbana del encierro" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.cuellar.es" target="_blank" rel="noopener">Ayuntamiento de Cuéllar — programa oficial de fiestas y encierros</a></li>
+        <li><a href="https://www.encierrosdecuellar.es" target="_blank" rel="noopener">Encierros de Cuéllar — web oficial del evento</a></li>
+        <li><a href="https://www.turismocastillayleon.com" target="_blank" rel="noopener">Turismo Castilla y León — información regional</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-02</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Encierros de Cuéllar en 2026?</dt>
+        <dd>Del <strong>domingo 30 de agosto al jueves 3 de septiembre de 2026</strong>. Cinco encierros consecutivos, uno por día, dentro de las fiestas en honor a la Virgen del Rosario.</dd>
+
+        <dt>¿Por qué son los más antiguos de España?</dt>
+        <dd>Su existencia está documentada desde 1215 (prohibición eclesiástica de asistir a los juegos de toros en Cuéllar) y tienen la primera norma legal escrita que regula un encierro en España: la Ordenanza de 1499 de Francisco Fernández de la Cueva, II Duque de Alburquerque.</dd>
+
+        <dt>¿Cómo es el recorrido?</dt>
+        <dd>6,5 km en dos fases: 5 km por el pinar comunal al amanecer, conducido por garrochistas a caballo, y 1,5 km por el casco histórico desde El Embudo hasta la plaza de toros.</dd>
+
+        <dt>¿En qué se diferencian de los Sanfermines?</dt>
+        <dd>Los de Pamplona son 100% urbanos y duran pocos minutos. Los de Cuéllar tienen cinco kilómetros de encierro por pinar, con garrochistas a caballo que controlan el ganado — una fase sin equivalente en ningún otro encierro español de ese rango.</dd>
+
+        <dt>¿Qué es la Probadilla?</dt>
+        <dd>La capea tradicional en la plaza de toros tras cada encierro, donde los aficionados locales torean a las reses. Requiere entrada. Es el cierre de cada mañana de fiestas, antes de los festejos taurinos formales de la tarde.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Encierro</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Castilla y León</a>
+        <a href="#" class="etiqueta">Segovia</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta">Toros</a>
+        <a href="#" class="etiqueta">Patrimonio Mudéjar</a>
+        <a href="#" class="etiqueta">Tradición Medieval</a>
+        <a href="#" class="etiqueta">Pinar</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-cuellar">
+        <h2 id="rel-title-cuellar">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="entrada-toros-caballos-segorbe.html" class="ficha-rel-card">
+            <img src="images/entrada-toros-caballos-segorbe.jpg" alt="Entrada de Toros y Caballos de Segorbe" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Entrada de Toros y Caballos de Segorbe</span>
+              <span class="rel-frase">Caballos y toros juntos en el encierro más espectacular del Mediterráneo.</span>
+              <span class="rel-meta">Segorbe · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="rapa-das-bestas-sabucedo.html" class="ficha-rel-card">
+            <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores en el curro de Sabucedo durante la Rapa das Bestas" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Rapa das Bestas de Sabucedo</span>
+              <span class="rel-frase">Los caballos salvajes del monte y los aloitadores a mano limpia.</span>
+              <span class="rel-meta">Sabucedo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="guerras-cantabras-corrales-buelna.html" class="ficha-rel-card">
+            <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Recreación de las Guerras Cántabras en Los Corrales de Buelna" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Guerras Cántabras de Los Corrales de Buelna</span>
+              <span class="rel-frase">La resistencia cántabra contra Roma recreada en el valle del Besaya.</span>
+              <span class="rel-meta">Los Corrales de Buelna · Cantabria</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Ayuntamiento de Cuéllar, BOE, Turismo Castilla y León y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
