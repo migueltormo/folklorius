@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Arribada de la Carabela Pinta a Baiona 2026: XXX edición medieval</title>
+  <meta name="description" content="Arribada Carabela Pinta Baiona 2026: XXX edición, 27 feb–1 marzo, 533 aniversario. Baiona fue el primer pueblo de Europa en saber que existía América. ITI 2015." />
+  <link rel="canonical" href="https://folklorius.es/arribada-carabela-pinta-baiona.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Festa da Arribada de Baiona: el cañonazo que en 1493 cambió el mundo entró por esta bocana" />
+  <meta property="og:description" content="El 1 de marzo de 1493, la Carabela Pinta entró en el puerto de Baiona y los vecinos fueron los primeros de Europa en saber que existía América. Cada año, el fin de semana más histórico de Galicia recrea ese momento con 200.000 personas, justas a caballo y un mercado medieval de 150 puestos." />
+  <meta property="og:image" content="https://folklorius.es/images/arribada-carabela-pinta-baiona.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/arribada-carabela-pinta-baiona.html",
+    "name": "Arribada de la Carabela Pinta a Baiona",
+    "startDate": "2026-02-27",
+    "endDate": "2026-03-01",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Baiona, Pontevedra",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baiona",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.1178,
+        "longitude": -8.8506
+      }
+    },
+    "image": ["https://folklorius.es/images/arribada-carabela-pinta-baiona.jpg"],
+    "description": "La Festa da Arribada de Baiona conmemora la llegada de la Carabela Pinta el 1 de marzo de 1493, cuando Baiona se convirtió en el primer pueblo de Europa en conocer la existencia de América. XXX edición en 2026, del 27 de febrero al 1 de marzo. Declarada Fiesta de Interés Turístico Internacional en 2015.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Baiona",
+      "url": "https://www.baiona.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Arribada de la Carabela Pinta a Baiona",
+        "item": "https://folklorius.es/arribada-carabela-pinta-baiona.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Festa da Arribada de Baiona en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del viernes 27 de febrero al domingo 1 de marzo de 2026, con actos previos desde el miércoles 25 de febrero. Es la XXX edición del Real Mercado Medieval y conmemora el 533 Aniversario de la llegada de la Carabela Pinta al puerto de Baiona."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué Baiona fue el primer pueblo de Europa en saber que existía América?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque el 1 de marzo de 1493, la Carabela Pinta capitaneada por Martín Alonso Pinzón entró en el puerto de Baiona tras ser separada de La Niña por una tormenta a la altura de las Azores. A bordo navigaba como piloto el baionés Cristóbal García Sarmiento, quien fijó el rumbo hacia la bahía segura de Baiona. Los vecinos y su corregidor fueron los primeros europeos en ver a los nativos americanos que viajaban a bordo y los productos del Nuevo Mundo: maíz, yuca, batata."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Real Mercado Medieval de la Arribada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El mercado medieval que transforma el casco histórico de Baiona durante la fiesta: más de 150 puestos de artesanos, orfebres, herreros y gastronomía tradicional en el Paseo Pinzón y la Alameda. El acceso es gratuito. En 2026 celebra su XXX edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué le pasó a Martín Alonso Pinzón tras la Arribada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pinzón llegó a Baiona gravemente enfermo, posiblemente de fiebres contraídas durante el viaje. Desde allí partió hacia su hogar en Palos de la Frontera, donde falleció apenas quince días después de la Arribada, sin llegar a entrevistarse con los Reyes Católicos. Nunca supo el alcance real del viaje que había completado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede visitar la réplica de la Carabela Pinta en Baiona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. La réplica permanente de la Carabela Pinta está amarrada en el puerto de Baiona, bajo las murallas del Castillo de Monterreal, y funciona como museo flotante con reproducciones de los camarotes y la carga. La visita cuesta 2 euros, o 3 euros con entrada conjunta a la Casa de la Navegación. Abre de martes a domingo."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Arribada de la Carabela Pinta a Baiona
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/arribada-carabela-pinta-baiona.jpg" alt="Réplica de la Carabela Pinta entrando en el puerto de Baiona al atardecer con el Castillo de Monterreal iluminado al fondo durante la Festa da Arribada" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Arribada de la Carabela Pinta a Baiona</h1>
+      <p class="ficha-subtitle">
+        Baiona (Pontevedra) · Recreación histórica · «El primer pueblo de Europa en saber que existía América.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">27 de febrero – 1 de marzo de 2026 · XXX edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Baiona · Pontevedra · Galicia</span>
+          <span>⏱️ 3 días · +200.000 visitantes</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>La Festa da Arribada conmemora un hecho histórico real ocurrido en este puerto exacto. Las representaciones y el mercado existen para dar escala humana a ese momento — el visitante entra como testigo, no como público de un espectáculo.</li>
+          <li>El acto conmemorativo del Aniversario en el Paseo Pinzón tiene el tono de un acto de Estado. No es el fondo del mercado medieval.</li>
+          <li>La réplica de la Carabela Pinta es un museo flotante con reproducciones de condiciones reales de navegación de 1493. No es atrezo.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El cañonazo retumba en la bahía antes de que nadie la vea. Un segundo después, la silueta de la carabela aparece por la bocana con el Castillo de Monterreal encendiéndose detrás. El puerto entero gira hacia el mar. Eso es exactamente lo que pasó aquí el 1 de marzo de 1493, cuando Martín Alonso Pinzón entró con la Pinta maltrecha por las tormentas del Atlántico y los vecinos de Baiona se convirtieron, sin saberlo todavía, en los primeros europeos en conocer la existencia de un nuevo mundo. Quinientos treinta y tres años después, el cañonazo sigue sonando el mismo.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        La Festa da Arribada de Baiona conmemora cada primer fin de semana de marzo la llegada de la Carabela Pinta al puerto gallego el <strong>1 de marzo de 1493</strong> — el momento en que Baiona se convirtió en el <strong>primer pueblo de Europa en saber que existía América</strong>. En 2026 celebra su <strong>XXX edición</strong> del Real Mercado Medieval, y el <strong>533 Aniversario</strong> de la Arribada, del <strong>27 de febrero al 1 de marzo</strong>. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó por resolución de 27 de octubre de 2015 publicada en el BOE el 10 de noviembre de ese año (BOE-A-2015-12150).
+      </p>
+      <p>
+        Durante tres días, el casco histórico de Baiona retrocede al siglo XV. El <strong>Real Mercado Medieval</strong> — más de 150 puestos de artesanos, orfebres, herreros y gastronomía tradicional en el Paseo Pinzón y la Alameda — convive con desfiles de época, espectáculos de juglares y malabaristas, combates de esgrima medieval y las <strong>justas a caballo</strong> en la playa de A Ribeira. El acto central de toda la fiesta es la recreación teatral del momento en que Pinzón relata la gesta al corregidor de Baiona: un barco de época se acerca a la costa y desembarcan actores caracterizados de tripulantes exhaustos e indígenas americanos.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo de la XXX edición lo publica el <a href="https://www.baiona.gal" target="_blank" rel="noopener">Concello de Baiona</a>. Los autobuses lanzadera gratuitos desde Porto do Molle son la mejor opción para llegar sin problemas de aparcamiento.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El <strong>1 de marzo de 1493</strong>, la Carabela Pinta entró en el puerto de Baiona capitaneada por <strong>Martín Alonso Pinzón</strong>. La expedición de Colón regresaba del Nuevo Mundo y una tormenta a la altura de las islas Azores había separado a La Pinta de La Niña. A bordo viajaba como piloto <strong>Cristóbal García Sarmiento</strong>, natural de Baiona y gran conocedor de la costa atlántica gallega, quien fijó el rumbo hacia la bahía segura de su villa natal para reparar el aparejo. Los vecinos de Baiona y su corregidor fueron los primeros europeos en ver a nativos americanos — que viajaban a bordo — y en tocar los productos del Nuevo Mundo: maíz, yuca, batata, canela.
+      </p>
+      <p>
+        Pinzón llegó gravemente enfermo, posiblemente de fiebres contraídas durante el viaje. Desde Baiona partió hacia Palos de la Frontera, donde falleció apenas <strong>quince días después de la Arribada</strong>, sin llegar a entrevistarse con los Reyes Católicos. Nunca supo el alcance real de lo que había completado. Desde Baiona, sin embargo, partieron las primeras relaciones escritas que informaron a la corte del éxito de la flota.
+      </p>
+      <p>
+        La fiesta moderna arranca en <strong>1996</strong>, impulsada por el tirón del V Centenario del Descubrimiento, y se ha celebrado de forma ininterrumpida desde entonces — con la única excepción de 2021, año de pandemia. En <strong>1999</strong> obtuvo la declaración de Fiesta de Interés Turístico de Galicia, en <strong>2010</strong> la de Interés Turístico Nacional y en <strong>2015</strong> la de <strong>Interés Turístico Internacional</strong>. En 2026 el Real Mercado celebra su <strong>trigésima edición</strong>. El hermanamiento entre Baiona y Palos de la Frontera — el puerto desde donde zarpó la expedición — se canaliza a través de la <strong>Real Sociedad Palósfila Pinzoniana</strong>, con la que la villa gallega conmemora el vínculo histórico que ambas localidades comparten desde 1493.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La <strong>XXX edición</strong> se celebra del <strong>viernes 27 de febrero al domingo 1 de marzo de 2026</strong>, con actos previos desde el miércoles 25. El domingo 1 de marzo es la fecha central: el 533 Aniversario exacto de la Arribada, con el acto conmemorativo en el Paseo Pinzón y la representación teatral en la playa de A Ribeira al atardecer.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Desde el miércoles 25 · Actos previos</span>
+          Actividades culturales en la Casa de la Navegación y el casco histórico que abren la semana festiva. El Real Mercado Medieval comienza a instalarse en el Paseo Pinzón y la Alameda.
+        </li>
+        <li>
+          <span class="dia-label">Viernes 27 · Mañana · Apertura</span>
+          Los cañones de la fortaleza de Monterreal disparan para anunciar la apertura oficial del mercado — el mismo saludo que marca el inicio de cada jornada de la fiesta. A continuación arranca el <strong>Real Mercado Medieval</strong> con más de 150 puestos. Juglares, malabaristas, músicos medievales y artesanos de todos los gremios toman las calles del casco histórico. Espectáculos aéreos y de fuego al atardecer en los jardines de la Casa de la Navegación.
+        </li>
+        <li>
+          <span class="dia-label">Viernes 27 · Mediodía · Iglesia de Santa María</span>
+          <strong>Misa solemne</strong> con Ofrenda de Coronas ante la Cruz de Evangelización de América. El acto religioso que recuerda el vínculo entre la Arribada y la evangelización del Nuevo Mundo que comenzó tras el Descubrimiento.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado 28 · Mañana y tarde</span>
+          Mercado medieval a pleno rendimiento. En la playa de A Ribeira: demostraciones de tiro con arco y <strong>combates de esgrima medieval</strong>. Pasacalles de compañías teatrales por la Alameda Carabela Pinta. Las <strong>justas a caballo</strong> llenan la playa de A Ribeira de polvo y público.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 1 de marzo · Mediodía · Paseo Pinzón</span>
+          <strong>Acto conmemorativo del 533 Aniversario</strong> de la Arribada: recepción de autoridades con la Banda de Música de Baiona, ofrenda de coronas e interpretación de himnos en el Paseo Pinzón. El acto más solemne de la fiesta.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 1 de marzo · Al atardecer · Playa de A Ribeira</span>
+          El acto central: la <strong>representación teatral «Arribada do Descubrimento»</strong>. Un barco de época se acerca a la costa. Desembarcan actores caracterizados de tripulantes exhaustos e indígenas americanos. Pinzón relata la gesta al Corregidor de Baiona ante cientos de espectadores. Espectáculo pirotécnico de cierre.
+        </li>
+      </ul>
+
+      <h2 class="section-title">La carabela y el puerto</h2>
+      <div class="music-block">
+        <p>
+          La bahía de Baiona está protegida por el Castillo de Monterreal — tres kilómetros de murallas almenadas sobre la península de Monte Boi que hoy albergan el Parador Nacional — y por las Islas Cíes al norte, que cortan los vientos del Atlántico. Era, en 1493, uno de los puertos más seguros de la costa gallega. Eso explica por qué Cristóbal García Sarmiento, el piloto baionés a bordo de la Pinta, fijó el rumbo aquí cuando la tormenta de las Azores destrozó el aparejo: conocía esta bahía mejor que nadie.
+        </p>
+        <p>
+          Amarrada en el puerto, bajo las murallas del castillo, está la <strong>réplica de la Carabela Pinta</strong> construida para el V Centenario del Descubrimiento. Hoy es un museo flotante que recrea el interior del barco: los camarotes, la carga, las condiciones de navegación de trece hombres en veinte metros de eslora cruzando el Atlántico. Se puede visitar por dos euros. Verla antes de la representación teatral cambia completamente la perspectiva de lo que se está conmemorando.
+        </p>
+        <ul>
+          <li>Visita la carabela al llegar, antes del mercado. La escala real del barco hace que el resto de la fiesta tenga más sentido.</li>
+          <li>Para ver la entrada de la réplica en la bahía al atardecer del domingo, sitúate en las murallas del Castillo de Monterreal — la perspectiva desde arriba, con el barco entrando por la bocana y el mar abierto detrás, es la imagen más poderosa de toda la fiesta.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La entrada de la carabela por la bocana</h3>
+          <span class="tag">Domingo 1 de marzo · Al atardecer · Puerto de Baiona</span>
+          <p>El cañonazo desde el mar anuncia la llegada. La silueta de la carabela aparece por la bocana con el Castillo de Monterreal encendiéndose al fondo. Es el momento en que el hecho histórico y la recreación se superponen exactamente en el mismo lugar donde ocurrió hace más de cinco siglos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el cañonazo sobre la bahía de Baiona es el único sonido de este catálogo que lleva más de quinientos años sonando en el mismo puerto con el mismo significado. Las murallas de Monterreal están ahí desde antes de 1493. La bocana es la misma. La escala del momento no existe en ninguna otra recreación histórica de España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La representación teatral en A Ribeira</h3>
+          <span class="tag">Domingo 1 de marzo · Al atardecer · Playa de A Ribeira</span>
+          <p>El acto central de la fiesta: el barco de época se acerca a la costa, desembarcan los actores como tripulantes exhaustos e indígenas americanos, y Pinzón relata la gesta al Corregidor. Dramaturgia de Avelino Sierra, dirección de Mónica Sueiro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la única recreación teatral en España que representa el momento exacto en que Europa supo que existía otro continente. El texto y la puesta en escena cambian cada año, pero el hecho que recrean es siempre el mismo: la primera conversación entre un europeo y alguien que venía de América.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las justas a caballo en A Ribeira</h3>
+          <span class="tag">Sábado 28 · Tarde · Playa de A Ribeira</span>
+          <p>Caballeros armados compiten con lanzas en la playa de A Ribeira con el océano Atlántico de fondo. El polvo de la arena, el estruendo del impacto y el público pegado a la orilla hacen de esto el espectáculo más físico de toda la fiesta.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque las justas en una playa atlántica con el Castillo de Monterreal al fondo es una imagen que no tiene equivalente en ningún otro mercado medieval de España. El marco natural convierte un espectáculo de recreación en algo que parece real.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La réplica de la Carabela Pinta</h3>
+          <span class="tag">Todo el año · Puerto de Baiona · 2€</span>
+          <p>El museo flotante amarrado bajo las murallas de Monterreal: la réplica exacta de la carabela con los camarotes, la carga y las condiciones de navegación de 1493 reproducidas. Trece hombres. Veinte metros de eslora. El Atlántico.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver el tamaño real del barco que cruzó el Atlántico en 1492-1493 es la experiencia más perturbadora de Baiona. El interior de la carabela hace que el resto de la fiesta — la representación, el mercado, el cañonazo — cobre una escala que las palabras no dan.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Los autobuses lanzadera.</strong> Baiona colapsa durante la fiesta. El Concello habilita autobuses gratuitos cada media hora desde Porto do Molle — aparca allí y llega en lanzadera. Es la única manera de evitar el atasco de los accesos por carretera.</li>
+        <li><strong>Cuándo ir.</strong> El domingo es el día del Aniversario y la representación teatral — el más cargado emocionalmente. El sábado tiene las justas y el mercado a pleno rendimiento. Si solo puedes ir un día, el domingo es el día central.</li>
+        <li><strong>La carabela primero.</strong> Visítala al llegar, antes del mercado. La réplica abre de martes a domingo — en fin de semana de fiesta el horario puede ampliarse, confirma en el Concello. El precio es de 2 euros, o 3 con la Casa de la Navegación incluida.</li>
+        <li><strong>Para ver la entrada de la carabela.</strong> Las murallas del Castillo de Monterreal dan la mejor perspectiva — el barco entrando por la bocana con el mar abierto detrás. Llega con tiempo para subir antes del cañonazo.</li>
+        <li><strong>Acceso gratuito.</strong> El mercado medieval, las representaciones en la playa y los espectáculos de calle son de acceso libre. La réplica de la carabela y la Casa de la Navegación tienen entrada de pago.</li>
+        <li><strong>Cómo llegar.</strong> Baiona está a unos 35 minutos de Vigo por la autopista AG-57 (Val Miñor) o por la carretera escénica de la costa PO-325. Desde Pontevedra, unos 50 minutos por la AP-9 y la AG-57. También existe la opción de llegar en barco desde Vigo.</li>
+        <li><strong>Alojamiento.</strong> Baiona tiene oferta limitada para el volumen de visitantes — reserva con meses de antelación. Vigo, a 35 minutos, tiene mucha más capacidad.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de la Arribada</h2>
+      <dl class="festero">
+
+        <dt>Arribada</dt>
+        <dd>La llegada de la Carabela Pinta al puerto de Baiona el 1 de marzo de 1493. En términos náuticos, una <em>arribada</em> es la entrada forzosa a un puerto por mal tiempo o avería — lo que describes exactamente lo que hizo Pinzón: refugiarse en Baiona para reparar el aparejo maltrecho por las tormentas del Atlántico. La palabra da nombre a la fiesta y al momento histórico que conmemora.</dd>
+
+        <dt>Corregidor</dt>
+        <dd>El representante de la autoridad real en Baiona en 1493 — el primer europeo en recibir oficialmente la noticia del Descubrimiento de boca de Pinzón. La escena de Pinzón relatando la gesta al Corregidor es el momento central que reconstruye la representación teatral cada año en la playa de A Ribeira.</dd>
+
+        <dt>Real Mercado Medieval</dt>
+        <dd>El nombre oficial del mercado de artesanos que ocupa el Paseo Pinzón y la Alameda durante la fiesta. El adjetivo «Real» no es decorativo — se refiere a que Baiona ostentó el título de Real Villa, concedido por los Reyes Católicos precisamente después de la Arribada, en reconocimiento al papel de la villa en la historia del Descubrimiento.</dd>
+
+        <dt>Monte Boi</dt>
+        <dd>La península que cierra la bahía de Baiona por el sur, sobre la que se asienta el Castillo de Monterreal. El nombre gallego — «monte del buey» — lleva siglos designando este promontorio que vigila la bocana del puerto. Desde sus murallas se ve la carabela entrar al atardecer del domingo.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/arribada-carabela-pinta-baiona-1.jpg" alt="Réplica de la Carabela Pinta entrando en la bahía de Baiona al atardecer con el Castillo de Monterreal iluminado durante la Festa da Arribada" loading="lazy" />
+        <img src="images/arribada-carabela-pinta-baiona-2.jpg" alt="Representación teatral de la Arribada do Descubrimento en la playa de A Ribeira de Baiona con actores caracterizados de tripulantes y nativos americanos" loading="lazy" />
+        <img src="images/arribada-carabela-pinta-baiona-3.jpg" alt="Justas medievales a caballo en la playa de A Ribeira de Baiona durante la Festa da Arribada con el Atlántico al fondo" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.baiona.gal" target="_blank" rel="noopener">Concello de Baiona — programa oficial y autobuses lanzadera</a></li>
+        <li><a href="https://turismoriasbaixas.com/es/descubre/rias-baixas-cultural/fiestas/arribada-de-baiona" target="_blank" rel="noopener">Turismo Rías Baixas — información sobre la Arribada</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — información regional</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-02</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Festa da Arribada de Baiona en 2026?</dt>
+        <dd>Del <strong>viernes 27 de febrero al domingo 1 de marzo de 2026</strong>. XXX edición del Real Mercado Medieval, 533 Aniversario de la Arribada. Actos previos desde el 25 de febrero.</dd>
+
+        <dt>¿Por qué Baiona fue el primer pueblo de Europa en saber que existía América?</dt>
+        <dd>Porque el 1 de marzo de 1493 la Carabela Pinta entró en el puerto de Baiona tras ser separada de La Niña por una tormenta. El piloto baionés Cristóbal García Sarmiento fijó el rumbo hacia la bahía de su villa natal. Los vecinos y el corregidor fueron los primeros europeos en ver nativos americanos y productos del Nuevo Mundo.</dd>
+
+        <dt>¿Qué es el Real Mercado Medieval?</dt>
+        <dd>Más de 150 puestos de artesanos, orfebres, herreros y gastronomía tradicional en el Paseo Pinzón y la Alameda. Acceso gratuito. En 2026 celebra su XXX edición.</dd>
+
+        <dt>¿Qué le pasó a Martín Alonso Pinzón tras la Arribada?</dt>
+        <dd>Llegó a Baiona gravemente enfermo. Partió hacia Palos de la Frontera, donde murió quince días después sin entrevistarse con los Reyes Católicos.</dd>
+
+        <dt>¿Se puede visitar la réplica de la Carabela Pinta?</dt>
+        <dd>Sí — es un museo flotante amarrado bajo las murallas de Monterreal. Entrada de 2 euros (3 con la Casa de la Navegación). Abre de martes a domingo. Recomendable visitarla antes de la representación teatral del domingo.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">Pontevedra</a>
+        <a href="#" class="etiqueta">Febrero-Marzo</a>
+        <a href="#" class="etiqueta">Historia Naval</a>
+        <a href="#" class="etiqueta">Descubrimiento de América</a>
+        <a href="#" class="etiqueta">Mercado Medieval</a>
+        <a href="#" class="etiqueta">Rías Baixas</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-baiona">
+        <h2 id="rel-title-baiona">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Romería Vikinga de Catoira en las Torres del Oeste" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Los vikingos asaltan las Torres del Oeste en la ría de Arousa.</span>
+              <span class="rel-meta">Catoira · Galicia</span>
+            </div>
+          </a>
+
+          <a href="guerras-cantabras-corrales-buelna.html" class="ficha-rel-card">
+            <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Recreación de las Guerras Cántabras en Los Corrales de Buelna" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Guerras Cántabras de Los Corrales de Buelna</span>
+              <span class="rel-frase">La resistencia cántabra contra Roma recreada en el valle del Besaya.</span>
+              <span class="rel-meta">Los Corrales de Buelna · Cantabria</span>
+            </div>
+          </a>
+
+          <a href="cascamorras-baza-guadix.html" class="ficha-rel-card">
+            <img src="images/cascamorras-baza-guadix.jpg" alt="El Cascamorras en las calles de Baza durante la fiesta" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">El Cascamorras de Baza y Guadix</span>
+              <span class="rel-frase">El albañil que intenta robar una virgen y llega empapado de pintura.</span>
+              <span class="rel-meta">Baza y Guadix · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Concello de Baiona, BOE, Turismo de Galicia y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
