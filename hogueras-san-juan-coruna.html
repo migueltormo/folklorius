@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hogueras San Juan A Coruña 2026: Noite da Queima y meigas</title>
+  <meta name="description" content="Hogueras San Juan A Coruña 2026: noche del 23 junio. La Noite da Queima, la Falla Mayor, 150.000 personas y arco de fuego en Riazor y Orzán. ITI 2015." />
+  <link rel="canonical" href="https://folklorius.es/hogueras-san-juan-coruna.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hogueras de San Juan de A Coruña: cientos de cacharelas, la Falla Mayor a medianoche y el olor a sardina desde el amanecer" />
+  <meta property="og:description" content="La noche del 23 de junio, A Coruña enciende cientos de hogueras simultáneas en sus playas. La Falla Mayor arde a medianoche en Riazor. El Atlántico de fondo, las gaitas, el meigallo y el olor a sardina asada sobre broa. La Noite da Queima más grande de Galicia." />
+  <meta property="og:image" content="https://folklorius.es/images/hogueras-san-juan-coruna.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/hogueras-san-juan-coruna.html",
+    "name": "Hogueras de San Juan de A Coruña",
+    "startDate": "2026-06-23",
+    "endDate": "2026-06-24",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Playas de Riazor y Orzán, A Coruña",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "A Coruña",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3623,
+        "longitude": -8.4115
+      }
+    },
+    "image": ["https://folklorius.es/images/hogueras-san-juan-coruna.jpg"],
+    "description": "Las Hogueras de San Juan de A Coruña son la Noite da Queima más grande de Galicia: más de 150.000 personas en las playas de Riazor y Orzán, cientos de cacharelas simultáneas y la quema de la Falla Mayor a medianoche. Declaradas Fiesta de Interés Turístico Internacional en mayo de 2015.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de A Coruña y Asociación de Meigas de las Hogueras de San Juan",
+      "url": "https://www.coruna.gal"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hogueras de San Juan de A Coruña",
+        "item": "https://folklorius.es/hogueras-san-juan-coruna.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Noite da Queima en A Coruña en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La noche del 23 al 24 de junio de 2026. La Falla Mayor arde a medianoche en las playas de Riazor y Orzán. El 24 de junio es festivo en A Coruña. El programa cultural previo ocupa todo el mes de junio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Falla Mayor y en qué se diferencia de las fallas valencianas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Falla Mayor de A Coruña es una estructura efímera de cartón piedra y madera con temática de brujas, mitología gallega o sátira local coruñesa. Se quema a medianoche en Riazor. Aunque visualmente comparte el lenguaje de las fallas valencianas, el contenido es propio de la tradición gallega del San Juan: meigas, rituales de solsticio y humor local, no ninots satíricos de personajes políticos nacionales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las cacharelas y cómo se organizan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las cacharelas son las hogueras de San Juan que encienden los vecinos en las playas y barrios de A Coruña paralelamente a la Falla Mayor. El Ayuntamiento reparte gratuitamente unas 120 toneladas de leña en 12-14 puntos de los arenales al atardecer del 23 de junio. Está prohibido bajar envases de vidrio y lanzar farolillos voladores."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué rituales se hacen en la noche de San Juan en A Coruña?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los tres ritos principales son: saltar las llamas siempre en número impar de veces (3, 7 o 9) para espantar el meigallo (el mal de ojo); dejar en agua durante la noche las siete hierbas de San Juan — hinojo, helecho, codeso, hierba de San Juan, malva, romero e hierbaluisa — para lavarse la cara al amanecer del 24; y recoger ramos de flores de San Juan en los mercados de la ciudad la mañana del 23."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué las sardinas son el plato de San Juan en A Coruña?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El refrán gallego lo explica: «Polo San Xoán, a sardiña molla o pan». El 23 de junio coincide con el momento de mayor contenido graso de la sardina atlántica. Se asan en parrillas en todos los barrios y se comen sobre broa — pan denso de maíz que absorbe la grasa sin deshacerse. La ciudad entera huele a sardina asada desde el mediodía."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Hogueras de San Juan de A Coruña
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/hogueras-san-juan-coruna.jpg" alt="Cientos de cacharelas ardiendo simultáneamente en la playa de Riazor de A Coruña durante la Noite da Queima de San Juan con el Atlántico de fondo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Hogueras de San Juan de A Coruña</h1>
+      <p class="ficha-subtitle">
+        A Coruña · Tradición etnográfica · «La Noite da Queima más grande de Galicia.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave 2026">
+        <div class="fechas-grandes">Noche del 23 al 24 de junio de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 A Coruña · Galicia</span>
+          <span>⏱️ Mes de junio · Noche grande: 23 junio</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Los rituales de San Juan — saltar las llamas, el agua con hierbas, los ramos — son prácticas con significado real para muchos coruñeses, no decorado folklórico para turistas. Participar con respeto incluye no interferir en los saltos de otras personas ni acercarse a las cacharelas ajenas sin permiso.</li>
+          <li>Las 120 toneladas de leña que reparte el Ayuntamiento son la única madera autorizada en los arenales. La normativa prohíbe el vidrio y los farolillos. No son caprichos administrativos — son medidas de seguridad para una playa con más de 150.000 personas.</li>
+          <li>El Aquelarre Poético y la proclamación de la Meiga Mayor son actos institucionales de la fiesta con más de cincuenta años de historia. La Meiga Mayor no es una reina de belleza — es la representante elegida de la sociedad coruñesa para ese año.</li>
+          <li>Los barrios de A Coruña viven su propia Noite da Queima al margen de las playas grandes. Riazor y Orzán son los escenarios más concurridos, pero las <em>cacharelas</em> arden también en plazas, calles y rincones de toda la ciudad. Respeta los espacios de los vecinos que celebran en su barrio.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Desde el mediodía, toda la ciudad huele a sardina asada. Las parrillas llevan horas encendidas en todos los barrios y el humo se mezcla con el salitre que entra desde el Atlántico. Al caer la noche, la gente empieza a bajar a las playas con leña en brazos. Riazor y Orzán se llenan despacio, y luego de golpe. Cuando la Meiga Mayor enciende la Falla Mayor a medianoche, ya hay más de ciento cincuenta mil personas en los arenales y el arco de fuego naranja de las <em>cacharelas</em> se ve desde los trece kilómetros del Paseo Marítimo. El Atlántico queda oscuro al fondo. Es la noche más corta del año.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Hogueras de San Juan de A Coruña — <em>As Fogueiras de San Xoán</em> — son la <strong>Noite da Queima más grande de Galicia</strong>: la noche del 23 al 24 de junio, más de <strong>150.000 personas</strong> se congregan en las playas de Riazor y Orzán para encender cientos de hogueras simultáneas, saltar las llamas, comer sardinas asadas sobre broa y ver cómo la Meiga Mayor prende la Falla Mayor a medianoche. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó en mayo de 2015, firmada por la secretaria de Estado de Turismo. La <strong>Fiesta de Interés Turístico Nacional</strong> la había obtenido en 2003, impulsada por la concejala Belén do Campo Piñeiro.
+      </p>
+      <p>
+        La fiesta desborda la noche grande. Durante <strong>todo el mes de junio</strong> el programa cultural de las Hogueras llena la ciudad de conciertos, ballet, teatro, exposiciones y <em>rúadas</em> — los pasacalles con gaitas y panderetas que recorren las calles. La Meiga Mayor, elegida entre octubre y enero anterior, preside los actos junto a sus Meigas de Honor y la Meiga Mayor Infantil. El <strong>Aquelarre Poético</strong> — la velada poética de proclamación de la Meiga Mayor, que celebra su <strong>54ª edición en 2026</strong> — arranca en mayo la cuenta atrás hacia la noche grande.
+      </p>
+      <p class="nota-grid">⚠️ El programa de la Noite da Queima 2026 y las actividades de junio los publica el <a href="https://www.coruna.gal" target="_blank" rel="noopener">Ayuntamiento de A Coruña</a> y la <a href="https://www.hoguerassanjuan.com" target="_blank" rel="noopener">Asociación de Meigas</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        San Juan fue el patrón de A Coruña hasta el siglo XVI, cuando fue sustituido por la Virgen del Rosario tras el asedio de Francis Drake. La fiesta del solsticio de verano tiene raíces celtas — la celebración de Litha, el fuego purificador que daba fuerza al sol antes de que los días empezaran a acortar — sincretizadas con el nacimiento de San Juan Bautista, cuyo padre Zacarías encendió una hoguera para anunciarlo. Durante siglos, las <em>cacharelas</em> ardían por barrios, especialmente en el Campo da Leña.
+      </p>
+      <p>
+        La fiesta estructurada moderna nació en <strong>junio de 1970</strong>, cuando un grupo de jóvenes coruñeses creó la Comisión Promotora de las Hogueras de San Juan para revivir una tradición que estaba perdiendo fuerza. En esa primera edición, en el Paseo de Ronda (hoy Avenida de Calvo Sotelo), encendieron la primera hoguera oficial y proclamaron a la primera Meiga Mayor: <strong>Estrella Pardo Castiñeiras</strong>. El <strong>Aquelarre Poético</strong> arrancó en <strong>1971</strong>. El traslado masivo de la celebración a las playas de Riazor y Orzán no llegó hasta <strong>1992</strong>. La fiesta de Interés Turístico Nacional llegó en <strong>2003</strong> y la Internacional en <strong>2015</strong>.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La <strong>Noite da Queima</strong> es la noche del <strong>23 al 24 de junio de 2026</strong>. El 24 de junio es festivo en A Coruña. El programa cultural de las Hogueras ocupa todo el mes de junio con actos en la Plaza de María Pita, la Avenida del Puerto y otros espacios de la ciudad. El Aquelarre Poético, con la proclamación de la Meiga Mayor, se celebra en mayo. El programa completo lo publica la Asociación de Meigas en <a href="https://www.hoguerassanjuan.com" target="_blank" rel="noopener">hoguerassanjuan.com</a>.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Mayo · Aquelarre Poético</span>
+          La <strong>54ª edición del Aquelarre Poético</strong> arranca la cuenta atrás oficial: una velada literaria donde se proclama la Meiga Mayor del año, rodeada de sus Meigas de Honor y la Meiga Mayor Infantil. El acto se celebra desde 1971.
+        </li>
+        <li>
+          <span class="dia-label">Todo junio · Programa cultural</span>
+          Conciertos de música de cámara, ballet, teatro, exposiciones y <em>rúadas</em> — los pasacalles con gaitas y panderetas — llenan la ciudad durante un mes. Los Premios San Juan reconocen cada año a personas e instituciones que han aportado a la ciudad. Los escenarios principales son la Plaza de María Pita y la Avenida del Puerto.
+        </li>
+        <li>
+          <span class="dia-label">23 de junio · Todo el día</span>
+          Desde la mañana, los mercados y las parrillas de los barrios marcan el ritmo. Las sardinas se asan sobre broa en todas las calles. Desfiles de gigantes y cabezudos, pasacalles y actuaciones llenan la ciudad. Al atardecer el Ayuntamiento reparte la leña en los puntos habilitados de los arenales.
+        </li>
+        <li>
+          <span class="dia-label">23 de junio · Al anochecer · Riazor y Orzán</span>
+          La gente baja a las playas con la leña y empieza a encender las <strong>cacharelas</strong>. Las playas se llenan progresivamente. Los rituales arrancan: se saltan las llamas en número impar, se recogen los ramos de San Juan, se prepara el agua con las siete hierbas silvestres para el alba.
+        </li>
+        <li>
+          <span class="dia-label">23 de junio · A medianoche · Riazor</span>
+          La <strong>Meiga Mayor</strong> enciende la <strong>Falla Mayor</strong> en la playa de Riazor. La estructura de cartón piedra y madera — con temática de brujas, mitología gallega o sátira coruñesa — arde mientras los fuegos artificiales cierran la noche sobre el Atlántico.
+        </li>
+        <li>
+          <span class="dia-label">24 de junio · Al amanecer</span>
+          Los que han pasado la noche en la playa se lavan la cara con el agua de San Juan — las siete hierbas que dejaron en remojo la noche anterior. Las playas se desalojan progresivamente para que los equipos de limpieza devuelvan los arenales a la normalidad antes de mediodía. El 24 es festivo en A Coruña.
+        </li>
+      </ul>
+
+      <h2 class="section-title">La Noite da Queima: rituales y fuego</h2>
+      <div class="music-block">
+        <p>
+          La noche de San Juan en A Coruña tiene dos capas que conviven en las mismas playas. La primera es el <strong>ritual</strong>: saltar las llamas un número impar de veces — tres, siete o nueve — para espantar el <em>meigallo</em>. Recoger las <strong>siete hierbas de San Juan</strong> — hinojo, helecho, codeso, hierba de San Juan, malva, romero e hierbaluisa — y dejarlas en agua durante la noche para lavarse la cara al amanecer y ahuyentar a las meigas. Llevar un ramo de flores de San Juan comprado en los mercados de la mañana. Son prácticas de origen celta y medieval que los coruñeses siguen haciendo con naturalidad, no como curiosidad etnográfica sino como parte de lo que es esa noche. A ellas se suma el <strong>baño de las nueve olas</strong>: quienes se atreven entran al mar de madrugada y saltan nueve olas consecutivas para purificarse de cara al año que empieza.
+        </p>
+        <p>
+          La segunda capa es el <strong>espectáculo</strong>: la <em>Falla Mayor</em>, una estructura de cartón piedra y madera con figuras de brujas o personajes de la mitología gallega, que arde a medianoche mientras los fuegos artificiales estallan sobre el Atlántico. Paralelamente, cientos de <em>cacharelas</em> ciudadanas — encendidas con la leña que reparte el Ayuntamiento en Riazor, Orzán, San Amaro y Oza — crean un arco de fuego naranja sobre los trece kilómetros del Paseo Marítimo. El sonido son las olas batiendo, el crepitar de la leña, los fuegos artificiales y las gaitas de las <em>rúadas</em> que siguen recorriendo las calles. El olor es sardina asada, humo de pino y salitre. El Atlántico queda oscuro al fondo.
+        </p>
+        <ul>
+          <li>Para ver bien la quema de la Falla Mayor llega a Riazor con tiempo — el arenal se llena rápido. Los taludes y muretes del Paseo Marítimo ofrecen visión sin estar en el gentío de la arena.</li>
+          <li>El arco de cacharelas se ve mejor desde los tramos más altos del Paseo Marítimo, alejados del núcleo de Riazor. Más distancia, más perspectiva del fuego sobre el agua.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La quema de la Falla Mayor a medianoche</h3>
+          <span class="tag">23 junio · Medianoche · Playa de Riazor</span>
+          <p>La Meiga Mayor prende la Falla Mayor — una estructura de cartón piedra y madera con figuras de la mitología gallega — a medianoche en Riazor. Los fuegos artificiales estallan sobre el Atlántico. Es el momento cumbre de la Noite da Queima.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la combinación de la Falla ardiendo, los fuegos artificiales y el océano oscuro de fondo no existe igual en ningún otro San Juan de España. La escala de Riazor — una playa urbana de A Coruña con más de cien mil personas — hace que el momento tenga una dimensión diferente a cualquier hoguera de barrio.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El arco de cacharelas desde el Paseo Marítimo</h3>
+          <span class="tag">23 junio · Noche · Paseo Marítimo</span>
+          <p>Desde el Paseo Marítimo — más de trece kilómetros, uno de los más largos de Europa — se ven simultáneamente cientos de hogueras encendidas a lo largo de Riazor, Orzán y las calas del arco de la bahía. Un arco de fuego naranja sobre el Atlántico oscuro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la imagen más propia de A Coruña en la Noite da Queima y no se puede fotografiar desde dentro de la playa. La perspectiva del Paseo Marítimo, especialmente desde los tramos más elevados sobre el mar, da la escala real de lo que está pasando en los arenales.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La sardiñada de barrio</h3>
+          <span class="tag">23 junio · Desde mediodía · Barrios de A Coruña</span>
+          <p>Desde el mediodía, toda la ciudad huele a sardina asada. Las parrillas arden en todas las calles y plazas. La sardina se come sobre broa — pan de maíz denso — siguiendo el refrán gallego: «Polo San Xoán, a sardiña molla o pan». Es el plato de esta noche y de ninguna otra.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la sardiñada de barrio es la fiesta real antes de la fiesta grande. Los vecinos llevan sillas a la calle, ponen las parrillas y comen juntos antes de bajar a las playas. Perderse eso para llegar directamente a Riazor es perderse la mitad de lo que hace especial esta noche en A Coruña.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Aquelarre Poético</h3>
+          <span class="tag">Mayo · Teatro Rosalía de Castro</span>
+          <p>La velada literaria donde se proclama la Meiga Mayor del año. 54ª edición en 2026. Existe desde 1971 y combina poesía, música y la investidura de la figura central de las Hogueras. Es el acto más solemne de toda la temporada festiva — y el más desconocido fuera de la ciudad.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Aquelarre Poético lleva más de cincuenta años siendo el arranque cultural de las Hogueras y muy poca gente de fuera de A Coruña lo conoce. Si vas a la ciudad en mayo, es el acto que mejor resume por qué las Hogueras de San Juan de A Coruña son algo más que una noche de hogueras en la playa.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>La leña.</strong> El Ayuntamiento reparte leña gratuitamente al atardecer del 23 en los puntos habilitados de los arenales. Solo esa madera es la autorizada en la playa. Está prohibido bajar vidrio y farolillos voladores — la normativa se aplica.</li>
+        <li><strong>Dónde situarse.</strong> Riazor y Orzán son las playas principales, pero se llenan. Las calas del Paseo Marítimo más alejadas del centro tienen cacharelas y menos gentío. Para ver el arco de fuego completo, sube al Paseo Marítimo por encima del arenal.</li>
+        <li><strong>El día 23.</strong> El ambiente empieza mucho antes de la noche — las sardiñadas de barrio arrancan al mediodía. Si llegas por la tarde, pasa por los mercados antes de bajar a la playa para entender el pulso real de la jornada.</li>
+        <li><strong>Las hierbas de San Juan.</strong> En los mercados de la mañana del 23 venden ramos de flores silvestres de San Juan. Si quieres hacer el ritual del agua, cómpralos allí — son siete hierbas específicas, no cualquier planta.</li>
+        <li><strong>Cómo llegar.</strong> A Coruña está a unos 50 minutos de Santiago de Compostela por la AP-9 y a unos 45 de Ferrol por la misma autopista. La noche del 23 el Paseo Marítimo se corta al tráfico — usa los parkings disuasorios habilitados y llega caminando.</li>
+        <li><strong>El 24 de junio.</strong> Es festivo en A Coruña. Las playas se limpian por la mañana y quedan operativas antes del mediodía. Si te quedas ese día, es el más tranquilo del ciclo festivo.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de San Juan</h2>
+      <dl class="festero">
+
+        <dt>Cacharela / Lumeirada</dt>
+        <dd>La hoguera de San Juan en gallego. Las <em>cacharelas</em> son las hogueras que encienden los vecinos en las playas y barrios paralelamente a la Falla Mayor oficial. En A Coruña, el Ayuntamiento reparte la leña para las cacharelas en los arenales al atardecer del 23 de junio. La imagen de cientos de cacharelas ardiendo simultáneamente en Riazor y Orzán es la postal más característica de la Noite da Queima coruñesa.</dd>
+
+        <dt>Noite da Queima</dt>
+        <dd>El nombre gallego de la noche del 23 al 24 de junio en A Coruña: la noche de la quema. La <em>queima</em> es tanto la quema de la Falla Mayor como el conjunto de cacharelas que arden en los arenales. El 24 de junio es festivo en la ciudad.</dd>
+
+        <dt>Meigallo</dt>
+        <dd>El mal de ojo o maleficio en la tradición gallega. Uno de los rituales centrales de la Noite da Queima es saltar las llamas un número impar de veces — tres, siete o nueve — para espantar el <em>meigallo</em> y purificar el cuerpo de cara al año que empieza. El número impar es requisito del rito: un número par un número par no purifica — atrae el mal.</dd>
+
+        <dt>Rúada</dt>
+        <dd>El pasacalles con gaitas, panderetas y percusión tradicional gallega que recorre las calles de A Coruña durante las fiestas de junio. Las <em>rúadas</em> son el sonido de fondo de toda la temporada festiva — no de la noche de las playas sino de los días previos que llenan la ciudad de música desde las plazas y los barrios.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/hogueras-san-juan-coruna-1.jpg" alt="Cientos de cacharelas ardiendo en la playa de Riazor de A Coruña durante la Noite da Queima de San Juan con el Atlántico de fondo" loading="lazy" />
+        <img src="images/hogueras-san-juan-coruna-2.jpg" alt="La Meiga Mayor de las Hogueras de San Juan de A Coruña durante el Aquelarre Poético de proclamación" loading="lazy" />
+        <img src="images/hogueras-san-juan-coruna-3.jpg" alt="Sardinas asadas sobre broa en una parrilla de barrio de A Coruña durante la jornada del 23 de junio de San Juan" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.hoguerassanjuan.com" target="_blank" rel="noopener">Asociación de Meigas de las Hogueras de San Juan — programa oficial</a></li>
+        <li><a href="https://www.coruna.gal" target="_blank" rel="noopener">Ayuntamiento de A Coruña — información municipal y normativa</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — información regional</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-02</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Noite da Queima en A Coruña en 2026?</dt>
+        <dd>La noche del <strong>23 al 24 de junio de 2026</strong>. La Falla Mayor arde a medianoche en Riazor. El 24 de junio es festivo en A Coruña.</dd>
+
+        <dt>¿Qué es la Falla Mayor y cómo se diferencia de las fallas valencianas?</dt>
+        <dd>Una estructura de cartón piedra y madera con figuras de brujas, mitología gallega o sátira coruñesa que se quema a medianoche en Riazor. Comparte el lenguaje visual con las fallas valencianas pero el contenido es propio de la tradición gallega del solsticio.</dd>
+
+        <dt>¿Qué son las cacharelas y cómo se organizan?</dt>
+        <dd>Las hogueras que encienden los vecinos en las playas y barrios. El Ayuntamiento reparte gratuitamente unas 120 toneladas de leña en los arenales al atardecer del 23. Prohibido el vidrio y los farolillos voladores.</dd>
+
+        <dt>¿Qué rituales se hacen en la noche de San Juan en A Coruña?</dt>
+        <dd>Saltar las llamas un número impar de veces (3, 7 o 9) para espantar el <em>meigallo</em>; dejar siete hierbas silvestres en agua durante la noche para lavarse la cara al amanecer; y recoger ramos de flores de San Juan en los mercados de la mañana.</dd>
+
+        <dt>¿Por qué las sardinas son el plato de esa noche?</dt>
+        <dd>El refrán lo dice: «Polo San Xoán, a sardiña molla o pan». El 23 de junio coincide con el momento de mayor contenido graso de la sardina atlántica. Se asan en parrillas en todos los barrios y se comen sobre broa — pan denso de maíz que absorbe la grasa sin deshacerse.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Tradición Etnográfica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">A Coruña</a>
+        <a href="#" class="etiqueta">Junio</a>
+        <a href="#" class="etiqueta">Fuego</a>
+        <a href="#" class="etiqueta">Solsticio</a>
+        <a href="#" class="etiqueta">Meigas</a>
+        <a href="#" class="etiqueta">San Juan</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-coruna">
+        <h2 id="rel-title-coruna">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="hogueras-san-juan-alicante.html" class="ficha-rel-card">
+            <img src="images/hogueras-san-juan-alicante.jpg" alt="Hogueras de San Juan de Alicante" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Hogueras de San Juan de Alicante</span>
+              <span class="rel-frase">Las fallas del mediterráneo que arden en la noche más corta del año.</span>
+              <span class="rel-meta">Alicante · Comunitat Valenciana</span>
+            </div>
+          </a>
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Romería Vikinga de Catoira en las Torres del Oeste" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">Los vikingos asaltan las Torres del Oeste en la ría de Arousa.</span>
+              <span class="rel-meta">Catoira · Galicia</span>
+            </div>
+          </a>
+
+          <a href="noche-tambores-mula.html" class="ficha-rel-card">
+            <img src="images/noche-tambores-mula.jpg" alt="Tamboristas en la Noche de los Tambores de Mula" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Noche de los Tambores de Mula</span>
+              <span class="rel-frase">Diez mil tambores en la oscuridad. El Viernes Santo más ruidoso de España.</span>
+              <span class="rel-meta">Mula · Murcia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Asociación de Meigas, Ayuntamiento de A Coruña, BOE y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
