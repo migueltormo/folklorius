@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fiestas del Motín de Aranjuez 2026: recreación histórica de 1808</title>
+  <meta name="description" content="Fiestas del Motín de Aranjuez 2026: primera semana de septiembre, 44ª edición. Vecinos recrean la caída de Godoy y la abdicación de Carlos IV. ITI 2014." />
+  <link rel="canonical" href="https://folklorius.es/motin-aranjuez.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="El Motín de Aranjuez: 170 vecinos gritan «¡Muera Godoy!» y el Palacio Real se convierte en escenario" />
+  <meta property="og:description" content="La noche del viernes, antorchas y gritos por las calles del Real Sitio. La noche del sábado, 8.000 personas sentadas frente a la fachada del Palacio Real para ver cómo sus vecinos remueven España entera. El domingo, piratas por el Tajo. Las únicas fiestas de la Comunidad de Madrid con declaración internacional." />
+  <meta property="og:image" content="https://folklorius.es/images/motin-aranjuez.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/motin-aranjuez.html",
+    "name": "Fiestas del Motín de Aranjuez",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Aranjuez, Madrid",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aranjuez",
+        "addressRegion": "Comunidad de Madrid",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.0354,
+        "longitude": -3.6083
+      }
+    },
+    "image": ["https://folklorius.es/images/motin-aranjuez.jpg"],
+    "description": "Las Fiestas del Motín de Aranjuez recrean cada septiembre el levantamiento popular de marzo de 1808 que derribó a Godoy y precipitó la abdicación de Carlos IV. Los propios vecinos de Aranjuez son los actores bajo la dirección de la compañía Yllana. Declaradas Fiesta de Interés Turístico Internacional en 2014.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento del Real Sitio y Villa de Aranjuez",
+      "url": "https://www.aranjuez.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fiestas del Motín de Aranjuez",
+        "item": "https://folklorius.es/motin-aranjuez.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran las Fiestas del Motín de Aranjuez en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La primera semana de septiembre de 2026, con el núcleo central entre el viernes y el domingo. El Ayuntamiento ha fijado el viernes 4 de septiembre como festivo local. El programa completo lo publica el Ayuntamiento del Real Sitio y Villa de Aranjuez en su web oficial antes de la celebración."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Representación del Motín de Aranjuez?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una obra de teatro al aire libre en la Plaza de Parejas, con la fachada monumental del Palacio Real de Aranjuez como telón de fondo. Unos 170 vecinos de Aranjuez actúan como la turba que en marzo de 1808 derribó el poder de Godoy. La dirección corre a cargo de la compañía teatral Yllana. El aforo de la plaza es de unas 8.000 personas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Descenso Pirata del Tajo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una cabalgata fluvial que desde 1980 llena el río Tajo de embarcaciones construidas a mano por los vecinos, sin motor. Los participantes descienden un tramo del río compitiendo por premios a la originalidad y la estética. Es el contrapunto festivo y carnavalesco de los actos goyescos del viernes y el sábado. En 2026 celebra su 47ª edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Son las únicas fiestas de la Comunidad de Madrid con declaración de Interés Turístico Internacional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Las Fiestas del Motín de Aranjuez son la única celebración de toda la Comunidad de Madrid con el título de Fiesta de Interés Turístico Internacional, concedido por resolución de la Secretaría de Estado de Turismo de 23 de julio de 2014 (BOE-A-2014-8344). Antes habían sido declaradas de Interés Turístico Nacional en 1990."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurrió realmente en el Motín de Aranjuez de 1808?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La noche del 17 de marzo de 1808, una turba popular asaltó el palacio de Manuel Godoy, el valido del rey Carlos IV, en Aranjuez. El pueblo temía que Godoy facilitara el paso de las tropas napoleónicas y propiciara la huida de la familia real a América, como había ocurrido en Portugal. El motín forzó a Carlos IV a destituir a Godoy y a abdicar en su hijo Fernando VII días después. Fue la chispa inmediata que precedió a la Guerra de la Independencia."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiestas del Motín de Aranjuez
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/motin-aranjuez.jpg" alt="Vecinos de Aranjuez caracterizados de época con antorchas durante el Asalto a la Casa de Godoy en las Fiestas del Motín de Aranjuez" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiestas del Motín de Aranjuez</h1>
+      <p class="ficha-subtitle">
+        Aranjuez (Madrid) · Recreación histórica · "La única fiesta de la Comunidad de Madrid con declaración de Interés Turístico Internacional."
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Primera semana de septiembre de 2026 · 44ª representación</div>
+        <div class="datos-secundarios">
+          <span>📍 Aranjuez · Comunidad de Madrid</span>
+          <span>⏱️ 4-5 días</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Los vecinos que actúan en la Representación llevan semanas de ensayos. No son figurantes: son el elenco. Merecen el mismo silencio que recibirían en cualquier teatro.</li>
+          <li>El Asalto a la Casa de Godoy es teatro itinerante: la comitiva avanza por las calles en movimiento. No se cruza ni se interrumpe.</li>
+          <li>La Plaza de Parejas la noche del sábado pertenece a los ribereños. El visitante entra como quien entra a un auditorio ajeno.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Ciento setenta vecinos de Aranjuez se ponen en la piel de la turba que la noche del 17 de marzo de 1808 asaltó el palacio de Godoy y lo escondió de sus propios guardias. Lo hacen cada septiembre desde 1982, en la misma ciudad donde ocurrió, con la fachada del Palacio Real de fondo y ocho mil personas sentadas delante. El grito de «¡Muera Godoy!» retumba entre los edificios del Real Sitio con una convicción que solo tienen quienes llevan dos meses ensayando para ese momento. Hay pueblos que conmemoran su historia. Aranjuez la representa.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Fiestas del Motín de Aranjuez son una <strong>recreación histórica popular</strong> de los hechos que en marzo de 1808 derribaron a Manuel Godoy, pusieron fin al gobierno de Carlos IV y abrieron la puerta a la Guerra de la Independencia. Durante cuatro o cinco días de la primera semana de septiembre, el casco histórico de Aranjuez se convierte en escenario de tres actos muy distintos: el pasacalles nocturno del <strong>Asalto a la Casa de Godoy</strong> el viernes, la <strong>Representación del Motín</strong> en la Plaza de Parejas el sábado, y el <strong>Descenso Pirata del Tajo</strong> el domingo. Son las únicas fiestas de toda la Comunidad de Madrid con declaración de <strong>Interés Turístico Internacional</strong> (BOE-A-2014-8344).
+      </p>
+      <p>
+        La clave de la fiesta es que los actores son los propios <strong>ribereños</strong> — el gentilicio informal de los habitantes de Aranjuez. Cada verano — habitualmente en junio — el Ayuntamiento abre la inscripción de amotinados voluntarios en el Centro Cultural Isabel de Farnesio. Los seleccionados pasan semanas de ensayos bajo la dirección de la compañía teatral profesional <strong>Yllana</strong>, que se encarga de la dramaturgia y la puesta en escena. El casting es abierto, los ensayos son de verano, y el resultado se nota en la Plaza de Parejas la noche del sábado.
+      </p>
+      <p>
+        La fiesta también incluye un <strong>Mercado Goyesco</strong>, una feria de artesanía y una <strong>Corrida Goyesca</strong> en la histórica plaza de toros del Real Sitio, que amplían el ambiente de época más allá de los tres actos principales.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo de cada edición lo publica el <a href="https://www.aranjuez.es" target="_blank" rel="noopener">Ayuntamiento del Real Sitio y Villa de Aranjuez</a>. Las fechas exactas pueden variar ligeramente cada año.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El <strong>17 de marzo de 1808</strong>, en Aranjuez, una turba popular asaltó el palacio del valido Manuel Godoy. El detonante era el miedo: el pueblo temía que Godoy facilitara el paso de las tropas de Napoleón y que la familia real huyera a América, como acababa de hacer la portuguesa. Godoy fue encontrado escondido enrollado en una estera y entregado a los guardias. Carlos IV, sin su hombre de confianza y ante la presión popular, lo destituyó y abdicó en su hijo Fernando VII días después. El Motín de Aranjuez fue la chispa inmediata de la Guerra de la Independencia y el primer eslabón del fin del Antiguo Régimen en España.
+      </p>
+      <p>
+        La fiesta moderna arrancó en <strong>1981</strong>, con la primera representación teatral en el Patio de Armas del Palacio Real el <strong>5 de septiembre de 1982</strong>. Nació para incorporar un componente cultural a las ferias de septiembre y fue ganando peso hasta convertirse en la fiesta central de Aranjuez. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en <strong>1990</strong>; la de <strong>Interés Turístico Internacional</strong>, el 23 de julio de <strong>2014</strong> (BOE-A-2014-8344). Desde 1984, cada edición nombra a un <strong>Amotinado Mayor</strong> — personalidad, institución o colectivo que representa los valores del pueblo — como figura honorífica central de la fiesta.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La edición de 2026 se celebra la <strong>primera semana de septiembre</strong>. El Ayuntamiento ha fijado el <strong>viernes 4 de septiembre</strong> como festivo local, lo que sitúa el núcleo central de la fiesta entre el viernes 4 y el domingo 6. En 2026 se celebra la <strong>44ª edición de la Representación del Motín</strong> (la primera fue en 1982) y el Descenso Pirata del Tajo llega a su edición 47ª (comenzó en 1980). Las fechas exactas y el programa desglosado los publica el Ayuntamiento antes de la celebración.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Jueves 3 de septiembre · Por la tarde · Plaza de la Constitución</span>
+          <strong>Pregón de Fiestas</strong> a cargo de José Luis Salcedo Nieto 'Pepín', con el que arranca oficialmente la edición de 2026. Apertura del <strong>Mercado Goyesco</strong> en el Paseo del Jardín de Isabel II y de la feria de artesanía. Ambiente de época con indumentaria del siglo XIX por las calles del Real Sitio.
+        </li>
+        <li>
+          <span class="dia-label">Viernes · Por la noche · Calles del Real Sitio</span>
+          El <strong>Asalto a la Casa de Godoy</strong>: pasacalles de teatro itinerante. Los amotinados, caracterizados con trajes de época y armados con antorchas, recorren las calles del casco histórico — desde la Plaza de la Constitución por las calles Stuart y Príncipe hasta la fachada del Palacio de Godoy — persiguiendo al valido entre gritos y tambores militares. El humo de las antorchas y el eco de «¡Muera Godoy!» entre los edificios de piedra son el prólogo de la noche del sábado. En paralelo, grupos de actores escenifican por las calles cuadros de Goya sobre la España de los aquelarres y la brujería — la cara oscura de la pintura del mismo período que retrata el Motín.
+        </li>
+        <li>
+          <span class="dia-label">Sábado · Por la noche · Plaza de Parejas</span>
+          La <strong>Representación del Motín</strong>: la obra central de la fiesta. Unos 170 vecinos de Aranjuez actúan en la explanada de 7.000 m² de la Plaza de Parejas con la fachada monumental del Palacio Real como telón de fondo. La dirección es de la compañía Yllana. Antes de la obra, nombramiento oficial del <strong>Amotinado Mayor</strong> de la edición. El aforo es de unas 8.000 personas. Los conciertos gratuitos del cartel musical — La Pegatina, Jaime Urrutia, Gabinete Caligari entre otros en 2026 — se reparten entre la <strong>Plaza de la Constitución</strong> y la <strong>Plaza de San Antonio (Mariblanca)</strong> durante todos los días de fiesta.
+        </li>
+        <li>
+          <span class="dia-label">Domingo · Por la mañana · Río Tajo</span>
+          El <strong>Descenso Pirata del Tajo</strong>: la cara carnavalesca de la fiesta. Los participantes bajan el Tajo a bordo de embarcaciones de fabricación propia — sin motor, construidas con materiales variados — desde el antiguo puente colgante hasta el Puente de Barcas. La competición premia la originalidad y la estética. El contraste con los dos días anteriores es total y deliberado.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El Motín de 1808 y su escenario</h2>
+      <div class="music-block">
+        <p>
+          Aranjuez es el lugar donde ocurrió el hecho que la fiesta recrea. El <strong>Palacio Real de Aranjuez</strong> — Patrimonio de la Humanidad desde 2001 junto al paisaje cultural del Real Sitio — era en 1808 la residencia de primavera de la familia real española. La <strong>Plaza de Parejas</strong>, donde se monta el escenario cada septiembre, es la explanada frente a la fachada sur del palacio, con sus 7.000 metros cuadrados de granito y los jardines del Parterre al fondo. Ningún escenario construido da lo que da ese telón de fondo natural.
+        </p>
+        <p>
+          El <strong>Palacio de Godoy</strong>, donde el asalto del viernes culmina, está a pocos minutos a pie. El <strong>río Tajo</strong>, que rodea el Real Sitio por el norte y el este, es el mismo cauce que los piratas bajan cada domingo desde hace casi medio siglo. La geografía de la fiesta y la del hecho histórico son la misma.
+        </p>
+        <ul>
+          <li>Para el Asalto del viernes, sitúate en las calles del recorrido antes de que empiece la comitiva: la perspectiva de la turba avanzando hacia ti con antorchas, en la oscuridad, entre los edificios del siglo XVIII, es la más inmersiva de toda la fiesta.</li>
+          <li>Para la Representación del sábado, llega con tiempo suficiente para conseguir buena posición en la Plaza de Parejas: el aforo es grande pero la plaza se llena.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Asalto a la Casa de Godoy</h3>
+          <span class="tag">Viernes · Por la noche · Calles del Real Sitio</span>
+          <p>El pasacalles nocturno de antorchas: los amotinados recorren las calles del casco histórico con gritos de «¡Muera Godoy!» y el sonido de tambores militares, del real estado a la fachada del Palacio de Godoy. La oscuridad, el humo y los edificios de piedra del siglo XVIII hacen que el recorrido se sienta más real que cualquier escenografía construida.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento de la fiesta en que el espectador está dentro de la escena, no delante de ella. La comitiva avanza entre el público por las calles; no hay separación entre actores y testigos. Es teatro de calle en su forma más directa y la antesala perfecta para entender qué va a ocurrir la noche siguiente en la Plaza de Parejas.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Representación en la Plaza de Parejas</h3>
+          <span class="tag">Sábado · Por la noche · Plaza de Parejas</span>
+          <p>Ciento setenta ribereños actuando en la explanada frente al Palacio Real con la fachada monumental como telón de fondo. La dirección profesional da a los actores vecinales una puesta en escena de nivel teatral que no tiene equivalente en ninguna otra recreación histórica española. El nombramiento del Amotinado Mayor abre la noche.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el escenario es el Palacio Real de Aranjuez — Patrimonio de la Humanidad — y los actores son los vecinos del pueblo donde ocurrió el hecho que representan. La combinación de ese marco con esa compañía amateur no existe en ninguna otra recreación histórica de España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Descenso Pirata del Tajo</h3>
+          <span class="tag">Domingo · Por la mañana · Río Tajo</span>
+          <p>El contrapunto carnavalesco: embarcaciones sin motor construidas a mano bajan el Tajo entre el antiguo puente colgante y el Puente de Barcas. Los participantes compiten por premios a la originalidad y la estética. El humor, el ingenio constructivo y el colorido de las barcas son exactamente lo contrario del ambiente goyesco de los dos días anteriores — y eso es parte del plan.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Descenso lleva desde 1980 siendo la demostración de que Aranjuez no se toma su historia solo en serio: también la celebra con ironía. La misma ciudad que la noche anterior lloraba a Godoy, al día siguiente lo manda al río en una barca de cartón. Ese doble registro es lo que hace al Motín difícil de reducir a una sola imagen.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Mercado Goyesco en el Real Sitio</h3>
+          <span class="tag">Todos los días · Casco histórico · Aranjuez</span>
+          <p>Artesanos, indumentaria de época y ambiente del siglo XIX por las calles y plazas del Real Sitio durante todos los días de fiesta. El marco arquitectónico — el palacio, los jardines, los ejes de boulevard del trazado borbónico — hace que el mercado tenga una escala que los mercados medievales de otras ciudades no pueden reproducir.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque pasear por el trazado urbano del Real Sitio con indumentaria goyesca alrededor es la única manera de entender por qué Aranjuez fue una ciudad de corte y no un pueblo de veraneo. La arquitectura hace el trabajo que en otros sitios hace la escenografía.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Aranjuez tiene oferta limitada para el volumen de visitantes durante las fiestas. Madrid capital está a unos 50 kilómetros y cuenta con todas las opciones posibles — es la alternativa más cómoda si no encuentras plaza en la ciudad. Reserva con semanas de antelación para cualquiera de las dos opciones.</li>
+        <li><strong>Cómo llegar.</strong> El tren de Cercanías (línea C-3 desde Atocha) llega al centro de Aranjuez en unos 45 minutos y es la opción más cómoda desde Madrid. En coche, la A-4 cubre el trayecto en tiempo similar, pero el aparcamiento en el centro durante las fiestas es complicado. Consulta los operadores de transporte habituales para horarios actualizados.</li>
+        <li><strong>Para el Asalto del viernes.</strong> Sitúate en el recorrido antes de que salga la comitiva. Las calles Stuart y Príncipe, en el tramo hacia el Palacio de Godoy, son los puntos donde la inmersión es mayor — la anchura justa para que la turba de antorchas llene el espacio.</li>
+        <li><strong>Para la Representación del sábado.</strong> La Plaza de Parejas tiene mucho aforo pero se llena. Llega con tiempo suficiente para elegir posición antes del nombramiento del Amotinado Mayor, que abre la velada.</li>
+        <li><strong>El tiempo en septiembre.</strong> Las noches de principios de septiembre en Aranjuez ya son frescas, especialmente junto al Tajo. Para los actos nocturnos del viernes y el sábado lleva algo de abrigo ligero — el calor del día desaparece rápido después de la puesta de sol.</li>
+        <li><strong>Gastronomía local.</strong> Los espárragos de Aranjuez — conocidos localmente como «Pericos» — y los fresones del Tajo son los productos identitarios del territorio, aunque su temporada principal sea la primavera. Los restaurantes del Real Sitio los trabajan durante todo el año. El Mercado Goyesco, en el Paseo del Jardín de Isabel II, también tiene puestos de gastronomía durante los días de fiesta.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del Motín</h2>
+      <dl class="festero">
+
+        <dt>Ribereño / Ribereña</dt>
+        <dd>El gentilicio informal — no oficial, pero de uso generalizado — para los habitantes de Aranjuez. La ciudad se asienta en la confluencia del Tajo y el Jarama, rodeada de sus riberas. Cuando los organizadores buscan actores para la Representación del Motín, se dirigen a los ribereños; cuando los vecinos hablan de su fiesta, hablan de lo que los ribereños hacen cada septiembre.</dd>
+
+        <dt>Amotinado / Amotinada</dt>
+        <dd>Cualquier vecino de Aranjuez que participa en la Representación del Motín como parte de la turba. No es un papel secundario: los amotinados son el elenco principal del espectáculo. Cada verano, el Ayuntamiento abre una convocatoria libre y los seleccionados pasan semanas de ensayo bajo la dirección de la compañía Yllana.</dd>
+
+        <dt>Amotinado Mayor</dt>
+        <dd>El título honorífico que desde 1984 recibe cada año una personalidad, institución o colectivo que haya destacado por su labor social, cultural o cívica. Es el equivalente del pregonero en otras fiestas, pero con un matiz deliberado: el Amotinado Mayor no proclama la fiesta, la encabeza. Entre los que lo han recibido: Camilo José Cela (1984), la Cruz Roja Española, la ONCE, la Fundación Luzón.</dd>
+
+        <dt>Pirata</dt>
+        <dd>El participante del Descenso Pirata del Tajo. No hay relación con el Motín histórico de 1808 — los piratas son la invención festera del domingo, el contrapunto carnavalesco a los actos goyescos de viernes y sábado. Cada pirata o grupo de piratas construye su propia embarcación, la baja al Tajo y compite por los premios de originalidad y estética de la organización.</dd>
+
+        <dt>Goyesco / Goyesca</dt>
+        <dd>El adjetivo que califica todo lo relacionado con la estética de la época de Goya: indumentaria, escenografía, mercado, corrida. Las fiestas del Motín se ambientan en los años 1808-1814 — el período que Goya retrató en sus pinturas de guerra y de corte. Una «noche goyesca» en Aranjuez es una noche de casacas, pelucas empolvadas y antorchas.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/motin-aranjuez-1.jpg" alt="Vecinos de Aranjuez con antorchas durante el Asalto a la Casa de Godoy en las Fiestas del Motín de Aranjuez" loading="lazy" />
+        <img src="images/motin-aranjuez-2.jpg" alt="Representación del Motín de Aranjuez en la Plaza de Parejas con la fachada del Palacio Real de fondo y miles de espectadores" loading="lazy" />
+        <img src="images/motin-aranjuez-3.jpg" alt="Descenso Pirata del Tajo con embarcaciones de fabricación casera durante las Fiestas del Motín de Aranjuez" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.aranjuez.es" target="_blank" rel="noopener">Ayuntamiento del Real Sitio y Villa de Aranjuez — programa oficial</a></li>
+        <li><a href="https://www.comunidad.madrid/servicios/turismo" target="_blank" rel="noopener">Turismo de la Comunidad de Madrid</a></li>
+        <li><a href="https://www.patrimonionacional.es/visita/palacios-reales/palacio-real-de-aranjuez" target="_blank" rel="noopener">Patrimonio Nacional — Palacio Real de Aranjuez</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-02</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Fiestas del Motín de Aranjuez en 2026?</dt>
+        <dd>La <strong>primera semana de septiembre de 2026</strong>, con el núcleo central entre el viernes y el domingo. El Ayuntamiento ha fijado el viernes 4 de septiembre como festivo local. El programa completo lo publica el <a href="https://www.aranjuez.es" target="_blank" rel="noopener">Ayuntamiento</a> antes de la celebración.</dd>
+
+        <dt>¿Qué es la Representación del Motín de Aranjuez?</dt>
+        <dd>Una obra de teatro al aire libre en la <strong>Plaza de Parejas</strong>, con la fachada monumental del Palacio Real como telón de fondo. Unos <strong>170 vecinos de Aranjuez</strong> actúan como la turba que en marzo de 1808 derribó el poder de Godoy, El aforo de la Plaza de Parejas es de unas <strong>8.000 personas</strong>.</dd>
+
+        <dt>¿Qué es el Descenso Pirata del Tajo?</dt>
+        <dd>Una cabalgata fluvial que desde 1980 llena el río Tajo de embarcaciones construidas a mano por los vecinos, sin motor. Los participantes descienden desde el antiguo puente colgante hasta el Puente de Barcas compitiendo por premios a la originalidad y la estética. Es el contrapunto festivo y carnavalesco de los actos goyescos de viernes y sábado.</dd>
+
+        <dt>¿Son las únicas fiestas de la Comunidad de Madrid con declaración de Interés Turístico Internacional?</dt>
+        <dd>Sí. Las Fiestas del Motín de Aranjuez son la única celebración de toda la Comunidad de Madrid con este título, concedido por resolución de la Secretaría de Estado de Turismo de 23 de julio de 2014 (<strong>BOE-A-2014-8344</strong>). Antes habían sido declaradas de Interés Turístico Nacional en 1990.</dd>
+
+        <dt>¿Qué ocurrió exactamente en el Motín de Aranjuez de 1808?</dt>
+        <dd>La noche del <strong>17 de marzo de 1808</strong>, una turba asaltó el palacio del valido Manuel Godoy en Aranjuez, temerosa de que facilitase el paso de las tropas napoleónicas y la huida de la familia real. Carlos IV, sin su hombre de confianza, lo destituyó y abdicó en su hijo Fernando VII. El Motín fue la chispa inmediata de la Guerra de la Independencia y el primer eslabón del fin del Antiguo Régimen en España.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Recreación Histórica</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Comunidad de Madrid</a>
+        <a href="#" class="etiqueta">Aranjuez</a>
+        <a href="#" class="etiqueta">Septiembre</a>
+        <a href="#" class="etiqueta">Teatro de Calle</a>
+        <a href="#" class="etiqueta">Palacio Real</a>
+        <a href="#" class="etiqueta">Guerra de la Independencia</a>
+        <a href="#" class="etiqueta">Río Tajo</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-motin">
+        <h2 id="rel-title-motin">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="arribada-carabela-pinta-baiona.html" class="ficha-rel-card">
+            <img src="images/arribada-carabela-pinta-baiona.jpg" alt="Réplica de la Carabela Pinta entrando en la bahía de Baiona durante la Festa da Arribada" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arribada de la Carabela Pinta a Baiona</span>
+              <span class="rel-frase">El cañonazo que en 1493 anunció a Europa la existencia de América.</span>
+              <span class="rel-meta">Baiona · Galicia</span>
+            </div>
+          </a>
+
+          <a href="bodas-isabel-segura.html" class="ficha-rel-card">
+            <img src="images/bodas-isabel-segura.jpg" alt="Cortejo nupcial durante las Bodas de Isabel de Segura en Teruel" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Bodas de Isabel de Segura</span>
+              <span class="rel-frase">Teruel entero se viste de siglo XIII para revivir la leyenda de sus amantes.</span>
+              <span class="rel-meta">Teruel · Aragón</span>
+            </div>
+          </a>
+
+          <a href="guerras-cantabras-corrales-buelna.html" class="ficha-rel-card">
+            <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Recreación de las Guerras Cántabras en Los Corrales de Buelna con combatientes caracterizados de romanos y cántabros" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Guerras Cántabras de Los Corrales de Buelna</span>
+              <span class="rel-frase">La resistencia cántabra contra Roma recreada en el valle del Besaya.</span>
+              <span class="rel-meta">Los Corrales de Buelna · Cantabria</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Ayuntamiento del Real Sitio y Villa de Aranjuez, BOE, Patrimonio Nacional y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
