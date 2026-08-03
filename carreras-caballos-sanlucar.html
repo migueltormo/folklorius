@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Carreras Caballos Sanlúcar 2026: el hipódromo que borra la marea</title>
+  <meta name="description" content="Carreras de Caballos Sanlúcar 2026: dos ciclos en agosto, 181ª edición. Purasangres a contraluz frente a Doñana. Gratis desde la playa. ITI 1997." />
+  <link rel="canonical" href="https://folklorius.es/carreras-caballos-sanlucar.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sanlúcar de Barrameda: la playa que dos veces en agosto se convierte en el hipódromo más antiguo de España" />
+  <meta property="og:description" content="Nacieron en 1845 de las carreras de los pescadores por llegar primeros al mercado. Hoy reúnen 30.000 personas al día frente al Atlántico, con Doñana al fondo y una copa de manzanilla en la mano. La pista la pone el mar — y la borra cuando sube la marea." />
+  <meta property="og:image" content="https://folklorius.es/images/carreras-caballos-sanlucar.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/carreras-caballos-sanlucar.html",
+    "name": "Carreras de Caballos en la Playa de Sanlúcar de Barrameda",
+    "startDate": "2026-08-08",
+    "endDate": "2026-08-23",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Playa de Las Piletas, Sanlúcar de Barrameda",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sanlúcar de Barrameda",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.7782,
+        "longitude": -6.3709
+      }
+    },
+    "image": ["https://folklorius.es/images/carreras-caballos-sanlucar.jpg"],
+    "description": "Las Carreras de Caballos de Sanlúcar de Barrameda son las más antiguas de España, celebradas desde 1845 en la playa. Dos ciclos de tres días en agosto, con unos 30.000 espectadores diarios. El hipódromo lo construye el mar con cada bajamar. Declaradas Fiesta de Interés Turístico Internacional en 1997.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda",
+      "url": "https://www.carrerasdesanlucar.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Acceso gratuito desde la playa. Palcos y paddock de pago."
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Carreras de Caballos en la Playa de Sanlúcar de Barrameda",
+        "item": "https://folklorius.es/carreras-caballos-sanlucar.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo son las Carreras de Caballos de Sanlúcar en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En 2026 se celebran en dos ciclos de tres días: primer ciclo los días 8, 9 y 10 de agosto; segundo ciclo los días 21, 22 y 23 de agosto. Las fechas exactas dependen del calendario de mareas, por lo que es recomendable verificar con la Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda antes del evento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta ver las Carreras de Caballos de Sanlúcar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El espectáculo es completamente gratuito si se sigue desde la arena de la playa, donde el público se sitúa a pocos metros del paso de los caballos. El acceso a los palcos, tribunas y paddock en la zona de meta es de pago o mediante invitación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué las fechas de las carreras dependen de las mareas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las carreras se disputan en la franja de arena mojada y compacta que deja el mar al retirarse. Sin una buena bajamar no hay pista suficiente para que los caballos purasangre puedan galopar. Por eso las fechas y el horario de cada jornada se fijan cada año consultando el calendario astronómico de mareas del Atlántico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el origen de las Carreras de Caballos de Sanlúcar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las carreras están documentadas desde 1845, lo que las convierte en las más antiguas de España. La tradición popular sostiene que nacieron de las competiciones informales entre los vendedores de pescado, que corrían con sus caballos de carga por la orilla para ser los primeros en llegar a los mercados locales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la manzanilla y qué tiene que ver con las carreras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La manzanilla es un vino blanco seco de crianza biológica que solo se produce en Sanlúcar de Barrameda, protegida por la Denominación de Origen Manzanilla-Sanlúcar de Barrameda. Su sabor salino, resultado de la influencia del Atlántico en la crianza, la convierte en el acompañamiento natural de los langostinos de Sanlúcar y del ambiente de las carreras. Es el vino de la ciudad y de su fiesta más grande."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Carreras de Caballos en la Playa de Sanlúcar de Barrameda
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/carreras-caballos-sanlucar.jpg" alt="Caballos purasangre galopando a contraluz por la orilla de la playa de Sanlúcar de Barrameda al atardecer con el Parque Nacional de Doñana al fondo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Carreras de Caballos en la Playa de Sanlúcar de Barrameda</h1>
+      <p class="ficha-subtitle">
+        Sanlúcar de Barrameda (Cádiz) · Deporte Tradicional · Las carreras de caballos más antiguas de España, en el único hipódromo que construye y borra el mar.
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Andaluz</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Agosto 2026 · Dos ciclos · 181ª edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Sanlúcar de Barrameda · Cádiz · Andalucía</span>
+          <span>🐎 Dos ciclos de tres días · Agosto</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Los caballos pasan a metros del público sin ninguna barrera física. La línea que marca la organización en la arena es la única separación entre los espectadores y los animales en plena carrera. No se cruza.</li>
+          <li>El paddock y los accesos a la zona de meta son espacio de trabajo para jinetes, mozos y veterinarios antes y después de cada prueba. Se entra con la misma consideración que se entraría a cualquier espacio de trabajo.</li>
+          <li>Las carreras son una competición hípica real con premios económicos y apuestas oficiales. El ambiente festivo de la playa y las terrazas de Bajo de Guía no cambia lo que ocurre en la pista.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Al atardecer, cuando la marea baja y deja al descubierto la franja de arena mojada, los caballos purasangre salen a la pista que el Atlántico acaba de construir. Docenas de ellos galopan por la orilla a toda velocidad, levantando cortinas de agua y arena, con el Parque Nacional de Doñana recortado al fondo en la otra orilla del Guadalquivir y treinta mil personas apostadas a tres metros del paso de los animales. La última carrera del día siempre es a contraluz. Ningún hipódromo del mundo tiene ese atardecer.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Carreras de Caballos de Sanlúcar de Barrameda son las <strong>más antiguas de España</strong>, celebradas desde 1845 en la playa. Cada agosto se disputan en <strong>dos ciclos de tres días</strong>, con entre cuatro y cinco carreras por jornada. En 2026 llegan a su <strong>181ª edición</strong>. El espectáculo es gratuito para quien lo siga desde la arena; la zona de palcos, tribunas y paddock frente al recinto de la <strong>Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda</strong> tiene acceso de pago o mediante invitación.
+      </p>
+      <p>
+        La pista la construye el mar: es la franja de arena mojada y compacta que deja la bajamar al retirarse. Sin una buena bajamar no hay carreras. Por eso las fechas de cada edición se fijan consultando el calendario astronómico de mareas — son las únicas carreras de caballos de España cuyo calendario lo decide el Atlántico. Compiten caballos <strong>purasangre de cuadras nacionales e internacionales</strong> en tres categorías: <strong>jockeys</strong> profesionales, <strong>gentlemen</strong> (aficionados masculinos) y <strong>amazonas</strong> (aficionadas femeninas). En una temporada normal se disputan unas 25 carreras en total, con premios que superan los 200.000 euros. El <strong>Gran Premio Ciudad de Sanlúcar</strong> es la prueba más valiosa de la temporada.
+      </p>
+      <p>
+        Las carreras están en trámite para su declaración como <strong>Patrimonio Cultural Inmaterial de la Humanidad</strong> por la UNESCO, con el respaldo formal del Senado desde 2024.
+      </p>
+      <p class="nota-grid">⚠️ Las fechas exactas y los horarios de cada jornada dependen del calendario de mareas y pueden ajustarse. Consulta el programa oficial en la web de la <a href="https://www.carrerasdesanlucar.com" target="_blank" rel="noopener">Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El origen de las carreras está en los vendedores de pescado de Sanlúcar. La tradición popular — respaldada por varios historiadores locales — sostiene que los pescadores corrían con sus caballos de carga por la orilla para ser los primeros en llegar a los mercados locales con las capturas del día. De esa costumbre nacieron los estatutos fundacionales de la Sociedad de Carreras de Caballos de Sanlúcar datan del <strong>31 de agosto de 1845</strong>, lo que las convierte en las carreras de caballos más antiguas de España en activo. Las primeras de estilo inglés reglamentadas fueron las de la Alameda de Osuna (Madrid) en 1835, pero no se mantuvieron en el tiempo.
+      </p>
+      <p>
+        A finales del siglo XIX, Sanlúcar era destino de veraneo de la aristocracia española, que acudía a los "baños de ola" y convirtió las carreras en el acontecimiento social del verano. Las carreras vivieron altibajos hasta que en <strong>1981</strong> se refundó la Real Sociedad de Carreras de Caballos, que desde entonces gestiona el evento. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en <strong>1986</strong> y la de <strong>Interés Turístico Internacional</strong> en <strong>1997</strong>.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La edición de 2026 — la <strong>181ª</strong> — se divide en dos ciclos: <strong>primer ciclo los días 8, 9 y 10 de agosto</strong> y <strong>segundo ciclo los días 21, 22 y 23 de agosto</strong>. Las carreras de cada jornada comienzan al caer la tarde, cuando la bajamar deja la pista en condiciones, y se prolongan hasta el anochecer. El horario exacto de cada jornada lo determina el calendario de mareas y lo publica la Real Sociedad con antelación.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Primer ciclo · 8, 9 y 10 de agosto · Playa de Bajo de Guía a Las Piletas</span>
+          Tres jornadas de carreras al atardecer. Cada día, entre cuatro y cinco pruebas sobre la arena mojada. El cajón de salida se desplaza a lo largo de la playa según la distancia de cada carrera — de 1.200 metros para los potros de dos años hasta 2.000 metros para las pruebas de fondo. La zona de meta, frente al recinto de la Sociedad, es el punto fijo de cada jornada. El paddock abre al público antes de cada prueba para ver los caballos antes de salir a la pista.
+        </li>
+        <li>
+          <span class="dia-label">Segundo ciclo · 21, 22 y 23 de agosto · Playa de Bajo de Guía a Las Piletas</span>
+          Tres jornadas con el mismo formato, con la diferencia de que el segundo ciclo concentra las pruebas de mayor dotación económica, entre ellas el <strong>Gran Premio Ciudad de Sanlúcar</strong> — la carrera más importante de la temporada, con 13.600 euros en premios. El ambiente en la playa y en las terrazas de Bajo de Guía es más intenso que en el primer ciclo.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El hipódromo que construye el mar</h2>
+      <div class="music-block">
+        <p>
+          No hay otro hipódromo igual en el mundo. La pista de las Carreras de Sanlúcar nace cada tarde con la bajamar y desaparece cuando sube la marea. Es la franja de arena mojada y compacta — dura, lisa, sin blandura — que el Atlántico deja al retirarse a lo largo de la playa de Bajo de Guía hasta Las Piletas. Sobre esa franja, que puede medir entre 20 y 30 metros de ancho según el día, los caballos purasangre corren en línea recta paralelamente a la orilla. En la zona de meta se monta cada año una infraestructura desmontable de lona y madera con palcos, tribunas y taquillas de apuestas. Cuando terminan las carreras, el mar lo cubre todo.
+        </p>
+        <p>
+          Al otro lado del Guadalquivir — el río grande de Andalucía, que desemboca en el Atlántico a los pies de Sanlúcar — se divisa la vegetación densa del <strong>Parque Nacional de Doñana</strong>. De esta misma desembocadura partieron el tercer viaje de Cristóbal Colón y la expedición de Magallanes-Elcano, la primera vuelta al mundo. El escenario de las carreras es el punto donde el río más largo de España se funde con el océano, con un Parque Nacional al fondo y cinco siglos de historia en el agua.
+        </p>
+        <ul>
+          <li>El mejor punto para ver las carreras desde la playa es situarse en los primeros metros después de la salida — los caballos arrancan juntos y la densidad del grupo es máxima ahí. Para la recta final, la zona de meta tiene la mayor concentración de público pero también la mayor emoción.</li>
+          <li>La última carrera de cada jornada siempre es a contraluz del sol cayendo sobre el Atlántico. Si vas a fotografiar, ese es el momento. Llega con tiempo suficiente para situarte antes de que el gentío cierre los huecos en la orilla.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La última carrera del día a contraluz</h3>
+          <span class="tag">Cada jornada · Al anochecer · Orilla de la playa</span>
+          <p>La última prueba de cada tarde se disputa cuando el sol está a ras del Atlántico. Los caballos galopan en silueta sobre el agua y la arena, con el Parque Nacional de Doñana al fondo. Treinta mil personas de pie en la orilla, a tres metros del paso de los animales, con el sonido sordo de los cascos sobre la arena mojada. No hay tribuna que dé esa perspectiva.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la combinación de luz, velocidad, agua y paisaje natural de esa última carrera no existe en ningún otro hipódromo del mundo. No es una metáfora: la pista la pone el mar, el telón de fondo es un Parque Nacional y la luz es la del atardecer atlántico de agosto. Se ve desde la playa, sin coste, a tres metros de los caballos.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El paddock antes de las carreras</h3>
+          <span class="tag">Antes de cada jornada · Zona de meta · Recinto de la Sociedad</span>
+          <p>En el paddock, los caballos purasangre son paseados y ensillados mientras el público los observa desde la valla. Es el único momento del día en que los animales están quietos y accesibles — a partir de la primera carrera, la pista es suya. Los jinetes ultiman los preparativos, los mozos de cuadra ajustan equipo y los aficionados al turf calibran las opciones de cada prueba.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver un purasangre en el paddock antes de una carrera es ver a un animal diseñado para correr en el único momento en que está parado. La diferencia entre esa quietud tensa y lo que ocurre tres minutos después en la pista es parte del espectáculo — y el paddock es acceso de pago, pero vale la pena.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las casetas de apuestas infantiles</h3>
+          <span class="tag">Cada jornada · A lo largo de la playa · Tradición local</span>
+          <p>Mientras los adultos apuestan en las taquillas oficiales, los niños sanluqueños montan sus propias casetas de apuestas a lo largo de la playa con cajas de cartón y cañas. Es una tradición no oficial, no organizada y no documentada en ninguna guía — ocurre porque ocurre, de generación en generación. Es la versión más local y más viva de lo que son las carreras para quien vive en Sanlúcar.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque las casetas infantiles de cartón son la prueba de que las carreras de Sanlúcar no son un evento turístico al que asiste el pueblo — son la fiesta del pueblo a la que también van los turistas. Esa diferencia se nota, y las casetas de cartón son la imagen más honesta de en qué consiste esto realmente.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Manzanilla y langostinos en Bajo de Guía</h3>
+          <span class="tag">Todos los días · Antes y después de las carreras · Barrio de Bajo de Guía</span>
+          <p>El barrio de Bajo de Guía, junto a la zona de salida de las carreras, concentra las terrazas de marisquería que desde finales del XIX reciben a los aficionados antes y después de cada jornada. Langostinos de Sanlúcar y manzanilla — el vino blanco seco con notas salinas que solo se produce en esta ciudad — son la combinación que define el verano sanluqueño. El olor a marisco cocido y fritura llega desde la playa.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la manzanilla de Sanlúcar no sabe igual en ningún otro sitio — la influencia del Atlántico en la crianza le da un punto salino que no tienen los finos de Jerez. Beberla en Bajo de Guía antes de las carreras, con el Guadalquivir delante y Doñana enfrente, es la única manera de entender por qué este vino se llama como se llama.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Sanlúcar de Barrameda está a unos 45 kilómetros de Jerez de la Frontera y a unos 70 de Sevilla. Hay autobús regular desde ambas ciudades. En coche, el acceso es por la A-480 desde Jerez. Durante los días de carreras el aparcamiento en la zona de la playa se complica — llega con tiempo o usa los aparcamientos del centro y acércate a pie o en transporte urbano.</li>
+        <li><strong>Dónde situarse.</strong> Para ver las carreras desde la playa (gratuito), llega antes de que empiece la primera prueba y elige posición en la orilla. La zona de salida, en las inmediaciones de Bajo de Guía, da la perspectiva del arranque. La zona de meta da la emoción del final. Los primeros metros tras la salida son los mejores para ver el grupo compacto de caballos arrancando juntos.</li>
+        <li><strong>Horario de mareas.</strong> El horario de cada jornada depende de la bajamar. La organización lo publica con antelación. Consúltalo antes de ir para no llegar cuando la pista todavía no está lista o cuando las carreras ya han terminado.</li>
+        <li><strong>Precio del recinto acotado.</strong> El acceso al hipódromo oficial — con palcos, tribunas y taquillas de apuestas — tiene un precio orientativo de entre 11 y 14 euros por persona (dato de referencia; puede haber variado). Consulta el precio actualizado en la web de la Real Sociedad antes de ir.</li>
+        <li><strong>Las terrazas de Bajo de Guía.</strong> Los bares y marisquerías del barrio de Bajo de Guía son el punto de reunión antes y después de las carreras. La manzanilla y los langostinos son lo que hay que pedir. Las terrazas se llenan rápido en los días de carreras — ir antes del inicio de la primera prueba es la mejor manera de conseguir sitio.</li>
+        <li><strong>El calor de agosto.</strong> Las carreras son en agosto en Sanlúcar, en plena ola de calor atlántica. El atardecer refresca, pero las horas previas pueden ser muy duras. Sombrero, agua y ropa ligera son imprescindibles si llegas antes de que baje el sol.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario de las carreras</h2>
+      <dl class="festero">
+
+        <dt>Manzanilla</dt>
+        <dd>El vino blanco seco de crianza biológica que solo se produce en Sanlúcar de Barrameda, protegida por la Denominación de Origen Manzanilla-Sanlúcar de Barrameda. La influencia del Atlántico y la humedad del Guadalquivir dan a la manzanilla un punto salino que la diferencia de los finos de Jerez. Es el vino de las carreras — se bebe en las terrazas de Bajo de Guía antes, durante y después de cada jornada.</dd>
+
+        <dt>Paddock</dt>
+        <dd>El recinto cercado junto a la zona de meta donde los caballos son paseados y ensillados antes de cada carrera. En Sanlúcar, el paddock se monta cada año sobre la arena con estructuras desmontables. Es el único espacio donde el público puede ver a los animales quietos y de cerca antes de que salgan a la pista.</dd>
+
+        <dt>Gentleman</dt>
+        <dd>El jinete aficionado masculino que compite en la categoría no profesional de las carreras. Los gentlemen no son jinetes de oficio: son aficionados al turf con caballos propios o montados en préstamo. Compiten en pruebas separadas de los jockeys profesionales y de las amazonas.</dd>
+
+        <dt>Amazona</dt>
+        <dd>La jinete aficionada femenina que compite en su propia categoría. Las amazonas tienen pruebas específicas en el programa de cada jornada y su presencia en las carreras de Sanlúcar es parte del formato oficial desde hace décadas.</dd>
+
+        <dt>Turf</dt>
+        <dd>El término inglés — adoptado en el mundo hípico español — que designa el universo de las carreras de caballos: los jinetes, las cuadras, los criadores, las apuestas y la cultura que rodea al deporte. En Sanlúcar, los aficionados al turf son quienes siguen el circuito hípico nacional, conocen los historiales de los caballos y apuestan en las taquillas oficiales de Loterías y Apuestas del Estado.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/carreras-caballos-sanlucar-1.jpg" alt="Caballos purasangre en plena carrera por la orilla de la playa de Sanlúcar de Barrameda al atardecer con el Parque Nacional de Doñana al fondo" loading="lazy" />
+        <img src="images/carreras-caballos-sanlucar-2.jpg" alt="Público apostado en la orilla de la playa a metros del paso de los caballos durante las Carreras de Caballos de Sanlúcar de Barrameda" loading="lazy" />
+        <img src="images/carreras-caballos-sanlucar-3.jpg" alt="Terrazas del barrio de Bajo de Guía con la manzanilla y los langostinos de Sanlúcar durante las jornadas de carreras" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.carrerasdesanlucar.com" target="_blank" rel="noopener">Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda — programa oficial y fechas</a></li>
+        <li><a href="https://www.sanlucarturismo.com" target="_blank" rel="noopener">Turismo de Sanlúcar de Barrameda</a></li>
+        <li><a href="https://www.andalucia.org" target="_blank" rel="noopener">Turismo de Andalucía</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-03</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo son las Carreras de Caballos de Sanlúcar en 2026?</dt>
+        <dd>En dos ciclos: <strong>primer ciclo los días 8, 9 y 10 de agosto</strong> y <strong>segundo ciclo los días 21, 22 y 23 de agosto</strong>. Las fechas dependen del calendario de mareas — consulta el programa exacto en la web de la <a href="https://www.carrerasdesanlucar.com" target="_blank" rel="noopener">Real Sociedad de Carreras de Caballos</a>.</dd>
+
+        <dt>¿Cuánto cuesta ver las carreras?</dt>
+        <dd>El espectáculo es <strong>gratuito desde la arena de la playa</strong>, donde el público se sitúa a pocos metros del paso de los caballos. El acceso a palcos, tribunas y paddock en la zona de meta es de pago o mediante invitación.</dd>
+
+        <dt>¿Por qué las fechas dependen de las mareas?</dt>
+        <dd>La pista es la franja de arena mojada que deja el mar al retirarse. Sin una buena bajamar no hay pista suficiente. Por eso las fechas y el horario de cada jornada se fijan cada año consultando el <strong>calendario astronómico de mareas</strong> del Atlántico.</dd>
+
+        <dt>¿Cuál es el origen de las carreras?</dt>
+        <dd>Están documentadas desde <strong>1845</strong>, lo que las convierte en las más antiguas de España. La tradición sostiene que nacieron de las competiciones informales entre <strong>vendedores de pescado</strong> que corrían con sus caballos por la orilla para llegar primeros a los mercados.</dd>
+
+        <dt>¿Qué es la manzanilla y qué tiene que ver con las carreras?</dt>
+        <dd>La <strong>manzanilla</strong> es el vino blanco seco de crianza biológica que solo se produce en Sanlúcar de Barrameda. Su punto salino — resultado de la influencia del Atlántico en la crianza — la diferencia de los finos de Jerez. Es el vino de la ciudad y el acompañamiento natural de los <strong>langostinos de Sanlúcar</strong> en las terrazas de Bajo de Guía durante los días de carreras.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Deporte Tradicional</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Cádiz</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta">Caballos</a>
+        <a href="#" class="etiqueta">Playa</a>
+        <a href="#" class="etiqueta">Guadalquivir</a>
+        <a href="#" class="etiqueta">Manzanilla</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-sanlucar">
+        <h2 id="rel-title-sanlucar">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="feria-caballo-jerez.html" class="ficha-rel-card">
+            <img src="images/feria-caballo-jerez.jpg" alt="Jinetes a caballo en la Feria del Caballo de Jerez de la Frontera" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria del Caballo de Jerez</span>
+              <span class="rel-frase">La capital mundial del caballo andaluz en mayo.</span>
+              <span class="rel-meta">Jerez de la Frontera · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="carnaval-cadiz.html" class="ficha-rel-card">
+            <img src="images/carnaval-cadiz.jpg" alt="Comparsas del Carnaval de Cádiz desfilando por las calles de la ciudad" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carnaval de Cádiz</span>
+              <span class="rel-frase">La crítica más afilada de España disfrazada de fiesta.</span>
+              <span class="rel-meta">Cádiz · Andalucía</span>
+            </div>
+          </a>
+
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Casetas y farolillos de la Feria de Abril de Sevilla al atardecer" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">Una semana entera en que Sevilla baila, bebe y no duerme.</span>
+              <span class="rel-meta">Sevilla · Andalucía</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Real Sociedad de Carreras de Caballos de Sanlúcar de Barrameda, Turismo de Andalucía, BOE y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
