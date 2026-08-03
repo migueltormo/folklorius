@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Descenso del Sella 2026: 900 piraguas y un cañonazo en Asturias</title>
+  <meta name="description" content="Descenso del Sella 2026: 8 de agosto, 88ª edición. 1.300 palistas, 20 km de río, 250.000 espectadores. Fiesta de las piraguas de Asturias. ITI 1980." />
+  <link rel="canonical" href="https://folklorius.es/descenso-sella-arriondas.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="El Sella, 8 de agosto: el silencio antes del cañonazo y 900 piraguas golpeando el agua a la vez" />
+  <meta property="og:description" content="Minutos antes de la salida, miles de gargantas entonan el Asturias Patria Querida con las gaitas. Luego el cañonazo. Luego el estruendo. Lo que empezó en 1929 como una excursión de amigos es hoy la fiesta piragüista más importante de España." />
+  <meta property="og:image" content="https://folklorius.es/images/descenso-sella-arriondas.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/descenso-sella-arriondas.html",
+    "name": "Descenso Internacional del Sella — Fiesta de las Piraguas",
+    "startDate": "2026-08-08",
+    "endDate": "2026-08-08",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Puente de Arriondas — Río Sella",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Arriondas",
+        "addressRegion": "Asturias",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3874,
+        "longitude": -5.1866
+      }
+    },
+    "image": ["https://folklorius.es/images/descenso-sella-arriondas.jpg"],
+    "description": "El Descenso Internacional del Sella, conocido como la Fiesta de las Piraguas o Les Piragües, es la prueba piragüista más importante de España. Cada primer sábado de agosto tras el día 2, más de 1.300 palistas de 25 países recorren los 20 km del río Sella desde Arriondas hasta Ribadesella. Declarado Fiesta de Interés Turístico Internacional en 1980.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Comité Organizador del Descenso Internacional del Sella (CODIS)",
+      "url": "https://descensodelsella.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Acceso gratuito para espectadores desde las orillas y puentes."
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Descenso Internacional del Sella",
+        "item": "https://folklorius.es/descenso-sella-arriondas.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es el Descenso del Sella en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El sábado 8 de agosto de 2026. La prueba se celebra siempre el primer sábado de agosto posterior al día 2. Será la 88ª edición. La salida oficial es al mediodía desde el Puente de Arriondas (Puente de las Piraguas). El programa de actividades festivas arranca los días previos en Arriondas y Ribadesella."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta ver el Descenso del Sella?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ver el descenso desde las orillas del río o desde los puentes es completamente gratuito. Los espectadores pueden situarse en cualquier punto del recorrido de 20 km entre Arriondas y Ribadesella sin coste. La inscripción para palistas federados que quieran competir tiene un coste aproximado de 50 euros."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el recorrido del Descenso del Sella?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El recorrido oficial completo es de 20 kilómetros por el río Sella, desde el Puente de Emilio Llamedo en Arriondas hasta el puente de Ribadesella. Existe una meta adelantada en el puente del ferrocarril de Llovio, a 15 kilómetros, para las categorías menores y veteranos. Los últimos 4 kilómetros del recorrido discurren por la ría de Ribadesella, influenciada por las mareas del Cantábrico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Fiesta de las Piraguas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Fiesta de las Piraguas, o Les Piragües en asturiano, es la celebración popular que rodea al Descenso Internacional del Sella. Arranca los días previos en Arriondas con verbenas, música y campistas, y culmina el sábado con el desfile folclórico matinal, el cañonazo de salida, el descenso y la romería en los Campos de Oba. Deporte y fiesta son inseparables en el Sella desde su primera edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién fundó el Descenso del Sella y cuándo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En 1929, Dionisio de la Huerta y un grupo de amigos descendieron en canoa 5 kilómetros por el río Piloña, de Coya a Infiesto. Esa excursión fue el germen del Descenso. La primera edición con carácter competitivo oficial se celebró en 1930. En 1932, Dionisio de la Huerta fijó el recorrido definitivo entre Arriondas y Ribadesella que se mantiene hoy. En 1980 fue declarado Fiesta de Interés Turístico Internacional."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Descenso Internacional del Sella — Fiesta de las Piraguas
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/descenso-sella-arriondas.jpg" alt="Salida masiva del Descenso Internacional del Sella desde el Puente de Arriondas con cientos de piraguas en el agua y miles de espectadores en los márgenes del río" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Descenso Internacional del Sella — Fiesta de las Piraguas</h1>
+      <p class="ficha-subtitle">
+        Arriondas–Ribadesella (Asturias) · Deporte Tradicional · La prueba piragüista más importante de España, declarada Fiesta de Interés Turístico Internacional en 1980.
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">8 de agosto de 2026 · 88ª edición</div>
+        <div class="datos-secundarios">
+          <span>📍 Arriondas–Ribadesella · Asturias</span>
+          <span>🛶 20 km · 1.300 palistas · 25 países</span>
+          <span>🏅 Interés Turístico Internacional desde 1980</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>Los palistas llevan meses entrenando para esta prueba. Las orillas son su pista durante el descenso. El público puede acercarse hasta el borde del agua, pero el cauce es suyo mientras compiten.</li>
+          <li>Minutos antes del cañonazo de salida se hace el silencio en el puente de Arriondas. Miles de personas y decenas de gaitas entonan el Asturias Patria Querida. El visitante entra en ese momento como entraría en cualquier otro rito colectivo: con la boca cerrada y los oídos abiertos.</li>
+          <li>La romería de los Campos de Oba es de los selleros y los vecinos del Oriente asturiano. El visitante es bienvenido, pero llega a algo con sus propias normas no escritas.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Minutos antes de la salida, el puente de Arriondas se queda en silencio. Miles de gargantas y decenas de gaitas arrancan el Asturias Patria Querida. Luego el cañonazo. Luego el estruendo: novecientas piraguas de carbono y fibra golpeando el agua a la vez. Lo que empezó en 1929 como una excursión de amigos por el río Piloña es hoy la prueba piragüista más importante de España — 20 kilómetros de Asturias desde Arriondas hasta Ribadesella, con los Picos de Europa al fondo y 250.000 personas repartidas por las orillas.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Descenso Internacional del Sella, conocido popularmente como <strong>Les Piragües</strong> o la <strong>Fiesta de las Piraguas</strong>, es una prueba de descenso fluvial en piragua que se celebra cada año el <strong>primer sábado de agosto posterior al día 2</strong>, entre las localidades asturianas de <strong>Arriondas y Ribadesella</strong>. El recorrido completo son <strong>20 kilómetros</strong> por el río Sella. Verlo desde las orillas o los puentes es gratuito.
+      </p>
+      <p>
+        En la salida participan más de <strong>1.300 palistas</strong> en unas <strong>900 embarcaciones</strong>, representando a unos <strong>25 países</strong>. Compiten en categorías K-1 y K-2 (kayak de una y dos plazas) y C-1 y C-2 (canoa). La prueba es única en el mundo porque mezcla en la misma salida masiva a campeones olímpicos de élite con cientos de palistas federados amateurs. La organización corre a cargo del <strong>Comité Organizador del Descenso Internacional del Sella (CODIS)</strong>, con la Federación Española y la Federación de Piragüismo del Principado de Asturias.
+      </p>
+      <p>
+        La competición oficial convive con un descenso turístico-recreativo que durante todo el verano mueve a más de 350.000 personas al año. Empresas de turismo activo de la comarca alquilan canoas para recorrer el mismo río cualquier día de la temporada, con precios orientativos en torno a los 20 euros para adultos. La Confederación Hidrográfica del Cantábrico regula el uso del río — el horario de navegación tiene un límite por la tarde y hay un período de veda invernal hasta principios de marzo.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo de actividades festivas y la información logística están disponibles en <a href="https://descensodelsella.com" target="_blank" rel="noopener">descensodelsella.com</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        En <strong>1929</strong>, Dionisio de la Huerta y un grupo de amigos bajaron en canoa 5 kilómetros por el río Piloña, de Coya a Infiesto. Era una excursión, no una competición. Un año después organizaron la primera prueba con carácter oficial. Tras varias ediciones desde Infiesto, en <strong>1932</strong> Dionisio de la Huerta fijó el recorrido definitivo entre Arriondas y Ribadesella — el mismo que se mantiene hoy. El nombre de Dionisio de la Huerta está tan unido al Sella como el propio río: en Arriondas hay bustos y placas que lo recuerdan, y cada edición incluye menciones a su figura.
+      </p>
+      <p>
+        La prueba creció hasta convertirse en una de las carreras fluviales más reconocidas de Europa. La declaración como <strong>Fiesta de Interés Turístico Internacional</strong> llegó el <strong>16 de febrero de 1980</strong> (BOE) — una de las primeras fiestas de España en conseguirlo. El impacto económico del descenso y del turismo activo que genera en el Oriente asturiano supera los <strong>10 millones de euros</strong> anuales.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La <strong>88ª edición</strong> se celebra el <strong>sábado 8 de agosto de 2026</strong>. La salida oficial tiene lugar al mediodía desde el Puente de Emilio Llamedo — el Puente de las Piraguas — en Arriondas. Las actividades festivas arrancan los días previos, jueves y viernes, con campistas, verbenas y música en Arriondas. El sábado arranca con el desfile folclórico matinal antes de la salida.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Jueves y viernes · Días previos · Arriondas</span>
+          Arriondas se llena de campistas, selleros y aficionados llegados de toda España y de fuera. Verbenas, música y ambiente festivo en las calles del pueblo durante los dos días previos. Las sidrerías y restaurantes de la comarca trabajan a pleno rendimiento desde el jueves.
+        </li>
+        <li>
+          <span class="dia-label">Sábado · Por la mañana · Arriondas</span>
+          <strong>La Alborada</strong>: desfile folclórico que recorre las calles de Arriondas con bandas de gaitas, charangas y figurantes portando el <strong>Collar de las Piraguas</strong> y luciendo <strong>monteras piconas</strong>. El cortejo acompaña a los palistas hasta el puente de salida. Minutos antes del cañonazo, silencio en el puente y el <strong>Asturias Patria Querida</strong> canta en miles de gargantas con las gaitas. El cañonazo da la salida y las 900 embarcaciones entran al río de golpe.
+        </li>
+        <li>
+          <span class="dia-label">Sábado · A lo largo del día · Orillas del Sella · 20 km</span>
+          Los palistas recorren los 20 km del río Sella entre rabiones, pozas y aldeas. El público se sitúa en orillas, puentes y riberas a lo largo de todo el recorrido. El <strong>Tren Fluvial de FEVE</strong> recorre la ribera del Sella en paralelo al descenso, parando en distintos puntos para que los espectadores animen desde la orilla. Los rabiones de La Raíz y La Remolina son los puntos más animados del recorrido.
+        </li>
+        <li>
+          <span class="dia-label">Sábado · Por la tarde · Ribadesella y Campos de Oba</span>
+          Los primeros palistas llegan al puente de Ribadesella entre la ovación de los espectadores congregados en la meta. Tras la entrega de premios, miles de personas se trasladan a los <strong>prados de Oba</strong>, en Llovio, para la romería y comida campestre que cierra la jornada. La Fiesta de las Piraguas termina en los prados.
+        </li>
+      </ul>
+
+      <h2 class="section-title">El río Sella y su recorrido</h2>
+      <div class="music-block">
+        <p>
+          El Sella es un río de montaña que baja desde los Picos de Europa hacia el Cantábrico. A lo largo de los 20 kilómetros del recorrido, el cauce alterna <strong>rabiones</strong> — tramos donde el río se estrecha, las piedras afloran y el agua corre rápido — con <strong>pozas</strong> de aguas tranquilas donde los palistas recuperan ritmo. Los rabiones de <strong>La Raíz</strong> y <strong>La Remolina</strong> son los puntos donde el público se acerca más al agua, algunos metidos hasta la cintura en el río para animar desde dentro. Las pozas como <strong>Toraño</strong> dan una tregua antes del siguiente tramo rápido.
+        </p>
+        <p>
+          Los últimos 4 kilómetros abandonan el río encajonado entre bosques de robles y sauces para entrar en la <strong>ría de Ribadesella</strong>, un estuario abierto donde las mareas del Cantábrico cambian completamente las condiciones — el agua puede ir a favor o en contra según la hora. La meta está en el puente de Ribadesella, con el pueblo y la playa de Santa Marina al fondo. Durante todo el recorrido, las estribaciones de los <strong>Picos de Europa</strong> se recortan en el horizonte al sur.
+        </p>
+        <ul>
+          <li>Para ver la salida, sitúate en el Puente de Arriondas o en los márgenes del río inmediatamente después — es el momento de mayor concentración de piraguas y el más espectacular visualmente. Llega con tiempo antes del desfile.</li>
+          <li>Para ver el descenso en los rabiones, los accesos a La Raíz y La Remolina se llenan rápido. El Tren de FEVE es la alternativa más cómoda para moverse entre puntos del recorrido sin coche.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El cañonazo de salida desde el puente</h3>
+          <span class="tag">Sábado · Al mediodía · Puente de Arriondas</span>
+          <p>Minutos antes de la salida, el puente se queda en silencio. El Asturias Patria Querida suena en miles de gargantas y en decenas de gaitas. Luego el cañonazo. Luego el estruendo de 900 piraguas golpeando el agua simultáneamente. El río tarda segundos en llenarse de embarcaciones de colores. Es el momento más sonoro de todo el catálogo de Folklorius.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la secuencia silencio-himno-cañonazo-estruendo no dura más de tres minutos y condensa todo lo que es la Fiesta de las Piraguas en un solo instante. Si solo puedes ver una cosa del Descenso del Sella, es esta. El puente de Arriondas se llena — llega con tiempo suficiente para encontrar posición.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Animar desde dentro del río en los rabiones</h3>
+          <span class="tag">Sábado · A lo largo del día · La Raíz y La Remolina</span>
+          <p>En los rabiones del recorrido, parte del público entra directamente al río para animar a los palistas desde el agua. Bocinas, pitos, chapoteos y gritos a menos de un metro de las embarcaciones en plena corriente. No hay tribuna, no hay valla, no hay separación entre el espectador y la prueba deportiva. Es la imagen más libre del descenso.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver el descenso desde dentro del río — con el agua hasta la cintura, los palistas pasando a rozarte y el sonido de las palas en el agua — es una experiencia que no existe en ningún otro evento deportivo de España. Los rabiones de La Raíz y La Remolina son los puntos donde ocurre con mayor intensidad.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Tren Fluvial de FEVE</h3>
+          <span class="tag">Sábado · Todo el día · Línea Arriondas–Ribadesella</span>
+          <p>La organización fleta un tren especial de FEVE que recorre la ribera del Sella en paralelo al descenso, parando en distintos puntos del recorrido. Desde las ventanas o los andenes, los espectadores ven pasar a los palistas con el río y los montes de fondo. Es la manera más cómoda de seguir el descenso sin coche y de ver varios tramos del recorrido en un solo día.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el tren permite algo que a pie o en coche es muy difícil: ver el descenso en varios puntos distintos del recorrido el mismo día. Y porque la línea de FEVE entre Arriondas y Ribadesella es en sí misma una de las rutas ferroviarias más bonitas del norte de España — el río siempre a un lado, los prados y los bosques al otro.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La romería en los Campos de Oba</h3>
+          <span class="tag">Sábado · Por la tarde · Prados de Oba, Llovio</span>
+          <p>Tras las llegadas a Ribadesella, miles de selleros se trasladan a los prados de Oba, en Llovio, para la romería y comida campestre que cierra la jornada. Sidra escanciada, bollos preñaos, música y el relax de quien ha pasado el día entero en el río. Los Campos de Oba son el cierre natural de la Fiesta de las Piraguas — donde la competición se convierte definitivamente en celebración.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la romería de Oba es donde se ve qué es realmente el Descenso del Sella para quien vive en el Oriente asturiano. No es el evento deportivo — es la fiesta del año. Los prados de Oba en la tarde del primer sábado de agosto huelen a sidra, a hierba mojada y a fin de verano asturiano.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Cómo llegar.</strong> Arriondas está en el Oriente de Asturias, a unos 70 km de Oviedo por la A-64. El día del descenso, los accesos por carretera entre Arriondas y Ribadesella se cortan por completo durante la mañana — el vehículo privado no es una opción viable. La alternativa obligada son los trenes especiales de FEVE-Renfe en la línea Oviedo–Santander o los autobuses de ALSA. Consulta horarios y billetes con antelación: las plazas se agotan.</li>
+        <li><strong>El Tren de FEVE.</strong> El tren especial que sigue el río el día del descenso sale desde Arriondas y para en distintos puntos del recorrido. Es la mejor forma de ver el descenso en varios tramos sin coche. Consulta el horario exacto en <a href="https://descensodelsella.com" target="_blank" rel="noopener">descensodelsella.com</a> — las plazas se agotan.</li>
+        <li><strong>Dónde situarse.</strong> Para la salida: el Puente de Arriondas, con tiempo suficiente antes del desfile. Para el descenso: los rabiones de La Raíz y La Remolina son los puntos más animados. Para la llegada: el puente de Ribadesella, donde los primeros palistas llegan en menos de dos horas desde la salida.</li>
+        <li><strong>El tiempo en agosto.</strong> El Oriente de Asturias en agosto puede ser fresco o lluvioso — el clima atlántico no garantiza sol aunque sea verano. Lleva algo de abrigo ligero o chubasquero, especialmente si vas a pasar horas en las orillas del río.</li>
+        <li><strong>Alojamiento.</strong> La comarca se llena semanas antes. Arriondas, Ribadesella y los pueblos del entorno agotan el alojamiento en agosto. Reserva con la mayor antelación posible. Muchos selleros optan por el camping — hay varias opciones en la comarca.</li>
+        <li><strong>Gastronomía.</strong> La sidra natural asturiana escanciada en la calle y el bollo preñao son el avituallamiento clásico del día. En las sidrerías de Arriondas y Ribadesella: cachopo, fabada, tortos y pescados del Cantábrico. Llevar un picnic para los Campos de Oba es la opción más sellera.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del Sella</h2>
+      <dl class="festero">
+
+        <dt>Sellero / Sellera</dt>
+        <dd>El aficionado habitual de la Fiesta de las Piraguas — quien vuelve año tras año, conoce los mejores puntos del recorrido, lleva el bollo preñao en la mochila y acaba el día en los prados de Oba. No hace falta ser asturiano para ser sellero, pero ayuda haberlo vivido al menos una vez.</dd>
+
+        <dt>Palista</dt>
+        <dd>El deportista que compite en el descenso. Nunca "remero" — en el piragüismo español, la disciplina y quien la practica se llaman palista y piragüismo. La distinción importa en el ambiente del Sella.</dd>
+
+        <dt>Rabión</dt>
+        <dd>Tramo del río donde el cauce se estrecha, el agua baja rápido y las piedras afloran. Los rabiones son los puntos más técnicos del recorrido para los palistas y los más animados para el público. En los rabiones de La Raíz y La Remolina, parte de los espectadores se mete directamente al agua para animar desde dentro del río.</dd>
+
+        <dt>Cepo</dt>
+        <dd>La estructura mecánica instalada en la orilla del puente de Arriondas que sujeta las palas de los palistas antes del cañonazo de salida. Cada palista encaja su pala en el cepo y espera. Cuando suena el cañonazo, los cepos se sueltan simultáneamente y las 900 embarcaciones arrancan de golpe — de ahí el estruendo.</dd>
+
+        <dt>Montera Picona</dt>
+        <dd>El sombrero tradicional asturiano de ala volteada hacia arriba, típico del folklore de la región. Durante la Alborada del sábado por la mañana, los figurantes del desfile la llevan como parte del traje tradicional. Entre los selleros más veteranos, la montera picona es el complemento del día del descenso.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/descenso-sella-arriondas-1.jpg" alt="Salida masiva del Descenso Internacional del Sella desde el Puente de Arriondas con cientos de piraguas entrando al agua simultáneamente" loading="lazy" />
+        <img src="images/descenso-sella-arriondas-2.jpg" alt="Espectadores metidos hasta la cintura en el río Sella animando a los palistas en los rabiones durante el Descenso Internacional del Sella" loading="lazy" />
+        <img src="images/descenso-sella-arriondas-3.jpg" alt="Romería en los Campos de Oba en Llovio al atardecer tras el Descenso Internacional del Sella con miles de asistentes en los prados" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://descensodelsella.com" target="_blank" rel="noopener">Web oficial del Descenso Internacional del Sella — programa, inscripciones y logística</a></li>
+        <li><a href="https://www.turismoasturias.es" target="_blank" rel="noopener">Turismo de Asturias</a></li>
+        <li><a href="https://www.federacionpiragüismo.es" target="_blank" rel="noopener">Real Federación Española de Piragüismo</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-03</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo es el Descenso del Sella en 2026?</dt>
+        <dd>El <strong>sábado 8 de agosto de 2026</strong>, 88ª edición. La salida oficial es al mediodía desde el Puente de Arriondas. Las actividades festivas arrancan los días previos en Arriondas. Consulta el programa en <a href="https://descensodelsella.com" target="_blank" rel="noopener">descensodelsella.com</a>.</dd>
+
+        <dt>¿Cuánto cuesta ver el Descenso del Sella?</dt>
+        <dd>Ver el descenso desde las orillas o los puentes es <strong>completamente gratuito</strong>. Los espectadores pueden situarse en cualquier punto del recorrido de 20 km sin coste. La inscripción para palistas federados tiene un coste aproximado de 50 euros.</dd>
+
+        <dt>¿Cuál es el recorrido del Descenso del Sella?</dt>
+        <dd><strong>20 kilómetros</strong> por el río Sella, desde el Puente de Emilio Llamedo en Arriondas hasta el puente de Ribadesella. Existe una meta adelantada en Llovio, a 15 km, para categorías menores y veteranos. Los últimos 4 km discurren por la ría de Ribadesella.</dd>
+
+        <dt>¿Qué es la Fiesta de las Piraguas?</dt>
+        <dd>La celebración popular que rodea al Descenso — verbenas y campistas los días previos, el desfile de la Alborada el sábado por la mañana, el cañonazo de salida, el descenso y la romería en los Campos de Oba al final. Deporte y fiesta son inseparables en el Sella desde 1930.</dd>
+
+        <dt>¿Quién fundó el Descenso del Sella?</dt>
+        <dd><strong>Dionisio de la Huerta</strong>, que en 1929 bajó con unos amigos el río Piloña en canoa. La primera edición oficial fue en 1930; el recorrido Arriondas–Ribadesella quedó fijado en 1932. En Arriondas hay bustos y placas que recuerdan su figura en cada edición.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Deporte Tradicional</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Asturias</a>
+        <a href="#" class="etiqueta">Agosto</a>
+        <a href="#" class="etiqueta">Piragüismo</a>
+        <a href="#" class="etiqueta">Río Sella</a>
+        <a href="#" class="etiqueta">Arriondas</a>
+        <a href="#" class="etiqueta">Ribadesella</a>
+        <a href="#" class="etiqueta">Sidra</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-sella">
+        <h2 id="rel-title-sella">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="romeria-vikinga-catoira.html" class="ficha-rel-card">
+            <img src="images/romeria-vikinga-catoira.jpg" alt="Vikingos desembarcando en las Torres del Oeste durante la Romería Vikinga de Catoira en Galicia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Romería Vikinga de Catoira</span>
+              <span class="rel-frase">El Atlántico, un río y los vikingos que nunca se fueron del norte.</span>
+              <span class="rel-meta">Catoira · Galicia</span>
+            </div>
+          </a>
+
+          <a href="rapa-das-bestas-sabucedo.html" class="ficha-rel-card">
+            <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores sujetando caballos salvajes durante la Rapa das Bestas de Sabucedo en A Estrada" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Rapa das Bestas de Sabucedo</span>
+              <span class="rel-frase">Los vecinos de Sabucedo bajan los caballos salvajes del monte a mano limpia.</span>
+              <span class="rel-meta">A Estrada · Galicia</span>
+            </div>
+          </a>
+
+          <a href="guerras-cantabras-corrales-buelna.html" class="ficha-rel-card">
+            <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Recreación de las Guerras Cántabras en Los Corrales de Buelna con combatientes de época" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Guerras Cántabras de Los Corrales de Buelna</span>
+              <span class="rel-frase">La resistencia cántabra contra Roma recreada en el valle del Besaya.</span>
+              <span class="rel-meta">Los Corrales de Buelna · Cantabria</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Descenso Internacional del Sella (CODIS), Turismo de Asturias, BOE y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
