@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Festival Celta de Ortigueira 2026: folk gratis en Galicia</title>
+  <meta name="description" content="Festival do Mundo Celta de Ortigueira 2026: 8-12 de julio, gratuito. 100.000 asistentes, ocho naciones celtas, camping en Morouzos. ITI desde 2005." />
+  <link rel="canonical" href="https://folklorius.es/festival-celta-ortigueira.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ortigueira, cinco días sin silencio: el mayor festival celta de España nació en un pueblo de 3.000 habitantes" />
+  <meta property="og:description" content="Una escuela de gaitas lo fundó en 1978 sin presupuesto. Hoy reúne 100.000 personas, artistas de ocho naciones celtas y foliadas espontáneas bajo los pinos de Morouzos hasta la madrugada. Y sigue siendo gratis." />
+  <meta property="og:image" content="https://folklorius.es/images/festival-celta-ortigueira.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/festival-celta-ortigueira.html",
+    "name": "Festival Internacional do Mundo Celta de Ortigueira",
+    "startDate": "2026-07-08",
+    "endDate": "2026-07-12",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Ortigueira, A Coruña",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ortigueira",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.6841,
+        "longitude": -7.8548
+      }
+    },
+    "image": ["https://folklorius.es/images/festival-celta-ortigueira.jpg"],
+    "description": "El Festival Internacional do Mundo Celta de Ortigueira reúne cada julio a artistas de las ocho naciones celtas en la explanada del puerto deportivo de Ortigueira. Fundado en 1978 por la Escola de Gaitas de Ortigueira, es el mayor festival de música folk de España y uno de los referentes europeos del género. Entrada gratuita. Declarado Fiesta de Interés Turístico Internacional en 2005.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Concello de Ortigueira",
+      "url": "https://festivaldeortigueira.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Festival Internacional do Mundo Celta de Ortigueira",
+        "item": "https://folklorius.es/festival-celta-ortigueira.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Festival de Ortigueira en 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Del 8 al 12 de julio de 2026. El festival arranca el miércoles con la apertura de la Vila Celta y el izado de banderas de las ocho naciones celtas, y cierra el domingo con el Desfile de las Naciones Celtas. El programa completo está disponible en festivaldeortigueira.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay que pagar entrada para el Festival de Ortigueira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. El Festival de Ortigueira es completamente gratuito: conciertos, talleres y zona de acampada en el pinar de Morouzos no tienen ningún coste. Es uno de los festivales de música de mayor escala de España con entrada libre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las ocho naciones celtas del Festival de Ortigueira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El festival reconoce ocho naciones celtas históricas: Galicia, Asturias, Bretaña (Francia), Irlanda, Isla de Man, Cornualles (Reino Unido), Gales y Escocia. El acto inaugural del festival es el izado de las banderas de estas ocho naciones en la Plaza de Isabel II, con la Escola de Gaitas de Ortigueira interpretando el Himno Gallego."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona el camping de Morouzos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El camping se instala en el pinar junto a la playa de Morouzos, a unos 3 kilómetros del recinto principal. Es gratuito. La organización habilita autobuses lanzadera gratuitos que funcionan sin interrupción entre el camping y los escenarios durante toda la duración del festival. El acceso de vehículos privados al pinar es restringido."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Concurso Runas del Festival de Ortigueira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Concurso Runas es el certamen anual de bandas emergentes de música folk del festival. Los finalistas compiten en el escenario principal durante el jueves, y el grupo ganador tiene garantizada su actuación como artista del cartel en la edición siguiente. Es el principal vivero de folk nuevo de España y ha lanzado la carrera internacional de varios grupos."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Festival Internacional do Mundo Celta de Ortigueira
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/festival-celta-ortigueira.jpg" alt="Escenario principal del Festival Internacional do Mundo Celta de Ortigueira con miles de asistentes frente al puerto deportivo al atardecer" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Festival Internacional do Mundo Celta de Ortigueira</h1>
+      <p class="ficha-subtitle">
+        Ortigueira (A Coruña) · Festival de Música · El mayor festival de folk del mundo celta en España, gratuito desde 1978.
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">8–12 de julio de 2026 · Gratuito · 5 días</div>
+        <div class="datos-secundarios">
+          <span>📍 Ortigueira · A Coruña · Galicia</span>
+          <span>🎵 Folk internacional · Ocho naciones celtas</span>
+          <span>🏅 Interés Turístico Internacional</span>
+        </div>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li>El izado de banderas del miércoles es el acto fundacional del festival: ocho naciones celtas representadas en un mismo espacio. Merece el silencio y la atención que recibiría cualquier ceremonia con banderas y música en vivo.</li>
+          <li>Las foliadas espontáneas del camping de Morouzos son de quienes las inician — músicos que tocan porque quieren tocar, no porque haya un público esperando. Se entra en ese círculo como oyente, no como espectador con derechos.</li>
+          <li>Ortigueira es un pueblo de 3.000 habitantes que durante cinco días alberga a 100.000 personas. El pueblo sigue ahí cuando el festival termina.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        En 1978, la Escola de Gaitas de Ortigueira organizó un festival de música celta en la explanada de un colegio con un presupuesto de un millón de pesetas y llovió tanto que las actuaciones tuvieron que suspenderse. Asistieron 9.000 personas. Cuarenta y ocho años después, el Festival Internacional do Mundo Celta convoca a unas 100.000 en la misma ría, sigue siendo gratuito y la escuela que lo fundó sigue siendo su corazón. Comenzó como una apuesta improbable de un pueblo del norte de Galicia. Hoy es el mayor festival de folk del mundo celta en España.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        El Festival de Ortigueira es el <strong>mayor festival de música celta de la Península Ibérica</strong> por volumen de asistentes, y cada julio convierte durante cinco días la villa marinera de Ortigueira en el punto de encuentro de las culturas atlánticas. Los conciertos, los talleres y el camping en el pinar de Morouzos son gratuitos. Unas <strong>100.000 personas</strong> de toda España y Europa se mueven hacia el extremo noroeste de la Península para escuchar gaitas, violines, bodhrán e instrumentos de viento de ocho tradiciones celtas distintas — y para quedarse varios días.
+      </p>
+      <p>
+        El festival tiene tres escenarios con lógicas distintas. El <strong>Escenario Principal Estrella Galicia</strong>, en la explanada del puerto deportivo, concentra las cabezas de cartel internacionales a partir de la entrada de la noche hasta la madrugada. La <strong>Vila Celta</strong>, en la intersección de las calles Soidade y Constitución, ofrece una programación más íntima y de proximidad desde el miércoles hasta el domingo — en 2026 amplía su peso dentro del festival. Y el <strong>Festival na Rúa</strong> lleva agrupaciones, charangas y bandas de gaitas por todo el casco urbano durante los cinco días, sin horario fijo, la música está en cualquier rincón del pueblo durante los cinco días.
+      </p>
+      <p>
+        El festival va más allá de las ocho naciones celtas europeas. Quebec y Canadá tienen presencia habitual en el cartel — comunidades francófonas que llevan siglos tocando gaitas y violines en el otro extremo del Atlántico. El propio Yves Lambert, que regresa en 2026, viene de esa tradición.
+      </p>
+      <p>
+        El <strong>Concurso Runas</strong> es el certamen de bandas emergentes del festival: los finalistas compiten el jueves en el escenario principal, y el ganador tiene garantizada su actuación en el cartel de la edición siguiente. En 2026, el grupo madrileño Xara actúa como artista del cartel tras ganar la edición anterior. El Runas ha lanzado la carrera internacional de varios grupos que hoy son nombres habituales del circuito folk europeo.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo, horarios de autobuses lanzadera y toda la información logística está disponible en <a href="https://festivaldeortigueira.com" target="_blank" rel="noopener">festivaldeortigueira.com</a>.</p>
+
+      <h2 class="section-title">Historia</h2>
+      <p>
+        El <strong>30 de julio de 1978</strong>, en la explanada del colegio de Ortigueira, la Escola de Gaitas organizó el primer festival de música celta celebrado en España. El presupuesto era de un millón de pesetas recaudado con la venta de entradas; llovió con fuerza y las actuaciones se suspendieron. Las 9.000 personas que asistieron volvieron al año siguiente. La segunda edición, en 1979, se trasladó al paseo de la Alameda del puerto deportivo — la ubicación definitiva desde entonces.
+      </p>
+      <p>
+        El festival creció durante los años ochenta hasta que problemas presupuestarios y de gestión lo interrumpieron durante varios años. Se retomó definitivamente en <strong>1995</strong> bajo gestión municipal y con un modelo más estable. En <strong>2000</strong> amplió su horizonte musical más allá del folk celta estricto, incorporando fusiones con rock, electrónica y world music, sin perder la raíz atlántica. La declaración como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en <strong>2003</strong> (BOE 7 de mayo de 2003) y la de <strong>Interés Turístico Internacional</strong> en <strong>2005</strong>.
+      </p>
+      <p>
+        Por sus escenarios han pasado nombres como The Chieftains, The Dubliners, Carlos Núñez, Milladoiro, Luar na Lubre o Alan Stivell. En 2026 actúan, entre otros, <strong>Solas</strong> (Estados Unidos), <strong>Lúnasa</strong> (Irlanda), <strong>Noon</strong> (Bretaña), <strong>Valtos</strong> (Escocia), <strong>Anxo Lorenzo</strong> (Galicia) y el regreso de <strong>Yves Lambert</strong>, vocalista y fundador de La Bottine Souriante, ocho años después de su última visita.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        La edición de 2026 se celebra del <strong>8 al 12 de julio</strong>. El miércoles 8 el festival arranca con la apertura de la Vila Celta y el acto inaugural de izado de banderas, con una programación de entrada progresiva. Los jueves, viernes y sábado son las jornadas de mayor intensidad en el escenario principal. El domingo cierra con el Desfile de las Naciones Celtas por la mañana y los últimos conciertos.
+      </p>
+
+      <h2 class="section-title">Programa</h2>
+      <ul class="procesiones-list">
+        <li>
+          <span class="dia-label">Miércoles 8 · Tarde-noche · Plaza de Isabel II y Vila Celta</span>
+          Acto inaugural: <strong>izado de las banderas de las ocho naciones celtas</strong> en la Plaza de Isabel II, con la Escola de Gaitas de Ortigueira interpretando el Himno Gallego. A continuación, apertura de la <strong>Vila Celta</strong> con los primeros conciertos de proximidad. El miércoles el festival arranca despacio, antes de crecer los días siguientes.
+        </li>
+        <li>
+          <span class="dia-label">Jueves 9 · Todo el día · Escenario principal y Vila Celta</span>
+          Primera jornada completa. Por la tarde, <strong>final del Concurso Runas</strong> en el escenario principal: bandas emergentes de folk compiten ante el jurado, con el premio de actuar en el cartel de 2027. Al caer la noche, primeras cabezas de cartel internacionales en el Escenario Estrella Galicia.
+        </li>
+        <li>
+          <span class="dia-label">Viernes 10 y sábado 11 · Todo el día · Todos los escenarios</span>
+          Las jornadas centrales del festival. El <strong>Festival na Rúa</strong> llena las calles de Ortigueira con bandas de gaitas, charangas y representaciones de teatro y marionetas desde primera hora. Los conciertos de la Vila Celta se suceden durante todo el día. Al caer la noche, los cabezas de cartel toman el Escenario Estrella Galicia y los conciertos se prolongan hasta la madrugada.
+        </li>
+        <li>
+          <span class="dia-label">Domingo 12 · Mañana · Casco urbano de Ortigueira</span>
+          <strong>Desfile de las Naciones Celtas</strong>: las bandas de gaitas de Galicia, Asturias, Bretaña, Irlanda, Isla de Man, Cornualles, Gales y Escocia desfilan juntas por la calle principal de Ortigueira. Es el cierre institucional y el momento más visual de la semana. Últimos conciertos al mediodía antes del fin de la edición.
+        </li>
+      </ul>
+
+      <h2 class="section-title">Las ocho naciones celtas y la ría de Ortigueira</h2>
+      <div class="music-block">
+        <p>
+          El concepto que da nombre y estructura al festival es el de las <strong>ocho naciones celtas</strong>: Galicia, Asturias, Bretaña, Irlanda, Isla de Man, Cornualles, Gales y Escocia. No son ocho países — son ocho territorios que comparten una raíz lingüística y cultural atlántica que la historia convirtió en periferias. El festival los reúne cada julio en Ortigueira, que geográficamente no podría estar más cerca de ese mapa: situado entre el <strong>Cabo Ortegal</strong> y la <strong>Estaca de Bares</strong>, en la caída de las sierras da Capelada, da Coriscada y a Faladoira hacia la ría, el pueblo tiene el Atlántico norte en todas las vistas.
+        </p>
+        <p>
+          La <strong>ría de Ortigueira</strong> es el marco natural del festival: una ría laberíntica de aguas tranquilas rodeada de espacios de alto valor geológico. El escenario principal está en la explanada del puerto deportivo, con la ría al fondo. En marea alta el agua roza los bordes del paseo; en marea baja, los limos de la ría quedan al descubierto y cambian completamente la perspectiva. El camping de Morouzos, a 3 kilómetros, está en el pinar junto a la playa del mismo nombre — uno de los lugares más recordados por quienes han ido al festival.
+        </p>
+        <ul>
+          <li>Para el izado de banderas del miércoles, llega antes de que empiece la ceremonia y sitúate cerca de la Escola de Gaitas: el momento en que las ocho banderas suben a los mástiles al son del Himno Gallego es el más cargado de significado de toda la semana.</li>
+          <li>Para los conciertos nocturnos del escenario principal, los mejores puntos de escucha son los laterales de la explanada — la acústica del puerto abierto se distribuye bien y evitas la mayor densidad de público del centro.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El izado de las ocho banderas celtas</h3>
+          <span class="tag">Miércoles · Tarde · Plaza de Isabel II</span>
+          <p>El acto inaugural del festival: las banderas de Galicia, Asturias, Bretaña, Irlanda, Isla de Man, Cornualles, Gales y Escocia suben a los mástiles de la Plaza de Isabel II mientras la Escola de Gaitas interpreta el Himno Gallego. Dura pocos minutos. Es el único momento del festival en que las ocho naciones celtas están en el mismo cuadro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque resume en un acto lo que el festival lleva décadas haciendo: reunir en un pueblo de Galicia a culturas que el mapa político separó hace siglos. No hay discurso, no hay presentación — solo música y banderas subiendo. Es el arranque más limpio y más cargado de cualquier festival de España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Escenario Estrella Galicia de noche</h3>
+          <span class="tag">Jueves a sábado · Noche · Puerto deportivo</span>
+          <p>Las cabezas de cartel internacionales en la explanada del puerto deportivo, con la ría de Ortigueira al fondo. En 2026: Solas, Lúnasa, Noon, Valtos, Yves Lambert y el resto del cartel. Los conciertos empiezan al caer la noche y se prolongan hasta la madrugada. El sonido se proyecta sobre el agua de la ría.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el escenario natural — la ría, el puerto, el fondo de montes de la Sierra da Capelada — convierte cualquier concierto en algo que no ocurre igual en ningún otro festival. Y porque la programación de Ortigueira trae artistas que no pasan habitualmente por España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La foliada nocturna en Morouzos</h3>
+          <span class="tag">Todas las noches · Madrugada · Pinar de Morouzos</span>
+          <p>El festival dentro del festival. En el pinar de Morouzos, mientras el escenario principal cierra, grupos de músicos aficionados y no tan aficionados montan foliadas espontáneas entre las tiendas. Gaitas gallesas, flautas irlandesas, violines bretones y lo que haya a mano. Nadie las organiza. Duran lo que duran.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es lo más cercano al origen del festival: músicos tocando juntos porque quieren, sin cartel, sin escenario, sin hora de cierre. El olor a pinar húmedo y a salitre, la arena fría y el sonido del roncón de la gaita bajo los pinos de Morouzos a la madrugada es lo que más gente recuerda años después de haber ido a Ortigueira.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Concurso Runas</h3>
+          <span class="tag">Jueves · Tarde · Escenario principal</span>
+          <p>El certamen de bandas emergentes de folk: los finalistas del año compiten en el escenario principal y el ganador actúa en el cartel del año siguiente. En 2026, Xara actúa como artista del cartel tras ganar la edición anterior. Es la única competición de música folk emergente de España con ese nivel de proyección internacional.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Runas es donde se ve lo que viene. Muchos de los nombres que hoy llenan festivales europeos pasaron primero por aquí como finalistas. El jueves por la tarde en el escenario principal es el único momento del festival en que el público decide — con su reacción — parte del futuro del folk.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> El camping del pinar de Morouzos es gratuito y es la opción más usada — y la más integrada en la experiencia del festival. Si prefieres alojamiento en techo, Ortigueira tiene opciones limitadas para el volumen de visitantes; las ciudades más cercanas con más oferta son Ferrol y A Coruña. Reserva con antelación.</li>
+        <li><strong>Cómo llegar.</strong> Ortigueira no tiene conexión directa de tren. La opción más habitual desde A Coruña o Ferrol es en coche o en autobús de línea hasta Ortigueira. Consulta los operadores de transporte gallegos para horarios actualizados — algunos años la organización habilita servicios especiales desde Ferrol.</li>
+        <li><strong>Autobuses lanzadera.</strong> La organización habilita autobuses gratuitos sin interrupción entre el camping de Morouzos y el recinto principal durante toda la duración del festival. El acceso de vehículos privados al pinar es restringido — consulta las instrucciones en la web oficial antes de ir.</li>
+        <li><strong>El tiempo en julio.</strong> Ortigueira está en el extremo norte de Galicia, a pocos kilómetros del Cabo Ortegal. El tiempo atlántico en julio puede ser fresco por la noche y cambiar rápido. Lleva capas para los conciertos nocturnos aunque haga calor durante el día. Para el camping, tienda con buena impermeabilidad.</li>
+        <li><strong>Gastronomía.</strong> El mercado de artesanía ocupa el paseo marítimo durante los cinco días del festival, con puestos de artesanía local y atlántica. En los mismos alrededores encontrarás empanada gallega, pulpo á feira de las carpas de pulpeiras que se montan cada año, calamares y pimientos de Padrón. Para comer en los bares del pueblo, la empanada de xoubas o de berberechos es el plato más local. Todo lo anterior se riega con vino blanco gallego o Estrella Galicia.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario del festival</h2>
+      <dl class="festero">
+
+        <dt>Foliada</dt>
+        <dd>Una reunión espontánea de músicos que tocan y bailan juntos, sin organización previa ni escenario formal. Las foliadas son el alma nocturna del camping de Morouzos: alguien saca una gaita, se suma un violín, aparece un bodhrán, y lo que empezó con tres personas puede terminar con veinte tocando bajo los pinos. En Galicia, la foliada es la forma más antigua de hacer música en comunidad.</dd>
+
+        <dt>Celtie / Folkie</dt>
+        <dd>El nombre informal para el asistente habitual del festival — quien vuelve año tras año, conoce el circuito folk europeo, sabe quiénes son los artistas antes de que los presenten y lleva la tienda al camping de Morouzos por costumbre. No es un término oficial, pero es de uso generalizado entre los que van al festival.</dd>
+
+        <dt>Runas</dt>
+        <dd>El certamen anual de bandas emergentes de folk del festival. El nombre hace referencia a las runas, el sistema de escritura de las culturas germánicas y nórdicas que comparten raíz atlántica con las celtas. Los finalistas compiten en el escenario principal el jueves; el ganador actúa en el cartel del año siguiente.</dd>
+
+        <dt>Alborada</dt>
+        <dd>Un pasacalles musical a primera hora de la mañana, antes de que el pueblo despierte del todo. En Ortigueira, las alboradas recorren el casco urbano con gaitas y percusión, anunciando que hay otro día de festival. Es la forma más antigua de despertar una fiesta en Galicia y el contrapunto al silencio que raramente existe en Ortigueira durante los cinco días del festival.</dd>
+
+        <dt>Ruada</dt>
+        <dd>Fiesta y baile tradicional en la calle, con música en directo. En el contexto del Festival de Ortigueira, las ruadas se dan tanto en la Vila Celta como de forma espontánea por el casco urbano cuando hay músicos tocando y espacio para bailar. La ruada es baile colectivo — no requiere pareja fija ni saber los pasos de antemano.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/festival-celta-ortigueira-1.jpg" alt="Izado de las banderas de las ocho naciones celtas en la Plaza de Isabel II durante el acto inaugural del Festival de Ortigueira" loading="lazy" />
+        <img src="images/festival-celta-ortigueira-2.jpg" alt="Miles de asistentes frente al Escenario Principal Estrella Galicia del Festival Internacional do Mundo Celta de Ortigueira en la explanada del puerto deportivo" loading="lazy" />
+        <img src="images/festival-celta-ortigueira-3.jpg" alt="Foliada espontánea de músicos en el pinar de Morouzos durante el camping del Festival de Ortigueira" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://festivaldeortigueira.com" target="_blank" rel="noopener">Web oficial del Festival Internacional do Mundo Celta de Ortigueira — programa, cartel y logística</a></li>
+        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia</a></li>
+        <li><a href="https://www.concellodeortigueira.com" target="_blank" rel="noopener">Concello de Ortigueira</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-08-03</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra el Festival de Ortigueira en 2026?</dt>
+        <dd>Del <strong>8 al 12 de julio de 2026</strong>. El festival arranca el miércoles con el izado de banderas y la apertura de la Vila Celta, y cierra el domingo con el Desfile de las Naciones Celtas. El programa completo está en <a href="https://festivaldeortigueira.com" target="_blank" rel="noopener">festivaldeortigueira.com</a>.</dd>
+
+        <dt>¿Hay que pagar entrada para el Festival de Ortigueira?</dt>
+        <dd>No. El festival es <strong>completamente gratuito</strong>: conciertos, talleres y zona de acampada en Morouzos no tienen ningún coste. Es uno de los festivales de música de mayor escala de España con entrada libre.</dd>
+
+        <dt>¿Qué son las ocho naciones celtas del Festival de Ortigueira?</dt>
+        <dd>Galicia, Asturias, Bretaña, Irlanda, Isla de Man, Cornualles, Gales y Escocia. El acto inaugural del festival es el <strong>izado de sus banderas</strong> en la Plaza de Isabel II, con la Escola de Gaitas de Ortigueira interpretando el Himno Gallego.</dd>
+
+        <dt>¿Cómo funciona el camping de Morouzos?</dt>
+        <dd>El camping se instala en el <strong>pinar junto a la playa de Morouzos</strong>, a unos 3 kilómetros del recinto principal. Es gratuito. La organización habilita autobuses lanzadera gratuitos sin interrupción entre el camping y los escenarios durante todo el festival. El acceso de vehículos privados al pinar es restringido.</dd>
+
+        <dt>¿Quién fundó el Festival de Ortigueira y cuándo?</dt>
+        <dd>La <strong>Escola de Gaitas de Ortigueira</strong>, fundada en 1975, organizó la primera edición el 30 de julio de <strong>1978</strong> en la explanada del colegio del pueblo. El presupuesto era de un millón de pesetas, llovió tanto que las actuaciones se suspendieron, y asistieron 9.000 personas. Fue el primer festival de música celta celebrado en España.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Festival de Música</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Galicia</a>
+        <a href="#" class="etiqueta">A Coruña</a>
+        <a href="#" class="etiqueta">Julio</a>
+        <a href="#" class="etiqueta">Folk</a>
+        <a href="#" class="etiqueta">Música Celta</a>
+        <a href="#" class="etiqueta">Gratuito</a>
+        <a href="#" class="etiqueta">Cultura Atlántica</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-ortigueira">
+        <h2 id="rel-title-ortigueira">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="arde-lucus-lugo.html" class="ficha-rel-card">
+            <img src="images/arde-lucus-lugo.jpg" alt="Legionarios romanos y pobladores castreños en el desfile de Arde Lucus por las calles de Lugo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Arde Lucus</span>
+              <span class="rel-frase">Lugo vuelve a ser romana y celta durante tres días de junio.</span>
+              <span class="rel-meta">Lugo · Galicia</span>
+            </div>
+          </a>
+
+          <a href="rapa-das-bestas-sabucedo.html" class="ficha-rel-card">
+            <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores sujetando caballos salvajes durante la Rapa das Bestas de Sabucedo en A Estrada" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Rapa das Bestas de Sabucedo</span>
+              <span class="rel-frase">Los vecinos de Sabucedo bajan los caballos salvajes del monte a mano limpia.</span>
+              <span class="rel-meta">A Estrada · Galicia</span>
+            </div>
+          </a>
+
+          <a href="fiesta-lamprea-arbo.html" class="ficha-rel-card">
+            <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea del Miño preparada al estilo tradicional durante la Festa da Lamprea de Arbo" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Festa da Lamprea de Arbo</span>
+              <span class="rel-frase">El pescado más antiguo del mundo, cocinado en el único lugar donde saben hacerlo.</span>
+              <span class="rel-meta">Arbo · Galicia</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: Festival Internacional do Mundo Celta de Ortigueira, Concello de Ortigueira, BOE y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
