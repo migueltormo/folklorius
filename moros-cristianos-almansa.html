@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moros y Cristianos de Almansa 2026: Castillo Real y Embajada Nocturna</title>
+  <meta name="description" content="Moros y Cristianos de Almansa 2026 (30 abr-6 may). ITI desde 2019. Embajada Nocturna ante el castillo del siglo XIV, 10 comparsas y la Procesión Mayor de Belén." />
+  <link rel="canonical" href="https://folklorius.es/moros-cristianos-almansa.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moros y Cristianos de Almansa 2026 | Folklorius" />
+  <meta property="og:description" content="La pólvora ilumina el Castillo de Almansa rozando la medianoche. Un castillo del siglo XIV, no de madera. Diez comparsas, siete días y la patrona de Belén al final." />
+  <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-almansa.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://folklorius.es/moros-cristianos-almansa.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* ── Filaes por bando ────────────────────────────────────── */
+    .filaes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .filaes-grid { grid-template-columns: 1fr; }
+    }
+    .filae-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .filae-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #b34700);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .filae-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .filae-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.45;
+    }
+    .filae-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #b34700);
+    }
+    /* Tooltip CSS puro */
+    .nombre-filae {
+      border-bottom: 1px dotted var(--brand, #b34700);
+      cursor: help;
+    }
+    .tooltip-filae {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 260px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-filae::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .filae-col ul li:hover .tooltip-filae { display: block; }
+    .filae-col ul li:focus-within .tooltip-filae { display: block; }
+    .filae-col .anyo {
+      font-size: 0.72rem;
+      color: var(--text-muted, #5a5a5a);
+      margin-left: 4px;
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #b34700);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      margin-bottom: 3px;
+    }
+    .actos-list .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
+    .bando-moro      { background: #fef3c7; color: #92400e; }
+    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #b34700); }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+    .nota-filae {
+      font-size: 0.78rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+  
+    /* ── Aviso sensibilidad ──────────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid #d97706;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: var(--text, #2c2c2c);
+    }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Lista consejos ─────────────────────────────────────── */
+    .lista-consejos { padding-left: 1.2rem; line-height: 1.8; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/moros-cristianos-almansa.html",
+    "name": "Moros y Cristianos de Almansa",
+    "startDate": "2026-04-30",
+    "endDate": "2026-05-06",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Almansa — Plaza de Santa María y Castillo del Cerro del Águila",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Almansa",
+        "addressRegion": "Albacete",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.8679,
+        "longitude": -1.0942
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Agrupación de Comparsas de Moros y Cristianos de Almansa",
+      "url": "https://www.agrupacionalmansa.es"
+    },
+    "image": ["https://folklorius.es/images/moros-cristianos-almansa.jpg"],
+    "description": "Los Moros y Cristianos de Almansa, celebrados en las Fiestas Mayores en honor a la Virgen de Belén. Declarados Fiesta de Interés Turístico Internacional en 2019. La Embajada Mora Nocturna ante el castillo real del siglo XIV es el acto más singular de la fiesta.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Moros y Cristianos", "item": "https://folklorius.es/index.html#moros-cristianos"},
+      {"@type": "ListItem", "position": 3, "name": "Moros y Cristianos de Almansa", "item": "https://folklorius.es/moros-cristianos-almansa.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebran los Moros y Cristianos de Almansa en 2026?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Del 30 de abril al 6 de mayo de 2026. Los días de mayor afluencia externa son el 1 de mayo (Entrada Mora) y la noche del 2 de mayo (Embajada Mora Nocturna). El 6 de mayo es el Día Grande para los locales. Las fechas cambian cada año — consulta el programa oficial en la web de la Agrupación de Comparsas."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es una fiesta apta para familias con niños?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, con una salvedad importante: los actos de arcabucería — especialmente la Embajada Mora Nocturna — son intensos en decibelios y se celebran rozando la medianoche. Para niños pequeños, las Entradas por la tarde y la Procesión Mayor del 6 de mayo son más adecuadas. Protección auditiva siempre."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si llueve?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Las Entradas y las Embajadas en la Plaza de Santa María pueden verse afectadas por lluvia. La Agrupación de Comparsas comunica cambios a través de sus canales oficiales. Consulta la web y las redes sociales de la Agrupación si hay riesgo de lluvia los días previos a tu visita."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay zonas accesibles para personas con movilidad reducida?",
+        "acceptedAnswer": {"@type": "Answer", "text": "El casco histórico de Almansa tiene tramos de calles empedradas y desniveles. La Plaza de Santa María es el punto más accesible para los actos principales. Consulta con el Ayuntamiento de Almansa antes del viaje para conocer las zonas habilitadas en la edición de 2026."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué los Mozárabes desfilan en el bando moro?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Cuando se fundó la comparsa de los Mozárabes, los organizadores optaron por incluirla en el bando moro por coherencia con la narrativa festera: en la historia de Al-Ándalus, los mozárabes convivían bajo dominio árabe. Es una decisión festera sin connotación peyorativa que la propia comunidad almanseña reconoce y respeta."}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Moros y Cristianos de Almansa
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/moros-cristianos-almansa.jpg" alt="Entrada Mora al atardecer en Almansa durante los Moros y Cristianos, con festeros de las comparsas desfilando por la Plaza de Santa María con el Castillo del Cerro del Águila al fondo" />
+  </div>
+
+  <main class="ficha-main">
+
+    <article class="card">
+
+      <h1>Moros y Cristianos de Almansa</h1>
+      <p class="ficha-subtitle">
+        Almansa · Albacete · Castilla-La Mancha · Fiestas Mayores — Interés Turístico Internacional
+      </p>
+
+    <!-- DATOS CLAVE -->
+    <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la fiesta">
+      <div class="fechas-grandes">Del 30 de abril al 6 de mayo de 2026</div>
+      <div class="datos-secundarios">
+        <span>📍 Almansa, Albacete</span>
+        <span>⏱️ 7 días de fiesta</span>
+        <span>🏅 Interés Turístico Internacional desde 2019</span>
+        <span>🏰 Castillo del siglo XIV como escenario real</span>
+      </div>
+    </div>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2019</span>
+      </div>
+
+      <!-- AVISO DE SENSIBILIDAD -->
+    <div class="aviso-sensibilidad" role="note">
+      <strong>Nota de sensibilidad</strong>
+      <ul>
+        <li><strong>Los Moros y Cristianos conmemoran una batalla, no celebran un enfrentamiento.</strong> El espíritu de la fiesta es de convivencia entre dos culturas que comparten una misma ciudad. Quien llega con esa mirada lo ve todo de otra manera.</li>
+        <li><strong>El público es parte de la fiesta, no un observador externo.</strong> Los Moros y Cristianos funcionan como un circuito entre festeros, música y público — cada uno necesita a los otros dos. Llenar las calles, aplaudir una Entrada o responder al estruendo del Alardo no es intromisión: es lo que la fiesta espera de quien está ahí.</li>
+        <li><strong>La Embajada Mora Nocturna no es fuegos artificiales.</strong> Los disparos de arcabucería que iluminan el castillo son parte de un ritual festero con décadas de historia. Recibirlos como lo que son — un acto de identidad colectiva — cambia completamente la experiencia.</li>
+      </ul>
+    </div>
+
+    <!-- LA ESENCIA -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Rozando la medianoche del 2 de mayo, la pólvora ilumina el Castillo del Cerro del Águila. No es un castillo de madera montado para la ocasión: es el castillo de verdad, el del siglo XIV, con sus trescientos metros de altura sobre la ciudad. Las tropas moras declaman su embajada a los pies de la muralla real mientras la Plaza de Santa María retumba con los disparos. Ese momento, la Embajada Mora Nocturna, solo ocurre en Almansa.
+      </p>
+      <p>
+        La fiesta lleva apenas cincuenta años — la primera comparsa desfiló en 1977 — pero lo que ha construido en ese tiempo es una identidad propia y reconocible. Diez comparsas, un castillo que no es escenografía y una patrona que cierra la semana el Día Grande. Así es Almansa en mayo.
+      </p>
+    </section>
+
+    <!-- EN QUÉ CONSISTE -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">¿En qué consiste?</h2>
+      <p>
+        Almansa celebra sus Fiestas Mayores en honor a la Virgen de Belén, con los Moros y Cristianos como eje central de la semana festera. La ciudad cuenta con <strong>10 comparsas</strong> organizadas en dos bandos de cinco. La <strong>Agrupación de Comparsas de Moros y Cristianos de Almansa</strong>, fundada en 1979, coordina todos los actos junto al Ayuntamiento.
+      </p>
+      <p>
+        La fiesta se despliega a lo largo de siete días, del 30 de abril al 6 de mayo. Los primeros días arrancan con los actos de apertura y las dianas festeras. El bloque central — del 1 al 4 de mayo — concentra las Entradas de ambos bandos y las dos Embajadas. El <strong>6 de mayo es el Día Grande</strong>: la Procesión Mayor de la Virgen de Belén reúne a todas las comparsas en traje de gala.
+      </p>
+      <p>
+        Para el visitante externo, el consejo es claro: elige entre la <strong>Entrada Mora del 1 de mayo</strong> por la tarde o la <strong>Embajada Nocturna del 2</strong>, y organiza el alojamiento en torno a uno de esos dos días. La Plaza de Santa María, a los pies del castillo, es el corazón de los actos principales.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios exactos y el programa completo los publica la Agrupación de Comparsas de Moros y Cristianos de Almansa antes de cada edición. Consúltalo en su web oficial antes de planificar tu visita.</p>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        Las Fiestas Mayores de Almansa tienen raíces patronales antiguas — la devoción a la Virgen de Belén se documenta desde la Edad Moderna — pero los Moros y Cristianos como estructura organizada nacen en los años setenta. En <strong>1976</strong>, impulsada por <strong>Diego de Ves</strong>, se funda la primera comparsa: los <strong>Almanzárabes</strong>, del bando moro, que desfila por primera vez en 1977 acompañada por los <strong>Alagoneses</strong>, comparsa invitada de la localidad alicantina de Sax. En <strong>1978</strong> se funda la primera comparsa cristiana, los <strong>Templarios</strong>. Un año después, en <strong>1979</strong>, se constituye oficialmente la <strong>Agrupación de Comparsas de Moros y Cristianos de Almansa</strong>, que en <strong>1982</strong> se integra en la <strong>UNDEF</strong> (Unión Nacional de Entidades Festeras). Las comparsas asumen rotativamente cada año la <strong>Capitanía Mora</strong> y la <strong>Capitanía Cristiana</strong>, los cargos de mayor representación festera de cada bando.
+      </p>
+      <p>
+        La fiesta creció rápido. En poco más de una década pasó de dos comparsas a diez, y encontró su seña de identidad definitiva en la Embajada Mora Nocturna: un acto que en otras ciudades es ceremonia diurna y aquí combina luz, pólvora y teatro en un espacio que ningún otro municipio festero puede replicar — el Castillo del Cerro del Águila, una fortaleza real del siglo XIV que domina la ciudad desde lo alto del cerro.
+      </p>
+      <p>
+        En <strong>2008</strong> la fiesta recibió la declaración de Interés Turístico Nacional. En <strong>2019</strong> fue elevada a <strong>Fiesta de Interés Turístico Internacional</strong>, reconocimiento que consolida a Almansa dentro del circuito festero español.
+      </p>
+    </section>
+
+    <!-- FECHAS -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Las fiestas de Almansa se celebran siempre en torno al 1 de mayo, ajustándose al calendario festivo. En 2026, del <strong>30 de abril al 6 de mayo</strong>. Las fechas exactas de cada acto las publica la Agrupación de Comparsas en su web oficial.
+      </p>
+    </section>
+
+    <!-- ACTOS PRINCIPALES -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Los actos principales</h2>
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Jueves 30 de abril — Apertura</span>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Dianas festeras al amanecer y actos de apertura de las Fiestas Mayores. Los festeros recorren la ciudad en la primera jornada oficial de la semana.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes 1 de mayo — Despertá, Entrada de Bandas y Entrada Mora</span>
+          <span class="bando-tag bando-moro">Bando Moro</span>
+          Al amanecer, la <strong>Despertá</strong> con arcabucería recorre las calles para anunciar el inicio del día grande. Por la mañana, la <strong>Entrada de Bandas</strong>: todos los músicos que acompañarán a las comparsas desfilan en solitario y culminan tocando juntos en la Plaza de Santa María. Por la tarde, la <strong>Entrada Mora</strong> propiamente dicha — las cinco comparsas del bando moro al ritmo lento y solemne de las marchas orientales.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado 2 de mayo — Embajada Infantil y Embajada Mora Nocturna</span>
+          <span class="bando-tag bando-moro">Bando Moro</span>
+          Por la mañana, la <strong>Embajada Mora Infantil</strong>: los más jóvenes de la fiesta representan su propia versión de la toma del castillo, asegurando que la tradición tiene quien la continúe. Rozando la medianoche, la <strong>Embajada Mora Nocturna</strong> — el acto más singular de Almansa —: el bando moro toma simbólicamente el Castillo del Cerro del Águila con arcabucería, iluminación y teatro sobre la muralla real del siglo XIV.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo 3 de mayo — Entrada Cristiana</span>
+          <span class="bando-tag bando-cristiano">Bando Cristiano</span>
+          Las cinco comparsas cristianas desfilan con pasodobles y marchas de metal. La Entrada Cristiana cierra el ciclo de desfiles de los dos bandos.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes 4 de mayo — Embajada Cristiana</span>
+          <span class="bando-tag bando-cristiano">Bando Cristiano</span>
+          El bando cristiano reconquista simbólicamente el castillo. Los parlamentos en verso de los embajadores y la arcabucería cierran el ciclo bélico festero.
+        </li>
+
+        <li>
+          <span class="dia-label">Martes 5 de mayo — Serenata</span>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Acto devocional ante la imagen de la Virgen de Belén. Todas las comparsas se reúnen en el acto de mayor carga emocional de la semana festera.
+        </li>
+
+        <li>
+          <span class="dia-label">Miércoles 6 de mayo — Día Grande</span>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Las diez comparsas, en traje de gala, acompañan a la Virgen de Belén en la Procesión Mayor. El día de mayor devoción de las Fiestas Mayores de Almansa.
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- COMPARSAS POR BANDO -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Comparsas por bando</h2>
+      <p>
+        Las diez comparsas son el eje de la fiesta. Cinco por bando, cada una con nombre propio, traje, boato y banda de música. La decana del bando moro es los Almanzárabes (1976); la del cristiano, los Templarios (1978).
+      </p>
+      <p class="nota-grid">La composición y el orden de desfile lo publica anualmente la Agrupación de Comparsas de Moros y Cristianos de Almansa.</p>
+
+      <div class="filaes-grid">
+        <div class="filae-col">
+          <h3>⚔️ Bando Cristiano</h3>
+          <ul>
+            <li><span class="nombre-filae">Templarios</span><span class="tooltip-filae">Primera comparsa cristiana, fundada en 1978.</span></li>
+            <li><span class="nombre-filae">Mosqueteros</span><span class="tooltip-filae">Bando Cristiano</span></li>
+            <li><span class="nombre-filae">Almogávares</span><span class="tooltip-filae">Bando Cristiano</span></li>
+            <li><span class="nombre-filae">Corsarios</span><span class="tooltip-filae">Bando Cristiano</span></li>
+            <li><span class="nombre-filae">Piratas</span><span class="tooltip-filae">Bando Cristiano</span></li>
+          </ul>
+        </div>
+        <div class="filae-col">
+          <h3>🌙 Bando Moro</h3>
+          <ul>
+            <li><span class="nombre-filae">Almanzárabes</span><span class="tooltip-filae">Comparsa decana, primera en desfilar (1976). Impulsada por Diego de Ves.</span></li>
+            <li><span class="nombre-filae">Beduinos</span><span class="tooltip-filae">Bando Moro</span></li>
+            <li><span class="nombre-filae">Almohades</span><span class="tooltip-filae">Bando Moro</span></li>
+            <li><span class="nombre-filae">Zegríes</span><span class="tooltip-filae">Bando Moro</span></li>
+            <li><span class="nombre-filae">Mozárabes</span><span class="tooltip-filae">Bando Moro. El nombre responde a la narrativa festera de Al-Ándalus, sin connotación peyorativa.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner-historia" role="note">
+        <h3>¿Por qué los Mozárabes están en el bando moro?</h3>
+        <p>En la narrativa festera de Almansa, el bando moro agrupa a todas las culturas que convivían en Al-Ándalus. Los Mozárabes, como comunidad histórica bajo dominio árabe, quedaron incluidos en ese bloque cuando se estructuró la Agrupación. Es una decisión festera sin connotación peyorativa que la comunidad almanseña reconoce y respeta.</p>
+      </div>
+    </section>
+
+    <!-- MÚSICA Y SONIDO -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">Dos sonidos, dos mundos</h3>
+        <p>En Almansa la música distingue a los bandos antes de que aparezcan. La <strong>Entrada Cristiana</strong> avanza con pasodobles y marchas de metal triunfal. La <strong>Entrada Mora</strong> llega con un paso lento y solemne, cargado de timbales y melodías orientales. La diferencia de tempo entre ambos — el paso marcial cristiano frente al arrastre moro — se nota en el suelo de la Plaza de Santa María antes de verlos aparecer.</p>
+        <p style="margin-bottom:0;">Cada comparsa desfila con su propia banda de música. No hay bandas municipales centenarias como en otras plazas festeras — aquí la música se renueva cada año según la elección de cada agrupación, lo que da a cada Entrada un carácter propio y variable.</p>
+      </div>
+    </section>
+
+    <!-- MUST-SEE -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Embajada Mora Nocturna</h3>
+          <span class="tag">Noche del 2 de mayo · Plaza de Santa María</span>
+          <p>Rozando la medianoche, el bando moro toma simbólicamente el castillo real del siglo XIV con arcabucería, iluminación y teatro simultáneo. La muralla de piedra auténtica amplifica el estruendo de una manera que ningún castillo de madera puede replicar. Ninguna otra fiesta de Moros y Cristianos de España tiene un castillo del siglo XIV como escenario real.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el castillo no se construye para la fiesta: lleva ahí desde el siglo XIV. Ese detalle, que parece menor, cambia todo lo que se siente cuando la pólvora lo ilumina.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Entrada Mora</h3>
+          <span class="tag">Tarde del 1 de mayo · Recorrido oficial</span>
+          <p>Las cinco comparsas del bando moro desfilan al ritmo lento y solemne de las marchas orientales. Los timbales, los tejidos y el peso visual del bando moro crean una entrada densa que contrasta con el tempo rápido y el metal brillante de los cristianos. Ver las dos Entradas seguidas — mora el viernes, cristiana el domingo — es entender la fiesta de un golpe.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la diferencia entre los dos bandos no se explica: se escucha. El tempo arrastrando de la marcha mora frente al pasodoble cristiano es el resumen sonoro de todo lo que la fiesta quiere contar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Procesión Mayor del Día Grande</h3>
+          <span class="tag">6 de mayo · Toda la ciudad</span>
+          <p>Las diez comparsas, en traje de gala, acompañan a la Virgen de Belén en la procesión que cierra las Fiestas Mayores. Es el acto de mayor devoción y el que da sentido a todo lo anterior: la fiesta festera existe porque existe la patrona. La Serenata del día anterior, ante la imagen, es el momento de mayor recogimiento de la semana.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver a las mismas comparsas que dos días antes cargaban arcabuces acompañar en silencio a su patrona dice más de Almansa que cualquier descripción.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El castillo a cualquier hora</h3>
+          <span class="tag">Todo el año · Cerro del Águila</span>
+          <p>El Castillo de Almansa — árabe en origen, reformado en el siglo XIV — domina la ciudad desde 323 metros de altura. Durante la fiesta es el escenario de las Embajadas. Fuera de ella, es visitable y ofrece una panorámica de la llanura manchega que explica por qué la Batalla de Almansa de 1707 se libró aquí. Subir antes de las Embajadas ayuda a entender la escala de lo que ocurre de noche.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver el castillo de día y volver a verlo iluminado por la pólvora de noche son dos experiencias que se necesitan mutuamente.</p>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONSEJOS -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul class="lista-consejos">
+        <li><strong>Alojamiento.</strong> Almansa tiene oferta hotelera limitada. Reserva con meses de antelación o busca alojamiento en Albacete (40 minutos) o Villena (20 minutos).</li>
+        <li><strong>Protección auditiva.</strong> Los actos de arcabucería — especialmente la Embajada Nocturna — son intensos en decibelios y se celebran en espacios cerrados por edificios. Para niños pequeños no es opcional.</li>
+        <li><strong>Noche del 2 de mayo.</strong> La Embajada Mora Nocturna termina tarde y la ciudad tarda en vaciarse. Si tienes alojamiento en otra localidad, ten en cuenta el horario de vuelta.</li>
+        <li><strong>Calzado.</strong> El casco histórico tiene calles empedradas y la subida al castillo tiene pendiente. Zapatillas cómodas siempre.</li>
+        <li><strong>Gastronomía.</strong> Los Gazpachos Manchegos — elaborados con <em>torta cenceña</em> (un pan ácimo sin levadura que se trocea), carne de caza y verduras — son el plato de la comarca. Nada que ver con el gazpacho andaluz.</li>
+      </ul>
+    </section>
+
+    <!-- VOCABULARIO -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+        <dt>Comparsa</dt>
+        <dd>Agrupación festera de Moros y Cristianos. En Almansa hay diez: cinco por bando. Cada una tiene nombre propio, traje, boato y banda.</dd>
+
+        <dt>Abanderada / Alférez</dt>
+        <dd>Los dos cargos máximos de representación adulta de cada comparsa. La Abanderada es el cargo femenino principal; el Alférez, el masculino. La Abanderada Mayor es el máximo cargo femenino de toda la Agrupación.</dd>
+
+        <dt>Capitanía</dt>
+        <dd>La responsabilidad anual de liderar el bando. Cada año, una comparsa distinta asume la Capitanía Mora y otra la Capitanía Cristiana, según el sistema rotativo de la Agrupación. La comparsa que ostenta la capitanía encabeza los actos de su bando durante toda la semana festera.</dd>
+
+        <dt>Sede Social</dt>
+        <dd>El local propio de cada comparsa o grupo festero, que se engalana y abre durante la semana de fiestas. Es el corazón de la vida interna de cada agrupación: donde se ensaya, se come en hermandad y se celebra antes y después de cada acto.</dd>
+
+        <dt>Boato</dt>
+        <dd>El acompañamiento escenográfico de una comparsa durante su desfile: carrozas, caballos, personajes o elementos visuales elaborados.</dd>
+
+        <dt>Embajada Nocturna</dt>
+        <dd>La Embajada Mora de Almansa se celebra de noche, con el Castillo del Cerro del Águila como fondo real. El castillo — del siglo XIV — no se construye para la ocasión: es el escenario permanente.</dd>
+
+        <dt>Día Grande</dt>
+        <dd>El 6 de mayo, jornada de clausura. Todas las comparsas, en traje de gala, acompañan a la Virgen de Belén en la Procesión Mayor.</dd>
+
+        <dt>Agrupación</dt>
+        <dd>La Agrupación de Comparsas de Moros y Cristianos de Almansa, constituida en 1979. Organiza y regula la participación de las diez comparsas en las Fiestas Mayores.</dd>
+
+        <dt>Grupos Festeros</dt>
+        <dd>Agrupaciones distintas a las comparsas de M&C, vinculadas a los cuatro distritos históricos de la ciudad (San Isidro, San Francisco, San Juan y San Roque). Visten trajes tradicionales manchegos y organizan eventos en sus propias sedes. Los principales son: Virgen del Pilar, Puerta de Valencia, Méndez Núñez, Vitorero, Santa Lucía, Boinas Negras, La Olla, La Estrella, Los Manchegos y El Rincón.</dd>
+
+        <dt>Serenata</dt>
+        <dd>El acto devocional previo al Día Grande. Todos los festeros se reúnen ante la imagen de la Virgen de Belén en el acto de mayor recogimiento de la semana.</dd>
+      </dl>
+    </section>
+
+    <!-- GALERÍA (oculta) -->
+    <section class="ficha-seccion galeria" style="display:none;" aria-hidden="true">
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria-grid"></div>
+    </section>
+
+    <!-- ENLACES ÚTILES -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul class="lista-consejos">
+        <li><a href="https://www.agrupacionalmansa.es" target="_blank" rel="noopener">Agrupación de Comparsas de Almansa — Web oficial</a></li>
+        <li><a href="https://www.almansa.es" target="_blank" rel="noopener">Ayuntamiento de Almansa</a></li>
+        <li><a href="https://turismo.castillalamancha.es" target="_blank" rel="noopener">Turismo Castilla-La Mancha</a></li>
+      </ul>
+      <p class="nota-grid">Última verificación de enlaces: 2026-08-01. Programa oficial disponible en la web de la Agrupación antes de cada edición.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="ficha-seccion">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Moros y Cristianos de Almansa en 2026?</dt>
+        <dd>Del 30 de abril al 6 de mayo de 2026. Los días de mayor afluencia externa son el 1 de mayo (Entrada Mora) y la noche del 2 de mayo (Embajada Mora Nocturna). El 6 de mayo es el Día Grande. Las fechas cambian cada año — consulta el programa oficial en la web de la Agrupación de Comparsas.</dd>
+
+        <dt>¿Es una fiesta apta para familias con niños?</dt>
+        <dd>Sí, con una salvedad: los actos de arcabucería — especialmente la Embajada Mora Nocturna — son intensos en decibelios y se celebran rozando la medianoche. Para niños pequeños, las Entradas por la tarde y la Procesión Mayor del 6 de mayo son más adecuadas. Protección auditiva siempre.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>Las Entradas y las Embajadas pueden verse afectadas. La Agrupación de Comparsas comunica cambios a través de sus canales oficiales. Consulta su web y redes sociales si hay riesgo de lluvia los días previos.</dd>
+
+        <dt>¿Hay zonas accesibles para personas con movilidad reducida?</dt>
+        <dd>El casco histórico tiene tramos de calles empedradas y desniveles. La Plaza de Santa María es el punto más accesible para los actos principales. Consulta con el Ayuntamiento de Almansa antes del viaje para conocer las zonas habilitadas en 2026.</dd>
+
+        <dt>¿Por qué los Mozárabes desfilan en el bando moro?</dt>
+        <dd>Cuando se fundó la comparsa, los organizadores la incluyeron en el bando moro por coherencia con la narrativa festera: en Al-Ándalus, los mozárabes convivían bajo dominio árabe. Es una decisión festera sin connotación peyorativa que la comunidad almanseña reconoce y respeta.</dd>
+
+      </dl>
+    </section>
+
+    <!-- ETIQUETAS -->
+    <div class="ficha-etiquetas" aria-label="Etiquetas">
+      <span class="etiqueta etiqueta-destacada">Moros y Cristianos</span>
+      <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
+      <span class="etiqueta">Castilla-La Mancha</span>
+      <span class="etiqueta">Albacete</span>
+      <span class="etiqueta">Almansa</span>
+      <span class="etiqueta">Mayo</span>
+      <span class="etiqueta">Embajada Nocturna</span>
+      <span class="etiqueta">Castillo Medieval</span>
+      <span class="etiqueta">Virgen de Belén</span>
+    </div>
+
+    <!-- FICHAS RELACIONADAS -->
+    <section class="fichas-relacionadas">
+      <h2>Fiestas relacionadas</h2>
+      <div class="relacionadas-grid">
+        <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+          <strong>Moros y Cristianos de Alcoi</strong>
+          <span>Comunitat Valenciana · ITI · La cuna de la tradición festera</span>
+        </a>
+        <a href="moros-cristianos-elda.html" class="relacionada-card">
+          <strong>Moros y Cristianos de Elda</strong>
+          <span>Comunitat Valenciana · ITI · 9 comparsas y devoción a San Antón</span>
+        </a>
+        <a href="semana-santa-cuenca.html" class="relacionada-card">
+          <strong>Semana Santa de Cuenca</strong>
+          <span>Castilla-La Mancha · ITI · La otra gran fiesta de interior manchego</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BACK LINK -->
+    <div class="back-link">
+      <a href="index.html">← Volver al inicio</a>
+    </div>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
