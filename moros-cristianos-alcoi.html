@@ -26,6 +26,307 @@
   <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
   <style>
 
+    .cofradias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .cofradia-col {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 0;
+      overflow: hidden;
+    }
+    .cofradia-col summary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      padding: 14px 16px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cofradia-col summary::-webkit-details-marker { display: none; }
+    .cofradia-col summary::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-muted, #999);
+      margin-left: 8px;
+    }
+    .cofradia-col details[open] summary::after { content: "−"; }
+    .cofradia-col details[open] summary {
+      border-bottom: 1px solid var(--border, #e5e0d8);
+    }
+    .cofradia-col ul {
+      list-style: none;
+      padding: 10px 16px 14px;
+      margin: 0;
+    }
+    .cofradia-col ul li {
+      font-size: 0.88rem;
+      padding: 3px 0;
+      color: var(--text, #2a2218);
+      position: relative;
+      cursor: default;
+    }
+    .cofradia-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    @media (max-width: 480px) {
+      .cofradias-grid { grid-template-columns: 1fr; }
+    }
+
+    .cofradia-col ul li .nombre-corto {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .cofradia-col ul li .tooltip-texto {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2a2218);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 280px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .cofradia-col ul li .tooltip-texto::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2a2218);
+    }
+    .cofradia-col ul li:hover .tooltip-texto { display: block; }
+    .cofradia-col ul li:focus-within .tooltip-texto { display: block; }
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    .procesiones-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e5e0d8);
+    }
+    .procesiones-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .procesiones-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+  
     /* ── Filaes por bando ────────────────────────────────────── */
     .filaes-grid {
       display: grid;
@@ -37,9 +338,9 @@
       .filaes-grid { grid-template-columns: 1fr; }
     }
     .filae-col {
-      background: var(--bg, #fafafa);
-      border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px);
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
       padding: 16px 18px;
     }
     .filae-col h3 {
@@ -47,41 +348,29 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 10px;
       padding-bottom: 6px;
-      border-bottom: 1px solid var(--border, #e8ddd4);
+      border-bottom: 1px solid var(--border, #e5e0d8);
     }
-    .filae-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .filae-col ul { list-style: none; padding: 0; margin: 0; }
     .filae-col ul li {
       font-size: 0.86rem;
       padding: 3px 0;
-      color: var(--text, #2c2c2c);
+      color: var(--text, #2a2218);
       position: relative;
       cursor: default;
       line-height: 1.45;
     }
-    .filae-col ul li::before {
-      content: "·";
-      margin-right: 6px;
-      color: var(--brand, #b34700);
-    }
-    /* Tooltip CSS puro */
-    .nombre-filae {
-      border-bottom: 1px dotted var(--brand, #b34700);
-      cursor: help;
-    }
+    .filae-col ul li::before { content: "·"; margin-right: 6px; color: var(--brand, #8b1a1a); }
+    .nombre-filae { border-bottom: 1px dotted var(--brand, #8b1a1a); cursor: help; }
     .tooltip-filae {
       display: none;
       position: absolute;
       bottom: calc(100% + 6px);
       left: 0;
       z-index: 100;
-      background: var(--text, #2c2c2c);
+      background: var(--text, #2a2218);
       color: #fff;
       font-size: 0.78rem;
       line-height: 1.4;
@@ -99,82 +388,23 @@
       top: 100%;
       left: 14px;
       border: 5px solid transparent;
-      border-top-color: var(--text, #2c2c2c);
+      border-top-color: var(--text, #2a2218);
     }
     .filae-col ul li:hover .tooltip-filae { display: block; }
     .filae-col ul li:focus-within .tooltip-filae { display: block; }
-    .filae-col .anyo {
-      font-size: 0.72rem;
-      color: var(--text-muted, #5a5a5a);
-      margin-left: 4px;
-    }
-
-    /* ── Must-see cards ──────────────────────────────────────── */
-    .must-see-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 1rem;
-    }
-    .must-see-card {
-      background: var(--bg, #fafafa);
-      border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px);
-      padding: 18px;
-      transition: box-shadow 0.2s ease;
-    }
-    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-    .must-see-card h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      color: var(--text, #2c2c2c);
-    }
-    .must-see-card .tag {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      background: var(--accent-light, #f5e6c8);
-      color: var(--brand, #b34700);
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-      letter-spacing: 0.02em;
-    }
-    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
-    .must-see-card details { margin-top: 10px; }
-    .must-see-card details summary {
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--brand, #b34700);
-      list-style: none;
-    }
-    .must-see-card details summary::-webkit-details-marker { display: none; }
-    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
-    .must-see-card details[open] summary::after { content: " ↑"; }
-    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+    .filae-col .anyo { font-size: 0.72rem; color: var(--text-muted, #666); margin-left: 4px; }
+    .nota-filae { font-size: 0.78rem; color: var(--text-muted, #666); font-style: italic; margin-bottom: 10px; }
 
     /* ── Timeline de actos ───────────────────────────────────── */
-    .actos-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e8ddd4);
-    }
-    .actos-list li {
-      position: relative;
-      padding: 0 0 20px 22px;
-    }
+    .actos-list { list-style: none; padding: 0; margin: 1rem 0 0; border-left: 2px solid var(--border, #e5e0d8); }
+    .actos-list li { position: relative; padding: 0 0 20px 22px; }
     .actos-list li::before {
       content: "";
       position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 8px;
-      height: 8px;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -183,7 +413,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
     .actos-list .bando-tag {
@@ -198,88 +428,56 @@
     }
     .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
     .bando-moro      { background: #fef3c7; color: #92400e; }
-    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #b34700); }
+    .bando-ambos     { background: #fdf3e7; color: var(--brand, #8b1a1a); }
 
     /* ── Banner historia ─────────────────────────────────────── */
     .banner-historia {
       background: #fff7ed;
-      border: 1px solid #f5e6c8;
-      border-left: 4px solid var(--brand, #b34700);
-      border-radius: var(--radius, 10px);
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid var(--brand, #8b1a1a);
+      border-radius: var(--radius, 8px);
       padding: 16px 18px;
       margin: 1.5rem 0;
     }
-    .banner-historia h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--brand, #b34700);
-      margin-bottom: 8px;
-    }
-    .banner-historia p {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--text, #2c2c2c);
-      margin-bottom: 6px;
-    }
+    .banner-historia h3 { font-size: 0.95rem; font-weight: 700; color: var(--brand, #8b1a1a); margin-bottom: 8px; }
+    .banner-historia p { font-size: 0.88rem; line-height: 1.6; color: var(--text, #2a2218); margin-bottom: 6px; }
     .banner-historia p:last-child { margin-bottom: 0; }
 
-    /* ── Nota de aviso ───────────────────────────────────────── */
+    /* ── Nota grid ───────────────────────────────────────────── */
     .nota-grid {
       font-size: 0.82rem;
-      color: var(--text-muted, #5a5a5a);
+      color: var(--text-muted, #666);
       font-style: italic;
       margin-top: 0.5rem;
       padding: 8px 12px;
-      background: var(--accent-light, #f5e6c8);
+      background: #fdf3e7;
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
-
-    /* ── Ficha datos clave ───────────────────────────────────────── */
-    .ficha-datos-clave {
-      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
-      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
-      padding: 18px 22px; margin: 1.2rem 0;
+    /* ── Aviso sensibilidad ──────────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
     }
-    .fechas-grandes {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
-    }
-    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
-    .datos-secundarios span {
-      font-size: 0.85rem; color: var(--text, #2c2c2c);
-      background: #fff; border: 1px solid var(--border, #e8ddd4);
-      border-radius: 999px; padding: 4px 12px;
-    }
-    /* ── Ficha etiquetas ─────────────────────────────────────────── */
-    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
-    .etiqueta {
-      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
-      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
-    }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
-    /* ── Fichas relacionadas ─────────────────────────────────────── */
-    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
-    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .relacionada-card {
-      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); padding: 14px 16px;
-      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
-    }
-    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
-    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
-
-    .nota-filae {
-      font-size: 0.78rem;
-      color: var(--text-muted, #5a5a5a);
-      font-style: italic;
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
       margin-bottom: 10px;
     }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Music block ─────────────────────────────────────────── */
+    .music-block p { font-size: 0.93rem; line-height: 1.6; margin-bottom: 0.9rem; }
+
   </style>
 
   <script type="application/ld+json">
@@ -413,13 +611,13 @@
         <div class="datos-secundarios">
           <span>📍 Alcoi · Alicante · Comunitat Valenciana</span>
           <span>⏱️ 3 días de fiesta</span>
-          <span>🏅 Interés Turístico Internacional desde 1980</span>
+          <span>🏅 Interés Turístico Internacional</span>
           <span>🎖️ Cuna de la tradición festera</span>
         </div>
       </div>
 
       <div class="badges" aria-label="Reconocimientos oficiales">
-        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 1980</span>
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
       <!-- AVISO -->
@@ -814,35 +1012,51 @@
       </dl>
 
 
-      <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Moros y Cristianos</span>
-        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
-        <span class="etiqueta">Comunitat Valenciana</span>
-        <span class="etiqueta">Alicante</span>
-        <span class="etiqueta">Alcoi</span>
-        <span class="etiqueta">Abril</span>
-        <span class="etiqueta">Filaes</span>
-        <span class="etiqueta">Entrades</span>
-        <span class="etiqueta">Sant Jordi</span>
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Moros y Cristianos</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Alicante</a>
+        <a href="#" class="etiqueta">Alcoi</a>
+        <a href="#" class="etiqueta">Abril</a>
+        <a href="#" class="etiqueta">Filaes</a>
+        <a href="#" class="etiqueta">Entrades</a>
+        <a href="#" class="etiqueta">Sant Jordi</a>
       </div>
 
-      <div class="fichas-relacionadas">
-        <h2>Fiestas relacionadas</h2>
-        <div class="relacionadas-grid">
-          <a href="moros-cristianos-ontinyent.html" class="relacionada-card">
-            <strong>Moros y Cristianos de Ontinyent</strong>
-            <span>Valencia · ITI · La noche de les Multes</span>
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-alcoi">
+        <h2 id="rel-title-alcoi">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="moros-cristianos-ontinyent.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-ontinyent.jpg" alt="Moros y Cristianos de Ontinyent" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Ontinyent</span>
+              <span class="rel-frase">La noche de les Multes y el casco histórico como escenario.</span>
+              <span class="rel-meta">Valencia · Comunitat Valenciana · ITI</span>
+            </div>
           </a>
-          <a href="moros-cristianos-elda.html" class="relacionada-card">
-            <strong>Moros y Cristianos de Elda</strong>
-            <span>Alicante · ITI · Comparsas y Gran Entrada</span>
+
+          <a href="moros-cristianos-elda.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-elda.jpg" alt="Moros y Cristianos de Elda" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Elda</span>
+              <span class="rel-frase">Comparsas, Gran Entrada y devoción a San Antón.</span>
+              <span class="rel-meta">Alicante · Comunitat Valenciana · ITI</span>
+            </div>
           </a>
-          <a href="moros-cristianos-bocairent.html" class="relacionada-card">
-            <strong>Moros y Cristianos de Bocairent</strong>
-            <span>Valencia · ITN · Calles medievales y estruendo</span>
+
+          <a href="moros-cristianos-bocairent.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-bocairent.jpg" alt="Moros y Cristianos de Bocairent" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Bocairent</span>
+              <span class="rel-frase">La Nit de les Caixes y el casco medieval en febrero.</span>
+              <span class="rel-meta">Valencia · Comunitat Valenciana · ITN</span>
+            </div>
           </a>
+
         </div>
-      </div>
+      </section>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
