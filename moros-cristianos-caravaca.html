@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moros y Cristianos de Caravaca de la Cruz 2026 · ITI</title>
+  <meta name="description" content="Moros y Cristianos de Caravaca de la Cruz 2026 (1-5 mayo). ITI desde 2004. El Baño de la Vera Cruz, el Parlamento y 28 kábilas y grupos festeros." />
+  <link rel="canonical" href="https://folklorius.es/moros-cristianos-caravaca.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moros y Cristianos de Caravaca de la Cruz | La devoción hecha batalla" />
+  <meta property="og:description" content="El eco de los arcabuces sube por la piedra del castillo y la Vera Cruz baja al Templete. 28 agrupaciones, el Parlamento y el Ritual del Baño. Guía completa 2026." />
+  <meta property="og:image" content="https://folklorius.es/images/fiestas-vera-cruz-caravaca.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* ── Agrupaciones por bando ──────────────────────────────── */
+    .filaes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .filaes-grid { grid-template-columns: 1fr; }
+    }
+    .filae-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .filae-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .filae-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .filae-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      line-height: 1.45;
+    }
+    .filae-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .nota-filae {
+      font-size: 0.78rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+    .actos-list .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
+    .bando-moro      { background: #fef3c7; color: #92400e; }
+    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #8b1a1a); }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #8b1a1a);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+
+    /* ── Ficha etiquetas ─────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+
+    /* ── Fichas relacionadas ─────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border, #e8ddd4); }
+    .fichas-relacionadas h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .fichas-relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .ficha-rel-card { background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4); border-radius: var(--radius, 10px); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
+    .ficha-rel-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .ficha-rel-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .ficha-rel-card .rel-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
+    .ficha-rel-card .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text, #2c2c2c); }
+    .ficha-rel-card .rel-frase { font-size: 0.82rem; color: var(--text-muted, #5a5a5a); font-style: italic; }
+    .ficha-rel-card .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+    /* ── fichas-relacionadas h2 original ─── */
+    .fichas-relacionadas-h2-legacy { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+    /* ── Aviso sensibilidad ──────────────────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/moros-cristianos-caravaca.html",
+    "name": "Moros y Cristianos de Caravaca de la Cruz",
+    "startDate": "2026-05-01",
+    "endDate": "2026-05-05",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Caravaca de la Cruz — Basílica-Santuario de la Vera Cruz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caravaca de la Cruz",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.1069,
+        "longitude": -1.8608
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Cofradía de la Santísima y Vera Cruz de Caravaca",
+      "url": "https://lacruzdecaravaca.com"
+    },
+    "image": ["https://folklorius.es/images/fiestas-vera-cruz-caravaca.jpg"],
+    "description": "Los Moros y Cristianos de Caravaca de la Cruz, parte de las Fiestas de la Vera Cruz declaradas ITI en 2004. El Parlamento, el Ritual del Baño de la Cruz y 28 agrupaciones del 1 al 5 de mayo.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://folklorius.es/"},
+      {"@type":"ListItem","position":2,"name":"Moros y Cristianos","item":"https://folklorius.es/#moros-cristianos"},
+      {"@type":"ListItem","position":3,"name":"Moros y Cristianos de Caravaca de la Cruz","item":"https://folklorius.es/moros-cristianos-caravaca.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Cuándo se celebran las Fiestas de la Vera Cruz de Caravaca en 2026?","acceptedAnswer":{"@type":"Answer","text":"Siempre del 1 al 5 de mayo. Los días de mayor intensidad son el 3 de mayo (Parlamento, Simulacro y Baño de la Cruz) y el 4 de mayo (Gran Desfile de los Bandos)."}},
+      {"@type":"Question","name":"¿Los Moros y Cristianos y los Caballos del Vino son la misma fiesta?","acceptedAnswer":{"@type":"Answer","text":"Comparten fechas y devoción a la Vera Cruz, pero son celebraciones con organizaciones distintas. Los Caballos del Vino tienen su propia declaración como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO (2020) y los gestiona una cofradía independiente."}},
+      {"@type":"Question","name":"¿Qué ocurre si llueve durante los desfiles?","acceptedAnswer":{"@type":"Answer","text":"Las federaciones pueden retrasar o suspender los desfiles para proteger los trajes y las reliquias. El Baño de la Cruz se celebra siempre en el Templete cubierto."}},
+      {"@type":"Question","name":"¿Es accesible la subida a la Basílica para personas con movilidad reducida?","acceptedAnswer":{"@type":"Answer","text":"La subida a la Basílica-Santuario tiene un desnivel pronunciado y adoquines. Existen accesos habilitados pero limitados. El Desfile de los Bandos en la Gran Vía es totalmente accesible."}},
+      {"@type":"Question","name":"¿Por qué los Moros y Cristianos de Caravaca giran en torno a una reliquia y no a un castillo?","acceptedAnswer":{"@type":"Answer","text":"Porque el origen de la fiesta no es una reconquista sino una custodia. Desde 1384 la Vera Cruz salía en procesión por las murallas. La fiesta creció alrededor de ese ritual de devoción, no de una batalla histórica concreta."}}
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Moros y Cristianos de Caravaca de la Cruz
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/fiestas-vera-cruz-caravaca.jpg" alt="Moros y Cristianos de Caravaca de la Cruz con el castillo y la Basílica-Santuario de la Vera Cruz al fondo durante los desfiles de mayo" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Moros y Cristianos de Caravaca de la Cruz</h1>
+      <p class="ficha-subtitle">
+        Caravaca de la Cruz · Región de Murcia · Fiestas de la Vera Cruz — Interés Turístico Internacional
+      </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">Del 1 al 5 de mayo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Caravaca de la Cruz · Región de Murcia</span>
+          <span>⏱️ 5 días de fiesta</span>
+          <span>🏅 Interés Turístico Internacional desde 2004</span>
+          <span>🎖️ Moros y Cristianos · Caballos del Vino · Vera Cruz</span>
+          <span>👥 Más de 4.000 festeros · 11 Kábilas y 17 grupos</span>
+        </div>
+      </div>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2004</span>
+        <span class="badge badge-oficial">Caballos del Vino — Patrimonio Cultural Inmaterial UNESCO</span>
+      </div>
+
+      <!-- AVISO SENSIBILIDAD -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Caravaca conmemoran el pasado medieval de una ciudad fronteriza con respeto hacia ambas culturas. No hay desprecio hacia el mundo musulmán ni hacia ninguna religión. Kábilas y grupos cristianos comparten las mismas calles, la misma devoción a la Vera Cruz y el mismo orgullo festero.</li>
+          <li><strong>El Baño de la Cruz es un acto de fe, no una puesta en escena.</strong> La reliquia que baja al Templete el 3 de mayo lleva documentada en ese ritual desde 1384. Quien llega con esa perspectiva — como testigo de algo que la ciudad lleva siglos haciendo — lo entiende de otra manera.</li>
+          <li><strong>La pólvora y la devoción van juntas aquí.</strong> El Alarde de Arcabucería no es un espectáculo de pirotecnia: es el eco de la escolta militar que protegía la reliquia cuando Caravaca era tierra fronteriza. Recibirlo con esa mirada cambia completamente lo que se ve.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        El estruendo seco de los arcabuces rebota contra las murallas de piedra y sube por las laderas hasta la Basílica. Luego cae el silencio — y en ese silencio baja la reliquia hacia el Templete. Cinco días en los que una ciudad que fue frontera medieval durante siglos revive esa tensión: la pólvora y la devoción, juntas desde 1384, sin separación posible.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Las Fiestas en honor a la Santísima y Vera Cruz reúnen tres tradiciones que comparten fechas y devoción: los <strong>Moros y Cristianos</strong>, los <strong>Caballos del Vino</strong> y los <strong>rituales religiosos de la Cofradía de la Vera Cruz</strong>. La declaración de Interés Turístico Internacional de 2004 cubre el conjunto. En la parte festera de M&C participan <strong>28 agrupaciones</strong> — 11 Kábilas del bando moro y 17 grupos del bando cristiano — organizadas por la Federación Bando Moro y la Federación Bando Cristiano de Caravaca. La coordinación ejecutiva de ambas federaciones —junto al Bando de los Caballos del Vino— recae en la Comisión de Festejos, el órgano ejecutivo de la Cofradía de la Santísima y Vera Cruz. Consulta el programa oficial de la Cofradía de la Santísima y Vera Cruz antes de planificar tu visita.
+      </p>
+      <p>
+        El hilo conductor de todo es la reliquia. Los Moros y Cristianos no recrean una batalla genérica: representan la escolta militar que protegía la Vera Cruz cuando salía de la Basílica. Los Caballos del Vino, el 2 de mayo, tienen su propia organización y su propia declaración como Patrimonio Cultural Inmaterial de la UNESCO (2020). Y los rituales religiosos de la Cofradía enmarcan ambas celebraciones desde el primer día hasta el último.
+      </p>
+      <p>
+        Si es tu primera vez, empieza por el Templete el 3 de mayo: es donde se concentra todo lo que hace única esta fiesta. Después, la Gran Vía el 4 de mayo para el desfile. Y si puedes, llega ya la noche del 30 de abril para la Noche de las Migas en el barrio del Hoyo.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios e itinerarios exactos los publica la Cofradía de la Santísima y Vera Cruz de Caravaca antes de cada edición. Consúltalos en su web oficial antes de planificar tu visita.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen de la fiesta está en el Ritual del Baño de la Cruz, documentado desde al menos 1384. La reliquia salía en procesión extramuros hacia el Templete, escoltada por un séquito militar para protegerla de las incursiones del Reino Nazarí de Granada — Caravaca era tierra fronteriza, y esa condición explica por qué la fiesta tiene marcas militares que otras no tienen. Tras la caída de Granada en 1492, la escolta militar se transformó en tradición devota.
+      </p>
+      <p>
+        En el siglo XIX se formaliza la participación de comparsas de moros junto a los grupos cristianos. En 1845 queda fijado el texto del Parlamento — el diálogo teatralizado entre el Rey Fernando III y el mandatario almohade Ceyt-Abuceyt — que desde entonces se transmite sin variaciones. En 1959 la fiesta se refunda con agrupaciones voluntarias: la Kábila Abul-Khatar (bando moro) y la Soberana Orden del Temple (bando cristiano) fueron las dos primeras. En 1983 recibió la declaración de Interés Turístico Nacional, y en 2004 la de <strong>Interés Turístico Internacional</strong>, que reconoce el conjunto de las fiestas de la Vera Cruz — Moros y Cristianos y Caballos del Vino incluidos.
+      </p>
+      <p>
+        Hoy la fiesta es identidad local sin adornos: la ciudad que fue frontera durante siglos no conmemora una batalla puntual, sino toda una época. Por eso en Caravaca la devoción y la pólvora no se separan: nacieron juntas en 1384 y no han vuelto a separarse.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Las fiestas se celebran siempre del 1 al 5 de mayo, fijas al calendario. Los días de mayor intensidad son:
+      </p>
+      <ul>
+        <li><strong>2 de mayo:</strong> Los Caballos del Vino (Patrimonio UNESCO) protagonizan la jornada más conocida de la semana.</li>
+        <li><strong>3 de mayo:</strong> Festividad de la Vera Cruz. Por la mañana, Desfile Infantil en la Gran Vía con los Infantes de Castilla y Príncipes de al-Ándalus, seguido del Parlamento y la Gran Batalla. La Procesión del Baño de la Cruz por la tarde.</li>
+        <li><strong>4 de mayo:</strong> Gran Desfile de los Bandos Moro y Cristiano por la Gran Vía.</li>
+      </ul>
+      <p class="nota-grid">⚠️ El programa completo con horarios exactos de cada acto lo publica la Cofradía de la Santísima y Vera Cruz en su web oficial. Consúltalo antes de planificar tu visita.</p>
+
+      <h2 class="section-title">Los actos principales</h2>
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">30 de abril — Madrugada</span>
+          <strong>Noche de las Migas.</strong>
+          <span class="bando-tag bando-ambos">Preludio popular</span>
+          En el barrio del Hoyo, concursos de migas, charangas y pasacalles hasta el amanecer. El preludio gastronómico y popular de las fiestas, sin protocolo ni programa oficial.
+        </li>
+
+        <li>
+          <span class="dia-label">1 de mayo</span>
+          <strong>Primeras ofrendas y ambiente previo.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Inicio oficial de las fiestas con los primeros actos de la Cofradía. La ciudad empieza a llenarse de festeros y el ambiente de los días centrales comienza a fraguarse.
+        </li>
+
+        <li>
+          <span class="dia-label">2 de mayo</span>
+          <strong>Primeras escaramuzas y día de los Caballos del Vino.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Los Moros y Cristianos inician sus primeras escaramuzas simbólicas mientras la Vera Cruz es escoltada. Ese mismo día, en la Cuesta del Castillo, se celebra la Carrera de los Caballos del Vino — una fiesta hermana con organización y declaración como Patrimonio Cultural Inmaterial de la UNESCO (2020) que comparte fecha y devoción con los M&C. <a href="caballos-del-vino-caravaca.html">Ver ficha completa de los Caballos del Vino →</a>
+        </li>
+
+        <li>
+          <span class="dia-label">3 de mayo — Mañana</span>
+          <strong>El Parlamento y la Gran Batalla.</strong>
+          <span class="bando-tag bando-ambos">Acto central</span>
+          En el entorno del Templete, el Sultán moro y los representantes del bando cristiano intercambian el Parlamento — el diálogo teatralizado que precede al Simulacro de Combate — seguido de la representación de combate. Es el núcleo festero de los cinco días.
+        </li>
+
+        <li>
+          <span class="dia-label">3 de mayo — Tarde</span>
+          <strong>Procesión del Baño de la Cruz.</strong>
+          <span class="bando-tag bando-ambos">Acto fundacional</span>
+          La Vera Cruz desciende desde la Basílica-Santuario hasta el Templete, escoltada por las Kábilas y los grupos cristianos, para el Ritual del Baño: la reliquia se sumerge en las aguas para bendecirlas. Es el acto más antiguo de la fiesta, documentado desde 1384.
+        </li>
+
+        <li>
+          <span class="dia-label">4 de mayo — Tarde y noche</span>
+          <strong>Gran Desfile de los Bandos.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Las 28 agrupaciones — 11 Kábilas y 17 grupos cristianos — desfilan por la Gran Vía con sus trajes, carrozas, caballos y bandas. El acto más visual de los cinco días.
+        </li>
+
+        <li>
+          <span class="dia-label">5 de mayo</span>
+          <strong>Cierre y subida de la Cruz.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Procesión de clausura con la subida de la Vera Cruz de vuelta a su Basílica-Santuario. Cierra el ciclo que comenzó el 1 de mayo.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Kábilas y grupos festeros</h2>
+      <p>
+        Las 28 agrupaciones de Caravaca se organizan en dos federaciones independientes: la Federación Bando Moro y la Federación Bando Cristiano, ambas bajo el paraguas de la Cofradía de la Santísima y Vera Cruz.
+      </p>
+      <p class="nota-grid">La composición oficial y el orden de desfile lo publica anualmente la Cofradía de la Santísima y Vera Cruz de Caravaca.</p>
+
+      <div class="filaes-grid">
+
+        <div class="filae-col">
+          <h3>🌙 Bando Moro — Kábilas</h3>
+          <p class="nota-filae">11 Kábilas. Años de fundación individuales no verificados en fuente oficial.</p>
+          <ul>
+            <li>Rifeños</li>
+            <li>Almorávides</li>
+            <li>Almohades</li>
+            <li>Yusuf-Ibn-Tachfin</li>
+            <li>Ibn-Ammar</li>
+            <li>Abul-Khatar</li>
+            <li>Ceyt-Abuceyt</li>
+            <li>Tariq</li>
+            <li>Aben-Zadom</li>
+            <li>Beduinos (Anara Sweik Bedú)</li>
+            <li>Halcones</li>
+          </ul>
+        </div>
+
+        <div class="filae-col">
+          <h3>⚔️ Bando Cristiano — Grupos</h3>
+          <p class="nota-filae">17 grupos. Años de fundación individuales no verificados en fuente oficial.</p>
+          <ul>
+            <li>Orden del Temple</li>
+            <li>Caballería Cristiana</li>
+            <li>Caballeros de Santiago</li>
+            <li>Real Banda de la Vera Cruz</li>
+            <li>Caballeros de San Juan</li>
+            <li>Caballeros de Navarra</li>
+            <li>Caballeros de San Jorge</li>
+            <li>Damas del Temple</li>
+            <li>Damas de San Juan</li>
+            <li>Almogávares</li>
+            <li>Damas de Navarra</li>
+            <li>Aragoneses</li>
+            <li>Infantes de San Jorge</li>
+            <li>Caballeros de Castilla</li>
+            <li>Damas de San Jorge</li>
+            <li>Orden de Calatrava</li>
+            <li>Cruzados de la Vera Cruz</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="banner-historia" role="note">
+        <h3>Misma devoción, dos fiestas distintas</h3>
+        <p>Las Fiestas de la Vera Cruz tienen dos caras que no se pueden entender la una sin la otra. Los Moros y Cristianos recrean la escolta medieval de la reliquia — la devoción hecha desfile, batalla y embajada. Los Caballos del Vino son otra cosa: sesenta peñas, caballos vestidos con mantos bordados durante un año entero, y una carrera de ochenta metros cuesta arriba que no dura ni diez segundos. Cada una tiene su organización, su federación, su mundo propio. Pero las dos giran en torno a la misma Vera Cruz y las dos solo ocurren en Caravaca.</p>
+        <p>Si vienes por los Moros y Cristianos y no te quedas también para los Caballos del Vino, te estás perdiendo la mitad de la historia.</p>
+        <p><a href="caballos-del-vino-caravaca.html">Ver ficha completa de los Caballos del Vino de Caravaca →</a></p>
+      </div>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">El eco de los arcabuces en la piedra</h3>
+        <p>El sonido más propio de Caravaca no está en los desfiles: está en el Alarde de Arcabucería, cuando los disparos rebotan contra las laderas del castillo y suben hacia la Basílica. En una ciudad construida sobre piedra y cuesta, el eco amplifica el estruendo de una manera que no se produce igual en ninguna otra plaza festera. Es la señal física de que el Parlamento está a punto de empezar.</p>
+        <p>Gran parte del repertorio icónico de Caravaca fue compuesto por el músico militar caravaqueño Ignacio Sánchez Navarro — Templarios de Caravaca, Caballeros de Navarra, Orgullo Santiaguista — cuyas piezas definen el sonido de la fiesta. En los desfiles, las marchas moras de cadencia lenta contrastan con los pasodobles de los grupos cristianos, siguiendo el patrón levantino. Las bandas proceden tanto de sociedades musicales locales como de agrupaciones de la Región de Murcia.</p>
+        <p style="margin-bottom:0;">Para oír el eco completo, sube hacia la Basílica durante el Alarde y ponte en la cuesta con el castillo a tu espalda. Los disparos rebotan desde tres ángulos y llegan desfasados: eso no pasa en ninguna otra fiesta de M&C.</p>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El Ritual del Baño de la Cruz</h3>
+          <span class="tag">3 de mayo · Tarde · El Templete</span>
+          <p>La Vera Cruz baja desde la Basílica escoltada por las Kábilas y grupos cristianos y se sumerge en las aguas del Templete. Es el acto que da origen a toda la fiesta, documentado desde 1384. El fin original del ritual no era solo devocional: el agua en contacto con la reliquia se distribuía por las acequias para bendecir los cultivos y protegerlos de plagas. Sin ese gesto, los Moros y Cristianos de Caravaca no existen.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ninguna otra fiesta de Moros y Cristianos en España gira alrededor de una reliquia con nombre propio. El momento del baño, en silencio, concentra siglos de devoción en un gesto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Parlamento ante el Templete</h3>
+          <span class="tag">3 de mayo · Mañana · El Templete</span>
+          <p>El texto fijado en 1845 enfrenta al Rey Fernando III el Santo contra el mandatario almohade Ceyt-Abuceyt. No son personajes genéricos: son figuras históricas documentadas, y el diálogo escenifica el choque real que precedió a la entrega de la reliquia. A diferencia de las embajadas alicantinas ante un castillo de madera, aquí el escenario es el Templete real de la ciudad histórica.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el momento en que la fiesta para el ruido y se vuelve teatro. Y porque el Templete hexagonal, con la ciudad a sus pies, no es un castillo de atrezzo: es el edificio real donde ocurrió lo que el texto narra.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Alarde de Arcabucería en la cuesta</h3>
+          <span class="tag">3 de mayo · Mañana · Entorno del castillo</span>
+          <p>Los disparos de arcabuz suben por las laderas del castillo y rebotan contra la piedra. En una plaza llana ese eco no existe. Aquí convierte la cuesta de la Basílica en el punto sonoro más reconocible de las fiestas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque si ya has oído arcabuces en otra fiesta M&C y aquí te suenan distinto, es la ladera haciendo el trabajo. No es un efecto buscado: es la ciudad misma.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Gran Desfile de los Bandos</h3>
+          <span class="tag">4 de mayo · Tarde y noche · Gran Vía</span>
+          <p>Las 28 agrupaciones — 11 Kábilas y 17 grupos cristianos — desfilan al completo con trajes, carrozas y bandas. Es el acto más largo y más visual de los cinco días, el único en que se ven los 28 grupos en movimiento a la vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque solo en el desfile completo se entiende la escala humana de la fiesta: 28 agrupaciones en movimiento dan una idea de cuántas familias, cuántos años de trabajo en trajes y cuánta identidad local hay detrás de cada desfile.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Caravaca cuadruplica su población durante las fiestas. Reserva con meses de antelación, especialmente para el 2 y el 3 de mayo. Si no encuentras en la ciudad, busca en municipios cercanos como Cehegín o Moratalla.</li>
+        <li><strong>Cómo llegar.</strong> Caravaca no tiene estación de tren propia. La opción más habitual es llegar en coche o en autobús desde Murcia capital. El Ayuntamiento habilita aparcamientos disuasorios durante las fiestas — el centro histórico cierra al tráfico.</li>
+        <li><strong>Dónde situarse.</strong> Para el Parlamento y el Baño de la Cruz, el entorno del Templete el 3 de mayo. Para el Gran Desfile, las tribunas de la Gran Vía el 4 de mayo — consigue pase con tiempo porque la afluencia es alta.</li>
+        <li><strong>Clima y ropa.</strong> Mayo en el noroeste murciano da calor a mediodía y frío por la noche, especialmente si te quedas en el Hoyo o en actos nocturnos. Ropa a capas y calzado muy cómodo para las cuestas del casco histórico.</li>
+        <li><strong>Protección auditiva.</strong> El Alarde de Arcabucería es intenso y en un entorno de piedra el sonido se amplifica. Protección auditiva para niños pequeños, sin excepciones.</li>
+        <li><strong>Gastronomía.</strong> El plato ceremonial de los días grandes es la <em>tartera caravaqueña</em> — cordero al horno con patatas, cebolla y piñones. Las migas de harina con embutidos y pimientos son el plato de referencia de las noches festeras. El arroz empedrao (alubias blancas y bacalao seco), el cordero segureño y los postres locales — yemas, alfajores y pañuelos teresianos — completan la mesa de mayo.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Kábila</dt>
+        <dd>Agrupación del bando moro en Caravaca. El término es el mismo que en Murcia capital, pero aquí las Kábilas nacieron para escoltar una reliquia, no para escenificar una batalla: ese origen marca todo lo que hacen.</dd>
+
+        <dt>Templete</dt>
+        <dd>También conocido como Capilla del Baño. Es el monumento hexagonal donde tiene lugar el Parlamento y el Ritual del Baño de la Cruz el 3 de mayo. El eje de toda la fiesta: sin el Templete, no hay Baño; sin el Baño, no hay fiesta.</dd>
+
+        <dt>Baño de la Cruz</dt>
+        <dd>El ritual documentado desde 1384 en que se sumerge la reliquia de la Vera Cruz en las aguas del Templete. Es el origen histórico de la escolta militar que dio lugar a los Moros y Cristianos de Caravaca.</dd>
+
+        <dt>Bañadero</dt>
+        <dd>Denominación popular caravaqueña del Templete o Capilla del Baño. No es un término oficial, pero es el que usan los festeros entre sí: decir "nos vemos en el Bañadero" ubica a cualquier caravaqueño sin más explicación.</dd>
+
+        <dt>Cuesta de la Cruz</dt>
+        <dd>El espacio urbano donde se escenifica el Parlamento y el Simulacro de Combate. Todo lo que importa el 3 de mayo ocurre en ese recorrido cuesta arriba.</dd>
+
+        <dt>Simulacro de Combate</dt>
+        <dd>El combate cuerpo a cuerpo que sucede inmediatamente después del Parlamento, antes de que la reliquia descienda al Templete. El momento de mayor tensión dramática de toda la fiesta.</dd>
+
+        <dt>Reyes Cristianos y Sultanes Moros</dt>
+        <dd>Los máximos cargos festeros de cada bando. Encarnan a Fernando III el Santo y su Reina (bando cristiano) y a Ceyt-Abuceyt y su Sultana (bando moro). Se eligen por dos años entre los festeros activos de cada federación.</dd>
+
+        <dt>Parlamento</dt>
+        <dd>El diálogo teatralizado entre el Sultán moro y los representantes del bando cristiano, equivalente a la embajada de otras fiestas de M&C, pero En Caravaca el texto data de 1845 y los personajes son Fernando III y Ceyt-Abuceyt, no figuras genéricas.</dd>
+
+        <dt>Caballos del Vino</dt>
+        <dd>La celebración hermana del 2 de mayo, con organización propia (Federación Bando de los Caballos del Vino) y declaración como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO (2020). Los caballos compiten enjaezados con mantos bordados a mano, evaluados por artesanía y por la carrera.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/caravaca/parlamento-templete.jpg" alt="El Parlamento de Moros y Cristianos ante el Templete hexagonal de Caravaca de la Cruz" />
+        <img src="images/caravaca/bano-vera-cruz.jpg" alt="Procesión del Baño de la Vera Cruz escoltada por Kábilas y grupos cristianos en Caravaca" />
+        <img src="images/caravaca/gran-desfile-gran-via.jpg" alt="Gran Desfile de los Bandos de Moros y Cristianos por la Gran Vía de Caravaca de la Cruz" />
+        <img src="images/caravaca/caballos-del-vino.jpg" alt="Caballos del Vino de Caravaca de la Cruz con sus mantos bordados en la carrera del 2 de mayo" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://lacruzdecaravaca.com" target="_blank" rel="noopener">Cofradía de la Santísima y Vera Cruz de Caravaca — Web oficial</a></li>
+        <li><a href="https://turismocaravaca.com" target="_blank" rel="noopener">Turismo de Caravaca de la Cruz</a></li>
+        <li><a href="https://www.caravacadelacruz.es" target="_blank" rel="noopener">Ayuntamiento de Caravaca de la Cruz</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-04</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran las Fiestas de la Vera Cruz de Caravaca en 2026?</dt>
+        <dd>Siempre del 1 al 5 de mayo, fijas al calendario. Los días de mayor intensidad son el 3 de mayo (Parlamento, Gran Batalla y Baño de la Cruz) y el 4 de mayo (Gran Desfile de los Bandos). El preludio popular es la Noche de las Migas en la madrugada del 30 de abril.</dd>
+
+        <dt>¿Los Moros y Cristianos y los Caballos del Vino son la misma fiesta?</dt>
+        <dd>Comparten fechas y devoción a la Vera Cruz, pero son celebraciones con organizaciones distintas. Los Caballos del Vino los organiza su propia Federación y tienen declaración como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO (2020). Los Moros y Cristianos los organizan la Federación Bando Moro y la Federación Bando Cristiano, bajo la Cofradía de la Vera Cruz. La declaración ITI de 2004 cubre el conjunto festivo.</dd>
+
+        <dt>¿Qué ocurre si llueve durante los desfiles?</dt>
+        <dd>Las federaciones evalúan la situación y pueden retrasar o suspender los desfiles para proteger los trajes y mantos de las Kábilas y grupos. La información oficial en caso de cambios se publica a través de los canales de la Cofradía y las federaciones festeras.</dd>
+
+        <dt>¿Es accesible la subida al castillo y a la Basílica para personas con movilidad reducida?</dt>
+        <dd>La subida a la Basílica-Santuario tiene un desnivel pronunciado y adoquines. Existen accesos habilitados, pero durante los días de mayor afluencia —especialmente el 2 y el 3 de mayo— la movilidad puede ser compleja por las aglomeraciones. Consulta con el Ayuntamiento de Caravaca antes de tu visita para conocer los accesos adaptados disponibles en cada edición.</dd>
+
+        <dt>¿Por qué los Moros y Cristianos de Caravaca giran en torno a una reliquia y no a una batalla?</dt>
+        <dd>Porque el origen de la fiesta no es una reconquista sino una custodia. Desde 1384 la Vera Cruz salía en procesión escoltada militarmente para protegerla de las incursiones del Reino Nazarí de Granada. Esa escolta, con el tiempo, se convirtió en fiesta festera. La reliquia sigue siendo el centro de todo: sin ella, no hay Moros y Cristianos en Caravaca.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Moros y Cristianos</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Caravaca de la Cruz</a>
+        <a href="#" class="etiqueta">Mayo</a>
+        <a href="#" class="etiqueta">Vera Cruz</a>
+        <a href="#" class="etiqueta">Caballos del Vino</a>
+        <a href="#" class="etiqueta">Patrimonio UNESCO</a>
+        <a href="#" class="etiqueta">Ritual del Baño</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-caravaca">
+        <h2 id="rel-title-caravaca">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="moros-cristianos-murcia.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-murcia.jpg" alt="Moros y Cristianos de Murcia" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Murcia</span>
+              <span class="rel-frase">El Campamento Medieval junto al Segura y la Batalla de las Flores.</span>
+              <span class="rel-meta">Murcia · Región de Murcia · ITI</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-alcoi.jpg" alt="Moros y Cristianos de Alcoi" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Alcoi</span>
+              <span class="rel-frase">Las Entrades más antiguas de España y Sant Jordi ante el castillo.</span>
+              <span class="rel-meta">Alicante · Comunitat Valenciana · ITI</span>
+            </div>
+          </a>
+
+          <a href="moros-cristianos-almansa.html" class="ficha-rel-card">
+            <img src="images/moros-cristianos-almansa.jpg" alt="Moros y Cristianos de Almansa" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Moros y Cristianos de Almansa</span>
+              <span class="rel-frase">La Embajada Nocturna al pie del castillo real del siglo XIV.</span>
+              <span class="rel-meta">Albacete · Castilla-La Mancha · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
