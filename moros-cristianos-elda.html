@@ -45,7 +45,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 10px;
       padding-bottom: 6px;
       border-bottom: 1px solid var(--border, #e8ddd4);
@@ -66,10 +66,10 @@
     .filae-col ul li::before {
       content: "·";
       margin-right: 6px;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
     }
     .nombre-filae {
-      border-bottom: 1px dotted var(--brand, #b34700);
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
       cursor: help;
     }
     .tooltip-filae {
@@ -126,7 +126,7 @@
       font-size: 0.78rem;
       font-weight: 600;
       background: var(--accent-light, #f5e6c8);
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       padding: 3px 10px;
       border-radius: 999px;
       margin-bottom: 10px;
@@ -138,7 +138,7 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       list-style: none;
     }
     .must-see-card details summary::-webkit-details-marker { display: none; }
@@ -164,7 +164,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -173,7 +173,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
     .actos-list .bando-tag {
@@ -188,13 +188,13 @@
     }
     .bando-cristiano  { background: #dbeafe; color: #1d4ed8; }
     .bando-moro       { background: #fef3c7; color: #92400e; }
-    .bando-ambos      { background: var(--accent-light, #f5e6c8); color: var(--brand, #b34700); }
+    .bando-ambos      { background: var(--accent-light, #f5e6c8); color: var(--brand, #8b1a1a); }
     .bando-religioso  { background: #f1f5f9; color: #475569; }
 
     .banner-historia {
       background: #fff7ed;
       border: 1px solid #f5e6c8;
-      border-left: 4px solid var(--brand, #b34700);
+      border-left: 4px solid var(--brand, #8b1a1a);
       border-radius: var(--radius, 10px);
       padding: 16px 18px;
       margin: 1.5rem 0;
@@ -202,7 +202,7 @@
     .banner-historia h3 {
       font-size: 0.95rem;
       font-weight: 700;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 8px;
     }
     .banner-historia p {
@@ -221,7 +221,7 @@
       padding: 8px 12px;
       background: var(--accent-light, #f5e6c8);
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
 
@@ -233,7 +233,7 @@
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -247,7 +247,7 @@
       border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
     .fichas-relacionadas { margin: 2rem 0 1.5rem; }
     .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
     .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
@@ -257,7 +257,7 @@
       text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
     }
     .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
     .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
   </style>
 
@@ -301,6 +301,33 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://folklorius.es/"},
+      {"@type":"ListItem","position":2,"name":"Moros y Cristianos","item":"https://folklorius.es/#moros-cristianos"},
+      {"@type":"ListItem","position":3,"name":"Moros y Cristianos de Elda","item":"https://folklorius.es/moros-cristianos-elda.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Cuándo se celebran los Moros y Cristianos de Elda en 2026?","acceptedAnswer":{"@type":"Answer","text":"Del 28 de mayo al 1 de junio de 2026. El programa completo lo publica la Junta Central de Comparsas en su web oficial."}},
+      {"@type":"Question","name":"¿Por qué se celebra en mayo si el patrón es San Antón (enero)?","acceptedAnswer":{"@type":"Answer","text":"La fiesta tiene su origen en enero, cuando la soldadesca local acompañaba a San Antón con salvas de arcabuz. Los días grandes se trasladaron a la primavera para favorecer los desfiles. En enero se mantiene la Media Fiesta, con la proclamación de cargos y la bendición de animales."}},
+      {"@type":"Question","name":"¿Qué cumple 50 años en 2026?","acceptedAnswer":{"@type":"Answer","text":"El Desfile Infantil de Elda celebra en 2026 su 50 aniversario de historia ininterrumpida."}},
+      {"@type":"Question","name":"¿Se puede ver la fiesta sin pagar?","acceptedAnswer":{"@type":"Answer","text":"Los desfiles se pueden seguir de pie de forma gratuita. Para las Entradas, que pueden durar más de cinco horas, es muy recomendable alquilar una silla del circuito oficial."}},
+      {"@type":"Question","name":"¿Hay zonas habilitadas para personas con movilidad reducida?","acceptedAnswer":{"@type":"Answer","text":"El Ayuntamiento de Elda habilita zonas accesibles durante los actos principales. Consulta la web municipal antes del viaje."}}
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -343,27 +370,23 @@
       </div>
 
       <!-- NOTA DE SENSIBILIDAD -->
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la fiesta">
         <div class="fechas-grandes">Del 28 de mayo al 1 de junio de 2026</div>
-        <div class="datos-secundarios">
-          <span>📍 Elda · Alicante · Comunitat Valenciana</span>
-          <span>⏱️ 5 días de fiesta</span>
-          <span>🏅 Interés Turístico Internacional desde 2026</span>
-          <span>🎖️ 9 comparsas · más de 7.000 festeros</span>
-        </div>
+        <p>9 comparsas · 5 días de fiesta · ITI desde 2026</p>
+        <p class="nota-grid">⚠️ Fechas y programa oficial los publica la Junta Central de Comparsas de Elda. Consúltalos antes de planificar tu visita.</p>
       </div>
 
       <div class="aviso-sensibilidad" role="note">
-        <strong>Antes de venir, ten en cuenta esto</strong>
+        <strong>Nota de sensibilidad</strong>
         <ul>
-          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Elda conmemoran un hecho histórico con respeto y admiración hacia ambas culturas. No hay desprecio hacia el mundo musulmán ni hacia ninguna otra religión o creencia. Festeros del bando moro y del cristiano comparten la misma fiesta y el mismo orgullo. Lo que define esta tradición es la unión, no la confrontación.</li>
-          <li><strong>Protección auditiva.</strong> Los Alardos de arcabucería del sábado y el lunes son intensos. Imprescindible para niños pequeños.</li>
-          <li><strong>No cruces el desfile.</strong> Durante las Entradas y los Alardos el recorrido está cerrado. Usa siempre los pasos habilitados por la organización.</li>
+          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Elda conmemoran un hecho histórico con respeto hacia ambas culturas. Festeros del bando moro y del cristiano comparten la misma fiesta y el mismo orgullo. Lo que sostiene esta tradición es la unión, no la confrontación.</li>
+          <li><strong>La fiesta es un triángulo.</strong> Festeros, músicos y público son los tres vértices: si falla uno, la fiesta no se entiende. Los festeros buscan el aplauso y el reconocimiento del público tanto como el público necesita lo que ellos llevan meses preparando. Llegar con esa conciencia cambia lo que se ve.</li>
+          <li><strong>Los Alardos son un ritual, no una exhibición pirotécnica.</strong> Las descargas de arcabucería tienen una función simbólica documentada desde la soldadesca del siglo XIX. Recibirlos con esa perspectiva cambia completamente la experiencia.</li>
         </ul>
       </div>
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        Elda en fiestas huele a cuero nuevo, a metal pulido y a pólvora quemada. Cuando arranca el final de mayo, los pasodobles y las marchas se solapan en cada esquina y rebotan contra los edificios. Más de siete mil festeros en la calle, nueve comparsas de tamaño descomunal, desfiles que duran cinco horas. Y aun así, nadie siente que sobra nada.
+        A finales de mayo, los pasodobles y las marchas se solapan en cada esquina y rebotan contra los edificios. Más de siete mil festeros en la calle, nueve comparsas de tamaño descomunal, desfiles que duran cinco horas. Y aun así, nadie siente que sobra nada.
       </p>
       <p>
         Debajo de todo eso hay algo más antiguo. Todo empezó con una soldadesca — la milicia local que disparaba arcabuces al aire para honrar a San Antón — y esa devoción al patrón sigue siendo el hilo que atraviesa cada acto. Cuando la imagen del santo pisa la calle y miles de voces arrancan el pasodoble <em>Idella</em>, la escala de la fiesta deja de importar. Lo que queda es la ciudad entera cantando a la vez.
@@ -381,13 +404,13 @@
       <p class="nota-grid">⚠️ El programa completo con horarios exactos lo publica la Junta Central de Comparsas. Consúltalo en su web oficial antes de planificar el viaje.</p>
       <h2 class="section-title">Historia y significado</h2>
       <p>
-        El origen de los Moros y Cristianos de Elda no fue un teatro planificado. Entre 1838 y 1840 existía en la ciudad una soldadesca — la milicia local que acompañaba a San Antón disparando arcabuces al aire como salvas de honor en enero. Un gesto a caballo entre la devoción y el alarde militar. Esa es la semilla.
+        El origen de los Moros y Cristianos de Elda no fue un teatro planificado. Las actas históricas documentan la devoción de la villa a <strong>San Antonio Abad</strong> desde 1478. Entre 1838 y 1840 esa devoción tomó forma de soldadesca — la milicia local que acompañaba al santo disparando arcabuces al aire como salvas de honor en enero. Un gesto a caballo entre la devoción y el alarde militar. Esa es la semilla.
       </p>
       <p>
         El modelo moderno llegó en 1944, cuando se constituyeron las cinco primeras comparsas con influencias de localidades vecinas pero con carácter propio desde el principio. Cuatro más se fueron sumando hasta completar las nueve actuales. Los días grandes se trasladaron a la primavera para escapar del frío de enero, dejando ese mes para la Media Fiesta: la proclamación de cargos, la bendición de animales y el vínculo devocional con el patrón que se mantiene vivo todo el invierno.
       </p>
       <p>
-        En mayo de 2026, el Ministerio de Industria y Turismo declaró la fiesta de Interés Turístico Internacional. Los eldenses lo llevaban tiempo buscando. Lo lograron.
+        En <strong>1975</strong> obtuvo la declaración de Interés Turístico Nacional. En mayo de <strong>2026</strong>, el Ministerio de Industria y Turismo elevó esa distinción a Interés Turístico Internacional. Los eldenses lo llevaban tiempo buscando. Lo lograron.
       </p>
       <h2 class="section-title">Fechas 2026</h2>
       <p>
@@ -412,7 +435,7 @@
           <span class="dia-label">Jueves 28 de mayo · Tarde/Noche</span>
           <strong>Entrada de Bandas.</strong>
           <span class="bando-tag bando-ambos">Ambos bandos</span>
-          Las bandas de música de todas las comparsas recorren el centro de Elda en el acto que abre oficialmente los días grandes. Al llegar a la Plaza de la Constitución, todas interpretan juntas el pasodoble <em>Idella</em>. Es el estallido inicial: el momento en que los eldenses cantan a pleno pulmón antes incluso de que nadie haya vestido el traje de gala. Después, la Retreta cierra la noche con un desfile más libre e informal.
+          Las bandas de música de todas las comparsas se concentran en la <strong>Plaza del Zapatero</strong> y arrancan hacia la Plaza de la Constitución en el acto que abre oficialmente los días grandes. Al llegar, todas interpretan juntas el pasodoble <em>Idella</em>. Cada año una figura musical invitada de honor sube a las almenas del castillo para dirigir a las bandas y al público. Es el estallido inicial: el momento en que los eldenses cantan a pleno pulmón antes incluso de que nadie haya vestido el traje de gala. Después, la Retreta cierra la noche con un desfile más libre e informal.
         </li>
 
         <li>
@@ -546,9 +569,9 @@
       <h2 class="section-title">Música y sonido</h2>
       <div class="music-block">
         <h3 style="color:#1d4ed8; margin-bottom:8px;">La ciudad que canta a la vez</h3>
-        <p>Elda es una potencia musical dentro del circuito festero valenciano. El sonido predominante no es solo el de las marchas moras y cristianas: el pasodoble eldense, alegre y de gran instrumentación, marca el pulso de las mañanas y los momentos de mayor emoción colectiva. Durante las Entradas, el sonido compacto de bandas y fanfarrias resuena en calles anchas con un volumen espectacular que se siente físicamente antes de verse.</p>
+        <p>Elda es una potencia musical dentro del circuito festero valenciano. El pasodoble eldense — alegre, de gran instrumentación — marca el pulso de las mañanas y los momentos de mayor emoción colectiva. Las marchas moras y cristianas llevan el resto del día. Durante las Entradas, el sonido compacto de bandas y fanfarrias resuena en calles anchas con un volumen espectacular que se siente físicamente antes de verse.</p>
         <p>La pieza más cargada de significado emocional es el pasodoble <em><strong>Idella</strong></em>. Se interpreta en la Entrada de Bandas del jueves, cuando todas las formaciones lo tocan juntas en la Plaza de la Constitución, y vuelve a sonar en los momentos de mayor intensidad devocional, especialmente a la salida y entrada del patrón. Cuando arranca <em>Idella</em>, los eldenses cantan. No es una opción.</p>
-        <p>Pero el patrimonio musical de Elda va mucho más allá. Dos piezas nacidas en la ciudad forman parte del repertorio esencial de cualquier banda del Levante español y suenan sí o sí durante los días de fiesta. El pasodoble <em><strong>Abanderadas</strong></em>, compuesto en 1955 por <strong>Antonio Candel Molina</strong> y dedicado expresamente a la figura de las abanderadas de Elda, es hoy una obra de referencia en el circuito festero. La marcha mora <em><strong>Elda Musulmana</strong></em>, compuesta en 1950 por <strong>Francisco Chico Cantos</strong> con letra de <strong>Óscar Santos González</strong> y dedicada a la Comparsa de Moros Musulmanes, celebró en 2025 su 75 aniversario y es una de las composiciones más antiguas y versionadas del bando de la media luna.</p>
+        <p>Dos piezas nacidas en la ciudad forman parte del repertorio esencial de cualquier banda del Levante español y suenan sí o sí durante los días de fiesta. El pasodoble <em><strong>Abanderadas</strong></em>, compuesto en 1955 por <strong>Antonio Candel Molina</strong> y dedicado expresamente a la figura de las abanderadas de Elda, es hoy una obra de referencia en el circuito festero. La marcha mora <em><strong>Elda Musulmana</strong></em>, compuesta en 1950 por <strong>Francisco Chico Cantos</strong> con letra de <strong>Óscar Santos González</strong> y dedicada a la Comparsa de Moros Musulmanes, celebró en 2025 su 75 aniversario y es una de las composiciones más antiguas y versionadas del bando de la media luna.</p>
         <p style="margin-bottom:0;">La ciudad también acoge el <strong>Certamen de Música de Moros y Cristianos de Elda</strong>, que atrae cada año a bandas y compositores de toda la Comunitat Valenciana. No es un concurso secundario: en Elda, la música se toma en serio.</p>
       </div>
       <h2 class="section-title">No te lo puedes perder</h2>
@@ -599,10 +622,11 @@
       <ul>
         <li><strong>Alojamiento.</strong> Elda se llena durante los cinco días de fiestas. Reserva con la máxima antelación. Las ciudades cercanas de Petrer, Novelda y Monóvar son alternativas próximas si no encuentras plaza en Elda.</li>
         <li><strong>Sillas y tribunas.</strong> Dado que las Entradas pueden durar más de cinco horas, alquilar una silla en el recorrido oficial es muy recomendable. La gestión corre a cargo de la Junta Central de Comparsas — consulta su web para fechas de venta y sectores disponibles.</li>
-        <li><strong>Protección auditiva.</strong> Imprescindible para los Alardos de arcabucería del sábado y el lunes por la mañana. Para niños pequeños no es negociable.</li>
+        <li><strong>Protección auditiva.</strong> Los Alardos de arcabucería del sábado y el lunes generan niveles de decibelios muy altos. Para niños pequeños no es negociable.</li>
         <li><strong>Calzado.</strong> Zapatillas cómodas. Los desfiles son larguísimos y el pavimento urbano puede ser irregular. El calor de finales de mayo en Alicante es intenso: ropa ligera y agua.</li>
         <li><strong>Cuartelillos.</strong> Los locales de las comparsas son el corazón social de la fiesta. Pregunta a la Junta Central qué cuartelillos tienen la puerta más abierta para el visitante — asomarse a uno es entender la fiesta desde dentro.</li>
-        <li><strong>Gastronomía.</strong> La cocina eldense mezcla lo manchego y lo alicantino: faseguras (pelotas de carne), gazpacho eldense y gachamigas son los platos más ligados a la identidad local. Reserva mesa con antelación durante los días grandes.</li>
+        <li><strong>Gastronomía.</strong> La cocina eldense mezcla lo manchego y lo alicantino: faseguras (pelotas de carne especiada con piñones), gazpacho eldense y gachamigas son los platos más ligados a la fiesta. La bebida festera es <em>la paloma</em> — anís seco con agua fría. Reserva mesa con antelación durante los días grandes.</li>
+        <li><strong>Casa de la Viuda de Rosas.</strong> El edificio señorial de 1925 en la calle Nueva es la sede de la Junta Central y alberga el Museo Festero. Visita recomendada para entender la historia de las nueve comparsas antes de verlas desfilar.</li>
         <li><strong>Accesibilidad.</strong> El Ayuntamiento de Elda habilita zonas accesibles para personas con movilidad reducida durante los actos principales. Consulta la web municipal para conocer su ubicación exacta en 2026.</li>
         <li><strong>Retransmisión.</strong> Los actos principales suelen tener cobertura a través de la emisora local y de À Punt, la televisión autonómica valenciana. Actualizaremos este apartado con los enlaces en cuanto estén disponibles.</li>
         <li><strong>Programa oficial.</strong> Descárgalo de la web de la Junta Central antes de salir. Con cinco días y dos desfiles de más de cinco horas cada uno, planificar bien qué ver cada jornada marca la diferencia.</li>
@@ -630,6 +654,15 @@
 
         <dt>Idella</dt>
         <dd>Pasodoble emblemático de Elda, interpretado por todas las bandas juntas al cierre de la Entrada de Bandas del jueves. Es la pieza más cargada de significado emocional de la fiesta: cuando arranca, los eldenses cantan. También suena en los momentos de mayor intensidad devocional ligados al patrón.</dd>
+
+        <dt>La Estafeta</dt>
+        <dd>Acto protocolario previo a cada Embajada: el jinete emisario de cada bando cabalga hasta el castillo para exigir formalmente la rendición antes del parlamento. Es el arranque dramático de toda Embajada — sin la Estafeta, el diálogo no tiene contexto.</dd>
+
+        <dt>Capitán y Abanderada</dt>
+        <dd>Máximos cargos anuales de cada comparsa, elegidos entre festeros adultos mayores de 16 años. Cada una de las 9 comparsas proclama además un Capitán y Abanderada infantiles. En total se nombran 36 cargos cada año en el acto solemne de la iglesia de Santa Ana durante la Media Fiesta de enero.</dd>
+
+        <dt>Embajador de Bando</dt>
+        <dd>Cargo elegido por la Junta de Gobierno para un mandato de 4 años — a diferencia de los cargos de comparsa, que son anuales. El Embajador Moro y el Embajador Cristiano son los portavoces dramáticos en las Embajadas.</dd>
 
         <dt>Rueda Musulmana</dt>
         <dd>Formación coreográfica que ejecuta la Comparsa de Moros Musulmanes durante su paso por la Plaza Mayor en la Entrada Mora. Es una seña de identidad propia de esta comparsa y uno de los momentos más fotografiados de toda la fiesta.</dd>
@@ -670,16 +703,16 @@
       </dl>
 
 
-      <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Moros y Cristianos</span>
-        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
-        <span class="etiqueta">Comunitat Valenciana</span>
-        <span class="etiqueta">Alicante</span>
-        <span class="etiqueta">Elda</span>
-        <span class="etiqueta">Mayo</span>
-        <span class="etiqueta">Rueda Musulmana</span>
-        <span class="etiqueta">Media Fiesta</span>
-        <span class="etiqueta">San Antón</span>
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Moros y Cristianos</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Comunitat Valenciana</a>
+        <a href="#" class="etiqueta">Alicante</a>
+        <a href="#" class="etiqueta">Elda</a>
+        <a href="#" class="etiqueta">Mayo</a>
+        <a href="#" class="etiqueta">Rueda Musulmana</a>
+        <a href="#" class="etiqueta">Media Fiesta</a>
+        <a href="#" class="etiqueta">San Antón</a>
       </div>
 
       <div class="fichas-relacionadas">
