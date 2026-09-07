@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moros y Cristianos de Murcia 2026: Kábilas y Campamento</title>
+  <meta name="description" content="Guía de los Moros y Cristianos de Murcia 2026. ITI desde 2025. Campamento Medieval, 15 Kábilas y Mesnadas y la entrega de llaves ante la Catedral." />
+  <link rel="canonical" href="https://folklorius.es/moros-cristianos-murcia.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moros y Cristianos de Murcia | La fiesta más joven con declaración ITI" />
+  <meta property="og:description" content="Un campamento entero junto al Segura, quince grupos festeros y una ciudad que recrea su propia fundación. Guía completa de Murcia 2026." />
+  <meta property="og:image" content="https://folklorius.es/images/moros-cristianos-murcia.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
+  <style>
+
+    /* ── Kábilas y Mesnadas por bando ────────────────────────── */
+    .filaes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 580px) {
+      .filaes-grid { grid-template-columns: 1fr; }
+    }
+    .filae-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .filae-col h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .filae-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .filae-col ul li {
+      font-size: 0.86rem;
+      padding: 3px 0;
+      color: var(--text, #2c2c2c);
+      position: relative;
+      cursor: default;
+      line-height: 1.45;
+    }
+    .filae-col ul li::before {
+      content: "·";
+      margin-right: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    /* Tooltip CSS puro */
+    .nombre-filae {
+      border-bottom: 1px dotted var(--brand, #8b1a1a);
+      cursor: help;
+    }
+    .tooltip-filae {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 100;
+      background: var(--text, #2c2c2c);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      padding: 7px 10px;
+      border-radius: 6px;
+      width: max-content;
+      max-width: 260px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .tooltip-filae::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 14px;
+      border: 5px solid transparent;
+      border-top-color: var(--text, #2c2c2c);
+    }
+    .filae-col ul li:hover .tooltip-filae { display: block; }
+    .filae-col ul li:focus-within .tooltip-filae { display: block; }
+    .filae-col .anyo {
+      font-size: 0.72rem;
+      color: var(--text-muted, #5a5a5a);
+      margin-left: 4px;
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+    .actos-list .bando-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.03em;
+    }
+    .bando-cristiano { background: #dbeafe; color: #1d4ed8; }
+    .bando-moro      { background: #fef3c7; color: #92400e; }
+    .bando-ambos     { background: var(--accent-light, #f5e6c8); color: var(--brand, #8b1a1a); }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #8b1a1a);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+    .nota-filae {
+      font-size: 0.78rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/moros-cristianos-murcia.html",
+    "name": "Moros y Cristianos de Murcia",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-14",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Murcia — Plaza de Belluga",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Murcia",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.9861,
+        "longitude": -1.1303
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Federación de Asociaciones de Fiestas de Moros y Cristianos de Murcia \"Civitas Murcie\"",
+      "url": "https://morosycristianosmurcia.org"
+    },
+    "image": ["https://folklorius.es/images/moros-cristianos-murcia.jpg"],
+    "description": "Los Moros y Cristianos de Murcia, declarados Fiesta de Interés Turístico Internacional en 2025, recrean la fundación de la ciudad y la entrega pacífica de sus llaves en 1243 desde un Campamento Medieval junto al Segura donde conviven sus 15 Kábilas y Mesnadas.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://folklorius.es/"},
+    {"@type":"ListItem","position":2,"name":"Moros y Cristianos","item":"https://folklorius.es/#moros-cristianos"},
+    {"@type":"ListItem","position":3,"name":"Moros y Cristianos de Murcia","item":"https://folklorius.es/moros-cristianos-murcia.html"}
+  ]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿Cuándo se celebran los Moros y Cristianos de Murcia en 2026?","acceptedAnswer":{"@type":"Answer","text":"Siempre el primer lunes de septiembre durante 8 días. En 2026 la estimación sitúa la fiesta del 7 al 14 de septiembre. Las fechas exactas las confirma la Federación Civitas Murcie."}},
+    {"@type":"Question","name":"¿Qué diferencia los Moros y Cristianos de Murcia de otras fiestas similares?","acceptedAnswer":{"@type":"Answer","text":"El Campamento Medieval unificado junto al Segura, donde conviven las 15 agrupaciones toda la semana. Y que recrea hechos históricos reales de la propia ciudad: el Tratado de Alcaraz de 1243."}},
+    {"@type":"Question","name":"¿Qué es el Tratado de Alcaraz?","acceptedAnswer":{"@type":"Answer","text":"El pacto de abril de 1243 entre el Infante Alfonso de Castilla e Ibn Hud por el que el Reino musulmán de Murcia pasó a ser protectorado de Castilla respetando su religión, lengua y fueros. La Embajada y la Entrega de Llaves recrean ese momento."}},
+    {"@type":"Question","name":"¿Cuántas agrupaciones participan?","acceptedAnswer":{"@type":"Answer","text":"15 en total: 8 kábilas del bando moro y 7 mesnadas del bando cristiano, con más de 2.500 festeros censados."}},
+    {"@type":"Question","name":"¿Se puede entrar al Campamento Medieval?","acceptedAnswer":{"@type":"Answer","text":"Sí, está abierto al público durante toda la semana festera. También alberga la feria gastronómica de los Huertos del Malecón junto al río Segura."}}
+  ]}
+  </script>
+
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Moros y Cristianos de Murcia
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/moros-cristianos-murcia.jpg" alt="Campamento Medieval de los Moros y Cristianos de Murcia junto al río Segura con Kábilas y Mesnadas conviviendo en un mismo espacio" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Moros y Cristianos de Murcia</h1>
+      <p class="ficha-subtitle">
+        Murcia · Región de Murcia · «Donde una ciudad entera recrea su propia fundación.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2025</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la fiesta">
+        <div class="fechas-grandes">Estimación: del 7 al 14 de septiembre de 2026</div>
+        <p>15 kábilas y mesnadas · 8 días de fiesta · ITI desde 2025</p>
+        <p class="nota-grid">⚠️ Fechas sujetas al calendario de la Romería de la Fuensanta. Consulta el programa oficial de la Federación Civitas Murcie antes de planificar tu visita.</p>
+      </div>
+
+      <!-- AVISO -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>Una celebración, no un enfrentamiento.</strong> Los Moros y Cristianos de Murcia conmemoran dos episodios históricos de la propia ciudad —su fundación y una entrega pacífica de llaves— con respeto hacia ambas culturas. No hay desprecio hacia el mundo musulmán ni hacia ninguna otra religión o creencia. Kábilas y Mesnadas comparten el mismo Campamento, las mismas calles y el mismo orgullo festero.</li>
+          <li><strong>La fiesta es un triángulo.</strong> Festeros, músicos y público son los tres vértices: si falla uno, la fiesta no se entiende. Los festeros buscan el aplauso y el reconocimiento del público tanto como el público necesita lo que ellos llevan meses preparando.</li>
+          <li><strong>El Campamento Medieval no es un decorado.</strong> Es el espacio de convivencia real de las 15 agrupaciones durante toda la semana. Quienes lo reciben como lo que es — una ciudad dentro de la ciudad — lo ven de otra manera.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Un campamento entero aparece junto al río, con tiendas, banderas y hogueras, y durante una semana se convierte en el centro de la ciudad. No hay cuartelillos dispersos por los barrios: las 15 agrupaciones —moros y cristianos— comparten el mismo recinto, a orillas del Segura, mientras el resto de Murcia sigue con su Feria de Septiembre como si nada.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Murcia cuenta con <strong>15 grupos festeros</strong> —8 Kábilas y 7 Mesnadas— agrupados en la Federación de Asociaciones de Fiestas de Moros y Cristianos "Civitas Murcie". Consulta el programa oficial de la Federación antes de planificar tu visita. A diferencia de otras fiestas de M&C de la costa alicantina, aquí no hay una batalla ni un desembarco puntual: la narrativa se apoya en dos hitos históricos de la propia ciudad, separados por cuatro siglos.
+      </p>
+      <p>
+        La fiesta se despliega dentro de la Feria de Septiembre de Murcia, con el <strong>Campamento Medieval</strong> como epicentro social: un espacio único donde conviven las 8 Kábilas y las 7 Mesnadas, abierto al público, muy distinto al modelo de locales dispersos que existe en otras ciudades. Desde ahí salen los desfiles y embajadas hacia el centro histórico, y ahí regresan cada noche.
+      </p>
+      <p>
+        Si es tu primera vez, empieza por el Campamento antes que por los desfiles: es donde se entiende de verdad cómo vive la fiesta cada grupo. Después, sitúate en la Plaza de Belluga para las embajadas, frente a la Catedral.
+      </p>
+      <p class="nota-grid">⚠️ Los horarios e itinerarios exactos los publica la Federación de Asociaciones de Fiestas de Moros y Cristianos de Murcia "Civitas Murcie" antes de cada edición.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        La fiesta no recrea un asalto ni un milagro puntual. Se apoya en dos hitos reales de la ciudad: la fundación de <strong>Madina Mursiya</strong> en el año 825 por Abderramán II, y la entrega de las llaves en 1243, escenificación del <strong>Tratado de Alcaraz</strong> — el pacto entre el Infante Alfonso de Castilla e Ibn Hud por el que el Reino musulmán de Murcia pasó a protectorado de Castilla respetando su religión, lengua y fueros.
+      </p>
+      <p>
+        La fiesta nació en <strong>1981</strong> con motivo del 1150 aniversario de la fundación de la ciudad. El primer desfile salió el 21 de abril de <strong>1983</strong> con ayuda de comparsas de Orihuela y Abanilla, y la Federación Civitas Murcie se constituyó ese mismo junio con cinco agrupaciones fundacionales: Abderramán II, Ibn Arabí, Aben-Mardenix y Mudéjares en el bando moro, y Caballeros del Temple en el cristiano. En <strong>2012</strong> llegó la declaración de Interés Turístico Nacional. En <strong>2025</strong>, la de <strong>Interés Turístico Internacional</strong>.
+      </p>
+      <p>
+        La fiesta comparte semana con la Feria de Septiembre y con la Romería de la Fuensanta. Esa acumulación no la diluye — la amplifica: quien llega a Murcia esa semana entra en tres celebraciones a la vez.
+      </p>
+
+      <h2 class="section-title">Fechas 2026</h2>
+      <p>
+        Las fechas de Moros y Cristianos de Murcia dependen del calendario de la Romería de la Fuensanta (domingo siguiente al 8 de septiembre), por lo que varían cada año. Siguiendo ese patrón, en 2026 la fiesta se situaría entre estas fechas:
+      </p>
+      <ul>
+        <li><strong>Inicio (estimado):</strong> lunes 7 de septiembre de 2026</li>
+        <li><strong>Gran Desfile (estimado):</strong> sábado 12 de septiembre de 2026</li>
+        <li><strong>Cierre — Entrada Triunfal del Infante (estimado):</strong> lunes 14 de septiembre de 2026</li>
+      </ul>
+      <p class="nota-grid">⚠️ *Estas fechas son una estimación por patrón de calendario, no una confirmación oficial de la Federación para 2026. El programa completo con fechas y horarios exactos lo publica la Federación "Civitas Murcie" en su web oficial. Consúltalo antes de planificar tu visita.</p>
+
+      <h2 class="section-title">Los actos principales</h2>
+      <ul class="actos-list">
+
+        <li>
+          <span class="dia-label">Jueves — Tarde</span>
+          <strong>Desfile Infantil.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          La cantera festera de las 15 agrupaciones recorre el centro histórico. Es el primer desfile de la semana en la calle y el acto más adecuado para los más pequeños.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes — Noche</span>
+          <strong>Desfile de Bienvenida a la Fiesta.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          Desfile informal a ritmo de pasodoble desde la Universidad hasta el Ayuntamiento. Sin protocolo ni orden oficial — la semana arranca aquí de verdad.
+        </li>
+
+        <li>
+          <span class="dia-label">Viernes</span>
+          <strong>Homenaje al Rey Alfonso X "el Sabio".</strong>
+          <span class="bando-tag bando-cristiano">Bando cristiano</span>
+          Acto de carácter institucional en la Catedral de Murcia, en recuerdo del Infante que recibió la ciudad en 1243 y que llegaría a ser rey con el sobrenombre de "el Sabio".
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo — Tarde</span>
+          <strong>Alarde de Arcabucería y Ofrenda floral.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El Alarde recorre varias plazas de la ciudad hasta llegar al río, con el estruendo característico de la pólvora festera. El mismo día se celebra la Ofrenda floral a María Santísima de la Arrixaca, patrona del antiguo Reino de Murcia medieval.
+        </li>
+
+        <li>
+          <span class="dia-label">Domingo — Noche</span>
+          <strong>Embajada de la Fundación de la Ciudad de Murcia.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          En la Plaza de Belluga, ante la fachada de la Catedral, se representa el momento fundacional de Murcia en el año 825. Es la única fiesta de M&C de España que dramatiza su propia fundación como ciudad.
+        </li>
+
+        <li>
+          <span class="dia-label">Sábado — Tarde y noche</span>
+          <strong>Gran Desfile de Moros y Cristianos.</strong>
+          <span class="bando-tag bando-ambos">Ambos bandos</span>
+          El acto más numeroso de la semana, desde la Alameda de Colón hasta la Plaza de la Fuensanta. Reúne a las 15 agrupaciones al completo, con sus bandas de música y trajes.
+        </li>
+
+        <li>
+          <span class="dia-label">Jueves — Noche</span>
+          <strong>Rapto Moro y Bautizo del Cristiano.</strong>
+          <span class="bando-tag bando-ambos">Campamento Medieval</span>
+          Una de las dramatizaciones internas más singulares de la fiesta, representada dentro del propio Campamento, con ritos de época propios de su ambientación medieval.
+        </li>
+
+        <li>
+          <span class="dia-label">Lunes — Noche</span>
+          <strong>Entrada Triunfal del Infante y Embajada de la Entrega de Llaves.</strong>
+          <span class="bando-tag bando-cristiano">Bando cristiano</span>
+          Cierre de la semana festera en la Plaza de Belluga, con la representación del episodio de 1243: la entrega pacífica de las llaves de la ciudad al Infante Alfonso de Castilla.
+        </li>
+
+      </ul>
+
+      <h2 class="section-title">Kábilas y Mesnadas</h2>
+      <p>
+        Las 15 agrupaciones son el alma de la fiesta: 8 Kábilas del bando moro y 7 Mesnadas del bando cristiano, integradas en la Federación "Civitas Murcie".
+      </p>
+      <p class="nota-grid">La composición oficial y el orden de desfile de cada grupo lo publica anualmente la Federación de Asociaciones de Fiestas de Moros y Cristianos de Murcia.</p>
+
+      <div class="filaes-grid">
+
+        <div class="filae-col">
+          <h3>🌙 Bando Moro — Kábilas</h3>
+          <p class="nota-filae">Las fechas de fundación individuales no están verificadas en fuente oficial, salvo la indicada.</p>
+          <ul>
+            <li><span class="nombre-filae">Kábila Abderramán II</span><span class="tooltip-filae">Grupo fundador de la fiesta (1981-1983)</span></li>
+            <li>Kábila Ibn Arabí</li>
+            <li>Kábila Abu-L-Abbás</li>
+            <li>Kábila Abenmardénix</li>
+            <li>Kábila Mudéjares</li>
+            <li>Kábila Almorávides</li>
+            <li>Kábila Almohades</li>
+            <li>Kábila Aben Amar</li>
+          </ul>
+        </div>
+
+        <div class="filae-col">
+          <h3>⚔️ Bando Cristiano — Mesnadas</h3>
+          <p class="nota-filae">Las fechas de fundación individuales no están verificadas en fuente oficial, salvo las indicadas.</p>
+          <ul>
+            <li>Mesnada Caballeros de San Juan de Jerusalén</li>
+            <li>Mesnada Orden de Santiago</li>
+            <li><span class="nombre-filae">Mesnada Templarios de Murcia</span><span class="tooltip-filae">Grupo fundador de la fiesta (1981-1983)</span></li>
+            <li>Mesnada Huestes de Fernando III</li>
+            <li>Mesnada Caballeros y Damas del Infante Don Juan Manuel</li>
+            <li>Mesnada Jaime I</li>
+            <li><span class="nombre-filae">Mesnada Santa María de la Arrixaca</span><span class="tooltip-filae">Grupo fundador de la fiesta (1981-1983)</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="banner-historia" role="note">
+        <h3>El Campamento Medieval — lo que distingue a Murcia</h3>
+        <p>El Campamento Medieval es lo que distingue a Murcia de cualquier otra fiesta de Moros y Cristianos de España. En las ciudades de la costa alicantina cada filà o comparsa tiene su propio local —el "cuartelillo"— repartido por el pueblo. En Murcia, al ser una ciudad grande, las 15 Kábilas y Mesnadas comparten un único espacio común, montado junto al Malecón, a orillas del Segura. Ahí conviven, ahí ensayan, y ahí se representan dramatizaciones internas como el Rapto Moro y Bautizo del Cristiano. Es, además, el punto de la fiesta más abierto al público que quiera vivir el ambiente festero desde dentro, no solo verlo pasar en un desfile.</p>
+      </div>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <h3 style="color:#1d4ed8; margin-bottom:8px;">El repertorio festero de la huerta</h3>
+        <p>La música de Murcia sigue el patrón de marcha mora y marcha cristiana levantina, con bandas que llegan tanto de sociedades musicales de las pedanías de la huerta murciana como de la Comunitat Valenciana. A diferencia de Alcoi, no existe una pieza reconocida institucionalmente como himno oficial de la fiesta: predomina el repertorio festero clásico de la zona.</p>
+        <p style="margin-bottom:0;">El contraste más claro se escucha entre el Gran Desfile del sábado, con las bandas al completo desfilando por la Gran Vía, y el ambiente más íntimo del Campamento Medieval por la noche, donde la música se mezcla con el rumor de las conversaciones junto al río. Para el mejor momento acústico, sitúate en la Gran Vía Escultor Salzillo durante el Gran Desfile, donde el recorrido concentra a las 15 bandas en su tramo más largo.</p>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Embajada de la Fundación</h3>
+          <span class="tag">Domingo · Noche · Plaza de Belluga</span>
+          <p>Ante la fachada de la Catedral y el edificio de Moneo, se representa la fundación de Murcia en el año 825. Es la única fiesta de M&C de España que dramatiza su propia fundación como ciudad, no una batalla o reconquista.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el escenario —la Catedral iluminada de noche— convierte un acto teatral en algo que solo se puede vivir en esa plaza concreta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Entrada Triunfal del Infante</h3>
+          <span class="tag">Lunes · Noche · Plaza de Belluga</span>
+          <p>Cierre de la semana festera con la Embajada de la Entrega de Llaves de 1243, cuando el gobernador Ibn Hud entregó la ciudad al futuro Alfonso X el Sabio.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único acto que narra una entrega pacífica de llaves, no una batalla, algo poco común en las fiestas de M&C de España.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Rapto Moro y Bautizo del Cristiano</h3>
+          <span class="tag">Jueves · Noche · Campamento Medieval</span>
+          <p>Una dramatización interna de los propios grupos festeros dentro del Campamento, con ritos de época propios de la ambientación medieval del recinto.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es de los pocos actos que ocurren dentro del propio Campamento y no en un desfile por la ciudad, lo que le da un tono mucho más cercano e improvisado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Campamento Medieval al completo</h3>
+          <span class="tag">Toda la semana · Malecón / Murcia Río</span>
+          <p>Las 15 Kábilas y Mesnadas conviviendo en un mismo espacio junto al Segura, algo que no ocurre en ninguna otra fiesta de M&C de España.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único lugar donde se puede ver el interior de la fiesta —cómo viven los grupos festeros entre acto y acto— sin esperar a un desfile.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Alojamiento.</strong> Murcia capital tiene mucha más oferta hotelera que los municipios de M&C alicantinos, pero coincide con la Feria de Septiembre, así que reserva con antelación si vienes el fin de semana del Gran Desfile.</li>
+        <li><strong>Cómo llegar.</strong> Murcia tiene estación de tren (Cercanías y AVE) y aeropuerto propio (Región de Murcia). El centro histórico y el Campamento Medieval están a poca distancia caminando o en bus urbano.</li>
+        <li><strong>Dónde situarse.</strong> Para las embajadas, la Plaza del Cardenal Belluga, frente a la Catedral. Para el Gran Desfile, cualquier punto de la Gran Vía Escultor Salzillo, que suele tener sillas de pago en todo su trazado.</li>
+        <li><strong>Clima y ropa.</strong> Principios de septiembre en Murcia significa calor todavía fuerte durante el día. Ropa ligera, protección solar para los actos de tarde, y algo de abrigo ligero para las noches en el Campamento junto al río.</li>
+        <li><strong>Protocolo de respeto.</strong> El Alarde de Arcabucería y los actos de pólvora se siguen desde fuera del recorrido acordonado. En el Campamento Medieval, respeta los espacios internos de cada Kábila y Mesnada aunque esté abierto al público.</li>
+        <li><strong>Gastronomía.</strong> Los Huertos del Malecón, junto al Campamento, concentran la feria gastronómica de la semana. El bocado más asociado a las fiestas es el <em>pastel de carne murciano</em> — hojaldre en espiral relleno de ternera, huevo duro y especias. Y para picar, la <em>marinera</em>: rosquilla de pan con ensaladilla rusa y anchoa en salmuera.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Embajada</dt>
+        <dd>Representación teatralizada entre los dos bandos. En Murcia narra episodios fundacionales de la ciudad, no una batalla, a diferencia de otras fiestas de Moros y Cristianos.</dd>
+
+        <dt>Kábila</dt>
+        <dd>Denominación murciana para las agrupaciones del bando moro, equivalente a la filà alcoyana o la comparsa en otras ciudades. Murcia tiene 8 kábilas, cada una con su sede en el Campamento Medieval durante la semana festera.</dd>
+
+        <dt>Mesnada</dt>
+        <dd>Denominación murciana para las agrupaciones del bando cristiano. El término procede del concepto medieval castellano de tropas al servicio de un señor. Murcia tiene 7 mesnadas. Kábila y Mesnada son los dos términos propios de Murcia — ninguna otra fiesta M&C española los usa.</dd>
+
+        <dt>Rey Moro Ibn Hud</dt>
+        <dd>Cargo máximo del bando moro, que rota anualmente entre las 8 kábilas en un ciclo de 8 años. Representa al gobernador histórico que firmó el Tratado de Alcaraz en 1243.</dd>
+
+        <dt>Infante Alfonso de Castilla</dt>
+        <dd>Cargo máximo del bando cristiano, que rota anualmente entre las 7 mesnadas en un ciclo de 7 años. Representa al futuro Alfonso X el Sabio, que recibió las llaves de Murcia en 1243.</dd>
+
+        <dt>Embajador Vitalicio</dt>
+        <dd>Cargo honorífico institucional de la Federación. El Embajador Moro y el Embajador Cristiano declaman los textos de la Embajada de la Fundación y la Entrega de Llaves. Su mandato es vitalicio: no rotan cada año.</dd>
+
+        <dt>Abanderada de la Federación</dt>
+        <dd>Cargo femenino de representación de toda la federación, elegido anualmente por jurado entre las candidatas que presenta cada kábila y mesnada. Existe la Abanderada Mayor y la Abanderada Infantil — la única figura de la fiesta que no se elige por rotación entre agrupaciones, sino por mérito ante un jurado.</dd>
+
+        <dt>Campamento Medieval</dt>
+        <dd>Recinto común junto al Segura donde conviven todas las Kábilas y Mesnadas durante la semana festera, a diferencia de los cuartelillos dispersos de otras ciudades.</dd>
+
+        <dt>Alarde de Arcabucería</dt>
+        <dd>Desfile de disparos de pólvora que recorre varias plazas de la ciudad hasta llegar al río.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/murcia/campamento-medieval.jpg" alt="Campamento Medieval de los Moros y Cristianos de Murcia junto al río Segura" />
+        <img src="images/murcia/embajada-plaza-belluga.jpg" alt="Embajada de la Fundación de Murcia en la Plaza de Belluga frente a la Catedral" />
+        <img src="images/murcia/gran-desfile.jpg" alt="Gran Desfile de Moros y Cristianos de Murcia por la Gran Vía Escultor Salzillo" />
+        <img src="images/murcia/entrega-llaves.jpg" alt="Entrada Triunfal del Infante Alfonso de Castilla en los Moros y Cristianos de Murcia" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://morosycristianosmurcia.org" target="_blank" rel="noopener">Federación de Asociaciones de Fiestas de Moros y Cristianos de Murcia "Civitas Murcie" — Web oficial</a></li>
+        <li><a href="https://www.murcia.es" target="_blank" rel="noopener">Ayuntamiento de Murcia</a></li>
+        <li><a href="https://www.turismoregiondemurcia.es" target="_blank" rel="noopener">Turismo Región de Murcia</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-04</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebran los Moros y Cristianos de Murcia en 2026?</dt>
+        <dd>Según el patrón de calendario ligado a la Romería de la Fuensanta, se situarían entre el 7 y el 14 de septiembre de 2026, con el Gran Desfile el sábado 12. Son fechas estimadas por patrón: consulta el programa oficial de la Federación "Civitas Murcie" para la confirmación definitiva de cada edición.</dd>
+
+        <dt>¿Es una fiesta apta para ir con niños?</dt>
+        <dd>El Campamento Medieval es un espacio abierto y familiar durante el día. Para los actos de pólvora (Alarde de Arcabucería) se recomienda protección auditiva y mantener distancia con niños pequeños.</dd>
+
+        <dt>¿Qué pasa si llueve?</dt>
+        <dd>No consta en las fuentes disponibles un protocolo específico publicado por la Federación ante lluvia. Consulta directamente con la organización o su web oficial ante previsión de mal tiempo.</dd>
+
+        <dt>¿Hay zonas adaptadas para movilidad reducida?</dt>
+        <dd>No consta esta información en las fuentes consultadas para esta ficha. Consulta con la Federación "Civitas Murcie" o el Ayuntamiento de Murcia antes de tu visita si necesitas esta información.</dd>
+
+        <dt>¿Por qué Murcia no tiene batalla ni desembarco como otras fiestas de Moros y Cristianos?</dt>
+        <dd>Porque su origen no conmemora una reconquista puntual, sino dos hitos reales de la propia ciudad: su fundación en el 825 y la entrega pacífica de las llaves en 1243. Por eso el acto central no es una guerrilla, sino dos embajadas que narran esos dos episodios.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <a href="#" class="etiqueta destacada">Moros y Cristianos</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Murcia</a>
+        <a href="#" class="etiqueta">Septiembre</a>
+        <a href="#" class="etiqueta">Campamento Medieval</a>
+        <a href="#" class="etiqueta">Kábilas y Mesnadas</a>
+        <a href="#" class="etiqueta">Feria de Septiembre</a>
+        <a href="#" class="etiqueta">Entrega de Llaves</a>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Alicante · ITI · La fiesta festera más antigua de España</span>
+          </a>
+          <a href="moros-cristianos-almansa.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Almansa</strong>
+            <span>Albacete · ITI · Declaración reciente y proximidad al sureste</span>
+          </a>
+          <a href="moros-cristianos-elda.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Elda</strong>
+            <span>Alicante · ITI · Contraste de escala frente a una capital</span>
+          </a>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
