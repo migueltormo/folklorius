@@ -31,7 +31,7 @@
       padding: 8px 12px;
       background: var(--accent-light, #f5e6c8);
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
     /* ── Ficha datos clave ───────────────────────────────────────── */
@@ -43,7 +43,7 @@
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -70,7 +70,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -79,7 +79,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
 
@@ -99,7 +99,7 @@
     .agrupacion-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 6px;
     }
     .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
@@ -110,7 +110,7 @@
       border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
     /* ── Fichas relacionadas ─────────────────────────────────────── */
     .fichas-relacionadas { margin: 2rem 0 1.5rem; }
     .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
@@ -121,8 +121,54 @@
       text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
     }
     .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
     .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+
+    /* ── Must-see ───────────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
   </style>
 
@@ -152,7 +198,7 @@
       }
     },
     "image": ["https://folklorius.es/images/carnaval-tenerife.jpg"],
-    "description": "El Carnaval de Santa Cruz de Tenerife: murgas, comparsas, gala de la reina y el Coso Apoteosis. De referencia internacional.",
+    "description": "El Carnaval de Santa Cruz de Tenerife: murgas, comparsas, Gala de la Reina y el Coso Apoteosis. Interés Turístico Internacional desde 1980.",
     "organizer": {
       "@type": "Organization",
       "name": "Ayuntamiento de Santa Cruz de Tenerife",
@@ -164,6 +210,52 @@
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Carnaval", "item": "https://folklorius.es/#carnaval"},
+      {"@type": "ListItem", "position": 3, "name": "Carnaval de Santa Cruz de Tenerife", "item": "https://folklorius.es/carnaval-tenerife.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Carnaval de Santa Cruz de Tenerife?",
+        "acceptedAnswer": {"@type": "Answer", "text": "En fecha variable según el calendario de Cuaresma. En 2026, del 16 de enero al 22 de febrero. Los concursos de agrupaciones comienzan semanas antes en el Recinto Ferial."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la diferencia entre murga y comparsa en Tenerife?",
+        "acceptedAnswer": {"@type": "Answer", "text": "La murga es una agrupación vocal que canta sátira y humor sobre la actualidad, con el pito murguero de cartón como instrumento identitario. La comparsa se centra en el baile y la percusión afrocaribeña, con una batucada de surdos, repiques y cajas."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Carnaval de Día?",
+        "acceptedAnswer": {"@type": "Answer", "text": "La jornada más multitudinaria del carnaval, celebrada en la Plaza de España con música en directo y ambiente familiar. En 2019 congregó a más de 400.000 personas, cifra recogida por el Libro Guinness."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son las tortillas de carnaval?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Un dulce ritual de la fiesta: masa frita con anís, limón, azúcar y canela, bañada en miel de caña. Se venden en los ventorrillos tradicionales de la Plaza del Príncipe durante el carnaval."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo termina el carnaval?",
+        "acceptedAnswer": {"@type": "Answer", "text": "El Entierro de la Sardina, el Miércoles de Ceniza, cierra el ciclo oficial con su cortejo fúnebre satírico. La fiesta en la calle continúa hasta el fin de semana siguiente y concluye definitivamente el Domingo de Piñata."}
+      }
+    ]
   }
   </script>
 </head>
@@ -200,16 +292,13 @@
 
       <h1>Carnaval de Santa Cruz de Tenerife</h1>
       <p class="ficha-subtitle">
-        Santa Cruz de Tenerife · «Donde la calle se disfraza de libertad.»
+        Santa Cruz de Tenerife · Canarias · «Donde la calle se disfraza de libertad.»
       </p>
 
       <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
         <div class="fechas-grandes">Del 16 de enero al 22 de febrero de 2026</div>
-        <div class="datos-secundarios">
-          <span>📍 Santa Cruz de Tenerife · Canarias</span>
-          <span>⏱️ Más de 5 semanas de fiesta</span>
-          <span>🏅 Interés Turístico Internacional (1980)</span>
-        </div>
+        <p>5 modalidades de agrupación · 5 semanas de fiesta · Interés Turístico Internacional desde 1980</p>
+        <p class="nota-grid">⚠️ Fechas sujetas a calendario litúrgico. Confirma en la web oficial del Ayuntamiento de Santa Cruz de Tenerife.</p>
       </div>
 
       <div class="badges" aria-label="Reconocimientos oficiales">
@@ -219,34 +308,43 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>Respeta el carácter cultural y participativo de la fiesta.</li>
-          <li>Algunos actos implican grandes aglomeraciones y música a alto volumen.</li>
-          <li>Respeta la privacidad en la toma y difusión de imágenes de otras personas.</li>
+          <li>Las murgas canarias son crónica local cantada: sus letras señalan con nombre y apellido a políticos, instituciones y personajes del año. Conocer el contexto tinerfeño de fondo marca la diferencia entre seguir el chiste y quedarse fuera.</li>
+          <li>En el Carnaval de Santa Cruz, el disfraz no es ornamental: es el lenguaje de la fiesta. Quien va sin disfraz participa, pero quien va disfrazado entra. El anonimato que da el traje forma parte de la libertad que lleva siglos definiendo esta celebración.</li>
+          <li>El carnaval de calle y el carnaval oficial son dos mundos distintos que coexisten. Los concursos en recintos cerrados tienen normas, jurados y horarios. La calle no tiene nada de eso. Ambos merecen el mismo respeto.</li>
         </ul>
       </div>
 
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        El Carnaval de Santa Cruz de Tenerife es una celebración abierta, inclusiva y creativa donde la música, el humor y el disfraz convierten la ciudad en un gran escenario colectivo. Durante semanas, la vida cotidiana se suspende para dar paso a una fiesta que fomenta la expresión libre y la participación ciudadana, con una proyección internacional reconocida como una de las más importantes del mundo.
+        En 1987, Celia Cruz actuó en la Plaza de España de Santa Cruz ante más de 250.000 personas. El Libro Guinness World Records homologó ese concierto como récord mundial de asistencia a un evento al aire libre. Tres décadas después, en 2019, el concierto de Juan Luis Guerra en el Carnaval de Día reunió a más de 400.000 asistentes en el mismo trazado urbano, pulverizando todos los registros locales anteriores. Ninguna de las dos cifras explica del todo lo que pasa en Santa Cruz en febrero, pero las dos dicen algo verdadero sobre la escala de lo que allí ocurre.
+      </p>
+      <p>
+        El Carnaval de Tenerife no se ve desde la acera. Se entra en él disfrazado, a cualquier hora del día o de la noche, durante cinco semanas. Lo que encuentras dentro no es un desfile que pasa delante de ti: son murgas que cantan lo que nadie más se atrevió a decir en todo el año, comparsas que llevan meses construyendo un ritmo de batucada que se siente en el pecho antes de verlas llegar, y personas que llevan el mismo disfraz desde hace treinta años y que son ya, ellas mismas, parte del patrimonio de la fiesta.
       </p>
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        El Carnaval de Santa Cruz de Tenerife es una celebración urbana y profundamente participativa en la que la ciudad entera se convierte en escenario. No es una fiesta para observar desde la distancia, sino para vivirla activamente, disfrazado y mezclado con la multitud.
+        El carnaval se articula en dos planos que conviven durante cinco semanas. Dentro de los recintos: concursos de murgas, comparsas y rondallas con jurado, puntuación y final en el Recinto Ferial. En la calle: música en directo, grupos espontáneos, disfraces de todo tipo y la libertad de no tener horario ni escenario fijo.
       </p>
       <p>
-       Se articula en dos dimensiones complementarias. Por un lado, los actos organizados: concursos, galas y certámenes con escenografías espectaculares y meses de preparación por parte de diseñadores, músicos y agrupaciones. Por otro, el carnaval en la calle, donde la fiesta se libera de horarios y normas: calles, plazas y avenidas se llenan de personas disfrazadas, música en directo y pequeños grupos espontáneos que cantan y bailan hasta altas horas.
+        El disfraz no responde a un único tema ni estilo. Conviven las fantasías de la Gala de la Reina —estructuras escultóricas que pesan decenas de kilos y llevan meses de trabajo— con el traje improvisado de quien simplemente se pinta la cara para salir. Lo que diferencia a Tenerife de otros carnavales es que hay personas que llevan el mismo personaje durante décadas y se han convertido en institución. Pedro Gómez Cuenca, conocido como Charlot, fue el primero en recibir una medalla oficial del Ayuntamiento por encarnar su personaje de forma ininterrumpida durante años. La Lecherita y Cantinflas son otras figuras de ese mismo fenómeno: ciudadanos de a pie que se disfrazan igual cada año hasta que el barrio entero los espera y los reconoce.
       </p>
       <p>
-      El disfraz es un elemento central. No responde a un único tema ni estilo: conviven disfraces elaborados, trajes improvisados, sátira política y humor absurdo. El anonimato que proporciona el disfraz favorece un ambiente de libertad expresiva. El carnaval se vive tanto de día, con actividades familiares, como de noche, con grandes concentraciones y oferta musical continua.
+        El Carnaval de Día se celebra en la Plaza de España con música en directo y ambiente familiar. En 2019 congregó a más de 400.000 asistentes, cifra recogida por el Libro Guinness.
       </p>
 
       <h2 class="section-title">Historia y significado</h2>
       <p>
-        El carnaval en Tenerife tiene sus orígenes en el siglo XVI, poco después de la conquista de la isla, ligado al calendario cristiano como celebración previa a la Cuaresma. La primera referencia escrita conocida es de <strong>1778</strong>, en el diario de un militar que relata un baile en Santa Cruz con comparsas ya organizadas. Apenas cinco años después, en 1783, el Corregidor de la isla prohibió el uso de máscaras nocturnas: la primera censura documentada de una fiesta que ya entonces incomodaba a las autoridades. En 1891 se fundó la primera rondalla de la que hay registro, germen de las agrupaciones musicales actuales.
+        Los orígenes del carnaval en Tenerife arrancan en el siglo XVI, ligados al calendario cristiano previo a la Cuaresma. La primera referencia escrita conocida es de <strong>1778</strong>: el diario de un militar que describe un baile en Santa Cruz con comparsas ya organizadas. En 1783, el Corregidor prohibió el uso de máscaras nocturnas —primera censura documentada— y en 1891 se fundó la primera rondalla de la que hay registro.
       </p>
       <p>
-        El Carnaval fue prohibido a nivel nacional durante buena parte del franquismo. En Tenerife se celebraba a puerta cerrada, con las tradicionales «tapadas» escondiéndose en la intimidad de las casas. En <strong>1961</strong> el Ayuntamiento logró pactar su celebración bajo el nombre de <strong>Fiestas de Invierno</strong>, un eufemismo que permitió mantener y subvencionar los concursos de agrupaciones hasta 1976, cuando con la Transición la fiesta recuperó su nombre real. Desde entonces se ha profesionalizado hasta convertirse en un evento de proyección internacional y motor cultural de la isla.
+        El germen de la murga canaria llega en <strong>1917</strong>. La tripulación del cañonero de la Armada española <em>Laya</em>, con marineros de Cádiz entre sus filas, llegó al puerto de Santa Cruz y formó una agrupación que entusiasmó a la ciudad. De esa semilla nació en los años 50 la <strong>Afilarmónica NiFú-NiFá</strong> —la Fufa—, fundada por <strong>Enrique González Bethencourt</strong>, padre de las murgas canarias, con sede histórica en la calle de La Noria.
+      </p>
+      <p>
+        Durante el franquismo el carnaval fue prohibido en toda España. En Tenerife se celebraba en la intimidad de las casas, con las <em>tapadas</em> como forma de resistencia. En <strong>1961</strong>, una alianza entre el obispo Domingo Pérez Cáceres, el gobernador civil Manuel Ballesteros Gaibrois, el delegado Opelio Rodríguez Peña y el propio González Bethencourt logró que el Ayuntamiento autorizara la fiesta bajo el nombre de <strong>Fiestas de Invierno</strong>, eufemismo que permitió mantener y financiar los concursos hasta 1976, cuando la Transición devolvió el nombre real al carnaval.
+      </p>
+      <p>
+        En diciembre de <strong>1965</strong>, Manuel Monzón Mingorance fundó la comparsa <strong>Los Rumberos</strong>, primera de su modalidad en Canarias, incorporando la percusión afrocaribeña y brasileña al desfile chicharrero. En <strong>1980</strong>, el carnaval recibió la declaración de <strong>Interés Turístico Internacional</strong>, junto al de Cádiz.
       </p>
 
       <h2 class="section-title">Fechas 2026</h2>
@@ -264,27 +362,32 @@
 
         <div class="agrupacion-card">
           <h3>Murgas</h3>
-          <p>Agrupaciones vocales que interpretan canciones humorísticas y satíricas sobre la actualidad, con meses de ensayo detrás. El alma crítica del carnaval, la más parecida en espíritu a las chirigotas gaditanas.</p>
+          <p>El alma crítica del carnaval. Agrupaciones vocales con repertorio nuevo cada año: letras de sátira política y social cantadas en coro. Su instrumento identitario es el <em>pito murguero</em>, un cono de cartón con papel sulfurizado en el extremo que produce una vibración nasal característica, distinto del pito de caña gaditano. La decana es la Afilarmónica NiFú-NiFá, fundada en los años 50.
+          </p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Comparsas</h3>
-          <p>Centradas en el baile, la percusión y el desfile, con fuerte influencia afrocaribeña y brasileña. Aportan ritmo y espectacularidad al carnaval en la calle.</p>
+          <p>Fundadas en 1965 por Manuel Monzón con Los Rumberos, tienen influencia directa de la percusión afrocaribeña y brasileña. Su base rítmica es la <em>batucada</em>: surdos, repiques, cajas y chocalhos que marcan el paso del cuerpo de baile liderado por la primera bailarina.
+          </p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Rondallas</h3>
-          <p>La vertiente más clásica y musical, con piezas líricas e instrumentos de cuerda. La primera agrupación de este tipo se documenta ya en 1891.</p>
+          <p>Única modalidad en España con repertorio de ópera y zarzuela adaptadas al carnaval. Cantan con coro lírico polifónico y solistas de tesitura clásica —tenores y sopranos— acompañados exclusivamente por instrumentos de pulso y púa: guitarras, laúdes y bandurrias. Los distingue radicalmente de las tunas y coros peninsulares. La primera agrupación documentada data de 1891.
+          </p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Agrupaciones coreográficas</h3>
-          <p>Grupos centrados en el baile y la expresión corporal, con coreografías modernas o temáticas. Destacan por su impacto visual en concursos y galas.</p>
+          <p>Grupos centrados en el baile con coreografías de gran formato. Compiten en el Recinto Ferial con danza, vestuario elaborado y efectos escénicos.
+          </p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Participación libre</h3>
-          <p>Miles de personas disfrazadas, en grupos improvisados o solas, que se suman al carnaval en la calle sin pertenecer a ninguna agrupación formal. Parte esencial del carácter abierto de la fiesta.</p>
+          <p>Miles de personas disfrazadas que se suman al carnaval sin pertenecer a ninguna agrupación. Incluye a los <em>personajes</em>: ciudadanos que llevan el mismo disfraz año tras año hasta convertirse en figuras reconocibles del barrio.
+          </p>
         </div>
 
       </div>
@@ -292,8 +395,18 @@
       <p style="margin-top:1rem;">
         La <strong>Gala de Elección de la Reina del Carnaval</strong> es el acto más mediático de la fiesta: candidatas luciendo fantasías de gran tamaño y peso, auténticas estructuras escultóricas que llevan meses de trabajo detrás. En la edición de 2026 la ganadora fue Carla Castro Castellano, con la fantasía «Icónica».
       </p>
-      <p class="nota-grid">🎵 Escucha una murga en directo para entender de verdad el humor local: sus letras reflejan el año con mirada satírica. El Carnaval de Día tiene ambiente familiar; por la noche la intensidad sube considerablemente.</p>
+      <p class="nota-grid">⚠️ Los concursos de agrupaciones tienen calendario propio. Consulta el programa oficial del Ayuntamiento de Santa Cruz de Tenerife para fechas, recintos y horarios actualizados.</p>
 
+      <h2 class="section-title" id="musica">Música y sonido</h2>
+      <p>
+        El sonido que identifica al carnaval de Santa Cruz arranca con el <strong>pito murguero</strong>: un cono de cartón con papel sulfurizado en el extremo que da el tono al grupo antes de arrancar. Más áspero y directo que el pito de caña gaditano. Quien lo ha escuchado una vez lo reconoce en cualquier esquina.
+      </p>
+      <p>
+        Las murgas cantan en coro a una sola voz —el unísono es lo que da fuerza al repertorio— con bombo y platillo como base. Las comparsas funcionan de otro modo: su motor es la <strong>batucada</strong>, una sección de percusión con surdos, repiques, cajas y chocalhos que construye un pulso físico antes de que llegue el cuerpo de baile. Las rondallas trabajan con cuerdas pulsadas —guitarras, laúdes y bandurrias— y un repertorio lírico que puede incluir fragmentos de ópera o zarzuela.
+      </p>
+      <p>
+        En la calle, los tres sonidos conviven sin avisar. Una murga puede cruzarse con una comparsa a cincuenta metros de una rondalla. Ninguna espera a la otra.
+      </p>
       <h2 class="section-title">Qué se celebra cada semana</h2>
       <p>El carnaval se organiza en cuatro fases claramente diferenciadas, útil si quieres planificar tu visita según lo que te interese ver:</p>
 
@@ -350,20 +463,62 @@
       </ul>
 
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>Vivir un desfile nocturno desde dentro y disfrazado.</li>
-        <li>Escuchar una murga en directo para entender el humor local.</li>
-        <li>La gala de la reina, aunque sea por televisión: las fantasías son espectaculares.</li>
-        <li>El Carnaval de Día si viajas con niños: es más accesible y familiar.</li>
-      </ul>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Una murga en directo en el Recinto Ferial</h3>
+          <span class="tag">Concurso de Murgas · Recinto Ferial Santa Cruz</span>
+          <p>Escuchar una murga canaria en concurso es entender por qué llevan meses ensayando. Cada letra es un repaso al año que acaba de pasar, con nombres propios y referencias que el público local reconoce al instante.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>El pito murguero da el tono, el coro entra y la sala sabe de qué va antes de que acabe la primera estrofa. El concurso tiene su propio ritual: aplausos, silencio y un veredicto del público que a veces no coincide con el del jurado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Coso Apoteosis</h3>
+          <span class="tag">Martes de Carnaval · Avenida Francisco La Roche</span>
+          <p>El gran desfile del carnaval. Murgas, comparsas y agrupaciones coreográficas desfilan durante horas. Es el momento en que los meses de trabajo de cada grupo se ven todos a la vez.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La batucada de una comparsa se siente en el pecho antes de que llegue a la vista. Y en el mismo desfile puedes ver una fantasía de treinta kilos junto a un grupo de amigos disfrazados de electrodomésticos. La escala y el contraste no los encuentras en ningún otro sitio.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Gala de Elección de la Reina</h3>
+          <span class="tag">Semana previa al carnaval · Recinto Ferial</span>
+          <p>Las candidatas lucen fantasías que son estructuras escultóricas de decenas de kilos, construidas durante meses. No es un concurso de belleza: es un certamen de arte efímero portado por una persona.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Las fantasías no se ven bien por televisión. La escala real, el movimiento bajo los focos y el silencio del recinto cuando una candidata hace su entrada son cosas que el directo cambia por completo. Las entradas se agotan: conviene reservar con meses de antelación.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Entierro de la Sardina</h3>
+          <span class="tag">Miércoles de Ceniza · Rambla de Santa Cruz</span>
+          <p>Cortejo fúnebre satírico que cierra el carnaval. Una sardina gigante desfila entre llantos fingidos y humor negro, mientras los que llevan cinco semanas disfrazados hacen el último esfuerzo antes de volver a la vida normal.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el Entierro es el momento en que el carnaval se despide de sí mismo con ironía. La Sardina de Tenerife tiene una escala y una producción que pocas ciudades alcanzan, y el ambiente de ese miércoles de noche es distinto a todo lo anterior.</p>
+          </details>
+        </div>
+
+      </div>
 
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li>Usa calzado cómodo: se camina y se baila mucho durante horas.</li>
-        <li>Planifica el transporte con antelación: hay cortes de tráfico y refuerzos de transporte público.</li>
-        <li>Hidrátate y protégete del sol en el Carnaval de Día.</li>
-        <li>Respeta el entorno y a las personas: es una fiesta masiva y compartida.</li>
-        <li>Reserva alojamiento con meses de antelación para las semanas centrales.</li>
+        <li><strong>Elige qué parte del carnaval quieres ver antes de llegar.</strong> El concurso en el Recinto Ferial, la Gala de la Reina, el Coso Apoteosis y el Carnaval de Día son experiencias distintas con horarios y ubicaciones propias. No hay manera de verlo todo.
+        </li>
+        <li><strong>El alojamiento en las semanas centrales se agota meses antes.</strong> Las fechas clave son el fin de semana de la Gala y el del Coso Apoteosis. Fuera de esas fechas hay más margen.
+        </li>
+        <li><strong>El Carnaval de Día es la opción más accesible para familias.</strong> Se celebra en la Plaza de España con ambiente diurno, música en directo y menor intensidad que las noches. También es el acto más multitudinario del carnaval.
+        </li>
+        <li><strong>Las tortillas de carnaval</strong> son el dulce ritual de la fiesta: masa frita con anís, limón, azúcar y canela, bañada en miel de caña. Las hacen los ventorrillos tradicionales de la Plaza del Príncipe. No tienen temporada fuera del carnaval.
+        </li>
+        <li>El programa oficial con fechas, recintos y horarios se publica en la web del Ayuntamiento de Santa Cruz de Tenerife.
+        </li>
       </ul>
 
       <h2 class="section-title">Vocabulario festero</h2>
@@ -380,6 +535,20 @@
         <dd>Gran desfile principal del Carnaval, uno de los actos más importantes y multitudinarios de la fiesta.</dd>
         <dt>Murga</dt>
         <dd>Agrupación vocal que interpreta canciones humorísticas y satíricas sobre la actualidad, con meses de preparación y concurso oficial.</dd>
+        <dt>Pito murguero</dt>
+        <dd>Instrumento cónico de cartón con papel sulfurizado en el extremo, propio de las murgas canarias. Da el tono al grupo antes de arrancar y produce una vibración nasal característica, distinta del pito de caña gaditano.</dd>
+        <dt>Batucada</dt>
+        <dd>Sección de percusión de las comparsas: surdos, repiques, cajas y chocalhos. Construye el pulso rítmico sobre el que baila el cuerpo de la comparsa.</dd>
+        <dt>Chicharrero</dt>
+        <dd>Gentilicio popular de los habitantes de Santa Cruz de Tenerife. Define también el estilo propio de la fiesta: irónico, participativo y con raíces marineras.</dd>
+        <dt>Tapada</dt>
+        <dd>Forma de celebrar el carnaval en la intimidad de las casas durante el franquismo. Las mujeres se disfrazaban y visitaban amigos con la cara cubierta para mantener el anonimato mientras la fiesta estaba prohibida en la calle.</dd>
+        <dt>Mascarita</dt>
+        <dd>Persona disfrazada que participa en el carnaval sin pertenecer a ninguna agrupación. El término subraya el anonimato como valor central de la fiesta.</dd>
+        <dt>Ventorrillo</dt>
+        <dd>Puesto o pequeño establecimiento temporal que vende comida y bebida durante el carnaval. Los tradicionales de la Plaza del Príncipe y alrededores son los que sirven las tortillas de carnaval.</dd>
+        <dt>Personaje</dt>
+        <dd>Ciudadano que lleva el mismo disfraz año tras año hasta convertirse en figura reconocible del carnaval. Su continuidad y la respuesta del barrio son lo que le dan ese estatus.</dd>
       </dl>
 
       <h2 class="section-title">Galería</h2>
@@ -407,19 +576,20 @@
         <dd>La mayoría de eventos en la calle son gratuitos. Algunos concursos y galas requieren entrada.</dd>
         <dt>¿Hay accesibilidad para personas con movilidad reducida?</dt>
         <dd>Sí, existen zonas habilitadas en los actos oficiales y presencia constante de servicios sanitarios. Consulta el plan de accesibilidad en la web del Ayuntamiento.</dd>
-        <dt>¿Dónde informarse de cambios de última hora?</dt>
-        <dd>En los canales oficiales del Ayuntamiento de Santa Cruz de Tenerife y la organización del carnaval.</dd>
+        <dt>¿Cuándo termina el carnaval?</dt>
+        <dd>El Entierro de la Sardina, celebrado el Miércoles de Ceniza en la Rambla de Santa Cruz, cierra el ciclo oficial con su cortejo fúnebre satírico. La fiesta en la calle continúa hasta el fin de semana siguiente y concluye el Domingo de Piñata. El programa oficial se publica en los canales del Ayuntamiento de Santa Cruz de Tenerife.</dd>
       </dl>
 
       <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Carnaval de Tenerife</span>
-        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
-        <span class="etiqueta">Canarias</span>
-        <span class="etiqueta">Santa Cruz de Tenerife</span>
-        <span class="etiqueta">Febrero</span>
-        <span class="etiqueta">Murgas</span>
-        <span class="etiqueta">Comparsas</span>
-        <span class="etiqueta">Gala de la Reina</span>
+        <a href="#" class="etiqueta etiqueta-destacada">Carnaval de Tenerife</a>
+        <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Canarias</a>
+        <a href="#" class="etiqueta">Santa Cruz de Tenerife</a>
+        <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta">Murgas</a>
+        <a href="#" class="etiqueta">Comparsas</a>
+        <a href="#" class="etiqueta">Gala de la Reina</a>
+        <a href="#" class="etiqueta">Patrimonio Inmaterial</a>
       </div>
 
       <div class="fichas-relacionadas">
