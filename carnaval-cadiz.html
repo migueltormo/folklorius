@@ -31,7 +31,7 @@
       padding: 8px 12px;
       background: var(--accent-light, #f5e6c8);
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
     /* ── Ficha datos clave ───────────────────────────────────────── */
@@ -43,7 +43,7 @@
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -70,7 +70,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -79,7 +79,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
 
@@ -99,7 +99,7 @@
     .agrupacion-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 6px;
     }
     .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
@@ -110,7 +110,7 @@
       border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
     /* ── Fichas relacionadas ─────────────────────────────────────── */
     .fichas-relacionadas { margin: 2rem 0 1.5rem; }
     .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
@@ -121,8 +121,64 @@
       text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
     }
     .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
     .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+
+    /* ── Must-see ───────────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+
+    .must-see-card details { margin-top: 10px; }
+
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+
+    .must-see-card details[open] summary::after { content: " ↑"; }
+
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
   </style>
 
@@ -152,7 +208,7 @@
       }
     },
     "image": ["https://folklorius.es/images/carnaval-cadiz1.png"],
-    "description": "El Carnaval de Cádiz: coplas, chirigotas, comparsas y carnaval en la calle. Una de las fiestas más singulares de España.",
+    "description": "El Carnaval de Cádiz: coplas, chirigotas, comparsas y carnaval en la calle. Bien de Interés Cultural e Interés Turístico Internacional desde 1980.",
     "organizer": {
       "@type": "Organization",
       "name": "Ayuntamiento de Cádiz",
@@ -164,6 +220,52 @@
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Carnaval", "item": "https://folklorius.es/#carnaval"},
+      {"@type": "ListItem", "position": 3, "name": "Carnaval de Cádiz", "item": "https://folklorius.es/carnaval-cadiz.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Carnaval de Cádiz?",
+        "acceptedAnswer": {"@type": "Answer", "text": "En fecha variable según el calendario de Cuaresma. En 2026, del 12 al 26 de febrero. El COAC comienza semanas antes en el Gran Teatro Falla."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo comprar entradas para el COAC?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Online en la web oficial o en taquilla del Teatro Falla. Son nominativas y se agotan rápido para la Gran Final. El gallinero vende plazas económicas el mismo día."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si no consigo entrada para el Falla?",
+        "acceptedAnswer": {"@type": "Answer", "text": "El carnaval en la calle es completamente gratuito. Las agrupaciones actúan en plazas, esquinas y callejones del casco histórico, especialmente en La Viña y el Mentidero, sin entrada y sin horario fijo."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es apto para familias?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, especialmente en el Domingo de Piñata y en las fiestas diurnas. Algunas letras están pensadas para público adulto y las noches en La Viña pueden ser muy intensas."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el Carnaval Chiquito o de los Jartibles?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es el carnaval que se celebra dos semanas después del oficial, para quienes no se cansan de la fiesta. Jartible es un gaditanismo que describe a quien cansa por exceso, y el nombre es una broma de la propia ciudad sobre sí misma."}
+      }
+    ]
   }
   </script>
 </head>
@@ -200,16 +302,13 @@
 
       <h1>Carnaval de Cádiz</h1>
       <p class="ficha-subtitle">
-        Cádiz · «La voz del pueblo hecha copla.»
+        Cádiz · Andalucía · «La voz del pueblo hecha copla.»
       </p>
 
       <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
         <div class="fechas-grandes">Del 12 al 26 de febrero de 2026</div>
-        <div class="datos-secundarios">
-          <span>📍 Cádiz · Andalucía</span>
-          <span>⏱️ 2 semanas de fiesta en la calle</span>
-          <span>🏅 Interés Turístico Internacional (1980)</span>
-        </div>
+        <p>4 modalidades de agrupación · 15 días de fiesta · Interés Turístico Internacional desde 1980</p>
+        <p class="nota-grid">⚠️ Fechas sujetas a calendario litúrgico. Confirma en la web oficial del Ayuntamiento de Cádiz.</p>
       </div>
 
       <div class="badges" aria-label="Reconocimientos oficiales">
@@ -219,19 +318,26 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>Respeta la sátira y el contexto cultural de las coplas: muchas letras requieren conocer la actualidad local.</li>
-          <li>No interrumpas a los grupos durante sus actuaciones callejeras.</li>
+          <li>Las coplas son crónica social cantada: el humor gaditano es irónico y a menudo punzante. Escucha antes de juzgar; lo que suena a exageración suele ser la capa más delgada de una crítica muy precisa.</li>
+          <li>Cuando una agrupación canta en una esquina, el silencio del corrillo que se forma alrededor es parte del ritual. No se cruza ni se interrumpe mientras actúan.</li>
+          <li>Las agrupaciones ilegales o callejeras actúan sin permiso ni horario fijo. Su existencia fuera del concurso oficial es intencional y forma parte de la cultura carnavalesca gaditana: no son una irregularidad, son el carnaval original.</li>
         </ul>
       </div>
 
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        El Carnaval de Cádiz es una de las expresiones culturales más singulares de España. Su esencia reside
-        en la crítica social, el humor inteligente y la creatividad popular, expresadas a través de la música
-        y la palabra cantada. Durante varios días, la ciudad se transforma en un gran escenario abierto donde
-        la ironía y el ingenio se convierten en herramientas para reflexionar, desde la risa, sobre la
-        actualidad, la política y la vida cotidiana. Más que un carnaval de desfiles espectaculares, el de
-        Cádiz es un carnaval de ideas, letras y voces.
+        Antes del amanecer del último domingo de carnaval, en el barrio de La Viña, alguien tararea en voz baja
+        el pasodoble que lleva semanas aprendiendo de memoria. No es músico profesional. No ensaya para nada.
+        Lo tararea porque esa copla lleva dentro exactamente lo que piensa del año que ha pasado, dicho con más
+        precisión de la que él encontraría solo. Eso es lo que hace el Carnaval de Cádiz: pone palabras cantadas
+        a lo que la gente ya sentía pero no sabía cómo decir.
+      </p>
+      <p>
+        Aquí el carnaval no se ve: se escucha y se participa. No hay carrozas que admirar desde la acera.
+        Hay chirigotas que te detienen en una esquina con un cuplé que en dos minutos retrata a un político,
+        a un vecino y a ti mismo. Hay comparsas que levantan pasodobles de letra tan trabajada que el corrillo
+        pide que los repitan. Y hay coros que cantan sobre una batea mientras el barrio entero se arremolina
+        a su alrededor sin que nadie haya anunciado nada.
       </p>
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
@@ -246,8 +352,7 @@
         coros y cuartetos presentan repertorios inéditos que se renuevan cada año. Por otro lado, y para
         muchos lo más importante, está el <strong>carnaval en la calle</strong>: actuaciones espontáneas en
         plazas, esquinas y bares del casco histórico sin horarios estrictos. El público se arremolina
-        alrededor del grupo, escucha, ríe y forma parte del espectáculo. El carnaval se vive caminando,
-        escuchando y participando.
+        alrededor del grupo, escucha y ríe. El carnaval se vive caminando y participando.
       </p>
 
       <h2 class="section-title">Historia y significado</h2>
@@ -258,7 +363,13 @@
         El carnaval tal como se celebra hoy, con programación municipal y organización oficial, nace en <strong>1862</strong>. Un año antes, el Ayuntamiento de Cádiz encargó un informe para regular una fiesta que llevaba siglos celebrándose en la calle sin control; el resultado fue un carnaval con marco de actuación reconocido por el propio municipio.
       </p>
       <p>
-        Durante la dictadura franquista, el carnaval fue prohibido junto con el resto de carnavales de España. Cádiz siguió celebrándolo de forma clandestina hasta que, en <strong>1949</strong>, el régimen permitió una fiesta paralela bajo el nombre de <strong>Fiestas Típicas Gaditanas</strong>: se trasladó a finales de mayo para desvincularla de la Cuaresma, las letras pasaban censura previa y ni siquiera se podía pronunciar la palabra «carnaval». Ese nombre se mantuvo hasta 1977, cuando con la Transición el carnaval volvió a febrero y recuperó su formato libre.
+        Durante la dictadura franquista, el carnaval fue prohibido junto con el resto de carnavales de España. Cádiz siguió celebrándolo de forma clandestina hasta que en agosto de <strong>1947</strong> una explosión en el polvorín de la Armada mató a más de ciento cincuenta personas y dejó la ciudad en duelo. El gobernador civil autorizó entonces recuperar los viejos tangos para levantar la moral de la población, y en <strong>1949</strong> el régimen articuló una fiesta paralela bajo el nombre de <strong>Fiestas Típicas Gaditanas</strong>: se trasladó a finales de mayo para desvincularla de la Cuaresma, las letras pasaban censura previa y ni siquiera se podía pronunciar la palabra «carnaval». Ese nombre se mantuvo hasta 1977, cuando con la Transición el carnaval volvió a febrero y recuperó su formato libre.
+      </p>
+      <p>
+        En <strong>1960</strong> el reglamento del concurso tuvo que crear una nueva categoría para dar cabida al trabajo de <strong>Paco Alba</strong>, cuya agrupación <em>Los Pajeros</em> rompía con todo lo anterior por su elaboración lírica y su carga poética. Hasta entonces existían coros y chirigotas; Alba obligó a inventar las <strong>comparsas</strong>. Hoy es la modalidad que más pasodobles produce con letra de largo recorrido.
+      </p>
+      <p>
+        En <strong>1980</strong>, el carnaval recibió la declaración de <strong>Interés Turístico Internacional</strong>, junto al de Santa Cruz de Tenerife. En <strong>2019</strong>, el Decreto 609/2019 (BOJA nº 240) lo inscribió en el Catálogo General del Patrimonio Histórico Andaluz como <strong>Bien de Interés Cultural</strong> bajo la tipología de Actividad de Interés Etnológico. Tiene además candidatura activa ante la UNESCO para la Lista Representativa del Patrimonio Cultural Inmaterial.
       </p>
 
       <h2 class="section-title">Fechas 2026</h2>
@@ -276,31 +387,41 @@
 
         <div class="agrupacion-card">
           <h3>Chirigotas</h3>
-          <p>La modalidad más popular y accesible. Grupos de 7 a 12 personas centrados en el humor directo y los cuplés ingeniosos. La puerta de entrada habitual para quien descubre el carnaval por primera vez.</p>
+          <p>Entre 7 y 12 personas con caja, bombo con platillo y guitarra. Su estructura gira en torno al <em>cuplé</em>: una letra corta con estribillo que apunta a un tema de actualidad con precisión quirúrgica. El humor es rápido, el remate directo y la letra entera se aprende de memoria en pocos días. La modalidad con más agrupaciones callejeras.</p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Comparsas</h3>
-          <p>Más poéticas y reivindicativas, con pasodobles de gran carga musical y contenido crítico. El registro más serio de las cuatro modalidades.</p>
+          <p>Creadas en 1960 para dar cabida al trabajo de Paco Alba, son la modalidad más lírica. Hasta 15 voces en registro polifónico: tenores, segundas, octavillas y contraltos. El repertorio se construye sobre el <em>pasodoble</em>, que lleva música y letra original e inédita cada año —a diferencia de las murgas de otros carnavales, que adaptan canciones preexistentes—. Instrumentación: guitarras acústicas, caja y bombo con platillo. Los instrumentos de plectro (laúd, bandurria) están prohibidos por reglamento del COAC en esta modalidad.</p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Coros</h3>
-          <p>La modalidad más numerosa, con decenas de integrantes. Cantan tangos a tres voces sobre una batea, su seña de identidad visual y sonora.</p>
+          <p>Hasta 45 componentes cantando sobre una <em>batea</em> que se desplaza por el casco histórico. Su himno identitario es el <em>tango gaditano</em>, de cadencia binaria pausada —no confundir con el compás de 3×4, que es la seña del pasodoble de chirigotas y comparsas—. El acompañamiento es la orquesta de pulso y púa: guitarras, laúdes y bandurrias al unísono, sin percusión de parche.</p>
         </div>
 
         <div class="agrupacion-card">
           <h3>Cuartetos</h3>
-          <p>Basados en el humor teatral y el diálogo entre sus miembros, más cercanos a una pequeña obra de teatro cantada que a un concierto.</p>
+          <p>De 3 a 5 integrantes. Género parateatral centrado en la parodia y el diálogo satírico rimado. No llevan instrumentos melódicos, pero el acompañamiento rítmico es obligatorio: marcan el golpe cómico y la rima golpeando <em>claves o palillos de madera</em>, acompañados de pitos de caña o güiros.</p>
         </div>
 
       </div>
 
       <p style="margin-top:1rem;">
-        Fuera del Falla está el <strong>carnaval en la calle</strong>, para muchos gaditanos lo más importante de todo: actuaciones espontáneas sin horario fijo en plazas y esquinas del casco histórico, especialmente en La Viña, El Pópulo y el Mentidero. El público se arremolina alrededor del grupo, escucha, ríe y forma parte del espectáculo sin más ceremonia que acercarse.
+        Fuera del Falla está el <strong>carnaval en la calle</strong>, para muchos gaditanos lo más importante de todo: actuaciones espontáneas sin horario fijo en plazas y esquinas del casco histórico, especialmente en La Viña, El Pópulo y el Mentidero. El público se arremolina alrededor del grupo, escucha, ríe y forma parte del corrillo sin más ceremonia que acercarse.
       </p>
-      <p class="nota-grid">🎵 Escucha con atención: el humor gaditano es rápido e irónico, y muchas letras requieren conocer la actualidad local para captar del todo la broma. No interrumpas a una agrupación en plena actuación callejera.</p>
+      <p class="nota-grid">⚠️ El repertorio del COAC se estrena en el Teatro Falla y se difunde después en redes y radio. Escuchar las letras antes de llegar al carnaval de calle marca la diferencia entre seguir la broma y perdérsela.</p>
 
+      <h2 class="section-title" id="musica">Música y sonido</h2>
+      <p>
+        Antes de que empiece la copla, suena el <strong>pito de caña</strong>. Un cilindro de caña con una membrana de papel vegetal, pariente del kazoo, que el director usa para dar el tono al grupo antes de arrancar. Ese silbido fino, casi nasal, es la señal que avisa al corrillo de que algo está a punto de comenzar.
+      </p>
+      <p>
+        La instrumentación varía por modalidad. Las chirigotas trabajan con <strong>caja</strong>, <strong>bombo con platillo</strong> y guitarras acústicas: el bombo lleva el pulso, el platillo acentúa el remate cómico. El <strong>compás de 3×4 gaditano</strong> da al <em>pasodoble</em> de chirigotas y comparsas esa cadencia inconfundible. El <em>tango gaditano</em> de los coros es distinto: tiene cadencia binaria pausada, más cercana al 4×4, que suena diferente en cuanto la batea arranca. Los coros llevan orquesta de pulso y púa —guitarras, laúdes y bandurrias— y prescinden de percusión; su sonido es más redondo, diseñado para sonar limpio al aire libre sobre la batea.
+      </p>
+      <p>
+        El carnaval en la calle tiene una acústica propia. Los grupos actúan en esquinas, plazas y callejones donde la reverberación del casco histórico amplifica las voces. Que eso funcione tan bien no es casualidad: los gaditanos llevan siglos eligiendo los rincones que suenan bien.
+      </p>
       <h2 class="section-title">Qué se celebra cada semana</h2>
       <p>El carnaval gaditano se organiza en tres bloques bien diferenciados, útil si quieres planificar tu visita según lo que te interese ver:</p>
 
@@ -357,21 +478,61 @@
       </ul>
       <p class="nota-grid">Curiosidad: el fin de semana siguiente al Domingo de Piñata, los más fieles al carnaval vuelven a las calles a cantar las coplas una última vez, en lo que popularmente se conoce como el «Carnaval de los Jartibles» o «Carnaval Chiquito».</p>
 
+      <p>
+        El pórtico gastronómico del carnaval empieza semanas antes de las agrupaciones. Las peñas del barrio de La Viña y del centro organizan comidas de hermandad donde se estrenan las primeras coplas: la <strong>Erizada</strong> en la calle La Palma, la <strong>Ostionada</strong> en la Plaza de San Antonio y la <strong>Pestiñada</strong> en la Plaza Fragela. No son eventos turísticos con entrada; son cenas de barrio donde quien llega, llega, y quien no, se queda en la puerta escuchando.
+      </p>
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>Escuchar una chirigota callejera en una esquina al azar: la magia está en lo espontáneo.</li>
-        <li>Ver un carrusel de coros cantando sobre su batea.</li>
-        <li>Vivir la final del COAC, aunque sea siguiéndola desde la calle mientras se retransmite.</li>
-        <li>Pasear disfrazado por el casco histórico sin rumbo fijo, dejándote llevar de un corro a otro.</li>
-      </ul>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>El pasodoble de comparsa que el corrillo pide que repitan</h3>
+          <span class="tag">Semifinales y Final del COAC · Gran Teatro Falla y calle</span>
+          <p>Cada año hay uno. Un pasodoble que el público para en seco, que se comparte en audio durante semanas y que se sigue tarareando en verano. Puedes intentar identificarlo antes de llegar escuchando los estrenos del COAC en redes o radio.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el pasodoble de comparsa es la pieza más trabajada del carnaval: música y letra originales e inéditas cada año, compuestas durante meses para decir en cuatro minutos lo que nadie más se atrevió a decir en todo el año. Cuando lo reconozcas en la calle, en la voz de alguien que lo tararea sin darse cuenta, entenderás por qué este carnaval es diferente a cualquier otro.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Un coro sobre su batea en el casco histórico</h3>
+          <span class="tag">Carnaval en la calle · La Viña y el Mentidero</span>
+          <p>Hasta 45 voces cantando a tres partes sobre una plataforma que se mueve por calles de quinientos años. El laúd y la bandurria rebotan entre las fachadas. No hay escenario, no hay separación, no hay entrada. Te pones al lado y escuchas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La batea para en una plaza, canta dos tangos y sigue su camino. Si llegas tarde, la sigues tú también. Es el único carnaval de España donde puedes seguir a una orquesta de treinta músicos por callejones medievales sin que nadie lo anuncie ni lo organice.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Gran Final del COAC en el Teatro Falla</h3>
+          <span class="tag">Último fin de semana del Carnaval · Gran Teatro Falla</span>
+          <p>Las entradas son nominativas y se agotan en minutos. El gallinero vende plazas económicas el mismo día; muchas actuaciones se siguen en pantallas en la calle. La final dura horas. La gente no se va.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque aquí no se aplaude solo la música: se vota con los pies, con los gritos y con el silencio. Un cajonazo —la eliminación de una agrupación favorita— puede convertir la noche entera en un episodio que el carnaval recordará durante años. Nunca sabes lo que va a pasar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Una erizada, una ostionada o una pestiñada de barrio</h3>
+          <span class="tag">Enero y febrero · La Viña, Plaza de San Antonio, Plaza Fragela</span>
+          <p>Son las comidas de hermandad donde las agrupaciones estrenan sus primeras coplas antes de que el carnaval empiece oficialmente. No tienen cartel ni horario fijo publicado. Preguntas al barrio, te enteras y vas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>La Erizada en la calle La Palma, la Ostionada en la Plaza de San Antonio, la Pestiñada en la Plaza Fragela. No son eventos turísticos con entrada; son cenas de barrio donde se oye por primera vez la copla que toda la ciudad va a tararear en febrero. Quien llega, llega. Quien no, se queda en la puerta escuchando.</p>
+          </details>
+        </div>
+
+      </div>
 
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li>Lleva tu disfraz: es imprescindible para integrarse en el ambiente.</li>
-        <li>Lleva también chubasquero; en febrero en Cádiz puede llover.</li>
-        <li>Reserva alojamiento con mucha antelación, especialmente en fines de semana clave.</li>
-        <li>Usa transporte público y calzado cómodo: caminarás mucho.</li>
-        <li>Consulta el programa oficial para actos y horarios actualizados.</li>
+        <li><strong>El disfraz no es obligatorio, pero cambia la experiencia.</strong> En La Viña y en el Mentidero nadie te mira mal si vas sin disfraz. Pero si llevas uno, aunque sea sencillo, te sientes más dentro del corrillo. El carnaval gaditano es de calle, no de desfile.</li>
+        <li><strong>Elige el barrio antes de elegir el horario.</strong> La Viña es el epicentro del carnaval popular. El Mentidero, el corazón de la noche. La Plaza de San Juan de Dios, el punto de encuentro familiar. Cada zona tiene un ritmo diferente y las agrupaciones se mueven entre ellas sin avisar.</li>
+        <li><strong>El COAC no es el único carnaval.</strong> Las agrupaciones ilegales y los romanceros que actúan fuera del concurso, especialmente en la semana final, son el carnaval más antiguo. Funcionan en paralelo y no tienen horario.</li>
+        <li><strong>El alojamiento en los fines de semana de semifinal y final del COAC se agota con meses de antelación.</strong> Si coincides con esas fechas, reserva con tiempo o busca localidades cercanas con buena conexión.</li>
+        <li>El programa oficial y las novedades de última hora se publican en los canales del Ayuntamiento de Cádiz y en la web del Gran Teatro Falla.</li>
       </ul>
 
       <h2 class="section-title">Vocabulario festero</h2>
@@ -395,7 +556,23 @@
         <dt>COAC</dt>
         <dd>Concurso Oficial de Agrupaciones Carnavalescas, celebrado en el Gran Teatro Falla.</dd>
         <dt>Dios Momo</dt>
-        <dd>Figura simbólica del carnaval que se quema el Martes de Carnaval, marcando el ecuador de la fiesta.</dd>
+        <dd>Figura simbólica del carnaval que se quema el Martes de Carnaval. Su desaparición marca el ecuador de la fiesta.</dd>
+        <dt>Ilegal o callejera</dt>
+        <dd>Agrupación que actúa en la calle sin inscripción en el COAC. El nombre hace referencia a su posición fuera del concurso oficial, no a una infracción. Son parte constitutiva del carnaval gaditano.</dd>
+        <dt>Romancero</dt>
+        <dd>Figura que recorre las calles con un cartelón de viñetas ilustradas y una vara para señalar cada escena mientras canta o recita la historia. Herencia directa de los ciegos recitadores medievales y la literatura de cordel.</dd>
+        <dt>Mirlitón o pito de caña</dt>
+        <dd>Instrumento de caña con membrana de papel vegetal que el director usa para dar el tono a la agrupación antes de arrancar. Produce un sonido nasal inconfundible, pariente del kazoo.</dd>
+        <dt>Batea</dt>
+        <dd>Plataforma móvil sobre la que se desplazan los coros por el casco histórico. Permite actuar en diferentes puntos de la ciudad en una misma noche.</dd>
+        <dt>Jartible</dt>
+        <dd>Gaditanismo para algo o alguien que cansa por exceso. El Carnaval Chiquito, dos semanas después del oficial, también se llama Carnaval de los Jartibles: los que no se cansan de la fiesta.</dd>
+        <dt>El tipo</dt>
+        <dd>La caracterización integral de la agrupación: vestuario, maquillaje, atrezzo y gestualidad dramática. El tipo es el concepto teatral que da unidad a toda la propuesta del grupo: vestuario, gestualidad y dramatización funcionan como una sola pieza, tanto en el concurso como en la calle.</dd>
+        <dt>Forillo</dt>
+        <dd>Decorado escénico desmontable que ambienta la propuesta de la agrupación sobre las tablas del Teatro Falla. Cada año es distinto y forma parte del tipo.</dd>
+        <dt>Cajonazo</dt>
+        <dd>Eliminación inesperada de una agrupación aclamada por el público en las fases del COAC. Un cajonazo convierte a la agrupación de inmediato en mito del carnaval callejero, donde sigue actuando sin jurado que la pueda descalificar.</dd>
       </dl>
 
       <h2 class="section-title">Galería</h2>
@@ -428,14 +605,15 @@
       </dl>
 
       <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Carnaval de Cádiz</span>
-        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
-        <span class="etiqueta">Andalucía</span>
-        <span class="etiqueta">Cádiz</span>
-        <span class="etiqueta">Febrero</span>
-        <span class="etiqueta">COAC</span>
-        <span class="etiqueta">Chirigotas</span>
-        <span class="etiqueta">Comparsas</span>
+        <a href="#" class="etiqueta etiqueta-destacada">Carnaval de Cádiz</a>
+        <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Cádiz</a>
+        <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta">COAC</a>
+        <a href="#" class="etiqueta">Chirigotas</a>
+        <a href="#" class="etiqueta">Comparsas</a>
+        <a href="#" class="etiqueta">Patrimonio Inmaterial</a>
       </div>
 
       <div class="fichas-relacionadas">
@@ -443,15 +621,15 @@
         <div class="relacionadas-grid">
           <a href="san-fermin.html" class="relacionada-card">
             <strong>Sanfermines de Pamplona</strong>
-            <span>Navarra · ITI (1980) · Fiesta popular con la misma declaración del mismo año</span>
+            <span>Navarra · ITI desde 1980 · Declarada el mismo año que el Carnaval de Cádiz</span>
           </a>
           <a href="las-fallas-valencia.html" class="relacionada-card">
             <strong>Las Fallas de Valencia</strong>
-            <span>Comunitat Valenciana · ITI/UNESCO · Otra fiesta con sátira y arte efímero</span>
+            <span>Comunitat Valenciana · ITI/UNESCO · Sátira, arte efímero y fiesta de raíz popular</span>
           </a>
-          <a href="tomatina-bunol.html" class="relacionada-card">
-            <strong>La Tomatina de Buñol</strong>
-            <span>Comunitat Valenciana · ITI · Otra gran fiesta popular española</span>
+          <a href="carnaval-tenerife.html" class="relacionada-card">
+            <strong>Carnaval de Santa Cruz de Tenerife</strong>
+            <span>Canarias · ITI desde 1980 · El otro gran carnaval español declarado en el mismo año</span>
           </a>
         </div>
       </div>
