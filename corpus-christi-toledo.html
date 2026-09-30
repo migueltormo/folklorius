@@ -2,38 +2,59 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Corpus Christi en Toledo 2026: Custodia de Arfe, la Tarasca y Guía Completa</title>
-  <meta name="description" content="Guía completa del Corpus Christi de Toledo 2026 (4 de junio). La Custodia de Arfe, la Tarasca, los patios toledanos y todo lo que necesitas saber para vivirlo. Fiesta de Interés Turístico Internacional desde 1980." />
-  <link rel="canonical" href="https://folklorius.es/corpus-christi-toledo.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Corpus Christi en Toledo 2026 | Oro, incienso y siete siglos de historia" />
-  <meta property="og:description" content="El 4 de junio de 2026, Toledo detiene el tiempo. La Custodia de Arfe sale a la calle y el casco histórico se convierte en otra cosa. Guía completa para vivirlo." />
-  <meta property="og:image" content="https://folklorius.es/images/corpus-christi-toledo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Corpus Christi de Toledo · Custodia de Arfe y Semana Grande</title>
+  <meta name="description" content="Corpus Christi de Toledo (ITI 1980): 183 kg de plata gótica por calles de tomillo y toldos blancos. La noche antes, el Pertiguero mide el gálibo. Guía 2026." />
+  <meta property="og:title" content="Corpus Christi de Toledo — La Custodia sale a la calle una vez al año" />
+  <meta property="og:description" content="El Pertiguero mide el gálibo la noche anterior. A la mañana siguiente, 183 kg de plata gótica recorren calles tapizadas de tomillo bajo un cielo de toldos blancos." />
   <meta property="og:type" content="article" />
-  <meta property="og:locale" content="es_ES" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon y fuentes -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <meta property="og:url" content="https://folklorius.es/corpus-christi-toledo.html" />
+  <meta property="og:image" content="https://folklorius.es/images/corpus-christi-toledo.jpg" />
+  <link rel="canonical" href="https://folklorius.es/corpus-christi-toledo.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Actos principales — timeline para fiesta de pocos días */
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Timeline de actos ───────────────────────────────────── */
     .actos-list {
       list-style: none;
       padding: 0;
       margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e5e0d8);
+      border-left: 2px solid var(--border, #e8ddd4);
     }
     .actos-list li {
       position: relative;
-      padding: 0 0 22px 22px;
+      padding: 0 0 20px 22px;
     }
     .actos-list li::before {
       content: "";
@@ -46,7 +67,7 @@
       background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
-    .actos-list .acto-label {
+    .actos-list .dia-label {
       display: block;
       font-size: 0.78rem;
       font-weight: 700;
@@ -55,24 +76,50 @@
       color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
-    .actos-list strong {
-      display: block;
-      font-size: 0.97rem;
-      margin-bottom: 3px;
-    }
 
-    .nota-grid {
-      font-size: 0.82rem;
-      color: var(--text-muted, #666);
-      font-style: italic;
-      margin-top: 0.5rem;
-      padding: 8px 12px;
-      background: var(--accent-light, #fdf3e7);
-      border-radius: var(--radius, 8px);
-      border-left: 3px solid var(--brand, #8b1a1a);
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
     }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
-    /* Must-see grid */
+
+    /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -91,7 +138,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--brand, #8b1a1a);
     }
     .must-see-card .tag {
       display: inline-block;
@@ -103,10 +150,6 @@
       border-radius: 999px;
       margin-bottom: 10px;
       letter-spacing: 0.02em;
-    }
-    .must-see-card .tag-leyenda {
-      background: #f0f0f7;
-      color: #3a3a8b;
     }
     .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
     .must-see-card details { margin-top: 10px; }
@@ -127,15 +170,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Festival",
-    "@id": "https://folklorius.es/corpus-christi-toledo.html",
     "name": "Corpus Christi de Toledo",
-    "startDate": "2026-06-04",
-    "endDate": "2026-06-04",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "description": "La procesión del Corpus Christi de Toledo saca a la calle la Custodia de Arfe —183 kg de plata gótica, 5.600 piezas ensambladas— por calles tapizadas de tomillo y cubiertas de toldos blancos. Fiesta de Interés Turístico Internacional desde 1980.",
     "location": {
       "@type": "Place",
-      "name": "Casco Histórico de Toledo",
+      "name": "Toledo",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Toledo",
@@ -144,26 +183,99 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 39.8571,
-        "longitude": -4.0243
+        "latitude": 39.8581,
+        "longitude": -4.0226
       }
     },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Cabildo de la Catedral Primada de Toledo",
-      "url": "https://catedralprimada.es"
-    },
-    "image": ["https://folklorius.es/images/corpus-christi-toledo.jpg"],
-    "description": "El Corpus Christi de Toledo es una de las procesiones más antiguas y solemnes de España. La Custodia de Arfe, labrada entre 1515 y 1524, recorre el casco histórico sobre una alfombra de tomillo. Declarada Fiesta de Interés Turístico Internacional en 1980.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    }
+    "startDate": "2026-06-03",
+    "endDate": "2026-06-07",
+    "organizer": [
+      {
+        "@type": "Organization",
+        "name": "Cabildo de la Catedral Primada de Toledo",
+        "url": "https://www.catedraldetoledo.org"
+      },
+      {
+        "@type": "Organization",
+        "name": "Ayuntamiento de Toledo",
+        "url": "https://www.toledo.es"
+      }
+    ],
+    "url": "https://folklorius.es/corpus-christi-toledo.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Corpus Christi de Toledo",
+        "item": "https://folklorius.es/corpus-christi-toledo.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo es el Corpus Christi de Toledo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El Corpus Christi cae el jueves siguiente a la semana de Pentecostés, sesenta días después del Domingo de Resurrección. La fecha cambia cada año. Toledo mantiene el jueves histórico sin trasladarlo al domingo, como han hecho otras ciudades. En 2026 la gran procesión es el jueves 4 de junio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el rito del Pertiguero la noche anterior?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La noche del miércoles, el Pertiguero de la Catedral —ataviado con peluca blanca y casaca de seda— recorre a pie todo el recorrido procesional con una vara de plata de 145 cm. Mide la altura libre bajo cada toldo, farol y cable para certificar que la Custodia de Arfe pasará sin rozar nada al día siguiente. Es uno de los ritos más antiguos y menos conocidos de la Semana Grande."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto dura la procesión?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El cortejo recorre aproximadamente dos kilómetros, pero avanza muy despacio por el peso de la Custodia y la estrechez de algunas calles. La procesión puede durar entre tres y cuatro horas desde la salida hasta el regreso a la Catedral."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ver la Custodia de Arfe fuera del día del Corpus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El resto del año la Custodia está en el Tesoro de la Catedral Primada, visitable con la entrada general al templo. Es una experiencia distinta a verla en la calle, pero permite observar los detalles de las 260 estatuillas y las 5.600 piezas ensambladas sin aglomeraciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son los patios toledanos y cómo se visitan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Durante la Semana Grande, decenas de casas palaciegas del casco histórico abren sus patios interiores al público de manera gratuita. Son espacios que el resto del año permanecen cerrados. El Ayuntamiento edita cada año un mapa con los participantes, disponible en la oficina de turismo y en la web municipal."
+        }
+      }
+    ]
   }
   </script>
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
@@ -177,231 +289,277 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#glosario">Vocabulario</a>
-        <a href="index.html#blog">Blog</a>
-        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+        <a href="#" class="nav-cta">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a> › Corpus Christi de Toledo
-  </nav>
+  <main role="main">
+    <article>
 
-  <div class="ficha-hero">
-    <img src="images/corpus-christi-toledo.jpg" alt="La Custodia de Arfe de Toledo avanzando por las calles del casco histórico durante la procesión del Corpus Christi, con toldos blancos sobre las fachadas" />
-  </div>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Corpus Christi de Toledo
+      </nav>
 
-  <main class="ficha-main">
-    <article class="card">
-
-      <h1>Corpus Christi en Toledo</h1>
-      <p class="ficha-subtitle">
-        Toledo · Castilla-La Mancha · "Oro, incienso y siete siglos que no pasan."
-      </p>
-
-      <div class="badges" aria-label="Reconocimientos oficiales">
-        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 1980</span>
-        <span class="badge badge-oficial">Toledo — Ciudad Patrimonio de la Humanidad UNESCO</span>
+      <div class="ficha-hero">
+        <img src="images/corpus-christi-toledo.jpg" alt="La Custodia de Arfe avanzando por las calles de Toledo durante la procesión del Corpus Christi, con toldos blancos sobre las fachadas" loading="eager" />
       </div>
 
-      <div class="aviso-sensibilidad" role="note">
-        <strong>Nota de sensibilidad</strong>
+      <div class="container ficha-main">
+
+        <h1>Corpus Christi de Toledo</h1>
+
+        <p class="ficha-subtitle">
+          Toledo · Castilla-La Mancha · «Oro, incienso y siete siglos que no pasan.»
+        </p>
+
+        <div class="badges" aria-label="Reconocimientos oficiales">
+          <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+          <span class="badge badge-oficial">Toledo — Ciudad Patrimonio de la Humanidad UNESCO</span>
+        </div>
+
+        <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+          <div class="fechas-grandes">Semana Grande · Jueves del Corpus 2026</div>
+          <p>La fecha varía cada año · Jueves posterior a Pentecostés · 60 días tras el Domingo de Resurrección · ITI desde 1980</p>
+          <p class="nota-grid">⚠️ Fechas exactas sujetas al calendario litúrgico. Confirma en catedraldetoledo.org y en la web del Ayuntamiento de Toledo antes de planificar el viaje.</p>
+        </div>
+
+        <div class="aviso-sensibilidad" role="note">
+          <strong>Nota de sensibilidad</strong>
+          <ul>
+            <li>La procesión del Corpus Christi es un acto de culto católico de primer orden, no un desfile. Los visitantes son bienvenidos, pero el recorrido es un espacio de devoción: evita cruzar el cortejo en movimiento, habla en voz baja al paso de la Custodia y no uses flash durante los momentos litúrgicos.</li>
+            <li>Los toldos, reposteros y tapices que engalanan las calles son piezas de valor histórico, algunas con siglos de antigüedad y en manos de las mismas familias desde los Reyes Católicos. No los toques ni te apoyes en ellos.</li>
+            <li>El ritual del Pertiguero la noche del miércoles es un acto oficial de la Catedral, no un evento turístico. Si coincides con él, observa desde la distancia y en silencio.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title">La esencia de la fiesta</h2>
+        <p>
+          Antes de que empiece nada, ya huele diferente. En la madrugada previa a la procesión, cuadrillas de vecinos esparcen toneladas de tomillo, cantueso y romero por el suelo de las calles del casco histórico. Ese olor —hierbas aplastadas bajo los pies de miles de personas— es el primer aviso de que Toledo ha entrado en otro tiempo.
+        </p>
+        <p>
+          Después llega la Custodia. Ciento ochenta y tres kilos de plata gótica, con forma de torre de más de tres metros, avanzando despacio por calles que llevan siglos esperando este momento. Sobre ella, un cielo de toldos blancos atados de fachada a fachada. A los lados, reposteros con escudos de familias que en algunos casos llevan aquí desde los Reyes Católicos. En pocos sitios de España el pasado pesa tanto y al mismo tiempo resulta tan presente.
+        </p>
+
+        <h2 class="section-title">¿En qué consiste?</h2>
+        <p>
+          El Corpus Christi de Toledo es una semana entera —la Semana Grande— en la que la ciudad cambia de cara. Las calles por donde pasará la Custodia se preparan con días de antelación: los toldos se despliegan, los vecinos cuelgan tapices y mantones de los balcones y el suelo se cubre de hierbas aromáticas la noche antes.
+        </p>
+        <p>
+          El jueves es el día central. El Cabildo de la Catedral, las autoridades civiles y militares, las cofradías, los capítulos nobiliarios y el <strong>Gremio de Hortelanos</strong> —el único gremio medieval de oficios que ha desfilado de forma ininterrumpida desde la Edad Media, reconocible por su capa de estameña parda y su pendón verde coronado de frutos de la vega del Tajo— acompañan a la Custodia de Arfe en un recorrido lento y solemne por el corazón del casco histórico. El cortejo puede durar entre tres y cuatro horas. Quien llega esperando algo rápido se desespera; quien entiende que el tiempo aquí funciona distinto, lo recuerda.
+        </p>
+        <p>
+          Paralelo a la solemnidad religiosa, la ciudad abre durante estos días algo que el resto del año permanece cerrado: los patios interiores de sus casas palaciegas. Entrar en esos patios —con sus columnas, sus fuentes y sus flores— es uno de los placeres más propios de la Semana Grande.
+        </p>
+        <p class="nota-grid">⚠️ El programa completo de actos, el recorrido exacto de la procesión y el mapa de patios abiertos los publica el Ayuntamiento de Toledo y el Cabildo de la Catedral Primada antes de cada edición.</p>
+
+        <h2 class="section-title">Historia y significado</h2>
+        <p>
+          La festividad del Corpus Christi fue instaurada en 1264 por el Papa Urbano IV mediante la bula <em>Transiturus de hoc mundo</em>. En Toledo caló pronto: la primera referencia documental de una procesión en la ciudad data de 1372, aunque la consolidación del protocolo que hoy conocemos llegó en 1418. La fiesta obtuvo la declaración de Interés Turístico Internacional por Resolución de 18 de enero de 1980, publicada en el BOE nº 41 de 16 de febrero de 1980 —una de las primeras clasificaciones de fiestas ITI en España.
+        </p>
+        <p>
+          El momento que lo transformó todo llegó con los Reyes Católicos y el Cardenal Cisneros. Fue entonces cuando la festividad adquirió la riqueza y el protocolo que reconocemos hoy: el encargo de la Custodia de Arfe, la consolidación del cortejo nobiliario, la fijación del recorrido. Toledo era la sede primada de España y la ciudad imperial, y el Corpus era el escaparate de ese poder. Esa tensión entre lo religioso y lo político nunca desapareció del todo, y es parte de lo que da al Corpus toledano su carácter propio.
+        </p>
+        <p>
+          Con los siglos, la fiesta fue sumando elementos sin liturgia: gigantones, cabezudos y sobre todo la Tarasca, el monstruo de origen medieval que precede al cortejo religioso. La convivencia entre la custodia de oro y el dragón de cartón, entre el rito visigótico de la Misa Mozárabe y el pasacalles festivo del miércoles, es una de las cosas más toledanas que existen.
+        </p>
+
+        <h2 class="section-title">Fechas 2026</h2>
+        <div class="fechas-grandes">Semana Grande del Corpus · Junio de 2026</div>
+        <p>El Corpus Christi cae el jueves siguiente a la semana de Pentecostés, sesenta días después del Domingo de Resurrección. La fecha cambia cada año. Toledo mantiene el jueves histórico sin trasladarlo al domingo, como han hecho otras ciudades. La Semana Grande arranca el miércoles previo con el desfile de la Tarasca y se extiende con actividades en los días posteriores. Si puedes quedarte más de un día, los patios abiertos y el ambiente de la ciudad preparada tienen su propio ritmo.</p>
+
+        <h2 class="section-title" id="programa">Los actos principales</h2>
+        <ol class="actos-list">
+          <li>
+            <span class="dia-label">Miércoles · Noche anterior</span>
+            <strong>El rito del Pertiguero</strong>
+            <p>La noche previa a la procesión, el Pertiguero de la Catedral —ataviado con peluca blanca y casaca de seda— recorre a pie todo el recorrido procesional con una vara de plata de 145 cm. Mide la altura libre bajo cada toldo, farol y cable para certificar que la Custodia de Arfe pasará sin rozar nada al día siguiente. Es uno de los ritos más antiguos y menos fotografiados de la Semana Grande.</p>
+          </li>
+          <li>
+            <span class="dia-label">Miércoles · Tarde</span>
+            <strong>Desfile de la Tarasca y los gigantones</strong>
+            <p>El lado más pagano de la fiesta: la Tarasca —cuerpo de galápago, alas de murciélago, cabeza de dragón articulada— recorre las calles con la Tarasquilla sentada en su lomo, vistiendo la moda satírica del año. La acompañan ocho gigantones —los Reyes Católicos, reyes moros, reyes de España y alcaldes— y el cortejo de cabezudos. Es lo que más disfrutan los niños y el acto que más se parece al carnaval dentro de la Semana Grande.</p>
+          </li>
+          <li>
+            <span class="dia-label">Jueves · Mañana</span>
+            <strong>Misa en Rito Hispano-Mozárabe</strong>
+            <p>Previa a la salida procesional, el Altar Mayor de la Catedral Primada acoge la Solemne Misa en Rito Hispano-Mozárabe: la liturgia visigótica que Toledo ha conservado de forma ininterrumpida gracias al Cardenal Cisneros, y que no se practica en ninguna otra catedral española de manera habitual. La misa precede inmediatamente a la salida de la Custodia.</p>
+          </li>
+          <li>
+            <span class="dia-label">Jueves · Mañana</span>
+            <strong>Salida de la Custodia por la Puerta Llana</strong>
+            <p>La Custodia abandona la Catedral por la Puerta Llana —el único acceso sin escalones, construido precisamente para que pudiera salir— y entra en la calle por primera vez en el año. El silencio que se hace en ese instante llega solo: nadie lo organiza.</p>
+          </li>
+          <li>
+            <span class="dia-label">Jueves · Mañana y mediodía</span>
+            <strong>Procesión Solemne con parada en Zocodover</strong>
+            <p>El cortejo recorre el casco histórico a un ritmo sin prisa, siguiendo un protocolo de antigüedad estricto. Cofradías, el Gremio de Hortelanos, capítulos nobiliarios, clero y autoridades acompañan a la Custodia sobre la alfombra de tomillo y romero. El cortejo se detiene en la Plaza de Zocodover, donde la Custodia queda bajo un templete efímero mientras el Arzobispo Primado dirige la alocución y bendice a la ciudad. El recorrido completo dura entre tres y cuatro horas.</p>
+          </li>
+          <li>
+            <span class="dia-label">Durante la Semana Grande</span>
+            <strong>Apertura de los patios toledanos</strong>
+            <p>Decenas de casas palaciegas del casco histórico abren sus patios interiores al público de forma gratuita. Son espacios que el resto del año permanecen cerrados. El Ayuntamiento edita un mapa con los participantes. Los días menos saturados son los previos y posteriores al jueves.</p>
+          </li>
+        </ol>
+
+        <h2 class="section-title" id="musica">Música y sonido</h2>
+        <p>
+          El sonido más recordado del Corpus de Toledo no viene de un instrumento: es el silencio. El silencio que cae cuando la Custodia aparece en la Puerta Llana y miles de personas dejan de hablar al mismo tiempo. Después de ese silencio llega el incienso —que se huele antes de que se vean los turiferarios— y luego los timbales del Ayuntamiento, que marcan el paso del cortejo con una cadencia que no ha cambiado en siglos.
+        </p>
+        <p>
+          La noche del miércoles tiene su propio sonido: el golpe seco de la vara del Pertiguero contra el adoquín mientras avanza solo por las calles vacías bajo los toldos ya desplegados. Y por la tarde, el ruido de la Tarasca: la cabeza articulada que expulsa agua o humo mientras los gigantones avanzan entre el gentío. Son dos registros que no se parecen en nada, y los dos pertenecen a la misma fiesta.
+        </p>
+        <p>
+          Para el momento acústico más intenso de la procesión, el sitio es la calle Comercio cuando la Custodia está dentro: las paredes estrechas amplifica el sonido de los timbales y el olor del tomillo aplastado llega desde el suelo. Es donde la escala de la Custodia se entiende mejor.
+        </p>
+
+        <h2 class="section-title">No te lo puedes perder</h2>
+        <div class="must-see-grid">
+
+          <div class="must-see-card">
+            <h3>El rito del Pertiguero la noche del miércoles</h3>
+            <span class="tag">Miércoles · Noche · Casco histórico</span>
+            <p>Un hombre con peluca blanca y casaca de seda recorre solo las calles de Toledo a la luz de los faroles, golpeando el adoquín con una vara de plata de 145 cm y levantando la vista para medir cada toldo. Lo hace para que la Custodia pase al día siguiente sin rozar nada. Es el rito de verificación de gálibo más fotografiado de España y el menos conocido fuera de Toledo.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es uno de los pocos rituales preparatorios que se celebran en la calle con el protocolo completo. Las calles están casi vacías, los toldos ya colgados y la ciudad en silencio. Lo que ves esa noche no lo ve nadie más.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Custodia de Arfe de cerca</h3>
+            <span class="tag">Jueves · Procesión · Casco histórico</span>
+            <p>Enrique de Arfe la labró entre 1515 y 1524 con 183 kg de plata y 18 kg de oro —en parte del primer oro llegado de América, procedente de la almoneda de Isabel la Católica—. Tiene 309 cm de altura, 5.600 piezas ensambladas con 12.500 tornillos y 260 estatuillas. Verla moviéndose por una calle estrecha del casco histórico es distinto a verla detrás de un cristal en el Tesoro de la Catedral.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>El día del Corpus es el único momento en que sale a la calle. Con luz natural, rodeada de personas, a la altura de los ojos. En el Tesoro puedes ver los detalles; en la procesión entiendes la escala real.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>El olor del suelo en las calles</h3>
+            <span class="tag">Toda la jornada · Casco histórico</span>
+            <p>La madrugada previa, el suelo de las calles del recorrido se cubre de tomillo, cantueso y romero. Cuando miles de personas caminan durante horas sobre esa alfombra verde, el olor que se libera es el del Corpus de Toledo. No hay otro igual. En la ciudad dicen que quien lo huele una vez vuelve para repetirlo.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el detalle más sensorial de toda la fiesta y el que menos sale en las fotos. Todo el mundo enfoca la Custodia. Casi nadie mira el suelo. Baja la vista, huele y date cuenta de que ese mismo gesto lleva haciéndose en estas calles desde el siglo XIV.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Tarasca y la Tarasquilla</h3>
+            <span class="tag">Miércoles · Tarde · Pasacalles</span>
+            <p>El monstruo que abre la Semana Grande tiene cuerpo de galápago, alas de murciélago y cabeza de dragón articulada que expulsa agua o humo. Sobre su lomo va la Tarasquilla, figura femenina que cada año viste la moda satírica del momento. La acompañan ocho gigantones: los Reyes Católicos, reyes moros, reyes de España y los alcaldes. Es la cara más antigua y más pagana de una fiesta que al día siguiente se vuelve completamente solemne.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque ver a un dragón medieval paseando por las mismas calles que al día siguiente recorrerá la Custodia de Arfe dice mucho sobre cómo entiende Toledo su propia historia. No descarta nada. Lo acoge todo.</p>
+            </details>
+          </div>
+
+        </div>
+
+        <h2 class="section-title">Consejos prácticos</h2>
         <ul>
-          <li><strong>Celebración religiosa.</strong> La procesión del Corpus Christi es un acto de culto católico de primer orden. Los visitantes son bienvenidos, pero el recorrido es un espacio de devoción: evita cruzar el cortejo, habla en voz baja al paso de la Custodia y no uses flash.</li>
-          <li><strong>Patrimonio vivo.</strong> Los toldos, reposteros y tapices que engalanan las calles son piezas de enorme valor histórico, algunas con siglos de antigüedad. No los toques ni te apoyes en ellos.</li>
+          <li><strong>Reserva con meses de antelación.</strong> Toledo está a menos de una hora de Madrid y el Corpus llena la ciudad por completo. Para pernoctar en el casco histórico, reserva cuanto antes. Los alojamientos cerca de la calle Comercio o la Plaza del Ayuntamiento se van primero.</li>
+          <li><strong>Deja el coche fuera.</strong> El casco histórico se corta al tráfico durante los días centrales. Usa los aparcamientos disuasorios de la periferia y sube por las escaleras mecánicas o los ascensores panorámicos.</li>
+          <li><strong>Para la procesión, llega pronto.</strong> La Plaza de Zocodover tiene tribunas que suelen ser de acceso restringido o de pago. Las calles estrechas del recorrido —la calle Comercio, sobre todo— dan una experiencia más intensa que los espacios abiertos, pero hay que situarse con tiempo.</li>
+          <li><strong>Los patios, mejor fuera del jueves.</strong> El día de la procesión el centro está saturado. Si puedes visitar los patios el miércoles por la tarde o el viernes, lo harás con más calma y mejores fotos.</li>
+          <li><strong>Calzado y agua.</strong> Toledo tiene cuestas serias y el empedrado no perdona. Usa calzado muy cómodo. El Corpus cae en junio y puede hacer mucho calor: lleva agua y busca la sombra de los toldos cuando puedas.</li>
+          <li><strong>Gastronomía:</strong> el dulce del Corpus en Toledo es el mazapán con IGP —figuras de la Custodia, anguilas, delicias— que los obradores y los conventos de clausura elaboran para la Semana Grande. Los dulces de las monjas de San Clemente y Santo Domingo el Antiguo se venden directamente en los tornos conventuales. El vino de la D.O. Méntrida acompaña la semana en bares y tabernas del casco histórico.</li>
         </ul>
-      </div>
 
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
-      <p>
-        Antes de que empiece nada, ya huele diferente. En las madrugadas previas a la procesión, cuadrillas de vecinos esparcen toneladas de tomillo, cantueso y romero por el suelo de las calles del casco histórico. Ese olor, el de las hierbas aplastadas bajo los pies, es el primer aviso de que Toledo ha entrado en otro tiempo.
-      </p>
-      <p>
-        Después llega la Custodia. Ciento sesenta kilos de plata y oro labrado, con forma de torre gótica, avanzando despacio por calles que llevan siglos esperando este momento. Sobre ella, un cielo de toldos blancos atados de fachada a fachada. A los lados, reposteros con escudos de familias que en algunos casos llevan aquí desde los Reyes Católicos. No es fácil encontrar otro sitio en España donde el pasado pese tanto y al mismo tiempo resulte tan vivo.
-      </p>
+        <h2 class="section-title">Vocabulario festero</h2>
+        <dl class="festero">
+          <dt>Custodia de Arfe</dt>
+          <dd>La pieza central de la procesión: una torre gótica de 309 cm de altura labrada por Enrique de Arfe entre 1515 y 1524. Contiene en su interior el ostensorio de oro de Jaume Aimeric —adquirido por el Cardenal Cisneros en 1505 de la almoneda de Isabel la Católica— que alberga la hostia consagrada. La estructura exterior suma 183 kg de plata y 18 kg de oro, ensamblados en 5.600 piezas con 12.500 tornillos y 260 estatuillas.</dd>
 
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
-      <p>
-        El Corpus Christi de Toledo no es solo una procesión: es una semana entera —la llamada Semana Grande— en la que la ciudad cambia de cara. Las calles por donde pasará la Custodia se preparan con días de antelación: los toldos se despliegan, los vecinos cuelgan tapices y mantones de los balcones y el suelo se cubre de hierbas aromáticas la noche antes.
-      </p>
-      <p>
-        El jueves es el día central. El Cabildo de la Catedral, las autoridades civiles y militares, las cofradías y los capítulos nobiliarios con sus hábitos históricos acompañan a la Custodia de Arfe en un recorrido lento y solemne por el corazón del casco histórico. El cortejo avanza a un ritmo que no tiene prisa: la procesión puede durar entre tres y cuatro horas. Quien espera el espectáculo rápido se desespera; quien entiende que el tiempo aquí funciona diferente, lo recuerda toda la vida.
-      </p>
-      <p>
-        Paralelo a la solemnidad religiosa, la ciudad abre durante estos días algo que el resto del año permanece cerrado: los patios interiores de sus casas palaciegas. Entrar en esos patios —con sus columnas, sus fuentes y sus flores— es uno de los placeres más genuinos de la Semana Grande.
-      </p>
-      <p class="nota-grid">⚠️ El programa completo de actos, el recorrido exacto de la procesión y el mapa de patios abiertos los publica el Ayuntamiento de Toledo y el Cabildo de la Catedral Primada. Consúltalos antes de salir.</p>
+          <dt>Pertiguero</dt>
+          <dd>Cargo ceremonial de la Catedral encargado de custodiar el protocolo procesional. La noche del miércoles recorre el recorrido completo con una vara de plata de 145 cm para medir la altura libre bajo toldos, faroles y cables —el gálibo— y certificar que la Custodia pasará sin incidentes.</dd>
 
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
-      <p>
-        La festividad del Corpus Christi fue instaurada en 1264 por el Papa Urbano IV mediante la bula <em>Transiturus</em>, para honrar la presencia de Cristo en la Eucaristía. En Toledo caló pronto y hondo: algunos autores sitúan las primeras procesiones a finales del siglo XIII, aunque la documentación más sólida arranca del siglo XIV.
-      </p>
-      <p>
-        El momento que lo cambió todo llegó con los Reyes Católicos y el Cardenal Cisneros. Fue entonces cuando la festividad adquirió el protocolo y la riqueza que hoy reconocemos: el encargo de la Custodia de Arfe, la consolidación del cortejo nobiliario, la fijación del recorrido. Toledo era la sede primada de España y la ciudad imperial, y el Corpus era el escaparate de ese poder. Esa tensión entre lo religioso y lo político, entre el fervor y la representación, nunca desapareció del todo — y eso es lo que hace al Corpus toledano tan peculiar.
-      </p>
-      <p>
-        A lo largo de los siglos, la fiesta fue sumando elementos que no tienen nada de litúrgico: gigantones, cabezudos, y sobre todo la Tarasca, ese monstruo de origen medieval que precede al cortejo religioso desde tiempos inmemoriales. La convivencia entre lo sagrado y lo profano, entre la custodia de oro y el dragón de cartón, es una de las cosas más toledanas que existen. En 1980 fue declarada Fiesta de Interés Turístico Internacional.
-      </p>
+          <dt>Tarasca</dt>
+          <dd>Figura monstruosa con cuerpo de galápago, alas de murciélago y cabeza de dragón articulada. Precede al cortejo procesional en la tarde del miércoles. Sobre su lomo lleva a la Tarasquilla, figura femenina que viste la moda satírica del año en curso.</dd>
 
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2026</h2>
-      <p>
-        El Corpus Christi es fecha móvil: siempre cae el jueves siguiente a la semana de Pentecostés, sesenta días después del Domingo de Resurrección. En 2026, la gran procesión es el <strong>jueves 4 de junio</strong>.
-      </p>
-      <p>
-        Toledo mantiene el jueves histórico sin trasladarlo al domingo, como han hecho otras ciudades. La Semana Grande arranca unos días antes con el desfile de la Tarasca el miércoles y se extiende con actividades en los días posteriores. Si puedes quedarte más de un día, merece la pena: los patios abiertos y el ambiente de la ciudad preparada para la fiesta tienen su propio ritmo.
-      </p>
+          <dt>Reposteros</dt>
+          <dd>Paños de tela noble —terciopelo o seda— adornados con escudos heráldicos que las familias cuelgan de sus balcones durante la Semana Grande. Algunos tienen siglos de antigüedad y llevan en las mismas familias desde los Reyes Católicos.</dd>
 
-      <!-- SECCIÓN 5: LOS ACTOS PRINCIPALES -->
-      <h2 class="section-title">Los actos principales</h2>
-      <ul class="actos-list">
-        <li>
-          <span class="acto-label">Miércoles 3 de junio · Tarde</span>
-          <strong>Desfile de la Tarasca y los gigantones</strong>
-          La víspera de la procesión, el centro de Toledo se llena de gigantones, cabezudos y la figura central: la Tarasca, un monstruo de cuerpo de galápago, alas de murciélago y cabeza de dragón que recorre las calles asustando —de manera festiva— a quien se le pone delante. Es el lado más pagano y más antiguo de la fiesta, y el que más disfrutan los niños.
-        </li>
-        <li>
-          <span class="acto-label">Jueves 4 de junio · Mañana</span>
-          <strong>Salida de la Custodia de Arfe</strong>
-          El momento más esperado. La Custodia abandona la Catedral Primada por la Puerta Llana —el único acceso sin escalones, construido precisamente para que pudiera salir— y entra en la calle por primera vez en el año. El silencio que se hace en ese instante no lo genera nadie: llega solo.
-        </li>
-        <li>
-          <span class="acto-label">Jueves 4 de junio · Mañana y mediodía</span>
-          <strong>Procesión Solemne</strong>
-          El cortejo recorre el casco histórico siguiendo un protocolo de antigüedad estricto. Cofradías, capítulos nobiliarios, clero y autoridades acompañan a la Custodia sobre una alfombra de tomillo y romero. El recorrido es de unos dos kilómetros pero puede durar entre tres y cuatro horas. La lentitud es parte de la fiesta.
-        </li>
-        <li>
-          <span class="acto-label">Durante la Semana Grande</span>
-          <strong>Apertura de los Patios Toledanos</strong>
-          Decenas de casas palaciegas del casco histórico abren sus patios interiores al público de manera gratuita. El Ayuntamiento edita un mapa con las ubicaciones. Son espacios que el resto del año permanecen cerrados, y algunos guardan sorpresas considerables.
-        </li>
-      </ul>
+          <dt>Semana Grande</dt>
+          <dd>Los días que rodean al jueves del Corpus en Toledo. Arranca el miércoles con el rito del Pertiguero y el desfile de la Tarasca, tiene su apogeo el jueves con la procesión y se extiende con la apertura de patios varios días antes y después.</dd>
 
-      <!-- SECCIÓN 6: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
-      <div class="must-see-grid">
+          <dt>Gremio de Hortelanos</dt>
+          <dd>El único gremio medieval de oficios que ha desfilado en el cortejo del Corpus de forma ininterrumpida desde la Edad Media. Sus miembros visten traje negro, capa de estameña parda y portan un pendón verde coronado con frutos y hortalizas de las vegas del Tajo.</dd>
 
-        <div class="must-see-card">
-          <h3>La Custodia de Arfe de cerca</h3>
-          <span class="tag">Procesión · Jueves · Casco histórico</span>
-          <p>Enrique de Arfe la labró entre 1515 y 1524 con plata y, según recogen las crónicas de la época, con parte del primer oro llegado de América. Pesa alrededor de 160 kilos, mide casi tres metros de altura y tiene forma de torre gótica con más de 260 figuras en relieve. Verla en movimiento por una calle estrecha del casco histórico es una experiencia visual que las fotos no reproducen.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es una de las piezas de orfebrería religiosa más importantes de Europa y la mayor parte del año está en el Tesoro de la Catedral detrás de un cristal. El día del Corpus es el único momento en que sale a la calle y puedes verla en su contexto original: moviéndose, con luz natural, rodeada de personas. Es distinto.</p>
-          </details>
+          <dt>Rito Hispano-Mozárabe</dt>
+          <dd>La liturgia visigótica que Toledo conserva de forma ininterrumpida gracias al Cardenal Cisneros. Se oficia en el Altar Mayor de la Catedral Primada la mañana del jueves, antes de la salida procesional. Es la única catedral española donde esta misa se celebra de manera habitual.</dd>
+
+          <dt>Toldos</dt>
+          <dd>Grandes lienzos de tela que se extienden de fachada a fachada cubriendo las calles del recorrido. Protegen la Custodia del sol y la lluvia, transforman el aspecto visual del casco histórico durante la Semana Grande y filtran la luz de manera característica.</dd>
+        </dl>
+
+        <h2 class="section-title" style="display:none">Galería</h2>
+        <div class="galeria" aria-hidden="true" style="display:none">
+          <!-- imágenes pendientes -->
         </div>
 
-        <div class="must-see-card">
-          <h3>El olor de las calles</h3>
-          <span class="tag">Toda la jornada · Casco histórico</span>
-          <p>La noche previa a la procesión, el suelo de las calles del recorrido se cubre con toneladas de tomillo, cantueso y romero. Cuando miles de personas caminan sobre esa alfombra verde durante horas, el olor que se libera es imposible de describir sin haberlo experimentado. En Toledo dicen que quien lo huele una vez no lo olvida.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es el detalle más sensorial de toda la fiesta y el que menos se fotografía. Todo el mundo enfoca la Custodia. Casi nadie presta atención al suelo. Baja la vista, huele y date cuenta de que ese gesto lleva haciéndose en estas calles desde el siglo XIV.</p>
-          </details>
+        <h2 class="section-title">Enlaces útiles</h2>
+        <ul>
+          <li><a href="https://www.catedraldetoledo.org" target="_blank" rel="noopener">Catedral Primada de Toledo (programa oficial)</a></li>
+          <li><a href="https://www.toledo.es" target="_blank" rel="noopener">Ayuntamiento de Toledo</a></li>
+          <li><a href="https://www.turismocastillalamancha.es" target="_blank" rel="noopener">Turismo de Castilla-La Mancha</a></li>
+        </ul>
+
+        <p><small>Fuente de fechas: <a href="https://www.catedraldetoledo.org" target="_blank" rel="noopener">catedraldetoledo.org</a> — consultado el 30/09/2026</small></p>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Cuándo es el Corpus Christi de Toledo?</dt>
+          <dd>El jueves siguiente a la semana de Pentecostés, sesenta días después del Domingo de Resurrección. La fecha cambia cada año. Toledo mantiene el jueves histórico sin trasladarlo al domingo. En 2026 la gran procesión es el jueves 4 de junio.</dd>
+
+          <dt>¿Qué es el rito del Pertiguero la noche anterior?</dt>
+          <dd>La noche del miércoles, el Pertiguero de la Catedral recorre todo el recorrido procesional con una vara de plata de 145 cm midiendo la altura libre bajo cada toldo, farol y cable. Certifica que la Custodia de Arfe pasará sin rozar nada al día siguiente. Es uno de los ritos más antiguos y menos conocidos de la Semana Grande.</dd>
+
+          <dt>¿Cuánto dura la procesión?</dt>
+          <dd>El cortejo recorre aproximadamente dos kilómetros, pero avanza muy despacio. La procesión dura entre tres y cuatro horas desde la salida hasta el regreso a la Catedral. La lentitud no es un defecto: es parte del protocolo.</dd>
+
+          <dt>¿Se puede ver la Custodia fuera del día del Corpus?</dt>
+          <dd>Sí. El resto del año está en el Tesoro de la Catedral Primada, visitable con la entrada general al templo. Permite ver los detalles de cerca sin aglomeraciones, aunque la experiencia de verla en movimiento en la calle es completamente distinta.</dd>
+
+          <dt>¿Qué son los patios toledanos y cómo se visitan?</dt>
+          <dd>Durante la Semana Grande, decenas de casas palaciegas abren sus patios interiores al público de forma gratuita. El Ayuntamiento edita un mapa cada año, disponible en la oficina de turismo y en la web municipal. Los días menos saturados son los previos y posteriores al jueves de la procesión.</dd>
+        </dl>
+
+        <div class="ficha-etiquetas" aria-label="Etiquetas">
+          <a href="#" class="etiqueta etiqueta-destacada">Corpus Christi de Toledo</a>
+          <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+          <a href="#" class="etiqueta">Castilla-La Mancha</a>
+          <a href="#" class="etiqueta">Toledo</a>
+          <a href="#" class="etiqueta">Junio</a>
+          <a href="#" class="etiqueta">Custodia de Arfe</a>
+          <a href="#" class="etiqueta">Semana Grande</a>
+          <a href="#" class="etiqueta">Corpus Christi</a>
+          <a href="#" class="etiqueta">Patrimonio UNESCO</a>
         </div>
 
-        <div class="must-see-card">
-          <h3>El cielo de toldos y reposteros</h3>
-          <span class="tag">Días centrales · Calles del recorrido</span>
-          <p>Las calles del recorrido procesional se cubren con toldos blancos atados de fachada a fachada y con reposteros —paños con escudos heráldicos— colgados de balcones que en algunos casos llevan en esa familia desde los Reyes Católicos. Mirar hacia arriba en la calle Comercio o en la plaza del Ayuntamiento durante la Semana Grande es ver una ciudad que construye su propio techo para la ocasión.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque esa arquitectura efímera desaparece en cuanto termina la semana. Es Toledo con un vestido que solo se pone una vez al año. Y porque la luz que se filtra por los toldos blancos a mediodía cambia completamente el aspecto de unas calles que ya de por sí son fotogénicas.</p>
-          </details>
+        <div class="fichas-relacionadas">
+          <h2>Otras fiestas que te van a interesar</h2>
+          <div class="relacionadas-grid">
+            <a href="corpus-christi-ponteareas.html" class="relacionada-card">
+              <strong>Corpus Christi de Ponteareas</strong>
+              <span>Galicia · ITI · Alfombras florales efímeras en el recorrido procesional</span>
+            </a>
+            <a href="corpus-christi-bejar.html" class="relacionada-card">
+              <strong>Corpus Christi de Béjar</strong>
+              <span>Castilla y León · ITI · Los Hombres de Musgo y la leyenda de la reconquista de Santa Marina</span>
+            </a>
+            <a href="semana-santa-toledo.html" class="relacionada-card">
+              <strong>Semana Santa de Toledo</strong>
+              <span>Castilla-La Mancha · ITI · Las mismas calles, otro rito, otro tiempo</span>
+            </a>
+          </div>
         </div>
 
-        <div class="must-see-card">
-          <h3>La Tarasca y la Tarasquilla</h3>
-          <span class="tag tag-leyenda">Miércoles · Leyenda local · Pasacalles</span>
-          <p>El monstruo que precede a la fiesta tiene cuerpo de galápago, alas de murciélago y cabeza de dragón. Sobre él va sentada la Tarasquilla, una figura femenina que, según cuenta la leyenda popular toledana, representa a Ana Bolena. El origen exacto de esa asociación nadie lo sabe con certeza, pero en Toledo se acepta como parte del relato y se disfruta como tal. La leyenda es de la ciudad: es suya.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es la cara más pagana y más antigua de una fiesta que el resto del tiempo resulta muy solemne. Y porque ver a un dragón medieval paseando por las mismas calles que luego recorrerá la Custodia de Arfe dice mucho sobre cómo entiende Toledo su propia historia: sin descartar nada.</p>
-          </details>
-        </div>
+        <p class="back-link"><a href="index.html">← Volver al inicio</a></p>
 
       </div>
-
-      <!-- SECCIÓN 7: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
-      <ul>
-        <li><strong>Reserva con mucha antelación.</strong> Toledo está a menos de una hora de Madrid y el Corpus llena la ciudad por completo. Para pernoctar en el casco histórico, reserva con varios meses de margen — cuanto antes, mejor.</li>
-        <li><strong>El coche no sirve de nada.</strong> El casco histórico se corta al tráfico durante los días centrales. Deja el coche en los aparcamientos disuasorios de la periferia (hay varios junto a las escaleras mecánicas que suben al centro) y sube andando o en los ascensores panorámicos.</li>
-        <li><strong>Para ver la procesión, llega pronto.</strong> La plaza de Zocodover tiene tribunas que suelen ser de acceso restringido o de pago. Si prefieres las calles — que es donde mejor se vive — sitúate con al menos un par de horas de antelación. Las calles estrechas como la calle Comercio dan una experiencia más intensa que los espacios abiertos.</li>
-        <li><strong>Los patios, mejor en los días previos o posteriores.</strong> El jueves de la procesión el centro está saturado. Si puedes visitar los patios el miércoles por la tarde o el viernes, lo harás con más calma y mejores fotos.</li>
-        <li><strong>Calzado y agua.</strong> Toledo tiene cuestas serias y el empedrado del casco histórico no perdona. Usa calzado muy cómodo. El final de mayo o principios de junio puede ser ya muy caluroso: lleva agua y busca la sombra de los toldos cuando puedas.</li>
-        <li><strong>El mapa de patios.</strong> El Ayuntamiento edita cada año un mapa gratuito con los patios participantes. Recógelo en la oficina de turismo o descárgalo de la web municipal antes de salir a la ruta.</li>
-      </ul>
-
-      <!-- SECCIÓN 8: VOCABULARIO -->
-      <h2 class="section-title">Vocabulario</h2>
-      <dl class="festero">
-
-        <dt>Custodia</dt>
-        <dd>Pieza monumental de orfebrería religiosa en la que se expone el viril con la hostia consagrada durante la procesión. La de Toledo, labrada por Enrique de Arfe entre 1515 y 1524, es una de las más grandes e importantes de Europa.</dd>
-
-        <dt>Tarasca</dt>
-        <dd>Figura monstruosa de origen medieval con cuerpo de galápago, alas de murciélago y cabeza de dragón. Precede a los actos religiosos del Corpus en varias ciudades españolas. En Toledo desfila el miércoles previo como parte del pasacalles festivo.</dd>
-
-        <dt>Tarasquilla</dt>
-        <dd>La figura femenina que va sentada sobre la Tarasca. En Toledo, la tradición popular la identifica con Ana Bolena, aunque nadie ha documentado con exactitud el origen de esa asociación. Es una de esas leyendas que la ciudad ha hecho suya con el tiempo.</dd>
-
-        <dt>Reposteros</dt>
-        <dd>Paños cuadrados o rectangulares de tela noble —a menudo terciopelo o seda— adornados con escudos heráldicos familiares o eclesiásticos. Se cuelgan de los balcones y fachadas durante la Semana Grande. Algunos tienen siglos de antigüedad.</dd>
-
-        <dt>Toldos</dt>
-        <dd>Grandes lienzos de tela que se extienden de tejado a tejado tapando el cielo de las calles del recorrido. Protegen la Custodia del sol y la lluvia, y transforman visualmente el casco histórico durante los días centrales de la fiesta.</dd>
-
-        <dt>Semana Grande</dt>
-        <dd>Nombre popular que reciben los días que rodean al jueves del Corpus en Toledo. No tiene fechas fijas más allá del jueves central: la ciudad extiende los actos y la apertura de patios varios días antes y después de la procesión.</dd>
-
-      </dl>
-
-      <!-- GALERÍA (oculta hasta tener imágenes reales) -->
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria" style="display:none;">
-        <img src="images/corpus-christi-toledo-1.jpg" alt="La Custodia de Arfe avanzando por las calles del casco histórico de Toledo durante el Corpus Christi, escoltada por el Cabildo y las cofradías" />
-        <img src="images/corpus-christi-toledo-2.jpg" alt="Calles de Toledo cubiertas con toldos blancos y reposteros heráldicos durante la Semana Grande del Corpus Christi" />
-        <img src="images/corpus-christi-toledo-3.jpg" alt="La Tarasca desfilando por el centro de Toledo en el pasacalles del miércoles previo al Corpus Christi" />
-      </div>
-
-      <!-- ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
-      <ul>
-        <li><a href="https://catedralprimada.es" target="_blank" rel="noopener">Catedral Primada de Toledo — Información oficial</a></li>
-        <li><a href="https://turismo.toledo.es" target="_blank" rel="noopener">Turismo del Ayuntamiento de Toledo</a></li>
-        <li><a href="https://turismoclm.es" target="_blank" rel="noopener">Turismo de Castilla-La Mancha</a></li>
-      </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
-
-      <!-- SECCIÓN 9: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <dl class="faq">
-
-        <dt>¿Cuándo es el Corpus Christi de Toledo en 2026?</dt>
-        <dd>El jueves 4 de junio de 2026. La fecha cambia cada año porque depende del calendario litúrgico: siempre es el jueves siguiente a Pentecostés, sesenta días después del Domingo de Resurrección. Toledo mantiene el jueves histórico sin trasladarlo al domingo.</dd>
-
-        <dt>¿Es festivo ese día?</dt>
-        <dd>En Toledo capital y en Castilla-La Mancha, el jueves del Corpus es fiesta laboral. En el resto de España depende de cada comunidad autónoma: en muchas es un día laborable normal o la festividad se traslada al domingo siguiente. Si viajas desde fuera, comprueba si es festivo en tu lugar de trabajo.</dd>
-
-        <dt>¿Cuánto dura la procesión?</dt>
-        <dd>El recorrido es de aproximadamente dos kilómetros, pero el cortejo avanza muy despacio por el tamaño de la Custodia y la estrechez de algunas calles. Cuenta con entre tres y cuatro horas desde la salida hasta el regreso a la Catedral.</dd>
-
-        <dt>¿Hay que pagar para ver los patios toledanos?</dt>
-        <dd>La gran mayoría de los patios que participan en la apertura de la Semana Grande son de acceso gratuito. Es una muestra de hospitalidad de las familias propietarias. El Ayuntamiento publica cada año el listado y el mapa de participantes.</dd>
-
-        <dt>¿Se puede ver la Custodia de Arfe fuera del día del Corpus?</dt>
-        <dd>Sí. El resto del año la Custodia está expuesta en el Tesoro de la Catedral Primada, que puede visitarse pagando la entrada general al templo. Es una experiencia diferente a verla en la calle, pero permite observar los detalles de cerca sin aglomeraciones.</dd>
-
-      </dl>
-
-      <a href="index.html" class="back-link">← Volver al inicio</a>
-
     </article>
   </main>
 
