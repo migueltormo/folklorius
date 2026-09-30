@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Carnaval de Águilas · Musona, Cascarones y Trajes de Papel</title>
+  <meta name="description" content="El Carnaval de Águilas (ITI 2015) combina la Suelta de la Musona, la Batalla de Cascarones y el único Concurso de Trajes de Papel de España. Guía completa 2026." />
+  <meta property="og:title" content="Carnaval de Águilas — La bestia baja del castillo y el pueblo la espera con cascarones" />
+  <meta property="og:description" content="Una figura cubierta de estopa y caracoles baja del castillo al anochecer. Después vienen los cascarones, la Cuerva y cuatro semanas de carnaval que no terminan en Miércoles de Ceniza." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://folklorius.es/carnaval-aguilas.html" />
+  <meta property="og:image" content="https://folklorius.es/images/carnaval-aguilas.jpg" />
+  <link rel="canonical" href="https://folklorius.es/carnaval-aguilas.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+
+    /* ── Must-see ───────────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--brand, #8b1a1a);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": "Carnaval de Águilas",
+    "description": "Carnaval declarado Fiesta de Interés Turístico Internacional en 2015. Celebrado en Águilas, Región de Murcia, con la Suelta de la Musona, la Batalla de Cascarones y el Concurso de Trajes de Papel.",
+    "location": {
+      "@type": "Place",
+      "name": "Águilas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Águilas",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.4049,
+        "longitude": -1.5847
+      }
+    },
+    "startDate": "2026-01-31",
+    "endDate": "2026-02-28",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Federación de Peñas del Carnaval de Águilas",
+      "url": "https://www.carnavaldeaguilas.org"
+    },
+    "url": "https://folklorius.es/carnaval-aguilas.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Carnaval de Águilas",
+        "item": "https://folklorius.es/carnaval-aguilas.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Por qué Águilas no tiene Entierro de la Sardina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La tradición aguileña es distinta: en lugar de enterrar la sardina, prolonga la fiesta hasta el sábado siguiente al Miércoles de Ceniza y la cierra quemando a Don Carnal en la Plaza de España."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Suelta de la Musona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acto que marca el arranque del carnaval: una figura cubierta de estopa de esparto, ristras de caracoles y pez negra baja desde el Castillo de San Juan hasta la Plaza de España guiada por el Músico-Domador, quien fue la Musona el año anterior."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es un carnaval apto para familias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los Grandes Desfiles y el Carnaval de Día son aptos para toda la familia. La Suelta de la Musona y el Carnaval de la Noche tienen más intensidad y aglomeración. La jornada del Viernes de Carnaval está dedicada a los niños con desfiles escolares."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Carnaval de Águilas 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El ciclo arranca a finales de enero con las galas previas y el Cambio de Poderes. El núcleo de la fiesta se concentra en los días de carnaval —de jueves a martes— y se prolonga hasta el Sábado de Piñata, ya pasado el Miércoles de Ceniza."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Cuerva?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La bebida ritual del Carnaval de Águilas: un ponche de vino tinto o blanco con gaseosa, almíbar de frutas locales y una mezcla de destilados que varía según quien la prepare. Se elabora en lebrillo de barro y tiene su propio certamen, el Concurso Nacional de Cuerva, que premia la mejor del año con el título de Supercuerva."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="#" class="nav-cta">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+    <article>
+
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Carnaval de Águilas
+      </nav>
+
+      <div class="ficha-hero">
+        <img src="images/carnaval-aguilas.jpg" alt="La Suelta de la Musona en el Carnaval de Águilas" loading="eager" />
+      </div>
+
+      <div class="container ficha-main">
+
+        <h1>Carnaval de Águilas</h1>
+
+        <p class="ficha-subtitle">
+          Águilas · Región de Murcia · «La bestia baja del castillo y el pueblo la espera con cascarones.»
+        </p>
+
+        <div class="badges" aria-label="Reconocimientos oficiales">
+          <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        </div>
+
+        <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+          <div class="fechas-grandes">Del 31 de enero al 28 de febrero de 2026</div>
+          <p>Más de 40 peñas · 4 personajes oficiales · ITI desde 2015 · La fiesta no termina en Miércoles de Ceniza</p>
+          <p class="nota-grid">⚠️ Fechas sujetas a calendario litúrgico. Confirma en carnavaldeaguilas.org o en la web del Ayuntamiento de Águilas.</p>
+        </div>
+
+        <!-- aviso-sensibilidad -->
+        <div class="aviso-sensibilidad" role="note">
+          <strong>Nota de sensibilidad</strong>
+          <ul>
+            <li>La Musona no es una figura decorativa: es una representación viva de algo que el pueblo de Águilas lleva décadas construyendo. Quien la sigue por las callejuelas del castillo está entrando en un rito, no en una atracción de feria.</li>
+            <li>Las Batallas de Cascarones tienen un primer acto que la mayoría del público no conoce: el duelo en verso entre Don Carnal y Doña Cuaresma. El confeti viene después. El confeti no es el protagonista: lo es el verso satírico que Don Carnal y Doña Cuaresma se lanzan antes de que empiece el lanzamiento.</li>
+            <li>El Carnaval de la Noche tiene un código propio: el feísmo, el humor sin filtro y el disfraz casero son el antídoto a los Grandes Desfiles de tarde. Quien va a verlo como observador se lleva la mitad de la experiencia.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title">La esencia de la fiesta</h2>
+        <p>
+          Al anochecer del Jueves Lardero, algo baja del castillo. Lo precede el olor a pez negra y estopa húmeda y el sonido de caracoles marinos que alguien hace sonar entre el gentío. La Musona, cubierta de esparto deshilachado y ristras de caracoles, desciende por las callejuelas empinadas del casco viejo guiada por el Músico-Domador —quien fue la bestia el año anterior— hacia una Plaza de España que ya la está esperando. A partir de ahí, Águilas tiene cuatro semanas de carnaval por delante. Y no termina en Miércoles de Ceniza.
+        </p>
+
+        <h2 class="section-title">¿En qué consiste?</h2>
+        <p>
+          El Carnaval de Águilas lo organizan más de cuarenta Peñas: asociaciones de vecinos y amigos que preparan durante meses coreografías, trajes y carrozas para los Grandes Desfiles. La competición entre Peñas es el motor del programa, con premios a la elegancia, la fantasía, la coreografía y la sátira. El trofeo que todas las Peñas quieren es el <strong>Águila Dorada</strong>, que el Ayuntamiento entrega la noche del Sábado de Piñata.
+        </p>
+        <p>
+          Quien coordina todo eso es la <strong>Federación de Peñas del Carnaval de Águilas</strong>, la entidad que agrupa a las asociaciones y gestiona el certamen. Dentro del programa conviven los Grandes Desfiles diurnos de alta producción con el <strong>Carnaval de la Noche</strong>, donde la norma es el feísmo y el disfraz casero. Son dos estilos que no se mezclan y que atraen a públicos distintos.
+        </p>
+        <p>
+          El carnaval tiene además tres actos sin equivalente en ningún otro carnaval español: la <strong>Suelta de la Musona</strong>, la <strong>Gran Batalla de Cascarones</strong> y el <strong>Concurso de Trajes de Papel</strong>. Los cuatro personajes oficiales de la fiesta —Don Carnal, Doña Cuaresma, Musa y Musona— se eligen cada agosto en la Plaza Antonio Cortijos en una asamblea abierta, y el traspaso de poderes entre ellos se celebra en el Pabellón Diego Calvo Valera antes de que empiece el carnaval.
+        </p>
+        <p>
+          La fiesta no cierra con el Entierro de la Sardina. Águilas prolonga el programa hasta el <strong>Sábado de Piñata</strong>, ya pasado el Miércoles de Ceniza, y lo cierra quemando a Don Carnal.
+        </p>
+        <p class="nota-grid">⚠️ El programa completo y el orden exacto de actos lo publica la Federación de Peñas del Carnaval de Águilas antes de cada edición.</p>
+
+        <h2 class="section-title">Historia y significado</h2>
+        <p>
+          El primer documento que regula el carnaval en Águilas es el <strong>Bando Municipal de 1886</strong> del alcalde Juan Gray Watson: prohíbe arrojar harina y agua, portar armas disfrazado y obstaculizar el paso de las máscaras. El carnaval ya existía antes, pero ese bando es el primer rastro escrito de una fiesta que la ciudad consideraba suficientemente grande como para necesitar normas propias.
+        </p>
+        <p>
+          Las primeras fotografías documentadas datan de 1903. A mediados del siglo XIX, Águilas vivía su momento de mayor actividad económica —puerto mercantil, exportación de esparto, minería— y el carnaval creció en ese contexto: bailes de disfraces en los casinos burgueses que el pueblo llano sacó a la calle cargados de sátira. Durante el franquismo, cuando el carnaval estaba prohibido, los aguileños siguieron celebrándolo de forma encubierta: ropa del revés, cara tiznada con corcho quemado, sábanas por encima.
+        </p>
+        <p>
+          La <strong>Musona</strong> tiene una historia más reciente de lo que parece. El historiador local Lorenzo Antonio Hernández Pallarés documentó en 1998 una figura de oso de circo ambulante que recorría los mercados de la zona a principios del siglo XX, acompañada por un domador que tocaba instrumentos rudimentarios. A partir de esa investigación, la Federación de Peñas recuperó el rito en <strong>1999</strong>, recreando la figura con materiales del oficio espartero —estopa, esparto, pez negra— y adaptando el descenso desde el Castillo de San Juan como escenario. Lo que hoy se vive no es un rito ancestral inmemorial: es una recuperación deliberada, con fecha y autor conocidos. Eso no lo hace menos real.
+        </p>
+        <p>
+          El <strong>Concurso de Trajes de Papel</strong> tiene otro origen. No nació en la posguerra con periódicos pegados: el certamen reglamentado es de finales del siglo XX, cuando la Gala en el Auditorio Infanta Doña Elena convirtió los trajes en construcciones de alta costura efímera: armazones de varillas de acero forjado, patrones de papel italiano o artesanal, pegado y trenzado, sin una sola tela.
+        </p>
+        <p>
+          La declaración de Interés Turístico Internacional llegó por Resolución de 20 de enero de 2015, publicada en el BOE nº 31 de 5 de febrero de 2015.
+        </p>
+
+        <h2 class="section-title">Fechas 2026</h2>
+        <div class="fechas-grandes">Del 31 de enero al 28 de febrero de 2026</div>
+        <p>El ciclo arranca a finales de enero con las galas previas. El núcleo de la fiesta son los días de carnaval —de Jueves Lardero al Martes de Carnaval— y el programa se prolonga hasta el Sábado de Piñata, ya pasado el Miércoles de Ceniza. Las fechas exactas de cada acto dependen del calendario litúrgico de cada edición.</p>
+
+        <h2 class="section-title">Peñas y categorías de premio</h2>
+        <div class="agrupaciones-grid">
+          <div class="agrupacion-card">
+            <h3>Elegancia y Fantasía</h3>
+            <p>Premian el diseño y la confección de los trajes en los Grandes Desfiles. La categoría de Fantasía admite las propuestas más libres; la de Elegancia valora la ejecución clásica y el conjunto de la Peña.</p>
+          </div>
+          <div class="agrupacion-card">
+            <h3>Cómico y Crítica</h3>
+            <p>Reconocen el ingenio satírico: disfraces y coreografías que hacen humor sobre la actualidad local y nacional, en la línea más gamberra del carnaval aguileño.</p>
+          </div>
+          <div class="agrupacion-card">
+            <h3>Coreografía y Mejor Carroza</h3>
+            <p>Valoran el trabajo de conjunto: la sincronía de la coreografía y la producción de la carroza que acompaña a la Peña en el desfile. Son los premios más técnicos del certamen.</p>
+          </div>
+          <div class="agrupacion-card">
+            <h3>Águila Dorada y Supercuerva</h3>
+            <p>El Águila Dorada es el trofeo global del carnaval, entregado por el Ayuntamiento la noche del Sábado de Piñata. El Supercuerva premia la mejor Cuerva del año entre los establecimientos hosteleros de la ciudad.</p>
+          </div>
+        </div>
+
+        <h2 class="section-title">La Suelta de la Musona</h2>
+        <p>
+          La Musona no es un disfraz. Es una figura construida cada año con materiales del oficio espartero: estopa deshilachada, ristras de caracoles terrestres y marinos, dientes de ajo y pez negra —alquitrán vegetal— que tiñe de negro todo lo que toca. Quien la porta baja desde el Castillo de San Juan de las Águilas al anochecer del Jueves Lardero, guiado por el <strong>Músico-Domador</strong>: la persona que fue la Musona el año anterior y que en el Castillo le traspasa el pandero ceremonial al nuevo portador antes de que empiece el descenso.
+        </p>
+        <p>
+          El recorrido baja por callejuelas empinadas y estrechas del casco histórico hasta llegar a la <strong>Glorieta (Plaza de España)</strong>. Por el camino, la Musona se lanza contra el público, fustiga con la estopa y siembra el caos entre los que se acercan demasiado. Los cencerros, las caracolas marinas y los silbatos marcan el paso. Al llegar a la plaza, el carnaval de calle empieza de verdad.
+        </p>
+
+
+        <h2 class="section-title" id="programa">Qué se celebra en cada fase</h2>
+        <ol class="actos-list">
+          <li>
+            <span class="dia-label">Semana previa</span>
+            <strong>Cambio de Poderes y galas previas</strong>
+            <p>El Cambio de Poderes se celebra en el Pabellón Diego Calvo Valera: Don Carnal, Doña Cuaresma, Musa y Musona adultos e infantiles toman posesión ante la ciudad. La semana previa acoge también la Gala del Concurso de Trajes de Papel en el Auditorio Infanta Doña Elena y el Concurso Nacional de Drag Queen.</p>
+          </li>
+          <li>
+            <span class="dia-label">Jueves Lardero · Noche</span>
+            <strong>Suelta de la Musona</strong>
+            <p>Arranque oficial del carnaval en la calle. La Musona desciende desde el Castillo de San Juan hasta la Plaza de España, precedida por el Músico-Domador y el sonido de cencerros y caracolas marinas.</p>
+          </li>
+          <li>
+            <span class="dia-label">Viernes de Carnaval</span>
+            <strong>Batalla infantil y desfiles escolares</strong>
+            <p>Jornada dedicada a los más pequeños, con batalla de cascarones infantil y desfiles de colegios por el centro de la ciudad.</p>
+          </li>
+          <li>
+            <span class="dia-label">Sábado de Carnaval</span>
+            <strong>Pregón y Gran Batalla de Cascarones</strong>
+            <p>Don Carnal y Doña Cuaresma se enfrentan primero en verso satírico octosílabo —la batalla dialéctica— y después en el lanzamiento de los cascarones: cáscaras de huevo selladas con papel de seda y engrudo, rellenas de confeti, que las peñas recolectan y preparan a lo largo de los meses previos. Se estiman entre 25.000 y 30.000 cascarones por edición. Don Carnal siempre gana, y con su victoria arranca el carnaval grande.</p>
+          </li>
+          <li>
+            <span class="dia-label">Domingo de Carnaval</span>
+            <strong>Primer Gran Desfile</strong>
+            <p>Las Peñas recorren la Avenida Juan Carlos I hasta el puerto con sus trajes, coreografías y carrozas. El palco de jueces valora cada categoría del certamen.</p>
+          </li>
+          <li>
+            <span class="dia-label">Lunes de Carnaval · Noche</span>
+            <strong>Carnaval de la Noche</strong>
+            <p>Concurso de disfraces espontáneos y caseros en la Plaza de España. El feísmo y la picaresca son el antídoto al lujo de los desfiles de tarde. Aquí no hay carrozas ni coreografías ensayadas: manda el ingenio de andar por casa.</p>
+          </li>
+          <li>
+            <span class="dia-label">Martes de Carnaval</span>
+            <strong>Segundo Gran Desfile</strong>
+            <p>Segunda vuelta del certamen de Peñas por el circuito oficial. En muchas ediciones es el desfile más concurrido del programa.</p>
+          </li>
+          <li>
+            <span class="dia-label">Viernes de Piñata</span>
+            <strong>Certamen de Murgas y Desfile Foráneo</strong>
+            <p>El Certamen Nacional de Cuartetos y Chirigotas reúne a agrupaciones de fuera. El Desfile Foráneo trae Peñas de otras localidades que participan fuera de concurso.</p>
+          </li>
+          <li>
+            <span class="dia-label">Sábado de Piñata</span>
+            <strong>Último Gran Desfile, Quema de Don Carnal y premios</strong>
+            <p>El tercer y último Gran Desfile cierra el certamen de Peñas. La noche acaba con la Quema de Don Carnal en la Plaza de España, los fuegos artificiales y la entrega del Águila Dorada y el resto de premios del carnaval.</p>
+          </li>
+        </ol>
+
+        <h2 class="section-title" id="musica">Música y sonido</h2>
+        <p>
+          El sonido más reconocible del Carnaval de Águilas no viene de un instrumento convencional: viene de una caracola marina que alguien sopla en la oscuridad mientras la Musona baja por la cuesta del castillo. Los cencerros golpean sin ritmo fijo, los silbatos marcan el caos y la estopa húmeda suena cuando roza el adoquín. Es un sonido que no se parece a ningún otro carnaval español.
+        </p>
+        <p>
+          Durante los Grandes Desfiles, la banda sonora cambia por completo: música grabada a todo volumen, coreografías ensayadas durante meses y el golpe rítmico de los pasos de las Peñas sobre el asfalto. El Carnaval de la Noche suena distinto: batucadas improvisadas, humor vocal y el ruido de una plaza llena de gente disfrazada con lo que tenía en casa.
+        </p>
+        <p>
+          Para el sonido de la Musona, el mejor sitio es el tramo de callejuelas entre el Castillo de San Juan y la Glorieta: la reverberación del sonido en las paredes estrechas lo amplifica todo. Para los Grandes Desfiles, el palco de jueces en la Avenida Juan Carlos I.
+        </p>
+
+        <h2 class="section-title">No te lo puedes perder</h2>
+        <div class="must-see-grid">
+
+          <div class="must-see-card">
+            <h3>La Suelta de la Musona</h3>
+            <span class="tag">Jueves Lardero · Casco histórico</span>
+            <p>La bestia cubierta de estopa y caracoles baja por las callejuelas empinadas del castillo al anochecer. El olor a pez negra llega antes que ella. El Músico-Domador toca, los cencerros resuenan en las paredes y la Musona se lanza contra quien se pone en su camino.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el único rito de apertura de carnaval en España que recrea una figura de oso de circo del siglo XIX con materiales del oficio espartero. El olor a pez negra, la oscuridad de las callejuelas y el momento en que la Musona se lanza contra el público son cosas que no funcionan descritas. Hay que estar ahí.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Gran Batalla de Cascarones</h3>
+            <span class="tag">Sábado de Carnaval · Plaza de España</span>
+            <p>Antes del lanzamiento viene el verso. Don Carnal y Doña Cuaresma se enfrentan en octosílabos satíricos ante la plaza llena, y solo cuando la dialéctica termina empiezan a volar los 25.000 cascarones de confeti que las peñas han preparado durante el año.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque la batalla tiene dos actos y el primero —el duelo en verso— es el que le da sentido al segundo. Sin él, los cascarones son solo confeti. Con él, la victoria de Don Carnal tiene peso narrativo.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>El Concurso de Trajes de Papel</h3>
+            <span class="tag">Semana previa · Auditorio Infanta Doña Elena</span>
+            <p>Armazones de varillas de acero forjado recubiertos de papel italiano pegado y trenzado, sin una sola tela. Los participantes entran a un auditorio con estructuras que pueden pesar decenas de kilos. Es alta costura efímera: cuando acaba la gala, los trajes no van a ningún sitio.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>España solo tiene dos certámenes de trajes de papel: Águilas y Mollerussa. El de Águilas es en gala de auditorio. La escala real de los trajes —que las fotos no transmiten— es lo que cambia la experiencia.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>El Carnaval de la Noche</h3>
+            <span class="tag">Lunes de Carnaval · Plaza de España</span>
+            <p>El reverso deliberado de los Grandes Desfiles: disfraces caseros, feísmo, humor sin filtro y cero producción. No hay carrozas ni coreografías. Hay una plaza llena de gente que ha decidido que el ingenio de andar por casa vale más que los meses de trabajo de una Peña.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el momento en que el carnaval se ríe de sí mismo. Quien ha visto los Grandes Desfiles de tarde y llega al lunes de noche entiende que las dos cosas son parte del mismo código cultural, no de dos fiestas distintas.</p>
+            </details>
+          </div>
+
+        </div>
+
+        <h2 class="section-title">Consejos prácticos</h2>
+        <ul>
+          <li><strong>Alojamiento:</strong> Águilas tiene oferta hotelera limitada para una fiesta de este tamaño. Reserva con meses de antelación si quieres alojarte en el municipio. Cartagena y Lorca, a menos de una hora, son alternativas con más opciones.</li>
+          <li><strong>Cómo llegar:</strong> En coche desde Murcia capital son unos 90 minutos por la A-7. En carnaval el centro queda cortado al tráfico: usa los aparcamientos de los accesos y entra a pie.</li>
+          <li><strong>Dónde situarse para la Musona:</strong> El tramo entre el Castillo de San Juan y la primera cuesta del casco viejo es donde el descenso tiene más intensidad. El espacio es estrecho: llega con tiempo y quédate pegado a las paredes.</li>
+          <li><strong>Ropa:</strong> Febrero en Águilas puede ser fresco de noche y templado de día. Para la Batalla de Cascarones, lleva ropa que puedas ensuciar: el confeti del interior se pega al pelo y a la ropa con facilidad.</li>
+          <li><strong>La Cuerva:</strong> La bebida ritual del carnaval se sirve en los bares y casetas de la ciudad durante toda la fiesta. Cada establecimiento tiene su propia receta —vino, fruta, destilados en proporciones distintas— y el Concurso Nacional de Cuerva premia la mejor del año. Vale la pena probar varias versiones.</li>
+          <li><strong>Gastronomía:</strong> La Cuerva se elabora en lebrillo de barro con vino tinto o blanco, gaseosa, almíbar de frutas locales y una mezcla de destilados —vermut, coñac, whisky, ginebra— que varía según quien la prepare. Fuera del carnaval, Águilas tiene buena oferta de marisco y pescado fresco del puerto.</li>
+        </ul>
+
+        <h2 class="section-title">Vocabulario festero</h2>
+        <dl class="festero">
+          <dt>Musona</dt>
+          <dd>La figura de apertura del Carnaval de Águilas: un portador cubierto de estopa deshilachada, ristras de caracoles y pez negra que desciende desde el Castillo de San Juan hasta la Plaza de España guiado por el Músico-Domador. El rito se recuperó en 1999 a partir de investigación etnográfica local. Ver la sección <em>La Suelta de la Musona</em> para la descripción completa.</dd>
+
+          <dt>Músico-Domador</dt>
+          <dd>Quien guía a la Musona en su descenso desde el castillo. Siempre es la persona que fue la Musona el año anterior. El traspaso del pandero ceremonial en el Castillo de San Juan marca el relevo entre ambos portadores.</dd>
+
+          <dt>Cascarones</dt>
+          <dd>Cáscaras de huevo vaciadas, selladas con papel de seda y engrudo, y rellenas de confeti. Las peñas los recolectan y preparan durante el año; en cada Batalla se lanzan entre 25.000 y 30.000 unidades.</dd>
+
+          <dt>Cuerva</dt>
+          <dd>Ponche ritual del Carnaval de Águilas: vino tinto o blanco con gaseosa, almíbar de frutas locales y destilados varios, elaborado en lebrillo de barro. Cada bar tiene su receta. El Concurso Nacional de Cuerva premia la mejor con el título de Supercuerva.</dd>
+
+          <dt>Piñata</dt>
+          <dd>Los dos días que cierran el carnaval pasado el Miércoles de Ceniza: Viernes y Sábado de Piñata. El sábado acaba con la Quema de Don Carnal y la entrega del Águila Dorada.</dd>
+
+          <dt>Águila Dorada</dt>
+          <dd>El trofeo global del Carnaval de Águilas, entregado por el Ayuntamiento la noche del Sábado de Piñata a la Peña o propuesta más destacada del conjunto del carnaval.</dd>
+
+          <dt>Don Carnal y Doña Cuaresma</dt>
+          <dd>Los dos personajes enfrentados en la Batalla de Cascarones. Don Carnal defiende el hedonismo; Doña Cuaresma, la abstinencia. Don Carnal siempre gana, lo que abre la fiesta. Al final del carnaval, es quemado en la plaza.</dd>
+
+          <dt>Musa</dt>
+          <dd>El cuarto personaje oficial del carnaval aguileño, junto a Don Carnal, Doña Cuaresma y la Musona. Se elige cada agosto en la Plaza Antonio Cortijos en asamblea abierta, junto al resto de personajes adultos e infantiles.</dd>
+        </dl>
+
+        <h2 class="section-title" style="display:none">Galería</h2>
+        <div class="galeria" aria-hidden="true" style="display:none">
+          <!-- imágenes pendientes -->
+        </div>
+
+        <h2 class="section-title">Enlaces útiles</h2>
+        <ul>
+          <li><a href="https://www.carnavaldeaguilas.org" target="_blank" rel="noopener">Federación de Peñas del Carnaval de Águilas (web oficial)</a></li>
+          <li><a href="https://www.aguilas.es" target="_blank" rel="noopener">Ayuntamiento de Águilas</a></li>
+          <li><a href="https://www.murciaturistica.es" target="_blank" rel="noopener">Turismo de la Región de Murcia</a></li>
+        </ul>
+
+        <p><small>Fuente de fechas: <a href="https://www.carnavaldeaguilas.org" target="_blank" rel="noopener">carnavaldeaguilas.org</a> — consultado el 30/09/2026</small></p>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Por qué Águilas no tiene Entierro de la Sardina?</dt>
+          <dd>La tradición aguileña es distinta: en lugar de enterrar la sardina, prolonga la fiesta hasta el Sábado de Piñata, pasado el Miércoles de Ceniza, y la cierra quemando a Don Carnal en la Plaza de España.</dd>
+
+          <dt>¿Qué es la Suelta de la Musona?</dt>
+          <dd>El acto de apertura del carnaval: una figura cubierta de estopa, caracoles y pez negra baja desde el Castillo de San Juan hasta la Plaza de España guiada por el Músico-Domador, quien fue la Musona el año anterior y le traspasa el pandero ceremonial en el castillo.</dd>
+
+          <dt>¿Es un carnaval apto para familias?</dt>
+          <dd>Los Grandes Desfiles y el programa de Viernes de Carnaval están pensados para todas las edades. La Suelta de la Musona y el Carnaval de la Noche tienen más intensidad y aglomeración en espacios estrechos.</dd>
+
+          <dt>¿Cuándo se celebra el Carnaval de Águilas 2026?</dt>
+          <dd>El ciclo arranca a finales de enero con las galas previas y el Cambio de Poderes. El núcleo de la fiesta va del Jueves Lardero al Martes de Carnaval, y el programa se prolonga hasta el Sábado de Piñata, ya pasado el Miércoles de Ceniza.</dd>
+
+          <dt>¿Qué es la Cuerva?</dt>
+          <dd>La bebida ritual del carnaval aguileño: un ponche de vino, gaseosa, almíbar de frutas locales y destilados varios elaborado en lebrillo de barro. Cada establecimiento tiene su receta. La mejor del año gana el título de Supercuerva en el Concurso Nacional de Cuerva.</dd>
+        </dl>
+
+        <div class="ficha-etiquetas" aria-label="Etiquetas">
+          <a href="#" class="etiqueta etiqueta-destacada">Carnaval de Águilas</a>
+          <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+          <a href="#" class="etiqueta">Región de Murcia</a>
+          <a href="#" class="etiqueta">Águilas</a>
+          <a href="#" class="etiqueta">Febrero</a>
+          <a href="#" class="etiqueta">La Musona</a>
+          <a href="#" class="etiqueta">Trajes de Papel</a>
+          <a href="#" class="etiqueta">Cascarones</a>
+          <a href="#" class="etiqueta">Peñas</a>
+        </div>
+
+        <div class="fichas-relacionadas">
+          <h2>Otras fiestas que te van a interesar</h2>
+          <div class="relacionadas-grid">
+            <a href="carnaval-badajoz.html" class="relacionada-card">
+              <strong>Carnaval de Badajoz</strong>
+              <span>Extremadura · ITI · Comparsas de percusión y Artefactos motorizados</span>
+            </a>
+            <a href="carnaval-cadiz.html" class="relacionada-card">
+              <strong>Carnaval de Cádiz</strong>
+              <span>Andalucía · ITI · Coros, chirigotas y copla como eje de la fiesta</span>
+            </a>
+            <a href="carnaval-tenerife.html" class="relacionada-card">
+              <strong>Carnaval de Tenerife</strong>
+              <span>Canarias · ITI · Murgas canarias, comparsas y Gala de la Reina</span>
+            </a>
+          </div>
+        </div>
+
+        <p class="back-link"><a href="index.html">← Volver al inicio</a></p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
