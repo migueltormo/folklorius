@@ -2,26 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Hogueras de San Juan de Alicante — El fuego que cierra junio</title>
-  <meta name="description" content="Hogueras de San Juan de Alicante: ITI 1983 y BIC Inmaterial 2014. 92 comisiones, Ofrenda a la Virgen del Remedio y la Cremà cada 24 de junio." />
-  <link rel="canonical" href="https://folklorius.es/hogueras-san-juan-alicante.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="La ciudad que planta 184 monumentos para verlos arder en una noche" />
-  <meta property="og:description" content="Cada junio, Alicante se llena de monumentos satíricos que arden todos a la vez la noche de San Juan. Antes de eso, flores para la Virgen, mascletàs diarias y una ciudad entera convertida en museo efímero." />
-  <meta property="og:image" content="https://folklorius.es/images/hogueras-san-juan-alicante.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Hogueras de San Juan de Alicante · El fuego que cierra junio</title>
+  <meta name="description" content="Hogueras de Alicante (ITI 1983, BIC 2014): monumentos satíricos que arden en la medianoche del 24 de junio. Palmera del Benacantil, Cremà y banyà. Guía 2026." />
+  <meta property="og:title" content="Hogueras de San Juan de Alicante — La ciudad que planta sus monumentos para verlos arder" />
+  <meta property="og:description" content="A medianoche del 24 de junio, una palmera de más de mil cohetes de titanio blanco estalla sobre el Benacantil. Es la señal. Después arde todo Alicante, distrito a distrito, hasta el amanecer." />
   <meta property="og:type" content="article" />
-  <meta property="og:locale" content="es_ES" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon y fuentes -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <meta property="og:url" content="https://folklorius.es/hogueras-san-juan-alicante.html" />
+  <meta property="og:image" content="https://folklorius.es/images/hogueras-san-juan-alicante.jpg" />
+  <link rel="canonical" href="https://folklorius.es/hogueras-san-juan-alicante.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
 
@@ -34,7 +25,7 @@
       padding: 8px 12px;
       background: var(--accent-light, #f5e6c8);
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
     /* ── Ficha datos clave ───────────────────────────────────────── */
@@ -46,7 +37,7 @@
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -54,8 +45,81 @@
       background: #fff; border: 1px solid var(--border, #e8ddd4);
       border-radius: 999px; padding: 4px 12px;
     }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
 
-    /* ── Must-see ─────────────────────────────────────────────────── */
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+
+    /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -64,7 +128,7 @@
     }
     .must-see-card {
       background: var(--surface, #fafafa);
-      border: 1px solid var(--border, #e8ddd4);
+      border: 1px solid var(--border, #e5e0d8);
       border-radius: var(--radius, 8px);
       padding: 18px;
       transition: box-shadow 0.2s ease;
@@ -74,14 +138,14 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--brand, #8b1a1a);
     }
     .must-see-card .tag {
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 600;
       background: var(--accent-light, #fdf3e7);
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       padding: 3px 10px;
       border-radius: 999px;
       margin-bottom: 10px;
@@ -93,34 +157,12 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       list-style: none;
     }
     .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
     .must-see-card details[open] summary::after { content: " ↑"; }
     .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
-
-    /* ── Ficha etiquetas ─────────────────────────────────────────── */
-    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
-    .etiqueta {
-      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
-      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
-    }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
-
-    /* ── Fichas relacionadas ─────────────────────────────────────── */
-    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
-    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .relacionada-card {
-      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); padding: 14px 16px;
-      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
-    }
-    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
-    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
   </style>
 
@@ -128,12 +170,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Festival",
-    "@id": "https://folklorius.es/hogueras-san-juan-alicante.html",
     "name": "Hogueras de San Juan de Alicante",
-    "startDate": "2027-06-20",
-    "endDate": "2027-06-24",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "description": "Las Hogueras de San Juan de Alicante plantan cada junio centenares de monumentos satíricos efímeros que arden todos en la medianoche del 24, precedidos por la Palmera del Benacantil. Fiesta de Interés Turístico Internacional (1983) y Bien de Interés Cultural Inmaterial (Decreto 222/2014).",
     "location": {
       "@type": "Place",
       "name": "Alicante",
@@ -145,23 +183,18 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 38.345245,
-        "longitude": -0.481018
+        "latitude": 38.3452,
+        "longitude": -0.4810
       }
     },
-    "image": ["https://folklorius.es/images/hogueras-san-juan-alicante.jpg"],
-    "description": "Las Hogueras de San Juan son la fiesta mayor de Alicante: monumentos satíricos plantados por toda la ciudad, mascletàs diarias, Ofrenda de flores a la Virgen del Remedio y la Cremà final la noche del 24 de junio. Declaradas Fiesta de Interés Turístico Internacional en 1983 y Bien de Interés Cultural Inmaterial en 2014.",
+    "startDate": "2026-06-20",
+    "endDate": "2026-06-29",
     "organizer": {
       "@type": "Organization",
-      "name": "Federación de Hogueras de San Juan",
+      "name": "Federación de Hogueras de San Juan de Alicante",
       "url": "https://hogueras.es"
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    }
+    "url": "https://folklorius.es/hogueras-san-juan-alicante.html"
   }
   </script>
 
@@ -170,9 +203,18 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/" },
-      { "@type": "ListItem", "position": 2, "name": "Fallas", "item": "https://folklorius.es/fallas.html" },
-      { "@type": "ListItem", "position": 3, "name": "Hogueras de San Juan de Alicante", "item": "https://folklorius.es/hogueras-san-juan-alicante.html" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hogueras de San Juan de Alicante",
+        "item": "https://folklorius.es/hogueras-san-juan-alicante.html"
+      }
     ]
   }
   </script>
@@ -184,34 +226,34 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cuándo se celebran las Hogueras de San Juan de Alicante?",
+        "name": "¿Cuándo son las Hogueras de Alicante?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oficialmente del 20 al 24 de junio, con el Concurso Internacional de Fuegos Artificiales prolongando el ambiente festivo hasta el 29. Comprueba las fechas exactas de cada edición en hogueras.es."
+          "text": "Los cinco días grandes van del 20 al 24 de junio, con la Cremà en la medianoche del 24. El ambiente festivo se extiende hasta finales de mes con el Concurso Internacional de Fuegos Artificiales, que se celebra en la Playa del Postiguet cada noche hasta el 29. Consulta el programa exacto en hogueras.es antes de planificar tu visita."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Son las Hogueras lo mismo que las Fallas de Valencia?",
+        "name": "¿Qué es la Palmera del Benacantil?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, aunque están relacionadas. En 1928, José María Py adaptó el modelo fallero a Alicante, centrado en San Juan en vez de en San José. Comparten monumentos satíricos y quema final, pero cada fiesta tiene calendario, patrona y desarrollo propios."
+          "text": "El disparo pirotécnico que da inicio a la Cremà. A medianoche del 24 de junio, tras las doce campanadas, más de mil cohetes de titanio blanco se lanzan desde la cumbre del monte Benacantil y se abren en un paraguas de luz de unos 300 metros de radio, visible desde toda la bahía. Es la señal de que empieza la quema."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Puedo bañarme en la playa la noche de San Juan en Alicante?",
+        "name": "¿Son las Hogueras una copia de las Fallas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Puedes bañarte, pero encender fuego en la arena está prohibido en la ciudad de Alicante desde hace varios años. Algunos municipios cercanos, como El Campello o Santa Pola, sí mantienen zonas habilitadas. Revisa la normativa municipal actualizada cada año."
+          "text": "No. En 1928, José María Py propuso adaptar el modelo fallero a Alicante, pero la fiesta tiene su propio calendario (el solsticio de verano y San Juan, no San José), su propia patrona (la Virgen del Remedio), su Bellea del Foc en lugar de Fallera Mayor y su identidad diferenciada. Tomó la idea de los monumentos efímeros satíricos y construyó algo propio a su alrededor."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Son las Hogueras de San Juan aptas para familias con niños?",
+        "name": "¿Qué es la banyà?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Cada distrito planta también una hoguera infantil, y existe una Bellea del Foc infantil con su propia corte y actos. Los momentos de mayor aglomeración, como la Cremà en la Plaza del Ayuntamiento, pueden ser intensos para niños pequeños."
+          "text": "La mojada que los bomberos lanzan sobre el público congregado alrededor de cada hoguera durante la Cremà. El calor de un monumento ardiendo a pocos metros es considerable; la banyà es la respuesta popular a ese calor, y al mismo tiempo un rito festivo en sí mismo que el público espera y celebra."
         }
       },
       {
@@ -219,14 +261,14 @@
         "name": "¿Tienen las Hogueras declaración UNESCO como las Fallas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Las Hogueras están declaradas Fiesta de Interés Turístico Internacional en 1983 y Bien de Interés Cultural Inmaterial en 2014, pero no cuentan con declaración UNESCO."
+          "text": "No. Las Hogueras están declaradas Fiesta de Interés Turístico Internacional desde 1983 y Bien de Interés Cultural Inmaterial por el Decreto 222/2014 del Consell, pero no tienen declaración UNESCO. Las Fallas de Valencia sí la tienen desde 2016."
         }
       }
     ]
   }
   </script>
-
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
@@ -240,286 +282,278 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#glosario">Vocabulario</a>
-        <a href="index.html#blog">Blog</a>
-        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+        <a href="#" class="nav-cta">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a> › Hogueras de San Juan de Alicante
-  </nav>
+  <main role="main">
+    <article>
 
-  <div class="ficha-hero">
-    <img src="images/hogueras-san-juan-alicante.jpg" alt="Hoguera oficial ardiendo en la Plaza del Ayuntamiento de Alicante durante la Nit de la Cremà" />
-  </div>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Hogueras de San Juan de Alicante
+      </nav>
 
-  <main class="ficha-main">
-    <article class="card">
+      <div class="ficha-hero">
+        <img src="images/hogueras-san-juan-alicante.jpg" alt="Hoguera oficial ardiendo en la Plaza del Ayuntamiento de Alicante durante la Nit de la Cremà, con la multitud y los bomberos alrededor" loading="eager" />
+      </div>
 
-      <h1>Hogueras de San Juan de Alicante</h1>
-      <p class="ficha-subtitle">
-        Alicante · «La ciudad que planta 184 monumentos para verlos arder en una noche.»
-      </p>
+      <div class="container ficha-main">
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
-        <div class="fechas-grandes">Del 20 al 24 de junio de 2026</div>
-        <div class="datos-secundarios">
-          <span>📍 Alicante</span>
-          <span>⏱️ 5 días grandes</span>
-          <span>🏅 Interés Turístico Internacional (1983)</span>
-          <span>🏛️ Bien de Interés Cultural Inmaterial (2014)</span>
+        <h1>Hogueras de San Juan de Alicante</h1>
+
+        <p class="ficha-subtitle">
+          Alicante · Comunitat Valenciana · «La ciudad que planta sus monumentos para verlos arder.»
+        </p>
+
+        <div class="badges" aria-label="Reconocimientos oficiales">
+          <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+          <span class="badge badge-oficial">Bien de Interés Cultural Inmaterial</span>
         </div>
-      </div>
 
-      <div class="badges" aria-label="Reconocimientos oficiales">
-        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
-        <span class="badge badge-oficial">Bien de Interés Cultural Inmaterial</span>
-      </div>
+        <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+          <div class="fechas-grandes">Del 20 al 24 de junio de 2026</div>
+          <p>ITI desde 1983 · BIC desde 2014 · Fecha fija: 24 de junio, noche de San Juan · Cremà a medianoche · Concurso de Fuegos hasta el 29 de junio</p>
+          <p class="nota-grid">⚠️ Programa completo y horarios exactos en hogueras.es. Consulta antes de planificar la visita.</p>
+        </div>
 
-      <div class="aviso-sensibilidad" role="note">
-        <strong>Nota de sensibilidad</strong>
+        <div class="aviso-sensibilidad" role="note">
+          <strong>Nota de sensibilidad</strong>
+          <ul>
+            <li>La Ofrenda de flores a la Virgen del Remedio se celebra sin interrupción desde 1941. Los foguerers que desfilan lo hacen por convicción, tradición familiar o voto personal. El visitante lo presencia como invitado en algo que tiene ese peso.</li>
+            <li>Los monumentos critican la actualidad con humor que a veces incomoda. Llevan casi un siglo haciéndolo. Entenderlo como tradición satírica, no como provocación, cambia cómo se lee lo que se está mirando.</li>
+            <li>En la Cremà, los foguerers ven arder en minutos lo que han construido durante meses. Para ellos es el cierre de un ciclo que empezó casi un año antes. Vale la pena tenerlo presente mientras arde.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title">La esencia de la fiesta</h2>
+        <p>
+          A medianoche del 24 de junio, desde la cumbre del monte Benacantil, más de mil cohetes de titanio blanco suben al cielo y se abren en un paraguas de luz de trescientos metros sobre la bahía. Las doce campanadas ya han sonado. La Palmera se apaga. Y entonces empieza a arder la hoguera oficial de la Plaza del Ayuntamiento.
+        </p>
+        <p>
+          Después, distrito a distrito, arde el resto de la ciudad. Centenares de monumentos que han tardado meses en construirse desaparecen en unas pocas horas, mientras los bomberos mojan a la gente congregada alrededor para rebajar el calor de las llamas. Al amanecer del 25 de junio, Alicante huele a ceniza y a mar.
+        </p>
+
+        <h2 class="section-title">¿En qué consiste?</h2>
+        <p>
+          Las Hogueras de San Juan son la fiesta mayor de Alicante. Cada distrito de la ciudad monta su propia hoguera mayor y su hoguera infantil: monumentos satíricos de varios pisos, construidos durante meses, que critican la actualidad y que están destinados a arder todos en la misma noche. No hay un recinto único; la fiesta se reparte por toda la ciudad, barrio a barrio, y recorrerla significa caminar Alicante de punta a punta.
+        </p>
+        <p>
+          Su relación con las Fallas de Valencia es directa pero no de dependencia. En 1928, José María Py propuso adaptar el modelo fallero a Alicante: monumentos efímeros y quema final, pero centrados en el solsticio de verano y San Juan en lugar de San José. La fiesta tiene su propio calendario, su propia patrona —la Virgen del Remedio— y su propia figura representativa: la <strong>Bellea del Foc</strong>, reconocible por la mantilla de blonda blanca ahuecada en halo sobre la cabeza, orlada con flores de azahar, el chaleco de terciopelo bordado y la falda de seda floral. Un traje que no tiene nada que ver con los moños y peinetas de la fallera valenciana.
+        </p>
+        <p>
+          Junto al monumento de cada distrito hay dos espacios distintos que la fiesta distingue con precisión. El <strong>racó</strong> es el espacio de convivencia de la comisión alrededor de su hoguera: donde se juntan los foguerers, donde se come y se celebra durante los días grandes. La <strong>barraca</strong> es otra cosa: una entidad festera con estatutos propios, portada artística efímera y programa de actividades, confederada en la Federación de Barracas. No son lo mismo y no cumplen la misma función.
+        </p>
+        <p>
+          Las comisiones de <strong>Categoría Especial</strong> agrupan a las que compiten con los presupuestos y volúmenes más ambiciosos. Son las que generan los monumentos más grandes y técnicamente complejos de la ciudad.
+        </p>
+        <p class="nota-grid">⚠️ Los horarios exactos y el programa completo los publica la Federación de Hogueras. Consulta <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a> antes de planificar la visita.</p>
+
+        <h2 class="section-title">Historia y significado</h2>
+        <p>
+          La primera referencia escrita a hogueras en Alicante data de 1822, cuando el Ayuntamiento intentó poner orden a unos festejos que por entonces generaban más problemas que celebración. La fiesta tal como se conoce hoy nació en 1928, cuando José María Py propuso sustituir aquellas hogueras desorganizadas por monumentos artísticos efímeros siguiendo el modelo fallero valenciano.
+        </p>
+        <p>
+          Las Hogueras obtuvieron la declaración de <strong>Fiesta de Interés Turístico Internacional</strong> por resolución publicada en el BOE de 10 de noviembre de 1983. En 2014, el Consell de la Generalitat Valenciana las declaró <strong>Bien de Interés Cultural Inmaterial</strong> mediante el Decreto 222/2014, de 19 de diciembre (DOGV nº 7428 de 22 de diciembre de 2014; BOE nº 14 de 16 de enero de 2015). A diferencia de las Fallas de Valencia, las Hogueras no cuentan con declaración UNESCO.
+        </p>
+        <p>
+          Dos elementos propios definen la identidad de la fiesta frente a su referente valenciano. El primero es el calendario: el solsticio de verano y la noche de San Juan tienen una carga simbólica que las Fallas, ligadas a San José, no comparten. El segundo es la Ofrenda a la Virgen del Remedio, que arrancó en 1941 y lleva celebrándose sin interrupción desde entonces, dando a la fiesta una dimensión devocional que fue creciendo con los años hasta convertirse en uno de sus actos más multitudinarios.
+        </p>
+
+        <h2 class="section-title">Fechas 2026</h2>
+        <div class="fechas-grandes">Del 20 al 24 de junio · Cremà en la medianoche del 24</div>
+        <p>La fecha de las Hogueras es fija: el 24 de junio es la festividad de San Juan y la Cremà se celebra siempre esa medianoche. Los cinco días grandes van del 20 al 24. El ambiente festivo se extiende con el Concurso Internacional de Fuegos Artificiales hasta el 29 de junio.</p>
+
+        <h2 class="section-title" id="programa">Los actos principales</h2>
+        <ol class="actos-list">
+          <li>
+            <span class="dia-label">20 de junio · Noche</span>
+            <strong>Plantà — los monumentos llegan a la calle</strong>
+            <p>En la noche del 20, cada comisión monta su hoguera mayor y su hoguera infantil en el distrito. Es una noche de trabajo colectivo que termina con los vecinos celebrando alrededor del monumento recién plantado. El alimento de esa noche, por tradición, es la <strong>coca amb tonyina</strong>: una coca de masa escaldada con anís, rellena de tonyina de sorra —ventresca de atún de almadraba en salazón—, cebolla y piñones, acompañada de <strong>bacores</strong> (brevas frescas de higuera). Es la gastronomía ceremonial de la Plantà.</p>
+          </li>
+          <li>
+            <span class="dia-label">21–22 de junio · Tarde y noche</span>
+            <strong>Ofrenda de flores a la Virgen del Remedio</strong>
+            <p>Miles de foguerers y foguereres desfilan con traje tradicional hasta la Concatedral de San Nicolás para depositar flores y construir entre todos un mosaico floral dedicado a la patrona de Alicante. El desfile lo cierran la Bellea del Foc y su corte. Se celebra sin interrupción desde 1941.</p>
+          </li>
+          <li>
+            <span class="dia-label">20–24 de junio · Mediodía</span>
+            <strong>Mascletà en la Plaza de los Luceros</strong>
+            <p>Disparo pirotécnico diurno de fuerte impacto sonoro, a las dos del mediodía, todos los días de la semana grande. Como en Valencia, el efecto no es visual sino físico: las ondas expansivas llegan al cuerpo antes que al oído.</p>
+          </li>
+          <li>
+            <span class="dia-label">24 de junio · Medianoche</span>
+            <strong>Palmera del Benacantil y Nit de la Cremà</strong>
+            <p>Tras las doce campanadas de medianoche, más de mil cohetes de titanio blanco se lanzan desde la cumbre del monte Benacantil y abren un paraguas de luz de unos trescientos metros de radio visible desde toda la bahía. Es la Palmera: la señal de que empieza la Cremà. Arde primero la hoguera oficial de la Plaza del Ayuntamiento, y después, distrito a distrito, el resto de la ciudad. Los bomberos lanzan la banyà —una mojada— sobre el público congregado alrededor de cada hoguera para rebajar el calor.</p>
+          </li>
+          <li>
+            <span class="dia-label">25–29 de junio · Medianoche</span>
+            <strong>Concurso Internacional de Fuegos Artificiales</strong>
+            <p>Cada noche, en la Playa del Postiguet, un país o pirotecnia diferente presenta su castillo de fuegos. Es el epílogo de la fiesta y uno de los concursos pirotécnicos más veteranos de España.</p>
+          </li>
+        </ol>
+
+        <h2 class="section-title" id="musica">Música y sonido</h2>
+        <p>
+          La mascletà de Alicante tiene el mismo efecto físico que la de Valencia: las ondas expansivas llegan al esternón antes de que el oído las procese como sonido. Pero el sonido más propio de las Hogueras no es ese. Es el de la Palmera del Benacantil estallando sobre el silencio de medianoche: más de mil detonaciones subiendo al cielo en cuestión de segundos, cuando la ciudad lleva horas esperando ese momento y sabe exactamente lo que viene después.
+        </p>
+        <p>
+          La Cremà tiene su propio registro acústico: el crepitar de los monumentos ardiendo a gran temperatura, el silbido del agua de la banyà evaporándose contra el calor, y la mezcla de las bandas de música que acompañan la quema de cada hoguera por toda la ciudad. Desde cualquier punto del centro se oyen dos o tres hogueras ardiendo a la vez, cada una con su banda, cada una con su público.
+        </p>
+        <p>
+          La noche de la Plantà tiene el sonido contrario: las conversaciones en voz baja entre los foguerers que trabajan, el golpe de las herramientas, y en algún momento de la madrugada el silencio de un barrio que acaba de terminar su monumento y se sienta a comer la coca amb tonyina.
+        </p>
+
+        <h2 class="section-title">No te lo puedes perder</h2>
+        <div class="must-see-grid">
+
+          <div class="must-see-card">
+            <h3>La Palmera del Benacantil</h3>
+            <span class="tag">24 de junio · Medianoche · Toda la ciudad</span>
+            <p>Más de mil cohetes de titanio blanco lanzados desde la cumbre del Benacantil, a casi 170 metros sobre el mar, que se abren en un paraguas de luz de trescientos metros de radio. Dura menos de un minuto. Después empieza a arder todo. No hay otro inicio de Cremà igual en España.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque la Palmera es el instante de mayor tensión de toda la fiesta. La ciudad lleva horas esperando medianoche. Las campanas suenan. El silencio dura un segundo. Y entonces el Benacantil explota de luz. Es el disparo de salida de la Cremà y el momento más fotografiado de las Hogueras.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Cremà de un distrito de barrio</h3>
+            <span class="tag">24 de junio · Noche · Distritos de la ciudad</span>
+            <p>La hoguera oficial de la Plaza del Ayuntamiento es la más grande y la más fotografiada, pero no es necesariamente la más intensa. La Cremà de un barrio tiene una escala humana distinta: los foguerers en círculo, la banda tocando, la banyà de los bomberos mojando al público, y el artista mirando arder su trabajo de meses.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque en el barrio ves a la gente que ha construido el monumento. Y la banyà, que desde lejos parece un detalle anecdótico, desde cerca es un rito festivo completo: el calor de la hoguera, el agua fría de los bomberos y la reacción del público son tres cosas que llegan a la vez.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Ofrenda de flores</h3>
+            <span class="tag">21–22 de junio · Tarde y noche · Concatedral de San Nicolás</span>
+            <p>Miles de foguerers en traje tradicional desfilan durante horas hacia la Concatedral. La Bellea del Foc cierra el desfile con la mantilla de blonda alicantina —ese halo blanco de encaje con flores de azahar que no se parece a ningún otro traje festero de la Comunitat. El mosaico floral de la Virgen del Remedio se construye ramo a ramo durante los dos días.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el acto donde más se entiende que las Hogueras tienen su propia identidad, separada de Las Fallas. El traje, la patrona, el tiempo que lleva celebrándose sin parar desde 1941: todo habla de Alicante, no de Valencia.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La noche de la Plantà</h3>
+            <span class="tag">20 de junio · Noche · Barrios de la ciudad</span>
+            <p>La noche en que los monumentos llegan a la calle es pública y gratuita. Recorrer los distritos mientras los foguerers terminan de montar, probar la coca amb tonyina con bacores en algún racó de barrio, y ver la ciudad antes de que empiece la semana grande tiene un ritmo que los días centrales no tienen.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el momento más íntimo de la fiesta y el que menos sale en las crónicas. Los monumentos están recién montados, todavía sin el gentío de los días siguientes, y los foguerers están en el racó celebrando que han terminado. Entras en algo que no está pensado para el visitante, y eso es exactamente lo que lo hace interesante.</p>
+            </details>
+          </div>
+
+        </div>
+
+        <h2 class="section-title">Consejos prácticos</h2>
         <ul>
-          <li>La Ofrenda de flores a la Virgen del Remedio se celebra sin interrupción desde 1941. Los foguerers que desfilan lo hacen por convicción, tradición familiar o voto personal — no es una actuación. El visitante lo presencia como invitado en algo que tiene ese peso.</li>
-          <li>Los monumentos critican la actualidad con humor que a veces incomoda. Llevan casi un siglo haciéndolo. Entenderlo como tradición satírica, no como provocación, cambia cómo se mira.</li>
-          <li>En la Cremà, los foguerers ven arder en minutos lo que han construido durante meses. Para quien lo ve desde fuera es espectáculo; para ellos es otra cosa. Vale la pena tenerlo presente.</li>
+          <li><strong>Cuándo llegar:</strong> el 20 de junio para la Plantà, el 21 o 22 para la Ofrenda y el 24 para la Cremà son los días centrales. El Concurso de Fuegos del 25 al 29 es gratuito y mucho menos masificado: una buena opción si quieres ver pirotecnia sin aglomeración.</li>
+          <li><strong>Alojamiento:</strong> reserva con meses de antelación. Alicante en Hogueras tiene la ocupación hotelera más alta del año. El centro y el Casco Antiguo son los más animados pero también los más ruidosos por la noche.</li>
+          <li><strong>Desplazamiento:</strong> el centro se corta al tráfico durante los días grandes. Usa el transporte público o muévete a pie; el casco urbano de Alicante es compacto y la mayoría de actos están a distancia caminable.</li>
+          <li><strong>La banyà:</strong> los bomberos mojan sin avisar y el agua puede ser fría. Si no quieres mojarte en la Cremà, mantente en los márgenes. Si no te importa, acércate: es parte de la experiencia.</li>
+          <li><strong>El baño de San Juan:</strong> encender fuego en la arena de Alicante está prohibido desde hace años. Algunos municipios cercanos como El Campello o Santa Pola mantienen zonas habilitadas; revisa cada año la normativa vigente.</li>
+          <li><strong>Gastronomía:</strong> la noche de la Plantà, la coca amb tonyina con bacores es el alimento de rigor en los racós y barracas. La tonyina de sorra —ventresca de atún en salazón— se encuentra también en los mercados y tiendas de producto local durante la semana de Hogueras.</li>
         </ul>
-      </div>
 
-      <h2 class="section-title">La esencia de la fiesta</h2>
-      <p>
-        A medianoche del 24 de junio, desde lo alto del castillo de Santa Bárbara, estalla una palmera de fuegos artificiales sobre el monte Benacantil. Es la señal. En cuanto se apaga, la hoguera oficial de la Plaza del Ayuntamiento empieza a arder, y con ella, distrito a distrito, el resto de la ciudad. Ciento ochenta y cuatro monumentos que han tardado meses en construirse desaparecen en unas pocas horas, mientras los bomberos mojan a la gente congregada alrededor para rebajar el calor de las llamas.
-      </p>
+        <h2 class="section-title">Vocabulario festero</h2>
+        <dl class="festero">
+          <dt>Hoguera / Foguera</dt>
+          <dd>Monumento festivo satírico que cada comisión de distrito planta en la calle y que arde en la Cremà. Cada comisión levanta una hoguera mayor y una infantil.</dd>
 
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
-      <p>
-        Las Hogueras de San Juan son la fiesta mayor de Alicante, declaradas Fiesta de Interés Turístico Internacional y Bien de Interés Cultural Inmaterial. Se celebran oficialmente del 20 al 24 de junio, aunque el ambiente festivo se extiende hasta finales de mes con el Concurso Internacional de Fuegos Artificiales. Consulta el programa oficial en <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a> antes de planificar tu visita.
-      </p>
-      <p>
-        Su relación con las Fallas de Valencia es directa: en 1928, José María Py, que había vivido en Valencia y conocía bien la fiesta fallera, propuso adaptar ese modelo a Alicante, con monumentos satíricos efímeros y una quema final, pero centrados en San Juan y el solsticio de verano en vez de en San José. No es una copia: es una fiesta con calendario, patrona y desarrollo propios, que tomó de las Fallas la idea de fondo y construyó su propia identidad alrededor.
-      </p>
-      <p>
-        Cada distrito de la ciudad monta su propia hoguera mayor y su hoguera infantil. No hay un recinto único: la fiesta se reparte por toda Alicante, barrio a barrio, y descubrirla significa caminar la ciudad de punta a punta.
-      </p>
-      <p class="nota-grid">⚠️ Los horarios exactos de cada acto y el programa completo los publica la Federación de Hogueras cada año. Consúltalos en <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a> antes de organizar tu visita.</p>
+          <dt>Cremà</dt>
+          <dd>La quema de todas las hogueras en la medianoche del 24 de junio. Empieza con la hoguera oficial de la Plaza del Ayuntamiento y sigue, distrito a distrito, hasta el amanecer.</dd>
 
-      <h2 class="section-title">Historia y significado</h2>
-      <p>
-        La primera referencia escrita a las hogueras en Alicante data de 1822, cuando el Ayuntamiento intentó poner orden a unos festejos que por entonces generaban más problemas de convivencia que celebración. La fiesta tal como se conoce hoy nace en 1928, cuando José María Py propuso sustituir aquellas hogueras desorganizadas por monumentos artísticos efímeros, siguiendo el modelo de la falla valenciana. La propuesta encontró buena acogida en toda la sociedad alicantina y así nació la fiesta moderna.
-      </p>
-      <p>
-        Las Hogueras fueron declaradas de Interés Turístico Nacional en 1965, y pasaron a la categoría de <strong>Interés Turístico Internacional en 1983</strong>, según resolución publicada en el BOE del 10 de noviembre de ese año. En 2014, el Consell de la Generalitat Valenciana las declaró además <strong>Bien de Interés Cultural Inmaterial</strong> mediante el Decreto 222/2014.
-      </p>
-      <p>
-        A diferencia de las Fallas de Valencia, las Hogueras no cuentan con declaración UNESCO.
-      </p>
+          <dt>Palmera del Benacantil</dt>
+          <dd>El disparo pirotécnico que da inicio a la Cremà. Más de mil cohetes de titanio blanco lanzados desde la cumbre del Benacantil que se abren en un paraguas de luz de unos trescientos metros de radio sobre la bahía, tras las doce campanadas de medianoche del 24 de junio.</dd>
 
-      <h2 class="section-title">Fechas 2026</h2>
-      <p>
-        Las Hogueras se celebran oficialmente del <strong>20 al 24 de junio</strong>, aunque los actos previos empiezan antes y el ambiente festivo se prolonga después. La Plantà tiene lugar la noche del 20 de junio, cuando los monumentos quedan instalados en la calle. La Ofrenda de flores a la Virgen del Remedio ocurre los días 21 y 22. La Cremà culmina la medianoche del 24, y del 25 al 29 de junio se celebra el Concurso Internacional de Fuegos Artificiales en la Playa del Postiguet.
-      </p>
-      <p class="nota-grid">⚠️ Comprueba las fechas exactas de cada edición en <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a>.</p>
+          <dt>Banyà</dt>
+          <dd>La mojada que los bomberos lanzan sobre el público congregado alrededor de cada hoguera durante la Cremà. El calor de un monumento ardiendo a pocos metros es considerable; la banyà es la respuesta popular a ese calor, y un rito festivo en sí mismo.</dd>
 
-      <h2 class="section-title">Actos destacados</h2>
-      <ul>
-        <li><strong>Plantà:</strong> montaje de los monumentos en la calle, la noche del 20 de junio. Cada distrito instala su hoguera mayor y su hoguera infantil.</li>
-        <li><strong>Ofrenda de flores:</strong> desfile de festeros y festeras con traje tradicional hasta la Concatedral de San Nicolás para formar un mosaico floral en honor a la Virgen del Remedio, patrona de Alicante, los días 21 y 22 de junio. Es una de las ofrendas más antiguas de España, celebrada desde 1941.</li>
-        <li><strong>Mascletà diaria:</strong> espectáculo pirotécnico a las 14:00 en la Plaza de los Luceros, todos los días durante la semana grande.</li>
-        <li><strong>Nit de la Cremà:</strong> la palmera de fuegos artificiales se dispara a medianoche del 24 de junio desde el castillo de Santa Bárbara, dando inicio a la quema. Arde primero la hoguera oficial de la Plaza del Ayuntamiento, y después el resto de distritos.</li>
-        <li><strong>Concurso Internacional de Fuegos Artificiales:</strong> del 25 al 29 de junio, cada noche a medianoche, en la Playa del Postiguet.</li>
-      </ul>
+          <dt>Bellea del Foc</dt>
+          <dd>La máxima representante honorífica de la fiesta, equivalente funcional a la Fallera Mayor de Valencia. Su traje es la mantilla de blonda blanca ahuecada en halo sobre la cabeza con flores de azahar, chaleco de terciopelo bordado y falda de seda con motivos florales: un traje completamente distinto al de la fallera valenciana.</dd>
 
-      <h2 class="section-title">La Ofrenda de flores a la Virgen del Remedio</h2>
-      <p>
-        Es el acto devocional central de la fiesta. Los días 21 y 22 de junio, miles de foguerers y foguereres desfilan con traje tradicional hasta la Concatedral de San Nicolás para depositar flores y formar, entre todos, un mosaico floral dedicado a la Virgen del Remedio, patrona de Alicante. Es una de las ofrendas florales más antiguas de España: se celebra sin interrupción desde 1941.
-      </p>
-      <p>
-        Cierran el desfile las máximas representantes de la fiesta: la Bellea del Foc infantil el día 21, y la Bellea del Foc adulta el día 22.
-      </p>
+          <dt>Racó</dt>
+          <dd>El espacio de convivencia de la comisión de la hoguera alrededor de su monumento durante los días de fiesta. Es donde se reúnen los foguerers, se come y se celebra. Se distingue de la barraca en que es el espacio propio de la comisión, no una entidad festera independiente.</dd>
 
-      <h2 class="section-title">La Cremà</h2>
-      <p>
-        Es el final de la fiesta y su momento más intenso. A medianoche del 24 de junio, desde el castillo de Santa Bárbara, en lo alto del monte Benacantil, se dispara la Palmera: una gran traca de fuegos artificiales que anuncia el inicio de la quema.
-      </p>
-      <p>
-        En cuanto se apaga, arde la hoguera oficial de la Plaza del Ayuntamiento, seguida del resto de monumentos repartidos por los distritos de la ciudad. Los bomberos controlan el fuego y, cuando el monumento ya se ha consumido, mojan a la gente que se ha congregado alrededor: es la <strong>banyà</strong>, un gesto que empezó siendo práctico (refrescar tras el calor de las llamas) y que se ha convertido en parte del ritual de cierre.
-      </p>
+          <dt>Barraca</dt>
+          <dd>Entidad festera con estatutos propios, portada artística efímera y programa de actividades, confederada en la Federación de Barracas de Alicante. No es el espacio físico junto a la hoguera (eso es el racó): es una organización con identidad propia.</dd>
 
-      <h2 class="section-title">Bellea del Foc</h2>
-      <p>
-        Es la máxima representante honorífica de las Hogueras de San Juan. Va vestida con el traje de novia alicantina y está acompañada por seis Damas de Honor. Existe también una Bellea del Foc infantil, con su propia corte.
-      </p>
-      <p>
-        Su papel es central en todos los actos oficiales de la fiesta, y su función es equivalente, aunque no es una denominación oficial compartida, a la de la Fallera Mayor en las Fallas de Valencia.
-      </p>
+          <dt>Coca amb tonyina</dt>
+          <dd>El alimento ceremonial de la noche de la Plantà. Coca de masa escaldada con anís, rellena de tonyina de sorra (ventresca de atún de almadraba en salazón), cebolla y piñones. Se acompaña de bacores —brevas frescas de higuera. Es la gastronomía del esfuerzo colectivo nocturno.</dd>
 
-      <h2 class="section-title">Los monumentos y la Plantà</h2>
-      <p>
-        Cada distrito de Alicante planta su propia hoguera mayor y su hoguera infantil la noche del 20 de junio. En 2026, la fiesta cuenta con 92 comisiones oficiales que suman un total de 184 monumentos entre categorías adultas e infantiles, a los que se añaden las dos hogueras oficiales (adulta e infantil) de la Plaza del Ayuntamiento.
-      </p>
-      <p>
-        No hay un recinto único: la Plantà convierte la ciudad entera en un museo efímero repartido por barrios y plazas. Los distritos de Categoría Especial (doce en la edición de 2026) son los que compiten con los monumentos más grandes y elaborados, y suelen concentrarse en zonas como Carolinas Altas, Florida-Portazgo, el entorno del Ayuntamiento y el puerto.
-      </p>
-      <p class="fuente">Fuente: <a href="https://hogueras.es" target="_blank" rel="noopener">Federación de Hogueras de San Juan</a> — última verificación: 2026-07-21</p>
+          <dt>Ninot indultat</dt>
+          <dd>La figura de cada hoguera que el público salva de la Cremà mediante votación popular en la Exposición del Ninot, previa a la fiesta. El ninot indultado se conserva en el Museu de les Fogueres.</dd>
+        </dl>
 
-      <h2 class="section-title">Música y sonido</h2>
-      <div class="music-block">
-        <p>
-          De día, la mascletà de la Plaza de los Luceros sacude el centro de Alicante con una cadencia de detonaciones que se siente en el pecho antes de oírse — igual que en Valencia, pero con la acústica propia de los Luceros. Las bandas de música aparecen en la Entrada de Bandas y Comisiones, el desfile en el que cada distrito desfila con su Bellea y sus Damas de Honor; pasodobles y uniformes recorriendo el centro durante horas.
-        </p>
-        <p>
-          De noche, la Cremà no tiene música programada. El sonido es el fuego: el crepitar de los monumentos, los cohetes que cada comisión lanza mientras arde su hoguera, y los gritos y el agua de la banyà cerrando cada quema. Para vivirlo de cerca, sitúate junto a una hoguera de barrio antes de que empiece a arder — la de la Plaza del Ayuntamiento tiene más gente, pero las de los distritos permiten estar cerca del fuego y de los foguerers que lo ven arder desde el primer momento.
-        </p>
-      </div>
-
-      <h2 class="section-title">No te lo puedes perder</h2>
-      <div class="must-see-grid">
-
-        <div class="must-see-card">
-          <h3>La Nit de la Cremà</h3>
-          <span class="tag">Medianoche del 24 de junio · Plaza del Ayuntamiento y toda la ciudad</span>
-          <p>La Palmera se dispara desde el castillo de Santa Bárbara, y en cuestión de minutos la hoguera oficial de la Plaza del Ayuntamiento empieza a arder. Es la señal de que toda la ciudad, distrito a distrito, va a quedar reducida a ceniza en unas horas.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el único momento del año en que toda una ciudad quema, de forma coordinada, meses de trabajo artístico en una sola noche.</p>
-          </details>
+        <h2 class="section-title" style="display:none">Galería</h2>
+        <div class="galeria" aria-hidden="true" style="display:none">
+          <!-- imágenes pendientes -->
         </div>
 
-        <div class="must-see-card">
-          <h3>La Ofrenda de flores</h3>
-          <span class="tag">21 y 22 de junio · Concatedral de San Nicolás</span>
-          <p>Miles de foguerers desfilan con traje tradicional para formar un mosaico floral en honor a la Virgen del Remedio. Es la cara solemne de una fiesta que el resto del tiempo suena a pólvora y fuego.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>El contraste entre el estruendo de la mascletà diaria y el silencio devocional de la Ofrenda muestra las dos caras de la misma fiesta.</p>
-          </details>
+        <h2 class="section-title">Enlaces útiles</h2>
+        <ul>
+          <li><a href="https://hogueras.es" target="_blank" rel="noopener">Federación de Hogueras (programa oficial)</a></li>
+          <li><a href="https://www.alicanteturismo.com" target="_blank" rel="noopener">Turismo de Alicante</a></li>
+          <li><a href="https://www.turismevalencia.es" target="_blank" rel="noopener">Turismo Comunitat Valenciana</a></li>
+        </ul>
+
+        <p><small>Fuente de fechas: <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a> — consultado el 01/10/2026</small></p>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Cuándo son las Hogueras de Alicante?</dt>
+          <dd>Los cinco días grandes van del 20 al 24 de junio, con la Cremà en la medianoche del 24. El ambiente festivo se extiende con el Concurso Internacional de Fuegos Artificiales hasta el 29 de junio. Consulta el programa exacto en hogueras.es.</dd>
+
+          <dt>¿Qué es la Palmera del Benacantil?</dt>
+          <dd>El disparo pirotécnico que da inicio a la Cremà. Tras las doce campanadas de medianoche, más de mil cohetes de titanio blanco se lanzan desde la cumbre del Benacantil y se abren en un paraguas de luz de unos trescientos metros de radio, visible desde toda la bahía.</dd>
+
+          <dt>¿Son las Hogueras una copia de las Fallas?</dt>
+          <dd>No. En 1928, José María Py propuso adaptar el modelo fallero a Alicante, pero la fiesta tiene su propio calendario, su propia patrona (la Virgen del Remedio) y su propia identidad. Tomó la idea de los monumentos efímeros satíricos y construyó algo propio alrededor.</dd>
+
+          <dt>¿Qué es la banyà?</dt>
+          <dd>La mojada que los bomberos lanzan sobre el público congregado alrededor de cada hoguera durante la Cremà. El calor de un monumento ardiendo a pocos metros es considerable; la banyà es la respuesta popular a ese calor, y un rito festivo en sí mismo.</dd>
+
+          <dt>¿Tienen las Hogueras declaración UNESCO como las Fallas?</dt>
+          <dd>No. Las Hogueras están declaradas Fiesta de Interés Turístico Internacional desde 1983 y Bien de Interés Cultural Inmaterial por el Decreto 222/2014 del Consell, pero no tienen declaración UNESCO.</dd>
+        </dl>
+
+        <div class="ficha-etiquetas" aria-label="Etiquetas">
+          <a href="#" class="etiqueta etiqueta-destacada">Hogueras de San Juan de Alicante</a>
+          <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+          <a href="#" class="etiqueta">Comunitat Valenciana</a>
+          <a href="#" class="etiqueta">Alicante</a>
+          <a href="#" class="etiqueta">Junio</a>
+          <a href="#" class="etiqueta">San Juan</a>
+          <a href="#" class="etiqueta">Cremà</a>
+          <a href="#" class="etiqueta">Arte efímero</a>
+          <a href="#" class="etiqueta">Bien de Interés Cultural</a>
         </div>
 
-        <div class="must-see-card">
-          <h3>La mascletà en la Plaza de los Luceros</h3>
-          <span class="tag">Diario, 14:00 · Plaza de los Luceros</span>
-          <p>Un espectáculo pirotécnico diurno que se repite cada día de la semana grande, con la misma intensidad sonora y física que sus equivalentes valencianas.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el único acto que puedes ver a diario durante toda la semana, sin depender de coincidir con la Ofrenda o la Cremà.</p>
-          </details>
+        <div class="fichas-relacionadas">
+          <h2>Otras fiestas que te van a interesar</h2>
+          <div class="relacionadas-grid">
+            <a href="fallas-valencia.html" class="relacionada-card">
+              <strong>Las Fallas de Valencia</strong>
+              <span>Valencia · ITI · UNESCO · El modelo que inspiró las Hogueras en 1928</span>
+            </a>
+            <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+              <strong>Moros y Cristianos de Alcoi</strong>
+              <span>Alicante · ITI · La fiesta que define la identidad festera de la provincia de Alicante</span>
+            </a>
+            <a href="misteri-elx.html" class="relacionada-card">
+              <strong>Misteri d'Elx</strong>
+              <span>Alicante · UNESCO · El drama sacrolirico más antiguo de Europa occidental</span>
+            </a>
+          </div>
         </div>
 
-        <div class="must-see-card">
-          <h3>El Concurso Internacional de Fuegos Artificiales</h3>
-          <span class="tag">25-29 de junio, entrada la noche · Playa del Postiguet</span>
-          <p>Cinco noches consecutivas de castillos de fuegos artificiales junto al mar, ya con la ciudad liberada de monumentos y con un ambiente mucho más relajado que la semana grande.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Si llegas tarde para la Cremà, esta es la forma de vivir parte del espíritu pirotécnico de las Hogueras sin la aglomeración de la semana central.</p>
-          </details>
-        </div>
+        <p class="back-link"><a href="index.html">← Volver al inicio</a></p>
 
       </div>
-
-      <h2 class="section-title">Experiencia del visitante</h2>
-      <p>
-        Prácticamente todo lo esencial de las Hogueras es gratuito y de acceso libre: ver los monumentos plantados por la ciudad, la mascletà diaria, la Ofrenda de flores, la Cremà y el Concurso de Fuegos Artificiales no requieren entrada ni reserva.
-      </p>
-      <p>
-        <strong>Barracas.</strong> Muchas comisiones organizan barracas (calles valladas con bar, escenario y verbena propia) durante la semana grande. El nivel de acceso exacto varía según la comisión y el evento concreto: algunas son abiertas al público general, otras funcionan por invitación o consumición. Si te interesa entrar en alguna, la forma más fiable es preguntar directamente en el distrito.
-      </p>
-      <p>
-        <strong>El baño de San Juan.</strong> Es importante separar la fiesta oficial de las Hogueras de la costumbre popular de ir a la playa la noche de San Juan. En la ciudad de Alicante, encender fuego en la arena está prohibido desde hace varios años por seguridad; solo algunos municipios cercanos como El Campello o Santa Pola mantienen zonas habilitadas para hogueras de playa. Si quieres bañarte o encender fuego esa noche, revisa cada año la normativa municipal vigente, porque puede cambiar de una edición a otra.
-      </p>
-      <p>
-        <strong>Saturación.</strong> No hay una cifra oficial de visitantes verificada para las Hogueras. Estimaciones periodísticas antiguas hablaban de hasta 1,5 millones de visitantes en ediciones antes de 2020, pero sin respaldo institucional publicado, así que la tratamos como referencia orientativa, no como dato cerrado.
-      </p>
-
-      <h2 class="section-title">Consejos prácticos</h2>
-      <ul>
-        <li>Reserva alojamiento con antelación si tu visita coincide con la semana del 20 al 24 de junio, cuando la ciudad concentra la mayor actividad.</li>
-        <li>Durante la semana grande hay cortes de tráfico y desvíos en buena parte del centro. Aparca fuera de la zona más concurrida y muévete a pie o en TRAM.</li>
-        <li>Los distritos de Carolinas Altas, Florida-Portazgo, el entorno del Ayuntamiento y el puerto concentran las hogueras de Categoría Especial. Ve antes del 24 de junio para verlas completas.</li>
-        <li>Si quieres ver bien la hoguera oficial de la Plaza del Ayuntamiento durante la Cremà, llega con margen: la plaza se llena mucho antes de medianoche.</li>
-        <li>Junio en Alicante es caluroso. Lleva calzado cómodo, ya que caminarás mucho entre distritos, y protección para los oídos si vas a estar cerca de la mascletà o la Cremà.</li>
-        <li>Si tu plan incluye el baño nocturno de San Juan, comprueba la normativa municipal actualizada antes de ir: la ciudad de Alicante no permite fuego en sus playas, a diferencia de algunos municipios vecinos.</li>
-      </ul>
-
-      <h2 class="section-title">Vocabulario festero</h2>
-      <dl class="festero">
-        <dt>Hoguera / Foguera</dt>
-        <dd>Monumento festivo satírico que cada distrito planta en la calle y que arde en la Cremà.</dd>
-        <dt>Plantà</dt>
-        <dd>Montaje e instalación del monumento en su ubicación de la calle, la noche del 20 de junio.</dd>
-        <dt>Cremà</dt>
-        <dd>Quema final de todas las hogueras, la medianoche del 24 de junio.</dd>
-        <dt>Banyà</dt>
-        <dd>Mojada popular protagonizada por los bomberos mientras arde la hoguera, que refresca al público congregado alrededor.</dd>
-        <dt>Bellea del Foc</dt>
-        <dd>Máxima representante honorífica de la fiesta, equivalente funcional a la Fallera Mayor de Valencia.</dd>
-        <dt>Ninot indultat</dt>
-        <dd>La figura de cada hoguera que el público salva del fuego mediante votación popular en la Exposición del Ninot, previa a la fiesta.</dd>
-        <dt>Comissió</dt>
-        <dd>Agrupación festera de cada distrito, responsable de organizar y financiar su propia hoguera durante todo el año.</dd>
-      </dl>
-
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria" style="display:none;">
-        <img src="images/hogueras-san-juan-alicante-1.jpg" alt="Hoguera de categoría especial plantada en un distrito de Alicante" />
-        <img src="images/hogueras-san-juan-alicante-2.jpg" alt="Ofrenda de flores a la Virgen del Remedio en la plaza de Alicante" />
-        <img src="images/hogueras-san-juan-alicante-3.jpg" alt="Palmera de fuegos artificiales disparada desde el castillo de Santa Bárbara en Alicante" />
-      </div>
-
-      <h2 class="section-title">Enlaces útiles</h2>
-      <ul>
-        <li><a href="https://hogueras.es" target="_blank" rel="noopener">Federación de Hogueras de San Juan</a></li>
-        <li><a href="https://www.alicante.es" target="_blank" rel="noopener">Ayuntamiento de Alicante</a></li>
-        <li><a href="https://www.alicanteturismo.com" target="_blank" rel="noopener">Oficina de Turismo de Alicante</a></li>
-      </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-07-21</p>
-
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <dl class="faq">
-        <dt>¿Cuándo se celebran las Hogueras de San Juan de Alicante?</dt>
-        <dd>Oficialmente del 20 al 24 de junio, con el Concurso Internacional de Fuegos Artificiales prolongando el ambiente festivo hasta el 29. Comprueba las fechas exactas de cada edición en <a href="https://hogueras.es" target="_blank" rel="noopener">hogueras.es</a>.</dd>
-        <dt>¿Son las Hogueras lo mismo que las Fallas de Valencia?</dt>
-        <dd>No, aunque están relacionadas. En 1928, José María Py adaptó el modelo fallero a Alicante, centrado en San Juan en vez de en San José. Comparten monumentos satíricos y quema final, pero cada fiesta tiene calendario, patrona y desarrollo propios.</dd>
-        <dt>¿Puedo bañarme en la playa la noche de San Juan en Alicante?</dt>
-        <dd>Puedes bañarte, pero encender fuego en la arena está prohibido en la ciudad de Alicante desde hace varios años. Algunos municipios cercanos, como El Campello o Santa Pola, sí mantienen zonas habilitadas. Revisa la normativa municipal actualizada cada año.</dd>
-        <dt>¿Son las Hogueras de San Juan aptas para familias con niños?</dt>
-        <dd>Sí. Cada distrito planta también una hoguera infantil, y existe una Bellea del Foc infantil con su propia corte y actos. Los momentos de mayor aglomeración, como la Cremà en la Plaza del Ayuntamiento, pueden ser intensos para niños pequeños.</dd>
-        <dt>¿Tienen las Hogueras declaración UNESCO como las Fallas?</dt>
-        <dd>No. Las Hogueras están declaradas Fiesta de Interés Turístico Internacional en 1983 y Bien de Interés Cultural Inmaterial en 2014, pero no cuentan con declaración UNESCO.</dd>
-      </dl>
-
-      <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Hogueras</span>
-        <span class="etiqueta etiqueta-destacada">Interés Turístico Internacional</span>
-        <span class="etiqueta">Bien de Interés Cultural</span>
-        <span class="etiqueta">Comunitat Valenciana</span>
-        <span class="etiqueta">Alicante</span>
-        <span class="etiqueta">Junio</span>
-        <span class="etiqueta">Cremà</span>
-        <span class="etiqueta">Ofrenda de flores</span>
-        <span class="etiqueta">Mascletà</span>
-      </div>
-
-      <div class="fichas-relacionadas">
-        <h2>Otras fiestas que te van a interesar</h2>
-        <div class="relacionadas-grid">
-          <a href="fallas-valencia.html" class="relacionada-card">
-            <strong>Las Fallas de Valencia</strong>
-            <span>Comunitat Valenciana · ITI + UNESCO · La fiesta que inspiró el modelo moderno de las Hogueras en 1928</span>
-          </a>
-          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
-            <strong>Moros y Cristianos de Alcoy</strong>
-            <span>Comunitat Valenciana · ITI · La otra gran declaración patrimonial de la provincia de Alicante</span>
-          </a>
-          <a href="misteri-elx.html" class="relacionada-card">
-            <strong>Misteri d'Elx</strong>
-            <span>Comunitat Valenciana · UNESCO · Otra gran fiesta de la provincia, de perfil litúrgico en vez de pirotécnico</span>
-          </a>
-        </div>
-      </div>
-      <a href="index.html" class="back-link">← Volver al inicio</a>
-
     </article>
   </main>
 
