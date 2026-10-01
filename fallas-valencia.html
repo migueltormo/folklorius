@@ -2,23 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Las Fallas de Valencia — Arte que arde cada marzo</title>
-  <meta name="description" content="Las Fallas de Valencia: ITI desde 1965 y Patrimonio UNESCO desde 2016. Mascletà, Ofrenda de flores, 382 comisiones y la Cremà cada 19 de marzo." />
-  <link rel="canonical" href="https://folklorius.es/fallas-valencia.html" />
-
-  <meta property="og:title" content="Las Fallas de Valencia 2026 | Arte que arde cada marzo" />
-  <meta property="og:description" content="382 comisiones, 764 monumentos y una Sección Especial de 9 fallas. Guía completa de Las Fallas 2026." />
-  <meta property="og:image" content="https://folklorius.es/images/fallas-valencia.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Las Fallas de Valencia · Arte efímero, pólvora y Cremà</title>
+  <meta name="description" content="Las Fallas de Valencia (ITI 1965, UNESCO 2016): monumentos satíricos que arden todos en la noche del 19 de marzo. Arte efímero, pólvora y sátira. Guía 2026." />
+  <meta property="og:title" content="Las Fallas de Valencia — 764 monumentos levantados para arder en una sola noche" />
+  <meta property="og:description" content="Cada marzo, Valencia levanta centenares de monumentos de varios pisos con figuras que critican la actualidad. Los construye durante meses. Los quema todos en la misma noche. Y al año siguiente vuelve a empezar." />
   <meta property="og:type" content="article" />
-  <meta property="og:locale" content="es_ES" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <meta property="og:url" content="https://folklorius.es/fallas-valencia.html" />
+  <meta property="og:image" content="https://folklorius.es/images/fallas-valencia.jpg" />
+  <link rel="canonical" href="https://folklorius.es/fallas-valencia.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
 
@@ -31,7 +25,7 @@
       padding: 8px 12px;
       background: var(--accent-light, #f5e6c8);
       border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
     /* ── Ficha datos clave ───────────────────────────────────────── */
@@ -43,7 +37,7 @@
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -51,6 +45,58 @@
       background: #fff; border: 1px solid var(--border, #e8ddd4);
       border-radius: 999px; padding: 4px 12px;
     }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
     /* ── Ficha etiquetas ─────────────────────────────────────────── */
     .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
     .etiqueta {
@@ -58,8 +104,22 @@
       border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
-    /* ── Must-see ─────────────────────────────────────────────────── */
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+
+    /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -78,14 +138,14 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--brand, #8b1a1a);
     }
     .must-see-card .tag {
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 600;
       background: var(--accent-light, #fdf3e7);
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       padding: 3px 10px;
       border-radius: 999px;
       margin-bottom: 10px;
@@ -97,25 +157,12 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       list-style: none;
     }
     .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
     .must-see-card details[open] summary::after { content: " ↑"; }
     .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
-
-    /* ── Fichas relacionadas ─────────────────────────────────────── */
-    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
-    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .relacionada-card {
-      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); padding: 14px 16px;
-      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
-    }
-    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
-    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
   </style>
 
@@ -123,19 +170,15 @@
   {
     "@context": "https://schema.org",
     "@type": "Festival",
-    "@id": "https://folklorius.es/fallas-valencia.html",
     "name": "Las Fallas de Valencia",
-    "startDate": "2027-03-15",
-    "endDate": "2027-03-19",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "description": "Las Fallas de Valencia levantan cada marzo centenares de monumentos satíricos de varios pisos que arden todos en la noche del 19 al 20. Fiesta de Interés Turístico Internacional (1965), Bien de Interés Cultural Inmaterial (2012) y Patrimonio Cultural Inmaterial de la UNESCO (2016, expediente 00859).",
     "location": {
       "@type": "Place",
       "name": "Valencia",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Valencia",
-        "addressRegion": "Comunidad Valenciana",
+        "addressRegion": "Comunitat Valenciana",
         "addressCountry": "ES"
       },
       "geo": {
@@ -144,19 +187,14 @@
         "longitude": -0.3763
       }
     },
-    "image": ["https://folklorius.es/images/fallas-valencia.jpg"],
-    "description": "Las Fallas de Valencia: monumentos, mascletàs, ofrenda de flores y la Cremà. Patrimonio Cultural Inmaterial de la Humanidad.",
+    "startDate": "2026-03-01",
+    "endDate": "2026-03-19",
     "organizer": {
       "@type": "Organization",
-      "name": "Junta Central Fallera / Ayuntamiento de València",
-      "url": "https://www.valencia.es"
+      "name": "Junta Central Fallera",
+      "url": "https://www.jcf.gva.es"
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    }
+    "url": "https://folklorius.es/fallas-valencia.html"
   }
   </script>
 
@@ -165,9 +203,18 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/" },
-      { "@type": "ListItem", "position": 2, "name": "Fallas", "item": "https://folklorius.es/fallas.html" },
-      { "@type": "ListItem", "position": 3, "name": "Las Fallas de Valencia", "item": "https://folklorius.es/fallas-valencia.html" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Fallas de Valencia",
+        "item": "https://folklorius.es/fallas-valencia.html"
+      }
     ]
   }
   </script>
@@ -179,48 +226,49 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cuándo se celebran las Fallas de Valencia?",
+        "name": "¿Cuándo son Las Fallas de Valencia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Del 15 al 19 de marzo, con actos previos desde el 1 de marzo. El día clave es el 19, festividad de San José."
+          "text": "El grueso de la fiesta va del 15 al 19 de marzo, fecha fija ligada a la festividad de San José. La mascletà se celebra todos los días del 1 al 19. La Plantà llega el 15, la Ofrenda los días 17 y 18, la Nit del Foc el 18 por la noche y la Cremà el 19 de marzo."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Son las Fallas de Valencia aptas para familias?",
+        "name": "¿Qué es el Ninot Indultat?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, hay actividades para todas las edades: mascletàs, pasacalles, desfiles y la sección infantil. Los actos pirotécnicos requieren precaución con los más pequeños."
+          "text": "Cada año, el público vota la figura de falla que considera mejor y esa pieza se salva de la Cremà. El Ninot Indultat pasa al Museu Faller de Valencia, donde se conservan las figuras indultadas de todas las ediciones desde 1934."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Hay zonas para movilidad reducida en las Fallas de Valencia?",
+        "name": "¿Qué es el tró de bac?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, el Ayuntamiento habilita zonas específicas en la Plaza del Ayuntamiento (mascletàs), Plaza de la Virgen (Ofrenda) y Jardín del Turia (Nit del Foc). Consulta el mapa de accesibilidad y el servicio de autobús adaptado."
+          "text": "El petardo de fulminante sin mecha que usan los tiradors durante la despertà. No lleva mecha: se activa por impacto al golpearlo contra el suelo. Es un artefacto pirotécnico exclusivo de la tradición fallera valenciana, documentado desde principios del siglo XX."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Dónde informarse de cambios de última hora en las Fallas de Valencia?",
+        "name": "¿Cuánto cuestan los monumentos de la Sección Especial?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En la web del Ayuntamiento de Valencia y los canales oficiales de la Junta Central Fallera."
+          "text": "Los monumentos de la Sección Especial pueden costar entre 500.000 y más de un millón de euros. Son estructuras de varios pisos construidas por equipos de artistas falleros durante meses en los talleres de la Ciutat Fallera. La financiación viene de las cuotas de los socios de la comisión y de patrocinadores."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Es de pago la entrada a las Fallas de Valencia?",
+        "name": "¿Se puede participar en Las Fallas sin ser fallero?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, es una fiesta de calle, libre y gratuita. Solo se paga si se quiere acceder al recinto vallado de algunas fallas de Sección Especial para verlas de cerca con más comodidad."
+          "text": "Sí. Todos los actos principales —mascletà, Ofrenda, Nit del Foc y Cremà— son de acceso libre y gratuito. El visitante puede recorrer los monumentos, asistir a los actos y vivir el ambiente de los casals sin pertenecer a ninguna comisión."
         }
       }
     ]
   }
   </script>
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
@@ -234,278 +282,276 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#glosario">Vocabulario</a>
-        <a href="index.html#blog">Blog</a>
-        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+        <a href="#" class="nav-cta">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a> › Las Fallas de Valencia
-  </nav>
+  <main role="main">
+    <article>
 
-  <div class="ficha-hero">
-    <img src="images/fallas-valencia.jpg" alt="Falla Convento Jerusalén - Matemático Marzal 2025" />
-  </div>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Las Fallas de Valencia
+      </nav>
 
-  <main class="ficha-main">
-    <article class="card">
+      <div class="ficha-hero">
+        <img src="images/fallas-valencia.jpg" alt="Monumento fallero de varios pisos ardiendo durante la Cremà del 19 de marzo en Valencia, con la multitud observando desde la calle" loading="eager" />
+      </div>
 
-      <h1>Las Fallas de Valencia</h1>
-      <p class="ficha-subtitle">
-        Valencia · «Arte que arde, tradición que renace.»
-      </p>
+      <div class="container ficha-main">
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
-        <div class="fechas-grandes">Del 15 al 19 de marzo de 2026</div>
-        <div class="datos-secundarios">
-          <span>📍 Valencia</span>
-          <span>⏱️ 5 días grandes</span>
-          <span>🏅 Interés Turístico Internacional (1965)</span>
-          <span>🌍 Patrimonio de la Humanidad UNESCO (2016)</span>
+        <h1>Las Fallas de Valencia</h1>
+
+        <p class="ficha-subtitle">
+          Valencia · Comunitat Valenciana · «Un año de trabajo para quemarlo en una noche.»
+        </p>
+
+        <div class="badges" aria-label="Reconocimientos oficiales">
+          <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+          <span class="badge badge-oficial">Patrimonio Cultural Inmaterial UNESCO</span>
+          <span class="badge badge-oficial">Bien de Interés Cultural Inmaterial</span>
         </div>
-      </div>
 
-      <div class="badges" aria-label="Reconocimientos oficiales">
-        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
-        <span class="badge badge-unesco">Patrimonio Cultural Inmaterial (UNESCO)</span>
-      </div>
+        <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+          <div class="fechas-grandes">Del 1 al 19 de marzo de 2026</div>
+          <p>Fecha fija · San José, 19 de marzo · Más de 380 comisiones falleras · Mascletà diaria del 1 al 19 · Cremà la noche del 19</p>
+          <p class="nota-grid">⚠️ Horarios exactos de cada acto en jcf.gva.es. Consulta el programa oficial antes de planificar la visita.</p>
+        </div>
 
-      <div class="aviso-sensibilidad" role="note">
-        <strong>Nota de sensibilidad</strong>
+        <div class="aviso-sensibilidad" role="note">
+          <strong>Nota de sensibilidad</strong>
+          <ul>
+            <li>La Ofrenda de flores a la Virgen de los Desamparados es un acto de devoción en el que miles de falleras y falleros llevan meses preparándose. Quien la presencia entra en algo que para ellos tiene un significado que la estética del desfile no alcanza a transmitir.</li>
+            <li>Los monumentos critican, exageran y a veces incomodan. Eso forma parte de la fiesta desde su origen satírico en los siglos XVIII y XIX, no es una licencia moderna. Entenderlo así cambia cómo se lee lo que se está mirando.</li>
+            <li>En la Cremà, los falleros queman en minutos lo que han construido durante un año. Para quien lo ve desde fuera es un momento de gran intensidad visual; para ellos es el cierre de un ciclo que empezó doce meses antes. Vale la pena tenerlo presente mientras arde.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title">La esencia de la fiesta</h2>
+        <p>
+          La pólvora llega antes que la luz. A primera hora de la mañana, cuando todavía no ha salido el sol, el sonido de los tróns de bac golpeando el asfalto recorre los barrios de Valencia. Eso es la despertà: una señal que nadie ha pedido y que toda la ciudad espera. Huele a pólvora, a buñuelos de calabaza y, cuando el viento sopla del este, a naranja madura del huerto cercano.
+        </p>
+        <p>
+          Durante diecinueve días, Valencia construye el museo al aire libre más grande y más extraño de España. Un museo donde las piezas critican a los políticos del año, donde los vecinos conocen a los artistas por su nombre y donde saben, desde el primer día, que todo va a arder. La noche del 19 de marzo arden a la vez. Eso también es parte del plan.
+        </p>
+
+        <h2 class="section-title">¿En qué consiste?</h2>
+        <p>
+          Las Fallas son una fiesta de barrio que acaba llenando una ciudad entera. Más de 380 comisiones falleras de Valencia llevan meses construyendo cada una dos monumentos —uno mayor y uno infantil— que estarán en la calle apenas unos días antes de arder todos en la misma noche. Son estructuras de varios pisos con figuras que critican y retratan la actualidad: políticos, personajes públicos, costumbres del año. Cada monumento tiene su guion escrito en el <strong>llibret</strong>, el cuadernillo que la comisión reparte entre sus socios.
+        </p>
+        <p>
+          La fiesta arranca despacio. Desde el 1 de marzo, la ciudad se despierta cada día con la despertà y a mediodía la mascletà en la Plaza del Ayuntamiento lanza ondas sonoras que se sienten en el pecho antes de oírse. Del 15 al 19, los monumentos están plantados y cualquier calle del centro puede tener una falla de diez metros entre los coches aparcados.
+        </p>
+        <p>
+          La <strong>Junta Central Fallera</strong>, creada en 1939, coordina el conjunto de comisiones y gestiona el sistema de secciones por las que compiten los monumentos. La cúspide es la <strong>Sección Especial</strong>: un grupo reducido de comisiones con los mayores presupuestos y la ingeniería plástica más ambiciosa, cuyos monumentos pueden costar entre medio millón y más de un millón de euros.
+        </p>
+        <p>
+          Un fallero o fallera puede llevar en la comisión de su barrio desde niño, haber desfilado en la Ofrenda durante décadas y haber visto arder docenas de fallas desde el mismo sitio. Para ellos la fiesta no empieza el 15 de marzo ni acaba el 19: dura todo el año. El visitante entra en eso aunque no lo sepa. Lo primero que nota es que en el casal del barrio hay gente un martes de noviembre preparando algo que no existe todavía.
+        </p>
+        <p class="nota-grid">⚠️ Los horarios exactos de cada acto los publica la Junta Central Fallera. Consulta <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">jcf.gva.es</a> antes de planificar la visita.</p>
+
+        <h2 class="section-title">Historia y significado</h2>
+        <p>
+          El origen de Las Fallas se explica a menudo con la historia de los carpinteros valencianos que quemaban restos de madera al llegar la primavera. Es una imagen bonita, pero es un mito. La formuló el Marqués de Cruïlles en su guía de Valencia de 1876 y se ha repetido desde entonces sin respaldo documental. Lo que los archivos municipales sí registran son los bandos de prohibición del Ayuntamiento de Valencia de 1740 y 1784, que prohíben la quema de peleles satíricos en la calle. Esos peleles —llamados en valenciano <em>estot</em> o <em>ninot</em>— eran figuras de trapo que los vecinos colgaban en las esquinas para ridiculizar a alguien del barrio y que quemaban en las fiestas previas a la cuaresma. Ahí está el origen real de la falla: en la sátira carnavalesca de los siglos XVIII y XIX, no en la carpintería.
+        </p>
+        <p>
+          Con el tiempo esas figuras de trapo se convirtieron en monumentos de varias plantas construidos por artistas profesionales. La fiesta fue creciendo durante el siglo XX hasta obtener la declaración de <strong>Fiesta de Interés Turístico Internacional en 1965</strong>, mediante la Resolución de 25 de enero de ese año de la Subsecretaría de Turismo, publicada en el BOE nº 35. El Consell de la Generalitat Valenciana la declaró <strong>Bien de Interés Cultural Inmaterial</strong> mediante el Decreto 44/2012, de 9 de marzo (DOGV nº 6732, BOE nº 71 de 23 de marzo de 2012). Y en <strong>2016</strong> la UNESCO la inscribió en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad (expediente nº 00859, 30 de noviembre de 2016).
+        </p>
+
+        <h2 class="section-title">Fechas 2026</h2>
+        <div class="fechas-grandes">Del 1 al 19 de marzo de 2026</div>
+        <p>La fecha de Las Fallas es fija: la festividad de San José cae siempre el 19 de marzo y la Cremà se celebra esa misma noche. El programa oficial arranca el 1 de marzo con la primera mascletà. Los monumentos se plantan el 15 y el ciclo cierra con la Cremà entre la noche del 19 y la madrugada del 20.</p>
+
+        <h2 class="section-title" id="programa">Los actos principales</h2>
+        <ol class="actos-list">
+          <li>
+            <span class="dia-label">1–19 de marzo · Mediodía</span>
+            <strong>Mascletà en la Plaza del Ayuntamiento</strong>
+            <p>Disparo pirotécnico diurno de fuerte impacto sonoro. No es un castillo de fuegos: es una secuencia de explosiones calibradas para que el sonido llegue al cuerpo antes que a los oídos. Dura entre seis y doce minutos. Se celebra cada día a las dos del mediodía durante todo el periodo festivo.</p>
+          </li>
+          <li>
+            <span class="dia-label">15 de marzo</span>
+            <strong>Plantà — los monumentos llegan a la calle</strong>
+            <p>Las comisiones montan sus monumentos en el espacio público durante el día. Las piezas grandes se levantan con grúas; el remate superior, en muchas comisiones, se iza a pulso mediante cuerdas y contrapesos humanos siguiendo la técnica tradicional llamada <strong>plantà al tombe</strong>. El 15 de marzo al amanecer, la ciudad tiene una falla en cada esquina.</p>
+          </li>
+          <li>
+            <span class="dia-label">17–18 de marzo · Tarde y noche</span>
+            <strong>Ofrenda de flores a la Virgen de los Desamparados</strong>
+            <p>Desfile de todas las comisiones falleras hasta la Plaza de la Virgen. Cada fallera y fallero lleva un ramo de flores con el que se va construyendo el manto floral de la imagen de la Virgen. El desfile dura hasta bien entrada la noche de los dos días.</p>
+          </li>
+          <li>
+            <span class="dia-label">18 de marzo · Noche</span>
+            <strong>Nit del Foc</strong>
+            <p>Gran castillo de fuegos artificiales lanzado desde el cauce del río Turia. Es el acto pirotécnico más grande de la semana y marca el inicio del cuenta atrás hacia la Cremà.</p>
+          </li>
+          <li>
+            <span class="dia-label">19 de marzo · Noche</span>
+            <strong>Cremà</strong>
+            <p>La quema de todos los monumentos en la misma noche. Las fallas infantiles arden primero, al caer la tarde. Las grandes, a partir de medianoche, por orden establecido, hasta que la falla municipal de la Plaza del Ayuntamiento cierra el ciclo ya de madrugada. Lo que tarda en arder una falla de varias plantas suele ser menos de veinte minutos.</p>
+          </li>
+        </ol>
+
+        <h2 class="section-title" id="musica">Música y sonido</h2>
+        <p>
+          La mascletà no suena: golpea. La secuencia de detonaciones está diseñada para que las ondas expansivas lleguen al esternón antes de que el oído las procese como sonido. Quien la escucha por primera vez desde la Plaza del Ayuntamiento suele parpadear en el primer disparo y quedarse quieto en los siguientes. Al cabo de diez minutos, cuando termina, el silencio pesa.
+        </p>
+        <p>
+          El sonido más reconocible del día a día festivo es el del tró de bac en la despertà: el golpe seco de un petardo de fulminante contra el asfalto, a cualquier hora de la mañana, en cualquier calle de la ciudad. No lleva mecha, no avisa. Solo el golpe y el eco. Así durante diecinueve días.
+        </p>
+        <p>
+          La Cremà tiene su propio registro: el crepitar de la madera y el cartón a gran temperatura, el calor que se siente en la cara a veinte metros de distancia y el silencio de las personas que miran arder algo que conocen. El sonido de las bandas de música que acompañan la quema de cada falla llega desde lejos y se mezcla con el de la siguiente que ya está ardiendo en otra calle.
+        </p>
+
+        <h2 class="section-title">No te lo puedes perder</h2>
+        <div class="must-see-grid">
+
+          <div class="must-see-card">
+            <h3>Una mascletà desde la plaza</h3>
+            <span class="tag">1–19 de marzo · Mediodía · Plaza del Ayuntamiento</span>
+            <p>Llega con tiempo, sitúate en la plaza y deja que la primera detonación te sorprenda. Lo que hace la mascletà con el cuerpo no se anticipa hasta que ocurre. Hay quien se tapa los oídos. Hay quien no puede y se va. Hay quien vuelve al día siguiente.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque no hay ningún otro acto festivo en España donde el sonido sea el protagonista en este sentido físico. La mascletà no es ruidosa: es corporal. La diferencia entre escucharla por vídeo y estar en la plaza durante la última salva es la diferencia entre ver una foto del mar y meterte en el agua.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>Los monumentos de noche</h3>
+            <span class="tag">15–18 de marzo · Noche · Barrios del centro</span>
+            <p>De noche, los monumentos se iluminan y las calles tienen una escala distinta. Sin el ruido del día, con menos gente, es cuando mejor se ve el trabajo: los detalles de las figuras, los textos del llibret en los carteles, la relación entre el monumento y el edificio que tiene detrás.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque de día los monumentos compiten con el ruido, la gente y la pólvora. De noche son solo ellos. Y porque el visitante que los ve a las once de la noche del 17 de marzo sabe que en cuarenta y ocho horas eso ya no existe.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Ofrenda de flores</h3>
+            <span class="tag">17–18 de marzo · Tarde y noche · Plaza de la Virgen</span>
+            <p>Miles de falleras y falleros en traje tradicional desfilan durante horas hacia la Plaza de la Virgen. La indumentaria —el espolín de seda, las peinetas y los rodetes del traje de siglo XIX, o el justillo del traje de siglo XVIII— es artesanía textil de primer orden. El manto floral de la imagen se va construyendo ramo a ramo durante los dos días.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es el momento en que la dimensión devocional de la fiesta se hace visible sin que nadie la explique. El traje, el paso, el ramo: todo tiene una carga de significado que viene de décadas de repetición. El visitante lo percibe aunque no sepa exactamente qué está mirando.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La Cremà de una falla de barrio</h3>
+            <span class="tag">19 de marzo · Noche · Barrios del centro</span>
+            <p>La falla municipal es la más grande y la más fotografiada, pero no es necesariamente la más intensa. La Cremà de una falla de barrio, con los vecinos en círculo, la banda tocando y el artista fallero mirando arder su propio trabajo, tiene una escala humana que la falla del Ayuntamiento no puede tener.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque en la falla de barrio ves a la gente que ha construido eso. Están ahí. Y la cara del artista fallero cuando arde la primera llama dice más sobre Las Fallas que cualquier descripción.</p>
+            </details>
+          </div>
+
+        </div>
+
+        <h2 class="section-title">Consejos prácticos</h2>
         <ul>
-          <li>La Ofrenda de flores a la Virgen de los Desamparados es un acto de devoción. Miles de falleras y falleros llevan meses preparándose para ese desfile. El visitante lo presencia como invitado en algo que para ellos tiene un significado que va más allá de la estética.</li>
-          <li>Los monumentos critican, exageran y a veces incomodan. Es parte de la fiesta desde su origen, no una concesión moderna. Entenderlo así antes de verlos cambia cómo se lee lo que se está mirando.</li>
-          <li>En la Cremà, los falleros queman en minutos lo que han construido durante un año. Para el visitante es espectáculo; para ellos, el cierre de un ciclo. Vale la pena tenerlo presente.</li>
+          <li><strong>Cuándo llegar:</strong> si solo puedes ir unos días, el 15 es el de la Plantà —la ciudad amanece transformada— y el 19 es la Cremà. Si tienes más tiempo, los días 17 y 18 tienen la Ofrenda y la Nit del Foc. Del 1 al 14 el ambiente es más tranquilo y la mascletà se disfruta sin aglomeraciones.</li>
+          <li><strong>La mascletà:</strong> llega a la Plaza del Ayuntamiento al menos media hora antes. La plaza se llena rápido. Sitúate en el centro para sentir las ondas expansivas. Los oídos: llevar tapones es válido, aunque cambia la experiencia.</li>
+          <li><strong>Alojamiento:</strong> reserva con meses de antelación. Valencia en Fallas tiene la ocupación hotelera más alta del año. El casco histórico y El Carmen son los barrios con más ambiente festivo pero también los más ruidosos por la noche.</li>
+          <li><strong>Desplazamiento:</strong> el centro queda cortado al tráfico durante los días de plantà y Cremà. El metro y los autobuses de la EMT tienen servicios reforzados. Moverse a pie es la mejor opción dentro del casco histórico.</li>
+          <li><strong>La despertà:</strong> empieza antes de que salga el sol. Si te alojas en el centro, las ventanas no aíslan mucho. Asúmelo como parte de la experiencia o pide habitación interior en el hotel.</li>
+          <li><strong>Gastronomía:</strong> los buñuelos de calabaza fritos en los puestos de la calle son el alimento de las Fallas: se comen con chocolate o con azúcar, a cualquier hora. La horchata con fartons es la otra constante. El agua de Valencia —cava, zumo de naranja y licor de naranja— aparece en los casals y bares de los barrios festivos.</li>
         </ul>
-      </div>
 
-      <h2 class="section-title">La esencia de la fiesta</h2>
-      <p>
-        Cada marzo, Valencia se llena de monumentos de cartón y poliéster que llevan meses en construcción y que están destinados a durar apenas unos días en la calle. Huele a pólvora desde primera hora, con la despertà recorriendo los barrios, y a buñuelos de calabaza en cualquier esquina. La ciudad entera se convierte en un museo al aire libre que sabe, desde el primer día, que va a terminar ardiendo.
-      </p>
+        <h2 class="section-title">Vocabulario festero</h2>
+        <dl class="festero">
+          <dt>Falla</dt>
+          <dd>Monumento artístico y satírico de varios pisos construido con materiales efímeros —madera, cartón, poliestireno— para ser quemado la noche del 19 de marzo. Cada comisión levanta uno mayor y uno infantil.</dd>
 
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
-      <p>
-        Las Fallas son una fiesta de barrio que acaba llenando una ciudad entera. Cada una de las 382 comisiones falleras de Valencia lleva meses construyendo dos monumentos — uno mayor y uno infantil — que estarán en la calle apenas unos días antes de arder todos en la misma noche. Son estructuras de varios pisos, con figuras que critican y retratan la actualidad: políticos, personajes públicos, costumbres del año. Cada monumento tiene su guion escrito en el llibret, el cuadernillo que la comisión reparte entre sus socios.
-      </p>
-      <p>
-        La fiesta arranca despacio. Desde el 1 de marzo, Valencia se despierta cada día con la despertà — cohetes recorriendo los barrios desde primera hora — y a mediodía la mascletà en la Plaza del Ayuntamiento lanza ondas expansivas que se sienten en el pecho antes de oírse. Del 15 al 19, los monumentos están plantados y la ciudad funciona como un museo al aire libre que ya sabe que va a desaparecer el último día.
-      </p>
-      <p>
-        Un fallero o fallera puede llevar en la comisión de su barrio desde niño, haber desfilado en la Ofrenda durante décadas, haber visto arder docenas de fallas desde el mismo sitio. Para ellos la fiesta no empieza el 15 de marzo ni acaba el 19: dura todo el año. El visitante entra en eso aunque no lo sepa.
-      </p>
-      <p class="nota-grid">⚠️ Los horarios exactos de cada acto los publica cada año la Junta Central Fallera. Consulta <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">jcf.gva.es</a> antes de planificar tu visita.</p>
+          <dt>Ninot</dt>
+          <dd>Figura humana o animal que forma parte del monumento fallero. Cada año el público vota cuál es la mejor de todas las fallas de Valencia; esa pieza se salva de la quema y pasa al Museu Faller. Se llama Ninot Indultat.</dd>
 
-      <h2 class="section-title">Historia y significado</h2>
-      <p>
-        El origen de Las Fallas se remonta a tradiciones medievales de los carpinteros valencianos, quienes,
-        al llegar la primavera, quemaban en la calle restos de madera sobrantes del invierno. Con el tiempo,
-        estos montones se empezaron a adornar con figuras humanas llamadas ninots que representaban escenas
-        humorísticas de la vida cotidiana. Durante los siglos XVIII y XIX las fallas evolucionaron hasta
-        representaciones más elaboradas, convirtiéndose en un reflejo crítico de la sociedad y las costumbres
-        valencianas. En el siglo XX, con la profesionalización de los artistas falleros y el crecimiento de
-        las comisiones, las fallas adquirieron la espectacularidad que hoy las caracteriza.
-      </p>
-      <p>
-        Las Fallas fueron declaradas Fiesta de Interés Turístico Internacional en <strong>1965</strong>, mediante la Resolución de 25 de enero de ese año de la Subsecretaría de Turismo, publicada en el BOE núm. 35. En esa misma resolución recibieron también el título otras fiestas como los Sanfermines de Pamplona o el Misterio de Elche. Más de cinco décadas después, en <strong>2016</strong>, la UNESCO las reconoció además como Patrimonio Cultural Inmaterial de la Humanidad, confirmando su dimensión cultural más allá de las fronteras españolas.
-      </p>
+          <dt>Cremà</dt>
+          <dd>La quema de todos los monumentos en la noche del 19 de marzo. Las fallas infantiles arden al caer la tarde; las grandes, desde medianoche. Una falla de varios pisos tarda menos de veinte minutos en quemarse.</dd>
 
-      <h2 class="section-title">Fechas 2026</h2>
-      <p>
-        Del 1 al 19 de marzo se concentran los actos oficiales, con mascletàs diarias a mediodía en la Plaza del Ayuntamiento. La semana grande es del 15 al 19 de marzo, cuando las fallas están plantadas y se celebran los principales actos. El día 19, festividad de San José, tiene lugar la Cremà de todos los monumentos.
-      </p>
-      <p class="nota-grid">⚠️ Los horarios exactos de cada acto los publica cada año la Junta Central Fallera en su programa oficial.</p>
+          <dt>Mascletà</dt>
+          <dd>Secuencia pirotécnica diurna de fuerte impacto sonoro que se dispara cada día a las dos del mediodía en la Plaza del Ayuntamiento durante todo el periodo festivo. No busca efectos en el cielo: su diseño es rítmico, físico y acústico, con un crescendo de calibres que termina en un terremoto a ras de suelo.</dd>
 
-      <h2 class="section-title">Actos destacados</h2>
-      <ul>
-        <li><strong>Mascletà:</strong> espectáculo pirotécnico diurno de fuerte impacto sonoro, todos los días en la Plaza del Ayuntamiento, del 1 al 19 de marzo a mediodía.</li>
-        <li><strong>Plantà:</strong> montaje de los monumentos falleros; a partir del 15 de marzo la ciudad se convierte en un museo al aire libre.</li>
-        <li><strong>Ofrenda de flores:</strong> desfile de todas las comisiones falleras hasta la Plaza de la Virgen para completar el manto floral, los días 17 y 18 de marzo por la tarde y hasta la noche.</li>
-        <li><strong>Nit del Foc:</strong> gran castillo de fuegos artificiales, el espectáculo pirotécnico más impactante de las fiestas, la noche del 18 al 19 de marzo.</li>
-        <li><strong>Cremà:</strong> quema de las fallas el 19 de marzo; primero las infantiles a última hora de la tarde, luego las grandes por la noche, con la falla municipal en la Plaza del Ayuntamiento como cierre.</li>
-      </ul>
+          <dt>Despertà</dt>
+          <dd>Recorrido por los barrios al amanecer en el que los tiradors disparan tróns de bac para despertar a la ciudad. Empieza antes de que salga el sol y puede durar varias horas.</dd>
 
-      <h2 class="section-title">Música y sonido</h2>
-      <div class="music-block">
-        <p>
-          Las bandas de música están en las Fallas desde primera hora: la despertà recorre los barrios con pasodobles antes de que la ciudad haya desayunado. Animan la recogida de premios, los pasacalles y la Ofrenda, con piezas como "Valencia", "El Fallero" o "Paquito el Chocolatero" que cualquier valenciano reconoce de memoria. Durante la Ofrenda aparecen también la dulzaina y el tabal, los instrumentos tradicionales valencianos, que dan a esas horas un sonido distinto al del resto de la semana.
-        </p>
-        <p>
-          El contraste más marcado de la fiesta no es visual sino sonoro: de la mascletà del mediodía — detonaciones encadenadas que golpean el pecho — al silencio con el que miles de falleros desfilan en la Ofrenda. La misma ciudad, el mismo día, dos registros que no podrían ser más distintos. Para escuchar los pasodobles de cada banda durante la Ofrenda, sitúate en un tramo amplio del recorrido — en calle estrecha el sonido se mezcla y pierde definición.
-        </p>
-      </div>
+          <dt>Tró de bac</dt>
+          <dd>El petardo de fulminante sin mecha propio de la despertà valenciana. Se activa por impacto al golpearlo contra el suelo. Documentado desde principios del siglo XX, es un artefacto pirotécnico exclusivo de la tradición fallera. Su uso exige la acreditación CRE (Consumidor Reconocido como Experto) según la legislación española de pirotecnia.</dd>
 
-      <h2 class="section-title">No te lo puedes perder</h2>
-      <div class="must-see-grid">
+          <dt>Plantà</dt>
+          <dd>El montaje del monumento en la calle, que se completa el 15 de marzo. Las piezas principales se elevan con grúas; el remate superior de algunas fallas se iza a pulso siguiendo la técnica tradicional llamada plantà al tombe.</dd>
 
-        <div class="must-see-card">
-          <h3>La mascletà en la Plaza del Ayuntamiento</h3>
-          <span class="tag">Diario, mediodía · 1-19 de marzo</span>
-          <p>Un espectáculo pirotécnico diurno que se siente antes de oírse: la onda expansiva golpea el pecho de miles de personas apretadas en la plaza. No es ruido sin más, es un crescendo calculado que termina en un estruendo final.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el único acto que se repite cada día de la fiesta y el que mejor resume el carácter sonoro y físico de las Fallas.</p>
-          </details>
+          <dt>Espolín</dt>
+          <dd>Tejido de seda natural labrado en telar de tiro Jacquard con motivos florales o geométricos, característico de la indumentaria valenciana de gala. El traje de fallera de siglo XIX se confecciona con espolín y se completa con peineta, rodetes laterales y agujas pasaderas. El de siglo XVIII lleva justillo, cuerpo de coteta y un solo moño.</dd>
+
+          <dt>Casal</dt>
+          <dd>Sede social de la comisión fallera donde los miembros se reúnen durante todo el año. El casal es el corazón de la vida fallera: ahí se organiza la fiesta, se recauda el presupuesto, se discute el tema del monumento y se celebra cualquier excusa durante los doce meses previos.</dd>
+        </dl>
+
+        <h2 class="section-title" style="display:none">Galería</h2>
+        <div class="galeria" aria-hidden="true" style="display:none">
+          <!-- imágenes pendientes -->
         </div>
 
-        <div class="must-see-card">
-          <h3>La Ofrenda de flores a la Virgen</h3>
-          <span class="tag">17-18 de marzo, tarde-noche · Plaza de la Virgen</span>
-          <p>Miles de falleras y falleros con traje tradicional desfilan durante horas para completar un manto floral gigante sobre la estructura de la Virgen de los Desamparados. Es el momento más solemne de toda la fiesta.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>El contraste entre el estruendo de la mascletà y el silencio devocional de la Ofrenda muestra las dos caras de la misma fiesta.</p>
-          </details>
+        <h2 class="section-title">Enlaces útiles</h2>
+        <ul>
+          <li><a href="https://www.jcf.gva.es" target="_blank" rel="noopener">Junta Central Fallera (programa oficial)</a></li>
+          <li><a href="https://www.visitvalencia.com" target="_blank" rel="noopener">Turismo de Valencia</a></li>
+          <li><a href="https://cultural.valencia.es/es/museu/museo-fallero/" target="_blank" rel="noopener">Museu Faller de València (web oficial)</a></li>
+        </ul>
+
+        <p><small>Fuente de fechas: <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">jcf.gva.es</a> — consultado el 01/10/2026</small></p>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Cuándo son Las Fallas de Valencia?</dt>
+          <dd>El grueso de la fiesta va del 15 al 19 de marzo, fecha fija ligada a la festividad de San José. La mascletà se celebra todos los días del 1 al 19. La Plantà llega el 15, la Ofrenda los días 17 y 18, la Nit del Foc el 18 por la noche y la Cremà el 19 de marzo.</dd>
+
+          <dt>¿Qué es el Ninot Indultat?</dt>
+          <dd>Cada año el público vota la figura de falla que considera mejor y esa pieza se salva de la Cremà. El Ninot Indultat pasa al Museu Faller de Valencia, donde se conservan los indultados de todas las ediciones desde 1934.</dd>
+
+          <dt>¿Qué es el tró de bac?</dt>
+          <dd>El petardo de fulminante sin mecha que usan los tiradors durante la despertà. Se activa por impacto al golpearlo contra el suelo. Es un artefacto pirotécnico exclusivo de la tradición fallera valenciana, documentado desde principios del siglo XX.</dd>
+
+          <dt>¿Cuánto cuestan los monumentos de la Sección Especial?</dt>
+          <dd>Entre 500.000 y más de un millón de euros. Son estructuras de varios pisos construidas por equipos de artistas falleros durante meses en los talleres de la Ciutat Fallera. La financiación viene de las cuotas de los socios de la comisión y de patrocinadores.</dd>
+
+          <dt>¿Se puede participar en Las Fallas sin ser fallero?</dt>
+          <dd>Sí. Todos los actos principales —mascletà, Ofrenda, Nit del Foc y Cremà— son de acceso libre y gratuito. El visitante puede recorrer los monumentos, asistir a los actos y vivir el ambiente de los casals sin pertenecer a ninguna comisión.</dd>
+        </dl>
+
+        <div class="ficha-etiquetas" aria-label="Etiquetas">
+          <a href="#" class="etiqueta etiqueta-destacada">Las Fallas de Valencia</a>
+          <a href="#" class="etiqueta etiqueta-destacada">Patrimonio UNESCO</a>
+          <a href="#" class="etiqueta">Comunitat Valenciana</a>
+          <a href="#" class="etiqueta">Valencia</a>
+          <a href="#" class="etiqueta">Marzo</a>
+          <a href="#" class="etiqueta">San José</a>
+          <a href="#" class="etiqueta">Cremà</a>
+          <a href="#" class="etiqueta">Mascletà</a>
+          <a href="#" class="etiqueta">Arte efímero</a>
         </div>
 
-        <div class="must-see-card">
-          <h3>La Nit del Foc</h3>
-          <span class="tag">Noche del 18 al 19 de marzo · Viejo cauce del Turia</span>
-          <p>El castillo de fuegos artificiales más grande e impactante de toda la semana, lanzado desde el antiguo cauce del río junto a la Ciutat de les Arts i les Ciències.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el anuncio de que la Cremà está a horas de distancia: el último gran espectáculo antes de que todo empiece a arder.</p>
-          </details>
+        <div class="fichas-relacionadas">
+          <h2>Otras fiestas que te van a interesar</h2>
+          <div class="relacionadas-grid">
+            <a href="hogueras-san-juan-alicante.html" class="relacionada-card">
+              <strong>Hogueras de San Juan de Alicante</strong>
+              <span>Alicante · ITI · La respuesta alicantina a Las Fallas: misma noche de fuego, otro carácter</span>
+            </a>
+            <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+              <strong>Moros y Cristianos de Alcoi</strong>
+              <span>Alicante · ITI · La fiesta que define la identidad festera de la provincia de Alicante</span>
+            </a>
+            <a href="corpus-christi-toledo.html" class="relacionada-card">
+              <strong>Corpus Christi de Toledo</strong>
+              <span>Castilla-La Mancha · ITI · Otra fiesta que lleva meses preparándose para un solo día</span>
+            </a>
+          </div>
         </div>
 
-        <div class="must-see-card">
-          <h3>El Museu Faller</h3>
-          <span class="tag">Todo el año · Ciudad de las Ciencias</span>
-          <p>Aquí se conservan los ninots indultats: la única figura de cada edición que el público salva de la Cremà mediante votación popular. Es la manera de ver de cerca la artesanía fallera fuera de temporada.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Es el único lugar donde el arte fallero sobrevive al fuego, y permite entender la fiesta también fuera de marzo.</p>
-          </details>
-        </div>
+        <p class="back-link"><a href="index.html">← Volver al inicio</a></p>
 
       </div>
-
-      <h2 class="section-title">Experiencia del visitante</h2>
-      <p>
-        Prácticamente todo lo esencial de las Fallas es gratuito y de acceso libre: la mascletà diaria, la Ofrenda de flores, la Nit del Foc y la Cremà de la inmensa mayoría de los monumentos no requieren entrada ni reserva.
-      </p>
-      <p>
-        <strong>Recintos de pago.</strong> Algunas comisiones de la Sección Especial habilitan un espacio vallado alrededor de su falla durante los días de plantà, con entrada de pago, para verla de cerca con más comodidad y sin las aglomeraciones de la calle. No es necesario pagarlo para ver el monumento: solo ofrece mejor visibilidad.
-      </p>
-      <p>
-        <strong>El Museu Faller</strong> tiene entrada de pago durante todo el año. Consulta el precio y horario actualizados en la web del Ayuntamiento de Valencia antes de ir.
-      </p>
-      <p>
-        <strong>Saturación.</strong> La semana grande (15-19 de marzo) satura por completo el centro de Valencia, especialmente la Plaza del Ayuntamiento durante la mascletà y la Plaza de la Virgen durante la Ofrenda. Reserva alojamiento con mucha antelación si tu visita coincide con esas fechas.
-      </p>
-
-      <h2 class="section-title">Monumentos de la Sección Especial 2026</h2>
-      <p>La Sección Especial reúne cada año a las comisiones con mayor presupuesto y espectacularidad. En 2026 la componen 9 fallas:</p>
-      <ul>
-        <li>Convento Jerusalén - Matemático Marzal <em>(Primer Premio 2026)</em></li>
-        <li>L'Antiga de Campanar</li>
-        <li>Na Jordana</li>
-        <li>Plaza del Pilar</li>
-        <li>Sueca - Literato Azorín <em>(Ninot Indultat 2026)</em></li>
-        <li>Reino de Valencia - Duque de Calabria</li>
-        <li>Exposición - Micer Mascó</li>
-        <li>Almirante Cadarso - Conde Altea</li>
-        <li>Cuba - Literato Azorín</li>
-      </ul>
-      <p style="margin-top:10px;padding:12px;background:#f3f4f6;border-radius:8px;">
-        En 2026 hay <strong>382 comisiones falleras</strong> activas en Valencia, lo que supone un total de <strong>764 monumentos</strong> plantados en la ciudad: 382 fallas mayores y 382 infantiles, uno de cada tipo por comisión. Más allá de la Sección Especial, encontrarás monumentos falleros en prácticamente cada barrio. El censo fallero de 2026 asciende a 128.675 falleros y falleras, cifra récord histórica, lo que convierte al mundo fallero en el movimiento asociativo más numeroso de la ciudad.
-      </p>
-      <p class="fuente">Fuente: <a href="https://www.jcf.gva.es" target="_blank" rel="noopener">Junta Central Fallera</a> y Ayuntamiento de Valencia — última verificación: 2026-07-21</p>
-
-      <h2 class="section-title">Consejos prácticos</h2>
-      <ul>
-        <li><strong>Reserva alojamiento con mucha antelación.</strong> La semana del 15 al 19 de marzo satura por completo el centro de Valencia. Si tu visita coincide con esas fechas, reserva con meses de antelación; los hoteles del centro se agotan antes que los de cualquier otra celebración del año.</li>
-        <li><strong>La mascletà se siente, no solo se oye.</strong> La onda expansiva golpea el pecho. Lleva protección para los oídos si eres sensible al ruido intenso, y si la Plaza del Ayuntamiento está demasiado llena, las calles adyacentes ofrecen la misma experiencia física con menos aglomeración.</li>
-        <li><strong>Para ver los monumentos sin agobios, ve por la mañana.</strong> Las fallas están plantadas desde el 15 de marzo. Los primeros días de semana grande, por la mañana temprano, la ciudad todavía respira: es el momento de recorrer los barrios tranquilamente y leer los llibrets.</li>
-        <li><strong>Para la Ofrenda, elige bien el punto.</strong> El desfile dura horas. La Plaza de la Virgen concentra más gente, pero ver pasar las comisiones en la calle Mayor o en el entorno de la Catedral permite más movilidad y mejores ángulos.</li>
-        <li><strong>Marzo en Valencia puede sorprender.</strong> Los días suelen ser suaves, pero las noches de la Cremà pueden refrescar. Lleva una capa por si acaso, especialmente si te quedas a ver la quema de la falla municipal, que es la última en arder.</li>
-        <li><strong>Gastronomía.</strong> Los buñuelos de calabaza con chocolate son el dulce de las Fallas: los encontrarás en puestos por toda la ciudad desde principios de marzo. En los casals de las comisiones también se sirven paellas y arroces durante la semana grande.</li>
-      </ul>
-
-      <h2 class="section-title">Vocabulario festero</h2>
-      <dl class="festero">
-        <dt>Falla</dt>
-        <dd>Monumento artístico y satírico fabricado de material sintético para ser quemado el día de San José.</dd>
-        <dt>Fallera/o</dt>
-        <dd>Persona que pertenece a una comisión fallera, propietaria del monumento de su barrio.</dd>
-        <dt>Ninot</dt>
-        <dd>Figura o muñeco de material sintético que forma parte del monumento fallero.</dd>
-        <dt>Llibret</dt>
-        <dd>Libro que explica la temática, versos y críticas de la falla.</dd>
-        <dt>Casal</dt>
-        <dd>Sede social de la comisión fallera donde los miembros se reúnen durante todo el año.</dd>
-        <dt>Plantà</dt>
-        <dd>Acto de montar y dejar instalada la falla definitiva en la calle.</dd>
-        <dt>Cremà</dt>
-        <dd>Acto de la quema del monumento el 19 de marzo.</dd>
-        <dt>Mascletà</dt>
-        <dd>Espectáculo pirotécnico diurno, muy ruidoso, que se celebra cada día durante las Fallas.</dd>
-        <dt>Crida</dt>
-        <dd>Acto de proclamación que da inicio oficial a las Fallas, realizado por la Fallera Mayor.</dd>
-      </dl>
-
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria" style="display:none;">
-        <img src="images/fallas-valencia-1.png" alt="Falla Plaza del Pilar" />
-        <img src="images/fallas-valencia-2.jpg" alt="Mascletà en la Plaza del Ayuntamiento" />
-        <img src="images/fallas-valencia-3.png" alt="Falleras preparadas para la Ofrenda" />
-        <img src="images/fallas-valencia-4.png" alt="Manto de flores a la Virgen de los Desamparados" />
-      </div>
-
-      <h2 class="section-title">Enlaces útiles</h2>
-      <ul>
-        <li><a href="https://www.jcf.gva.es" target="_blank" rel="noopener">Junta Central Fallera</a></li>
-        <li><a href="https://www.valencia.es" target="_blank" rel="noopener">Ayuntamiento de Valencia</a></li>
-        <li><a href="https://www.visitvalencia.com" target="_blank" rel="noopener">Oficina de Turismo de Valencia</a></li>
-      </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-07-07</p>
-
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <dl class="faq">
-        <dt>¿Cuándo se celebra?</dt>
-        <dd>Del 15 al 19 de marzo, con actos previos desde el 1 de marzo. El día clave es el 19, festividad de San José.</dd>
-        <dt>¿Es apta para familias?</dt>
-        <dd>Sí, hay actividades para todas las edades: mascletàs, pasacalles, desfiles y la sección infantil. Los actos pirotécnicos requieren precaución con los más pequeños.</dd>
-        <dt>¿Hay zonas para movilidad reducida?</dt>
-        <dd>Sí, el Ayuntamiento habilita zonas específicas en la Plaza del Ayuntamiento (mascletàs), Plaza de la Virgen (Ofrenda) y Jardín del Turia (Nit del Foc). Consulta el mapa de accesibilidad y el servicio de autobús adaptado.</dd>
-        <dt>¿Dónde informarse de cambios de última hora?</dt>
-        <dd>En la web del Ayuntamiento de Valencia y los canales oficiales de la Junta Central Fallera.</dd>
-        <dt>¿Es una fiesta con entrada de pago?</dt>
-        <dd>No, es una fiesta de calle, libre y gratuita. Solo se paga si se quiere acceder al recinto vallado de algunas fallas de Sección Especial para verlas de cerca con más comodidad.</dd>
-      </dl>
-
-      <div class="ficha-etiquetas" aria-label="Etiquetas">
-        <span class="etiqueta etiqueta-destacada">Las Fallas</span>
-        <span class="etiqueta etiqueta-destacada">Patrimonio de la Humanidad UNESCO</span>
-        <span class="etiqueta">Comunitat Valenciana</span>
-        <span class="etiqueta">Valencia</span>
-        <span class="etiqueta">Marzo</span>
-        <span class="etiqueta">Mascletà</span>
-        <span class="etiqueta">Cremà</span>
-        <span class="etiqueta">Ofrenda de flores</span>
-      </div>
-
-      <div class="fichas-relacionadas">
-        <h2>Otras fiestas que te van a interesar</h2>
-        <div class="relacionadas-grid">
-          <a href="hogueras-san-juan-alicante.html" class="relacionada-card">
-            <strong>Hogueras de San Juan de Alicante</strong>
-            <span>Comunitat Valenciana · ITI · La fiesta hermana que Alicante forjó a imagen de las Fallas</span>
-          </a>
-          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
-            <strong>Moros y Cristianos de Alcoi</strong>
-            <span>Comunitat Valenciana · ITI · La fiesta que define la identidad festera de la provincia de Alicante</span>
-          </a>
-          <a href="bodas-isabel-segura.html" class="relacionada-card">
-            <strong>Bodas de Isabel de Segura</strong>
-            <span>Teruel · Aragón · ITI · Otra fiesta donde una ciudad entera toma las calles durante días</span>
-          </a>
-        </div>
-      </div>
-      <a href="index.html" class="back-link">← Volver al inicio</a>
-
     </article>
   </main>
 
