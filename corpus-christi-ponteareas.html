@@ -2,38 +2,59 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Corpus Christi en Ponteareas 2026: Alfombras Florales, Fechas y Guía Completa</title>
-  <meta name="description" content="Guía completa del Corpus Christi de Ponteareas 2026 (7 de junio). Más de un kilómetro de alfombras florales tejidas a mano en una noche. Fiesta de Interés Turístico Internacional desde 2009." />
-  <link rel="canonical" href="https://folklorius.es/corpus-christi-ponteareas.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Corpus Christi de Ponteareas 2026 | Un pueblo entero dibujando con flores en la madrugada" />
-  <meta property="og:description" content="La noche del sábado al domingo, Ponteareas se arrodilla sobre el asfalto. Pétalo a pétalo, kilómetros de alfombras florales para un día de procesión. Guía completa 2026." />
-  <meta property="og:image" content="https://folklorius.es/images/corpus-christi-ponteareas.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Corpus Christi de Ponteareas · Alfombras florales efímeras</title>
+  <meta name="description" content="Corpus de Ponteareas (ITI 2009, BIC 2024): un kilómetro de alfombras florales que duran unas horas. La noche antes, el pueblo entero no duerme. Guía 2026." />
+  <meta property="og:title" content="Corpus Christi de Ponteareas — Un pueblo entero dibujando con flores en la madrugada" />
+  <meta property="og:description" content="La noche del sábado, Ponteareas no duerme. Cientos de vecinos arrodillados en el asfalto, pétalo a pétalo, durante horas. Al amanecer, más de un kilómetro de flores. A mediodía, la procesión lo deshace todo." />
   <meta property="og:type" content="article" />
-  <meta property="og:locale" content="es_ES" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon y fuentes -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <meta property="og:url" content="https://folklorius.es/corpus-christi-ponteareas.html" />
+  <meta property="og:image" content="https://folklorius.es/images/corpus-christi-ponteareas.jpg" />
+  <link rel="canonical" href="https://folklorius.es/corpus-christi-ponteareas.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Actos principales — timeline para fiesta de pocos días */
+
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Timeline de actos ───────────────────────────────────── */
     .actos-list {
       list-style: none;
       padding: 0;
       margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e5e0d8);
+      border-left: 2px solid var(--border, #e8ddd4);
     }
     .actos-list li {
       position: relative;
-      padding: 0 0 22px 22px;
+      padding: 0 0 20px 22px;
     }
     .actos-list li::before {
       content: "";
@@ -46,7 +67,7 @@
       background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
-    .actos-list .acto-label {
+    .actos-list .dia-label {
       display: block;
       font-size: 0.78rem;
       font-weight: 700;
@@ -55,24 +76,50 @@
       color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
-    .actos-list strong {
-      display: block;
-      font-size: 0.97rem;
-      margin-bottom: 3px;
-    }
 
-    .nota-grid {
-      font-size: 0.82rem;
-      color: var(--text-muted, #666);
-      font-style: italic;
-      margin-top: 0.5rem;
-      padding: 8px 12px;
-      background: var(--accent-light, #fdf3e7);
-      border-radius: var(--radius, 8px);
-      border-left: 3px solid var(--brand, #8b1a1a);
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
     }
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+    }
+    .agrupacion-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
-    /* Must-see grid */
+
+    /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -91,7 +138,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--brand, #8b1a1a);
     }
     .must-see-card .tag {
       display: inline-block;
@@ -103,10 +150,6 @@
       border-radius: 999px;
       margin-bottom: 10px;
       letter-spacing: 0.02em;
-    }
-    .must-see-card .tag-nota {
-      background: #f0f0f7;
-      color: #3a3a8b;
     }
     .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
     .must-see-card details { margin-top: 10px; }
@@ -127,15 +170,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Festival",
-    "@id": "https://folklorius.es/corpus-christi-ponteareas.html",
     "name": "Corpus Christi de Ponteareas",
-    "startDate": "2026-06-06",
-    "endDate": "2026-06-07",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "description": "El Corpus Christi de Ponteareas transforma más de un kilómetro de calles en alfombras florales efímeras que los vecinos elaboran durante una noche entera y que la procesión del domingo deshace en minutos. Fiesta de Interés Turístico Internacional (2009) y Bien de Interés Cultural inmaterial de Galicia (2024).",
     "location": {
       "@type": "Place",
-      "name": "Centro histórico de Ponteareas",
+      "name": "Ponteareas",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Ponteareas",
@@ -144,26 +183,98 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 42.1738,
-        "longitude": -8.5036
+        "latitude": 42.1732,
+        "longitude": -8.4978
       }
     },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Ayuntamiento de Ponteareas",
-      "url": "https://www.ponteareas.gal"
-    },
-    "image": ["https://folklorius.es/images/corpus-christi-ponteareas.jpg"],
-    "description": "El Corpus Christi de Ponteareas reúne a cientos de vecinos durante la noche del sábado para confeccionar más de un kilómetro de alfombras florales sobre las que procesiona la Custodia con el Santísimo Sacramento el domingo. Declarada Fiesta de Interés Turístico Internacional en 2009.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    }
+    "startDate": "2026-06-06",
+    "endDate": "2026-06-08",
+    "organizer": [
+      {
+        "@type": "Organization",
+        "name": "Ayuntamiento de Ponteareas",
+        "url": "https://www.ponteareas.es"
+      },
+      {
+        "@type": "Organization",
+        "name": "Asociación de Alfombristas do Corpus Christi de Ponteareas"
+      }
+    ],
+    "url": "https://folklorius.es/corpus-christi-ponteareas.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://folklorius.es/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Corpus Christi de Ponteareas",
+        "item": "https://folklorius.es/corpus-christi-ponteareas.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra el Corpus Christi de Ponteareas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La noche de confección de alfombras es el sábado anterior al domingo de Corpus. La procesión es ese domingo, que cae sesenta días después del Domingo de Resurrección. A diferencia de otras ciudades que mantienen el Corpus en jueves, Ponteareas celebra su día grande en domingo. Confirma las fechas exactas con el Ayuntamiento antes de planificar el viaje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si llueve durante la noche de las alfombras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el mayor temor de la fiesta cada año. Si la lluvia es ligera, los alfombristas protegen el trabajo con plásticos y continúan en cuanto para. Si es intensa y sostenida, el agua puede arrastrar horas de trabajo. Los vecinos siempre intentan terminar la obra, pero la lluvia es el único elemento que puede alterar la fiesta de manera significativa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo ayudar a hacer una alfombra si soy visitante?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El diseño y el relleno están organizados por los vecinos de cada calle, que llevan meses coordinados y conocen el patrón a la perfección. En las tareas más sencillas de la tarde —clasificar material, preparar bordes— algunos grupos reciben con agrado la ayuda respetuosa de visitantes. La clave es preguntar antes de tocar nada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Las alfombras se pueden pisar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Son una ofrenda religiosa concebida exclusivamente para el paso de la procesión. El único momento en que alguien pisa las alfombras es durante la procesión del domingo. Los visitantes deben moverse siempre por las aceras y pasillos habilitados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significan los dibujos de las alfombras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La mayoría de los motivos centrales son eucarísticos: cálices, palomas, cruces, espigas de trigo. Los bordes y cenefas suelen ser geométricos, inspirados en el arte popular gallego. Cada calle tiene libertad de diseño dentro de esa tradición, lo que hace que el kilómetro de alfombras sea visualmente muy variado."
+        }
+      }
+    ]
   }
   </script>
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
@@ -177,227 +288,275 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#glosario">Vocabulario</a>
-        <a href="index.html#blog">Blog</a>
-        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+        <a href="#" class="nav-cta">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a> › Corpus Christi de Ponteareas
-  </nav>
+  <main role="main">
+    <article>
 
-  <div class="ficha-hero">
-    <img src="images/corpus-christi-ponteareas.jpg" alt="Alfombras florales de colores cubriendo las calles del centro histórico de Ponteareas durante el Corpus Christi, con vecinos trabajando en la madrugada" />
-  </div>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Corpus Christi de Ponteareas
+      </nav>
 
-  <main class="ficha-main">
-    <article class="card">
-
-      <h1>Corpus Christi en Ponteareas</h1>
-      <p class="ficha-subtitle">
-        Ponteareas · Galicia · "Un pueblo entero dibujando con flores en la madrugada."
-      </p>
-
-      <div class="badges" aria-label="Reconocimientos oficiales">
-        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional desde 2009</span>
+      <div class="ficha-hero">
+        <img src="images/corpus-christi-ponteareas.jpg" alt="Alfombras florales de colores cubriendo las calles del centro histórico de Ponteareas durante el Corpus Christi, con vecinos trabajando en la madrugada" loading="eager" />
       </div>
 
-      <div class="aviso-sensibilidad" role="note">
-        <strong>Nota de sensibilidad</strong>
+      <div class="container ficha-main">
+
+        <h1>Corpus Christi de Ponteareas</h1>
+
+        <p class="ficha-subtitle">
+          Ponteareas · Galicia · «Un pueblo entero dibujando con flores en la madrugada.»
+        </p>
+
+        <div class="badges" aria-label="Reconocimientos oficiales">
+          <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+          <span class="badge badge-oficial">Bien de Interés Cultural de Galicia</span>
+        </div>
+
+        <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+          <div class="fechas-grandes">Sábado-domingo de Corpus · Junio de 2026</div>
+          <p>ITI desde 2009 · BIC inmaterial de Galicia desde 2024 · Más de un kilómetro de alfombras florales · La procesión las deshace en minutos</p>
+          <p class="nota-grid">⚠️ Fechas exactas sujetas al calendario litúrgico. Confirma en ponteareas.es y en la web del Ayuntamiento antes de planificar el viaje.</p>
+        </div>
+
+        <div class="aviso-sensibilidad" role="note">
+          <strong>Nota de sensibilidad</strong>
+          <ul>
+            <li>Las alfombras están diseñadas para que las pise la procesión, no los visitantes. Quienes las han hecho llevan toda la noche de rodillas para que lleguen intactas al mediodía del domingo. Hay pasillos habilitados en los laterales: úsalos y podrás ver el trabajo de cerca sin estropearlo.</li>
+            <li>La noche de confección es uno de los mejores momentos para entender la fiesta, y puedes vivirla desde cerca. Solo ten en cuenta que los alfombristas trabajan contra el reloj y necesitan concentración: observa desde los márgenes delimitados y deja que el trabajo fluya sin interrupciones.</li>
+            <li>Si llegas con cámara, bien: hay imágenes que no se ven en ningún otro sitio. Pero dedica un momento a mirar antes de disparar. Detrás de cada trozo de alfombra hay un grupo que lleva meses preparando lo que tienes delante. Eso cambia la manera de fotografiarlo.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title">La esencia de la fiesta</h2>
+        <p>
+          La noche del sábado, Ponteareas no duerme. Cientos de vecinos se arrodillan sobre el asfalto de sus calles y durante horas, bajo la luz de las farolas y en silencio casi completo, colocan pétalo a pétalo, semilla a semilla, los colores de un dibujo que han estado preparando durante meses. Al amanecer del domingo, más de un kilómetro de calles ha desaparecido bajo las flores.
+        </p>
+        <p>
+          Esas alfombras duran unas horas. La procesión del domingo las deshace al pasar. Y aun así, los vecinos vuelven a hacerlas cada año. Eso lo explica todo.
+        </p>
+
+        <h2 class="section-title">¿En qué consiste?</h2>
+        <p>
+          El Corpus Christi de Ponteareas no se parece a ningún otro. No hay custodias monumentales ni toldos heráldicos ni protocolos de siglos. Lo que hay es un pueblo que dedica meses de trabajo colectivo a crear algo que va a durar unas horas.
+        </p>
+        <p>
+          La <strong>Asociación de Alfombristas do Corpus Christi de Ponteareas</strong> coordina la manifestación y custodia la transmisión intergeneracional del oficio. Bajo su paraguas, los vecinos se organizan por calles y portalones: cada grupo diseña su patrón, recolecta el material vegetal en los montes cercanos durante semanas y lo clasifica por color y tipo en los bajos del barrio. La técnica está formalizada en tres fases que el Decreto BIC de 2024 recoge de manera canónica.
+        </p>
+        <p>
+          Primero, el <strong>trazado</strong>: trasladar el patrón-molde a escala real sobre el asfalto mediante un puntero. Después, el <strong>perfilado</strong>: marcar los contornos con materiales secos y oscuros —cocas de eucalipto trituradas, árnica, mangurrias o carozo de maíz tostado— que contienen los pétalos e impiden que los colores se mezclen. Por último, el <strong>matizado</strong>: rellenar cada área con pétalos frescos y follaje verde en gradación cromática. El resultado, visto desde un balcón, puede confundirse con un tapiz de tela.
+        </p>
+        <p>
+          El domingo por la mañana, mientras las alfombras todavía están intactas, los visitantes pueden recorrer el trazado completo. A mediodía llega la procesión con la Custodia, el clero y los niños de comunión, y lo que ha costado una noche entera queda deshecho en minutos. Desde los balcones, una lluvia de pétalos acompaña el paso.
+        </p>
+        <p class="nota-grid">⚠️ El programa detallado, el recorrido exacto y los horarios los publica el Ayuntamiento de Ponteareas antes de cada edición.</p>
+
+        <h2 class="section-title">Historia y significado</h2>
+        <p>
+          La celebración del Corpus en Ponteareas arranca, como en el resto de Europa, de la bula <em>Transiturus</em> del Papa Urbano IV en 1264. Pero su carácter floral es local y tiene fecha aproximada: hacia 1857, según recogen las crónicas locales, los vecinos de la calle de Abaixo empezaron a esparcir hinojo y retamas olorosas sobre el suelo de tierra para adecentar el paso de la procesión. No era arte: era respeto.
+        </p>
+        <p>
+          Con el tiempo, ese gesto fue ganando en ambición. Las hierbas dieron paso a flores, las flores a dibujos, los dibujos a composiciones con perspectiva y profundidad que exigen una técnica que se ha transmitido de generación en generación. Lo que empezó siendo una calle con olor a hinojo es hoy un oficio visual sin nombre académico que atrae visitantes de toda Europa y mantiene vínculos activos con otros grupos alfombristas internacionales.
+        </p>
+        <p>
+          La fiesta fue reconocida como Fiesta de Interés Turístico Internacional en 2009. El reconocimiento más reciente llegó mediante el Decreto 130/2024, de 22 de abril de la Xunta de Galicia —publicado en el DOG nº 97 de 20 de mayo de 2024 y en el BOE nº 292 de 4 de diciembre de 2024—, que la declara <strong>Bien de Interés Cultural inmaterial</strong>. La fiesta forma parte además de la candidatura coordinada ante la UNESCO para el reconocimiento del arte efímero floral como Patrimonio Cultural Inmaterial de la Humanidad.
+        </p>
+
+        <h2 class="section-title">Fechas 2026</h2>
+        <div class="fechas-grandes">Sábado-domingo de Corpus · Junio de 2026</div>
+        <p>El Corpus Christi cae el domingo sesenta días después del Domingo de Resurrección. Ponteareas celebra su día grande en domingo —no en jueves, como hacen otras ciudades—, lo que convierte la noche del sábado al domingo en el corazón de la fiesta. El Lunes de Corpus cierra el ciclo con el acto de entrega de medallas a los alfombristas.</p>
+
+        <h2 class="section-title" id="programa">Los actos principales</h2>
+        <ol class="actos-list">
+          <li>
+            <span class="dia-label">Semanas previas</span>
+            <strong>El deshoje y la preparación en los portalones</strong>
+            <p>En bajos, portales y garajes del barrio, los vecinos clasifican, cortan y preparan el material vegetal recogido en los montes: flores, mirto, tuya, hinojo, brezo, cocas de eucalipto, mangurrias. Todo se separa por color y tipo. Este trabajo previo, invisible para el visitante, es el que hace posible que la noche del sábado funcione.</p>
+          </li>
+          <li>
+            <span class="dia-label">Sábado · Tarde y noche</span>
+            <strong>La Noche de las Alfombras</strong>
+            <p>Las calles se cortan al tráfico. Comienza el trazado de los patrones sobre el asfalto, luego el perfilado con materiales oscuros y por último el matizado con pétalos frescos. El trabajo dura toda la madrugada sin pausa. Pasear por el pueblo mientras ocurre es una experiencia que no se anuncia en ningún cartel: la ves o no la ves.</p>
+          </li>
+          <li>
+            <span class="dia-label">Domingo · Amanecer y mañana</span>
+            <strong>El amanecer floral</strong>
+            <p>Cuando sale el sol, las alfombras están terminadas. Es el mejor momento para recorrer el trazado completo: el trabajo está intacto, la luz es buena y el gentío todavía no ha llegado. A medida que avanza la mañana, el centro se va llenando de visitantes.</p>
+          </li>
+          <li>
+            <span class="dia-label">Domingo · Mediodía</span>
+            <strong>Misa Solemne y Procesión</strong>
+            <p>La Custodia con el Santísimo Sacramento, el clero, los niños de comunión y las autoridades recorren las alfombras. Desde los balcones del recorrido, los vecinos lanzan pétalos al paso. Las alfombras quedan deshechas. Los servicios municipales recogen el material orgánico ese mismo día.</p>
+          </li>
+          <li>
+            <span class="dia-label">Lunes de Corpus</span>
+            <strong>Homenaje a los alfombristas</strong>
+            <p>El ciclo cierra con el acto institucional de entrega de medallas y reconocimiento a los alfombristas veteranos y a quienes ya no están. Es el epílogo social de una fiesta que sin ese cierre quedaría incompleta.</p>
+          </li>
+        </ol>
+
+        <h2 class="section-title" id="musica">Música y sonido</h2>
+        <p>
+          La Noche de las Alfombras no tiene música. Ese es su sonido más característico: el silencio interrumpido por el roce de los pétalos sobre el asfalto, las voces en voz baja entre vecinos que se coordinan y, de vez en cuando, el crujido de una rodilla apoyada en el suelo durante horas. Un silencio de trabajo, no de ceremonia.
+        </p>
+        <p>
+          El domingo cambia todo. La procesión avanza con el canto del clero, las campanas de la iglesia y el murmullo de los miles de personas que bordean el recorrido. El momento acústicamente más intenso es cuando los pétalos caen desde los balcones: el sonido suave y colectivo de flores golpeando el suelo, la custodia y a las personas que pasan debajo no se parece a nada que se pueda anticipar.
+        </p>
+        <p>
+          Para quien quiera entender la fiesta desde el oído: la madrugada del sábado en cualquier calle en plena confección, cuando los únicos sonidos son los de las manos trabajando y las conversaciones en gallego entre vecinos que llevan haciendo esto toda la vida.
+        </p>
+
+        <h2 class="section-title">No te lo puedes perder</h2>
+        <div class="must-see-grid">
+
+          <div class="must-see-card">
+            <h3>La madrugada de trabajo colectivo</h3>
+            <span class="tag">Sábado · Noche · Centro histórico</span>
+            <p>El mejor momento para entender la fiesta no es la procesión: es la noche antes. Familias enteras arrodilladas en el suelo, cada una en su trozo de calle, rellenando un dibujo que llevan meses preparando. Hay concentración, hay humor, hay vecinos que llevan haciéndolo toda la vida y niños que lo hacen por primera vez.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es la parte que menos se fotografía y la que más dice sobre por qué existe esta fiesta. No hay escenario ni público ni protocolo. Solo gente trabajando en la calle de noche para que algo bonito exista unas horas. Si solo vas el domingo a ver la procesión, te pierdes la mitad.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>Las alfombras al amanecer del domingo</h3>
+            <span class="tag">Domingo · Amanecer · Recorrido completo</span>
+            <p>Antes de que llegue la procesión y antes de que el centro se llene, hay una ventana de tiempo en la que puedes recorrer el kilómetro de alfombras con calma. La luz del amanecer sobre los colores florales, con el olor a mirto e hinojo en el aire, es la postal más auténtica de la fiesta.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque en pocas horas esas alfombras dejan de existir. Verlas intactas antes del paso de la procesión te permite entender la escala del trabajo: la precisión de los dibujos, la variedad de los materiales, las diferencias de técnica entre una calle y la siguiente.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>La lluvia de pétalos durante la procesión</h3>
+            <span class="tag">Domingo · Mediodía · Recorrido procesional</span>
+            <p>Durante la procesión, en varios puntos del recorrido, los vecinos lanzan pétalos desde los balcones al paso de la Custodia. El sonido de miles de flores cayendo al mismo tiempo sobre la calle, la custodia y la gente que la rodea crea algo que la foto no captura.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque es uno de esos momentos en que la fotografía no alcanza. El sonido de los pétalos cayendo, el olor que se libera al golpear el suelo y la imagen de la Custodia avanzando entre flores son tres cosas que llegan a la vez y que solo ocurren ahí.</p>
+            </details>
+          </div>
+
+          <div class="must-see-card">
+            <h3>Las alfombras de las calles menos visitadas</h3>
+            <span class="tag">Domingo · Mañana · Calles laterales</span>
+            <p>El recorrido oficial tiene sus puntos de saturación. Pero Ponteareas es pequeña y el kilómetro de alfombras incluye tramos alejados del eje central donde el trabajo es igual de cuidado y hay mucho menos gente. Los diseños más elaborados no siempre están en las calles más conocidas.</p>
+            <details>
+              <summary>¿Por qué no perdértelo?</summary>
+              <p>Porque las alfombras de las calles laterales tienen a menudo los perfilados con coca y mangurria más visibles —el contraste oscuro entre el contorno y el relleno de color— y son el sitio donde mejor se entiende la técnica de las tres fases.</p>
+            </details>
+          </div>
+
+        </div>
+
+        <h2 class="section-title">Consejos prácticos</h2>
         <ul>
-          <li><strong>Las alfombras no se pisan.</strong> Son una ofrenda religiosa concebida exclusivamente para el paso de la procesión. Los visitantes deben caminar por las aceras y pasillos laterales habilitados. Pisar una alfombra, aunque sea por accidente, es un gesto que la comunidad vive como una falta de respeto.</li>
-          <li><strong>Respeto durante la noche de trabajo.</strong> Si visitas la madrugada del sábado para ver la confección, mantente en los márgenes delimitados y evita interferir con los vecinos que trabajan. Son horas de concentración y esfuerzo colectivo.</li>
-          <li><strong>Aviso para personas con alergias.</strong> El ambiente estará cargado de material vegetal —flores, mirto, hinojo, brezo— removido por miles de personas. Si tienes alergia al polen o asma, toma precauciones antes de acudir.</li>
+          <li><strong>Alojamiento:</strong> Ponteareas es un municipio pequeño. La oferta hotelera propia es limitada; Vigo, a unos 30 km, tiene más opciones y conexión directa en tren y autobús. Reserva con antelación para el fin de semana del Corpus.</li>
+          <li><strong>Cómo llegar:</strong> En tren desde Vigo son menos de 30 minutos. En coche, hay aparcamiento en los accesos al casco urbano pero el centro queda cortado al tráfico desde el sábado por la tarde. Llega antes del cierre o usa el transporte público.</li>
+          <li><strong>Para la madrugada:</strong> lleva ropa cómoda para estar de pie varias horas y calzado que no te importe mancharte. El ambiente es tranquilo pero el suelo de los márgenes puede estar húmedo. Mantente siempre fuera del área de trabajo.</li>
+          <li><strong>Para el amanecer:</strong> el mejor momento es a primera luz del domingo, antes de que empiece el flujo de visitantes. Lleva la cámara pero no el trípode: el espacio en los pasillos laterales es justo.</li>
+          <li><strong>Alergias:</strong> el ambiente durante la jornada del domingo concentra una cantidad importante de material vegetal removido. Si tienes alergia al polen o asma, consulta con tu médico antes de planificar la visita en las horas de más afluencia.</li>
+          <li><strong>Gastronomía:</strong> la cocina del Condado do Tea tiene el lacón y las carnes tradicionales como referencia, y el río Miño como fuente de lamprea. En repostería, los melindres y rosquillas de Ponteareas son el dulce ceremonial de la villa. El vino de la <strong>D.O. Rías Baixas, subzona Condado do Tea</strong> —con variedades treixadura y albariño— es lo que se sirve en bares y restaurantes durante la Semana del Corpus.</li>
         </ul>
-      </div>
 
-      <!-- SECCIÓN 1: LA ESENCIA -->
-      <h2 class="section-title">La esencia de la fiesta</h2>
-      <p>
-        La noche del sábado, Ponteareas no duerme. Cientos de vecinos se arrodillan sobre el asfalto de sus calles y durante horas, bajo la luz de las farolas y en silencio casi completo, colocan pétalo a pétalo, semilla a semilla, los colores de un dibujo que han estado preparando durante meses. Al amanecer del domingo, más de un kilómetro de calles ha desaparecido bajo las flores.
-      </p>
-      <p>
-        Esas alfombras duran unas horas. La procesión del domingo las deshace al pasar. Y aun así, los vecinos vuelven a hacerlas cada año. Eso lo explica todo.
-      </p>
+        <h2 class="section-title">Vocabulario festero</h2>
+        <dl class="festero">
+          <dt>Trazado</dt>
+          <dd>Primera fase de la elaboración de las alfombras: trasladar el patrón-molde a escala real sobre el asfalto mediante un puntero o punzón. Define la geometría exacta del dibujo antes de empezar a colocar material vegetal.</dd>
 
-      <!-- SECCIÓN 2: EN QUÉ CONSISTE -->
-      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
-      <p>
-        El Corpus Christi de Ponteareas no se parece a ningún otro. No hay custodias monumentales ni toldos heráldicos ni protocolos de siglos. Lo que hay es un pueblo que dedica meses de trabajo colectivo a crear algo que va a durar unas horas.
-      </p>
-      <p>
-        Los vecinos se organizan por calles y portalones. Cada grupo diseña su propio patrón —con motivos religiosos, geométricos o florales—, recolecta el material vegetal en los montes cercanos durante semanas y lo clasifica por color y tipo en los bajos del barrio. El sábado por la tarde las calles se cortan, se dibujan las plantillas sobre el asfalto y empieza la noche larga: cientos de personas de todas las edades trabajando sin pausa hasta el amanecer para que las alfombras estén listas antes de la procesión.
-      </p>
-      <p>
-        El domingo por la mañana, mientras las alfombras todavía están intactas, los visitantes pueden recorrer el trazado y ver el resultado completo. A mediodía llega la procesión con la Custodia, el clero y los niños de comunión, y lo que ha costado una noche entera queda deshecho en minutos. Desde los balcones, una lluvia de pétalos acompaña el paso.
-      </p>
-      <p class="nota-grid">⚠️ El programa detallado de 2026, el recorrido exacto y los horarios los publica el Ayuntamiento de Ponteareas. Consúltalos antes de planificar tu visita.</p>
+          <dt>Perfilado</dt>
+          <dd>Segunda fase: marcar los contornos del diseño con materiales secos y oscuros que impiden que los colores del relleno se mezclen. Los materiales más característicos de Ponteareas son la coca de eucalipto triturada, la árnica, la mangurria —caperuza de la bellota— y el carozo de maíz tostado y molido.</dd>
 
-      <!-- SECCIÓN 3: HISTORIA Y SIGNIFICADO -->
-      <h2 class="section-title">Historia y significado</h2>
-      <p>
-        La celebración del Corpus en Ponteareas arranca, como en el resto de Europa, de la bula <em>Transiturus</em> del Papa Urbano IV en 1264. Pero su carácter floral es local y tiene fecha aproximada: hacia mediados del siglo XIX, en torno a 1857 según recogen las crónicas locales, los vecinos de la calle de Abaixo empezaron a esparcir hinojo y retamas olorosas sobre el suelo de tierra para adecentar el paso de la procesión. No era arte: era respeto.
-      </p>
-      <p>
-        Con el tiempo, ese gesto sencillo fue ganando en ambición. Las hierbas dieron paso a flores, las flores a dibujos, los dibujos a composiciones con perspectiva y profundidad que exigen una técnica que se ha transmitido de generación en generación. Lo que empezó siendo una calle con olor a hinojo se convirtió en un oficio visual sin nombre académico que hoy atrae a visitantes de toda Europa.
-      </p>
-      <p>
-        En 2009 la fiesta fue reconocida como Fiesta de Interés Turístico Internacional. El reconocimiento llegó tarde para lo que el pueblo lleva haciendo desde el siglo XIX, pero al menos llegó.
-      </p>
+          <dt>Matizado</dt>
+          <dd>Tercera y última fase: rellenar cada área del diseño con pétalos frescos y follaje verde en gradación cromática. Es el trabajo más visual y el que da a las alfombras su aspecto de tapiz floral cuando están terminadas.</dd>
 
-      <!-- SECCIÓN 4: FECHAS -->
-      <h2 class="section-title">Fechas 2026</h2>
-      <p>
-        El Corpus Christi depende del calendario litúrgico: siempre cae 60 días después del Domingo de Resurrección. A diferencia de Toledo, Ponteareas celebra su día grande en domingo, no en jueves. En 2026, la <strong>noche de las alfombras es el sábado 6 de junio</strong> y la <strong>procesión el domingo 7 de junio</strong>.
-      </p>
-      <p>
-        Si quieres vivirlo completo, plan mínimo de dos días: llega el sábado por la tarde para ver el arranque de la confección, quédate hasta el amanecer si puedes, y recorre las alfombras el domingo por la mañana antes de que llegue la procesión. Es cuando están intactas y el ambiente es más tranquilo.
-      </p>
+          <dt>Coca de eucalipto</dt>
+          <dd>La cápsula o caperuza leñosa del fruto del eucalipto, triturada y usada como material de perfilado. Su color oscuro y su textura granulada crean el contraste necesario para que los colores del relleno no se corran.</dd>
 
-      <!-- SECCIÓN 5: LOS ACTOS PRINCIPALES -->
-      <h2 class="section-title">Los actos principales</h2>
-      <ul class="actos-list">
-        <li>
-          <span class="acto-label">Semanas previas</span>
-          <strong>El deshoje y la preparación</strong>
-          En bajos, portales y garajes del barrio, los vecinos se reúnen para clasificar, cortar y preparar el material vegetal recogido en los montes: flores, mirto, tuya, hinojo, brezo. Todo se separa por color y tipo. Este trabajo previo, invisible para el visitante, es el que hace posible que la noche del sábado funcione.
-        </li>
-        <li>
-          <span class="acto-label">Sábado 6 de junio · Tarde y noche</span>
-          <strong>La Noche de las Alfombras</strong>
-          Las calles se cortan al tráfico. Los vecinos dibujan las plantillas sobre el asfalto y empiezan a volcar las flores sobre los diseños. El trabajo dura toda la madrugada sin pausa. Pasear por el pueblo mientras ocurre es una experiencia que no se anuncia en ningún cartel: la ves o no la ves.
-        </li>
-        <li>
-          <span class="acto-label">Domingo 7 de junio · Amanecer y mañana</span>
-          <strong>El amanecer floral</strong>
-          Cuando sale el sol, las alfombras están terminadas. Es el mejor momento para recorrer el trazado completo: el trabajo está intacto, la luz es buena y el gentío todavía no ha llegado. A medida que avanza la mañana, el centro se va llenando de visitantes.
-        </li>
-        <li>
-          <span class="acto-label">Domingo 7 de junio · Mediodía</span>
-          <strong>Misa Solemne y Procesión</strong>
-          La Custodia con el Santísimo Sacramento, el clero, los niños de comunión y las autoridades recorren las alfombras. Desde los balcones de la calle San Gregorio y otros puntos del recorrido, los vecinos lanzan pétalos al paso. Las alfombras quedan deshechas. Los servicios municipales recogen el material orgánico ese mismo día.
-        </li>
-      </ul>
+          <dt>Mangurria</dt>
+          <dd>Nombre local de la caperuza de la bellota, usada también como material de perfilado junto con la coca. Uno de los elementos vegetales identitarios de las alfombras de Ponteareas que las distinguen de otras tradiciones alfombristas.</dd>
 
-      <!-- SECCIÓN 6: NO TE LO PUEDES PERDER -->
-      <h2 class="section-title">No te lo puedes perder</h2>
-      <div class="must-see-grid">
+          <dt>Portalón</dt>
+          <dd>El bajo, cochera o garaje donde los vecinos de cada calle se reúnen semanas antes para clasificar y preparar el material. Es el taller de la alfombra: ahí se guardan las plantillas, se deshoja, se pica el verde y se organizan los turnos de la noche.</dd>
 
-        <div class="must-see-card">
-          <h3>La madrugada de trabajo colectivo</h3>
-          <span class="tag">Sábado · Noche · Centro histórico</span>
-          <p>El mejor momento para entender la fiesta no es la procesión: es la noche antes. Familias enteras arrodilladas en el suelo, cada una en su trozo de calle, rellenando un dibujo que llevan meses preparando. Hay concentración, hay humor, hay vecinos que llevan haciéndolo toda la vida y niños que lo hacen por primera vez.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es la parte que menos se fotografía y la que más dice sobre por qué existe esta fiesta. No hay escenario ni público ni protocolo. Solo gente trabajando en la calle de noche para que algo bonito exista unas horas. Si solo vas el domingo a ver la procesión, te perdes la mitad.</p>
-          </details>
+          <dt>Esfollar</dt>
+          <dd>Separar los pétalos de las flores y picar menudo el verde —mirto, brezo, tuya, hinojo— para obtener el material de relleno. Es un trabajo lento y repetitivo que ocupa muchas horas previas a la fiesta y en el que participa gente de todas las edades.</dd>
+
+          <dt>Alfombra invitada</dt>
+          <dd>Pieza confeccionada por un grupo alfombrista de otra localidad, invitado por el Ayuntamiento para enriquecer el recorrido con técnicas y materiales distintos. En ediciones anteriores han participado grupos de La Orotava (Tenerife), que trabajan con tierras volcánicas.</dd>
+        </dl>
+
+        <h2 class="section-title" style="display:none">Galería</h2>
+        <div class="galeria" aria-hidden="true" style="display:none">
+          <!-- imágenes pendientes -->
         </div>
 
-        <div class="must-see-card">
-          <h3>Las alfombras al amanecer del domingo</h3>
-          <span class="tag">Domingo · Amanecer · Recorrido completo</span>
-          <p>Antes de que llegue la procesión y antes de que el centro se llene, hay una ventana de tiempo en la que puedes recorrer el kilómetro de alfombras con calma. La luz del amanecer sobre los colores florales, con el olor a mirto e hinojo en el aire, es la postal más auténtica de la fiesta.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque en pocas horas esas alfombras dejan de existir. Y porque verlas intactas, antes del paso de la procesión, te permite entender la escala del trabajo que hay detrás: la precisión de los dibujos, la variedad de los materiales, las diferencias de técnica entre una calle y la siguiente.</p>
-          </details>
+        <h2 class="section-title">Enlaces útiles</h2>
+        <ul>
+          <li><a href="https://www.ponteareas.es" target="_blank" rel="noopener">Ayuntamiento de Ponteareas (programa oficial)</a></li>
+          <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia</a></li>
+          <li><a href="https://www.corposponteareas.gal" target="_blank" rel="noopener">Asociación de Alfombristas do Corpus Christi de Ponteareas</a></li>
+        </ul>
+
+        <p><small>Fuente de fechas: <a href="https://www.ponteareas.es" target="_blank" rel="noopener">ponteareas.es</a> — consultado el 01/10/2026</small></p>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Cuándo se celebra el Corpus Christi de Ponteareas?</dt>
+          <dd>La noche de confección de alfombras es el sábado anterior al domingo de Corpus, que cae sesenta días después del Domingo de Resurrección. Ponteareas celebra su día grande en domingo, no en jueves. Confirma las fechas exactas con el Ayuntamiento antes de planificar el viaje.</dd>
+
+          <dt>¿Qué pasa si llueve durante la noche de las alfombras?</dt>
+          <dd>Es el mayor temor de la fiesta cada año. Si la lluvia es ligera, los alfombristas protegen el trabajo con plásticos y continúan en cuanto para. Si es intensa y sostenida, puede arrastrar horas de trabajo. Los vecinos siempre intentan terminar, pero la lluvia es el único elemento que puede alterar la fiesta de forma significativa.</dd>
+
+          <dt>¿Puedo ayudar a hacer una alfombra si soy visitante?</dt>
+          <dd>El diseño y el relleno están organizados por los vecinos de cada calle, que llevan meses coordinados. En las tareas más sencillas de la tarde —clasificar material, preparar bordes— algunos grupos reciben con agrado la ayuda respetuosa de visitantes. La clave es preguntar antes de tocar nada.</dd>
+
+          <dt>¿Las alfombras se pueden pisar?</dt>
+          <dd>No. Son una ofrenda religiosa para el paso de la procesión. El único momento en que alguien las pisa es la procesión del domingo. Los visitantes deben moverse siempre por las aceras y pasillos habilitados.</dd>
+
+          <dt>¿Qué significan los dibujos de las alfombras?</dt>
+          <dd>La mayoría de los motivos centrales son eucarísticos: cálices, palomas, cruces, espigas de trigo. Los bordes y cenefas suelen ser geométricos, inspirados en el arte popular gallego. Cada calle tiene libertad de diseño dentro de esa tradición, lo que da al kilómetro completo una variedad visual que no esperabas.</dd>
+        </dl>
+
+        <div class="ficha-etiquetas" aria-label="Etiquetas">
+          <a href="#" class="etiqueta etiqueta-destacada">Corpus Christi de Ponteareas</a>
+          <a href="#" class="etiqueta etiqueta-destacada">Interés Turístico Internacional</a>
+          <a href="#" class="etiqueta">Galicia</a>
+          <a href="#" class="etiqueta">Pontevedra</a>
+          <a href="#" class="etiqueta">Junio</a>
+          <a href="#" class="etiqueta">Alfombras florales</a>
+          <a href="#" class="etiqueta">Bien de Interés Cultural</a>
+          <a href="#" class="etiqueta">Arte efímero</a>
+          <a href="#" class="etiqueta">Corpus Christi</a>
         </div>
 
-        <div class="must-see-card">
-          <h3>La lluvia de pétalos en la calle San Gregorio</h3>
-          <span class="tag">Domingo · Mediodía · Procesión</span>
-          <p>Durante la procesión hay varios momentos en que los vecinos lanzan pétalos desde los balcones al paso de la Custodia. Uno de los más vistosos ocurre en la calle San Gregorio, donde la cantidad de material lanzado desde las alturas crea una imagen que mezcla lo religioso y lo festivo de una manera muy difícil de describir sin verlo.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es uno de esos momentos en que la fotografía no alcanza. El sonido de los pétalos cayendo sobre la custodia, sobre el clero, sobre la gente que mira, tiene algo que solo ocurre en ese instante y en ese sitio.</p>
-          </details>
+        <div class="fichas-relacionadas">
+          <h2>Otras fiestas que te van a interesar</h2>
+          <div class="relacionadas-grid">
+            <a href="corpus-christi-toledo.html" class="relacionada-card">
+              <strong>Corpus Christi de Toledo</strong>
+              <span>Castilla-La Mancha · ITI · La Custodia de Arfe y siete siglos de protocolo procesional</span>
+            </a>
+            <a href="corpus-christi-bejar.html" class="relacionada-card">
+              <strong>Corpus Christi de Béjar</strong>
+              <span>Castilla y León · ITI · Los Hombres de Musgo y la leyenda de la reconquista de Santa Marina</span>
+            </a>
+            <a href="entroido-xinzo-de-limia.html" class="relacionada-card">
+              <strong>Entroido de Xinzo de Limia</strong>
+              <span>Galicia · ITI + BIC · La Pantalla y el ciclo de Entroido más largo de España</span>
+            </a>
+          </div>
         </div>
 
-        <div class="must-see-card">
-          <h3>Las alfombras invitadas</h3>
-          <span class="tag tag-nota">Variable según edición · Centro histórico</span>
-          <p>En ediciones anteriores, Ponteareas ha acogido a grupos alfombristas de otras localidades con tradición propia. Algunos, como los de La Orotava en Canarias, trabajan con materiales completamente distintos —tierras volcánicas del Teide en lugar de flores— y el contraste de técnicas y texturas enriquece el recorrido. Consulta el programa de 2026 para saber si hay delegaciones invitadas ese año.</p>
-          <details>
-            <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque ver cómo resuelven el mismo problema —cubrir una superficie con un dibujo usando material natural— con materiales completamente distintos dice mucho sobre cómo cada lugar ha desarrollado su propia tradición. Es la misma fiesta contada de otra manera.</p>
-          </details>
-        </div>
+        <p class="back-link"><a href="index.html">← Volver al inicio</a></p>
 
       </div>
-
-      <!-- SECCIÓN 7: CONSEJOS PRÁCTICOS -->
-      <h2 class="section-title">Consejos prácticos</h2>
-      <ul>
-        <li><strong>Llega al amanecer del domingo si quieres ver las alfombras intactas.</strong> A medida que avanza la mañana el centro se llena. Cuanto antes llegues, más tranquilo y más fotogénico lo encontrarás.</li>
-        <li><strong>Si vas a la madrugada del sábado, respeta los márgenes.</strong> Puedes caminar por los laterales y ver trabajar a los vecinos, pero nunca te acerques al diseño en proceso ni cruces las zonas delimitadas. Es su trabajo y su espacio.</li>
-        <li><strong>Calzado cómodo y ropa de abrigo.</strong> Pasarás horas de pie sobre adoquín y asfalto. La humedad nocturna del interior de Pontevedra es notable, especialmente en junio: una capa ligera de más no estorba.</li>
-        <li><strong>El coche, fuera del centro.</strong> Todo el núcleo histórico se corta al tráfico durante los días centrales. Sigue las indicaciones del Ayuntamiento hacia los aparcamientos periféricos habilitados y entra andando.</li>
-        <li><strong>Si tienes alergia al polen o asma, toma precauciones.</strong> Caminarás rodeado de toneladas de material vegetal removido por el viento y el paso de miles de personas. Consulta con tu médico si tienes dudas sobre si puedes acudir con seguridad.</li>
-        <li><strong>Alojamiento con antelación.</strong> Ponteareas es una villa de tamaño medio y la oferta de alojamiento en el pueblo es limitada. Si quieres quedarte cerca, reserva con meses de margen o busca opciones en Vigo o Porriño, bien comunicados por carretera.</li>
-      </ul>
-
-      <!-- SECCIÓN 8: VOCABULARIO -->
-      <h2 class="section-title">Vocabulario</h2>
-      <dl class="festero">
-
-        <dt>Portalón / Portal alfombrero</dt>
-        <dd>El bajo comercial, cochera o garaje donde los vecinos de cada calle se reúnen semanas antes para clasificar y preparar el material vegetal. Es el taller y el punto de encuentro del grupo: ahí se guardan las plantillas, se deshoja, se pica el verde y se organizan los turnos de la noche.</dd>
-
-        <dt>Plantilla</dt>
-        <dd>El diseño del dibujo que servirá de guía para la alfombra. Puede estar trazado sobre papel o dibujado directamente con tiza sobre el asfalto el sábado. Marca los límites de cada color y cada motivo para que el trabajo colectivo de la noche mantenga la forma prevista.</dd>
-
-        <dt>Esfollar / Deshojar</dt>
-        <dd>La acción de separar los pétalos de las flores y picar menudo el verde —mirto, brezo, tuya, hinojo— para obtener la "pintura" vegetal con la que se rellenan los dibujos. Es un trabajo lento y repetitivo que ocupa muchas horas previas a la fiesta y en el que participa gente de todas las edades.</dd>
-
-        <dt>Cenefa</dt>
-        <dd>El borde o marco geométrico que rodea el motivo central de cada alfombra. Suele estar hecho de material verde triturado —mirto o tuya— y define el perímetro del diseño. Es también lo que da unidad visual al conjunto cuando se recorre el kilómetro completo.</dd>
-
-        <dt>Alfombra invitada</dt>
-        <dd>La pieza confeccionada por un grupo alfombrista de otra localidad, invitado por el Ayuntamiento para enriquecer el recorrido con técnicas y materiales distintos a los de Ponteareas. En ediciones anteriores han participado grupos de La Orotava (Tenerife), que trabajan con tierras volcánicas.</dd>
-
-      </dl>
-
-      <!-- GALERÍA (oculta hasta tener imágenes reales) -->
-      <h2 class="section-title">Galería</h2>
-      <div class="galeria" style="display:none;">
-        <img src="images/corpus-christi-ponteareas-1.jpg" alt="Vecinos de Ponteareas trabajando durante la madrugada en la confección de las alfombras florales del Corpus Christi" />
-        <img src="images/corpus-christi-ponteareas-2.jpg" alt="Vista aérea de las alfombras florales de colores cubriendo las calles del centro histórico de Ponteareas al amanecer del Corpus Christi" />
-        <img src="images/corpus-christi-ponteareas-3.jpg" alt="Lluvia de pétalos desde los balcones al paso de la Custodia durante la procesión del Corpus Christi de Ponteareas" />
-      </div>
-
-      <!-- ENLACES ÚTILES -->
-      <h2 class="section-title">Enlaces útiles</h2>
-      <ul>
-        <li><a href="https://www.ponteareas.gal" target="_blank" rel="noopener">Ayuntamiento de Ponteareas — Información oficial</a></li>
-        <li><a href="https://www.turismo.gal" target="_blank" rel="noopener">Turismo de Galicia — Xunta de Galicia</a></li>
-      </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-05-01</p>
-
-      <!-- SECCIÓN 9: PREGUNTAS FRECUENTES -->
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <dl class="faq">
-
-        <dt>¿Cuándo se celebra el Corpus Christi de Ponteareas en 2026?</dt>
-        <dd>La noche de confección de alfombras es el sábado 6 de junio y la procesión el domingo 7 de junio de 2026. A diferencia de otras ciudades que mantienen el Corpus en jueves, Ponteareas celebra su día grande en domingo. Confirma el programa definitivo con el Ayuntamiento antes de planificar tu visita.</dd>
-
-        <dt>¿Qué pasa si llueve durante la noche de las alfombras?</dt>
-        <dd>Es el mayor temor de la fiesta cada año. Si la lluvia es ligera, los alfombristas protegen el trabajo con plásticos y continúan en cuanto para. Si es intensa y sostenida, el agua puede arrastrar horas de trabajo. El empeño de los vecinos es terminar la obra pase lo que pase, pero la lluvia es el único elemento que puede alterar la fiesta de manera significativa.</dd>
-
-        <dt>¿Puedo ayudar a hacer una alfombra si soy visitante?</dt>
-        <dd>El diseño y el relleno están organizados por los vecinos de cada calle, que llevan meses coordinados y conocen el patrón a la perfección. Incorporar a alguien externo en las zonas de detalle puede generar errores en el dibujo. Dicho eso, en las tareas más sencillas de la tarde —clasificar material, preparar bordes— algunos grupos reciben con agrado la ayuda respetuosa de visitantes. La clave es preguntar antes de tocar nada.</dd>
-
-        <dt>¿Las alfombras se pueden pisar?</dt>
-        <dd>No. Son una ofrenda religiosa concebida exclusivamente para el paso de la procesión. El único momento en que alguien pisa las alfombras es durante la procesión del domingo. Los visitantes deben moverse siempre por las aceras y pasillos laterales habilitados.</dd>
-
-        <dt>¿Qué significan los dibujos de las alfombras?</dt>
-        <dd>La mayoría de los motivos centrales son eucarísticos: cálices, palomas, cruces, espigas de trigo. Los bordes y cenefas suelen ser geométricos, inspirados en el arte popular gallego, los rosetones de piedra o la artesanía textil de la zona. Cada calle tiene su propio estilo y su propio nivel de ambición en el diseño: recorrer el kilómetro completo es ver esa variación de cerca.</dd>
-
-      </dl>
-
-      <a href="index.html" class="back-link">← Volver al inicio</a>
-
     </article>
   </main>
 
