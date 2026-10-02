@@ -21,74 +21,113 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 
   <style>
 
-    /* ── Maquinaria escénica (patrón cofradia-col adaptado) ── */
-    .maquinaria-grid {
+    /* ── Nota de aviso ───────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      border-left: 2px solid var(--border, #e8ddd4);
+    }
+    .actos-list li {
+      position: relative;
+      padding: 0 0 20px 22px;
+    }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── Agrupaciones grid (equivalente a filaes/cofradías para Carnaval) ── */
+    .agrupaciones-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
       margin-top: 1rem;
     }
-    .maquinaria-col {
-      background: var(--surface, #fafafa);
-      border: 1px solid var(--border, #e5e0d8);
-      border-radius: var(--radius, 8px);
-      padding: 16px;
+    .agrupacion-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
     }
-    .maquinaria-col h3 {
+    .agrupacion-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
       color: var(--brand, #8b1a1a);
       margin-bottom: 6px;
     }
-    .maquinaria-col p {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      margin: 0;
-      color: var(--text, #2a2218);
+    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    /* ── Ficha etiquetas ─────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    @media (max-width: 480px) {
-      .maquinaria-grid { grid-template-columns: 1fr; }
+    .etiqueta-destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
+    /* ── Fichas relacionadas ─────────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
     }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
-    /* ── Los dos actos (bloques diferenciados) ── */
-    .actos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .acto-bloque {
-      background: var(--surface, #fafafa);
-      border-left: 3px solid var(--brand, #8b1a1a);
-      border-radius: 0 var(--radius, 8px) var(--radius, 8px) 0;
-      padding: 16px 18px;
-    }
-    .acto-bloque h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.1rem;
-      color: var(--text, #2a2218);
-      margin-bottom: 4px;
-    }
-    .acto-bloque .acto-fecha {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--brand, #8b1a1a);
-      margin-bottom: 10px;
-      display: block;
-    }
-    .acto-bloque p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
 
-    /* ── Must-see (idéntico al de Orihuela/Palencia) ── */
+    /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -107,7 +146,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--brand, #8b1a1a);
     }
     .must-see-card .tag {
       display: inline-block;
@@ -133,137 +172,82 @@
     .must-see-card details[open] summary::after { content: " ↑"; }
     .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
-    /* ── Fichas relacionadas ── */
-    .fichas-relacionadas {
-      margin: 2rem 0 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 2px solid var(--border, #e5e0d8);
-    }
-    .fichas-relacionadas h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text, #2a2218);
-    }
-    .fichas-relacionadas-grid {
+  
+    /* ── Maquinaria escénica ── */
+    .maquinaria-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
     }
-    .ficha-rel-card {
-      background: var(--surface, #fafafa);
-      border: 1px solid var(--border, #e5e0d8);
-      border-radius: var(--radius, 8px);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
+    .maquinaria-col {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 16px;
     }
-    .ficha-rel-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-    .ficha-rel-card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      display: block;
-    }
-    .ficha-rel-card .rel-body {
-      padding: 12px 14px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .ficha-rel-card .rel-title {
+    .maquinaria-col h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
-      font-weight: 700;
-      color: var(--text, #2a2218);
-    }
-    .ficha-rel-card .rel-frase {
-      font-size: 0.82rem;
-      color: var(--text-muted, #666);
-      font-style: italic;
-    }
-    .ficha-rel-card .rel-meta {
-      font-size: 0.72rem;
       color: var(--brand, #8b1a1a);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-top: 4px;
+      margin-bottom: 6px;
     }
+    .maquinaria-col p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+    @media (max-width: 480px) { .maquinaria-grid { grid-template-columns: 1fr; } }
 
-    /* ── Etiquetas ── */
-    .ficha-etiquetas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 2rem 0 1rem;
-      padding: 18px 0 4px;
-      border-top: 1px solid var(--border, #e5e0d8);
+    /* ── Los dos actos ── */
+    .actos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
     }
-    .ficha-etiquetas .etiqueta {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 6px 12px;
-      background: #fafafa;
-      border: 1px solid var(--border, #e5e0d8);
-      border-radius: 999px;
-      color: var(--text-muted, #666);
-      text-decoration: none;
-      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    .acto-bloque {
+      background: var(--bg, #fafafa);
+      border-left: 3px solid var(--brand, #8b1a1a);
+      border-radius: 0 var(--radius, 10px) var(--radius, 10px) 0;
+      padding: 16px 18px;
     }
-    .ficha-etiquetas .etiqueta:hover {
-      background: var(--accent-light, #fdf3e7);
-      border-color: var(--brand, #8b1a1a);
-      color: var(--brand, #8b1a1a);
-    }
-    .ficha-etiquetas .etiqueta.destacada {
-      background: var(--accent-light, #fdf3e7);
-      border-color: var(--brand, #8b1a1a);
-      color: var(--brand, #8b1a1a);
-    }
-
-    /* ── Bloque datos clave ── */
-    .ficha-datos-clave {
-      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
-      border: 1px solid #e5e0d8;
-      border-radius: var(--radius, 8px);
-      padding: 22px 20px;
-      margin: 1.25rem 0 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .ficha-datos-clave .fechas-grandes {
+    .acto-bloque h3 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--brand, #8b1a1a);
+      font-size: 1.1rem;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 4px;
+    }
+    .acto-bloque .acto-fecha {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--brand, #8b1a1a);
+      margin-bottom: 10px; display: block;
+    }
+    .acto-bloque p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+    @media (max-width: 580px) { .actos-grid { grid-template-columns: 1fr; } }
+
+    /* ── Aviso sensibilidad ── */
+    .aviso-sensibilidad {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-left: 3px solid var(--brand, #8b1a1a);
+      border-radius: 0 var(--radius, 10px) var(--radius, 10px) 0;
+      padding: 16px 18px;
+      margin: 1.25rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--brand, #8b1a1a);
       margin-bottom: 10px;
-      line-height: 1.25;
     }
-    .ficha-datos-clave .datos-secundarios {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      font-size: 0.92rem;
-      color: var(--text, #2a2218);
-    }
-    .ficha-datos-clave .datos-secundarios span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    @media (max-width: 580px) {
-      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
-      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 6px; }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Música block ── */
+    .music-block {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px 20px;
+      margin: 1.25rem 0;
     }
 
   </style>
@@ -274,8 +258,8 @@
     "@type": "Festival",
     "@id": "https://folklorius.es/misteri-elx.html",
     "name": "Misteri d'Elx (Misterio de Elche)",
-    "startDate": "2027-08-14",
-    "endDate": "2027-08-15",
+    "startDate": "2026-08-14",
+    "endDate": "2026-08-15",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -339,7 +323,7 @@
         "name": "¿Necesito saber valenciano para entender el Misteri d'Elx?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No es imprescindible, pero ayuda mucho. El Patronato edita un libreto bilingüe: llevarlo facilita seguir la trama, ya que el valenciano antiguo y la densidad del canto polifónico dificultan la comprensión incluso para hablantes nativos."
+          "text": "No hace falta, pero ayuda mucho. El Patronato edita un libreto bilingüe: llevarlo facilita seguir la trama, ya que el valenciano medieval y la densidad del canto polifónico dificultan la comprensión incluso para valencianohablantes."
         }
       },
       {
@@ -384,23 +368,23 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#glosario">Vocabulario</a>
-        <a href="index.html#blog">Blog</a>
-        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+        <a href="#" class="nav-cta">Explorar</a>
       </nav>
     </div>
   </header>
 
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a> › Misteri d'Elx
-  </nav>
+  <main role="main">
+    <article>
 
-  <div class="ficha-hero">
-    <img src="images/misteri-elx.jpg" alt="Descenso del Araceli, retablo aéreo dorado con ángeles cantores, desde la cúpula de la Basílica de Santa María de Elche durante el Misteri d'Elx" />
-  </div>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a> › Misteri d'Elx
+      </nav>
 
-  <main class="ficha-main">
-    <article class="card">
+      <div class="ficha-hero">
+        <img src="images/misteri-elx.jpg" alt="Descenso del Araceli, retablo aéreo dorado con ángeles cantores, desde la cúpula de la Basílica de Santa María de Elche durante el Misteri d'Elx" loading="eager" />
+      </div>
+
+      <div class="container ficha-main">
 
       <h1>Misteri d'Elx</h1>
       <p class="ficha-subtitle">
@@ -412,8 +396,8 @@
         <span class="badge badge-oficial">Monumento Nacional · 1931</span>
       </div>
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
-        <div class="fechas-grandes">14–15 de agosto · 2026</div>
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave">
+        <div class="fechas-grandes">14 y 15 de agosto</div>
         <div class="datos-secundarios">
           <span>📍 Basílica de Santa María, Elche</span>
           <span>🎭 Teatro sacro-lírico cantado</span>
@@ -425,9 +409,9 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota para el visitante</strong>
         <ul>
-          <li>El Misteri es una representación litúrgica dentro de un templo activo. Silencio y respeto durante toda la obra, especialmente en los momentos de mayor recogimiento.</li>
-          <li>Los días oficiales (14 y 15 de agosto) no garantizan asiento. Si necesitas ir sentado, los ensayos generales (11-13 agosto) son la opción segura.</li>
-          <li>El interior de la basílica se llena por completo horas antes del inicio en los días oficiales. Valora tu tolerancia al calor y a las aglomeraciones antes de decidir cuándo ir.</li>
+          <li>Los cantores de la Capella son vecinos de Elche que llevan generaciones transmitiendo esta música de forma oral. Lo que escuchas no es una recreación histórica: es la continuidad viva de algo que no ha parado desde el siglo XV.</li>
+          <li>El Misteri se representa dentro de una misa activa, no en un escenario de teatro. La acción escénica y la liturgia de la Asunción son una sola cosa: asistir con esa conciencia cambia lo que se ve.</li>
+          <li>Los niños de la Escolanía que interpretan a los ángeles y a la Virgen llevan meses de ensayos. Cuando la Mangrana desciende y se abre, hay detrás un trabajo colectivo de toda una comunidad.</li>
         </ul>
       </div>
 
@@ -462,7 +446,7 @@
         En 1931 fue declarado <strong>Monumento Nacional</strong> por el Gobierno de España. En 2001, la UNESCO lo declaró <strong>Obra Maestra del Patrimonio Oral e Inmaterial de la Humanidad</strong>, formando parte de la primera proclamación que hizo la UNESCO en esa categoría, y en 2008 se incorporó a la Lista Representativa. Las Cortes Valencianas aprobaron en 2005 una ley propia, la Ley 13/2005, específicamente para su protección.
       </p>
 
-<h2 class="section-title">Fechas 2026</h2>
+<h2 class="section-title">Cuándo se celebra</h2>
       <p>
         El Misteri se representa oficialmente los días <strong>14 de agosto (La Vespra)</strong> y <strong>15 de agosto (La Festa)</strong>, coincidiendo con la festividad de la Asunción de la Virgen. Cada acto se representa en su día correspondiente, no la obra completa seguida.
       </p>
@@ -470,7 +454,9 @@
         Los <strong>ensayos generales</strong>, abiertos al público con entrada de pago, se celebran los días <strong>11, 12 y 13 de agosto</strong>. A diferencia de la representación oficial, en los ensayos se escenifican los dos actos seguidos, sin interrupción entre ellos.
       </p>
       <p>
-        Existen representaciones extraordinarias en años pares, hacia el 1 de noviembre, aunque el ciclo principal y el que reúne al grueso del público es el de agosto.
+        La noche del 13 de agosto se celebra la <strong>Nit de l'Albà</strong>: el alumbrado urbano de Elche se apaga y la Palmera de la Virgen, un cohete cenital, se dispara desde la torre-campanario de la basílica para anunciar el inicio del ciclo. La mañana del 15, antes de La Festa, tiene lugar la <strong>Processó del Soterrar</strong>, la procesión de la sepultura por las calles del centro histórico.
+
+        Existen representaciones extraordinarias en años pares, en torno al 1 de noviembre, aunque el ciclo de agosto reúne al grueso del público.
       </p>
       <p class="fuente">Comprueba las fechas exactas y la venta de entradas en <a href="https://misteridelx.com" target="_blank" rel="noopener">misteridelx.com</a>.</p>
 
@@ -485,7 +471,7 @@
 
 <h2 class="section-title">La maquinaria escénica</h2>
       <p>
-        Es el elemento más singular de toda la representación, y no exagera quien dice que no hay nada igual en el mundo. Desde una trampilla en la lona que cubre la cúpula, descienden y ascienden tres aparatos aéreos, impulsados por tracción manual mediante cuerdas y poleas.
+        Desde una trampilla en la lona que cubre la cúpula de la basílica descienden tres aparatos aéreos accionados a mano desde la cambra del cel, el espacio superior oculto al público donde trabajan los tramoistes. El sistema de torno, contrapeso y maromas no ha cambiado desde el siglo XVII. Antes de que lleguen los aparatos aéreos, la acción transcurre en el cadafal, el catafalco octogonal donde yace la Virgen, conectado con el resto de la nave por el andador, un pasillo elevado con barandilla desde el que se producen las entradas de los personajes. El momento central del segundo acto, la Vespra, ocurre en el bressol: el lecho mortuorio donde, mediante una trampilla oculta, el niño cantor que interpreta a la Virgen es sustituido en silencio por la talla escultórica de la Mare de Déu antes de que el Araceli la eleve.
       </p>
 
       <div class="maquinaria-grid">
@@ -495,11 +481,11 @@
         </div>
         <div class="maquinaria-col">
           <h3>El Araceli (altar del cielo)</h3>
-          <p>Un retablo aéreo dorado, ocupado por ángeles cantores, que desciende dos veces: una para llevarse el alma de la Virgen tras su muerte, y otra al final de la obra para subir su cuerpo a los cielos.</p>
+          <p>Retablo aéreo dorado con cinco figuras: el Ángel Mayor y cuatro ángeles acompañantes. Desciende dos veces: la primera para recibir el alma de la Virgen tras su muerte, la segunda para elevar su cuerpo a los cielos en el clímax final.</p>
         </div>
         <div class="maquinaria-col">
           <h3>La Coloma (Santísima Trinidad)</h3>
-          <p>El retablo aéreo más alto, que desciende en el clímax final del segundo acto para coronar a la Virgen justo antes de que complete su ascensión.</p>
+          <p>El retablo más alto, con tres figuras: el Padre Eterno y dos ángeles. Desciende en el punto culminante de La Festa para coronar a la Virgen y completar el misterio de la Santísima Trinidad.</p>
         </div>
       </div>
 
@@ -595,7 +581,7 @@
         <strong>Ensayos generales (11, 12 y 13 de agosto).</strong> Se montan sillas y gradas dentro de la nave, y las entradas se venden con antelación a través de <a href="https://misteridelx.com" target="_blank" rel="noopener">misteridelx.com</a> o en la Casa de la Festa. Es la opción más cómoda para quien quiere ver la obra completa en una sola sesión y con asiento asegurado.
       </p>
       <p>
-        <strong>Recomendaciones para quien no conoce valenciano.</strong> El Patronato suele editar un libreto bilingüe. Llevarlo es casi imprescindible: el valenciano antiguo y la densidad polifónica del canto hacen difícil seguir la letra exacta sin apoyo, incluso para valencianohablantes.
+        <strong>Recomendaciones para quien no conoce valenciano.</strong> El Patronato suele editar un libreto bilingüe. Llevarlo facilita mucho seguir la trama: el valenciano medieval y la densidad polifónica del canto hacen difícil entender la letra exacta sin apoyo, incluso para valencianohablantes.
       </p>
       <p>
         <strong>El calor dentro de la basílica.</strong> Agosto, iglesia abarrotada, sin apenas ventilación. El abanico es casi una tradición entre el público asistente.
@@ -658,7 +644,7 @@
         <dd>Los días 14 (La Vespra) y 15 de agosto (La Festa), con ensayos generales abiertos al público los días 11, 12 y 13. Comprueba fechas y venta de entradas en <a href="https://misteridelx.com" target="_blank" rel="noopener">misteridelx.com</a>.</dd>
 
         <dt>¿Necesito saber valenciano para entenderlo?</dt>
-        <dd>No es imprescindible, pero ayuda mucho. El Patronato edita un libreto bilingüe: llevarlo facilita seguir la trama, ya que el valenciano antiguo y la densidad del canto polifónico dificultan la comprensión incluso para hablantes nativos.</dd>
+        <dd>No hace falta, pero ayuda mucho. El Patronato edita un libreto bilingüe: llevarlo facilita seguir la trama, ya que el valenciano medieval y la densidad del canto polifónico dificultan la comprensión incluso para valencianohablantes.</dd>
 
         <dt>¿Es mejor ir a la representación oficial o al ensayo general?</dt>
         <dd>Depende de lo que busques. Los ensayos (11-13 agosto) ofrecen los dos actos seguidos, con asiento garantizado mediante entrada de pago. Los días oficiales (14-15 agosto) son gratuitos pero sin asiento asegurado, con la basílica abarrotada.</dd>
@@ -671,9 +657,9 @@
 
       </dl>
 
-      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
-        <a href="#" class="etiqueta destacada">Representación religiosa</a>
-        <a href="#" class="etiqueta destacada">UNESCO</a>
+      <div class="ficha-etiquetas">
+        <a href="#" class="etiqueta etiqueta-destacada">Representación religiosa</a>
+        <a href="#" class="etiqueta etiqueta-destacada">UNESCO</a>
         <a href="#" class="etiqueta">Monumento Nacional</a>
         <a href="#" class="etiqueta">Comunitat Valenciana</a>
         <a href="#" class="etiqueta">Elche</a>
@@ -683,42 +669,27 @@
         <a href="#" class="etiqueta">Siglo XV</a>
       </div>
 
-      <section class="fichas-relacionadas" aria-labelledby="rel-title-elx">
-        <h2 id="rel-title-elx">Otras fiestas que te van a interesar</h2>
-        <div class="fichas-relacionadas-grid">
-
-          <a href="semana-santa-orihuela.html" class="ficha-rel-card">
-            <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Semana Santa de Orihuela</span>
-              <span class="rel-frase">La ficha de referencia de Semana Santa, a 20 km de Elche.</span>
-              <span class="rel-meta">Orihuela · Comunitat Valenciana</span>
-            </div>
+      <section class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="semana-santa-orihuela.html" class="relacionada-card">
+            <strong>Semana Santa de Orihuela</strong>
+            <span>Procesiones históricas a 20 km de Elche · Comunitat Valenciana</span>
           </a>
-
-          <a href="moros-cristianos-crevillent.html" class="ficha-rel-card">
-            <img src="images/moros-cristianos-crevillent.jpg" alt="Moros y Cristianos de Crevillent" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Moros y Cristianos de Crevillent</span>
-              <span class="rel-frase">La declaración vecina más cercana a Elche, a solo 8 km.</span>
-              <span class="rel-meta">Crevillent · Comunitat Valenciana</span>
-            </div>
+          <a href="moros-cristianos-crevillent.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Crevillent</strong>
+            <span>Declaración ITI vecina, a solo 8 km · Comunitat Valenciana</span>
           </a>
-
-          <a href="moros-cristianos-alcoy.html" class="ficha-rel-card">
-            <img src="images/moros-cristianos-alcoy.jpg" alt="Moros y Cristianos de Alcoy" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Moros y Cristianos de Alcoy</span>
-              <span class="rel-frase">La ficha de referencia de la tipología, mismo patrimonio valenciano de raíz medieval.</span>
-              <span class="rel-meta">Alcoy · Comunitat Valenciana</span>
-            </div>
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Referencia de la tipología, patrimonio medieval valenciano</span>
           </a>
-
         </div>
       </section>
 
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
+      </div>
     </article>
   </main>
 
