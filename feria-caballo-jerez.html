@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feria del Caballo de Jerez 2026: Caballos y Vino | Folklorius</title>
-  <meta name="description" content="Feria del Caballo de Jerez 2026: casetas abiertas a todos, el Paseo de Caballos y Enganches, doma vaquera y los vinos del Marco de Jerez. ITI desde 1980." />
+  <title>Feria del Caballo de Jerez: Caballos, Vino y Doma | Folklorius</title>
+  <meta name="description" content="Feria del Caballo de Jerez: casetas abiertas, Paseo de Caballos y Enganches, doma vaquera y vinos del Marco de Jerez. ITI desde 1980." />
   <link rel="canonical" href="https://folklorius.es/feria-caballo-jerez.html" />
 
-  <meta property="og:title" content="Feria del Caballo de Jerez 2026 | Caballos, Enganches y Vino de Jerez" />
+  <meta property="og:title" content="Feria del Caballo de Jerez | Caballos, Enganches y los Vinos del Marco" />
   <meta property="og:description" content="Qué puedes hacer en la Feria del Caballo de Jerez: casetas de acceso libre, el Paseo de Caballos y Enganches, doma vaquera y los vinos del Marco de Jerez." />
   <meta property="og:image" content="https://folklorius.es/images/feria-caballo-jerez.jpg" />
   <meta property="og:type" content="article" />
@@ -22,52 +22,70 @@
 
   <style>
 
+    /* ── Nota de aviso (nota-grid) ─────────────────────────────── */
     .nota-grid {
-      font-size: 0.82rem;
-      color: var(--text-muted, #5a5a5a);
-      font-style: italic;
-      margin-top: 0.5rem;
-      padding: 8px 12px;
-      background: var(--accent-light, #f5e6c8);
-      border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      font-size: 0.82rem; color: #666; font-style: italic;
+      margin-top: 0.5rem; padding: 8px 12px;
+      background: #fdf3e7; border-radius: 8px;
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
+    /* ── Aviso de sensibilidad ─────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Ficha datos clave ─────────────────────────────── */
     .ficha-datos-clave {
-      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
-      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
-      padding: 18px 22px; margin: 1.2rem 0;
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8; border-radius: 8px;
+      padding: 22px 20px; margin: 1.25rem 0 1.5rem;
+      text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px; line-height: 1.25;
     }
-    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
-    .datos-secundarios span {
-      font-size: 0.85rem; color: var(--text, #2c2c2c);
-      background: #fff; border: 1px solid var(--border, #e8ddd4);
-      border-radius: 999px; padding: 4px 12px;
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
     }
-    .actos-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e8ddd4);
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .actos-list li {
-      position: relative;
-      padding: 0 0 20px 22px;
-    }
+
+    /* ── Timeline de actos (dia-label) ─────────────────────────────── */
+    .actos-list { list-style: none; padding: 0; margin: 1rem 0 0; border-left: 2px solid var(--border, #e5e0d8); }
+    .actos-list li { position: relative; padding: 0 0 20px 22px; }
     .actos-list li::before {
       content: "";
       position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 8px;
-      height: 8px;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -76,49 +94,105 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
 
-    .agrupaciones-grid {
+    /* ── Bloque musica y sonido ─────────────────────────────── */
+    .music-block p { font-size: 0.93rem; line-height: 1.6; margin-bottom: 0.9rem; }
+
+    /* ── Must-see ─────────────────────────────── */
+    .must-see-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
       margin-top: 1rem;
     }
-    .agrupacion-card {
-      background: var(--bg, #fafafa);
-      border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px);
-      padding: 16px 18px;
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
     }
-    .agrupacion-card h3 {
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1rem;
-      color: var(--brand, #b34700);
+      font-size: 1.05rem;
       margin-bottom: 6px;
+      color: var(--text, #2a2218);
     }
-    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
-    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    /* ── Etiquetas ─────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.5rem 0; }
     .etiqueta {
-      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
-      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 6px 12px; background: #fafafa;
+      border: 1px solid #e5e0d8; border-radius: 999px;
+      color: #666; text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
 
-    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
-    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .relacionada-card {
-      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); padding: 14px 16px;
-      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    /* ── Fichas relacionadas ─────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e5e0d8; }
+    .fichas-relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .ficha-rel-card { display: block; border-radius: 8px; overflow: hidden; border: 1px solid #e5e0d8; text-decoration: none; color: inherit; }
+    .ficha-rel-card img { width: 100%; height: 120px; object-fit: cover; }
+    .rel-body { padding: 10px 12px; }
+    .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #2a2218; display: block; }
+    .rel-frase { font-size: 0.82rem; color: #666; font-style: italic; display: block; }
+    .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; display: block; }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
     }
-    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
-    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+  
+
+    /* ── Casetas grid (bloque central tipología Feria) ──────────────── */
+    .casetas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 1rem; }
+    .caseta-card { background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4); border-radius: var(--radius, 10px); padding: 16px 18px; }
+    .caseta-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; color: var(--brand, #8b1a1a); margin-bottom: 6px; }
+    .caseta-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    .tag-leyenda { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #2b5b8c; background: #e6f0fa; border-radius: 999px; padding: 2px 10px; margin-bottom: 6px; }
 
   </style>
 
@@ -130,6 +204,11 @@
     "name": "Feria del Caballo de Jerez",
     "startDate": "2026-05-09",
     "endDate": "2026-05-16",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1Y",
+      "description": "Se celebra en mayo, siempre después de la Feria de Abril de Sevilla y antes de la Romería del Rocío. Las fechas exactas las fija anualmente el Ayuntamiento de Jerez."
+    },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -143,8 +222,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 36.6850,
-        "longitude": -6.1261
+        "latitude": 36.6964,
+        "longitude": -6.1270
       }
     },
     "image": ["https://folklorius.es/images/feria-caballo-jerez.jpg"],
@@ -202,7 +281,7 @@
         "name": "¿Qué diferencia a la Feria de Jerez de la de Sevilla?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El acceso y el foco simbólico. En Jerez casi todas las casetas son públicas y el caballo es el eje central de la fiesta. En Sevilla la inmensa mayoría de casetas son privadas y el foco recae en la Portada y el ritual social urbano."
+          "text": "El acceso y el foco simbólico. En Jerez casi todas las casetas son de acceso libre y el caballo es el eje de la fiesta. En Sevilla casi todas son privadas y el foco está en la Portada y el ritual social de la caseta."
         }
       },
       {
@@ -269,7 +348,7 @@
         Jerez de la Frontera, Andalucía · La feria donde el caballo, no la caseta, es el protagonista.
       </p>
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la feria">
         <div class="fechas-grandes">Del 9 al 16 de mayo de 2026</div>
         <div class="datos-secundarios">
           <span>📍 Parque González Hontoria · Jerez de la Frontera</span>
@@ -285,76 +364,85 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>Durante el Paseo de Caballos y Enganches conviven a diario caballos, carruajes y miles de peatones: sigue siempre las indicaciones de los cocheros y no te cruces de improviso delante de un caballo.</li>
-          <li>Es una feria con mucho consumo de vinos generosos (finos, olorosos), de mayor graduación que el vino habitual: modera el ritmo si no estás acostumbrado.</li>
-          <li>El dispositivo de seguridad incluye cortes de tráfico perimetrales por la afluencia de público y vehículos; llega con tiempo si vas en coche.</li>
+          <li>El caballo es el protagonista real de esta feria, no un elemento decorativo. Los jinetes, amazonas y cocheros que participan en el Paseo llevan meses preparándose: lo que ves en las calles del recinto es el resultado de una tradición ecuestre viva, no una exhibición montada para el turismo.</li>
+          <li>Las casetas abiertas son un compromiso cívico de toda la feria, no una concesión al visitante externo. Esa accesibilidad distingue a Jerez de otras ferias andaluzas y es motivo de orgullo local: corresponde entrar con la misma actitud con la que entrarías en el salón de alguien que te ha abierto la puerta.</li>
+          <li>El vino del Marco de Jerez —fino, amontillado, oloroso— tiene en esta feria un peso que excede el consumo festivo. Para muchas familias jerezanas, la copa de fino en la caseta es un ritual de reconocimiento social que se repite generación tras generación.</li>
         </ul>
       </div>
 
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        En Jerez, la feria no gira en torno a una portada monumental ni a quién tiene caseta propia: gira en torno al caballo. Durante ocho días, el parque González Hontoria se llena de enganches, jinetes y amazonas paseando entre casetas que, a diferencia de Sevilla, están abiertas a cualquiera que quiera entrar. Por las tardes manda el paseo ecuestre; por las noches, los vinos del Marco de Jerez y el cante.
+        Ocho días en el parque González Hontoria: enganches, jinetes y amazonas recorriendo calles entre casetas que aquí, a diferencia de Sevilla, tiene las puertas abiertas para quien quiera entrar. Por las tardes manda el paseo ecuestre. Por las noches, el fino en copa catavinos y el cante jerezano en la barra. El caballo da nombre a la feria y se lo gana cada tarde.
       </p>
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        Si nunca has ido, piensa en la Feria de Jerez como una versión abierta de la Feria de Abril de Sevilla: las mismas casetas de lona con música, comida y baile, pero aquí la norma es que puedas entrar en casi cualquiera sin conocer a nadie. La ordenanza municipal lo deja claro: el acceso es público, gratuito y solo limitado por el aforo real de cada caseta, salvo un único día (el "día del socio") en el que cada caseta puede restringir la entrada a sus miembros.
+        La diferencia más visible con Sevilla está en la puerta de cada caseta: en Jerez está abierta. La ordenanza municipal lo fija sin ambigüedad: acceso público, gratuito, limitado solo por el aforo real. La única excepción es el "día del socio", una jornada de la semana en la que cada caseta puede restringir la entrada a sus miembros.
       </p>
       <p>
-        Lo que de verdad diferencia a Jerez es el protagonismo del caballo. No es un elemento decorativo: es el motivo que da nombre a la fiesta. Cada tarde, jinetes, amazonas y cocheros recorren el recinto en el Paseo de Caballos y Enganches, y en paralelo se celebran concursos de doma vaquera, morfológicos y de presentación de enganches, con entrega de premios el viernes.
+        El otro eje es el caballo, que da nombre a la feria y aparece en todo. Cada tarde, jinetes, amazonas y cocheros recorren el recinto en el Paseo de Caballos y Enganches. En paralelo hay concursos de doma vaquera y morfológicos centrados en el Pura Raza Española, con entrega de premios el viernes.
       </p>
 
       <h2 class="section-title">Historia y significado</h2>
       <p>
-        El origen de la feria se remonta a la <strong>Edad Media</strong>: tras la incorporación de Jerez al reino castellano, Alfonso X concedió a la ciudad dos ferias anuales, una de ellas en abril, antecedente directo de la actual. Esa feria original era un mercado ganadero y caballar, no una fiesta lúdica.
+        El origen documentado arranca en <strong>1264</strong>: Alfonso X el Sabio concedió a Jerez, recién incorporada al reino castellano, un privilegio real que autorizaba la celebración de dos ferias anuales. El documento, ratificado por Sancho IV en <strong>1282</strong> con salvoconducto de deudas y exención arancelaria para mercaderes flamencos, bretones e ingleses, aquel mercado original era ganadero y caballar, no una fiesta lúdica.
       </p>
       <p>
-        La forma moderna nace a principios del <strong>siglo XX</strong>, de la unión entre la feria de ganado de la Dehesa de Caulina y una feria festiva abierta a toda la población, con espectáculos y vida social. Desde <strong>1903</strong> se celebra de forma estable en el parque González Hontoria, lo que consolidó el formato que hoy conocemos.
+        La dimensión ecuestre tiene raíces concretas que siguen presentes. El <strong>Monasterio de la Cartuja de Santa María de la Defensión</strong>, fundado en el siglo XV a las afueras de Jerez, conservó y seleccionó durante siglos la estirpe del caballo cartujano: el animal que da nombre y carácter a la feria actual. <strong>Francisco Hernández-Rubio</strong>, arquitecto municipal, trazó el Parque González Hontoria entre 1899 y 1905: jardín botánico ajardinado con templetes modernistas. El mismo trazado sobre el que se montan hoy las casetas. El <strong>Depósito de Sementales</strong>, terminado en 1905 como parte de ese mismo proyecto, institucionalizó la cría del caballo cartujano. Sigue activo como referencia del mundo ecuestre español.
+      </p>
+      <p>
+        La feria moderna nació a principios del <strong>siglo XX</strong> de la fusión entre la feria de ganado de la Dehesa de Caulina y una celebración popular abierta a todos. Desde <strong>1903</strong> se celebra en el parque González Hontoria —el antiguo Campo de Instrucción, transformado por el alcalde Julio González Hontoria en 1902— y en <strong>1980</strong> recibió la declaración de Fiesta de Interés Turístico Internacional (BOE núm. 41, de 16 de febrero de 1980), en la misma resolución que la Feria de Abril de Sevilla.
       </p>
 
       <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Feria del Caballo de Jerez 2026 se celebró del 9 al 16 de mayo, en el formato habitual de ocho días, de sábado a sábado. Se celebra siempre antes de la Romería del Rocío.
+        La Feria del Caballo de Jerez 2026 se celebra del 9 al 16 de mayo, en el formato habitual de ocho días, de sábado a sábado.
       </p>
-      <p class="nota-grid">⚠️ Las fechas exactas se fijan cada año por el Ayuntamiento. Consulta el calendario oficial en jerez.es/feria antes de planificar tu visita.</p>
+      <p class="nota-grid">📅 Las fechas se fijan cada año por el Ayuntamiento en mayo, siempre después de la Feria de Abril de Sevilla y antes de la Romería del Rocío. Consulta el calendario oficial en <a href="https://www.jerez.es/feria" target="_blank" rel="noopener">jerez.es/feria</a> antes de planificar tu visita.</p>
 
       <h2 class="section-title">El Real y las casetas</h2>
       <p>
         El recinto ferial, en el parque González Hontoria, es mucho más pequeño que el de Sevilla: en torno a 175 casetas, frente al millar largo del Real sevillano. Se reparten en tres tipos:
       </p>
 
-      <div class="agrupaciones-grid">
+      <div class="casetas-grid">
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Tradicionales</h3>
-          <p>La mayoría del recinto (157 de 175 en la edición de 2026). Casetas con el formato clásico de lona, gestionadas por familias, entidades o peñas, pero de acceso público por ordenanza.</p>
+          <p>La mayoría del recinto. Casetas con el formato clásico de lona, gestionadas por familias, entidades o peñas, de acceso público por ordenanza.</p>
         </div>
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>No tradicionales</h3>
-          <p>Casetas con formatos distintos al clásico (13 en 2026), también sujetas a la misma norma de acceso abierto.</p>
+          <p>Casetas con formatos distintos al clásico, sujetas a la misma norma de acceso abierto.</p>
         </div>
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Municipales</h3>
           <p>Casetas gestionadas directamente por el Ayuntamiento, siempre de acceso público y sin restricciones de socios.</p>
         </div>
 
       </div>
 
-      <p class="nota-grid">🚪 A diferencia de Sevilla, en Jerez la norma es la puerta abierta: la ordenanza prohíbe expresamente negar la entrada por no ser socio, salvo en el "día del socio", una única jornada de la semana que cada caseta puede fijar libremente dentro del calendario de feria.</p>
+      <p class="nota-grid">🚪 A diferencia de Sevilla, en Jerez la norma es la puerta abierta. La Ordenanza Municipal Reguladora de la Feria del Caballo, aprobada en pleno y publicada en el Boletín Oficial de la Provincia de Cádiz el 10 de enero de 2025 (166 artículos), obliga al acceso libre y gratuito, limita las casetas no tradicionales al 20% del total, establece un tope acústico de 95 dB y obliga a programar música exclusivamente flamenca hasta las 23:00 h. El "día del socio" solo puede activarse para un máximo del 25% de la superficie útil de la caseta.</p>
 
       <h2 class="section-title">El Caballo</h2>
       <p>
-        Es el eje real de la fiesta, no un adorno temático. Cada tarde se celebra el Paseo de Caballos y Enganches: jinetes, amazonas y cocheros recorren el recinto luciendo monturas y carruajes, en un desfile que combina tradición ganadera con exhibición social. En paralelo, la programación incluye doma vaquera (la disciplina de conducir al caballo para el trabajo con el ganado, hoy convertida en exhibición y competición) y concursos morfológicos centrados en el caballo de Pura Raza Española, el cartujano, de estirpe jerezana.
+        El caballo de Pura Raza Española que protagoniza esta feria viene de un sitio concreto: la estirpe cartujana, criada durante siglos en el Monasterio de la Cartuja de Santa María de la Defensión. Eso no es anecdótico. Es lo que da al caballo su papel central, y no el de adorno.
       </p>
       <p>
-        El viernes de la semana de feria se entregan los premios a los mejores enganches y caballistas del paseo, desde el templete municipal del recinto.
+        Cada tarde se celebra el Paseo de Caballos y Enganches: jinetes, amazonas y cocheros recorren el recinto luciendo monturas y carruajes en un desfile que mezcla tradición ganadera con exhibición social. En paralelo, la programación incluye doma vaquera —la disciplina de conducir el caballo para el trabajo con el ganado, hoy exhibición y competición— y concursos morfológicos. El viernes se entregan los premios del certamen <strong>EQUISUR</strong> y el trofeo <strong>Caballo de Oro</strong>, los más prestigiosos del calendario ecuestre de la feria.
       </p>
 
       <h2 class="section-title">El vino de Jerez</h2>
       <p>
-        Aquí el vino no es un acompañamiento más: es parte de la identidad de la fiesta. Los vinos del Marco de Jerez (fino, amontillado, oloroso, cream y Pedro Ximénez) tienen un peso mayor que el rebujito típico de otras ferias andaluzas, y se combinan con platos propios del ambiente ferial jerezano, como el consomé o el menudo.
+        El vino del Marco de Jerez —fino, amontillado, oloroso, cream y Pedro Ximénez— tiene aquí un peso que en otras ferias andaluzas lleva el rebujito. La copa que se sirve en las casetas no es rebujito: es, en la mayoría de los casos, un fino servido en <strong>copa catavinos</strong>, el instrumento de cata que aquí es también copa de diario. Ese detalle no es casual.
+      </p>
+      <p>
+        Lo que hay en cada botella es el resultado del sistema de <strong>criaderas y soleras</strong>: una forma de envejecimiento por mezcla de añadas que mantiene el perfil del vino constante año tras año. En la barra de una caseta es difícil que lo expliquen; pero es lo que hace que el fino de Jerez sepa siempre igual, independientemente del año de la cosecha.
+      </p>
+      <p>
+        En la cocina, la feria tiene su propia gastronomía de resistencia: el <strong>menudo jerezano</strong>, el <strong>consomé al jerez</strong> y la <strong>berza jerezana con pringá</strong> son los platos que aparecen en las barras de las casetas con más raigambre, por encima de los formatos más genéricos del ambiente ferial.
       </p>
 
       <h2 class="section-title">El Alumbrado</h2>
@@ -364,65 +452,67 @@
 
       <h2 class="section-title">Vestimenta tradicional</h2>
       <p>
-        Comparte base con el resto de ferias andaluzas: traje de flamenca para las mujeres y traje corto para los hombres. La diferencia jerezana está en el peso del protocolo ecuestre: el traje corto aparece ligado sobre todo a jinetes y cocheros que participan en el paseo, más que a una norma social generalizada para cualquier visitante.
+        Comparte base con el resto de ferias andaluzas: traje de flamenca para las mujeres y traje corto para los hombres. La diferencia está en el protocolo ecuestre: el traje corto se asocia sobre todo a quien participa en el paseo, no a una norma social generalizada.
       </p>
 
-      <h2 class="section-title">Qué se celebra en cada fase</h2>
-      <p>El programa se repite con el mismo patrón cada uno de los ocho días, salvo el primero y el viernes de premios:</p>
-
-      <ul class="actos-list">
-
-        <li>
-          <span class="dia-label">Primer sábado · Noche</span>
-          <strong>Inauguración y Alumbrado.</strong>
-          Encendido oficial desde el templete municipal, seguido de fuegos artificiales.
-        </li>
-
-        <li>
-          <span class="dia-label">Del segundo día al último · Tarde</span>
-          <strong>Paseo de Caballos y Enganches.</strong>
-          Jinetes, amazonas y coches de caballos recorren el recinto durante buena parte de la tarde.
-        </li>
-
-        <li>
-          <span class="dia-label">Durante toda la semana</span>
-          <strong>Casetas, atracciones y programación musical.</strong>
-          Funcionan a diario, con música flamenca y sevillanas por las noches.
-        </li>
-
-        <li>
-          <span class="dia-label">Viernes</span>
-          <strong>Entrega de premios del paseo ecuestre.</strong>
-          Valoración y premios a los mejores enganches y caballistas, desde el templete municipal.
-        </li>
-
-        <li>
-          <span class="dia-label">Último sábado</span>
-          <strong>Cierre de la feria.</strong>
-        </li>
-
-      </ul>
+      <h2 class="section-title">Música</h2>
+      <p>
+        Jerez es cuna del flamenco, con palos propios —la <strong>soleá jerezana</strong>, la <strong>bulería</strong>— que aquí suenan distintos que en cualquier otro sitio. Durante la feria, eso se nota en las casetas: hay un fondo de cante que no es ambiental.
+      </p>
+      <p>
+        Junto a eso conviven sevillanas y rocieras, más ligeras y bailables. La mezcla de los dos registros —el flamenco de raíz y el cante festero— es lo que da al ambiente nocturno de Jerez un carácter propio.
+      </p>
 
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>El Paseo de Caballos y Enganches, el acto que mejor resume la identidad de esta feria.</li>
-        <li>Una exhibición de doma vaquera, si coincide con tu visita.</li>
-        <li>Una cata de vinos del Marco de Jerez en cualquier caseta, parte central de la experiencia local.</li>
-        <li>El Alumbrado del primer sábado, con los fuegos artificiales de apertura.</li>
-      </ul>
+      <div class="must-see-grid">
 
-      <h2 class="section-title">Qué puedes hacer si vas de visita, sin conocer a nadie</h2>
-      <p>
-        Aquí la respuesta es mucho más sencilla que en Sevilla: prácticamente todo. Puedes entrar en casi cualquier caseta del recinto (tradicional, no tradicional o municipal), sentarte, pedir en la barra y quedarte el tiempo que quieras, sin necesitar invitación. La única salvedad es el "día del socio": si tu visita coincide con esa jornada en una caseta concreta, puede que te pidan ser socio para entrar en esa caseta en particular, pero el resto del recinto sigue abierto con normalidad.
-      </p>
-      <p class="nota-grid">👨‍👩‍👧 Plan realista para quien no conoce Jerez: por la tarde, sitúate cerca del recorrido del Paseo de Caballos y Enganches para verlo pasar; después, elige cualquier caseta que te guste por dentro y entra a tomar un fino o un rebujito con algo de picar; por la noche, prueba dos o tres casetas distintas, ya que aquí sí puedes moverte libremente entre ellas.</p>
+        <div class="must-see-card">
+          <h3>El Paseo de Caballos y Enganches</h3>
+          <span class="tag">Cada tarde · calles del recinto</span>
+          <p>Jinetes, amazonas y cocheros recorren el parque González Hontoria en un desfile que resume mejor que nada la identidad de esta feria. El caballo no es el telón de fondo. Es el motivo.</p>
+          <details>
+            <summary>Dónde situarse</summary>
+            <p>Busca sitio en las calles principales del recinto con tiempo; es el acto más concurrido de la tarde y los mejores ángulos se ocupan pronto.</p>
+          </details>
+        </div>
 
+        <div class="must-see-card">
+          <h3>Una exhibición de doma vaquera</h3>
+          <span class="tag">Programación · días de semana</span>
+          <p>La disciplina de origen campero en la que el jinete conduce el caballo con precisión milimétrica. Ver un buen ejercicio de doma vaquera es entender por qué el caballo cartujano jerezano tiene la reputación que tiene.</p>
+          <details>
+            <summary>Qué es lo que se valora</summary>
+            <p>La fluidez del movimiento sin señales visibles del jinete. Cuanto menos se nota la ayuda, mayor es la técnica. El caballo ideal parece moverse solo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Una copa de fino en cualquier caseta</h3>
+          <span class="tag">Todo el día · cualquier caseta abierta</span>
+          <p>El fino servido en copa catavinos es el ritual social de las casetas de Jerez. En ninguna otra feria andaluza el vino tiene este peso identitario. Entrar en cualquier caseta y pedir uno es, aquí, el gesto más local posible.</p>
+          <details>
+            <summary>Qué pedir si no conoces los vinos</summary>
+            <p>Un fino es el más fresco y ligero. Un amontillado tiene más cuerpo y un punto de nuez. Un oloroso es el más intenso. Cualquiera va bien con el menudo o la berza jerezana.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Alumbrado del primer sábado</h3>
+          <span class="tag">Primer sábado · medianoche</span>
+          <p>El encendido oficial del parque González Hontoria con fuegos artificiales desde el templete municipal. Sin Portada monumental, el arranque de la feria lo concentra este momento.</p>
+          <details>
+            <summary>Diferencia con Sevilla</summary>
+            <p>En Sevilla el Alumbrado enciende una Portada de 40 metros que es el icono visual de la feria. En Jerez es el parque y las casetas lo que se ilumina: más íntimo, más horizontal.</p>
+          </details>
+        </div>
+
+      </div>
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li>Si vas al Paseo de Caballos, busca sitio con tiempo en las calles principales del recinto; es el acto más concurrido de la tarde.</li>
-        <li>Prueba el vino de Jerez con moderación si no estás acostumbrado a vinos generosos: tienen más graduación que un vino de mesa normal.</li>
-        <li>Evita ir en coche particular los días de mayor afluencia; hay cortes de tráfico perimetrales alrededor del recinto.</li>
-        <li>Si una caseta concreta te dice que es "día del socio", simplemente prueba en la de al lado: la norma general en Jerez es la puerta abierta.</li>
+        <li>A diferencia de Sevilla, aquí puedes entrar en casi cualquier caseta sin conocer a nadie: por la tarde, sitúate en las calles del recinto para ver el Paseo de Caballos; después, elige la caseta que más te guste por dentro y entra a tomar un fino; por la noche, muévete libremente entre dos o tres casetas distintas.</li>
+        <li>Si una caseta te dice que es el "día del socio", prueba en la de al lado: es la única excepción a la norma de acceso abierto, y afecta solo a esa caseta ese día concreto.</li>
+        <li>Los vinos del Marco de Jerez tienen más graduación que un vino de mesa; si no estás acostumbrado a generosos, alterna con agua entre copas.</li>
+        <li>Los días de mayor afluencia, el tráfico perimetral al recinto se corta. Ir a pie o en transporte público desde el centro ahorra tiempo.</li>
       </ul>
 
       <h2 class="section-title">Vocabulario festero</h2>
@@ -436,7 +526,11 @@
         <dt>Día del socio</dt>
         <dd>Única jornada de la semana en la que una caseta puede restringir su acceso a sus socios; el resto de días es de acceso libre.</dd>
         <dt>Fino / Oloroso</dt>
-        <dd>Vinos generosos del Marco de Jerez, protagonistas de la barra de las casetas junto al amontillado, el cream y el Pedro Ximénez.</dd>
+        <dd>Vinos generosos del Marco de Jerez que protagonizan la barra de las casetas, junto al amontillado, el cream y el Pedro Ximénez.</dd>
+        <dt>Copa catavinos</dt>
+        <dd>Copa de cristal fino y base estrecha usada en Jerez tanto para catar como para beber en la barra. Su forma concentra el aroma del vino; verla en una caseta indica que el fino va en serio.</dd>
+        <dt>Criaderas y soleras</dt>
+        <dd>Sistema de envejecimiento del vino de Jerez por mezcla de añadas en barricas apiladas. Permite que el perfil de cada tipo se mantenga constante año tras año.</dd>
       </dl>
 
       <h2 class="section-title">Galería</h2>
@@ -457,9 +551,9 @@
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
         <dt>¿Puedo entrar en cualquier caseta sin conocer a nadie?</dt>
-        <dd>Sí, casi siempre. La ordenanza municipal obliga a que las casetas tengan acceso público y gratuito, sujeto solo al aforo real. La única excepción es el "día del socio", una jornada de la semana en la que cada caseta puede restringir la entrada a sus socios.</dd>
+        <dd>Sí, casi siempre. La Ordenanza Municipal de 2025 (BOP Cádiz, 10 de enero de 2025) obliga a que las casetas tengan acceso público y gratuito, limitado solo por el aforo real. La única excepción es el "día del socio", que cada caseta puede activar solo para un máximo del 25% de su superficie útil.</dd>
         <dt>¿Qué diferencia a la Feria de Jerez de la de Sevilla?</dt>
-        <dd>El acceso y el foco simbólico. En Jerez casi todas las casetas son públicas y el caballo es el eje central de la fiesta. En Sevilla la inmensa mayoría de casetas son privadas y el foco recae en la Portada y el ritual social urbano.</dd>
+        <dd>El acceso y el foco simbólico. En Jerez casi todas las casetas son de acceso libre y el caballo es el eje de la fiesta. En Sevilla casi todas son privadas y el foco está en la Portada y el ritual social de la caseta.</dd>
         <dt>¿Cuándo es la Feria del Caballo en 2026?</dt>
         <dd>Del sábado 9 al sábado 16 de mayo de 2026, en el formato habitual de ocho días. Se celebra siempre antes de la Romería del Rocío.</dd>
         <dt>¿Qué es la doma vaquera?</dt>
@@ -477,22 +571,35 @@
         <span class="etiqueta">Caballos</span>
         <span class="etiqueta">Enganches</span>
         <span class="etiqueta">Vino de Jerez</span>
+        <span class="etiqueta">Doma vaquera</span>
       </div>
 
       <div class="fichas-relacionadas">
         <h2>Otras fiestas que te van a interesar</h2>
-        <div class="relacionadas-grid">
-          <a href="feria-abril-sevilla.html" class="relacionada-card">
-            <strong>Feria de Abril de Sevilla</strong>
-            <span>Andalucía · ITI (1980) · El modelo cerrado de caseta, opuesto al de Jerez</span>
+        <div class="fichas-relacionadas-grid">
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Feria de Abril de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">El modelo de caseta cerrada, opuesto al de Jerez</span>
+              <span class="rel-meta">Andalucía · ITI</span>
+            </div>
           </a>
-          <a href="carnaval-cadiz.html" class="relacionada-card">
-            <strong>Carnaval de Cádiz</strong>
-            <span>Andalucía · ITI (1980) · Otra gran fiesta declarada en la misma resolución de 1980</span>
+          <a href="carnaval-cadiz.html" class="ficha-rel-card">
+            <img src="images/carnaval-cadiz.jpg" alt="Carnaval de Cádiz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carnaval de Cádiz</span>
+              <span class="rel-frase">Otra gran fiesta declarada en la misma resolución de 1980</span>
+              <span class="rel-meta">Andalucía · ITI</span>
+            </div>
           </a>
-          <a href="san-fermin.html" class="relacionada-card">
-            <strong>San Fermín de Pamplona</strong>
-            <span>Navarra · ITI (1980) · Otra fiesta con protagonismo animal en el centro de su identidad</span>
+          <a href="san-fermin.html" class="ficha-rel-card">
+            <img src="images/san-fermin.jpg" alt="San Fermín de Pamplona" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">San Fermín de Pamplona</span>
+              <span class="rel-frase">Otra fiesta con protagonismo animal en el centro de su identidad</span>
+              <span class="rel-meta">Navarra · ITI</span>
+            </div>
           </a>
         </div>
       </div>
