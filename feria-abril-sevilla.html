@@ -22,65 +22,70 @@
 
   <style>
 
+    /* ── Nota de aviso (nota-grid) ─────────────────────────────── */
     .nota-grid {
-      font-size: 0.82rem;
-      color: var(--text-muted, #5a5a5a);
-      font-style: italic;
-      margin-top: 0.5rem;
-      padding: 8px 12px;
-      background: var(--accent-light, #f5e6c8);
-      border-radius: var(--radius-sm, 6px);
-      border-left: 3px solid var(--brand, #b34700);
+      font-size: 0.82rem; color: #666; font-style: italic;
+      margin-top: 0.5rem; padding: 8px 12px;
+      background: #fdf3e7; border-radius: 8px;
+      border-left: 3px solid var(--brand, #8b1a1a);
     }
 
-    .tag-leyenda {
-      display: inline-block;
-      font-size: 0.72rem;
+    /* ── Aviso de sensibilidad ─────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #2b5b8c;
-      background: #e6f0fa;
-      border-radius: 999px;
-      padding: 2px 10px;
-      margin-bottom: 6px;
+      color: #92400e;
+      margin-bottom: 10px;
     }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
 
+    /* ── Ficha datos clave ─────────────────────────────── */
     .ficha-datos-clave {
-      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
-      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
-      padding: 18px 22px; margin: 1.2rem 0;
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8; border-radius: 8px;
+      padding: 22px 20px; margin: 1.25rem 0 1.5rem;
+      text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px; line-height: 1.25;
     }
-    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
-    .datos-secundarios span {
-      font-size: 0.85rem; color: var(--text, #2c2c2c);
-      background: #fff; border: 1px solid var(--border, #e8ddd4);
-      border-radius: 999px; padding: 4px 12px;
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
     }
-    .actos-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e8ddd4);
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .actos-list li {
-      position: relative;
-      padding: 0 0 20px 22px;
-    }
+
+    /* ── Timeline de actos (dia-label) ─────────────────────────────── */
+    .actos-list { list-style: none; padding: 0; margin: 1rem 0 0; border-left: 2px solid var(--border, #e5e0d8); }
+    .actos-list li { position: relative; padding: 0 0 20px 22px; }
     .actos-list li::before {
       content: "";
       position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 8px;
-      height: 8px;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -89,50 +94,105 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
 
-    /* ── Casetas grid (bloque troncal de tipología Feria) ───────── */
-    .agrupaciones-grid {
+    /* ── Bloque musica y sonido ─────────────────────────────── */
+    .music-block p { font-size: 0.93rem; line-height: 1.6; margin-bottom: 0.9rem; }
+
+    /* ── Must-see ─────────────────────────────── */
+    .must-see-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
       margin-top: 1rem;
     }
-    .agrupacion-card {
-      background: var(--bg, #fafafa);
-      border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px);
-      padding: 16px 18px;
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
     }
-    .agrupacion-card h3 {
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1rem;
-      color: var(--brand, #b34700);
+      font-size: 1.05rem;
       margin-bottom: 6px;
+      color: var(--text, #2a2218);
     }
-    .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
-    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    /* ── Etiquetas ─────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.5rem 0; }
     .etiqueta {
-      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
-      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 6px 12px; background: #fafafa;
+      border: 1px solid #e5e0d8; border-radius: 999px;
+      color: #666; text-decoration: none;
     }
-    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
 
-    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
-    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .relacionada-card {
-      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); padding: 14px 16px;
-      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    /* ── Fichas relacionadas ─────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e5e0d8; }
+    .fichas-relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .ficha-rel-card { display: block; border-radius: 8px; overflow: hidden; border: 1px solid #e5e0d8; text-decoration: none; color: inherit; }
+    .ficha-rel-card img { width: 100%; height: 120px; object-fit: cover; }
+    .rel-body { padding: 10px 12px; }
+    .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #2a2218; display: block; }
+    .rel-frase { font-size: 0.82rem; color: #666; font-style: italic; display: block; }
+    .rel-meta { font-size: 0.72rem; color: var(--brand, #8b1a1a); font-weight: 600; text-transform: uppercase; margin-top: 4px; display: block; }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
     }
-    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
-    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+  
+
+    /* ── Casetas grid ──────────────────────────────────────────────── */
+    .casetas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 1rem; }
+    .caseta-card { background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4); border-radius: var(--radius, 10px); padding: 16px 18px; }
+    .caseta-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; color: var(--brand, #8b1a1a); margin-bottom: 6px; }
+    .caseta-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+    .tag-leyenda { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #2b5b8c; background: #e6f0fa; border-radius: 999px; padding: 2px 10px; margin-bottom: 6px; }
 
   </style>
 
@@ -144,6 +204,11 @@
     "name": "Feria de Abril de Sevilla",
     "startDate": "2026-04-21",
     "endDate": "2026-04-26",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1Y",
+      "description": "Se celebra la tercera semana posterior al Domingo de Resurrección; si esa pauta desplaza la celebración íntegramente a mayo, se adelanta a la segunda semana (BOP núm. 295, 23/12/2011)."
+    },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -232,7 +297,7 @@
         "name": "¿Qué diferencia hay con la Feria de Jerez o de Málaga?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, la inmensa mayoría son privadas y de invitación."
+          "text": "La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, casi todas son privadas y de invitación."
         }
       },
       {
@@ -299,159 +364,157 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>El Alumbrado concentra a más de 100.000 personas frente a la Portada en pocos metros: se desaconseja acudir con niños muy pequeños o carritos, y conviene dispersarse rápido por las calles interiores tras el encendido.</li>
-          <li>Durante el Paseo de Caballos, los peatones deben ceder siempre el paso a los caballos en las calzadas de albero; los atropellos por despiste son el principal riesgo de las tardes de feria.</li>
-          <li>El aforo diario del Real puede rozar el medio millón de personas: fija un punto de encuentro si vas en grupo.</li>
+          <li>Las casetas privadas son el salón de una familia durante esa semana, no un local con aforo libre. Su carácter cerrado no es una barrera hacia el visitante: es parte de lo que la hace ser lo que es desde hace casi dos siglos.</li>
+          <li>El traje de flamenca y el traje corto son ropa de calle para los sevillanos durante su semana grande — una identidad construida durante generaciones, no una puesta en escena para el turismo. Entender eso cambia la forma de mirar.</li>
+          <li>El Paseo de Caballos y Enganches no es un espectáculo organizado para el público: es el uso cotidiano del recinto por parte de familias con tradición ecuestre. En las calzadas de albero, los caballos tienen prioridad natural de paso.</li>
         </ul>
       </div>
 
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        La Feria de Abril nació como un mercado de ganado y terminó siendo la semana más ritualizada del calendario sevillano. Durante seis días, el Real de Los Remedios se llena de albero, farolillos de papel y más de mil casetas con toldos a rayas. De día manda el Paseo de Caballos; de noche, las sevillanas y el rebujito. Y todo bajo una Portada nueva cada año que solo dura una semana en pie.
+        De la feria de ganado de 1847 quedan el nombre, el emplazamiento y muy poco más. Lo que llegó después es otra cosa: seis días al año en que Sevilla monta más de mil casetas de lona junto al Guadalquivir, llena las calles de albero y farolillos de papel, y traslada su vida social entera a un recinto provisional que la semana siguiente ya no existe. De día, el Paseo de Caballos. De noche, sevillanas y rebujito. Y una Portada nueva cada año que dura lo que dura la feria.
       </p>
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        Imagina que, durante una semana, una ciudad entera monta más de mil tiendas de campaña de lona en un descampado junto al río, y cada una de esas tiendas funciona como el salón de una casa: dentro hay mesas, sillas, una barra, música y comida, y la gente entra a comer, beber, bailar y charlar con quien conoce. Eso es una <strong>caseta</strong>, y el terreno donde se instalan todas juntas es <strong>el Real</strong>. La Feria de Abril es, en el fondo, eso: una semana en la que Sevilla traslada su vida social a un recinto provisional de tela y luces que desaparece el lunes siguiente.
+        Imagina que, durante una semana, una ciudad entera monta más de mil tiendas de campaña de lona en un descampado junto al río, y cada una es un espacio privado con mesa, barra y música donde la gente come, bebe y baila con quien conoce. Eso es una <strong>caseta</strong>, y el terreno donde se instalan todas juntas es <strong>el Real</strong>. Eso es la Feria: una semana en que Sevilla traslada su vida social a un recinto provisional de tela y luces que desaparece el lunes siguiente.
       </p>
       <p>
-        El día tiene dos ritmos muy distintos. Por la mañana y hasta media tarde, la gente se viste de traje de flamenca o de traje corto y pasea o monta a caballo por las calles del recinto: es el momento más fotogénico, con los caballos y los carruajes circulando entre las casetas. Al caer la tarde, muchos se cambian de ropa y el ambiente se traslada dentro de las casetas, donde se cena, se canta por sevillanas y se bebe rebujito hasta la madrugada.
+        El día tiene dos tiempos. Por la mañana y hasta media tarde, la gente pasea a pie o a caballo: es cuando el Real tiene más luz y más movimiento. Al caer la tarde, buena parte de los asistentes se cambia de ropa, se mete en las casetas y no sale hasta la madrugada.
       </p>
       <p>
-        El recinto en sí ocupa 450.000 metros cuadrados divididos en 15 calles con nombres de toreros históricos, y todas las casetas siguen el mismo código estético: toldos a rayas verdes o rojas y blanco, para que el conjunto se vea uniforme desde fuera aunque cada una sea un mundo privado por dentro.
+        El recinto ocupa 450.000 metros cuadrados con 15 calles nombradas en honor a toreros históricos. Todas las casetas llevan toldos a rayas —verdes o rojas con blanco— para que el conjunto sea visualmente uniforme aunque por dentro cada una vaya a su aire.
       </p>
       <p>
-        Coincidiendo con la Feria, la Real Maestranza de Caballería celebra a diario corridas de toros desde el Domingo de Resurrección: es el ciclo taurino continuado más importante de España junto al de San Isidro, y para muchos sevillanos marca una pausa de tarde entre el paseo a caballo y la vuelta a la caseta por la noche.
+        Mientras dura la Feria, la Real Maestranza celebra corridas a diario desde el Domingo de Resurrección. Para muchos sevillanos es la pausa de la tarde: se va en coche de caballos, se asiste y se vuelve a la caseta por la noche.
       </p>
 
       <h2 class="section-title">Historia y significado</h2>
       <p>
-        La Feria nació en <strong>1847</strong> como una feria anual de ganado, impulsada por dos concejales que, curiosamente, no eran sevillanos: el catalán Narciso Bonaplata y el vasco José María de Ybarra, que presentaron el proyecto al cabildo en 1846. El primer año se instalaron corrales para los tratos de ganado y unas carpas de lona improvisadas donde los tratantes comían y descansaban a la sombra.
+        La Feria nació en <strong>1847</strong> como una feria anual de ganado, impulsada por dos concejales que no eran sevillanos: el catalán Narciso Bonaplata y el vasco José María de Ybarra. Presentaron el proyecto al cabildo en 1846. El primer año hubo corrales para los tratos de ganado y carpas de lona donde los tratantes descansaban a la sombra.
       </p>
       <p>
-        A finales del siglo XIX, la parte lúdica (el vino, el cante, el baile) desplazó a la comercial. El Ayuntamiento empezó a decorar el recinto y la élite sevillana sustituyó a los tratantes de ganado, dando forma al modelo estético que hoy se reconoce como Feria de Abril. El Real se traslada de forma ininterrumpida al barrio de Los Remedios desde <strong>1973</strong>.
+        A finales del siglo XIX, la parte lúdica —el vino, el cante, el baile— desplazó a la comercial. La élite agraria andaluza sustituyó a los tratantes de ganado y convirtió el Real en espacio de visibilidad social con su propio protocolo de pertenencia.
+      </p>
+      <p>
+        En <strong>1919</strong>, el pintor hispano-gibraltareño Gustavo Bacarisas recibió el encargo de ordenar el caos estético del recinto. Fijó las lonas bicolores en franjas de diez centímetros, las pañoletas de madera como tímpano ornamental y las barandillas verdes como cierre exterior. Ese canon sigue vigente: cada caseta reproduce hoy la misma fórmula de hace más de cien años.
+      </p>
+      <p>
+        El Ayuntamiento trasladó el recinto en <strong>1973</strong> al polígono de Los Remedios, junto al Guadalquivir. En <strong>1980</strong>, la Feria fue declarada Fiesta de Interés Turístico Internacional (BOE núm. 41, de 16 de febrero de 1980).
       </p>
 
       <h2 class="section-title">Fechas 2026</h2>
       <p>
-        La Feria de Abril de Sevilla 2026 se celebró del martes 21 al domingo 26 de abril, en su formato clásico de seis días.
+        La Feria de Abril de Sevilla 2026 se celebra del martes 21 al domingo 26 de abril, en su formato clásico de seis días.
       </p>
-      <p class="nota-grid">⚠️ Las fechas dependen de la Semana Santa: la Feria empieza, por ordenanza municipal, dos semanas después del Domingo de Resurrección (o una semana, si el Ayuntamiento decide acortar el margen para no adentrarse demasiado en mayo). Consulta el calendario oficial antes de planificar tu visita.</p>
+      <p class="nota-grid">📅 Las fechas se fijan por ordenanza: la Feria arranca la tercera semana después del Domingo de Resurrección. Si esa regla desplaza la celebración íntegramente a mayo, se adelanta una semana. Consulta el Ayuntamiento de Sevilla antes de reservar.</p>
 
       <h2 class="section-title">El Real y las casetas</h2>
       <p>
         El recinto cuenta con algo más de 1.050 casetas, repartidas en cuatro tipos según quién puede entrar:
       </p>
 
-      <div class="agrupaciones-grid">
+      <div class="casetas-grid">
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Particulares y familiares</h3>
           <p>La mayoría del recinto (cerca de 524 casetas). Pertenecen a familias o grupos de amigos. Acceso estrictamente por invitación, con seguridad en la puerta.</p>
         </div>
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Entidades, peñas y empresas</h3>
           <p>Alrededor de 513 casetas. Acceso restringido a socios o trabajadores, aunque las normas de entrada suelen relajarse a partir de cierta hora.</p>
         </div>
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Partidos y sindicatos</h3>
           <p>Casetas de formaciones políticas y sindicatos con acceso libre al público general durante casi todo el horario de apertura.</p>
         </div>
 
-        <div class="agrupacion-card">
+        <div class="caseta-card">
           <h3>Públicas y municipales</h3>
           <p>17 casetas de entrada 100% libre: los 6 distritos municipales, la caseta popular y la Caseta del Turista, con personal políglota.</p>
         </div>
 
       </div>
 
-      <p class="nota-grid">🎭 Cerca de 1.040 de las casi 1.060 casetas del Real son de acceso privado. Es el rasgo que más diferencia a Sevilla de Jerez o Málaga, donde la ordenanza obliga a que todas las casetas tengan las puertas abiertas.</p>
+      <p class="nota-grid">🎭 Cerca de 1.040 de las casi 1.060 casetas del Real son de acceso privado. Es el rasgo que más define la experiencia del visitante externo en Sevilla.</p>
 
       <h2 class="section-title">Portada y Alumbrado</h2>
       <p>
         La Portada es una estructura efímera de unos 40 metros de altura, construida cada año en la entrada principal del Real. Su diseño sale de un concurso público convocado por el Ayuntamiento y suele representar un edificio o episodio emblemático de la ciudad, iluminado con más de 28.000 bombillas.
       </p>
       <p>
-        El Alumbrado es el encendido oficial de la Portada y de los cientos de miles de farolillos que decoran las calles del Real, a medianoche del lunes al martes. Con ese gesto arrancan oficialmente los seis días de feria. La noche anterior, los socios de cada caseta celebran la Cena del Pescaíto, una cena privada de cazón, adobo y boquerones que recuerda a lo que comían los tratantes de ganado mientras se montaban las casetas.
+        El Alumbrado es el encendido de la Portada y los farolillos a medianoche del lunes al martes: con ese gesto arranca la semana. La noche anterior, en cada caseta se celebra la Cena del Pescaíto —la cena privada de socios que precede al encendido—.
       </p>
 
       <h2 class="section-title">Vestimenta tradicional</h2>
       <p>
-        El traje de flamenca es la única indumentaria regional de España con moda propia, que cambia de tendencias cada año y tiene su propia pasarela (SIMOF). Nació a finales del siglo XIX, cuando las mujeres de etnia gitana y las tratantes de ganado que acudían a la feria vestían batas de faena con pequeños volantes; la burguesía sevillana adoptó esa silueta y la fue adornando hasta institucionalizarla tras la Exposición Iberoamericana de 1929.
+        El traje de flamenca tiene algo bastante singular: es la única indumentaria regional española con tendencias propias que cambian cada temporada y pasarela propia (SIMOF). Viene de finales del siglo XIX, cuando las mujeres gitanas y las tratantes de ganado llevaban batas de faena con volantes. La burguesía sevillana tomó esa silueta, la fue adornando y la institucionalizó después de la Exposición Iberoamericana de 1929.
       </p>
       <p>
-        El traje corto masculino, con pantalón ceñido, chaquetilla y sombrero de ala ancha, es la evolución del traje de campo andaluz. Se usa exclusivamente para montar a caballo o ir en coche de caballos de día: llevarlo de noche o a pie se considera una incorrección de protocolo. Si se va a pie, lo correcto para un hombre es el traje de chaqueta.
+        El traje corto masculino —pantalón ceñido, chaquetilla, sombrero de ala ancha— viene del traje de campo andaluz. Solo se usa para montar a caballo o ir en carruaje de día; llevarlo a pie o de noche es una incorrección de protocolo. A pie, el hombre va de traje de chaqueta.
       </p>
 
-      <h2 class="section-title">Qué se celebra en cada fase</h2>
-      <p>El programa se repite cada uno de los seis días con el mismo patrón, salvo el primer y el último día:</p>
-
-      <ul class="actos-list">
-
-        <li>
-          <span class="dia-label">Lunes · Noche</span>
-          <strong>Cena del Pescaíto.</strong>
-          Cena privada de socios en cada caseta, previa al Alumbrado.
-        </li>
-
-        <li>
-          <span class="dia-label">Martes · Medianoche</span>
-          <strong>El Alumbrado.</strong>
-          Encendido oficial de la Portada y los farolillos: arranca oficialmente la feria.
-        </li>
-
-        <li>
-          <span class="dia-label">Miércoles a sábado · Día</span>
-          <strong>Paseo de Caballos y Enganches.</strong>
-          Cerca de 1.400 carruajes y jinetes recorren las calles del Real, desde el mediodía hasta última hora de la tarde.
-        </li>
-
-        <li>
-          <span class="dia-label">Miércoles a sábado · Tarde</span>
-          <strong>Corridas de toros en la Real Maestranza.</strong>
-          Muchos sevillanos abandonan el Real en coche de caballos para asistir y regresan por la noche.
-        </li>
-
-        <li>
-          <span class="dia-label">Miércoles a sábado · Noche</span>
-          <strong>Sevillanas y rebujito en las casetas.</strong>
-          El ambiente nocturno del Real, con el cante y el baile como protagonistas.
-        </li>
-
-        <li>
-          <span class="dia-label">Domingo · Última hora de la noche</span>
-          <strong>Castillo de fuegos artificiales y cierre.</strong>
-          Junto al Guadalquivir, marca el fin oficial de la feria; después se apaga el alumbrado.
-        </li>
-
-      </ul>
+      <h2 class="section-title">Música</h2>
+      <p>
+        La Feria se anuncia antes de verla: las palmas y la guitarra que se cuelan entre los toldos delatan que algo está pasando ahí dentro. La <strong>sevillana</strong> es el género que sostiene esa banda sonora — un baile por parejas en cuatro partes, lo bastante accesible para que buena parte de los que están en la caseta se levanten a bailarlo, no solo quien lo lleva aprendido.
+      </p>
+      <p>
+        Cada caseta suena distinto según quién la lleve: grupos en directo, equipo de música, clásicos del género o mezcla de todo. El resultado es el mismo: ese sonido que cualquier sevillano identifica al instante aunque lo escuche a miles de kilómetros.
+      </p>
 
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>El Alumbrado, el momento fundacional de la feria cada año.</li>
-        <li>El Paseo de Caballos y Enganches por las calles del Real.</li>
-        <li>La Portada, distinta cada año y visible incluso sin entrar en ninguna caseta.</li>
-        <li>Las casetas públicas, la mejor forma de vivir sevillanas y rebujito en directo sin conocer a nadie.</li>
-      </ul>
+      <div class="must-see-grid">
 
-      <h2 class="section-title">Qué puedes hacer si vas de visita, sin conocer a nadie</h2>
-      <p>
-        A diferencia de un desfile de Moros y Cristianos o una procesión de Semana Santa, donde llegas y te colocas a ver pasar el acto, en la Feria hay tres formas distintas de participar, y conviene tenerlas claras antes de ir para no llevarte una sorpresa.
-      </p>
-      <p><strong>1. Actos que ves como espectador, gratis y en la calle.</strong> No necesitas entrada ni invitación: el Alumbrado, la Portada y el Paseo de Caballos ocurren en las calles del Real, y cualquiera puede colocarse a verlos igual que en un desfile.</p>
-      <p><strong>2. El único acto con entrada de pago.</strong> Las corridas de toros en la Real Maestranza son un espectáculo público normal: se compra entrada como en cualquier otro evento, sin depender de conocer a nadie.</p>
-      <p><strong>3. Sitios donde puedes entrar y quedarte un rato.</strong> Son las casetas públicas: los 6 distritos municipales, la caseta popular, la Caseta del Turista (con personal que habla varios idiomas) y las de sindicatos y partidos. Ahí sí puedes sentarte, pedir en la barra, escuchar sevillanas en directo y quedarte el tiempo que quieras, igual que en un bar.</p>
-      <p><strong>Lo que queda fuera de tu alcance sin invitación:</strong> las casetas particulares y familiares (la mayoría del recinto) y casi todas las de entidades y empresas. Tienen guardia en la puerta y no vas a poder entrar aunque las veas medio vacías; son propiedad privada esa semana, no bares con sitio libre.</p>
-      <p class="nota-grid">👨‍👩‍👧 Plan realista para una familia o grupo de amigos sin contactos en Sevilla: por la mañana o a media tarde, pasear el Real para ver la Portada y el Paseo de Caballos; a media tarde, si os gustan los toros, entrada para la Real Maestranza; y por la noche, instalaros en una o dos casetas públicas a cenar, tomar rebujito y escuchar sevillanas en directo. Con eso se cubre toda la fiesta que es accesible sin necesitar a nadie.</p>
+        <div class="must-see-card">
+          <h3>El Alumbrado</h3>
+          <span class="tag">Lunes · medianoche</span>
+          <p>El encendido oficial de la Portada y los farolillos. El Real pasa en pocos segundos de la oscuridad a cientos de miles de puntos de luz.</p>
+          <details>
+            <summary>Por qué no te lo puedes saltar</summary>
+            <p>Ocurre una sola noche y no se repite. Sin él, la feria no ha empezado.</p>
+          </details>
+        </div>
 
+        <div class="must-see-card">
+          <h3>El Paseo de Caballos y Enganches</h3>
+          <span class="tag">Tarde · calles del Real</span>
+          <p>Cerca de 1.400 carruajes y jinetes recorren a diario las calles de albero. El ritmo visual de las tardes de feria lo ponen los caballos, no la música.</p>
+          <details>
+            <summary>Cuándo verlo</summary>
+            <p>El mejor momento es a primera hora de la tarde: la luz es buena y el tráfico de caballos está en su punto más alto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Portada</h3>
+          <span class="tag">Entrada principal · toda la semana</span>
+          <p>Estructura efímera de unos 40 metros, distinta cada año. Se ve desde la calle, sin necesidad de entrar en el Real.</p>
+          <details>
+            <summary>Dato de contexto</summary>
+            <p>Su diseño sale de un concurso público. Se monta, se usa una semana y desaparece: no hay dos ediciones iguales.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las casetas públicas</h3>
+          <span class="tag">Todo el día · acceso libre</span>
+          <p>Los seis distritos municipales, la Caseta del Turista y las de partidos y sindicatos son de entrada libre. La forma más directa de vivir sevillanas y rebujito desde dentro.</p>
+          <details>
+            <summary>Consejo de uso</summary>
+            <p>Las normas de las casetas de entidades suelen relajarse después de medianoche. Si vas tarde, hay más posibilidades de que te dejen asomarte.</p>
+          </details>
+        </div>
+
+      </div>
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li>Ve a última hora de la tarde o de noche si quieres probar suerte en alguna caseta de entidad: las normas de acceso suelen relajarse.</li>
+        <li>Si vas sin contactos en Sevilla: por la mañana, el barrio de Triana y los alrededores del Real; a mediodía, el Paseo de Caballos desde la calle; por la tarde-noche, una caseta pública para escuchar sevillanas en directo; a medianoche del lunes, el Alumbrado.</li>
+        <li>Las normas de entrada en casetas de entidades suelen relajarse después de medianoche: si quieres probar suerte, ve tarde.</li>
         <li>Camina siempre por el lado de la calle sin caballos si oyes cascos acercarse; el albero no avisa de frenazos.</li>
-        <li>Si llevas calzado de tacón, ten en cuenta que las calles son de albero (arena compactada), no asfalto.</li>
-        <li>Reserva alojamiento con mucha antelación: los precios en Sevilla se disparan esa semana.</li>
+        <li>Las calles del Real son de albero, no asfalto. El tacón de aguja se hunde; el calzado plano aguanta mejor la noche.</li>
+        <li>Reserva alojamiento con mucha antelación: los precios en Sevilla se disparan durante la semana de feria.</li>
       </ul>
 
       <h2 class="section-title">Vocabulario festero</h2>
@@ -459,7 +522,7 @@
         <dt>El Real</dt>
         <dd>El recinto ferial completo, por estar ubicado históricamente en terrenos de propiedad real.</dd>
         <dt>Albero</dt>
-        <dd>La arena dorada y compactada que cubre todas las calles del Real, la misma que se usa en las plazas de toros.</dd>
+        <dd>Calcarenita fosilífera extraída de la formación geológica de Los Alcores (Alcalá de Guadaíra). Su capacidad de drenaje y amortiguación la hace ideal para el casco del caballo; menos para el tacón de aguja.</dd>
         <dt>La Portada</dt>
         <dd>La estructura monumental y efímera que ilumina la entrada principal, distinta cada año.</dd>
         <dt>El Alumbrao</dt>
@@ -501,7 +564,7 @@
         <dt>¿Cuándo es la Feria de Abril en 2026?</dt>
         <dd>Del martes 21 al domingo 26 de abril de 2026. Las fechas dependen de la Semana Santa: la Feria empieza dos semanas después del Domingo de Resurrección.</dd>
         <dt>¿Qué diferencia hay con la Feria de Jerez o de Málaga?</dt>
-        <dd>La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, la inmensa mayoría son privadas y de invitación.</dd>
+        <dd>La principal es el acceso: en Jerez y Málaga la ordenanza obliga a que todas las casetas tengan las puertas abiertas al público. En Sevilla, casi todas son privadas y de invitación.</dd>
         <dt>¿Es obligatorio ir vestido de flamenca?</dt>
         <dd>No es obligatorio, pero es la costumbre mayoritaria entre las mujeres. Los hombres a pie visten de traje de chaqueta; el traje corto solo se usa para montar a caballo o ir en coche de caballos de día.</dd>
       </dl>
@@ -515,22 +578,35 @@
         <span class="etiqueta">El Real</span>
         <span class="etiqueta">Casetas</span>
         <span class="etiqueta">Traje de flamenca</span>
+        <span class="etiqueta">Arquitectura efímera</span>
       </div>
 
       <div class="fichas-relacionadas">
         <h2>Otras fiestas que te van a interesar</h2>
-        <div class="relacionadas-grid">
-          <a href="semana-santa-sevilla.html" class="relacionada-card">
-            <strong>Semana Santa de Sevilla</strong>
-            <span>Andalucía · ITI (1980) / UNESCO · La otra gran cita del calendario sevillano, dos semanas antes</span>
+        <div class="fichas-relacionadas-grid">
+          <a href="semana-santa-sevilla.html" class="ficha-rel-card">
+            <img src="images/semana-santa-sevilla.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Semana Santa de Sevilla</span>
+              <span class="rel-frase">La otra gran cita del calendario sevillano, dos semanas antes</span>
+              <span class="rel-meta">Andalucía · ITI / UNESCO</span>
+            </div>
           </a>
-          <a href="san-fermin.html" class="relacionada-card">
-            <strong>San Fermín de Pamplona</strong>
-            <span>Navarra · ITI (1980) · Otra fiesta declarada en la misma resolución de 1980</span>
+          <a href="san-fermin.html" class="ficha-rel-card">
+            <img src="images/san-fermin.jpg" alt="San Fermín de Pamplona" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">San Fermín de Pamplona</span>
+              <span class="rel-frase">Otra fiesta declarada en la misma resolución de 1980</span>
+              <span class="rel-meta">Navarra · ITI</span>
+            </div>
           </a>
-          <a href="carnaval-cadiz.html" class="relacionada-card">
-            <strong>Carnaval de Cádiz</strong>
-            <span>Andalucía · ITI (1980) · Otra gran fiesta andaluza con su propio código estético</span>
+          <a href="carnaval-cadiz.html" class="ficha-rel-card">
+            <img src="images/carnaval-cadiz.jpg" alt="Carnaval de Cádiz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carnaval de Cádiz</span>
+              <span class="rel-frase">Otra gran fiesta andaluza con su propio código estético</span>
+              <span class="rel-meta">Andalucía · ITI</span>
+            </div>
           </a>
         </div>
       </div>
