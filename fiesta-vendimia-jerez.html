@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vendimia de Jerez: Pisa de la Uva, Catas y Flamenco | Folklorius</title>
+  <meta name="description" content="La Pisa de la Uva ante la Catedral, catas en el Alcázar y los vinos del Marco de Jerez. Fiesta de Interés Turístico Internacional desde 1980." />
+  <link rel="canonical" href="https://folklorius.es/fiesta-vendimia-jerez.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fiesta de la Vendimia de Jerez | La Pisa de la Uva y los vinos del Marco" />
+  <meta property="og:description" content="Bendición del primer mosto ante la Catedral, catas en el Patio de Armas del Alcázar y bulería jerezana. Dos semanas dedicadas al vino, sin casetas ni caballos." />
+  <meta property="og:image" content="https://folklorius.es/images/fiesta-vendimia-jerez.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon y fuentes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS LOCAL — base Folklorius + componentes específicos de esta ficha -->
+  <style>
+
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2a2218);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #fdf3e7);
+      color: var(--brand, #8b1a1a);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #8b1a1a);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
+
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
+      border: 1px solid #e5e0d8;
+      border-radius: var(--radius, 8px);
+      padding: 22px 20px;
+      margin: 1.25rem 0 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ficha-datos-clave .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .ficha-datos-clave .datos-secundarios {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 0.92rem;
+      color: var(--text, #2a2218);
+    }
+    .ficha-datos-clave .datos-secundarios span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 580px) {
+      .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
+      .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
+    }
+
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
+    .fichas-relacionadas {
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border, #e5e0d8);
+    }
+    .fichas-relacionadas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text, #2a2218);
+    }
+    .fichas-relacionadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ficha-rel-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .ficha-rel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .ficha-rel-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .ficha-rel-card .rel-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .ficha-rel-card .rel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #2a2218);
+    }
+    .ficha-rel-card .rel-frase {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+    }
+    .ficha-rel-card .rel-meta {
+      font-size: 0.72rem;
+      color: var(--brand, #8b1a1a);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list { list-style: none; padding: 0; margin: 1rem 0 0; border-left: 2px solid var(--border, #e5e0d8); }
+    .actos-list li { position: relative; padding: 0 0 20px 22px; }
+    .actos-list li::before {
+      content: "";
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #8b1a1a);
+    }
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 3px;
+    }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid var(--brand, #8b1a1a);
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 { font-size: 0.95rem; font-weight: 700; color: var(--brand, #8b1a1a); margin-bottom: 8px; }
+    .banner-historia p { font-size: 0.88rem; line-height: 1.6; color: var(--text, #2a2218); margin-bottom: 6px; }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota grid ───────────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: #fdf3e7;
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Aviso sensibilidad ──────────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Music block ─────────────────────────────────────────── */
+    .music-block p { font-size: 0.93rem; line-height: 1.6; margin-bottom: 0.9rem; }
+
+    /* ── Badge regional ──────────────────────────────────────── */
+    .badge-regional {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+      margin-left: 6px;
+    }
+
+    /* ── Vinos del Marco ─────────────────────────────────────── */
+    .vinos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 1rem;
+    }
+    .vino-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+    }
+    .vino-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      color: var(--brand, #8b1a1a);
+      margin-bottom: 6px;
+    }
+    .vino-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
+
+  </style>
+
+  <!-- JSON-LD: Festival -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/fiesta-vendimia-jerez.html",
+    "name": "Fiesta de la Vendimia de Jerez",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1Y",
+      "byMonth": [8, 9],
+      "description": "Se celebra cada año coincidiendo con el inicio de la vendimia de la uva palomino fino en el Marco de Jerez, habitualmente entre finales de agosto y mediados de septiembre. El Ayuntamiento de Jerez y el Consejo Regulador publican las fechas exactas de cada edición."
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Reducto de la Catedral de San Salvador de Jerez de la Frontera",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jerez de la Frontera",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.682667,
+        "longitude": -6.141500
+      }
+    },
+    "image": ["https://folklorius.es/images/fiesta-vendimia-jerez.jpg"],
+    "description": "La Fiesta de la Vendimia de Jerez: la bendición del primer mosto ante la Catedral, catas en el Alcázar y actividades enoturísticas repartidas por el centro histórico. Fiesta de Interés Turístico Internacional desde 1980 y de Interés Turístico de Andalucía desde 2015.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ayuntamiento de Jerez de la Frontera y Consejo Regulador de las DD.OO. Jerez-Xérès-Sherry y Manzanilla",
+      "url": "https://www.jerez.es"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/index.html"},
+      {"@type": "ListItem", "position": 2, "name": "Ferias", "item": "https://folklorius.es/index.html#ferias"},
+      {"@type": "ListItem", "position": 3, "name": "Fiesta de la Vendimia de Jerez", "item": "https://folklorius.es/fiesta-vendimia-jerez.html"}
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se celebra la Fiesta de la Vendimia de Jerez?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Coincide con el inicio de la vendimia de la uva palomino fino en el Marco de Jerez, que suele arrancar a finales de agosto y se extiende hasta mediados de septiembre. Al depender de la maduración de la uva, las fechas cambian de un año a otro: el Ayuntamiento de Jerez y el Consejo Regulador publican el calendario de cada edición."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es lo mismo que la Feria del Caballo de Jerez?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Son dos fiestas distintas de la misma ciudad, declaradas de Interés Turístico Internacional en la misma resolución de 1980. La Feria del Caballo es en mayo, con casetas y protagonismo ecuestre en el parque González Hontoria. La Vendimia es de final de verano, sin recinto ferial, repartida por el centro histórico y centrada en el vino."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la Pisa de la Uva?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El acto inaugural, celebrado en el Reducto de la Catedral de San Salvador. Los pisadores prensan con los pies los primeros racimos sobre un lagar de pino de Flandes, el deán bendice el primer mosto y repican las campanas de la Catedral. El acceso es libre y gratuito hasta completar aforo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la venencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El instrumento con que se extrae el vino de la bota sin remover la capa de levadura que lo protege: una varilla flexible, tradicionalmente de barba de ballena, rematada en un cubilete de plata. El venenciador escancia desde la altura sin derramar una gota. La fiesta incluye concursos de venencia, algunos infantiles que se hacen con agua."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué relación tiene el flamenco con la Vendimia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La bulería es el palo propio de Jerez y se transmite en el ámbito familiar de los barrios de Santiago y San Miguel. Juan de la Plata, fundador de la Cátedra de Flamencología, impulsó en 1967 la Fiesta de la Bulería, que nació vinculada al ciclo de la Vendimia y mantiene calendario propio dentro del final del verano jerezano."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Fiesta de la Vendimia de Jerez
+  </nav>
+
+  <!-- HERO IMAGEN -->
+  <div class="ficha-hero">
+    <img src="images/fiesta-vendimia-jerez.jpg" alt="Pisadores prensando la uva sobre el lagar de madera en el Reducto de la Catedral de Jerez durante la Fiesta de la Vendimia" loading="eager" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Fiesta de la Vendimia de Jerez</h1>
+      <p class="ficha-subtitle">
+        Jerez de la Frontera · Cádiz · Andalucía · «El final del verano que empieza con una bendición y acaba en una bota de roble.»
+      </p>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge-regional">Interés Turístico de Andalucía</span>
+      </div>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la fiesta">
+        <div class="fechas-grandes">Finales de agosto · Mediados de septiembre</div>
+        <p>Centro histórico de Jerez · Unas dos semanas · ITI desde 1980</p>
+        <p class="nota-grid">⚠️ Las fechas dependen de la maduración de la uva y cambian cada año. El calendario y el programa los publican el Ayuntamiento de Jerez y el Consejo Regulador antes de cada edición.</p>
+      </div>
+
+      <!-- AVISO -->
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Nota de sensibilidad</strong>
+        <ul>
+          <li><strong>La Pisa es una cosecha de verdad.</strong> El mosto que sale del lagar ante la Catedral entra en el ciclo productivo del Marco como el de cualquier otro día de recolección. Detrás de esos primeros racimos hay cuadrillas de vendimiadores, viñas de albariza y un sector del que vive buena parte de la comarca. La fiesta celebra un trabajo que se está haciendo esos mismos días en el campo.</li>
+          <li><strong>Cada copa viene de décadas de trabajo.</strong> Lo que se sirve en una cata no corresponde a ninguna añada: es el resultado de mezclar vinos de distintas edades durante años, en un sistema que no tiene equivalente en ninguna otra región. Detrás hay generaciones de capataces, no una sola cosecha.</li>
+          <li><strong>La bulería se hereda en casa.</strong> El flamenco de estas fechas sale de las familias de los barrios de Santiago y San Miguel, donde el cante se transmite de padres a hijos en fiestas privadas antes de llegar a ningún escenario. Quien lo escucha en la calle está asistiendo a algo que existe con o sin público.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Un sacerdote bendice un cubo de zumo de uva mientras repican las campanas de la Catedral. Alrededor, cuatro hombres con zapatos de clavos de cabeza roma aplastan racimos a pisotones cortos sobre un cajón de pino, y el jugo turbio se escurre por el canalillo hasta la pila. Ese chorro es el primer mosto de la cosecha, y su destino es una bota de roble en la que seguirá criándose cuando nadie se acuerde ya de esta tarde.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        No hay Real, ni casetas, ni recinto. La Vendimia se reparte por el centro histórico de Jerez a lo largo de unas dos semanas: plazas, claustros, el Alcázar y las bodegas del Marco abren sus puertas con un programa que organizan conjuntamente el Ayuntamiento y el <strong>Consejo Regulador de las Denominaciones de Origen Jerez-Xérès-Sherry y Manzanilla</strong>. Los actos no se encadenan en una progresión: cada uno funciona por su cuenta, unos se celebran una sola vez y otros se repiten varios días.
+      </p>
+      <p>
+        El ciclo arranca con la <strong>Pisa de la Uva</strong> y se completa con muestras de vino en la calle, catas guiadas, visitas a viñas y concursos de venencia. Quien llega por primera vez puede tratarlo como un festival urbano de vino: se eligen los actos que apetecen, sin recorrido obligatorio ni hora fija a la que estar en ningún sitio.
+      </p>
+      <p>
+        Tampoco hay código de vestuario. A diferencia de la Feria del Caballo, aquí nadie espera traje de flamenca ni traje corto. La única indumentaria tradicional que se ve es la de pisadores y vendimiadores en los actos institucionales, con el atuendo camperil del trabajo en el campo.
+      </p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El vínculo entre Jerez y la fiesta del vino viene de los gremios medievales. Desde el siglo XIII, con la ciudad ya incorporada a la Corona de Castilla tras el privilegio otorgado por <strong>Alfonso X en 1264</strong>, el Gremio de la Vinatería honraba a <strong>San Ginés de la Jara</strong>, patrón del oficio, con una celebración propia ligada al final de la recolección.
+      </p>
+      <p>
+        La fiesta contemporánea tiene otro origen y una fecha concreta: <strong>1948</strong>. Nació de una tertulia poética que se reunía el Sábado de Gloria, impulsada por el médico <strong>Luis Romero Palomo</strong>, y que planteó celebrar públicamente la vendimia con juegos florales y exaltación de la cosecha. Las bodegas del Marco se sumaron de inmediato y lo que empezó como una iniciativa de un grupo de jerezanos acabó convertido en el acto anual que hoy abre el calendario vinícola de la ciudad.
+      </p>
+      <p>
+        El flamenco entró en el ciclo en <strong>1967</strong>, cuando <strong>Juan de la Plata</strong>, fundador de la Cátedra de Flamencología de Jerez, puso en marcha la <strong>Fiesta de la Bulería</strong>, dedicada al palo que la ciudad considera suyo. Mantiene calendario propio y variable, pero nació asociada a estas fechas y sigue formando parte del final del verano jerezano.
+      </p>
+      <p>
+        En <strong>1980</strong>, la Secretaría de Estado de Turismo declaró la Vendimia <strong>Fiesta de Interés Turístico Internacional</strong> — en la misma resolución en que se reconoció a la Feria del Caballo. El reconocimiento autonómico como <strong>Fiesta de Interés Turístico de Andalucía</strong> llegó en 2015.
+      </p>
+
+      <h2 class="section-title">Cuándo se celebra</h2>
+      <p>
+        La Vendimia no tiene fecha fija porque depende de la uva. El ciclo se abre cuando la <strong>palomino fino</strong>, la variedad mayoritaria del Marco, alcanza el punto de maduración que marca el inicio de la recolección, algo que ocurre habitualmente a finales de agosto y que se prolonga hasta mediados de septiembre. Los años de verano cálido adelantan el calendario y los frescos lo retrasan.
+      </p>
+      <p class="nota-grid">⚠️ El Consejo Regulador fija el inicio oficial de la vendimia en el Marco y el Ayuntamiento publica el programa completo con los horarios de cada acto. Consúltalos antes de planificar tu visita.</p>
+
+      <h2 class="section-title">La liturgia de la Pisa de la Uva</h2>
+      <p>
+        El acto inaugural se celebra al aire libre en el <strong>Reducto de la Catedral de San Salvador</strong> y sigue un orden que apenas ha cambiado en décadas.
+      </p>
+
+      <ul class="actos-list">
+        <li>
+          <span class="dia-label">Antes del acto</span>
+          <strong>La llegada de los racimos.</strong>
+          Los primeros racimos cortados en las viñas del Marco llegan hasta el Reducto en cajas, acompañados por el cortejo de vendimiadores con atuendo camperil. Es la parte que menos gente mira y la que explica todo lo demás: esa uva viene de una cuadrilla que lleva desde el amanecer en el campo.
+        </li>
+        <li>
+          <span class="dia-label">El pisado</span>
+          <strong>Los pisadores sobre el lagar.</strong>
+          El lagar es un cajón cuadrangular de <strong>pino de Flandes</strong>, la madera que se usaba tradicionalmente por su resistencia a la humedad. Los pisadores calzan <strong>zapatos de clavos de cabeza roma</strong>: los clavos sujetan el pie sobre la uva resbaladiza y la cabeza redondeada evita que el hollejo y las pepitas se rompan, porque romperlos aportaría amargor al mosto. El paso es corto y rítmico, no un pisoteo libre.
+        </li>
+        <li>
+          <span class="dia-label">La bendición</span>
+          <strong>El primer mosto y las campanas.</strong>
+          Con el jugo ya en la pila, el <strong>deán de la Catedral</strong> bendice el primer mosto de la cosecha y las campanas repican sobre la plaza. Ahí asoma la raíz de todo esto: un rito agrícola que pide por la cosecha del año.
+        </li>
+        <li>
+          <span class="dia-label">Después</span>
+          <strong>Música y copa.</strong>
+          Una formación interpreta el repertorio asociado al acto y la plaza se queda de pie un rato largo, con los catavinos en la mano, antes de que la fiesta se disperse por el resto del centro.
+        </li>
+      </ul>
+      <p class="nota-grid">El acceso al Reducto es libre y gratuito hasta completar aforo.</p>
+
+      <h2 class="section-title">El vino del Marco</h2>
+      <p>
+        Entender qué se está bebiendo cambia por completo lo que se saca de una cata. Estos son los cuatro conceptos que recorren toda la fiesta.
+      </p>
+
+      <div class="vinos-grid">
+
+        <div class="vino-card">
+          <h3>La albariza</h3>
+          <p>La tierra de las mejores viñas del Marco: una marga blanca rica en carbonato cálcico que absorbe el agua del invierno y la retiene bajo una costra superficial durante el verano seco. De ahí sale el perfil mineral que distingue al fino y a la manzanilla.</p>
+        </div>
+
+        <div class="vino-card">
+          <h3>Criaderas y soleras</h3>
+          <p>El sistema de crianza propio de la zona. Las botas se apilan en escalas y el vino se va trasegando de las superiores a las inferiores, de modo que el joven se mezcla con el viejo. Lo que se embotella sale siempre de la fila del suelo, la solera, y no corresponde a ninguna añada concreta.</p>
+        </div>
+
+        <div class="vino-card">
+          <h3>La venencia</h3>
+          <p>Varilla flexible, tradicionalmente de barba de ballena, con un cubilete de plata en la punta. Permite atravesar el velo de flor que cubre el fino dentro de la bota y sacar una muestra sin romperlo. El venenciador escancia desde lo alto para que el vino se airee al caer.</p>
+        </div>
+
+        <div class="vino-card">
+          <h3>El catavinos</h3>
+          <p>La copa jerezana: cristal fino, cuerpo alargado y boca estrecha que concentra los aromas. Se llena por poco más de un tercio, nunca hasta arriba, y es la que se usa en las catas y en las muestras de calle.</p>
+        </div>
+
+      </div>
+      <p>
+        Las denominaciones amparan finos, olorosos, amontillados, palos cortados y vinos dulces, y las bodegas del Marco (González Byass, Williams &amp; Humbert, Lustau, Fundador o Díez Mérito, entre otras) participan en el programa oficial con catas guiadas, visitas a viñas y jornadas de puertas abiertas.
+      </p>
+
+      <h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La Vendimia suena a dos cosas distintas según el momento. El acto inaugural tiene un repertorio propio de corte sinfónico y lírico que se repite año tras año: <em>Vendimia jerezana</em>, de <strong>Manuel Alejandro</strong>; <em>El brindis del Jerez</em>, de la zarzuela <em>Don Gil de Alcalá</em>; <em>Serranía</em>, de <strong>Francisco Orellana</strong>; y el <em>Himno a la Vendimia</em>, de <strong>Moisés Davia</strong>. Sobre todo ello, el repique de las campanas de la Catedral en el momento de la bendición.
+        </p>
+        <p>
+          El resto del ciclo pertenece al flamenco jerezano: compás corto, acento propio, lejos de las sevillanas de caseta. La guitarra que acompaña la Pisa marca el tono, y de ahí en adelante el sonido de la fiesta son las voces que se arrancan en los claustros y las plazas cuando cae la tarde.
+        </p>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Pisa de la Uva</h3>
+          <span class="tag">Acto inaugural · Reducto de la Catedral</span>
+          <p>Pisadores, cortejo de vendimiadores, lagar de pino y la bendición del primer mosto con las campanas de fondo. Es el único acto en que se prensa uva de verdad delante del público, y el que abre el ciclo.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es la parte de la fiesta que sigue siendo un rito agrícola y no un espectáculo. Sitúate cerca del lagar, donde se ve el canalillo por el que baja el mosto: la distancia corta permite oír los clavos de los zapatos sobre la uva, que es el sonido que nadie se espera.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Una cata en el Patio de Armas del Alcázar</h3>
+          <span class="tag">Al anochecer · Alcázar de Jerez</span>
+          <p>Las Catas Magistrales reúnen a las bodegas del Marco en un recinto almohade que el resto del año no se usa para esto. Sesiones guiadas de maridaje con aforo limitado, reserva previa y coste.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque catar un oloroso con la luz cayendo sobre la muralla cambia la percepción de lo que hay en la copa. Y porque es el formato donde alguien de la bodega explica el recorrido del vino por las criaderas, algo que en una degustación de calle no ocurre.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Un concurso de venencia</h3>
+          <span class="tag">Durante el ciclo · Plazas y claustros</span>
+          <p>Los venenciadores compiten atravesando el velo de flor y escanciando desde la altura sin derramar una gota. Hay categorías infantiles que se disputan con agua en lugar de vino.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es un oficio en estado puro y se entiende en diez segundos sin saber nada de vino. Fíjate en la muñeca del venenciador: todo el movimiento sale de ahí, y el chorro tiene que caer limpio dentro del catavinos desde el brazo completamente estirado.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El vino del Marco en los claustros</h3>
+          <span class="tag">Varios días · Claustros de Santo Domingo</span>
+          <p>La muestra de calle reúne a las bodegas bajo las arcadas del antiguo convento, con música en directo. Entrada libre y degustaciones que se pagan aparte, copa a copa.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque permite recorrer en una tarde el abanico completo del Marco sin reservar nada, y porque es donde se ve a los jerezanos bebiendo lo suyo. Empieza por el fino y avanza hacia el oloroso: al revés, el paladar ya no distingue el primero.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li>Las catas en el Alcázar tienen aforo limitado y suelen agotarse. Reserva en cuanto se publique el programa, a través del Consejo Regulador o de la bodega organizadora.</li>
+        <li>Los vinos generosos del Marco tienen bastante más graduación que un vino de mesa. Alterna con agua y ve sin prisa entre acto y acto.</li>
+        <li>Sin recinto único, moverse entre plazas, claustros y bodegas implica caminar por el centro histórico. Calzado cómodo.</li>
+        <li>Finales de agosto en Jerez es verano pleno, con temperaturas altas hasta bien entrada la tarde. Los actos de calle se llevan mejor a partir del anochecer.</li>
+        <li>Consulta el programa día a día. Al no haber una secuencia fija, conviene saber qué toca en cada jornada antes de salir.</li>
+        <li>Si quieres ver una bodega por dentro, muchas abren con visitas guiadas durante el ciclo, pero con horarios propios y plazas contadas.</li>
+        <li>Para ver el lagar de cerca en la Pisa, llega con antelación: el Reducto se llena y las primeras filas se ocupan temprano.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario festero</h2>
+      <dl class="festero">
+
+        <dt>Pisa de la uva</dt>
+        <dd>El prensado de los primeros racimos con los pies sobre el lagar, tal como se hacía antes de la mecanización. Da nombre al acto inaugural de la fiesta.</dd>
+
+        <dt>Lagar</dt>
+        <dd>El cajón cuadrangular de pino de Flandes sobre el que se pisa la uva, con un canalillo que conduce el jugo hasta la pila de recogida.</dd>
+
+        <dt>Mosto</dt>
+        <dd>El zumo de la uva recién prensada, todavía sin fermentar. El primer mosto de la cosecha es el que se bendice en el acto de apertura.</dd>
+
+        <dt>Albariza</dt>
+        <dd>La marga blanca rica en carbonato cálcico que forma los mejores pagos del Marco. Retiene la humedad del invierno bajo una costra superficial y aporta el carácter mineral del fino y de la manzanilla.</dd>
+
+        <dt>Criaderas y soleras</dt>
+        <dd>El sistema de crianza por mezcla de añadas propio de la zona. Las botas se ordenan en escalas y el vino desciende de las criaderas a la solera, la fila inferior, de la que se extrae lo que se embotella.</dd>
+
+        <dt>Bota</dt>
+        <dd>El tonel de roble americano en el que se cría el vino del Marco. Nunca se llena del todo: el hueco superior permite que viva el velo de flor.</dd>
+
+        <dt>Venencia / venenciador</dt>
+        <dd>Varilla flexible de barba de ballena rematada en un cubilete de plata, y la persona que la maneja. Sirve para sacar vino de la bota sin romper el velo de flor y escanciarlo desde la altura.</dd>
+
+        <dt>Catavinos</dt>
+        <dd>La copa tradicional jerezana, de cristal fino y boca estrecha, pensada para concentrar los aromas del vino generoso.</dd>
+
+        <dt>Bulería</dt>
+        <dd>El palo flamenco característico de Jerez, de compás rápido y acento propio, transmitido en el ámbito familiar de los barrios de Santiago y San Miguel.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/fiesta-vendimia-jerez-1.jpg" alt="Pisadores sobre el lagar de pino durante la Pisa de la Uva en el Reducto de la Catedral de Jerez" loading="lazy" />
+        <img src="images/fiesta-vendimia-jerez-2.jpg" alt="Cata de vinos del Marco de Jerez en los Claustros de Santo Domingo" loading="lazy" />
+        <img src="images/fiesta-vendimia-jerez-3.jpg" alt="Catavinos jerezano durante una degustación de la Fiesta de la Vendimia" loading="lazy" />
+        <img src="images/fiesta-vendimia-jerez-4.jpg" alt="Venenciador escanciando vino desde la altura durante la Fiesta de la Vendimia de Jerez" loading="lazy" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://www.sherry.wine" target="_blank" rel="noopener">Consejo Regulador de las DD.OO. Jerez-Xérès-Sherry y Manzanilla</a></li>
+        <li><a href="https://www.jerez.es" target="_blank" rel="noopener">Ayuntamiento de Jerez de la Frontera</a></li>
+        <li><a href="https://www.turismojerez.com" target="_blank" rel="noopener">Turismo de Jerez</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-10-11</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Fiesta de la Vendimia de Jerez?</dt>
+        <dd>Coincide con el inicio de la vendimia de la uva palomino fino en el Marco de Jerez, que suele arrancar a finales de agosto y se extiende hasta mediados de septiembre. Al depender de la maduración de la uva, las fechas cambian de un año a otro: el Ayuntamiento de Jerez y el Consejo Regulador publican el calendario de cada edición.</dd>
+
+        <dt>¿Es lo mismo que la Feria del Caballo de Jerez?</dt>
+        <dd>No. Son dos fiestas distintas de la misma ciudad, declaradas de Interés Turístico Internacional en la misma resolución de 1980. La Feria del Caballo es en mayo, con casetas y protagonismo ecuestre en el parque González Hontoria. La Vendimia es de final de verano, sin recinto ferial, repartida por el centro histórico y centrada en el vino.</dd>
+
+        <dt>¿Qué es la Pisa de la Uva?</dt>
+        <dd>El acto inaugural, celebrado en el Reducto de la Catedral de San Salvador. Los pisadores prensan con los pies los primeros racimos sobre un lagar de pino de Flandes, el deán bendice el primer mosto y repican las campanas de la Catedral. El acceso es libre y gratuito hasta completar aforo.</dd>
+
+        <dt>¿Qué es la venencia y por qué hay concursos?</dt>
+        <dd>La venencia es el instrumento con que se saca el vino de la bota sin romper el velo de flor. Manejarla bien es un oficio que se aprende durante años. La fiesta lo convierte en competición: los venenciadores escancian desde la altura buscando precisión y limpieza. Hay categorías infantiles que se hacen con agua, y vale la pena verlas aunque no se sepa nada de vino.</dd>
+
+        <dt>¿Qué relación tiene el flamenco con la Vendimia?</dt>
+        <dd>La bulería es el palo propio de Jerez y se transmite en el ámbito familiar de los barrios de Santiago y San Miguel. Juan de la Plata, fundador de la Cátedra de Flamencología, impulsó en 1967 la Fiesta de la Bulería, que nació vinculada al ciclo de la Vendimia y mantiene calendario propio dentro del final del verano jerezano.</dd>
+
+      </dl>
+
+      <p class="nota-grid" style="margin-bottom:1.5rem;">La Vendimia no es una feria con horario de cierre. Es el final de un año de trabajo en el campo que Jerez ha decidido celebrar con las puertas abiertas. Llega sin prisa, elige lo que te interesa y quédate a escuchar cuando caiga la tarde.</p>
+
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <a href="#" class="etiqueta destacada">Fiesta de la Vendimia</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta">Andalucía</a>
+        <a href="#" class="etiqueta">Cádiz</a>
+        <a href="#" class="etiqueta">Jerez de la Frontera</a>
+        <a href="#" class="etiqueta">Agosto-Septiembre</a>
+        <a href="#" class="etiqueta">Pisa de la Uva</a>
+        <a href="#" class="etiqueta">Vino de Jerez</a>
+        <a href="#" class="etiqueta">Flamenco</a>
+      </div>
+
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-vendimia">
+        <h2 id="rel-title-vendimia">Otras fiestas que te van a interesar</h2>
+        <div class="fichas-relacionadas-grid">
+
+          <a href="feria-caballo-jerez.html" class="ficha-rel-card">
+            <img src="images/feria-caballo-jerez.jpg" alt="Feria del Caballo de Jerez" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria del Caballo de Jerez</span>
+              <span class="rel-frase">La otra gran fiesta jerezana: casetas, doma vaquera y vino generoso.</span>
+              <span class="rel-meta">Cádiz · Andalucía · ITI</span>
+            </div>
+          </a>
+
+          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
+            <img src="images/feria-abril-sevilla.jpg" alt="Feria de Abril de Sevilla" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Feria de Abril de Sevilla</span>
+              <span class="rel-frase">El modelo de feria con albero, portada y mil casetas.</span>
+              <span class="rel-meta">Sevilla · Andalucía · ITI</span>
+            </div>
+          </a>
+
+          <a href="carnaval-cadiz.html" class="ficha-rel-card">
+            <img src="images/carnaval-cadiz.jpg" alt="Carnaval de Cádiz" loading="lazy" />
+            <div class="rel-body">
+              <span class="rel-title">Carnaval de Cádiz</span>
+              <span class="rel-frase">Chirigotas, comparsas y el ingenio gaditano en la calle.</span>
+              <span class="rel-meta">Cádiz · Andalucía · ITI</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
