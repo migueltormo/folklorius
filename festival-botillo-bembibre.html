@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Festival del Botillo de Bembibre 2026: la exaltación del Bierzo</title>
-  <meta name="description" content="Festival del Botillo de Bembibre 2026: LIII edición, 7 de febrero. El banquete de 1.200 comensales, la IGP berciana y el rito del ciego. ITI desde 2026." />
+  <title>Festival del Botillo de Bembibre: Bierzo e IGP | Folklorius</title>
+  <meta name="description" content="Guía del Festival del Botillo de Bembibre: banquete de invierno en el Bierzo, rito del ciego, Feria Agroalimentaria e Interés Turístico Internacional." />
   <link rel="canonical" href="https://folklorius.es/festival-botillo-bembibre.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Festival del Botillo de Bembibre: el manjar del Bierzo en su 53ª edición internacional" />
+  <meta property="og:title" content="Festival de Exaltación del Botillo de Bembibre | El gran banquete de invierno del Bierzo" />
   <meta property="og:description" content="En febrero, Bembibre monta el mayor banquete de invierno de Castilla y León: 1.200 comensales, el olor a pimentón ahumado y el tintineo de los cuchillos abriendo el ciego. Un embutido, un pueblo, cincuenta años de exaltación." />
   <meta property="og:image" content="https://folklorius.es/images/festival-botillo-bembibre.jpg" />
   <meta property="og:type" content="article" />
@@ -237,8 +237,13 @@
     "@type": "Festival",
     "@id": "https://folklorius.es/festival-botillo-bembibre.html",
     "name": "Festival de Exaltación del Botillo de Bembibre",
-    "startDate": "2026-02-07",
-    "endDate": "2026-02-07",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1Y",
+      "byMonth": 2,
+      "scheduleTimezone": "Europe/Madrid",
+      "description": "Se celebra anualmente en febrero, el sábado inmediatamente anterior al sábado de Carnaval (Entroido berciano)"
+    },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -250,16 +255,21 @@
         "addressRegion": "Castilla y León",
         "addressCountry": "ES"
       },
-      "geo": {
+      "alternateName": ["Festival del Botillo de Bembibre", "Festival Nacional de Exaltación del Botillo"],
+    "award": [
+      "Fiesta de Interés Turístico Internacional por Resolución de 13 de octubre de 2025 (BOE n.º 25 de 28/01/2026)",
+      "Fiesta de Interés Turístico Nacional por Resolución de 29 de mayo de 2008 (BOE n.º 167 de 11/07/2008)"
+    ],
+    "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 42.6153,
-        "longitude": -6.4201
+        "latitude": 42.617889,
+        "longitude": -6.417389
       }
     },
     "image": ["https://folklorius.es/images/festival-botillo-bembibre.jpg"],
-    "description": "El Festival de Exaltación del Botillo de Bembibre celebra cada febrero el embutido más emblemático del Bierzo. LIII edición en 2026. Declarado Fiesta de Interés Turístico Internacional por el BOE del 28 de enero de 2026.",
+    "description": "Gala institucional anual en la que unos 1.500 comensales celebran el botillo del Bierzo —embutido con IGP europea— junto a la Feria Agroalimentaria de la Villa, cata de vinos D.O. Bierzo y el discurso del mantenedor literario. Fiesta de Interés Turístico Internacional (Resolución 13/10/2025, BOE n.º 25, 28/01/2026) y Nacional (Resolución 29/05/2008, BOE n.º 167, 11/07/2008).",
     "organizer": {
-      "@type": "Organization",
+      "@type": "GovernmentOrganization",
       "name": "Ayuntamiento de Bembibre",
       "url": "https://www.aytobembibre.es"
     },
@@ -287,6 +297,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Fiestas Gastronómicas",
+        "item": "https://folklorius.es/#gastronomia"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Festival de Exaltación del Botillo de Bembibre",
         "item": "https://folklorius.es/festival-botillo-bembibre.html"
       }
@@ -302,10 +318,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cuándo se celebra el Festival del Botillo de Bembibre en 2026?",
+        "name": "¿Cuándo se celebra el Festival del Botillo de Bembibre?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El sábado 7 de febrero de 2026. Es la LIII edición y la primera con el título de Fiesta de Interés Turístico Internacional. El festival se celebra cada año el sábado anterior al sábado de Carnaval, lo que lo vincula al ciclo del Entroido berciano y a la temporada de matanza invernal."
+          "text": "Cada año en febrero, el sábado inmediatamente anterior al sábado de Carnaval (Entroido berciano). Esta regla lo vincula al ciclo de matanza invernal, cuando el botillo recién curado está en su punto óptimo."
         }
       },
       {
@@ -321,7 +337,7 @@
         "name": "¿Qué es exactamente el botillo del Bierzo y en qué se diferencia de otros embutidos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El botillo del Bierzo es un embutido con IGP elaborado con costilla de cerdo (entre el 65% y el 90%), rabo (entre el 10% y el 20%) y proporciones variables de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón, embutido en el intestino ciego del cerdo y ahumado con leña de roble o encina durante un mínimo de 15 días. Se diferencia de otros embutidos peninsulares precisamente por ese ahumado prolongado y por llevar hueso, lo que obliga a cocinarlo cocido en olla durante dos horas o más antes de servir."
+          "text": "Embutido con IGP elaborado con costilla de cerdo (65–90%) y rabo (10–20%), con adición facultativa de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón berciano, embuchado en el ciego del cerdo y ahumado con leña de roble o encina durante un mínimo de 24 horas, seguido de al menos 48 horas de secado. Lo diferencia el hueso, que obliga a cocinarlo cocido en olla dos horas antes de servir."
         }
       },
       {
@@ -385,8 +401,8 @@
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
-        <div class="fechas-grandes">Sábado 7 de febrero de 2026 · LIII edición</div>
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave del festival">
+        <div class="fechas-grandes">Febrero · Sábado anterior al Carnaval</div>
         <div class="datos-secundarios">
           <span>📍 Bembibre · León · Castilla y León</span>
           <span>⏱️ 1 día (fin de semana festivo)</span>
@@ -399,7 +415,7 @@
         <ul>
           <li>El banquete del festival es un acto de identidad comarcal, no una cena de restaurante. Los comensales bercianos celebran algo que llevan más de cincuenta años construyendo. El visitante entra como invitado en ese rito colectivo.</li>
           <li>El discurso del mantenedor tiene el peso de un pregón formal. No es entretenimiento de fondo: es el momento central de la gala. El recinto guarda silencio mientras dura.</li>
-          <li>El botillo que se sirve en el festival cumple la IGP al pie de la letra — costilla, rabo, ahumado de roble o encina durante quince días y larga cocción. Compararlo con versiones industriales equivale a comparar un vino de cosecha con un vino de garrafa.</li>
+          <li>El botillo que se sirve en el festival cumple la IGP al pie de la letra — costilla, rabo, ahumado de roble o encina durante un mínimo de 24 horas y cocción prolongada. Compararlo con versiones industriales equivale a comparar un vino de cosecha con un vino de garrafa.</li>
           <li>Las Jornadas de Pinchos previas al festival son una competición seria entre bares del municipio. Los que participan lo hacen con orgullo berciano, no como reclamo turístico.</li>
         </ul>
       </div>
@@ -411,7 +427,7 @@
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        El Festival de Exaltación del Botillo de Bembibre es una <strong>celebración gastronómica e institucional</strong> centrada en el embutido más representativo de El Bierzo. Cada febrero, el sábado anterior al sábado de Carnaval, la capital del Bierzo Alto reúne a más de mil doscientos comensales en un banquete de gala en el que el botillo del Bierzo con IGP es el protagonista absoluto. En 2026 celebra su <strong>LIII edición</strong> — la primera con el título de Fiesta de Interés Turístico Internacional, concedido por resolución de la Secretaría de Estado de Turismo publicada en el BOE el 28 de enero de 2026.
+        El Festival de Exaltación del Botillo de Bembibre es una <strong>celebración gastronómica e institucional</strong> centrada en el embutido más representativo de El Bierzo. Cada febrero, el sábado anterior al sábado de Carnaval, la capital del Bierzo Alto reúne a más de mil doscientos comensales en un banquete de gala en el que el botillo del Bierzo con IGP es el protagonista absoluto. En enero de 2026 alcanzó el título de <strong>Fiesta de Interés Turístico Internacional</strong> (Resolución de 13 de octubre de 2025 de la Secretaría de Estado de Turismo, BOE n.º 25 de 28/01/2026, disp. 2063), reconocimiento que se suma al de Fiesta de Interés Turístico Nacional, obtenido en 2008.
       </p>
       <p>
         El festival tiene dos dimensiones que se solapan durante el fin de semana. La primera es la <strong>gala central del sábado</strong>: recepción de autoridades, discurso del mantenedor, actuación musical y banquete. La segunda, extendida desde el viernes hasta el domingo, incluye la <strong>Semana Cultural</strong> — mesas redondas, el Certamen Literario del Botillo y representaciones en la Casa de las Culturas — y la <strong>Feria Agroalimentaria</strong> en el Bembibre Arena, donde productores con denominación de origen o marcas de calidad del Bierzo exponen vinos, pimientos asados, castañas, peras y miel. Los días previos, las <strong>Jornadas de Pinchos del Botillo</strong> convierten los bares de Bembibre en una competición gastronómica informal donde el ingrediente obligatorio es, siempre, el botillo.
@@ -423,12 +439,12 @@
         La semilla llegó de Madrid. El <strong>26 de febrero de 1970</strong>, dos vecinos de Bembibre — Baldomero Ferrero Gago y Reinerio Gago González — asistieron al XXV aniversario de la exaltación del botillo que los emigrantes bercianos celebraban en la capital. Volvieron con la idea de hacer algo así en casa. Tres años después, el alcalde Alberto Blanco Riego y una comisión de vecinos pusieron en marcha la primera edición: el <strong>10 de junio de 1973</strong>, aprovechando la Salida del Santo — la procesión del Ecce-Homo que baja desde el Santuario hasta la Iglesia de San Pedro Apóstol y que solo ocurre cada siete años. Duró poco en junio: desde la segunda edición, el festival se trasladó a febrero porque el botillo es un alimento de invierno, ligado al ciclo de la matanza, y su momento óptimo es el que sigue al ahumado y la semicuración. El sábado anterior al Carnaval berciano — el Entroido — quedó fijado como fecha permanente.
       </p>
       <p>
-        En <strong>1984</strong> se incorporó la Semana Cultural para dar al festival una dimensión más allá de la gastronomía. En el año <strong>2000</strong> se añadió la Feria Agroalimentaria, que amplió el escaparate a toda la producción de calidad de la comarca. A partir de <strong>1995</strong> los banquetes pasaron a celebrarse en pabellones deportivos municipales; desde <strong>2007</strong> la sede fija es el Pabellón Manuel Marqués «Patarita» — con la única excepción de 2011, cuando la inauguración del Bembibre Arena lo acogió de forma puntual. El reconocimiento como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en 2008. En octubre de 2025, la Secretaría de Estado de Turismo concedió la declaración de <strong>Fiesta de Interés Turístico Internacional</strong>, que el BOE publicó el 28 de enero de 2026 — días antes de que la LIII edición abriese las puertas del pabellón.
+        En <strong>1984</strong> se incorporó la Semana Cultural para dar al festival una dimensión más allá de la gastronomía. En el año <strong>2000</strong> se añadió la Feria Agroalimentaria, que amplió el escaparate a toda la producción de calidad de la comarca. A partir de <strong>1995</strong> los banquetes pasaron a celebrarse en pabellones deportivos municipales; desde <strong>2007</strong> la sede fija es el Pabellón Manuel Marqués «Patarita» — con la única excepción de 2011, cuando la inauguración del Bembibre Arena lo acogió de forma puntual. El reconocimiento como <strong>Fiesta de Interés Turístico Nacional</strong> llegó en 2008 (Resolución de 29 de mayo de 2008, BOE n.º 167 de 11/07/2008, disp. 11860). El reconocimiento como <strong>Fiesta de Interés Turístico Internacional</strong> fue concedido por Resolución de 13 de octubre de 2025 de la Secretaría de Estado de Turismo y publicado en el BOE n.º 25 de 28/01/2026 (disp. 2063).
       </p>
 
-      <h2 class="section-title">Fechas 2026</h2>
+      <h2 class="section-title">Cuándo se celebra</h2>
       <p>
-        La LIII edición se celebra el <strong>sábado 7 de febrero de 2026</strong>. La Semana Cultural y las Jornadas de Pinchos comienzan días antes, y la Feria Agroalimentaria permanece abierta el fin de semana completo. La fecha varía cada año — consulta el programa oficial en la web del Ayuntamiento antes de planificar el viaje.
+        El festival se celebra cada año en febrero, el <strong>sábado inmediatamente anterior al sábado de Carnaval</strong> (Entroido berciano). La Semana Cultural y las Jornadas de Pinchos arrancan días antes; la Feria Agroalimentaria permanece abierta el fin de semana completo. Para la fecha exacta de cada año, consulta el programa oficial en la web del Ayuntamiento antes de planificar el viaje.
       </p>
 
       <h2 class="section-title">Programa</h2>
@@ -454,7 +470,7 @@
       <h2 class="section-title">El botillo del Bierzo</h2>
       <div class="music-block">
         <p>
-          El botillo del Bierzo es un embutido con <strong>Indicación Geográfica Protegida</strong> elaborado exclusivamente con piezas del despiece del cerdo: la IGP exige entre el 65% y el 90% de costilla, entre el 10% y el 20% de rabo, y proporciones variables de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón — dulce o picante según el productor — y se embute en el intestino <em>ciego</em> del cerdo, que le da su forma característica de saco ovalado. El paso diferencial es el <strong>ahumado con leña de roble o encina</strong> durante un mínimo de quince días, que le imprime el toque oscuro y terroso que ningún otro embutido peninsular tiene exactamente igual. Después viene la semicuración.
+          El botillo del Bierzo es un embutido con <strong>Indicación Geográfica Protegida</strong> elaborado exclusivamente con piezas del despiece del cerdo: la IGP exige entre el 65% y el 90% de costilla, entre el 10% y el 20% de rabo, y proporciones variables de lengua, carrillera, paleta y espinazo. Todo va adobado con sal, ajo, orégano y pimentón — dulce o picante según el productor — y se embute en el intestino <em>ciego</em> del cerdo, que le da su forma característica de saco ovalado. El paso diferencial es el <strong>ahumado con leña de roble o encina</strong> durante un mínimo de 24 horas continuas —seguido de al menos 48 horas de secado—, que le imprime el toque oscuro y terroso que ningún otro embutido peninsular tiene exactamente igual. Después viene la semicuración.
         </p>
         <p>
           Para servir el botillo hay que cocerlo en olla a fuego lento durante unas dos horas. En los últimos cuarenta y cinco minutos entran en el mismo caldo la <strong>berza</strong>, los <strong>cachelos</strong> y los <strong>chorizos frescos</strong> — ese conjunto es el plato, y no se sirve de otra manera en Bembibre. La textura que resulta es untuosa: la carne de costilla se desprende del hueso sin esfuerzo, y la mezcla de pimentón ahumado con el amargor de la berza mojada en el caldo graso es lo que hace que quien lo prueba una vez vuelva a buscarlo en febrero.
@@ -558,14 +574,14 @@
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra el Festival del Botillo de Bembibre en 2026?</dt>
-        <dd>El <strong>sábado 7 de febrero de 2026</strong>. Es la LIII edición y la primera con el título de Fiesta de Interés Turístico Internacional. La fecha cambia cada año según el calendario del Carnaval.</dd>
+        <dt>¿Cuándo se celebra el Festival del Botillo de Bembibre?</dt>
+        <dd>Cada año en <strong>febrero</strong>, el sábado inmediatamente anterior al sábado de Carnaval (Entroido berciano). La fecha exacta varía con el calendario litúrgico; consulta la web del Ayuntamiento de Bembibre para el programa anual.</dd>
 
         <dt>¿Es posible asistir al banquete central?</dt>
         <dd>Sí. Las entradas son públicas y de pago — alrededor de 45 euros por comensal — y se venden en la web del Ayuntamiento y en taquilla semanas antes. La sala tiene capacidad para entre 1.200 y 1.500 personas y las plazas se agotan. Compra con antelación.</dd>
 
         <dt>¿Qué es el botillo del Bierzo y en qué se diferencia de otros embutidos?</dt>
-        <dd>Un embutido con IGP elaborado con costilla de cerdo (65–90%), rabo (10–20%) y otras piezas, adobado con pimentón y ahumado con leña de roble o encina durante al menos quince días. Lo diferencia el ahumado prolongado y el hecho de llevar hueso, lo que obliga a cocinarlo cocido en olla durante dos horas antes de servir.</dd>
+        <dd>Embutido con IGP elaborado con costilla de cerdo (65–90%), rabo (10–20%) y otras piezas opcionales, adobado con pimentón, ajo y orégano, embuchado en el ciego del cerdo y ahumado con leña de roble o encina durante un mínimo de 24 horas. Tras 48 horas de secado, se cuece en olla a fuego lento dos horas antes de servir.</dd>
 
         <dt>¿Qué hay además del banquete?</dt>
         <dd>Una semana de actos culturales previos (mesas redondas, Certamen Literario del Botillo), las Jornadas de Pinchos en los bares de Bembibre durante los días anteriores, y la Feria Agroalimentaria en el Bembibre Arena con productores de DO del Bierzo — entrada libre todo el fin de semana.</dd>
@@ -576,14 +592,17 @@
       </dl>
 
       <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
+        <p>La celebración del botillo de Bembibre es, ante todo, un acto de memoria colectiva: una comarca que cada invierno se reúne en torno al embutido que define su identidad, con la misma solemnidad con la que un pregonero abre la fiesta mayor.</p>
+
         <a href="#" class="etiqueta destacada">Fiesta Gastronómica</a>
         <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
+        <a href="#" class="etiqueta destacada">Interés Turístico Nacional</a>
         <a href="#" class="etiqueta">Castilla y León</a>
         <a href="#" class="etiqueta">León</a>
         <a href="#" class="etiqueta">El Bierzo</a>
         <a href="#" class="etiqueta">Febrero</a>
+        <a href="#" class="etiqueta">Invierno</a>
         <a href="#" class="etiqueta">Botillo</a>
-        <a href="#" class="etiqueta">Gastronomía</a>
         <a href="#" class="etiqueta">IGP</a>
       </div>
 
