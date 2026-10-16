@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bodas de Isabel de Segura 2026: los Amantes de Teruel</title>
-  <meta name="description" content="Del 19 al 22 de febrero, Teruel revive la leyenda de los Amantes en las calles. Guía de los cuatro días de la recreación y cómo vivirla." />
+  <title>Bodas de Isabel de Segura: los Amantes de Teruel | Folklorius</title>
+  <meta name="description" content="Cada febrero Teruel representa en sus calles la leyenda de los Amantes. Guía de los cuatro días de recreación, las escenas clave y los campamentos." />
   <link rel="canonical" href="https://folklorius.es/bodas-isabel-segura.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Teruel se convierte en villa medieval por la leyenda de los Amantes" />
-  <meta property="og:description" content="Cuatro días, cien escenas, y una ciudad entera representando la historia de amor más triste de Aragón." />
+  <meta property="og:description" content="Cuatro días de teatro de calle, 147 campamentos vecinales y una ciudad entera metida dentro de su propia leyenda." />
   <meta property="og:image" content="https://folklorius.es/images/bodas-isabel-segura.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
+  <!-- CSS LOCAL — solo componentes específicos de esta ficha -->
   <style>
 
     .must-see-grid {
@@ -65,32 +66,23 @@
       color: var(--brand, #8b1a1a);
       list-style: none;
     }
-    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
-    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details summary::after { content: " \2193"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " \2191"; }
     .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
-    .procesiones-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e5e0d8);
-    }
-    .procesiones-list li {
-      position: relative;
-      padding: 0 0 20px 22px;
-    }
-    .procesiones-list li::before {
+    /* ── Timeline de actos ───────────────────────────────────── */
+    .actos-list { list-style: none; padding: 0; margin: 1rem 0 0; border-left: 2px solid var(--border, #e5e0d8); }
+    .actos-list li { position: relative; padding: 0 0 20px 22px; }
+    .actos-list li::before {
       content: "";
       position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 8px;
-      height: 8px;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--brand, #8b1a1a);
     }
-    .procesiones-list li:last-child { padding-bottom: 0; }
-    .procesiones-list .dia-label {
+    .actos-list li:last-child { padding-bottom: 0; }
+    .actos-list .dia-label {
       display: block;
       font-size: 0.78rem;
       font-weight: 700;
@@ -135,6 +127,51 @@
       .ficha-datos-clave .fechas-grandes { font-size: 1.35rem; }
       .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
     }
+
+    /* ── Nota grid ───────────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #666);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: #fdf3e7;
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #8b1a1a);
+    }
+
+    /* ── Aviso sensibilidad ──────────────────────────────────── */
+    .aviso-sensibilidad {
+      background: #fdf6ec;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid #d97706;
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.2rem 0;
+    }
+    .aviso-sensibilidad strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .aviso-sensibilidad ul { margin: 0; padding-left: 1.2rem; }
+    .aviso-sensibilidad li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 8px; color: var(--text, #2a2218); }
+    .aviso-sensibilidad li:last-child { margin-bottom: 0; }
+
+    /* ── Banner historia ─────────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid var(--border, #e5e0d8);
+      border-left: 4px solid var(--brand, #8b1a1a);
+      border-radius: var(--radius, 8px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 { font-size: 0.95rem; font-weight: 700; color: var(--brand, #8b1a1a); margin-bottom: 8px; }
+    .banner-historia p { font-size: 0.88rem; line-height: 1.6; color: var(--text, #2a2218); margin-bottom: 6px; }
+    .banner-historia p:last-child { margin-bottom: 0; }
 
     /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
     .ficha-etiquetas {
@@ -241,8 +278,13 @@
     "@type": "Festival",
     "@id": "https://folklorius.es/bodas-isabel-segura.html",
     "name": "Bodas de Isabel de Segura",
-    "startDate": "2027-02-18",
-    "endDate": "2027-02-21",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "P1Y",
+      "byMonth": 2,
+      "scheduleTimezone": "Europe/Madrid",
+      "description": "Anual, de jueves a domingo, en el fin de semana del tercer viernes de febrero, según el calendario oficial fijado por el Ayuntamiento de Teruel en 2009."
+    },
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -261,7 +303,7 @@
       }
     },
     "image": ["https://folklorius.es/images/bodas-isabel-segura.jpg"],
-    "description": "Recreación histórico-teatral de la leyenda de los Amantes de Teruel. Cada febrero, la ciudad vuelve al siglo XIII con más de un centenar de actos en sus plazas y calles. Declarada Fiesta de Interés Turístico Internacional.",
+    "description": "Recreación histórico-teatral de la leyenda de los Amantes de Teruel. Cada febrero la ciudad vuelve al siglo XIII con más de un centenar de actos en sus plazas y calles, 147 campamentos vecinales y un mercado medieval. Fiesta de Interés Turístico Internacional.",
     "organizer": {
       "@type": "Organization",
       "name": "Fundación Bodas de Isabel",
@@ -307,7 +349,7 @@
         "name": "¿Cuándo se celebran las Bodas de Isabel de Segura?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Del 19 al 22 de febrero de 2026, el tercer fin de semana del mes. Las fechas cambian cada año — consulta el programa oficial de la Fundación Bodas de Isabel."
+          "text": "En el fin de semana del tercer viernes de febrero, de jueves a domingo. El Ayuntamiento de Teruel fijó ese calendario en 2009, de modo que la fecha se puede calcular de un año para otro. El programa con los horarios de cada escena lo publica la Fundación Bodas de Isabel antes de cada edición."
         }
       },
       {
@@ -315,7 +357,7 @@
         "name": "¿Son las Bodas de Isabel de Segura aptas para familias con niños?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El jueves incluye un cuentacuentos infantil, y el ambiente de mercado y campamentos vale para todas las edades. La escena de la muerte de Diego, el sábado, puede resultar intensa para los más pequeños más por la aglomeración de gente que por el contenido."
+          "text": "Sí. El jueves incluye un cuentacuentos infantil, y el mercado y los campamentos valen para todas las edades. La escena de la muerte de Diego, el sábado, puede resultar intensa para los más pequeños, más por la aglomeración que por el contenido."
         }
       },
       {
@@ -380,73 +422,70 @@
 
       <h1>Bodas de Isabel de Segura</h1>
       <p class="ficha-subtitle">
-        Teruel (Aragón) · Recreación histórica · "Cuatro días, cien escenas, y una ciudad entera representando la historia de amor más triste de Aragón."
+        Teruel · Aragón · Recreación histórica · «Cuatro días en los que la ciudad entera se mete dentro de su propia leyenda.»
       </p>
 
       <div class="badges" aria-label="Reconocimientos oficiales">
         <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
       </div>
 
-      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
-        <div class="fechas-grandes">Del 19 al 22 de febrero de 2026</div>
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la fiesta">
+        <div class="fechas-grandes">El fin de semana del tercer viernes de febrero</div>
         <div class="datos-secundarios">
           <span>📍 Teruel · Aragón</span>
-          <span>⏱️ 4 días de recreación</span>
+          <span>⏱️ De jueves a domingo</span>
           <span>🏅 Interés Turístico Internacional</span>
         </div>
+        <p class="nota-grid">⚠️ El programa con los horarios y recorridos de cada escena lo publica la Fundación Bodas de Isabel antes de cada edición.</p>
       </div>
 
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>Las escenas se representan en plazas y calles abiertas. Los actores y figurantes están en mitad de una representación: no cruces las comitivas en movimiento ni interrumpas las escenas.</li>
-          <li>La Petición del Beso, la muerte de Diego y el funeral del domingo son momentos de alta carga dramática. El público que los ha vivido otras veces los recibe en silencio. Ese silencio es parte de la experiencia — respétalo.</li>
-          <li>La leyenda termina con dos muertes. La recreación no suaviza ese final. Es una historia de amor con tragedia real, y la fiesta la cuenta sin eufemismos. Entrar sabiendo esto hace que el peso de cada escena se entienda mejor.</li>
+          <li>Cada traje que pasa por delante lo ha cosido alguien en su casa a lo largo del año. El manual de indumentaria de la Fundación pide fibras naturales — lana, lino, cuero, seda — y los grupos lo siguen hasta en el calzado. Fijarse de cerca en una costura da la medida del trabajo que hay detrás.</li>
+          <li>Las calles amanecen medievales porque los vecinos las visten. Siguiendo la normativa de la Federación, las asociaciones cubren cableado, rótulos y mobiliario urbano con arpillera, madera y forja: cada portal del casco antiguo tiene a alguien que se ha ocupado de él.</li>
+          <li>Quien sirve el vino en una jaima y quien llora en la escena del Torico son vecinos de Teruel que lo hacen de forma voluntaria, en la misma ciudad donde viven el resto del año. Pasear entre los campamentos es pasear por su casa, y así es como ellos lo viven.</li>
         </ul>
       </div>
 
       <h2 class="section-title">La esencia de la fiesta</h2>
       <p>
-        Diego pide un beso. Isabel se lo niega por lealtad al esposo que no eligió. Él muere ahí mismo, en mitad de la plaza, rodeado de cientos de vecinos vestidos de siglo XIII que contienen la respiración con él. Ese es el momento que sostiene toda la recreación que cada febrero convierte las calles de Teruel en el escenario de la leyenda de amor más conocida de Aragón.
+        Diego pide un beso. Isabel se lo niega por lealtad al esposo que no eligió. Él muere ahí mismo, en mitad de la plaza, rodeado de cientos de vecinos vestidos de siglo XIII que contienen la respiración con él. Ese minuto sostiene los cuatro días que cada febrero convierten las calles de Teruel en el escenario de la leyenda de los Amantes.
       </p>
 
       <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
       <p>
-        Durante cuatro días, Teruel deja de ser una ciudad normal. Los comercios cambian sus escaparates, las plazas se llenan de tiendas de campaña medievales y por las calles aparecen herreros, juglares, soldados y novias con tocado del siglo XIII. No hay escenario con público separado: la ciudad entera es el escenario, y el visitante camina dentro.
+        Durante cuatro días, Teruel deja de ser una ciudad normal. Los comercios cambian sus escaparates, las plazas se llenan de tiendas de campaña medievales y por las calles aparecen herreros, juglares, soldados y novias con tocado del siglo XIII. La ciudad entera hace de escenario, y el visitante camina dentro.
       </p>
       <p>
-        La historia que se cuenta es la de Diego e Isabel: él se va a la guerra para ganar fortuna y poder casarse con ella; vuelve un día tarde, ella ya tiene marido, y lo que ocurre después es lo que da nombre a la fiesta. Esa historia se representa en escenas que van ocurriendo a lo largo del fin de semana en distintas plazas, con actores profesionales y cerca de 200 figurantes con texto. El viernes es la boda de Isabel con otro. El sábado, la vuelta de Diego y el momento central de la leyenda. El domingo, el funeral.
+        La historia que se cuenta es la de Diego e Isabel: él se va a la guerra para ganar fortuna y poder casarse con ella; vuelve un día tarde, ella ya tiene marido, y lo que ocurre después da nombre a la fiesta. Se representa en escenas repartidas por distintas plazas a lo largo del fin de semana, con actores profesionales y cerca de 200 figurantes con texto.
       </p>
       <p>
-        Mientras tanto, por todo el centro histórico, 147 campamentos montados por asociaciones de vecinos recrean la vida cotidiana de la época: cada uno tiene su oficio, su ambientación, su propia pequeña historia. Se puede entrar y salir libremente, sin horario. El visitante puede elegir seguir la trama principal de principio a fin, o simplemente perderse por el mercado medieval de 250 puestos y ver qué encuentra. La mayoría acaba haciendo las dos cosas.
+        Mientras tanto, por todo el centro histórico, 147 campamentos montados por asociaciones de vecinos recrean la vida cotidiana de la época: cada uno tiene su oficio, su ambientación y su propia pequeña historia. Se entra y se sale libremente, sin horario. Se puede seguir la trama principal de principio a fin o perderse por el mercado medieval de 250 puestos y ver qué aparece. La mayoría acaba haciendo las dos cosas.
       </p>
-      <p>
-        Consulta el programa oficial en <a href="https://www.bodasdeisabel.com" target="_blank" rel="noopener">bodasdeisabel.com</a> antes de planificar tu visita.
-      </p>
-
-      <div class="nota-grid" role="note">
-        ⚠️ Los horarios y el recorrido exacto de cada escena los publica cada año la Fundación Bodas de Isabel. Consúltalos antes de ir.
-      </div>
 
       <h2 class="section-title">Historia y significado</h2>
       <p>
-        La leyenda se sitúa en el siglo XIII. Diego de Marcilla parte a la guerra para hacer fortuna y poder casarse con Isabel de Segura; su padre le concede cinco años de plazo. Isabel espera, pero al cumplirse el plazo su familia la casa con Pedro de Azagra. Diego vuelve un día tarde, pide un último beso a Isabel ya casada, ella se lo niega por fidelidad, y él muere de dolor delante de ella. Isabel muere al día siguiente, durante el funeral de Diego, al besar por fin su cadáver.
-      </p>
-      <p>
-        La recreación la puso en marcha Raquel Esteban, licenciada en Bellas Artes y Arte Dramático, y desde 2008 la organiza la Fundación Bodas de Isabel. La edición de 2026 es la trigésima, y la primera que se celebra con el reconocimiento de Fiesta de Interés Turístico Internacional.
+        La leyenda se sitúa en el siglo XIII y el relato tradicional la fecha en 1217. Diego de Marcilla — Juan Martínez de Marcilla en la tradición documental turolense — parte a la guerra para hacer fortuna y poder casarse con Isabel de Segura; su padre le concede cinco años de plazo. Isabel espera, pero al cumplirse el plazo su familia la casa con Pedro de Azagra. Diego vuelve un día tarde, pide un último beso a Isabel ya casada, ella se lo niega por fidelidad, y él muere de dolor delante de ella. Isabel muere al día siguiente, durante el funeral, al besar por fin su cadáver.
       </p>
 
-      <h2 class="section-title">Fechas 2026</h2>
+      <div class="banner-historia" role="note">
+        <h3>Cómo llegó la leyenda hasta nosotros</h3>
+        <p>La historia de los Amantes no aparece en ningún documento del siglo XIII. Entra en la escritura de la mano del notario turolense <strong>Juan Yagüe de Salas</strong>, que en 1619 publicó un poema épico sobre los dos jóvenes y declaró haber encontrado, durante la exhumación de unas momias en la capilla de los Santos Médicos de la iglesia de San Pedro, un «papel de letra antigua» que contaba el episodio y lo fechaba en 1217.</p>
+        <p>El medievalista <strong>Fernando López Rajadel</strong>, que ha estudiado los manuscritos de los Amantes, sostiene que el relato no nació como tradición oral sino como ficción caballeresca de finales del siglo XV, recogida en el Manuscrito 353 de la Biblioteca de Cataluña y encargada por los propios Marcilla para dar lustre a su linaje. El hallazgo de 1619 vendría a ser, según esa lectura, la segunda vida de un texto que ya tenía siglo y medio.</p>
+        <p>Lo que no se discute es el efecto. Desde Yagüe de Salas la historia pasa al teatro del Siglo de Oro, al romanticismo del XIX y por fin a la calle. Teruel lleva cuatro siglos levantando su identidad sobre un relato, y esa construcción forma parte de lo que se representa cada febrero tanto como la propia leyenda.</p>
+      </div>
+
       <p>
-        Del jueves 19 al domingo 22 de febrero, el tercer fin de semana del mes. El viernes trae la boda de Isabel; el sábado, la muerte de Diego y el momento central de la leyenda. Las fechas se fijan cada año — comprueba siempre el calendario antes de organizar el viaje.
+        La recreación moderna arranca en <strong>febrero de 1997</strong>, impulsada por <strong>Raquel Esteban</strong>, licenciada en Bellas Artes y Arte Dramático, autora de los libretos originales. En <strong>2005</strong> se constituyen las primeras asociaciones culturales que darán lugar a la <strong>Federación de Grupos</strong>, encargada de los campamentos. En <strong>2006</strong> el Ayuntamiento de Teruel crea la fundación que organiza la fiesta, con <strong>Caja Rural de Teruel</strong> y la <strong>Confederación Empresarial de Teruel</strong> en el patronato desde el principio; la Federación de Grupos se incorpora después y el <strong>Gobierno de Aragón</strong> entra en <strong>2015</strong>. En <strong>2009</strong> el consistorio fija el calendario oficial que ata la fiesta al fin de semana del tercer viernes de febrero.
       </p>
 
       <h2 class="section-title">Los cuatro actos</h2>
-      <ul class="procesiones-list">
+      <ul class="actos-list">
 
         <li>
           <span class="dia-label">Jueves · Apertura</span>
-          La ciudad despierta al siglo XIII con un cuentacuentos infantil por la tarde en la Plaza de la Catedral. Entrada la noche, dos escenas cortas dan paso a la <strong>Procesión de las Ánimas</strong>, que recorre el centro histórico y abre oficialmente la recreación.
+          La ciudad despierta al siglo XIII con un cuentacuentos infantil por la tarde en la Plaza de la Catedral. Entrada la noche, dos escenas cortas dan paso a la <strong>Comitiva de ánimas</strong>, el cortejo que recorre el centro histórico y abre oficialmente la recreación.
         </li>
 
         <li>
@@ -456,27 +495,35 @@
 
         <li>
           <span class="dia-label">Sábado · La muerte de Diego</span>
-          El día central, y el más concurrido. Por la mañana y mediodía, el <strong>Toro Nupcial</strong> y el <strong>Torneo del Rey</strong> llenan la Plaza de Toros y el Tozal. Al atardecer llega el tramo de la leyenda: la entrada de las tropas de Aragón, el encuentro de Diego con sus padres y, en la Plaza del Torico, la Petición del Beso, la muerte de Diego y el lamento de Isabel. La jornada sigue con la Procesión de las Ánimas acompañando al difunto y un desfile benéfico de antorchas que termina en los Jardines de la Escalinata con el rito fúnebre <strong>«La vela del Capitán»</strong>.
+          El día central, y el más concurrido. Por la mañana y mediodía, el <strong>Toro Nupcial</strong> y el <strong>Torneo del Rey</strong> llenan la Plaza de Toros y el Tozal. Al atardecer llega el tramo de la leyenda: la entrada de las mesnadas de Aragón, el encuentro de Diego con sus padres y, en la Plaza del Torico, la Petición del Beso, la muerte de Diego y el lamento de Isabel. La jornada sigue con la Comitiva de ánimas acompañando al difunto y un desfile benéfico de antorchas que termina en los Jardines de la Escalinata con el rito fúnebre <strong>«La vela del Capitán»</strong>.
         </li>
 
         <li>
           <span class="dia-label">Domingo · El funeral</span>
-          La comitiva de los funerales de Diego recorre el centro histórico hasta la Catedral. Se representan las exequias y la muerte de Isabel. La recreación se cierra en la Plaza del Seminario con el <strong>Romance del Ciego</strong> y la <strong>Oda a los Amantes</strong>.
+          La comitiva de los funerales de Diego recorre el centro histórico hasta la Catedral. Se representan las exequias y la muerte de Isabel. La recreación se cierra en la Plaza del Seminario con el <strong>Romance del Ciego</strong> y la <strong>Oda a los Amantes</strong>, y termina con el beso multitudinario al que la organización invita a todos los presentes: el beso que Isabel no pudo dar en vida lo dan a la vez varios miles de personas.
         </li>
 
       </ul>
 
-      <h2 class="section-title">Más allá del guion</h2>
+      <h2 class="section-title">El resto del año</h2>
       <p>
-        El <strong>mercado medieval</strong> — unos 250 puestos entre la Plaza de la Catedral, la Glorieta, el Paseo del Óvalo y el Parque de los Fueros — y los campamentos de la Federación se pueden visitar sin seguir ninguna escena concreta. Es la parte de la fiesta sin horario: se pasea entre haimas y puestos a cualquier hora del día.
+El mercado y las jaimas se reparten entre la Plaza de la Catedral, la Glorieta, el Paseo del Óvalo y el Parque de los Fueros, y se visitan sin seguir ninguna escena concreta. Es la parte de la fiesta que funciona sin horario.
+      </p>
+      <p>
+        Las Bodas son además la segunda mitad de un díptico. En octubre, Teruel representa <strong>«La Partida de Diego»</strong>, la precuela: la marcha del joven a la guerra en 1212, tras la batalla de Las Navas de Tolosa, y el pacto de los cinco años de espera. Quien ve las dos entiende la historia completa, y entiende también que la recreación es un trabajo de todo el año y no de un fin de semana.
       </p>
 
-      <h2 class="section-title">Música y sonido</h2>
+      <h2 class="section-title">Marco normativo</h2>
       <p>
-        Los pregoneros de 2026, <strong>Nacho del Río y Beatriz Bernad</strong>, llevan treinta años juntos como referentes de la jota aragonesa. Su voz aparece repartida en distintos momentos de la recreación, no solo en el pregón oficial.
+        El reconocimiento oficial de la fiesta recorrió los tres escalones habituales en algo menos de veinte años:
       </p>
+      <ul>
+        <li>Fiesta de Interés Turístico de Aragón por Orden de 19 de junio de 2007 del Departamento de Industria, Comercio y Turismo del Gobierno de Aragón, publicada en el BOA n.º 84, de 16 de julio de 2007.</li>
+        <li>Fiesta de Interés Turístico Nacional por Resolución de 12 de abril de 2016 de la Secretaría de Estado de Turismo, publicada en el BOE n.º 100, de 26 de abril de 2016, disposición 3996.</li>
+        <li>Fiesta de Interés Turístico Internacional por Resolución de 23 de diciembre de 2025 de la Secretaría de Estado de Turismo, publicada en el BOE n.º 24, de 28 de enero de 2026, disposición 2064. Con ella Aragón suma su cuarta fiesta en la categoría.</li>
+      </ul>
       <p>
-        El contraste más marcado se da entre el bullicio del mercado — música de calle, animación constante — y el silencio que cae sobre la Plaza del Torico en el instante de la Petición del Beso, cuando cientos de personas dejan de hablar a la vez. Para vivir ese silencio, sitúate en la Plaza del Torico el sábado al atardecer con margen de tiempo.
+        Al margen de las declaraciones, dos acuerdos municipales ordenan la fiesta: el de 2006, por el que el Ayuntamiento crea la fundación que la organiza, y el de 2009, que fija su fecha de celebración. El patronato lo componen el propio Ayuntamiento, Caja Rural de Teruel, la Confederación Empresarial de Teruel, la Federación de Grupos y, desde 2015, el Gobierno de Aragón.
       </p>
 
       <h2 class="section-title">No te lo puedes perder</h2>
@@ -488,7 +535,7 @@
           <p>Diego regresa de la guerra, encuentra a Isabel casada y le pide un beso. Ella lo rechaza. Él muere. Todo sucede en la plaza, rodeado de cientos de personas que lo presencian en silencio. Es el momento central de la leyenda y el de mayor carga emocional de toda la recreación.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>El silencio que cae sobre la Plaza del Torico en ese instante no se planifica: ocurre solo. No se repite en ninguna otra fiesta española.</p>
+            <p>El silencio que cae sobre la Plaza del Torico en ese instante lo produce la gente por su cuenta, sin que nadie lo pida por megafonía. Dura lo que dura la escena y se rompe de golpe.</p>
           </details>
         </div>
 
@@ -503,19 +550,19 @@
         </div>
 
         <div class="must-see-card">
-          <h3>El mercado y las haimas</h3>
+          <h3>El mercado y las jaimas</h3>
           <span class="tag">Viernes a domingo · Centro histórico</span>
-          <p>250 puestos medievales y 147 campamentos de recreación de la Federación distribuidos por las plazas y paseos de Teruel. No sigue ningún horario fijo: se entra y se sale libremente, y cada haima recrea un oficio o escena de vida del siglo XIII.</p>
+          <p>Las jaimas de la Federación y los puestos del mercado ocupan las plazas y paseos del casco antiguo. Cada campamento tiene su oficio — herrería, tintorería, botica, escribano — y lo trabaja delante del visitante: no son escaparates, se ve a la gente herrando, hilando o amasando. Funcionan a cualquier hora del día.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Es la única parte de la fiesta sin guion ni hora: el visitante camina y se encuentra con la Edad Media sin previo aviso.</p>
+            <p>Es la parte de la fiesta sin guion ni hora: se camina y se tropieza uno con la Edad Media sin previo aviso.</p>
           </details>
         </div>
 
         <div class="must-see-card">
           <h3>El Torneo del Rey</h3>
           <span class="tag">Sábado por la tarde · Plaza de Toros</span>
-          <p>Combates ecuestres y a pie en la Plaza de Toros, con la recreación de la llegada de Diego de Marcilla como telón de fondo. Es el único acto de la fiesta que usa la Plaza de Toros como escenario, con el graderío como tribuna natural para el público.</p>
+          <p>Combates ecuestres y a pie en la Plaza de Toros, con la llegada de Diego de Marcilla como telón de fondo. Es el único acto que usa la Plaza de Toros como escenario, con el graderío haciendo de tribuna.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
             <p>La Plaza de Toros da escala al espectáculo: la misma leyenda que en las calles resulta íntima, aquí se convierte en gran formato.</p>
@@ -526,27 +573,43 @@
 
       <h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li><strong>El frío de febrero en Teruel es real.</strong> Teruel es una de las capitales más frías de España en invierno. Lleva abrigo de verdad, no una chaqueta ligera, especialmente para las escenas nocturnas del jueves y el sábado.</li>
-        <li><strong>Cómo llegar.</strong> En tren de media distancia desde Zaragoza (algo más de dos horas) o desde Valencia (algo menos de tres horas). No hay AVE ni aeropuerto en Teruel. En coche, la A-23 es la vía principal desde ambas ciudades.</li>
-        <li><strong>Para la muerte de Diego, llega con margen.</strong> La Plaza del Torico se llena con antelación el sábado al atardecer. Si llegas sobre la hora, la escena ya estará en marcha y el acceso será difícil.</li>
-        <li><strong>El Mausoleo de los Amantes puede cambiar su horario.</strong> Está en la iglesia de San Pedro y puede alterar su apertura habitual durante los días de la fiesta. Confírmalo antes de ir en la web de la Fundación Amantes de Teruel.</li>
-        <li><strong>Gastronomía.</strong> Los <em>suspiros de amante</em> son el dulce que Teruel dedica a su propia leyenda. No te vayas sin probarlos.</li>
+        <li>Teruel es una de las capitales más frías de España en invierno y febrero no perdona. Hace falta abrigo de verdad, sobre todo para las escenas nocturnas del jueves y el sábado.</li>
+        <li>Se llega en tren de media distancia desde Zaragoza, algo más de dos horas, o desde Valencia, algo menos de tres. La ciudad no tiene AVE ni aeropuerto. En coche, la A-23 es la vía principal desde ambas.</li>
+        <li>Para la muerte de Diego conviene llegar con margen. La Plaza del Torico se llena mucho antes de la hora el sábado al atardecer, y quien aparece justo a tiempo se queda fuera.</li>
+        <li>El Mausoleo de los Amantes, en la iglesia de San Pedro, puede alterar su horario habitual durante los días de fiesta. Conviene confirmarlo en la web de la Fundación Amantes de Teruel.</li>
+        <li>Los <em>suspiros de amante</em> son el dulce que la ciudad dedica a su propia leyenda. Están en cualquier pastelería del centro.</li>
+        <li>Conviene mirar el programa con tiempo: las escenas se solapan entre sí y en un mismo fin de semana no caben todas.</li>
       </ul>
 
       <h2 class="section-title">Vocabulario festero</h2>
       <dl class="festero">
 
         <dt>Recreación histórica</dt>
-        <dd>Puesta en escena teatral de un hecho, episodio o leyenda del pasado, con actores y vecinos caracterizados de época.</dd>
+        <dd>Puesta en escena de un hecho, episodio o leyenda del pasado con criterios de rigor documental: indumentaria, oficios y ambientación se ajustan a lo que se sabe de la época, y no a la idea general que se tiene de ella.</dd>
 
-        <dt>Fundación Bodas de Isabel</dt>
-        <dd>Entidad organizadora de las escenas principales y de la parte teatral de la fiesta.</dd>
+        <dt>Jaima</dt>
+        <dd>Cada uno de los campamentos que las asociaciones vecinales levantan por el centro histórico para representar un oficio o una escena de vida medieval. La palabra designa en árabe la tienda de pelo de cabra de los pueblos nómadas, y en Teruel ha acabado nombrando cualquier sede de cuadrilla, tenga forma de tienda o no.</dd>
 
-        <dt>Federación</dt>
-        <dd>Conjunto de asociaciones vecinales que ambientan la ciudad con sus propias haimas y campamentos, complementando el guion principal. Coordina 147 haimas repartidas por el centro histórico.</dd>
+        <dt>Mesnada</dt>
+        <dd>Tropa de armas medieval al servicio de un señor o un concejo. En la fiesta, los grupos armados que entran en la ciudad el sábado por la tarde.</dd>
 
-        <dt>Haima</dt>
-        <dd>Campamento de recreación medieval instalado por los grupos de la Federación para ambientar la ciudad durante la fiesta.</dd>
+        <dt>Comitiva de ánimas</dt>
+        <dd>Cortejo mortuorio nocturno que vela a los difuntos. Abre la recreación el jueves por la noche y reaparece el sábado acompañando el cuerpo de Diego.</dd>
+
+        <dt>Toro Nupcial</dt>
+        <dd>Ritual tauríno documentado en el medievo hispánico, ligado a las celebraciones de boda, que la fiesta recupera la mañana del sábado.</dd>
+
+        <dt>Romance del Ciego</dt>
+        <dd>Pieza de ciego — el género de los juglares que recitaban sucesos por las plazas a cambio de unas monedas — con la que el domingo se narra la historia completa de los Amantes antes de cerrar la recreación.</dd>
+
+        <dt>Oda a los Amantes</dt>
+        <dd>El texto con que se cierra la recreación el domingo en la Plaza del Seminario, antes del beso multitudinario.</dd>
+
+        <dt>La Partida de Diego</dt>
+        <dd>La representación de octubre que cuenta la primera mitad de la historia, la que en febrero ya ha ocurrido cuando empieza la fiesta.</dd>
+
+        <dt>Suspiros de amante</dt>
+        <dd>Dulce turolense de hojaldre y crema que la ciudad asocia a la leyenda y vende durante todo el año.</dd>
 
       </dl>
 
@@ -563,16 +626,16 @@
         <li><a href="https://turismo.teruel.es" target="_blank" rel="noopener">Turismo de Teruel — Ayuntamiento</a></li>
         <li><a href="https://www.turismodearagon.com" target="_blank" rel="noopener">Turismo de Aragón</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-07-21</p>
+      <p class="fuente">Última verificación de enlaces: 2026-10-16</p>
 
       <h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
         <dt>¿Cuándo se celebran las Bodas de Isabel de Segura?</dt>
-        <dd>Del 19 al 22 de febrero de 2026, el tercer fin de semana del mes. Las fechas cambian cada año — consulta el programa oficial de la Fundación Bodas de Isabel.</dd>
+        <dd>En el fin de semana del tercer viernes de febrero, de jueves a domingo. El Ayuntamiento de Teruel fijó ese calendario en 2009, así que la fecha se puede calcular de un año para otro. El programa con los horarios de cada escena lo publica la Fundación Bodas de Isabel antes de cada edición.</dd>
 
         <dt>¿Son aptas para familias con niños?</dt>
-        <dd>Sí. El jueves incluye un cuentacuentos infantil, y el ambiente de mercado y campamentos vale para todas las edades. La muerte de Diego, el sábado al atardecer, puede resultar intensa para los más pequeños más por la aglomeración de gente que por el contenido.</dd>
+        <dd>Sí. El jueves incluye un cuentacuentos infantil, y el mercado y las jaimas valen para todas las edades. La muerte de Diego, el sábado al atardecer, puede resultar intensa para los más pequeños, más por la aglomeración que por el contenido.</dd>
 
         <dt>¿Qué pasa si hace mal tiempo?</dt>
         <dd>No hay protocolo oficial verificado de suspensión por lluvia o nieve. Sigue los canales de la Fundación el mismo día si el tiempo se pone feo.</dd>
@@ -638,7 +701,7 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p>© Folklorius · Fiesta, tradición e historia</p>
       <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
     </div>
   </footer>
