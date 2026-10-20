@@ -320,7 +320,8 @@ p { margin-bottom: 1rem; color: var(--text); }
 }
 
 /* Subtítulo bajo el h1 */
-.ficha-subtitle {
+.ficha-subtitle,
+.ficha-subtitulo {
   font-style: italic;
   color: var(--text-muted);
   font-size: 0.98rem;
@@ -348,16 +349,25 @@ p { margin-bottom: 1rem; color: var(--text); }
 
 /* Aviso de sensibilidad */
 .aviso-sensibilidad {
-  background: #fff7ed;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  margin: 16px 0;
-  color: #7a4b11;
-  font-size: 0.95rem;
+  padding: 16px 18px;
+  margin: 20px 0;
+  color: var(--text);
+  font-size: 0.92rem;
 }
-.aviso-sensibilidad strong { display: block; margin-bottom: 6px; }
-.aviso-sensibilidad ul { margin: 4px 0 0 16px; }
+.aviso-sensibilidad strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--brand-dark);
+  margin-bottom: 10px;
+}
+.aviso-sensibilidad ul { margin: 0; padding-left: 1.15rem; }
+.aviso-sensibilidad li { line-height: 1.65; margin-bottom: 8px; }
+.aviso-sensibilidad li:last-child { margin-bottom: 0; }
 
 /* Títulos de sección dentro de la ficha */
 .section-title {
@@ -370,13 +380,25 @@ p { margin-bottom: 1rem; color: var(--text); }
 }
 
 /* Bloque de música */
-.music-block {
-  background: #f0f7ff;
-  border-left: 4px solid #3b82f6;
+.music-block { margin: 4px 0 20px; }
+.music-block p { line-height: 1.7; margin-bottom: 0.9rem; }
+.music-block ul { margin: 0; padding-left: 1.15rem; }
+.music-block li { line-height: 1.65; margin-bottom: 8px; color: var(--text-muted); }
+.music-block li:last-child { margin-bottom: 0; }
+
+/* Nota breve en línea (avisos de programa, horarios, fuentes puntuales) */
+.nota-grid {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius-sm);
-  padding: 16px 20px;
-  margin: 16px 0;
+  padding: 10px 14px;
+  margin: 14px 0;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
+.nota-grid a { font-style: normal; }
 
 /* Glosario festero */
 dl.festero { margin: 0 0 1rem; }

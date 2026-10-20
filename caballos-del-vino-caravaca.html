@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Caballos del Vino de Caravaca 2026: Carrera, Peñas y UNESCO</title>
+  <meta name="description" content="Guía de los Caballos del Vino de Caravaca de la Cruz 2026. Patrimonio UNESCO desde 2020. 60 peñas, la carrera en la Cuesta del Castillo y el enjaezamiento el 2 de mayo." />
+  <link rel="canonical" href="https://folklorius.es/caballos-del-vino-caravaca.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Caballos del Vino de Caravaca | Ocho segundos que duran todo un año" />
+  <meta property="og:description" content="Sesenta peñas, mantos bordados durante un año entero y una carrera que no dura ni diez segundos cuesta arriba. La fiesta más única de Caravaca de la Cruz." />
+  <meta property="og:image" content="https://folklorius.es/images/caballos-del-vino-caravaca.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Peñas desplegables ──────────────────────────────────── */
+    .penas-details {
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+    .penas-details summary {
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      cursor: pointer;
+      list-style: none;
+      background: var(--bg, #fafafa);
+      border-bottom: 1px solid var(--border, #e8ddd4);
+    }
+    .penas-details summary::-webkit-details-marker { display: none; }
+    .penas-details summary::after { content: " ↓ Ver todas"; font-weight: 400; font-size: 0.82rem; }
+    .penas-details[open] summary::after { content: " ↑ Ocultar"; font-weight: 400; font-size: 0.82rem; }
+    .penas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 6px;
+      padding: 16px 18px;
+    }
+    .penas-grid span {
+      font-size: 0.82rem;
+      color: var(--text, #2c2c2c);
+      padding: 4px 8px;
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .penas-grid span.pena-destacada {
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
+      font-weight: 600;
+    }
+
+    /* ── Concursos timeline ──────────────────────────────────── */
+    .concursos-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .concurso-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 16px;
+      margin-bottom: 1.4rem;
+    }
+    @media (max-width: 500px) {
+      .concurso-item { grid-template-columns: 1fr; }
+    }
+    .concurso-fecha {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand, #b34700);
+      padding-top: 3px;
+    }
+    .concurso-body strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .concurso-body p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text, #2c2c2c);
+      margin: 0;
+    }
+
+    /* ── Must-see cards ──────────────────────────────────────── */
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--bg, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::-webkit-details-marker { display: none; }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Banner vinculación ──────────────────────────────────── */
+    .banner-historia {
+      background: #fff7ed;
+      border: 1px solid #f5e6c8;
+      border-left: 4px solid var(--brand, #b34700);
+      border-radius: var(--radius, 10px);
+      padding: 16px 18px;
+      margin: 1.5rem 0;
+    }
+    .banner-historia h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      margin-bottom: 8px;
+    }
+    .banner-historia p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text, #2c2c2c);
+      margin-bottom: 6px;
+    }
+    .banner-historia p:last-child { margin-bottom: 0; }
+
+    /* ── Nota grid ───────────────────────────────────────────── */
+    .nota-grid {
+      font-size: 0.82rem;
+      color: var(--text-muted, #5a5a5a);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding: 8px 12px;
+      background: var(--accent-light, #f5e6c8);
+      border-radius: var(--radius-sm, 6px);
+      border-left: 3px solid var(--brand, #b34700);
+    }
+
+    /* ── Ficha datos clave ───────────────────────────────────── */
+    .ficha-datos-clave {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
+      padding: 18px 22px; margin: 1.2rem 0;
+    }
+    .fechas-grandes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--brand, #b34700); margin-bottom: 10px;
+    }
+    .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
+    .datos-secundarios span {
+      font-size: 0.85rem; color: var(--text, #2c2c2c);
+      background: #fff; border: 1px solid var(--border, #e8ddd4);
+      border-radius: 999px; padding: 4px 12px;
+    }
+
+    /* ── Etiquetas ───────────────────────────────────────────── */
+    .ficha-etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+    .etiqueta {
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
+      color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
+    }
+    .etiqueta-destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+
+    /* ── Fichas relacionadas ─────────────────────────────────── */
+    .fichas-relacionadas { margin: 2rem 0 1.5rem; }
+    .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; }
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
+      background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
+    }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
+
+    /* ── Record box ──────────────────────────────────────────── */
+    .record-box {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .record-item {
+      flex: 1;
+      min-width: 140px;
+      background: #fff;
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .record-item .record-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brand, #b34700);
+      display: block;
+    }
+    .record-item .record-label {
+      font-size: 0.78rem;
+      color: var(--text-muted, #5a5a5a);
+      display: block;
+      margin-top: 2px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "@id": "https://folklorius.es/caballos-del-vino-caravaca.html",
+    "name": "Caballos del Vino de Caravaca de la Cruz",
+    "startDate": "2027-05-02",
+    "endDate": "2027-05-02",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Caravaca de la Cruz — Cuesta del Castillo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caravaca de la Cruz",
+        "addressRegion": "Región de Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.1069,
+        "longitude": -1.8608
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Federación Bando de los Caballos del Vino de Caravaca",
+      "url": "https://caballosdelvino.org"
+    },
+    "image": ["https://folklorius.es/images/caballos-del-vino-caravaca.jpg"],
+    "description": "Los Caballos del Vino de Caravaca de la Cruz, declarados Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2020. 60 peñas caballistas, el enjaezamiento y la Carrera en la Cuesta del Castillo cada 2 de mayo.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#fiestas">Fiestas</a>
+        <a href="index.html#glosario">Vocabulario</a>
+        <a href="index.html#blog">Blog</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Caballos del Vino de Caravaca de la Cruz
+  </nav>
+
+  <div class="ficha-hero">
+    <img src="images/caballos-del-vino-caravaca.jpg" alt="Carrera de los Caballos del Vino de Caravaca de la Cruz en la Cuesta del Castillo con los cuatro mozos agarrados a los arreos del caballo enjaezado" />
+  </div>
+
+  <main class="ficha-main">
+    <article class="card">
+
+      <h1>Caballos del Vino de Caravaca de la Cruz</h1>
+      <p class="ficha-subtitle">
+        Caravaca de la Cruz · Región de Murcia · «Un año entero bordando para ocho segundos de carrera.»
+      </p>
+
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2026">
+        <div class="fechas-grandes">2 de mayo de 2026</div>
+        <div class="datos-secundarios">
+          <span>📍 Caravaca de la Cruz · Región de Murcia</span>
+          <span>🏅 Patrimonio Cultural Inmaterial UNESCO desde 2020</span>
+          <span>🐴 60 peñas caballistas</span>
+          <span>🎖️ Parte de las Fiestas de la Vera Cruz — ITI 2004</span>
+        </div>
+      </div>
+
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Patrimonio Cultural Inmaterial de la Humanidad — UNESCO 2020</span>
+        <span class="badge badge-oficial">Fiestas de la Vera Cruz — Interés Turístico Internacional 2004</span>
+      </div>
+
+      <div class="aviso-sensibilidad" role="note">
+        <strong>Antes de venir, ten en cuenta esto</strong>
+        <ul>
+          <li><strong>Una tradición, no un espectáculo de riesgo.</strong> La carrera es un acto de devoción y competición festera con siglos de historia. El esfuerzo físico de los mozos y el bienestar del caballo son responsabilidad de cada peña. Respeta el espacio de la carrera y no te interpongas en el recorrido bajo ninguna circunstancia.</li>
+          <li><strong>El pasillo humano lo formas tú.</strong> Durante la carrera el público se aparta para crear el corredor por el que sube el caballo. Mantén la posición que indique la organización — la seguridad de los mozos depende de ello.</li>
+          <li><strong>Respeta el enjaezamiento.</strong> Los mantos que visten los caballos son piezas de artesanía que algunas peñas tardan un año en confeccionar. No toques los caballos ni los mantos sin permiso explícito de la peña.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        La carrera no dura ni diez segundos. Eso es lo primero que hay que entender, y también lo que más cuesta creer cuando ves el trabajo que hay detrás. Ochenta metros de cuesta, un caballo enjaezado con un manto que ha tardado un año en bordarse, cuatro mozos agarrados a los arreos y una regla sin excepciones: los cinco cruzan la meta juntos o la peña queda eliminada. Sin importar el tiempo. Si uno se suelta antes de la línea, se acabó.
+      </p>
+      <p>
+        Sesenta peñas. Un día. Una cuesta. Nada igual en ningún otro sitio del mundo.
+      </p>
+
+      <h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Los Caballos del Vino son una celebración dentro de las Fiestas en honor a la Santísima y Vera Cruz de Caravaca, que se extienden del 1 al 5 de mayo. Tienen su propia organización — la Federación Bando de los Caballos del Vino —, su propia estructura de concursos y su propia declaración: Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO desde 2020. Comparten fecha y devoción con los Moros y Cristianos, pero son una fiesta distinta con identidad propia.
+      </p>
+      <p>
+        La participación de las 60 peñas no se reduce a la carrera del 2 de mayo. Empieza el 1 de mayo con el Concurso a Pelo — los caballos desfilan sin manto, mostrando su morfología natural — y sigue hasta el 4 de mayo, cuando los miembros de las peñas asisten a los desfiles de Moros y Cristianos con las camisas de color identificativo de su peña y sus charangas, aportando música y ambiente a todo el conjunto festivo.
+      </p>
+      <p class="nota-grid">⚠️ El programa completo con horarios exactos lo publica la Federación Bando de los Caballos del Vino en su web oficial antes de cada edición. Consúltalo en caballosdelvino.org.</p>
+
+      <h2 class="section-title">Historia y significado</h2>
+      <p>
+        El origen lo cuenta la leyenda. Según la tradición popular, en el siglo XIII los templarios que defendían el castillo de Caravaca, asediados y sin agua, cargaron sus caballos con pellejos de vino y rompieron el cerco a galope para abastecer la fortaleza. La ciudad se salvó. El vino sustituyó al agua, y el galope del caballo cuesta arriba quedó grabado en la memoria colectiva de Caravaca.
+      </p>
+      <p>
+        Leyenda o no, la tradición de los caballos enjaezados lleva siglos vinculada a la devoción por la Vera Cruz. Con el tiempo se organizó en peñas, se formalizaron los concursos y la carrera en la Cuesta del Castillo se convirtió en el momento cumbre. En 2020 la UNESCO reconoció todo ese conjunto — la carrera, el enjaezamiento, los concursos y los ritos asociados — como Patrimonio Cultural Inmaterial de la Humanidad.
+      </p>
+
+      <h2 class="section-title">Los tres concursos</h2>
+      <p>La participación de las peñas se estructura en tres momentos distintos, cada uno con su propio jurado y su propio criterio de valoración:</p>
+      <ul class="concursos-list">
+        <li class="concurso-item">
+          <div class="concurso-fecha">1 de mayo<br>Tarde</div>
+          <div class="concurso-body">
+            <strong>Concurso de Caballo a Pelo</strong>
+            <p>Los caballos desfilan sin manto por la Gran Vía y la calle del Hoyo, mostrando su morfología, crines trenzadas y estampa natural. Un jurado valora la nobleza y la belleza anatómica del animal. Es el primer contacto del público con los caballos antes de verlos enjaezados al día siguiente.</p>
+          </div>
+        </li>
+        <li class="concurso-item">
+          <div class="concurso-fecha">Madrugada<br>2 de mayo</div>
+          <div class="concurso-body">
+            <strong>Concurso de Enjaezamiento</strong>
+            <p>Desde antes del amanecer, las peñas visten a sus caballos con los mantos bordados en seda, canutillo de oro y plata y pedrería. El diseño de cada manto es un secreto hasta esa mañana — algunas peñas tardan un año entero en confeccionarlo. Tras el enjaezamiento, los caballos desfilan para que el jurado valore la riqueza y el trabajo del bordado. El mejor manto tiene su propio premio, separado del de la carrera.</p>
+          </div>
+        </li>
+        <li class="concurso-item">
+          <div class="concurso-fecha">2 de mayo<br>Mediodía</div>
+          <div class="concurso-body">
+            <strong>Concurso de Carrera — La Cuesta del Castillo</strong>
+            <p>Tras una misa matutina en el Templete y la Carrera de la Simona como apertura, las 60 peñas suben a la Cuesta del Castillo para la carrera contrarreloj. Ochenta metros de pendiente pronunciada, cuatro mozos por caballo agarrados a los arreos, y la regla de oro: los cinco cruzan la meta juntos o quedan eliminados. La velocidad y la cohesión del equipo determinan el resultado.</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="section-title">La carrera en números</h2>
+      <div class="record-box">
+        <div class="record-item">
+          <span class="record-num">7,713 s</span>
+          <span class="record-label">Récord histórico — Peña Artesano<br>Caballo Asemil · 2016</span>
+        </div>
+        <div class="record-item">
+          <span class="record-num">8,156 s</span>
+          <span class="record-label">Ganador 2026 — Peña Caprichoso<br>Caballo inglés Enol</span>
+        </div>
+        <div class="record-item">
+          <span class="record-num">80 m</span>
+          <span class="record-label">Longitud de la Cuesta del Castillo</span>
+        </div>
+        <div class="record-item">
+          <span class="record-num">60</span>
+          <span class="record-label">Peñas caballistas participantes</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">Las 60 peñas caballistas</h2>
+      <p>
+        Estas son las 60 peñas que forman la Federación Bando de los Caballos del Vino de Caravaca de la Cruz, listadas según el registro oficial de la Federación. Las marcadas en naranja han ganado alguno de los tres concursos en ediciones recientes verificadas.
+      </p>
+
+      <details class="penas-details">
+        <summary>60 peñas caballistas — Federación Bando de los Caballos del Vino</summary>
+        <div class="penas-grid">
+          <span>Al-bino</span>
+          <span>Almanzor</span>
+          <span class="pena-destacada">Ambicioso</span>
+          <span class="pena-destacada">Artesano</span>
+          <span>Aspirante</span>
+          <span>Azahara</span>
+          <span>Baezano</span>
+          <span>Bavieka</span>
+          <span>Berea</span>
+          <span>Cabecico</span>
+          <span>Calesera</span>
+          <span>Calimocho</span>
+          <span>Campanazo</span>
+          <span>Campeón</span>
+          <span class="pena-destacada">Caprichoso</span>
+          <span>Cartujano</span>
+          <span>Centauro</span>
+          <span class="pena-destacada">Chirinos</span>
+          <span>Cortijero</span>
+          <span>El Púa</span>
+          <span>Escándalo</span>
+          <span>Espartaco</span>
+          <span>Exigente</span>
+          <span>Flecha Roja</span>
+          <span>Furioso</span>
+          <span>Gacel</span>
+          <span>Gaditano</span>
+          <span>Gladiador</span>
+          <span>Histórico</span>
+          <span>Jabato</span>
+          <span>Jeque</span>
+          <span>Jubiloso</span>
+          <span>Júpiter</span>
+          <span>La Pastora</span>
+          <span>Legendario</span>
+          <span>Luminoso</span>
+          <span>Mayrena</span>
+          <span>Mel-Azules</span>
+          <span>Minipúa</span>
+          <span>Mudacid</span>
+          <span>Mustafa</span>
+          <span>Panterry</span>
+          <span>Peregrino</span>
+          <span>Pura Sangre</span>
+          <span>Rebelde</span>
+          <span>Retorno</span>
+          <span>Sagitario</span>
+          <span>Sangrino</span>
+          <span>Santa Cruz</span>
+          <span>Silencio</span>
+          <span>Soberano</span>
+          <span>Solitario</span>
+          <span>Solterón</span>
+          <span>Terremoto</span>
+          <span class="pena-destacada">Terry</span>
+          <span>Triana</span>
+          <span>Triunfador</span>
+          <span>Universo</span>
+          <span>Zuagir</span>
+          <span>Zambra</span>
+        </div>
+      </details>
+      <p class="nota-grid" style="margin-top:0.5rem;">Fuente: caballosdelvino.org — listado oficial de la Federación Bando de los Caballos del Vino. Las peñas destacadas en naranja han ganado alguno de los tres concursos en ediciones recientes con datos verificados: Artesano (récord carrera 2016), Caprichoso (carrera 2026), Chirinos (Caballo a Pelo 2024), Terry y Al-bino (Enjaezamiento, ediciones recientes).</p>
+
+      <div class="banner-historia" role="note">
+        <h3>Los Caballos del Vino y los Moros y Cristianos — la misma devoción, dos mundos distintos</h3>
+        <p>Las dos fiestas comparten fecha, ciudad y devoción a la Vera Cruz, pero funcionan con organizaciones separadas y tienen su propia identidad. Los Moros y Cristianos son el desfile, la embajada, el Parlamento, la reliquia escoltada. Los Caballos del Vino son el enjaezamiento, la carrera, la artesanía y el esfuerzo físico. Si solo ves una, te estás perdiendo lo que hace única a Caravaca.</p>
+        <p><a href="moros-cristianos-caravaca.html">Ver ficha completa de los Moros y Cristianos de Caravaca →</a></p>
+      </div>
+
+      <h2 class="section-title">No te lo puedes perder</h2>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>La Carrera en la Cuesta del Castillo</h3>
+          <span class="tag">2 de mayo · Mediodía · Cuesta del Castillo</span>
+          <p>Ochenta metros, cuatro mozos, un caballo enjaezado y menos de diez segundos. La regla de oro: los cinco cruzan la meta juntos o quedan eliminados. El récord histórico son 7,713 segundos.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque en el momento en que el caballo arranca cuesta arriba y el público abre el pasillo, no hay nada comparable. La velocidad, el estruendo y la tensión de los mozos agarrados a los arreos es algo que no se explica bien con palabras — hay que estar en la cuesta.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Enjaezamiento en la madrugada</h3>
+          <span class="tag">Madrugada del 2 de mayo · Refugios de las peñas</span>
+          <p>Desde antes del amanecer, las peñas visten a sus caballos con mantos bordados durante un año. El diseño es secreto hasta esa mañana. Después los caballos desfilan para que el jurado valore el trabajo del bordado.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver los mantos de seda y canutillo de oro bajo la luz de la madrugada, antes de la carrera, es el momento más íntimo de toda la fiesta. La artesanía y la devoción juntas, antes del estruendo.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>El Concurso de Caballo a Pelo</h3>
+          <span class="tag">1 de mayo · Tarde · Gran Vía y calle del Hoyo</span>
+          <p>El día antes de la carrera, los caballos desfilan sin manto mostrando su morfología y crines trenzadas. El primer contacto con los animales antes de verlos transformados por el enjaezamiento al día siguiente.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el contraste entre el caballo a pelo del 1 de mayo y el mismo animal enjaezado el 2 de mayo te da la medida exacta del trabajo que hay detrás de cada peña.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Las peñas en los desfiles de M&C</h3>
+          <span class="tag">3 y 4 de mayo · Con los Moros y Cristianos</span>
+          <p>Una vez terminados sus concursos, los miembros de las peñas asisten a los desfiles de Moros y Cristianos con las camisas de colores identificativos de su peña y sus charangas. Son el hilo que une las dos fiestas.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque ver a las peñas caballistas mezcladas entre las Kábilas y los grupos cristianos con sus colores y su música propia es la imagen más clara de que en Caravaca las dos fiestas son inseparables aunque sean distintas.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">Consejos prácticos</h2>
+      <ul>
+        <li><strong>Sitúate con antelación en la Cuesta.</strong> El pasillo humano para la carrera se forma con tiempo. Cuanto antes llegues a la Cuesta del Castillo, mejor posición tendrás. Una vez empieza la carrera no te muevas hasta que tu peña haya pasado.</li>
+        <li><strong>La madrugada del 2 merece el madrugón.</strong> El enjaezamiento empieza antes del amanecer. Si puedes estar en los refugios de las peñas esa madrugada, verás el momento más íntimo de toda la fiesta.</li>
+        <li><strong>Alojamiento.</strong> Caravaca se llena durante las fiestas. Reserva con meses de antelación, especialmente para la noche del 1 al 2 de mayo. Si no encuentras en la ciudad, busca en Cehegín o Moratalla.</li>
+        <li><strong>Cómo llegar.</strong> Caravaca no tiene estación de tren. La opción más habitual es coche o autobús desde Murcia capital. El Ayuntamiento habilita aparcamientos disuasorios — el centro histórico cierra al tráfico durante las fiestas.</li>
+        <li><strong>Clima.</strong> Mayo en el noroeste murciano puede sorprender: calor durante el día y fresco por la noche y en la madrugada del enjaezamiento. Ropa a capas y calzado cómodo para la cuesta adoquinada.</li>
+        <li><strong>Gastronomía.</strong> Las migas de harina con embutidos y pimientos son el plato de las fiestas. El arroz empedrao, el cordero segureño y los postres locales — yemas, alfajores y pañuelos teresianos — completan la mesa caravaqueña de mayo.</li>
+      </ul>
+
+      <h2 class="section-title">Vocabulario</h2>
+      <dl class="festero">
+
+        <dt>Peña caballista</dt>
+        <dd>Cada una de las 60 agrupaciones que participan en los Caballos del Vino. Tienen su propio caballo, su propio manto y sus propios mozos para la carrera. Muchas llevan el nombre de su caballo de referencia histórico.</dd>
+
+        <dt>Enjaezamiento</dt>
+        <dd>El proceso de vestir al caballo con el manto bordado. Se hace desde la madrugada del 2 de mayo y el diseño es secreto hasta ese momento. El resultado entra en el Concurso de Enjaezamiento.</dd>
+
+        <dt>Manto</dt>
+        <dd>La pieza bordada en seda, canutillo de oro y plata y pedrería con la que se viste el caballo para la carrera. Algunas peñas invierten un año entero en su confección y se estrena en cada edición.</dd>
+
+        <dt>Cuesta del Castillo</dt>
+        <dd>El recorrido de ochenta metros de pendiente pronunciada donde tiene lugar la carrera contrarreloj. Termina en la explanada del Castillo-Santuario de la Vera Cruz.</dd>
+
+        <dt>Carrera de la Simona</dt>
+        <dd>El tramo inicial de la jornada de carrera, anterior al concurso principal en la Cuesta del Castillo. Abre el día de la competición.</dd>
+
+        <dt>Caballistas o corredores</dt>
+        <dd>Los cuatro mozos de cada peña que corren agarrados a los arreos del caballo. Dos delante y dos detrás. Deben cruzar la meta con el animal sin soltarse — si uno falla, la peña queda eliminada.</dd>
+
+      </dl>
+
+      <h2 class="section-title">Galería</h2>
+      <div class="galeria" style="display:none;">
+        <img src="images/caravaca/carrera-cuesta-castillo.jpg" alt="Carrera de los Caballos del Vino en la Cuesta del Castillo de Caravaca con los cuatro mozos agarrados al caballo enjaezado" />
+        <img src="images/caravaca/enjaezamiento-madrugada.jpg" alt="Enjaezamiento de un caballo con manto bordado en la madrugada del 2 de mayo en Caravaca de la Cruz" />
+        <img src="images/caravaca/manto-bordado-detalle.jpg" alt="Detalle del manto bordado en seda y canutillo de oro de los Caballos del Vino de Caravaca" />
+        <img src="images/caravaca/caballo-a-pelo-gran-via.jpg" alt="Concurso de Caballo a Pelo en la Gran Vía de Caravaca de la Cruz el 1 de mayo" />
+      </div>
+
+      <h2 class="section-title">Enlaces útiles</h2>
+      <ul>
+        <li><a href="https://caballosdelvino.org" target="_blank" rel="noopener">Federación Bando de los Caballos del Vino de Caravaca — Web oficial</a></li>
+        <li><a href="https://turismocaravaca.com" target="_blank" rel="noopener">Turismo de Caravaca de la Cruz</a></li>
+        <li><a href="https://www.caravacadelacruz.es" target="_blank" rel="noopener">Ayuntamiento de Caravaca de la Cruz</a></li>
+        <li><a href="https://ich.unesco.org" target="_blank" rel="noopener">UNESCO — Patrimonio Cultural Inmaterial</a></li>
+      </ul>
+      <p class="fuente">Última verificación de enlaces: 2026-07-04</p>
+
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <dl class="faq">
+
+        <dt>¿Cuándo se celebra la Carrera de los Caballos del Vino en 2026?</dt>
+        <dd>El 2 de mayo de 2026, a mediodía, en la Cuesta del Castillo de Caravaca de la Cruz. El programa completo con el orden de salida de las 60 peñas lo publica la Federación Bando de los Caballos del Vino en su web oficial antes de cada edición.</dd>
+
+        <dt>¿Qué pasa si un mozo se suelta durante la carrera?</dt>
+        <dd>La peña queda automáticamente descalificada, sin importar el tiempo que haya marcado el caballo. Los cinco — el caballo y los cuatro mozos — deben cruzar la meta juntos. Es la regla de oro de la carrera.</dd>
+
+        <dt>¿Los Caballos del Vino son la misma fiesta que los Moros y Cristianos?</dt>
+        <dd>No. Comparten fechas (del 1 al 5 de mayo) y devoción a la Vera Cruz, pero tienen organizaciones distintas y declaraciones oficiales separadas: los Caballos del Vino son Patrimonio Cultural Inmaterial UNESCO desde 2020, y forman parte de las Fiestas de la Vera Cruz declaradas ITI en 2004. Los Moros y Cristianos tienen su propia ficha en Folklorius.</dd>
+
+        <dt>¿Se puede ver el enjaezamiento desde fuera?</dt>
+        <dd>Sí, parte del enjaezamiento es público: tras vestir al caballo desde la madrugada, las peñas desfilan por las calles para que el jurado y el público valoren el manto. El proceso interno en los refugios de cada peña depende de lo que permita cada una.</dd>
+
+        <dt>¿Es apta la carrera para verla con niños?</dt>
+        <dd>La carrera es rápida e intensa, con mucha aglomeración en la Cuesta. Es apta para niños si se les sitúa en una posición segura con visibilidad desde el exterior del pasillo humano, lejos del recorrido directo del caballo. Consulta con la organización los puntos de mejor visibilidad familiar antes de la jornada.</dd>
+
+      </dl>
+
+      <div class="ficha-etiquetas" aria-label="Etiquetas">
+        <span class="etiqueta etiqueta-destacada">Caballos del Vino</span>
+        <span class="etiqueta etiqueta-destacada">Patrimonio UNESCO</span>
+        <span class="etiqueta">Región de Murcia</span>
+        <span class="etiqueta">Caravaca de la Cruz</span>
+        <span class="etiqueta">Mayo</span>
+        <span class="etiqueta">Vera Cruz</span>
+        <span class="etiqueta">Enjaezamiento</span>
+        <span class="etiqueta">Interés Turístico Internacional</span>
+        <span class="etiqueta">Tradición festera</span>
+      </div>
+
+      <div class="fichas-relacionadas">
+        <h2>Fiestas relacionadas</h2>
+        <div class="relacionadas-grid">
+          <a href="moros-cristianos-caravaca.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Caravaca</strong>
+            <span>Caravaca de la Cruz · ITI · La otra cara de las Fiestas de la Vera Cruz</span>
+          </a>
+          <a href="moros-cristianos-murcia.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Murcia</strong>
+            <span>Murcia · ITI · El Campamento Medieval junto al Segura</span>
+          </a>
+          <a href="moros-cristianos-alcoi.html" class="relacionada-card">
+            <strong>Moros y Cristianos de Alcoi</strong>
+            <span>Alicante · ITI · La fiesta festera más antigua de España</span>
+          </a>
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2026 Folklorius · Fiesta, tradición e historia</p>
+      <p><a href="index.html">Inicio</a> · Fuentes: ayuntamientos, oficinas de turismo y organismos oficiales</p>
+    </div>
+  </footer>
+
+</body>
+</html>
