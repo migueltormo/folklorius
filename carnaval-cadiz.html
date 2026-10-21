@@ -24,14 +24,14 @@
 
     /* ── Ficha datos clave ───────────────────────────────────────── */
     .ficha-datos-clave {
-      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
-      border: 1px solid #e5e0d8; border-radius: var(--radius, 10px);
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3e2 100%);
+      border: 1px solid #f5e6c8; border-radius: var(--radius, 10px);
       padding: 18px 22px; margin: 1.2rem 0;
     }
     .fechas-grandes {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem; font-weight: 700;
-      color: var(--brand, #b34700); margin-bottom: 10px;
+      color: var(--brand, #8b1a1a); margin-bottom: 10px;
     }
     .datos-secundarios { display: flex; flex-wrap: wrap; gap: 10px; }
     .datos-secundarios span {
@@ -58,7 +58,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--brand, #b34700);
+      background: var(--brand, #8b1a1a);
     }
     .actos-list li:last-child { padding-bottom: 0; }
     .actos-list .dia-label {
@@ -67,7 +67,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 3px;
     }
 
@@ -87,7 +87,7 @@
     .agrupacion-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       margin-bottom: 6px;
     }
     .agrupacion-card p { font-size: 0.88rem; line-height: 1.5; margin-bottom: 0; }
@@ -98,23 +98,19 @@
       border-radius: 999px; border: 1px solid var(--border, #e8ddd4);
       color: var(--text, #2c2c2c); background: var(--bg, #fafafa); text-decoration: none;
     }
-    .etiqueta.destacada { background: var(--brand, #b34700); color: #fff; border-color: var(--brand, #b34700); }
+    .etiqueta.destacada { background: var(--brand, #8b1a1a); color: #fff; border-color: var(--brand, #8b1a1a); }
     /* ── Fichas relacionadas ─────────────────────────────────────── */
     .fichas-relacionadas { margin: 2rem 0 1.5rem; }
     .fichas-relacionadas h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; color: var(--text, #2c2c2c); }
-    .fichas-relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .ficha-rel-card {
+    .relacionadas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .relacionada-card {
       background: var(--bg, #fafafa); border: 1px solid var(--border, #e8ddd4);
-      border-radius: var(--radius, 10px); overflow: hidden;
-      text-decoration: none; color: inherit; display: flex; flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: var(--radius, 10px); padding: 14px 16px;
+      text-decoration: none; color: var(--text, #2c2c2c); transition: box-shadow 0.2s;
     }
-    .ficha-rel-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-    .ficha-rel-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
-    .ficha-rel-card .rel-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 5px; }
-    .ficha-rel-card .rel-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text, #2c2c2c); }
-    .ficha-rel-card .rel-frase { font-size: 0.82rem; color: var(--text-muted, #5a5a5a); font-style: italic; }
-    .ficha-rel-card .rel-meta { font-size: 0.72rem; color: var(--brand, #b34700); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+    .relacionada-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #8b1a1a); }
+    .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
     /* ── Must-see ───────────────────────────────────────────── */
     .must-see-grid {
@@ -138,7 +134,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
     }
 
     .must-see-card .tag {
@@ -146,7 +142,7 @@
       font-size: 0.78rem;
       font-weight: 600;
       background: var(--accent-light, #fdf3e7);
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       padding: 3px 10px;
       border-radius: 999px;
       margin-bottom: 10px;
@@ -161,7 +157,7 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--brand, #b34700);
+      color: var(--brand, #8b1a1a);
       list-style: none;
     }
 
@@ -309,9 +305,9 @@
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>Las coplas son crónica social cantada: el humor gaditano es irónico y a menudo punzante. Escucha antes de juzgar; lo que suena a exageración suele ser la capa más delgada de una crítica muy precisa.</li>
-          <li>Cuando una agrupación canta en una esquina, el silencio del corrillo que se forma alrededor es parte del ritual. No se cruza ni se interrumpe mientras actúan.</li>
-          <li>Las agrupaciones ilegales o callejeras actúan sin permiso ni horario fijo. Su existencia fuera del concurso oficial es intencional y forma parte de la cultura carnavalesca gaditana: no son una irregularidad, son el carnaval original.</li>
+          <li>Las coplas son crónica social cantada, y el humor gaditano es irónico y a veces áspero. Lo que desde fuera suena a exageración suele ser la capa más delgada de una crítica trabajada durante meses por gente que no se dedica a esto y que canta sobre lo que le ha pasado a su ciudad este año.</li>
+          <li>Cuando una agrupación arranca en una esquina, el corrillo se cierra y se calla solo. Ese silencio no lo pide nadie: forma parte de cómo se escucha aquí, y es lo que permite que una letra escrita para cuatro minutos llegue hasta la última fila.</li>
+          <li>Las agrupaciones ilegales actúan sin permiso ni horario fijo. Estar fuera del concurso es una decisión, no un descuido: son el carnaval más antiguo de la ciudad y la razón de que siguiera habiendo coplas en los años en que el carnaval oficial estuvo prohibido.</li>
         </ul>
       </div>
 
@@ -593,39 +589,23 @@
         <a href="#" class="etiqueta">Patrimonio Inmaterial</a>
       </div>
 
-      <section class="fichas-relacionadas" aria-labelledby="rel-title-cadiz">
-        <h2 id="rel-title-cadiz">Otras fiestas que te van a interesar</h2>
-        <div class="fichas-relacionadas-grid">
-
-          <a href="carnaval-tenerife.html" class="ficha-rel-card">
-            <img src="images/carnaval-tenerife.jpg" alt="Murga actuando durante el Carnaval de Santa Cruz de Tenerife" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Carnaval de Santa Cruz de Tenerife</span>
-              <span class="rel-frase">Declarado el mismo año que el de Cádiz, y la manera opuesta de entender el carnaval.</span>
-              <span class="rel-meta">Santa Cruz de Tenerife · Canarias · ITI</span>
-            </div>
+      <div class="fichas-relacionadas">
+        <h2>Otras fiestas que te van a interesar</h2>
+        <div class="relacionadas-grid">
+          <a href="carnaval-tenerife.html" class="relacionada-card">
+            <strong>Carnaval de Santa Cruz de Tenerife</strong>
+            <span>Canarias · ITI desde 1980 · El otro gran carnaval español declarado el mismo año</span>
           </a>
-
-          <a href="carnaval-aguilas.html" class="ficha-rel-card">
-            <img src="images/carnaval-aguilas.jpg" alt="La Musona recorriendo las calles del casco histórico de Águilas durante el Carnaval" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Carnaval de Águilas</span>
-              <span class="rel-frase">Otro carnaval que se vive en la calle, con sus propias criaturas y su cuerva.</span>
-              <span class="rel-meta">Águilas · Región de Murcia · ITI</span>
-            </div>
+          <a href="fallas-valencia.html" class="relacionada-card">
+            <strong>Las Fallas de Valencia</strong>
+            <span>Comunitat Valenciana · ITI/UNESCO · Sátira, arte efímero y fiesta de raíz popular</span>
           </a>
-
-          <a href="festival-cante-minas-union.html" class="ficha-rel-card">
-            <img src="images/festival-cante-minas-union.jpg" alt="Actuación de cante minero durante el Festival Internacional del Cante de las Minas de La Unión" loading="lazy" />
-            <div class="rel-body">
-              <span class="rel-title">Festival del Cante de las Minas</span>
-              <span class="rel-frase">Otro certamen donde el público pesa tanto como el jurado.</span>
-              <span class="rel-meta">La Unión · Región de Murcia · ITI</span>
-            </div>
+          <a href="san-fermin.html" class="relacionada-card">
+            <strong>Sanfermines de Pamplona</strong>
+            <span>Navarra · ITI desde 1980 · Declarada el mismo año que el Carnaval de Cádiz</span>
           </a>
-
         </div>
-      </section>
+      </div>
       <a href="index.html" class="back-link">← Volver al inicio</a>
 
     </article>
