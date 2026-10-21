@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Fira de Tots Sants de Cocentaina 2026: la feria más antigua</title>
-  <meta name="description" content="Fira de Tots Sants de Cocentaina 2026: 680 ediciones, 140.000 m², 750 expositores. ITI 2019, BIC Inmaterial. Del 31 de octubre al 2 de noviembre en Alicante." />
-  <link rel="canonical" href="https://folklorius.es/fira-tots-sants-cocentaina.html" />
+  <title>Noche de los Tambores de Mula: dieciséis horas de redoble</title>
+  <meta name="description" content="La Noche de los Tambores de Mula arranca a medianoche del Martes Santo y no para en dieciséis horas. Interés Turístico Internacional y Patrimonio UNESCO." />
+  <link rel="canonical" href="https://folklorius.es/noche-tambores-mula.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cocentaina: la feria que lleva leyéndose el mismo privilegio desde 1346" />
-  <meta property="og:description" content="Cada 1 de noviembre, desde el balcón del Palau Comtal, alguien lee en voz alta el documento de un rey medieval. Abajo, medio millón de personas escuchan. Llevan haciéndolo 680 años." />
-  <meta property="og:image" content="https://folklorius.es/images/fira-tots-sants-cocentaina.jpg" />
+  <meta property="og:title" content="Mula: la noche en que un pueblo deja de hablar y se pone a tocar" />
+  <meta property="og:description" content="Doce campanadas, un toque de corneta y el silencio se acaba. Lo que viene después no para hasta la tarde siguiente." />
+  <meta property="og:image" content="https://folklorius.es/images/noche-tambores-mula.jpg" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+
     .must-see-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -32,7 +33,7 @@
     }
     .must-see-card {
       background: var(--surface, #fafafa);
-      border: 1px solid var(--border, #e5e0d8);
+      border: 1px solid var(--border, #e8ddd4);
       border-radius: var(--radius, 8px);
       padding: 18px;
       transition: box-shadow 0.2s ease;
@@ -42,14 +43,14 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       margin-bottom: 6px;
-      color: var(--text, #2a2218);
+      color: var(--text, #2c2c2c);
     }
     .must-see-card .tag {
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 600;
-      background: var(--accent-light, #fdf3e7);
-      color: var(--brand, #8b1a1a);
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
       padding: 3px 10px;
       border-radius: 999px;
       margin-bottom: 10px;
@@ -61,24 +62,24 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--brand, #8b1a1a);
+      color: var(--brand, #b34700);
       list-style: none;
     }
     .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
     .must-see-card details[open] summary::after { content: " ↑"; }
     .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #666); }
 
-    .programa-list {
+    .procesiones-list {
       list-style: none;
       padding: 0;
       margin: 1rem 0 0;
-      border-left: 2px solid var(--border, #e5e0d8);
+      border-left: 2px solid var(--border, #e8ddd4);
     }
-    .programa-list li {
+    .procesiones-list li {
       position: relative;
       padding: 0 0 20px 22px;
     }
-    .programa-list li::before {
+    .procesiones-list li::before {
       content: "";
       position: absolute;
       left: -5px;
@@ -86,22 +87,23 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--brand, #8b1a1a);
+      background: var(--brand, #b34700);
     }
-    .programa-list li:last-child { padding-bottom: 0; }
-    .programa-list .dia-label {
+    .procesiones-list li:last-child { padding-bottom: 0; }
+    .procesiones-list .dia-label {
       display: block;
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--brand, #8b1a1a);
+      color: var(--brand, #b34700);
       margin-bottom: 3px;
     }
 
+    /* ── BLOQUE DESTACADO DE FECHAS ──────────────────────────── */
     .ficha-datos-clave {
-      background: linear-gradient(135deg, #fdf3e7 0%, #f3e2d0 100%);
-      border: 1px solid #e5e0d8;
+      background: linear-gradient(135deg, #f5e6c8 0%, #f3e2d0 100%);
+      border: 1px solid var(--border, #e8ddd4);
       border-radius: var(--radius, 8px);
       padding: 22px 20px;
       margin: 1.25rem 0 1.5rem;
@@ -112,7 +114,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.7rem;
       font-weight: 700;
-      color: var(--brand, #8b1a1a);
+      color: var(--brand, #b34700);
       margin-bottom: 10px;
       line-height: 1.25;
     }
@@ -122,7 +124,7 @@
       flex-wrap: wrap;
       gap: 8px 20px;
       font-size: 0.92rem;
-      color: var(--text, #2a2218);
+      color: var(--text, #2c2c2c);
     }
     .ficha-datos-clave .datos-secundarios span {
       display: inline-flex;
@@ -134,13 +136,14 @@
       .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
     }
 
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
     .ficha-etiquetas {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin: 2rem 0 1rem;
       padding: 18px 0 4px;
-      border-top: 1px solid var(--border, #e5e0d8);
+      border-top: 1px solid var(--border, #e8ddd4);
     }
     .ficha-etiquetas .etiqueta {
       display: inline-block;
@@ -150,33 +153,34 @@
       letter-spacing: 0.06em;
       padding: 6px 12px;
       background: #fafafa;
-      border: 1px solid var(--border, #e5e0d8);
+      border: 1px solid var(--border, #e8ddd4);
       border-radius: 999px;
       color: var(--text-muted, #666);
       text-decoration: none;
       transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
     .ficha-etiquetas .etiqueta:hover {
-      background: var(--accent-light, #fdf3e7);
-      border-color: var(--brand, #8b1a1a);
-      color: var(--brand, #8b1a1a);
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
     }
     .ficha-etiquetas .etiqueta.destacada {
-      background: var(--accent-light, #fdf3e7);
-      border-color: var(--brand, #8b1a1a);
-      color: var(--brand, #8b1a1a);
+      background: var(--accent-light, #f5e6c8);
+      border-color: var(--brand, #b34700);
+      color: var(--brand, #b34700);
     }
 
+    /* ── FICHAS RELACIONADAS ──────────────────────────────────── */
     .fichas-relacionadas {
       margin: 2rem 0 1.5rem;
       padding-top: 1.5rem;
-      border-top: 2px solid var(--border, #e5e0d8);
+      border-top: 2px solid var(--border, #e8ddd4);
     }
     .fichas-relacionadas h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.35rem;
       margin-bottom: 1rem;
-      color: var(--text, #2a2218);
+      color: var(--text, #2c2c2c);
     }
     .fichas-relacionadas-grid {
       display: grid;
@@ -185,7 +189,7 @@
     }
     .ficha-rel-card {
       background: var(--surface, #fafafa);
-      border: 1px solid var(--border, #e5e0d8);
+      border: 1px solid var(--border, #e8ddd4);
       border-radius: var(--radius, 8px);
       overflow: hidden;
       text-decoration: none;
@@ -214,7 +218,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--text, #2a2218);
+      color: var(--text, #2c2c2c);
     }
     .ficha-rel-card .rel-frase {
       font-size: 0.82rem;
@@ -223,44 +227,45 @@
     }
     .ficha-rel-card .rel-meta {
       font-size: 0.72rem;
-      color: var(--brand, #8b1a1a);
+      color: var(--brand, #b34700);
       font-weight: 600;
       text-transform: uppercase;
       margin-top: 4px;
     }
+
   </style>
 
-  <!-- JSON-LD: Festival -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Festival",
-    "name": "Fira de Tots Sants de Cocentaina",
-    "description": "Feria histórica fundada en 1346 por privilegio real. Declarada Fiesta de Interés Turístico Internacional y BIC Inmaterial. Celebrada en torno al 1 de noviembre en Cocentaina, Alicante.",
-    "startDate": "2026-10-31",
-    "endDate": "2026-11-02",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "@id": "https://folklorius.es/noche-tambores-mula.html",
+    "name": "La Noche de los Tambores de Mula",
+    "startDate": "2027-03-23",
+    "endDate": "2027-03-28",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "isAccessibleForFree": true,
+    "eventStatus": "https://schema.org/EventScheduled",
     "location": {
       "@type": "Place",
-      "name": "Cocentaina",
+      "name": "Mula",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Cocentaina",
-        "addressRegion": "Alicante",
+        "addressLocality": "Mula",
+        "addressRegion": "Región de Murcia",
         "addressCountry": "ES"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 38.7441,
-        "longitude": -0.4398
+        "latitude": 38.0384,
+        "longitude": -1.4883
       }
     },
+    "image": ["https://folklorius.es/images/noche-tambores-mula.jpg"],
+    "description": "La Noche de los Tambores de Mula: dieciséis horas de redoble continuo que arrancan a medianoche del Martes Santo en la plaza del Ayuntamiento. Fiesta de Interés Turístico Internacional e inscrita en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad dentro de Las Tamboradas.",
     "organizer": {
       "@type": "Organization",
-      "name": "Ayuntamiento de Cocentaina",
-      "url": "https://www.firadecocentaina.org"
+      "name": "Ayuntamiento de Mula y Asociación de Tamboristas de Mula",
+      "url": "https://lanochedelostambores.com"
     },
     "offers": {
       "@type": "Offer",
@@ -270,339 +275,312 @@
     }
   }
   </script>
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Inicio",
-        "item": "https://folklorius.es/index.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Fira de Tots Sants de Cocentaina",
-        "item": "https://folklorius.es/fira-tots-sants-cocentaina.html"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuándo se celebra la Fira de Tots Sants de Cocentaina?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La Fira se celebra en torno al 1 de noviembre, Día de Todos los Santos. En 2026, las fechas son del 31 de octubre al 2 de noviembre. El programa completo lo publica el Ayuntamiento de Cocentaina en firadecocentaina.org."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Desde cuándo se celebra la Fira de Tots Sants?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El origen documentado es el 12 de mayo de 1346, cuando el rey Pere IV de Aragón, Pere el Cerimoniós, concedió a Cocentaina el privilegio para celebrar la feria. La edición de 2026 es la 680ª."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué es la lectura del Privilegi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Es el acto que inaugura oficialmente la Fira cada 1 de noviembre. Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina elegido para la ocasión lee íntegramente el documento por el que Pere el Cerimoniós concedió a la villa el derecho a celebrar la feria."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Se siguen haciendo tratos orales en la Fira de Cocentaina?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. En la zona ganadera y ecuestre de la Fira, la compraventa de animales se sigue cerrando con un apretón de manos, sin documento escrito. Es uno de los rituales comerciales más antiguos que siguen funcionando en España."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Por qué la Fira de Tots Sants es única entre las ferias declaradas ITI?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Es el único certamen comercial en España con declaración de Fiesta de Interés Turístico Internacional. Todas las demás ITI son fiestas de carácter festivo-religioso o recreativo. La Fira obtuvo esta distinción en 2019 por ser un evento económico vivo con continuidad desde el siglo XIV."
-        }
-      }
-    ]
-  }
-  </script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://folklorius.es/"},
+    {"@type": "ListItem", "position": 2, "name": "Tamboradas", "item": "https://folklorius.es/index.html#fiestas"},
+    {"@type": "ListItem", "position": 3, "name": "Noche de los Tambores de Mula", "item": "https://folklorius.es/noche-tambores-mula.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Cuándo se celebra la Noche de los Tambores de Mula?", "acceptedAnswer": {"@type": "Answer", "text": "La tamborada grande arranca a medianoche del Martes Santo. En 2027, esa medianoche es la del 23 al 24 de marzo. Hay dos tamboradas más en la misma semana, el Viernes Santo y el Domingo de Resurrección. Las fechas cambian cada año con el calendario litúrgico y los horarios los confirma el Ayuntamiento de Mula antes de cada edición."}},
+    {"@type": "Question", "name": "¿Cuánto dura la Noche de los Tambores de Mula?", "acceptedAnswer": {"@type": "Answer", "text": "Dieciséis horas seguidas. El toque arranca a medianoche del Martes Santo y se prolonga hasta media tarde del Miércoles Santo, según los horarios que publica el Ayuntamiento de Mula. No hay pausa: el redoble cubre la madrugada, el amanecer y toda la mañana."}},
+    {"@type": "Question", "name": "¿Puede tocar cualquiera o hay que pertenecer a una peña?", "acceptedAnswer": {"@type": "Answer", "text": "Puede tocar cualquiera. En Mula no hay cuadrillas cerradas ni escuadras que desfilen en formación: cada tamborista toca por su cuenta o se empareja con quien tenga enfrente. Quien llegue de fuera con un tambor puede sumarse sin pedir permiso a nadie."}},
+    {"@type": "Question", "name": "¿Es apta para ir con niños?", "acceptedAnswer": {"@type": "Answer", "text": "La tamborada del Viernes Santo, de mañana, es la más llevadera para ir en familia. La noche del Martes Santo alcanza niveles de ruido muy altos en la plaza del Ayuntamiento y se prolonga durante toda la madrugada, así que para los más pequeños conviene protección auditiva y quedarse en las calles del entorno en lugar del centro de la plaza."}},
+    {"@type": "Question", "name": "¿El toque del tambor en Mula viene de la Edad Media?", "acceptedAnswer": {"@type": "Answer", "text": "No. La documentación más antigua que se conserva son las Ordenanzas Municipales de 1859, que prohibían andar por las calles con tambores fuera de las procesiones. El toque nace en el siglo XIX, vinculado a los llamados nazarenos de la broma, y no hay respaldo documental para los relatos que lo sitúan en ritos paganos o en tropas medievales."}}
+  ]
+}
+</script>
 </head>
 <body>
 
   <header class="site-header" role="banner">
-    <div class="container">
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
-          <picture>
-            <source srcset="images/logo-folklorius.webp" type="image/webp" />
-            <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
-          </picture>
-        </a>
+    <div class="header-inner">
+      <a href="index.html" class="brand-link" aria-label="Folklorius — Inicio">
+        <picture>
+          <source srcset="images/logo-folklorius.webp" type="image/webp" />
+          <img src="images/logo-folklorius.png" alt="Folklorius — Fiesta, tradición e historia" class="site-logo" width="200" height="55" />
+        </picture>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="index.html#fiestas">Fiestas</a>
-        <a href="index.html#vocabulario">Vocabulario</a>
+        <a href="index.html#glosario">Vocabulario</a>
         <a href="index.html#blog">Blog</a>
-        <a href="index.html#explorar">Explorar</a>
+        <a class="nav-cta" href="index.html#fiestas">Explorar</a>
       </nav>
     </div>
   </header>
 
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a> › Noche de los Tambores de Mula
+  </nav>
+
   <div class="ficha-hero">
-    <img src="images/fira-tots-sants-cocentaina.jpg" alt="Lectura del Privilegi desde el balcón del Palau Comtal de Cocentaina durante la inauguración de la Fira de Tots Sants" />
+    <img src="images/noche-tambores-mula.jpg" alt="Tamboristas con túnica negra tocando en la plaza del Ayuntamiento de Mula durante el arranque de la Noche de los Tambores" />
   </div>
 
-  <main class="container" role="main">
-    <nav aria-label="Ruta de navegación" class="breadcrumb">
-      <a href="index.html">Inicio</a> › Fira de Tots Sants de Cocentaina
-    </nav>
+  <main class="ficha-main">
+    <article class="card">
 
-    <article>
+      <h1>Noche de los Tambores de Mula</h1>
+      <p class="ficha-subtitle">
+        Mula (Región de Murcia) · Tamborada de Semana Santa · "Dieciséis horas. Sin parar. Sin jerarquía. Sin imágenes."
+      </p>
 
-      <h1>Fira de Tots Sants de Cocentaina</h1>
-      <p class="ficha-subtitulo">Cocentaina (Alicante · Comunitat Valenciana) · Feria Histórica · <em>"Desde 1346. El mismo privilegio. El mismo balcón."</em></p>
-
-      <div class="nota-grid" role="note">
-        <span class="declaracion-badge">Fiesta de Interés Turístico Internacional</span>
-        <span class="declaracion-badge">Fiesta de Interés Turístico Nacional</span>
-        <span class="declaracion-badge">BIC Inmaterial — Generalitat Valenciana</span>
+      <div class="badges" aria-label="Reconocimientos oficiales">
+        <span class="badge badge-oficial">Fiesta de Interés Turístico Internacional</span>
+        <span class="badge badge-oficial">Patrimonio Cultural Inmaterial de la Humanidad — UNESCO</span>
       </div>
 
-      <div class="ficha-datos-clave">
-        <div class="fechas-grandes">31 de octubre al 2 de noviembre de 2026</div>
+      <div class="ficha-datos-clave" role="region" aria-label="Datos clave de la edición 2027">
+        <div class="fechas-grandes">Del 23 al 28 de marzo de 2027</div>
         <div class="datos-secundarios">
-          <span>📍 Cocentaina · Alicante · Comunitat Valenciana</span>
-          <span>⏱️ 3 días · 680ª edición</span>
-          <span>🏅 ITI · ITN · BIC Inmaterial</span>
+          <span>📍 Mula · Región de Murcia</span>
+          <span>⏱️ 16 horas de toque continuo</span>
+          <span>🏅 ITI · ITN · UNESCO</span>
         </div>
       </div>
 
       <div class="aviso-sensibilidad" role="note">
         <strong>Nota de sensibilidad</strong>
         <ul>
-          <li>La lectura del Privilegi el 1 de noviembre es un acto institucional solemne. El balcón del Palau Comtal y la plaza que lo rodea se llenan de silencio cuando empieza la lectura: el visitante entra en ese registro.</li>
-          <li>La zona ganadera y ecuestre es un espacio de trabajo, no un espectáculo. Las compraventas que se cierran allí son transacciones reales: observar sin interrumpir.</li>
-          <li>La Fira atrae entre 400.000 y 500.000 personas en tres días a un pueblo de unos 11.000 habitantes. La concentración es extrema, especialmente el 1 de noviembre: circular por el casco histórico y el Arrabal requiere paciencia y disposición a compartir cada metro con quienes también han venido a comprar, a vender o a escuchar el Privilegi.</li>
+          <li>Aquí no hay público. No existe un desfile al que asistir ni un recorrido que mirar desde la acera: quien está en la plaza está dentro de la fiesta, y quien no toca es el único que sobra en la foto. Entrar con esa idea cambia por completo la manera de estar esa noche.</li>
+          <li>La túnica negra no es un disfraz. Viene de los nazarenos de la broma del siglo XIX y conserva el luto de la Semana Santa. Quien la viste está tocando, no posando: usarla como atrezo para hacerse una foto desvirtúa lo único que iguala a todos los que están ahí abajo.</li>
+          <li>La tamborada convive con las procesiones y los actos religiosos de la Semana Santa muleña. El ruido tiene sus horas marcadas y el resto de la semana no las tiene: fuera de las franjas de toque el pueblo está en otro registro, y el visitante acompaña ese cambio.</li>
+          <li>Cada tamborista lleva un tambor que mantiene y repara él mismo durante todo el año. Pedir uno prestado para probar un rato se parece poco a cómo funciona esta noche: quien quiere tocar, trae el suyo.</li>
         </ul>
       </div>
+<h2 class="section-title">La esencia de la fiesta</h2>
+      <p>
+        Primero callan las campanas. Las doce de la Torre del Reloj caen sobre una plaza en la que hay miles de personas con un tambor colgado del cuello y nadie lo toca todavía. Luego suena una corneta desde el balcón del Ayuntamiento. Y entonces empieza algo que no para en dieciséis horas: un redoble sin dirección, sin compás común y sin nadie al mando, que se come la madrugada, sigue cuando sale el sol y llega hasta media tarde del día siguiente.
+      </p>
+      <p>
+        En Mula no hay pasos ni imágenes en esa noche. No hay escuadras formadas ni cuadrillas que ensayen. Hay <strong>túnicas negras</strong>, que vienen del siglo XIX y que borran de quién es hijo cada uno, y hay tambores. El pueblo entero cabe en el mismo sonido y por eso se ha llamado siempre La Noche de los Tambores, en singular, aunque sean tres las tamboradas de la semana.
+      </p>
+<h2 class="section-title" id="que-es">¿En qué consiste?</h2>
+      <p>
+        Es una tamborada de Semana Santa: un toque colectivo de tambor que ocupa la calle durante unas horas marcadas, dentro de la semana litúrgica pero sin formar parte del cortejo religioso. Mula es uno de los <strong>diecisiete municipios españoles</strong> de cinco comunidades autónomas que comparten la inscripción de las Tamboradas en la lista de la UNESCO, junto a Moratalla por parte murciana y a los pueblos del Bajo Aragón, Albacete y Castellón.
+      </p>
+      <p>
+        Lo que ve quien llega por primera vez es una plaza llena hasta el borde. La gente va vestida igual —túnica negra, cordón a la cintura y, cada vez menos, el capuz con dos aberturas para los ojos— y lleva el tambor por delante. Hasta la medianoche, silencio. Después del toque de corneta, el sonido es físico: el aire se mueve, las fachadas devuelven el golpe y hablar deja de ser una opción. Según avanza la madrugada la masa se descompone y los tamboristas se reparten por las calles empinadas del casco antiguo, de modo que lo que a medianoche era un bloque compacto termina siendo un rumor que llega desde todas las esquinas a la vez.
+      </p>
+      <p>
+        El pulso de la semana tiene tres momentos, y van de más a menos intensidad. La noche del Martes Santo es la grande. El Viernes Santo se toca de día, con un ambiente mucho más de paseo y de familia. El Domingo de Resurrección se cierra, ya en clave de fiesta. Entre medias, Mula hace su Semana Santa como cualquier otra ciudad murciana, con sus procesiones y sus hermandades.
+      </p>
+      <p>
+        Quien toca no es un grupo de iniciados. Es el vecino que guarda el tambor todo el año, el que vuelve al pueblo esa semana desde donde viva, el niño que lleva uno más pequeño y el que lleva treinta años aguantando las dieciséis horas enteras. Ahí está lo que hace distinta a Mula: <strong>no hay jerarquía</strong>. Nadie dirige, nadie reparte puestos, nadie marca el ritmo que los demás deben seguir. Cada uno toca lo suyo y el resultado lo construyen todos a la vez sin haberlo acordado.
+      </p>
 
-      <h2>La esencia de la fiesta</h2>
-      <p>Desde el balcón del Palau Comtal, alguien empieza a leer en voz alta. Abajo, la plaza se ha ido llenando desde primera hora. El humo de las brasas de longaniza llega desde los puestos del Porrat. La dolçaina y el tabal han ido abriendo paso a las autoridades por las calles estrechas del pueblo. Y entonces el lector pronuncia las primeras palabras del documento de Pere el Cerimoniós — el mismo de 1346 — y la plaza se queda quieta. Cuatro días así, con medio millón de personas que vienen a comprar, a mirar, a comer y a escuchar cómo un rey medieval les dio permiso para hacer exactamente eso.</p>
-
-      <h2>¿En qué consiste?</h2>
-      <p>La Fira de Tots Sants es una feria comercial fundada en 1346 por privilegio real. En eso se diferencia de cualquier otra fiesta del catálogo: no nació como celebración religiosa ni como recreación histórica, sino como mercado. Un mercado con salvoconducto real: el rey garantizaba la seguridad de quienes viajaran a vender o comprar. Con el tiempo se ha convertido en el certamen al aire libre más grande de la Comunitat Valenciana.</p>
-
-      <p>Hoy ocupa unos 140.000 metros cuadrados con más de 750 expositores repartidos en sectores que han ido sumándose a lo largo de los siglos. El recinto moderno concentra los sectores comerciales de siempre: vehículos, maquinaria agrícola e industrial, piscinas de fibra, hogar y alimentación. Es la feria en su versión más contemporánea, con tratos que se cierran igual que en cualquier certamen del país.</p>
-
-      <p>Pero la Fira tiene otro flanco. El barrio histórico acoge el mercado medieval, el zoco árabe y la judería: tres espacios diferenciados con artesanos en traje de época, músicos callejeros, herreros trabajando en la calle y oficios que no existen fuera de este contexto. La plaza del Palau Comtal es el escenario de las actuaciones de música medieval e interpretaciones teatrales — la programación varía cada edición, pero el marco es siempre el mismo: con un palacio del siglo XV detrás. El recinto ferial incluye también una zona de atracciones para los más jóvenes. Y aparte de todo eso, la zona de animales: ganado y caballos donde la compraventa se cierra todavía con un apretón de manos, sin papel. En los sectores de vehículos o maquinaria esa formalidad ya no existe.</p>
-
-      <p>Es el único certamen comercial de España con la declaración de Fiesta de Interés Turístico Internacional. La distinción llegó en 2019, reconociendo algo que Cocentaina lleva haciendo sin interrupción desde el siglo XIV. La organización corre a cargo del <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a>, que publica el programa completo antes de cada edición.</p>
-
-      <div class="nota-grid" role="note">
-        <p>⚠️ Las fechas exactas, el mapa del recinto y la programación cultural los publica el <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a> antes de cada edición. Los datos aquí recogidos corresponden a la edición de 2026.</p>
-      </div>
-
-      <h2>Historia y origen</h2>
-      <p>El 12 de mayo de 1346, Pere IV de Aragón, Pere el Cerimoniós, firmó a petición de su tío Alfons Roger de Llúria, señor feudal de Cocentaina, el privilegio que autorizaba la celebración de una feria anual. El documento fijaba algo práctico además del permiso: el rey garantizaba la protección de los vendedores y compradores en sus viajes hacia la villa. En una época en que los caminos no eran seguros, esa garantía era el argumento de venta de la feria.</p>
-
-      <p>Nació como feria ganadera, agrícola y de artesanía (hierro, lana, pan) celebrada originalmente en torno a San Miguel, a finales de septiembre, durante quince días. Entre 1671 y 1795 sufrió varios intentos de cambio de fecha por crisis y malas cosechas hasta que la insistencia popular la asentó alrededor del 1 de noviembre, Día de Todos los Santos, donde lleva desde entonces. En el siglo XIX estuvo a punto de desaparecer: un brote de cólera en 1865 y varias malas cosechas la pusieron contra las cuerdas. Se recuperó.</p>
-
-      <p>El mercado medieval del Arrabal, que hoy transforma el barrio histórico en un zoco con artesanos en traje de época, herreros y músicos callejeros, se incorporó en 1996 coincidiendo con el 650 aniversario. No es una tradición secular sino una incorporación moderna que ha funcionado.</p>
-
-      <p>En 2012 el Ministerio de Cultura le concedió la declaración de Fiesta de Interés Turístico Nacional. En abril de 2019 obtuvo la de Interés Turístico Internacional — la primera feria comercial de sus características en conseguirla.</p>
-
-      <h2>Fechas 2026</h2>
-      <p>La 680ª edición de la Fira de Tots Sants se celebra del <strong>31 de octubre al 2 de noviembre de 2026</strong>, en torno al Día de Todos los Santos. La inauguración oficial, con la lectura del Privilegi desde el balcón del Palau Comtal, tiene lugar el 1 de noviembre por la mañana. Las fechas exactas y el programa completo los confirma el Ayuntamiento de Cocentaina en <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">firadecocentaina.org</a>.</p>
-
-      <h2>El programa</h2>
-      <ul class="programa-list">
+      <p class="nota-grid">⚠️ Los horarios de toque y el programa completo de cada edición los publican el <a href="https://mula.es/web/tambores/" target="_blank" rel="noopener">Ayuntamiento de Mula</a> y la <a href="https://lanochedelostambores.com" target="_blank" rel="noopener">Asociación de Tamboristas</a>. Consúltalos antes de organizar el viaje.</p>
+<h2 class="section-title">Historia y significado</h2>
+      <p>
+        El documento más antiguo que habla del tambor en Mula no lo celebra: lo prohíbe. Las <strong>Ordenanzas Municipales de 1859</strong> ordenaban guardar el orden debido en las procesiones y vetaban andar por las calles con tambores, salvo los pocos que la Hermandad del Carmen repartiera con permiso de la autoridad, y aun esos solo dentro del cortejo. Si hubo que escribirlo es porque ya estaba pasando lo contrario.
+      </p>
+      <p>
+        Lo que estaba pasando eran los <strong>nazarenos de la broma</strong>: jóvenes que se ponían la túnica y el capuz de las cofradías fuera de los desfiles y aprovechaban el anonimato para rondar, cortejar y burlarse de los vecinos. De ahí sale la indumentaria del tamborista actual y de ahí sale también el conflicto, que duró más de un siglo. Hubo bandos, multas, tambores decomisados y detenciones, con más dureza tras la Guerra Civil, cuando el control del orden público y el rigor religioso fueron a la par. La costumbre no se perdió: se tocaba igual, en las calles de arriba, lejos del centro.
+      </p>
+      <p>
+        El cambio llegó con la democracia y fue por acuerdo, no por victoria. En 1977 se celebraron las primeras asambleas para pactar horarios de toque con el Ayuntamiento; en 1979 se formó la primera comisión de tamboristas, y en 1987 la gestora que dio paso a la <strong>Asociación de Tamboristas de Mula</strong>. Aquello que durante ciento veinte años se persiguió es hoy lo que organiza el calendario de la villa y lo que la ha llevado a tres declaraciones oficiales y a la lista de la UNESCO. La fiesta fue declarada de Interés Turístico Regional en 1990, Nacional en 2009 e Internacional en 2022.
+      </p>
+<h2 class="section-title">Fechas 2027</h2>
+      <p>
+        En 2027, la Semana Santa de Mula va del <strong>domingo 21 de marzo</strong>, Domingo de Ramos, al <strong>domingo 28 de marzo</strong>, Domingo de Resurrección. La tamborada grande arranca a medianoche del <strong>Martes Santo, 23 de marzo</strong>, y se prolonga hasta media tarde del Miércoles Santo, 24 de marzo. Las otras dos tamboradas caen el <strong>Viernes Santo, 26 de marzo</strong>, de mañana, y el <strong>Domingo de Resurrección, 28 de marzo</strong>, desde el mediodía.
+      </p>
+      <p>
+        La fecha se mueve cada año con el calendario litúrgico. Los horarios concretos de cada franja de toque los fija y publica el Ayuntamiento de Mula antes de cada Semana Santa: consúltalos antes de cerrar alojamiento o transporte.
+      </p>
+<h2 class="section-title">La semana, día a día</h2>
+      <ul class="procesiones-list">
         <li>
-          <span class="dia-label">Víspera — 31 de octubre</span>
-          Apertura del recinto ferial. El Porrat de dulces, frutos secos y pequeños regalos ocupa las calles del casco urbano. La zona de atracciones abre ya desde la víspera. Ambiente nocturno en el Arrabal medieval con músicos callejeros y artesanos.
+          <span class="dia-label">Martes Santo · 23 de marzo · a medianoche</span>
+          La plaza del Ayuntamiento se llena durante la última hora del día con miles de tamboristas de túnica negra y el tambor ya colgado. Cuando la Torre del Reloj da las doce campanadas, nadie toca: ese silencio contenido, con la plaza entera esperando, es el momento más difícil de olvidar de toda la noche. Después suena la <strong>llamada a tamborada</strong> desde el balcón del consistorio y el redoble arranca de golpe, a la vez, sin director y sin cuenta atrás.
         </li>
         <li>
-          <span class="dia-label">1 de noviembre — Día central</span>
-          Por la mañana, la Colla de Dolçaines i Tabals abre paso a las autoridades hasta la plaza del Pla. Desde el balcón del Palau Comtal, lectura íntegra del Privilegi por un ciudadano ilustre elegido para la ocasión. A continuación, apertura oficial de todos los sectores. Zona ecuestre y ganadera en pleno funcionamiento: exhibiciones de doma y compraventa de animales. Durante los días de la Fira, la plaza del Palau Comtal acoge actuaciones de música medieval e interpretaciones teatrales; la programación concreta la publica el Ayuntamiento antes de cada edición.
+          <span class="dia-label">Miércoles Santo · 24 de marzo · hasta media tarde</span>
+          El toque no se interrumpe. De madrugada la concentración de la plaza se deshace y los tamboristas se reparten por el casco antiguo; el sonido llega entonces desde calles que no se ven. Con la luz del día el ambiente se vuelve más familiar y la gente entra y sale, pero el redoble sigue sin pausa hasta la hora de cese que marca el Ayuntamiento, bien entrada la tarde. El silencio que viene después es el otro gran momento de la fiesta.
         </li>
         <li>
-          <span class="dia-label">2 de noviembre — Día del cierre</span>
-          Jornada de máxima afluencia en el recinto. Espectáculo de clausura por la tarde. Las dos bandas de música de Cocentaina participan en los actos de cierre.
+          <span class="dia-label">Viernes Santo · 26 de marzo · de mañana</span>
+          Tamborada diurna, de buena mañana hasta media tarde. Es la más tranquila de las tres y la que mejor permite ver cómo se toca: hay sitio, hay luz y se distinguen las manos, los palillos y el estado real de los parches después de la noche del martes.
         </li>
         <li>
-          <span class="dia-label">8 de noviembre — Certamen Coral</span>
-          El Certamen Coral Fira de Tots Sants, de ámbito nacional, extiende la agenda cultural de la villa una semana después de la feria principal.
+          <span class="dia-label">Domingo de Resurrección · 28 de marzo · desde el mediodía</span>
+          La tamborada de cierre, ya con el tono festivo de la Pascua, se extiende desde el mediodía hasta el atardecer. Con ella se acaban los días de toque autorizado y Mula guarda los tambores hasta el año siguiente.
         </li>
       </ul>
-
-      <h2>Música y sonido</h2>
-      <p>El sonido que abre la Fira no viene del recinto ferial: viene de las calles del pueblo. La Colla de Dolçaines i Tabals precede a las autoridades el 1 de noviembre por la mañana, con el golpe seco del tabal rebotando en las fachadas de piedra. Cuando llegan al Palau Comtal y empieza la lectura del Privilegi, la dolçaina para. Lo que queda es la voz del lector y el silencio de la plaza.</p>
-
-      <p>Cocentaina tiene dos bandas de música propias que participan en los actos festivos de la Fira y en el cierre. El Certamen Coral, que se celebra la semana siguiente, añade otro registro: voces, no instrumentos, en un formato que lleva décadas siendo el contrapunto culto a la feria comercial. Para escuchar la dolçaina en su contexto más concentrado, el momento previo a la lectura del Privilegi, cuando las autoridades atraviesan el casco histórico, es el mejor de la Fira.</p>
-
-      <h2>No te lo puedes perder</h2>
+      <p class="fuente">Fuente de los días y franjas de toque: <a href="https://mula.es/web/tambores/" target="_blank" rel="noopener">Ayuntamiento de Mula</a> y folleto oficial de <a href="https://turismodemula.es" target="_blank" rel="noopener">Turismo de Mula</a> — última verificación: 2026-10-21</p>
+<h2 class="section-title">Música y sonido</h2>
+      <div class="music-block">
+        <p>
+          La tamborada muleña se toca con <strong>palillos de madera</strong> sobre un tambor de parches tensados con cuerda o con tensores, y lo que define su sonido no es un toque concreto sino la ausencia de toques pactados. El redoble de Mula es rápido, continuo y sin figura reconocible: no hay una pieza que empiece y termine, ni una cadencia que el resto deba seguir. Ese es el contraste exacto con las tamboradas del Bajo Aragón, inscritas en la misma lista de la UNESCO, donde se tocan repertorios cerrados y ensayados que los tamborileros ejecutan juntos. En Calanda o en Híjar se toca una cosa concreta; en Mula se toca, a secas.
+        </p>
+        <p>
+          Los dos momentos acústicos que hay que buscar son opuestos. El primero son las doce campanadas de la Torre del Reloj con la plaza llena y todos los tambores mudos: un silencio raro, de miles de personas calladas, que dura lo que tardan en caer las campanas. El segundo llega unas horas más tarde, cuando el bloque de la plaza se ha repartido por el casco antiguo y el redoble te alcanza rebotado por las cuestas, desde tres calles distintas a la vez y sin que veas a nadie tocando.
+        </p>
+        <ul>
+          <li>Para el arranque, sitúate en la <strong>plaza del Ayuntamiento</strong> con bastante antelación y asume que una vez dentro no vas a poder moverte ni oír tu propia voz. Lleva protección auditiva: el nivel sonoro de una plaza entera redoblando a la vez no es comparable al de una banda.</li>
+          <li>Si prefieres el sonido al impacto, sube de madrugada a las <strong>calles empinadas del casco antiguo</strong>. Ahí el redoble llega filtrado por las fachadas y se oye lo que de verdad hace distinta a esta tamborada: muchos tambores que no van juntos.</li>
+          <li>El Viernes Santo por la mañana es la franja para escuchar de cerca y con calma, y la única en la que se puede hablar con los tamboristas mientras tocan.</li>
+        </ul>
+      </div>
+<h2 class="section-title">No te lo puedes perder</h2>
       <div class="must-see-grid">
 
         <div class="must-see-card">
-          <h3>La lectura del Privilegi</h3>
-          <span class="tag">1 de noviembre · Palau Comtal</span>
-          <p>Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina lee íntegramente el Privilegi original. La plaza del Pla se llena antes de que empiece. Cuando el lector abre el texto, el bullicio de la feria desaparece.</p>
+          <h3>La llamada a tamborada</h3>
+          <span class="tag">Martes Santo · a medianoche · Plaza del Ayuntamiento</span>
+          <p>Las doce campanadas de la Torre del Reloj caen sobre una plaza llena de gente que ya tiene el tambor puesto y no lo toca. Después suena una corneta desde el balcón del Ayuntamiento y el redoble arranca entero, de una vez.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es el único momento de la Fira en que toda esa historia se concentra en un acto de dos minutos. El mismo privilegio, el mismo balcón, el mismo pueblo. Llegar con tiempo para tener sitio en la plaza — una vez que empieza la lectura el espacio ya no se mueve.</p>
+            <p>Porque es el único instante de la noche en que miles de tambores están callados a la vez, y porque el arranque no lo dirige nadie: no hay señal de entrada más allá de la corneta, ni ensayo previo. Sitúate en la plaza con tiempo y acepta que vas a quedarte donde estés hasta que la masa se afloje.</p>
           </details>
         </div>
 
         <div class="must-see-card">
-          <h3>Los tratos orales en la zona ganadera</h3>
-          <span class="tag">Durante la Fira · Zona ecuestre</span>
-          <p>En la zona de ganado y caballos, la compraventa se cierra con un trato oral sin papel. Igual que en el siglo XIV, igual que esta misma mañana si hay un comprador y un vendedor que se ponen de acuerdo.</p>
+          <h3>El casco antiguo de madrugada</h3>
+          <span class="tag">Miércoles Santo · madrugada · Calle Mayor y calles altas</span>
+          <p>Pasadas unas horas, la concentración de la plaza se deshace y los tamboristas suben por las cuestas del casco histórico. El redoble se oye entonces desde varias calles a la vez, rebotado en las fachadas, sin que se vea quién lo está tocando.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque en ninguna otra feria del país funciona hoy un sistema de compraventa medieval. Las exhibiciones de doma son el espectáculo visible, pero los tratos son lo que diferencia esta zona de cualquier feria equestre moderna.</p>
+            <p>Porque es cuando se entiende que esto no es un desfile: no hay recorrido ni final, solo gente repartida por su pueblo tocando donde le apetece. También es el momento en que se aprecia que nadie va a compás con nadie y que precisamente eso es lo que suena a Mula.</p>
           </details>
         </div>
 
         <div class="must-see-card">
-          <h3>El mercado del Arrabal</h3>
-          <span class="tag">Durante la Fira · Barrio histórico</span>
-          <p>El barrio histórico se transforma en un zoco con artesanos en traje de época, herreros trabajando en la calle, músicos callejeros y oficios que ya no existen fuera de este contexto. Tres o cuatro días al año el Arrabal vuelve a ser lo que fue.</p>
+          <h3>El cese del toque</h3>
+          <span class="tag">Miércoles Santo · media tarde</span>
+          <p>Tras dieciséis horas seguidas de redoble, llega la hora de cese que marca el Ayuntamiento y el sonido se apaga. El contraste es brutal: un pueblo que lleva desde medianoche sin poder oírse, en silencio de golpe.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque es el contrapunto al recinto ferial moderno. Misma feria, otro ritmo, otro siglo. La transición entre los 750 expositores de maquinaria agrícola y las calles medievales del Arrabal es uno de los contrastes más llamativos de la Fira.</p>
+            <p>Porque la fiesta tiene principio y final marcados, y el final dice tanto como el principio: lo que durante más de un siglo se persiguió a base de multas hoy se regula de común acuerdo, con una hora de inicio y una de parada que todo el mundo respeta.</p>
           </details>
         </div>
 
         <div class="must-see-card">
-          <h3>La gastronomía de la Fira</h3>
-          <span class="tag">Durante la Fira · Recinto ferial</span>
-          <p>El recinto ferial tiene su propia zona de restauración con feriantes especializados: carnes a la brasa, arroces, embutidos y frituras. El olor a brasa es uno de los más presentes en los días de la Fira. La pericana, pimiento seco con bacalao y aceite de oliva, es el plato frío de la comarca que aparece en las mesas de la zona cuando hay algo que celebrar.</p>
+          <h3>La estatua del Tamborista</h3>
+          <span class="tag">Todo el año · Plaza del Ayuntamiento</span>
+          <p>En la misma plaza donde arranca la noche hay un monumento inaugurado en el año 2000 que representa a dos tamboristas enfrentados, batiéndose cara a cara con los tambores encarados.</p>
           <details>
             <summary>¿Por qué no perdértelo?</summary>
-            <p>Porque la oferta gastronómica de la Fira refleja la comarca: productos del Comtat y l'Alcoià en un formato de feria al aire libre. Si vas a comer en el recinto, ten en cuenta que los precios son los propios de un evento de esta escala y afluencia.</p>
+            <p>Porque es la manera que tuvo Mula de contarse a sí misma qué es su fiesta: no una formación ordenada, sino dos personas midiéndose con el tambor. Si llegas fuera de Semana Santa, es lo único que queda en pie de aquella noche, y explica bastante.</p>
           </details>
         </div>
 
       </div>
-
-      <h2>Consejos prácticos</h2>
+<h2 class="section-title">Consejos prácticos</h2>
       <ul>
-        <li><strong>Cómo llegar.</strong> Cocentaina tiene conexión por tren en la línea Alcoy–Xàtiva–València. Renfe suele reforzar los servicios durante los días de la Fira. En coche, los accesos al pueblo se saturan: hay parkings disuasorios en los alrededores con autobuses lanzadera gratuitos hasta el recinto.</li>
-        <li><strong>Cuándo ir.</strong> El 1 de noviembre es el día de la lectura del Privilegi y el de mayor concentración de actividad. Si el objetivo es ver la zona ganadera y el Arrabal con menos gente, la víspera o el 2 de noviembre dan más margen.</li>
-        <li><strong>Alojamiento.</strong> Cocentaina es un pueblo de unos 11.000 habitantes. Para los días de la Fira, reservar con mucha antelación. Alcoi, a diez minutos en coche, tiene más oferta y buena conexión con la feria.</li>
-        <li><strong>Programa completo.</strong> El Ayuntamiento publica antes de cada edición el programa detallado, el mapa del recinto y las novedades en <a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">firadecocentaina.org</a>.</li>
+        <li>Lleva <strong>protección auditiva</strong>, y este es el consejo más importante de la ficha. El volumen de la plaza del Ayuntamiento a medianoche está muy por encima de lo que aguanta un oído sin consecuencias. Tapones para ti, y si vas con niños, de los suyos.</li>
+        <li>Mula está a unos 35 km de Murcia capital por la RM-15 y no tiene estación de tren, así que la combinación habitual es autobús desde Murcia o coche propio. Las noches de tamborada el casco urbano se cierra al tráfico: cuenta con aparcar en la periferia y entrar andando.</li>
+        <li>Para el arranque, el sitio es la <strong>plaza del Ayuntamiento</strong>, frente a la Torre del Reloj. Para la madrugada, las calles que suben hacia el castillo. Son cuestas de verdad y el suelo es irregular, así que calzado cerrado y con suela.</li>
+        <li>Mula está a más de 300 metros de altitud y la madrugada de marzo es fría aunque el día anterior haya hecho sol. Chaqueta de abrigo y ropa por capas: dentro de la plaza, con la aglomeración, sobra la mitad.</li>
+        <li>La oferta de alojamiento del casco urbano es pequeña para la demanda de esa noche. Reserva con meses de antelación, o busca en Murcia capital y alrededores a media hora en coche, contando con que la vuelta será de madrugada.</li>
+        <li>Si vas a tocar, trae tu tambor de casa. No hay registro ni inscripción previa —se baja a la plaza y se toca—, pero tampoco hay tambores de alquiler ni de préstamo.</li>
       </ul>
-
-      <h2>Vocabulario de la Fira</h2>
+<h2 class="section-title">Vocabulario del tambor</h2>
       <dl class="festero">
 
-        <dt>Privilegi</dt>
-        <dd>El documento original de 1346 por el que Pere el Cerimoniós concedió a Cocentaina el derecho a celebrar la feria. Se lee íntegro desde el balcón del Palau Comtal cada 1 de noviembre. Los locals lo llaman así, en valenciano, independientemente de si hablan en castellano o en valenciano.</dd>
+        <dt>Tamborista</dt>
+        <dd>El nombre del que toca en Mula. No es un sinónimo caprichoso: en el pueblo se rechaza el término <em>tamborilero</em>, que en la música tradicional designa a quien acompaña a la gaita o al pito. Un tamborista muleño no acompaña a nada ni a nadie.</dd>
 
-        <dt>Porrat</dt>
-        <dd>El mercado callejero de dulces, frutos secos y pequeños regalos que ocupa las calles del casco urbano durante la Fira. Denominación tradicional valenciana para este tipo de mercadillo festivo. En Cocentaina el Porrat convive con el recinto ferial moderno y con el mercado medieval del Arrabal.</dd>
+        <dt>Llamada a tamborada</dt>
+        <dd>El toque de corneta que suena desde el balcón del Ayuntamiento a medianoche del Martes Santo, después de las doce campanadas, y que autoriza el inicio del redoble. Es la única indicación que recibe la plaza en toda la noche.</dd>
 
-        <dt>Pericana</dt>
-        <dd>Plato frío típico de las comarcas del Comtat y l'Alcoià: pimiento seco, bacalao desmenuzado y aceite de oliva. No es exclusivo de Cocentaina pero sí de esta franja de la provincia de Alicante. En las mañanas de la Fira aparece como entrante antes del bocadillo caliente de longaniza.</dd>
+        <dt>Nazareno de la broma</dt>
+        <dd>El antecedente del tamborista actual. Jóvenes del siglo XIX que vestían la túnica y el capuz de las cofradías fuera de las procesiones y usaban el anonimato para rondar y gastar bromas a los vecinos. Las ordenanzas municipales los persiguieron durante décadas; de ellos viene la indumentaria que hoy se lleva con naturalidad.</dd>
 
-        <dt>Contestà / Contestano</dt>
-        <dd>El gentilicio de Cocentaina en valenciano es contestà (femenino: contestana). Los contestanos son quienes organizan, participan y viven la Fira de dentro hacia fuera — los que conocen los puestos de siempre, los que saben dónde están los mejores bocadillos, los que han ido cada año desde pequeños.</dd>
+        <dt>Túnica y capuz</dt>
+        <dd>La indumentaria del tamborista: túnica negra lisa, normalmente con cordón a la cintura, y capuchón negro con dos aberturas a la altura de los ojos. Hoy es frecuente tocar con la cara descubierta. Mientras se lleva puesta no se distingue quién es quién, que es exactamente para lo que nació.</dd>
 
-        <dt>Fira de Fires</dt>
-        <dd>Así llaman los locals a la Fira de Tots Sants: la feria de ferias. El nombre refleja que aglutina en el mismo recinto sectores tan distintos como maquinaria agrícola, automóviles, artesanía, gastronomía y ganado — algo que ninguna otra feria de la región hace a esa escala.</dd>
+        <dt>Bordones</dt>
+        <dd>Las cuerdas tensadas contra el parche inferior del tambor. Son las responsables del zumbido que acompaña a cada golpe y lo que diferencia el sonido de un tambor del de un simple parche golpeado. Tensarlos más o menos cambia el carácter del instrumento.</dd>
+
+        <dt>Cerquillo</dt>
+        <dd>El aro que sujeta el parche contra la caja del tambor. Junto con el cordel y el cinto, forma el sistema con el que el tamborista afina y mantiene su instrumento, trabajo que cada uno hace por su cuenta durante el año.</dd>
 
       </dl>
-
-      <h2>Galería</h2>
+<h2 class="section-title">Galería</h2>
       <div class="galeria" style="display:none;">
-        <img src="images/fira-tots-sants-cocentaina-1.jpg" alt="Lectura del Privilegi desde el balcón del Palau Comtal de Cocentaina durante la inauguración de la Fira de Tots Sants" loading="lazy" />
-        <img src="images/fira-tots-sants-cocentaina-2.jpg" alt="Mercado medieval del Arrabal de Cocentaina con artesanos en traje de época durante la Fira de Tots Sants" loading="lazy" />
-        <img src="images/fira-tots-sants-cocentaina-3.jpg" alt="Zona ecuestre de la Fira de Tots Sants de Cocentaina con exhibición de doma y jinetes" loading="lazy" />
+        <img src="images/noche-tambores-mula-1.jpg" alt="Miles de tamboristas con túnica negra concentrados en la plaza del Ayuntamiento de Mula antes de la medianoche del Martes Santo" loading="lazy" />
+        <img src="images/noche-tambores-mula-2.jpg" alt="Detalle de un tambor muleño con los bordones y el cerquillo durante la tamborada de Mula" loading="lazy" />
+        <img src="images/noche-tambores-mula-3.jpg" alt="Tamboristas tocando al amanecer por las calles empinadas del casco antiguo de Mula" loading="lazy" />
       </div>
-
-      <h2>Enlaces útiles</h2>
+<h2 class="section-title">Enlaces útiles</h2>
       <ul>
-        <li><a href="https://www.firadecocentaina.org" target="_blank" rel="noopener">Web oficial de la Fira de Tots Sants — programa y recinto</a></li>
-        <li><a href="https://www.cocentaina.es" target="_blank" rel="noopener">Ayuntamiento de Cocentaina</a></li>
-        <li><a href="https://www.comunitatvalenciana.com" target="_blank" rel="noopener">Turisme Comunitat Valenciana</a></li>
+        <li><a href="https://lanochedelostambores.com" target="_blank" rel="noopener">La Noche de los Tambores — Asociación de Tamboristas de Mula</a></li>
+        <li><a href="https://mula.es/web/tambores/" target="_blank" rel="noopener">Ayuntamiento de Mula — Tambores</a></li>
+        <li><a href="https://turismodemula.es" target="_blank" rel="noopener">Turismo de Mula</a></li>
+        <li><a href="https://ich.unesco.org/es/RL/las-tamboradas-rituales-de-toques-de-tambor-01208" target="_blank" rel="noopener">UNESCO — Las tamboradas, repiques rituales de tambores</a></li>
       </ul>
-      <p class="fuente">Última verificación de enlaces: 2026-07-26</p>
-
-      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="fuente">Última verificación de enlaces: 2026-10-21</p>
+<h2 class="section-title">Preguntas frecuentes</h2>
       <dl class="faq">
 
-        <dt>¿Cuándo se celebra la Fira de Tots Sants de Cocentaina?</dt>
-        <dd>La Fira se celebra en torno al 1 de noviembre, Día de Todos los Santos. En 2026, las fechas son del 31 de octubre al 2 de noviembre. El programa completo lo publica el Ayuntamiento de Cocentaina en firadecocentaina.org.</dd>
+        <dt>¿Cuándo se celebra?</dt>
+        <dd>La tamborada grande arranca a medianoche del Martes Santo. En 2027, esa medianoche es la del 23 al 24 de marzo. Hay dos tamboradas más en la misma semana, el Viernes Santo y el Domingo de Resurrección. Las fechas cambian cada año con el calendario litúrgico y los horarios los confirma el Ayuntamiento de Mula antes de cada edición.</dd>
 
-        <dt>¿Desde cuándo se celebra la Fira de Tots Sants?</dt>
-        <dd>El origen documentado es el 12 de mayo de 1346, cuando el rey Pere IV de Aragón, Pere el Cerimoniós, concedió a Cocentaina el privilegio para celebrar la feria. La edición de 2026 es la 680ª.</dd>
+        <dt>¿Cuánto dura la Noche de los Tambores?</dt>
+        <dd>Dieciséis horas seguidas. El toque arranca a medianoche del Martes Santo y se prolonga hasta media tarde del Miércoles Santo, según los horarios que publica el Ayuntamiento de Mula. No hay pausa: el redoble cubre la madrugada, el amanecer y toda la mañana.</dd>
 
-        <dt>¿Qué es la lectura del Privilegi?</dt>
-        <dd>Es el acto que inaugura oficialmente la Fira cada 1 de noviembre. Desde el balcón del Palau Comtal, un ciudadano ilustre de Cocentaina elegido para la ocasión lee íntegramente el documento por el que Pere el Cerimoniós concedió a la villa el derecho a celebrar la feria.</dd>
+        <dt>¿Puede tocar cualquiera o hay que pertenecer a una peña?</dt>
+        <dd>Puede tocar cualquiera. En Mula no hay cuadrillas cerradas ni escuadras que desfilen en formación: cada tamborista toca por su cuenta o se empareja con quien tenga enfrente. Quien llegue de fuera con un tambor puede sumarse sin pedir permiso a nadie.</dd>
 
-        <dt>¿Se siguen haciendo tratos orales en la Fira de Cocentaina?</dt>
-        <dd>Sí. En la zona ganadera y ecuestre de la Fira, la compraventa de animales se sigue cerrando con un apretón de manos, sin documento escrito. Es uno de los rituales comerciales más antiguos que siguen funcionando en España.</dd>
+        <dt>¿Es apta para ir con niños?</dt>
+        <dd>La tamborada del Viernes Santo, de mañana, es la más llevadera para ir en familia. La noche del Martes Santo alcanza niveles de ruido muy altos en la plaza del Ayuntamiento y se prolonga durante toda la madrugada, así que para los más pequeños conviene protección auditiva y quedarse en las calles del entorno en lugar del centro de la plaza.</dd>
 
-        <dt>¿Por qué la Fira de Tots Sants es única entre las fiestas declaradas ITI?</dt>
-        <dd>Es el único certamen comercial en España con declaración de Fiesta de Interés Turístico Internacional. Todas las demás ITI son fiestas de carácter festivo-religioso o recreativo. La Fira obtuvo esta distinción en 2019 por ser un evento económico vivo con continuidad desde el siglo XIV.</dd>
+        <dt>¿El toque del tambor en Mula viene de la Edad Media?</dt>
+        <dd>No. La documentación más antigua que se conserva son las Ordenanzas Municipales de 1859, que prohibían andar por las calles con tambores fuera de las procesiones. El toque nace en el siglo XIX, vinculado a los nazarenos de la broma, y no hay respaldo documental para los relatos que lo sitúan en ritos paganos o en tropas medievales.</dd>
 
       </dl>
 
       <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
-        <a href="#" class="etiqueta destacada">Feria Histórica</a>
-        <a href="#" class="etiqueta">Comunitat Valenciana</a>
-        <a href="#" class="etiqueta">Alicante</a>
-        <a href="#" class="etiqueta">Noviembre</a>
+        <a href="#" class="etiqueta destacada">Tamborada</a>
         <a href="#" class="etiqueta destacada">Interés Turístico Internacional</a>
-        <a href="#" class="etiqueta">BIC Inmaterial</a>
-        <a href="#" class="etiqueta">El Comtat</a>
-        <a href="#" class="etiqueta">3 días</a>
-        <a href="#" class="etiqueta">Gratuita</a>
+        <a href="#" class="etiqueta">UNESCO Patrimonio Inmaterial</a>
+        <a href="#" class="etiqueta">Región de Murcia</a>
+        <a href="#" class="etiqueta">Mula</a>
+        <a href="#" class="etiqueta">Semana Santa</a>
+        <a href="#" class="etiqueta">Marzo</a>
+        <a href="#" class="etiqueta">16 horas de toque</a>
+        <a href="#" class="etiqueta">Túnica negra</a>
       </div>
 
-      <section class="fichas-relacionadas" aria-labelledby="rel-title-cocentaina">
-        <h2 id="rel-title-cocentaina">Otras fiestas que te van a interesar</h2>
+      <section class="fichas-relacionadas" aria-labelledby="rel-title-mula">
+        <h2 id="rel-title-mula">Otras fiestas que te van a interesar</h2>
         <div class="fichas-relacionadas-grid">
 
-          <a href="moros-cristianos-alcoi.html" class="ficha-rel-card">
-            <img src="images/moros-cristianos-alcoi.jpg" alt="Desfile de Moros y Cristianos por las calles de Alcoi durante las fiestas patronales" loading="lazy" />
+          <a href="ruta-tambor-bombo.html" class="ficha-rel-card">
+            <img src="images/ruta-tambor-bombo.jpg" alt="Tamborileros del Bajo Aragón durante la Rompida de la Hora en la Ruta del Tambor y el Bombo" loading="lazy" />
             <div class="rel-body">
-              <span class="rel-title">Moros y Cristianos de Alcoi</span>
-              <span class="rel-frase">La fiesta mayor de la comarca, a diez minutos de Cocentaina.</span>
-              <span class="rel-meta">Alcoi · Comunitat Valenciana</span>
+              <span class="rel-title">Ruta del Tambor y el Bombo</span>
+              <span class="rel-frase">La misma declaración UNESCO, la manera opuesta de tocar: allí el redoble va ensayado.</span>
+              <span class="rel-meta">Bajo Aragón · Teruel · ITI · UNESCO</span>
             </div>
           </a>
 
-          <a href="entrada-toros-caballos-segorbe.html" class="ficha-rel-card">
-            <img src="images/entrada-toros-caballos-segorbe.jpg" alt="Jinetes conduciendo toros bravos por la calle Colón de Segorbe sin barreras durante la Entrada de Toros y Caballos" loading="lazy" />
+          <a href="festival-cante-minas-union.html" class="ficha-rel-card">
+            <img src="images/festival-cante-minas-union.jpg" alt="Actuación de cante minero en el Festival Internacional del Cante de las Minas de La Unión" loading="lazy" />
             <div class="rel-body">
-              <span class="rel-title">Entrada de Toros y Caballos de Segorbe</span>
-              <span class="rel-frase">Otra tradición valenciana que lleva igual desde el siglo XIV.</span>
-              <span class="rel-meta">Segorbe · Comunitat Valenciana</span>
+              <span class="rel-title">Festival del Cante de las Minas</span>
+              <span class="rel-frase">Otra fiesta murciana construida sobre el sonido. Otro mundo.</span>
+              <span class="rel-meta">La Unión · Región de Murcia · ITI</span>
             </div>
           </a>
 
-          <a href="feria-abril-sevilla.html" class="ficha-rel-card">
-            <img src="images/feria-abril-sevilla.jpg" alt="Casetas y farolillos de la Feria de Abril de Sevilla al atardecer" loading="lazy" />
+          <a href="semana-santa-lorca.html" class="ficha-rel-card">
+            <img src="images/semana-santa-lorca.jpg" alt="Desfile bíblico-pasional de la Semana Santa de Lorca con bordados en seda" loading="lazy" />
             <div class="rel-body">
-              <span class="rel-title">Feria de Abril de Sevilla</span>
-              <span class="rel-frase">La otra gran feria declarada ITI. Otro siglo, otra escala, otro sur.</span>
-              <span class="rel-meta">Sevilla · Andalucía</span>
+              <span class="rel-title">Semana Santa de Lorca</span>
+              <span class="rel-frase">La misma semana, a una hora de carretera, y todo lo contrario: color, seda y desfile.</span>
+              <span class="rel-meta">Lorca · Región de Murcia · ITI</span>
             </div>
           </a>
 
