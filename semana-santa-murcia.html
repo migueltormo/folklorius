@@ -238,6 +238,40 @@
       .ficha-datos-clave .datos-secundarios { font-size: 0.85rem; }
     }
 
+    /* ── ETIQUETAS VISIBLES ───────────────────────────────────── */
+    .ficha-etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2rem 0 1rem;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--border, #e5e0d8);
+    }
+    .ficha-etiquetas .etiqueta {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 12px;
+      background: #fafafa;
+      border: 1px solid var(--border, #e5e0d8);
+      border-radius: 999px;
+      color: var(--text-muted, #666);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .ficha-etiquetas .etiqueta:hover {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+    .ficha-etiquetas .etiqueta.destacada {
+      background: var(--accent-light, #fdf3e7);
+      border-color: var(--brand, #8b1a1a);
+      color: var(--brand, #8b1a1a);
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -735,7 +769,7 @@
         </div>
       </section>
 
-      <div class="etiquetas" aria-label="Etiquetas temáticas">
+      <div class="ficha-etiquetas" role="region" aria-label="Etiquetas de esta fiesta">
         <span class="etiqueta destacada">Semana Santa</span>
         <span class="etiqueta destacada">Interés Turístico Internacional</span>
         <span class="etiqueta">Murcia</span>
