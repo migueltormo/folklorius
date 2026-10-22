@@ -57,8 +57,7 @@
       <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
         <a href="#fiestas">Fiestas</a>
-        <a href="#glosario">Vocabulario</a>
-        <a href="#blog">Blog</a>
+        <a href="#calendario">Calendario</a>
         <a class="nav-cta" href="#fiestas">Explorar</a>
       </nav>
     </div>
@@ -81,972 +80,94 @@
 
   <main>
 
-    <!-- INTRO -->
-    <section class="intro" id="inicio" aria-labelledby="intro-title">
-      <h2 id="intro-title">Bienvenido a Folklorius</h2>
-      <p>
-        España es un país de fiestas vivas. Cada pueblo, cada ciudad, guarda tradiciones que llevan siglos celebrándose.
-        Aquí las contamos con rigor, con respeto y con el entusiasmo de quien sabe que la cultura popular merece ser conocida.
+    <!-- EXPLORADOR: las tres preguntas con las que se busca una fiesta -->
+    <section class="explorador" id="explorar" aria-labelledby="explorar-title">
+      <h2 id="explorar-title">Noventa fiestas con declaración oficial</h2>
+      <p class="explorador-intro">
+        Todas las que están aquí tienen reconocimiento de Interés Turístico Internacional,
+        Nacional o inscripción en la UNESCO. Busca por lo que te interesa, por cuándo puedes
+        viajar o por dónde vas a estar.
       </p>
+
+      <form class="explorador-form" role="search" aria-label="Buscar fiestas">
+        <div class="explorador-campo">
+          <label for="f-tipo">Qué fiesta</label>
+          <select id="f-tipo" name="tipo">
+            <option value="">Todas las tipologías</option>
+            <option value="semana-santa">Semana Santa</option>
+            <option value="moros-y-cristianos">Moros y Cristianos</option>
+            <option value="carnaval">Carnaval</option>
+            <option value="recreacion-historica">Recreación Histórica</option>
+            <option value="fiesta-gastronomica">Fiesta Gastronómica</option>
+            <option value="fiestas-patronales">Fiestas Patronales</option>
+            <option value="feria">Feria</option>
+            <option value="corpus-christi">Corpus Christi</option>
+            <option value="festival-musical">Festival Musical</option>
+            <option value="fiesta-taurina">Fiesta Taurina</option>
+            <option value="fuego">Fuego</option>
+            <option value="tamborada">Tamborada</option>
+            <option value="tradicion-popular">Tradición Popular</option>
+          </select>
+        </div>
+
+        <div class="explorador-campo">
+          <label for="f-mes">Cuándo</label>
+          <select id="f-mes" name="mes">
+            <option value="">Cualquier mes</option>
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+        </div>
+
+        <div class="explorador-campo">
+          <label for="f-zona">Dónde</label>
+          <select id="f-zona" name="zona">
+            <option value="">Todo el territorio</option>
+            <option value="andalucia">Andalucía</option>
+            <option value="aragon">Aragón</option>
+            <option value="asturias">Asturias</option>
+            <option value="canarias">Canarias</option>
+            <option value="cantabria">Cantabria</option>
+            <option value="castilla-y-leon">Castilla y León</option>
+            <option value="castilla-la-mancha">Castilla-La Mancha</option>
+            <option value="comunidad-de-madrid">Comunidad de Madrid</option>
+            <option value="comunitat-valenciana">Comunitat Valenciana</option>
+            <option value="extremadura">Extremadura</option>
+            <option value="galicia">Galicia</option>
+            <option value="navarra">Navarra</option>
+            <option value="region-de-murcia">Región de Murcia</option>
+          </select>
+        </div>
+
+        <button type="button" class="explorador-reset" id="f-reset">Ver todas</button>
+      </form>
     </section>
 
-    <!-- FICHAS DESTACADAS -->
+    <!-- CALENDARIO: lo escoge el navegador segun su fecha, no se queda viejo -->
+    <section class="proximas" id="calendario" aria-labelledby="proximas-title" hidden>
+      <div class="proximas-cabecera">
+        <h2 id="proximas-title">Lo próximo en el calendario</h2>
+        <a href="#fiestas" class="proximas-todas">Ver el catálogo completo →</a>
+      </div>
+      <ul class="proximas-tira" id="proximas-tira" role="list"></ul>
+    </section>
+
+    <!-- CATALOGO -->
     <section class="fiestas-section" id="fiestas" aria-labelledby="fiestas-title">
-      <h2 id="fiestas-title">Fichas destacadas</h2>
+      <h2 id="fiestas-title">El catálogo</h2>
+      <p class="resultado-cuenta" id="resultado-cuenta" role="status" aria-live="polite"></p>
       <ul class="fiestas-grid" role="list">
-
-        <li class="fiesta-card">
-          <a href="fallas-valencia.html">
-            <div class="card-img-wrap">
-              <img src="images/fallas-valencia.jpg" alt="Las Fallas de Valencia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Las Fallas de Valencia</span>
-              <span class="card-frase">Monumentos de arte efímero, mascletàs y la Cremà final.</span>
-              <span class="card-meta">Valencia · Marzo · Patrimonio UNESCO</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-  <a href="moros-cristianos-bocairent.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-bocairent.jpg"
-           alt="Festeros con farolillos y mantas bocairentinas en la Nit de les Caixes de Bocairent"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Bocairent</span>
-      <span class="card-frase">La fiesta del invierno, la manta y Sant Blai.</span>
-      <span class="card-meta">Bocairent · Valencia · Interés Turístico Nacional</span>
-    </div>
-  </a>
-</li>
-
-        <li class="fiesta-card">
-          <a href="semana-santa-malaga.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Málaga</span>
-              <span class="card-frase">Fe, arte y emoción en cada trono.</span>
-              <span class="card-meta">Málaga · Marzo-Abril · Patrimonio Cultural</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="san-fermin.html">
-            <div class="card-img-wrap">
-              <img src="images/san-fermin.jpg" alt="Sanfermines de Pamplona" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Sanfermines de Pamplona</span>
-              <span class="card-frase">Encierro, Chupinazo y 16 peñas con sus txarangas.</span>
-              <span class="card-meta">Navarra · Julio · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-cadiz.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-cadiz1.png" alt="Carnaval de Cádiz" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Cádiz</span>
-              <span class="card-frase">La voz del pueblo hecha copla y sátira.</span>
-              <span class="card-meta">Cádiz · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-tenerife.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-tenerife.jpg" alt="Carnaval de Santa Cruz de Tenerife" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Santa Cruz de Tenerife</span>
-              <span class="card-frase">Donde la calle se disfraza de libertad.</span>
-              <span class="card-meta">Tenerife · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-las-palmas.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-las-palmas.jpg" alt="Carnaval de Las Palmas de Gran Canaria" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Las Palmas de Gran Canaria</span>
-              <span class="card-frase">Purpurina, murgas y la pionera Gala Drag Queen.</span>
-              <span class="card-meta">Las Palmas de Gran Canaria · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-aguilas.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-aguilas.jpg" alt="Carnaval de Águilas" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Águilas</span>
-              <span class="card-frase">La Musona, la Cuerva y el Carnaval de la Noche.</span>
-              <span class="card-meta">Águilas, Región de Murcia · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carnaval-badajoz.html">
-            <div class="card-img-wrap">
-              <img src="images/carnaval-badajoz.jpg" alt="Carnaval de Badajoz" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carnaval de Badajoz</span>
-              <span class="card-frase">Comparsas de escala latinoamericana y los Artefactos, únicos en España.</span>
-              <span class="card-meta">Badajoz, Extremadura · Febrero · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="entroido-xinzo-de-limia.html">
-            <div class="card-img-wrap">
-              <img src="images/entroido-xinzo-de-limia.jpg" alt="Entroido de Xinzo de Limia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Entroido de Xinzo de Limia</span>
-              <span class="card-frase">La Pantalla y el ciclo ininterrumpido de 5 domingos.</span>
-              <span class="card-meta">Xinzo de Limia, Ourense · Febrero · Interés Turístico Internacional · BIC</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="feria-abril-sevilla.html">
-            <div class="card-img-wrap">
-              <img src="images/feria-abril-sevilla.jpg" alt="La Portada iluminada de la Feria de Abril de Sevilla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Feria de Abril de Sevilla</span>
-              <span class="card-frase">El Real, la Portada y más de mil casetas junto al Guadalquivir.</span>
-              <span class="card-meta">Sevilla · Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="feria-caballo-jerez.html">
-            <div class="card-img-wrap">
-              <img src="images/feria-caballo-jerez.jpg" alt="Paseo de Caballos y Enganches en la Feria del Caballo de Jerez" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Feria del Caballo de Jerez</span>
-              <span class="card-frase">Casetas abiertas a todos, caballos y los vinos del Marco de Jerez.</span>
-              <span class="card-meta">Jerez de la Frontera, Cádiz · Mayo · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="fiesta-vendimia-jerez.html">
-            <div class="card-img-wrap">
-              <img src="images/fiesta-vendimia-jerez.jpg" alt="Pisa tradicional de la uva en el Reducto de la Catedral de Jerez durante la Fiesta de la Vendimia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiesta de la Vendimia de Jerez</span>
-              <span class="card-frase">Dieciséis días dedicados al vino, sin casetas ni caballos.</span>
-              <span class="card-meta">Jerez de la Frontera, Cádiz · Septiembre · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="feria-albacete.html">
-            <div class="card-img-wrap">
-              <img src="images/feria-albacete.jpg" alt="Recinto Ferial de Albacete, conocido popularmente como La Sartén, durante la feria" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Feria de Albacete</span>
-              <span class="card-frase">Once días en La Sartén, el único recinto ferial permanente de piedra de España.</span>
-              <span class="card-meta">Albacete, Castilla-La Mancha · Septiembre · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="semana-santa-sevilla.html">
-            <div class="card-img-wrap">
-              <img src="images/sevilla-santa1.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Sevilla</span>
-              <span class="card-frase">Donde la fe se hace arte y el arte sale a la calle.</span>
-              <span class="card-meta">Sevilla · Marzo-Abril · Patrimonio UNESCO</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="tomatina-bunol.html">
-            <div class="card-img-wrap">
-              <img src="images/tomatina1.jpg" alt="La Tomatina de Buñol" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">La Tomatina de Buñol</span>
-              <span class="card-frase">La batalla de tomates más famosa del mundo, un miércoles de agosto.</span>
-              <span class="card-meta">Valencia · Agosto · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-alcoi.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-alcoi.jpg" alt="Moros y Cristianos de Alcoi" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Alcoi</span>
-              <span class="card-frase">Donde nació la tradición que se extendió por el mundo.</span>
-              <span class="card-meta">Alicante · Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="festival-cante-minas-union.html">
-            <div class="card-img-wrap">
-              <img src="images/festival-cante-minas-union.jpg"
-                   alt="Cantaor en el escenario del Antiguo Mercado de La Unión durante el Festival del Cante de las Minas"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Festival del Cante de las Minas</span>
-              <span class="card-frase">El concurso de flamenco más prestigioso del mundo. Nació en los pozos.</span>
-              <span class="card-meta">La Unión · Región de Murcia · ITI · BIC Inmaterial</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="semana-santa-cartagena.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-cartagena.jpg" alt="Semana Santa de Cartagena" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Cartagena</span>
-              <span class="card-frase">Diez días de orden, luces y tradición militar en el Mediterráneo.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-lorca.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-lorca.jpg" alt="Semana Santa de Lorca" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Lorca</span>
-              <span class="card-frase">Donde el bordado se hace piel y la historia galopa.</span>
-              <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-cuenca.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-cuenca.jpg" alt="Semana Santa de Cuenca" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Cuenca</span>
-              <span class="card-frase">Pasión vertical entre hoces, silencios y tambores roncos.</span>
-              <span class="card-meta">Cuenca · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-granada.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-granada.jpg" alt="Semana Santa de Granada" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Granada</span>
-              <span class="card-frase">Pasión entre el Albaicín, el Sacromonte y la Alhambra.</span>
-              <span class="card-meta">Granada · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Murcia</span>
-              <span class="card-frase">El genio de Salzillo esculpido en la tradición huertana.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-jumilla.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-jumilla.jpg" alt="Semana Santa de Jumilla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Jumilla</span>
-              <span class="card-frase">Más de seiscientos años de fe entre túnicas y viñedos.</span>
-              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-crevillent.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-crevillent.jpg" alt="Semana Santa de Crevillent" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Crevillent</span>
-              <span class="card-frase">El genio de Benlliure mecido por el canto polifónico.</span>
-              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-orihuela.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Orihuela</span>
-              <span class="card-frase">Un museo en la calle bañado de incienso y fervor.</span>
-              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-          <a href="semana-santa-avila.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-avila.jpg" alt="Semana Santa de Ávila" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Ávila</span>
-              <span class="card-frase">Piedra, silencio y fe al abrigo de la muralla medieval.</span>
-              <span class="card-meta">Ávila · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-        <li class="fiesta-card">
-  <a href="semana-santa-leon.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-leon.jpg" alt="Semana Santa de León" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de León</span>
-      <span class="card-frase">El latido del tambor y el orgullo del papón.</span>
-      <span class="card-meta">León · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-       </li>
-       <li class="fiesta-card">
-  <a href="semana-santa-palencia.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-palencia.jpg" alt="Semana Santa de Palencia" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Palencia</span>
-      <span class="card-frase">Silencio roto por el lamento del Tararú.</span>
-      <span class="card-meta">Palencia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-valladolid.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Valladolid</span>
-      <span class="card-frase">Un museo de madera policromada bajo el cielo de Castilla.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-salamanca.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-salamanca.jpg" alt="Semana Santa de Salamanca" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Salamanca</span>
-      <span class="card-frase">Piedra viva, silencio estremecedor y pasión bajo el cielo charro.</span>
-      <span class="card-meta">Salamanca · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-      <li class="fiesta-card">
-  <a href="semana-santa-zamora.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-zamora.jpg" alt="Cofrades de las Capas Pardas con linterna en las calles románicas de Zamora" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Zamora</span>
-      <span class="card-frase">Un museo románico donde el silencio, el frío y el canto desgarran el alma.</span>
-      <span class="card-meta">Zamora · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-medina-del-campo.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-medina-del-campo.jpg" alt="Procesión nocturna en la Semana Santa de Medina del Campo con el Castillo de la Mota al fondo" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Medina del Campo</span>
-      <span class="card-frase">Silencio castellano bajo cera y piedra antigua.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-medina-de-rioseco.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-medina-de-rioseco.jpg" alt="Paso a hombros por las calles empinadas de Medina de Rioseco durante la Semana Santa" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Medina de Rioseco</span>
-      <span class="card-frase">Madera al hombro, silencio y emoción castellana.</span>
-      <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-caceres.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-caceres.jpg" alt="Procesión nocturna por las calles medievales de la Ciudad Monumental de Cáceres" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Cáceres</span>
-      <span class="card-frase">Piedra, silencio y cera en la penumbra.</span>
-      <span class="card-meta">Cáceres · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-merida.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-merida.jpg" alt="Vía Crucis en el Anfiteatro Romano de Mérida durante la Semana Santa" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Mérida</span>
-      <span class="card-frase">La Pasión de Cristo sobre la piedra de Roma.</span>
-      <span class="card-meta">Badajoz · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-ferrol.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-ferrol.jpg" alt="Procesión nocturna de Os Caladiños en las calles de A Magdalena de Ferrol" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Ferrol</span>
-      <span class="card-frase">Sobriedad, mar y silencio en las calles ilustradas.</span>
-      <span class="card-meta">A Coruña · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-viveiro.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-viveiro.jpg" alt="Procesión de Os Caladiños en Viveiro con fieles portando velas en silencio por el casco histórico" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Viveiro</span>
-      <span class="card-frase">Tambores de pasión y silencio en A Mariña.</span>
-      <span class="card-meta">Lugo · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-zaragoza.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-zaragoza.jpg" alt="Cofrades con bombos y tambores en la Semana Santa de Zaragoza" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Zaragoza</span>
-      <span class="card-frase">Cuatro mil metros de pasión a golpe de bombo y tambor.</span>
-      <span class="card-meta">Zaragoza · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-hellin.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-hellin.jpg" alt="Tamborada de Hellín" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa y Tamborada de Hellín</span>
-      <span class="card-frase">Donde la fe camina a hombros y el suelo retumba.</span>
-      <span class="card-meta">Hellín · Albacete · ITI + UNESCO</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-toledo.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-toledo.jpg" 
-           alt="Procesión nocturna bajo los cobertizos medievales de Toledo durante la Semana Santa" 
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Toledo</span>
-      <span class="card-frase">El silencio bajo los cobertizos.</span>
-      <span class="card-meta">Toledo · Castilla-La Mancha · ITI 2014</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="semana-santa-baena.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-baena.jpg"
-           alt="Turbas de Judíos Coliblancos y Colinegros en la Semana Santa de Baena"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Baena</span>
-      <span class="card-frase">El pueblo que reza a golpe de tambor.</span>
-      <span class="card-meta">Córdoba · Andalucía · ITI 2025</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="cascamorras-baza-guadix.html">
-    <div class="card-img-wrap">
-      <img src="images/cascamorras-baza-guadix.jpg"
-           alt="El Cascamorras cubierto de pintura negra abriéndose paso con su porra entre la multitud en Baza"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">El Cascamorras de Baza y Guadix</span>
-      <span class="card-frase">Lleva más de 530 años intentándolo. Nunca lo ha conseguido.</span>
-      <span class="card-meta">Baza y Guadix · Granada · Andalucía · ITI · BIC Etnológico</span>
-    </div>
-  </a>
-</li>
-<li class="fiesta-card">
-  <a href="ruta-tambor-bombo.html">
-    <div class="card-img-wrap">
-      <img src="images/ruta-tambor-bombo.jpg"
-           alt="Tamborileros del Bajo Aragón en la Rompida de la Hora de la Ruta del Tambor y el Bombo"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Ruta del Tambor y el Bombo</span>
-      <span class="card-frase">Cuando el Bajo Aragón rompe la hora.</span>
-      <span class="card-meta">Bajo Aragón · Teruel · ITI 2014 + Patrimonio UNESCO 2018</span>
-    </div>
-  </a>
-</li>
-        <li class="fiesta-card">
-          <a href="domingo-ramos-elche.html">
-            <div class="card-img-wrap">
-              <img src="images/domingo-ramos-elche.jpg" alt="Procesión del Domingo de Ramos de Elche con miles de personas portando palmas blancas trenzadas" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Domingo de Ramos de Elche</span>
-              <span class="card-frase">Setenta mil palmas blancas bajo el sol levantino.</span>
-              <span class="card-meta">Elche · Alicante · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="corpus-christi-toledo.html">
-            <div class="card-img-wrap">
-              <img src="images/corpus-christi-toledo.jpg" alt="La Custodia de Arfe avanzando por las calles del casco histórico de Toledo durante el Corpus Christi" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Corpus Christi de Toledo</span>
-              <span class="card-frase">Oro, incienso y siete siglos que no pasan.</span>
-              <span class="card-meta">Toledo · Castilla-La Mancha · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-       
-        <li class="fiesta-card">
-  <a href="corpus-christi-ponteareas.html">
-    <div class="card-img-wrap">
-      <img src="images/corpus-christi-ponteareas.jpg"
-           alt="Alfombras florales cubriendo las calles de Ponteareas durante el Corpus Christi"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Corpus Christi de Ponteareas</span>
-      <span class="card-frase">Un pueblo entero dibujando con flores en la madrugada.</span>
-      <span class="card-meta">Ponteareas · Galicia · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-      <li class="fiesta-card">
-  <a href="corpus-christi-bejar.html">
-    <div class="card-img-wrap">
-      <img src="images/corpus-christi-bejar.jpg"
-           alt="Hombres de Musgo escoltando la Custodia en el Corpus Christi de Béjar"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Corpus Christi de Béjar</span>
-      <span class="card-frase">La leyenda que camina junto a la Custodia.</span>
-      <span class="card-meta">Béjar · Castilla y León · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="semana-santa-cieza.html">
-    <div class="card-img-wrap">
-      <img src="images/semana-santa-cieza.jpg" alt="El Tercio Romano de los Armaos en la Semana Santa de Cieza" loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Semana Santa de Cieza</span>
-      <span class="card-frase">Pasión en la calle, escultura levantina y el eco de los Armaos.</span>
-      <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="moros-cristianos-villajoyosa.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-villajoyosa.jpg"
-           alt="El Desembarc de Villajoyosa con embarcaciones moras atacando la Playa Centro al amanecer"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Villajoyosa</span>
-      <span class="card-frase">Cuando el mar se convierte en campo de batalla.</span>
-      <span class="card-meta">Villajoyosa · Alicante · ITI 2003</span>
-    </div>
-  </a>
-</li>
-
-<li class="fiesta-card">
-  <a href="moros-cristianos-crevillent.html">
-    <div class="card-img-wrap">
-      <img src="images/moros-cristianos-crevillent.jpg"
-           alt="La Embajada al Rey Jaime I frente al Castillo Festero en la Plaza de la Constitución de Crevillent"
-           loading="lazy" />
-    </div>
-    <div class="card-body">
-      <span class="card-title">Moros y Cristianos de Crevillent</span>
-      <span class="card-frase">Vasallaje histórico y pacto pacífico en el Baix Vinalopó.</span>
-      <span class="card-meta">Crevillent · Alicante · ITI 2017</span>
-    </div>
-  </a>
-</li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-ontinyent.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-ontinyent.jpg"
-                   alt="Comparsas desfilando durante los Moros y Cristianos de Ontinyent"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Ontinyent</span>
-              <span class="card-frase">24 comparsas, la Bajada del Cristo y las Embajadas de 1860.</span>
-              <span class="card-meta">Ontinyent · Valencia · ITI 2025</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-elda.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-elda.jpg"
-                   alt="Comparsas desfilando durante las Entradas de los Moros y Cristianos de Elda"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Elda</span>
-              <span class="card-frase">Más de 7.000 festeros y devoción a San Antón.</span>
-              <span class="card-meta">Elda · Alicante · ITI 2026</span>
-            </div>
-          </a>
-        </li>
-<li class="fiesta-card">
-          <a href="moros-cristianos-almansa.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-almansa.jpg"
-                   alt="Desfile de Moros y Cristianos de Almansa con las comparsas cruzando la plaza bajo el castillo"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Almansa</span>
-              <span class="card-frase">Bajo el castillo que vio cambiar la historia.</span>
-              <span class="card-meta">Almansa · Albacete · ITI 2024</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="moros-cristianos-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-murcia.jpg"
-                   alt="Campamento Medieval de los Moros y Cristianos de Murcia junto al río Segura"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Murcia</span>
-              <span class="card-frase">Un campamento entero junto al Segura recrea la fundación de la ciudad.</span>
-              <span class="card-meta">Murcia · Septiembre · ITI 2025</span>
-            </div>
-          </a>
-        </li>
-<li class="fiesta-card">
-          <a href="moros-cristianos-caravaca.html">
-            <div class="card-img-wrap">
-              <img src="images/moros-cristianos-caravaca.jpg"
-                   alt="Desfile de Moros y Cristianos de Caravaca de la Cruz con la Basílica-Santuario de la Vera Cruz al fondo"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Moros y Cristianos de Caravaca de la Cruz</span>
-              <span class="card-frase">La devoción a la Vera Cruz hecha batalla, desfile y embajada.</span>
-              <span class="card-meta">Caravaca de la Cruz · Mayo · ITI 2004</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="caballos-del-vino-caravaca.html">
-            <div class="card-img-wrap">
-              <img src="images/caballos-del-vino-caravaca.jpg"
-                   alt="Carrera de los Caballos del Vino en la Cuesta del Castillo de Caravaca con los mozos agarrados al caballo enjaezado"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Caballos del Vino de Caravaca de la Cruz</span>
-              <span class="card-frase">Un año bordando para ocho segundos de carrera cuesta arriba.</span>
-              <span class="card-meta">Caravaca de la Cruz · 2 de mayo · UNESCO 2020</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="romeria-rocio.html">
-            <div class="card-img-wrap">
-              <img src="images/romeria-rocio.jpg"
-                   alt="Carreta del Simpecado tirada por bueyes atravesando los arenales del Parque Nacional de Doñana durante la Romería del Rocío"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Romería del Rocío</span>
-              <span class="card-frase">Un millón de peregrinos hacia la Blanca Paloma.</span>
-              <span class="card-meta">El Rocío · Huelva · Fiesta de Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="misteri-elx.html">
-            <div class="card-img-wrap">
-              <img src="images/misteri-elx.jpg"
-                   alt="Descenso del Araceli, retablo aéreo dorado con ángeles cantores, desde la cúpula de la Basílica de Santa María de Elche durante el Misteri d'Elx"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Misteri d'Elx</span>
-              <span class="card-frase">La única ópera medieval de Europa que nunca dejó de sonar.</span>
-              <span class="card-meta">Elche · Alicante · UNESCO 2001</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="fiestas-pilar-zaragoza.html">
-            <div class="card-img-wrap">
-              <img src="images/fiestas-pilar-zaragoza.jpg"
-                   alt="Oferentes con traje regional depositando flores en la estructura piramidal de la Virgen del Pilar durante la Ofrenda de Flores en Zaragoza"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiestas del Pilar de Zaragoza</span>
-              <span class="card-frase">Un manto de flores de 200 metros para la Virgen del Pilar.</span>
-              <span class="card-meta">Zaragoza · Aragón · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="hogueras-san-juan-coruna.html">
-            <div class="card-img-wrap">
-              <img src="images/hogueras-san-juan-coruna.jpg" alt="Cientos de cacharelas ardiendo en la playa de Riazor de A Coruña durante la Noite da Queima" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Hogueras de San Juan de A Coruña</span>
-              <span class="card-frase">La Noite da Queima más grande de Galicia. La Falla Mayor, 150.000 personas y el arco de fuego sobre el Atlántico.</span>
-              <span class="card-meta">A Coruña · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="hogueras-san-juan-alicante.html">
-            <div class="card-img-wrap">
-              <img src="images/hogueras-san-juan-alicante.jpg"
-                   alt="Hoguera oficial ardiendo en la Plaza del Ayuntamiento de Alicante durante la Nit de la Cremà"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Hogueras de San Juan de Alicante</span>
-              <span class="card-frase">La ciudad que planta 184 monumentos para verlos arder en una noche.</span>
-              <span class="card-meta">Alicante · Comunitat Valenciana · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-
-        <li class="fiesta-card">
-          <a href="descenso-sella-arriondas.html">
-            <div class="card-img-wrap">
-              <img src="images/descenso-sella-arriondas.jpg" alt="Salida masiva del Descenso Internacional del Sella desde el Puente de Arriondas con cientos de piraguas entrando al río" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Descenso Internacional del Sella — Fiesta de las Piraguas</span>
-              <span class="card-frase">El cañonazo, el silencio y 900 piraguas golpeando el agua a la vez.</span>
-              <span class="card-meta">Arriondas–Ribadesella · Asturias · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carreras-caballos-sanlucar.html">
-            <div class="card-img-wrap">
-              <img src="images/carreras-caballos-sanlucar.jpg" alt="Caballos purasangre galopando a contraluz por la orilla de la playa de Sanlúcar de Barrameda al atardecer" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carreras de Caballos en la Playa de Sanlúcar de Barrameda</span>
-              <span class="card-frase">El hipódromo más antiguo de España lo construye el mar con cada bajamar.</span>
-              <span class="card-meta">Sanlúcar de Barrameda · Cádiz · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="festival-celta-ortigueira.html">
-            <div class="card-img-wrap">
-              <img src="images/festival-celta-ortigueira.jpg" alt="Escenario principal del Festival Internacional do Mundo Celta de Ortigueira con miles de asistentes frente al puerto deportivo" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Festival Internacional do Mundo Celta de Ortigueira</span>
-              <span class="card-frase">El mayor festival de folk del mundo celta en España, gratuito desde 1978.</span>
-              <span class="card-meta">Ortigueira · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="motin-aranjuez.html">
-            <div class="card-img-wrap">
-              <img src="images/motin-aranjuez.jpg" alt="Vecinos de Aranjuez con antorchas durante el Asalto a la Casa de Godoy en las Fiestas del Motín de Aranjuez" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiestas del Motín de Aranjuez</span>
-              <span class="card-frase">170 vecinos recrean la noche en que el pueblo de Aranjuez cambió la historia de España.</span>
-              <span class="card-meta">Aranjuez · Comunidad de Madrid · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="bodas-isabel-segura.html">
-            <div class="card-img-wrap">
-              <img src="images/bodas-isabel-segura.jpg" alt="Bodas de Isabel de Segura de Teruel" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Bodas de Isabel de Segura</span>
-              <span class="card-frase">Cuatro días para contar la leyenda de amor más triste de Aragón.</span>
-              <span class="card-meta">Teruel · Aragón · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="bando-huerta-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/bando-huerta-murcia.jpg" alt="Bando de la Huerta de Murcia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Bando de la Huerta de Murcia</span>
-              <span class="card-frase">Un martes al año Murcia entera huele a tierra de huerta.</span>
-              <span class="card-meta">Murcia · Región de Murcia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="entierro-sardina-murcia.html">
-            <div class="card-img-wrap">
-              <img src="images/entierro-sardina-murcia.jpg" alt="Entierro de la Sardina de Murcia" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Entierro de la Sardina de Murcia</span>
-              <span class="card-frase">Murcia entierra la Cuaresma con dioses olímpicos, un dragón y fuego.</span>
-              <span class="card-meta">Murcia · Región de Murcia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="carthagineses-romanos-cartagena.html">
-            <div class="card-img-wrap">
-              <img src="images/carthagineses-romanos-cartagena.jpg" alt="Carthagineses y Romanos de Cartagena" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Carthagineses y Romanos de Cartagena</span>
-              <span class="card-frase">La ciudad que fue el centro del mundo revive la guerra que lo cambió.</span>
-              <span class="card-meta">Cartagena · Región de Murcia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="purisima-concepcion-yecla.html">
-            <div class="card-img-wrap">
-              <img src="images/purisima-concepcion-yecla.jpg" alt="Fiestas de la Purísima Concepción de Yecla" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiestas de la Purísima Concepción de Yecla</span>
-              <span class="card-frase">En Yecla, la devoción huele a pólvora desde 1642.</span>
-              <span class="card-meta">Yecla · Región de Murcia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="noche-tambores-mula.html">
-            <div class="card-img-wrap">
-              <img src="images/noche-tambores-mula.jpg" alt="Tamboristas con túnica negra en la plaza del Ayuntamiento de Mula durante el arranque de la Noche de los Tambores" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Noche de los Tambores de Mula</span>
-              <span class="card-frase">Dieciséis horas. Sin parar. Sin jerarquía. Sin imágenes.</span>
-              <span class="card-meta">Mula · Región de Murcia · ITI · UNESCO Patrimonio Inmaterial</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="galicia" data-meses="6" data-titulo="Arde Lucus" data-inicio="2027-06-17" data-fin="2027-06-20" data-fecha="Del 17 al 20 de junio de 2027">
           <a href="arde-lucus-lugo.html">
             <div class="card-img-wrap">
               <img src="images/arde-lucus-lugo.jpg" alt="Gran Desfile del Arde Lucus por la Muralla Romana de Lugo" loading="lazy" />
@@ -1058,88 +179,7 @@
             </div>
           </a>
         </li>
-
-        <li class="fiesta-card">
-          <a href="festividad-apostol-santiago.html">
-            <div class="card-img-wrap">
-              <img src="images/festividad-apostol-santiago.jpg" alt="Botafumeiro en vuelo en la Catedral de Santiago de Compostela durante la Misa Solemne del 25 de julio" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Festividad del Apóstol Santiago</span>
-              <span class="card-frase">El Botafumeiro, la Ofrenda Nacional y los Fuegos del Apóstol.</span>
-              <span class="card-meta">Santiago de Compostela · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="fiesta-lamprea-arbo.html">
-            <div class="card-img-wrap">
-              <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense en cazuela durante la Fiesta de la Lamprea de Arbo en el río Miño" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiesta de la Lamprea de Arbo</span>
-              <span class="card-frase">El pez del Miño cocinado con su propia sangre.</span>
-              <span class="card-meta">Arbo · Pontevedra · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="rapa-das-bestas-sabucedo.html">
-            <div class="card-img-wrap">
-              <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores inmovilizando a mano un caballo salvaje en el curro de Sabucedo durante la Rapa das Bestas" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Rapa das Bestas de Sabucedo</span>
-              <span class="card-frase">Tres aloitadores. Un caballo. Sin cuerdas.</span>
-              <span class="card-meta">Sabucedo · A Estrada · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="encierros-cuellar.html">
-            <div class="card-img-wrap">
-              <img src="images/encierros-cuellar.jpg" alt="Garrochistas conduciendo toros por el pinar comunal de Cuéllar al amanecer durante el encierro de campo" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Encierros de Cuéllar</span>
-              <span class="card-frase">Los más antiguos de España. Cinco kilómetros de pinar, El Embudo y murallas mudéjares.</span>
-              <span class="card-meta">Cuéllar · Segovia · Castilla y León · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="guerras-cantabras-corrales-buelna.html">
-            <div class="card-img-wrap">
-              <img src="images/guerras-cantabras-corrales-buelna.jpg"
-                   alt="Combate entre cántabros y legionarios romanos en el Anfiteatro de Los Corrales de Buelna"
-                   loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Guerras Cántabras de Los Corrales de Buelna</span>
-              <span class="card-frase">La única guerra que obligó a Augusto a venir en persona.</span>
-              <span class="card-meta">Los Corrales de Buelna · Cantabria · ITI · ITN</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="fiesta-albarino-cambados.html">
-            <div class="card-img-wrap">
-              <img src="images/fiesta-albarino-cambados.jpg" alt="Visitantes con catavinos en el paseo de A Calzada de Cambados durante la Fiesta del Albariño" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiesta del Albariño de Cambados</span>
-              <span class="card-frase">La fiesta de vino más antigua de Galicia. Una apuesta de 1953, el Capítulo Serenísimo y 150.000 visitantes.</span>
-              <span class="card-meta">Cambados · Pontevedra · Galicia · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="galicia" data-meses="3" data-titulo="Arribada de la Carabela Pinta a Baiona" data-inicio="2027-03-05" data-fin="2027-03-07" data-fecha="5 de marzo – 7 de marzo de 2027">
           <a href="arribada-carabela-pinta-baiona.html">
             <div class="card-img-wrap">
               <img src="images/arribada-carabela-pinta-baiona.jpg" alt="Réplica de la Carabela Pinta entrando en el puerto de Baiona con el Castillo de Monterreal al fondo durante la Festa da Arribada" loading="lazy" />
@@ -1151,21 +191,127 @@
             </div>
           </a>
         </li>
-
-        <li class="fiesta-card">
-          <a href="romeria-vikinga-catoira.html">
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="region-de-murcia" data-meses="3" data-titulo="Bando de la Huerta de Murcia" data-inicio="2027-03-30" data-fin="2027-03-30" data-fecha="Martes 30 de marzo de 2027">
+          <a href="bando-huerta-murcia.html">
             <div class="card-img-wrap">
-              <img src="images/romeria-vikinga-catoira.jpg" alt="Drakkar con velas rojas navegando el río Ulla hacia las Torres do Oeste durante la Romería Vikinga de Catoira" loading="lazy" />
+              <img src="images/bando-huerta-murcia.jpg" alt="Bando de la Huerta de Murcia" loading="lazy" />
             </div>
             <div class="card-body">
-              <span class="card-title">Romería Vikinga de Catoira</span>
-              <span class="card-frase">Cada agosto el Ulla vuelve a tener miedo.</span>
-              <span class="card-meta">Catoira · Pontevedra · Galicia · Interés Turístico Internacional</span>
+              <span class="card-title">Bando de la Huerta de Murcia</span>
+              <span class="card-frase">Un martes al año Murcia entera huele a tierra de huerta.</span>
+              <span class="card-meta">Murcia · Región de Murcia · Interés Turístico Internacional</span>
             </div>
           </a>
         </li>
-
-                <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="aragon" data-meses="2" data-titulo="Bodas de Isabel de Segura" data-inicio="2027-02-18" data-fin="2027-02-21" data-fecha="Del jueves 18 al domingo 21 de febrero de 2027">
+          <a href="bodas-isabel-segura.html">
+            <div class="card-img-wrap">
+              <img src="images/bodas-isabel-segura.jpg" alt="Bodas de Isabel de Segura de Teruel" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Bodas de Isabel de Segura</span>
+              <span class="card-frase">Cuatro días para contar la leyenda de amor más triste de Aragón.</span>
+              <span class="card-meta">Teruel · Aragón · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="region-de-murcia" data-meses="5" data-titulo="Caballos del Vino de Caravaca de la Cruz" data-inicio="2027-05-02" data-fin="2027-05-02" data-fecha="2 de mayo de 2027">
+          <a href="caballos-del-vino-caravaca.html">
+            <div class="card-img-wrap">
+              <img src="images/caballos-del-vino-caravaca.jpg" alt="Carrera de los Caballos del Vino en la Cuesta del Castillo de Caravaca con los mozos agarrados al caballo enjaezado" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Caballos del Vino de Caravaca de la Cruz</span>
+              <span class="card-frase">Un año bordando para ocho segundos de carrera cuesta arriba.</span>
+              <span class="card-meta">Caravaca de la Cruz · 2 de mayo · UNESCO 2020</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="extremadura" data-meses="1,2" data-titulo="Carnaval de Badajoz" data-inicio="2027-01-30" data-fin="2027-02-23" data-fecha="Del 30 de enero al 23 de febrero de 2027">
+          <a href="carnaval-badajoz.html">
+            <div class="card-img-wrap">
+              <img src="images/carnaval-badajoz.jpg" alt="Carnaval de Badajoz" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carnaval de Badajoz</span>
+              <span class="card-frase">Comparsas de escala latinoamericana y los Artefactos, únicos en España.</span>
+              <span class="card-meta">Badajoz, Extremadura · Febrero · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="andalucia" data-meses="2" data-titulo="Carnaval de Cádiz" data-inicio="2027-02-04" data-fin="2027-02-14" data-fecha="Del 4 al 14 de febrero de 2027">
+          <a href="carnaval-cadiz.html">
+            <div class="card-img-wrap">
+              <img src="images/carnaval-cadiz1.png" alt="Carnaval de Cádiz" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carnaval de Cádiz</span>
+              <span class="card-frase">La voz del pueblo hecha copla y sátira.</span>
+              <span class="card-meta">Cádiz · Febrero · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="canarias" data-meses="1,2" data-titulo="Carnaval de Las Palmas de Gran Canaria" data-fecha="Cinco semanas entre enero y febrero">
+          <a href="carnaval-las-palmas.html">
+            <div class="card-img-wrap">
+              <img src="images/carnaval-las-palmas.jpg" alt="Carnaval de Las Palmas de Gran Canaria" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carnaval de Las Palmas de Gran Canaria</span>
+              <span class="card-frase">Purpurina, murgas y la pionera Gala Drag Queen.</span>
+              <span class="card-meta">Las Palmas de Gran Canaria · Febrero · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="canarias" data-meses="1,2" data-titulo="Carnaval de Santa Cruz de Tenerife" data-inicio="2027-01-08" data-fin="2027-02-14" data-fecha="Del 8 de enero al 14 de febrero de 2027">
+          <a href="carnaval-tenerife.html">
+            <div class="card-img-wrap">
+              <img src="images/carnaval-tenerife.jpg" alt="Carnaval de Santa Cruz de Tenerife" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carnaval de Santa Cruz de Tenerife</span>
+              <span class="card-frase">Donde la calle se disfraza de libertad.</span>
+              <span class="card-meta">Tenerife · Febrero · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="region-de-murcia" data-meses="1,2" data-titulo="Carnaval de Águilas" data-inicio="2027-01-23" data-fin="2027-02-20" data-fecha="Del 23 de enero al 20 de febrero de 2027">
+          <a href="carnaval-aguilas.html">
+            <div class="card-img-wrap">
+              <img src="images/carnaval-aguilas.jpg" alt="Carnaval de Águilas" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carnaval de Águilas</span>
+              <span class="card-frase">La Musona, la Cuerva y el Carnaval de la Noche.</span>
+              <span class="card-meta">Águilas, Región de Murcia · Febrero · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="andalucia" data-meses="8" data-titulo="Carreras de Caballos en la Playa de Sanlúcar de Barrameda" data-fecha="Agosto · Dos ciclos de tres jornadas">
+          <a href="carreras-caballos-sanlucar.html">
+            <div class="card-img-wrap">
+              <img src="images/carreras-caballos-sanlucar.jpg" alt="Caballos purasangre galopando a contraluz por la orilla de la playa de Sanlúcar de Barrameda al atardecer" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carreras de Caballos en la Playa de Sanlúcar de Barrameda</span>
+              <span class="card-frase">El hipódromo más antiguo de España lo construye el mar con cada bajamar.</span>
+              <span class="card-meta">Sanlúcar de Barrameda · Cádiz · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="region-de-murcia" data-meses="9" data-titulo="Carthagineses y Romanos de Cartagena" data-inicio="2027-09-17" data-fin="2027-09-26" data-fecha="Del viernes 17 al domingo 26 de septiembre de 2027">
+          <a href="carthagineses-romanos-cartagena.html">
+            <div class="card-img-wrap">
+              <img src="images/carthagineses-romanos-cartagena.jpg" alt="Carthagineses y Romanos de Cartagena" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Carthagineses y Romanos de Cartagena</span>
+              <span class="card-frase">La ciudad que fue el centro del mundo revive la guerra que lo cambió.</span>
+              <span class="card-meta">Cartagena · Región de Murcia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="festival-musical" data-zona="comunitat-valenciana" data-meses="7" data-titulo="Certamen de Habaneras de Torrevieja" data-inicio="2027-07-25" data-fin="2027-07-31" data-fecha="Del 25 al 31 de julio de 2027">
           <a href="certamen-habaneras-polifonia-torrevieja.html">
             <div class="card-img-wrap">
               <img src="images/certamen-habaneras-polifonia-torrevieja.jpg" alt="Coro internacional actuando en el Certamen de Habaneras y Polifonía de Torrevieja" loading="lazy" />
@@ -1177,8 +323,103 @@
             </div>
           </a>
         </li>
-
-                <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="corpus-christi" data-zona="castilla-y-leon" data-meses="5" data-titulo="Corpus Christi de Béjar" data-inicio="2027-05-27" data-fin="2027-05-30" data-fecha="Domingo de Corpus · 30 de mayo de 2027">
+          <a href="corpus-christi-bejar.html">
+            <div class="card-img-wrap">
+              <img src="images/corpus-christi-bejar.jpg" alt="Hombres de Musgo escoltando la Custodia en el Corpus Christi de Béjar" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Corpus Christi de Béjar</span>
+              <span class="card-frase">La leyenda que camina junto a la Custodia.</span>
+              <span class="card-meta">Béjar · Castilla y León · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="corpus-christi" data-zona="galicia" data-meses="5" data-titulo="Corpus Christi de Ponteareas" data-inicio="2027-05-29" data-fin="2027-05-30" data-fecha="Sábado-domingo de Corpus · 29 y 30 de mayo de 2027">
+          <a href="corpus-christi-ponteareas.html">
+            <div class="card-img-wrap">
+              <img src="images/corpus-christi-ponteareas.jpg" alt="Alfombras florales cubriendo las calles de Ponteareas durante el Corpus Christi" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Corpus Christi de Ponteareas</span>
+              <span class="card-frase">Un pueblo entero dibujando con flores en la madrugada.</span>
+              <span class="card-meta">Ponteareas · Galicia · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="corpus-christi" data-zona="castilla-la-mancha" data-meses="5" data-titulo="Corpus Christi de Toledo" data-inicio="2027-05-26" data-fin="2027-05-30" data-fecha="Semana Grande · Jueves del Corpus 2026">
+          <a href="corpus-christi-toledo.html">
+            <div class="card-img-wrap">
+              <img src="images/corpus-christi-toledo.jpg" alt="La Custodia de Arfe avanzando por las calles del casco histórico de Toledo durante el Corpus Christi" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Corpus Christi de Toledo</span>
+              <span class="card-frase">Oro, incienso y siete siglos que no pasan.</span>
+              <span class="card-meta">Toledo · Castilla-La Mancha · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="asturias" data-meses="8" data-titulo="Descenso Internacional del Sella — Fiesta de las Piraguas" data-inicio="2027-08-07" data-fin="2027-08-07" data-fecha="7 de agosto de 2027 · 88ª edición">
+          <a href="descenso-sella-arriondas.html">
+            <div class="card-img-wrap">
+              <img src="images/descenso-sella-arriondas.jpg" alt="Salida masiva del Descenso Internacional del Sella desde el Puente de Arriondas con cientos de piraguas entrando al río" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Descenso Internacional del Sella — Fiesta de las Piraguas</span>
+              <span class="card-frase">El cañonazo, el silencio y 900 piraguas golpeando el agua a la vez.</span>
+              <span class="card-meta">Arriondas–Ribadesella · Asturias · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="comunitat-valenciana" data-meses="3" data-titulo="Domingo de Ramos de Elche" data-inicio="2027-03-21" data-fin="2027-03-21" data-fecha="21 de marzo de 2027 · Un solo día">
+          <a href="domingo-ramos-elche.html">
+            <div class="card-img-wrap">
+              <img src="images/domingo-ramos-elche.jpg" alt="Procesión del Domingo de Ramos de Elche con miles de personas portando palmas blancas trenzadas" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Domingo de Ramos de Elche</span>
+              <span class="card-frase">Setenta mil palmas blancas bajo el sol levantino.</span>
+              <span class="card-meta">Elche · Alicante · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="andalucia" data-meses="9" data-titulo="El Cascamorras de Baza y Guadix" data-inicio="2027-09-06" data-fin="2027-09-09" data-fecha="6 de septiembre en Baza · 9 de septiembre en Guadix">
+          <a href="cascamorras-baza-guadix.html">
+            <div class="card-img-wrap">
+              <img src="images/cascamorras-baza-guadix.jpg" alt="El Cascamorras cubierto de pintura negra abriéndose paso con su porra entre la multitud en Baza" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">El Cascamorras de Baza y Guadix</span>
+              <span class="card-frase">Lleva más de 530 años intentándolo. Nunca lo ha conseguido.</span>
+              <span class="card-meta">Baza y Guadix · Granada · Andalucía · ITI · BIC Etnológico</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-taurina" data-zona="castilla-y-leon" data-meses="8,9" data-titulo="Encierros de Cuéllar" data-inicio="2027-08-29" data-fin="2027-09-02" data-fecha="29 de agosto – 2 de septiembre de 2027">
+          <a href="encierros-cuellar.html">
+            <div class="card-img-wrap">
+              <img src="images/encierros-cuellar.jpg" alt="Garrochistas conduciendo toros por el pinar comunal de Cuéllar al amanecer durante el encierro de campo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Encierros de Cuéllar</span>
+              <span class="card-frase">Los más antiguos de España. Cinco kilómetros de pinar, El Embudo y murallas mudéjares.</span>
+              <span class="card-meta">Cuéllar · Segovia · Castilla y León · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="region-de-murcia" data-meses="4" data-titulo="Entierro de la Sardina de Murcia" data-inicio="2027-04-03" data-fin="2027-04-03" data-fecha="Sábado 3 de abril de 2027">
+          <a href="entierro-sardina-murcia.html">
+            <div class="card-img-wrap">
+              <img src="images/entierro-sardina-murcia.jpg" alt="Entierro de la Sardina de Murcia" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Entierro de la Sardina de Murcia</span>
+              <span class="card-frase">Murcia entierra la Cuaresma con dioses olímpicos, un dragón y fuego.</span>
+              <span class="card-meta">Murcia · Región de Murcia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-taurina" data-zona="comunitat-valenciana" data-meses="9" data-titulo="Entrada de Toros y Caballos de Segorbe" data-inicio="2027-09-06" data-fin="2027-09-12" data-fecha="Del 6 al 12 de septiembre de 2027">
           <a href="entrada-toros-caballos-segorbe.html">
             <div class="card-img-wrap">
               <img src="images/entrada-toros-caballos-segorbe.jpg" alt="Jinetes conduciendo toros bravos por la calle Colón de Segorbe sin barreras durante la Entrada de Toros y Caballos" loading="lazy" />
@@ -1190,73 +431,19 @@
             </div>
           </a>
         </li>
-
-                <li class="fiesta-card">
-          <a href="fira-tots-sants-cocentaina.html">
+        <li class="fiesta-card" data-tipo="carnaval" data-zona="galicia" data-meses="1,2" data-titulo="Entroido de Xinzo de Limia" data-inicio="2027-01-23" data-fin="2027-02-14" data-fecha="Del 23 de enero al 14 de febrero de 2027">
+          <a href="entroido-xinzo-de-limia.html">
             <div class="card-img-wrap">
-              <img src="images/fira-tots-sants-cocentaina.jpg" alt="Lectura del Privilegi desde el balcón del Palau Comtal de Cocentaina durante la Fira de Tots Sants" loading="lazy" />
+              <img src="images/entroido-xinzo-de-limia.jpg" alt="Entroido de Xinzo de Limia" loading="lazy" />
             </div>
             <div class="card-body">
-              <span class="card-title">Fira de Tots Sants de Cocentaina</span>
-              <span class="card-frase">Desde 1346. El mismo privilegio. El mismo balcón.</span>
-              <span class="card-meta">Cocentaina · Alicante · Comunitat Valenciana · ITI · BIC Inmaterial</span>
+              <span class="card-title">Entroido de Xinzo de Limia</span>
+              <span class="card-frase">La Pantalla y el ciclo ininterrumpido de 5 domingos.</span>
+              <span class="card-meta">Xinzo de Limia, Ourense · Febrero · Interés Turístico Internacional · BIC</span>
             </div>
           </a>
         </li>
-
-                <li class="fiesta-card">
-          <a href="fiestas-magdalena-castellon.html">
-            <div class="card-img-wrap">
-              <img src="images/fiestas-magdalena-castellon.jpg" alt="Monumento de luz de una gaiata iluminado durante el Desfile de Gaiatas de las Fiestas de la Magdalena de Castellón" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiestas de la Magdalena de Castellón</span>
-              <span class="card-frase">19 monumentos de luz y 165.000 personas subiendo al cerro donde nació la ciudad.</span>
-              <span class="card-meta">Castellón · Comunitat Valenciana · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-                <li class="fiesta-card">
-          <a href="semana-santa-badajoz.html">
-            <div class="card-img-wrap">
-              <img src="images/semana-santa-badajoz.jpg" alt="Costaleros portando un paso por las calles estrechas del Casco Antiguo de Badajoz durante la Semana Santa" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Semana Santa de Badajoz</span>
-              <span class="card-frase">Costaleros, madrugadas y el Muñidor del siglo XVI.</span>
-              <span class="card-meta">Badajoz · Extremadura · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="otono-magico-valle-ambroz.html">
-            <div class="card-img-wrap">
-              <img src="images/otono-magico-valle-ambroz.jpg" alt="Robles y castaños teñidos de ocre en los bosques del Valle del Ambroz durante el Otoño Mágico" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Otoño Mágico del Valle del Ambroz</span>
-              <span class="card-frase">Ocho pueblos, siete fines de semana y los bosques en ocre.</span>
-              <span class="card-meta">Valle del Ambroz · Cáceres · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
-          <a href="fiesta-pulpo-carballino.html">
-            <div class="card-img-wrap">
-              <img src="images/fiesta-pulpo-carballino.jpg" alt="Pulpeiras cortando pulpo á feira junto a las calderas de cobre durante la Fiesta del Pulpo de O Carballiño" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <span class="card-title">Fiesta del Pulpo de O Carballiño</span>
-              <span class="card-frase">80.000 kilos de pulpo á feira a la sombra del río Arenteiro.</span>
-              <span class="card-meta">O Carballiño · Ourense · Interés Turístico Internacional</span>
-            </div>
-          </a>
-        </li>
-
-        <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="galicia" data-meses="1" data-titulo="Feira do Cocido de Lalín" data-inicio="2027-01-31" data-fin="2027-01-31" data-fecha="Domingo 31 de enero de 2027">
           <a href="feira-cocido-lalin.html">
             <div class="card-img-wrap">
               <img src="images/feira-cocido-lalin.jpg" alt="Piezas del cocido gallego servidas en mesa durante la Feira do Cocido de Lalín" loading="lazy" />
@@ -1268,8 +455,55 @@
             </div>
           </a>
         </li>
-
-        <li class="fiesta-card">
+        <li class="fiesta-card" data-tipo="feria" data-zona="andalucia" data-meses="4" data-titulo="Feria de Abril de Sevilla" data-inicio="2027-04-13" data-fin="2027-04-18" data-fecha="Del 13 al 18 de abril de 2027">
+          <a href="feria-abril-sevilla.html">
+            <div class="card-img-wrap">
+              <img src="images/feria-abril-sevilla.jpg" alt="La Portada iluminada de la Feria de Abril de Sevilla" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Feria de Abril de Sevilla</span>
+              <span class="card-frase">El Real, la Portada y más de mil casetas junto al Guadalquivir.</span>
+              <span class="card-meta">Sevilla · Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="feria" data-zona="castilla-la-mancha" data-meses="9" data-titulo="Feria de Albacete" data-inicio="2027-09-07" data-fin="2027-09-17" data-fecha="Del 7 al 17 de septiembre de 2027">
+          <a href="feria-albacete.html">
+            <div class="card-img-wrap">
+              <img src="images/feria-albacete.jpg" alt="Recinto Ferial de Albacete, conocido popularmente como La Sartén, durante la feria" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Feria de Albacete</span>
+              <span class="card-frase">Once días en La Sartén, el único recinto ferial permanente de piedra de España.</span>
+              <span class="card-meta">Albacete, Castilla-La Mancha · Septiembre · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="feria" data-zona="andalucia" data-meses="5" data-titulo="Feria del Caballo de Jerez" data-fecha="Mayo · Ocho días, de sábado a sábado">
+          <a href="feria-caballo-jerez.html">
+            <div class="card-img-wrap">
+              <img src="images/feria-caballo-jerez.jpg" alt="Paseo de Caballos y Enganches en la Feria del Caballo de Jerez" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Feria del Caballo de Jerez</span>
+              <span class="card-frase">Casetas abiertas a todos, caballos y los vinos del Marco de Jerez.</span>
+              <span class="card-meta">Jerez de la Frontera, Cádiz · Mayo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="festival-musical" data-zona="galicia" data-meses="7" data-titulo="Festival Internacional do Mundo Celta de Ortigueira" data-inicio="2027-07-07" data-fin="2027-07-11" data-fecha="7–11 de julio de 2027 · Gratuito · 5 días">
+          <a href="festival-celta-ortigueira.html">
+            <div class="card-img-wrap">
+              <img src="images/festival-celta-ortigueira.jpg" alt="Escenario principal del Festival Internacional do Mundo Celta de Ortigueira con miles de asistentes frente al puerto deportivo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Festival Internacional do Mundo Celta de Ortigueira</span>
+              <span class="card-frase">El mayor festival de folk del mundo celta en España, gratuito desde 1978.</span>
+              <span class="card-meta">Ortigueira · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="castilla-y-leon" data-meses="1" data-titulo="Festival del Botillo de Bembibre" data-inicio="2027-01-30" data-fin="2027-01-30" data-fecha="Sábado 30 de enero de 2027">
           <a href="festival-botillo-bembibre.html">
             <div class="card-img-wrap">
               <img src="images/festival-botillo-bembibre.jpg" alt="Comensales en el pabellón de Bembibre durante el banquete del Festival de Exaltación del Botillo" loading="lazy" />
@@ -1281,8 +515,743 @@
             </div>
           </a>
         </li>
-
+        <li class="fiesta-card" data-tipo="festival-musical" data-zona="region-de-murcia" data-meses="7,8" data-titulo="Festival del Cante de las Minas" data-fecha="Once días entre finales de julio y agosto">
+          <a href="festival-cante-minas-union.html">
+            <div class="card-img-wrap">
+              <img src="images/festival-cante-minas-union.jpg" alt="Cantaor en el escenario del Antiguo Mercado de La Unión durante el Festival del Cante de las Minas" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Festival del Cante de las Minas</span>
+              <span class="card-frase">El concurso de flamenco más prestigioso del mundo. Nació en los pozos.</span>
+              <span class="card-meta">La Unión · Región de Murcia · ITI · BIC Inmaterial</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiestas-patronales" data-zona="galicia" data-meses="7" data-titulo="Festividad del Apóstol Santiago" data-inicio="2027-07-15" data-fin="2027-07-31" data-fecha="25 de julio de 2027 · Día del Apóstol">
+          <a href="festividad-apostol-santiago.html">
+            <div class="card-img-wrap">
+              <img src="images/festividad-apostol-santiago.jpg" alt="Botafumeiro en vuelo en la Catedral de Santiago de Compostela durante la Misa Solemne del 25 de julio" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Festividad del Apóstol Santiago</span>
+              <span class="card-frase">El Botafumeiro, la Ofrenda Nacional y los Fuegos del Apóstol.</span>
+              <span class="card-meta">Santiago de Compostela · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="galicia" data-meses="4" data-titulo="Fiesta de la Lamprea de Arbo" data-inicio="2027-04-23" data-fin="2027-04-25" data-fecha="Del viernes 23 al domingo 25 de abril de 2027">
+          <a href="fiesta-lamprea-arbo.html">
+            <div class="card-img-wrap">
+              <img src="images/fiesta-lamprea-arbo.jpg" alt="Lamprea a la arbense en cazuela durante la Fiesta de la Lamprea de Arbo en el río Miño" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiesta de la Lamprea de Arbo</span>
+              <span class="card-frase">El pez del Miño cocinado con su propia sangre.</span>
+              <span class="card-meta">Arbo · Pontevedra · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="andalucia" data-meses="8,9" data-titulo="Fiesta de la Vendimia de Jerez" data-fecha="Finales de agosto · Mediados de septiembre">
+          <a href="fiesta-vendimia-jerez.html">
+            <div class="card-img-wrap">
+              <img src="images/fiesta-vendimia-jerez.jpg" alt="Pisa tradicional de la uva en el Reducto de la Catedral de Jerez durante la Fiesta de la Vendimia" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiesta de la Vendimia de Jerez</span>
+              <span class="card-frase">Dieciséis días dedicados al vino, sin casetas ni caballos.</span>
+              <span class="card-meta">Jerez de la Frontera, Cádiz · Septiembre · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="galicia" data-meses="7,8" data-titulo="Fiesta del Albariño de Cambados" data-inicio="2027-07-28" data-fin="2027-08-01" data-fecha="Del miércoles 28 de julio al domingo 1 de agosto de 2027">
+          <a href="fiesta-albarino-cambados.html">
+            <div class="card-img-wrap">
+              <img src="images/fiesta-albarino-cambados.jpg" alt="Visitantes con catavinos en el paseo de A Calzada de Cambados durante la Fiesta del Albariño" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiesta del Albariño de Cambados</span>
+              <span class="card-frase">La fiesta de vino más antigua de Galicia. Una apuesta de 1953, el Capítulo Serenísimo y 150.000 visitantes.</span>
+              <span class="card-meta">Cambados · Pontevedra · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-gastronomica" data-zona="galicia" data-meses="8" data-titulo="Fiesta del Pulpo de O Carballiño" data-inicio="2027-08-08" data-fin="2027-08-08" data-fecha="domingo 8 de agosto de 2027 · Parque Municipal del Arenteiro">
+          <a href="fiesta-pulpo-carballino.html">
+            <div class="card-img-wrap">
+              <img src="images/fiesta-pulpo-carballino.jpg" alt="Pulpeiras cortando pulpo á feira junto a las calderas de cobre durante la Fiesta del Pulpo de O Carballiño" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiesta del Pulpo de O Carballiño</span>
+              <span class="card-frase">80.000 kilos de pulpo á feira a la sombra del río Arenteiro.</span>
+              <span class="card-meta">O Carballiño · Ourense · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiestas-patronales" data-zona="comunitat-valenciana" data-meses="2,3" data-titulo="Fiestas de la Magdalena de Castellón" data-inicio="2027-02-27" data-fin="2027-03-07" data-fecha="Del 27 de febrero al 7 de marzo de 2027">
+          <a href="fiestas-magdalena-castellon.html">
+            <div class="card-img-wrap">
+              <img src="images/fiestas-magdalena-castellon.jpg" alt="Monumento de luz de una gaiata iluminado durante el Desfile de Gaiatas de las Fiestas de la Magdalena de Castellón" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiestas de la Magdalena de Castellón</span>
+              <span class="card-frase">19 monumentos de luz y 165.000 personas subiendo al cerro donde nació la ciudad.</span>
+              <span class="card-meta">Castellón · Comunitat Valenciana · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiestas-patronales" data-zona="region-de-murcia" data-meses="12" data-titulo="Fiestas de la Purísima Concepción de Yecla" data-inicio="2026-12-05" data-fin="2026-12-08" data-fecha="Del 5 al 8 de diciembre de 2026">
+          <a href="purisima-concepcion-yecla.html">
+            <div class="card-img-wrap">
+              <img src="images/purisima-concepcion-yecla.jpg" alt="Fiestas de la Purísima Concepción de Yecla" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiestas de la Purísima Concepción de Yecla</span>
+              <span class="card-frase">En Yecla, la devoción huele a pólvora desde 1642.</span>
+              <span class="card-meta">Yecla · Región de Murcia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="comunidad-de-madrid" data-meses="9" data-titulo="Fiestas del Motín de Aranjuez" data-inicio="2027-09-01" data-fin="2027-09-05" data-fecha="Del 1 al 5 de septiembre de 2027">
+          <a href="motin-aranjuez.html">
+            <div class="card-img-wrap">
+              <img src="images/motin-aranjuez.jpg" alt="Vecinos de Aranjuez con antorchas durante el Asalto a la Casa de Godoy en las Fiestas del Motín de Aranjuez" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiestas del Motín de Aranjuez</span>
+              <span class="card-frase">170 vecinos recrean la noche en que el pueblo de Aranjuez cambió la historia de España.</span>
+              <span class="card-meta">Aranjuez · Comunidad de Madrid · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiestas-patronales" data-zona="aragon" data-meses="10" data-titulo="Fiestas del Pilar de Zaragoza" data-inicio="2027-10-09" data-fin="2027-10-17" data-fecha="Del 9 al 17 de octubre de 2027">
+          <a href="fiestas-pilar-zaragoza.html">
+            <div class="card-img-wrap">
+              <img src="images/fiestas-pilar-zaragoza.jpg" alt="Oferentes con traje regional depositando flores en la estructura piramidal de la Virgen del Pilar durante la Ofrenda de Flores en Zaragoza" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fiestas del Pilar de Zaragoza</span>
+              <span class="card-frase">Un manto de flores de 200 metros para la Virgen del Pilar.</span>
+              <span class="card-meta">Zaragoza · Aragón · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="feria" data-zona="comunitat-valenciana" data-meses="10,11" data-titulo="Fira de Tots Sants de Cocentaina" data-inicio="2026-10-31" data-fin="2026-11-02" data-fecha="31 de octubre al 2 de noviembre de 2026">
+          <a href="fira-tots-sants-cocentaina.html">
+            <div class="card-img-wrap">
+              <img src="images/fira-tots-sants-cocentaina.jpg" alt="Lectura del Privilegi desde el balcón del Palau Comtal de Cocentaina durante la Fira de Tots Sants" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Fira de Tots Sants de Cocentaina</span>
+              <span class="card-frase">Desde 1346. El mismo privilegio. El mismo balcón.</span>
+              <span class="card-meta">Cocentaina · Alicante · Comunitat Valenciana · ITI · BIC Inmaterial</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="cantabria" data-meses="8,9" data-titulo="Guerras Cántabras de Los Corrales de Buelna" data-inicio="2027-08-27" data-fin="2027-09-05" data-fecha="27–29 de agosto y 3–5 de septiembre de 2027">
+          <a href="guerras-cantabras-corrales-buelna.html">
+            <div class="card-img-wrap">
+              <img src="images/guerras-cantabras-corrales-buelna.jpg" alt="Combate entre cántabros y legionarios romanos en el Anfiteatro de Los Corrales de Buelna" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Guerras Cántabras de Los Corrales de Buelna</span>
+              <span class="card-frase">La única guerra que obligó a Augusto a venir en persona.</span>
+              <span class="card-meta">Los Corrales de Buelna · Cantabria · ITI · ITN</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fuego" data-zona="galicia" data-meses="6" data-titulo="Hogueras de San Juan de A Coruña" data-inicio="2027-06-23" data-fin="2027-06-24" data-fecha="Noche del 23 al 24 de junio de 2027">
+          <a href="hogueras-san-juan-coruna.html">
+            <div class="card-img-wrap">
+              <img src="images/hogueras-san-juan-coruna.jpg" alt="Cientos de cacharelas ardiendo en la playa de Riazor de A Coruña durante la Noite da Queima" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Hogueras de San Juan de A Coruña</span>
+              <span class="card-frase">La Noite da Queima más grande de Galicia. La Falla Mayor, 150.000 personas y el arco de fuego sobre el Atlántico.</span>
+              <span class="card-meta">A Coruña · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fuego" data-zona="comunitat-valenciana" data-meses="6" data-titulo="Hogueras de San Juan de Alicante" data-inicio="2027-06-20" data-fin="2027-06-29" data-fecha="Del 20 al 24 de junio de 2027">
+          <a href="hogueras-san-juan-alicante.html">
+            <div class="card-img-wrap">
+              <img src="images/hogueras-san-juan-alicante.jpg" alt="Hoguera oficial ardiendo en la Plaza del Ayuntamiento de Alicante durante la Nit de la Cremà" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Hogueras de San Juan de Alicante</span>
+              <span class="card-frase">La ciudad que planta 184 monumentos para verlos arder en una noche.</span>
+              <span class="card-meta">Alicante · Comunitat Valenciana · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="comunitat-valenciana" data-meses="8" data-titulo="La Tomatina de Buñol" data-inicio="2027-08-25" data-fin="2027-08-25" data-fecha="25 de agosto de 2027">
+          <a href="tomatina-bunol.html">
+            <div class="card-img-wrap">
+              <img src="images/tomatina1.jpg" alt="La Tomatina de Buñol" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">La Tomatina de Buñol</span>
+              <span class="card-frase">La batalla de tomates más famosa del mundo, un miércoles de agosto.</span>
+              <span class="card-meta">Valencia · Agosto · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fuego" data-zona="comunitat-valenciana" data-meses="3" data-titulo="Las Fallas de Valencia" data-inicio="2027-03-01" data-fin="2027-03-19" data-fecha="Del 1 al 19 de marzo de 2027">
+          <a href="fallas-valencia.html">
+            <div class="card-img-wrap">
+              <img src="images/fallas-valencia.jpg" alt="Las Fallas de Valencia" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Las Fallas de Valencia</span>
+              <span class="card-frase">Monumentos de arte efímero, mascletàs y la Cremà final.</span>
+              <span class="card-meta">Valencia · Marzo · Patrimonio UNESCO</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiestas-patronales" data-zona="comunitat-valenciana" data-meses="8" data-titulo="Misteri d'Elx" data-inicio="2027-08-14" data-fin="2027-08-15" data-fecha="14 y 15 de agosto">
+          <a href="misteri-elx.html">
+            <div class="card-img-wrap">
+              <img src="images/misteri-elx.jpg" alt="Descenso del Araceli, retablo aéreo dorado con ángeles cantores, desde la cúpula de la Basílica de Santa María de Elche durante el Misteri d'Elx" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Misteri d'Elx</span>
+              <span class="card-frase">La única ópera medieval de Europa que nunca dejó de sonar.</span>
+              <span class="card-meta">Elche · Alicante · UNESCO 2001</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="4" data-titulo="Moros y Cristianos de Alcoi" data-inicio="2027-04-24" data-fin="2027-04-26" data-fecha="Del 24 al 26 de abril de 2027">
+          <a href="moros-cristianos-alcoi.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-alcoi.jpg" alt="Moros y Cristianos de Alcoi" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Alcoi</span>
+              <span class="card-frase">Donde nació la tradición que se extendió por el mundo.</span>
+              <span class="card-meta">Alicante · Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="castilla-la-mancha" data-meses="4,5" data-titulo="Moros y Cristianos de Almansa" data-inicio="2027-04-30" data-fin="2027-05-06" data-fecha="Del 30 de abril al 6 de mayo de 2027">
+          <a href="moros-cristianos-almansa.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-almansa.jpg" alt="Desfile de Moros y Cristianos de Almansa con las comparsas cruzando la plaza bajo el castillo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Almansa</span>
+              <span class="card-frase">Bajo el castillo que vio cambiar la historia.</span>
+              <span class="card-meta">Almansa · Albacete · ITI 2024</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="2" data-titulo="Moros y Cristianos de Bocairent" data-inicio="2027-02-05" data-fin="2027-02-10" data-fecha="Del 5 al 10 de febrero de 2027">
+          <a href="moros-cristianos-bocairent.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-bocairent.jpg" alt="Festeros con farolillos y mantas bocairentinas en la Nit de les Caixes de Bocairent" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Bocairent</span>
+              <span class="card-frase">La fiesta del invierno, la manta y Sant Blai.</span>
+              <span class="card-meta">Bocairent · Valencia · Interés Turístico Nacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="region-de-murcia" data-meses="5" data-titulo="Moros y Cristianos de Caravaca de la Cruz" data-inicio="2027-05-01" data-fin="2027-05-05" data-fecha="Del 1 al 5 de mayo de 2027">
+          <a href="moros-cristianos-caravaca.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-caravaca.jpg" alt="Desfile de Moros y Cristianos de Caravaca de la Cruz con la Basílica-Santuario de la Vera Cruz al fondo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Caravaca de la Cruz</span>
+              <span class="card-frase">La devoción a la Vera Cruz hecha batalla, desfile y embajada.</span>
+              <span class="card-meta">Caravaca de la Cruz · Mayo · ITI 2004</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="10" data-titulo="Moros y Cristianos de Crevillent" data-inicio="2027-10-01" data-fin="2027-10-04" data-fecha="Del 1 al 4 de octubre de 2027">
+          <a href="moros-cristianos-crevillent.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-crevillent.jpg" alt="La Embajada al Rey Jaime I frente al Castillo Festero en la Plaza de la Constitución de Crevillent" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Crevillent</span>
+              <span class="card-frase">Vasallaje histórico y pacto pacífico en el Baix Vinalopó.</span>
+              <span class="card-meta">Crevillent · Alicante · ITI 2017</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="5,6" data-titulo="Moros y Cristianos de Elda" data-fecha="Cinco días entre finales de mayo y primeros de junio">
+          <a href="moros-cristianos-elda.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-elda.jpg" alt="Comparsas desfilando durante las Entradas de los Moros y Cristianos de Elda" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Elda</span>
+              <span class="card-frase">Más de 7.000 festeros y devoción a San Antón.</span>
+              <span class="card-meta">Elda · Alicante · ITI 2026</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="region-de-murcia" data-meses="9" data-titulo="Moros y Cristianos de Murcia" data-inicio="2027-09-06" data-fin="2027-09-13" data-fecha="Estimación: del 6 al 13 de septiembre de 2027">
+          <a href="moros-cristianos-murcia.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-murcia.jpg" alt="Campamento Medieval de los Moros y Cristianos de Murcia junto al río Segura" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Murcia</span>
+              <span class="card-frase">Un campamento entero junto al Segura recrea la fundación de la ciudad.</span>
+              <span class="card-meta">Murcia · Septiembre · ITI 2025</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="8" data-titulo="Moros y Cristianos de Ontinyent" data-fecha="Cinco días en la segunda mitad de agosto">
+          <a href="moros-cristianos-ontinyent.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-ontinyent.jpg" alt="Comparsas desfilando durante los Moros y Cristianos de Ontinyent" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Ontinyent</span>
+              <span class="card-frase">24 comparsas, la Bajada del Cristo y las Embajadas de 1860.</span>
+              <span class="card-meta">Ontinyent · Valencia · ITI 2025</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="moros-y-cristianos" data-zona="comunitat-valenciana" data-meses="7" data-titulo="Moros y Cristianos de Villajoyosa" data-inicio="2027-07-24" data-fin="2027-07-31" data-fecha="Del 24 al 31 de julio de 2027">
+          <a href="moros-cristianos-villajoyosa.html">
+            <div class="card-img-wrap">
+              <img src="images/moros-cristianos-villajoyosa.jpg" alt="El Desembarc de Villajoyosa con embarcaciones moras atacando la Playa Centro al amanecer" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Moros y Cristianos de Villajoyosa</span>
+              <span class="card-frase">Cuando el mar se convierte en campo de batalla.</span>
+              <span class="card-meta">Villajoyosa · Alicante · ITI 2003</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tamborada" data-zona="region-de-murcia" data-meses="3" data-titulo="Noche de los Tambores de Mula" data-inicio="2027-03-23" data-fin="2027-03-28" data-fecha="Del 23 al 28 de marzo de 2027">
+          <a href="noche-tambores-mula.html">
+            <div class="card-img-wrap">
+              <img src="images/noche-tambores-mula.jpg" alt="Tamboristas con túnica negra en la plaza del Ayuntamiento de Mula durante el arranque de la Noche de los Tambores" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Noche de los Tambores de Mula</span>
+              <span class="card-frase">Dieciséis horas. Sin parar. Sin jerarquía. Sin imágenes.</span>
+              <span class="card-meta">Mula · Región de Murcia · ITI · UNESCO Patrimonio Inmaterial</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="extremadura" data-meses="10,11,12" data-titulo="Otoño Mágico del Valle del Ambroz" data-inicio="2026-10-24" data-fin="2026-12-06" data-fecha="Octubre – diciembre de 2026 · XXIX edición">
+          <a href="otono-magico-valle-ambroz.html">
+            <div class="card-img-wrap">
+              <img src="images/otono-magico-valle-ambroz.jpg" alt="Robles y castaños teñidos de ocre en los bosques del Valle del Ambroz durante el Otoño Mágico" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Otoño Mágico del Valle del Ambroz</span>
+              <span class="card-frase">Ocho pueblos, siete fines de semana y los bosques en ocre.</span>
+              <span class="card-meta">Valle del Ambroz · Cáceres · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="galicia" data-meses="7" data-titulo="Rapa das Bestas de Sabucedo" data-inicio="2027-07-02" data-fin="2027-07-05" data-fecha="Del 2 al 5 de julio de 2027">
+          <a href="rapa-das-bestas-sabucedo.html">
+            <div class="card-img-wrap">
+              <img src="images/rapa-das-bestas-sabucedo.jpg" alt="Aloitadores inmovilizando a mano un caballo salvaje en el curro de Sabucedo durante la Rapa das Bestas" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Rapa das Bestas de Sabucedo</span>
+              <span class="card-frase">Tres aloitadores. Un caballo. Sin cuerdas.</span>
+              <span class="card-meta">Sabucedo · A Estrada · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="recreacion-historica" data-zona="galicia" data-meses="8" data-titulo="Romería Vikinga de Catoira" data-inicio="2027-08-01" data-fin="2027-08-01" data-fecha="domingo 1 de agosto de 2027">
+          <a href="romeria-vikinga-catoira.html">
+            <div class="card-img-wrap">
+              <img src="images/romeria-vikinga-catoira.jpg" alt="Drakkar con velas rojas navegando el río Ulla hacia las Torres do Oeste durante la Romería Vikinga de Catoira" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Romería Vikinga de Catoira</span>
+              <span class="card-frase">Cada agosto el Ulla vuelve a tener miedo.</span>
+              <span class="card-meta">Catoira · Pontevedra · Galicia · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tradicion-popular" data-zona="andalucia" data-meses="5" data-titulo="Romería del Rocío" data-inicio="2027-05-16" data-fin="2027-05-19" data-fecha="Domingo de Pentecostés">
+          <a href="romeria-rocio.html">
+            <div class="card-img-wrap">
+              <img src="images/romeria-rocio.jpg" alt="Carreta del Simpecado tirada por bueyes atravesando los arenales del Parque Nacional de Doñana durante la Romería del Rocío" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Romería del Rocío</span>
+              <span class="card-frase">Un millón de peregrinos hacia la Blanca Paloma.</span>
+              <span class="card-meta">El Rocío · Huelva · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="tamborada" data-zona="aragon" data-meses="3" data-titulo="Ruta del Tambor y el Bombo" data-inicio="2027-03-19" data-fin="2027-03-28">
+          <a href="ruta-tambor-bombo.html">
+            <div class="card-img-wrap">
+              <img src="images/ruta-tambor-bombo.jpg" alt="Tamborileros del Bajo Aragón en la Rompida de la Hora de la Ruta del Tambor y el Bombo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Ruta del Tambor y el Bombo</span>
+              <span class="card-frase">Cuando el Bajo Aragón rompe la hora.</span>
+              <span class="card-meta">Bajo Aragón · Teruel · ITI 2014 + Patrimonio UNESCO 2018</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="fiesta-taurina" data-zona="navarra" data-meses="7" data-titulo="Sanfermines de Pamplona" data-inicio="2027-07-06" data-fin="2027-07-14" data-fecha="Del 6 al 14 de julio de 2027">
+          <a href="san-fermin.html">
+            <div class="card-img-wrap">
+              <img src="images/san-fermin.jpg" alt="Sanfermines de Pamplona" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Sanfermines de Pamplona</span>
+              <span class="card-frase">Encierro, Chupinazo y 16 peñas con sus txarangas.</span>
+              <span class="card-meta">Navarra · Julio · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="extremadura" data-meses="3" data-titulo="Semana Santa de Badajoz" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-badajoz.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-badajoz.jpg" alt="Costaleros portando un paso por las calles estrechas del Casco Antiguo de Badajoz durante la Semana Santa" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Badajoz</span>
+              <span class="card-frase">Costaleros, madrugadas y el Muñidor del siglo XVI.</span>
+              <span class="card-meta">Badajoz · Extremadura · Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="andalucia" data-meses="3" data-titulo="Semana Santa de Baena" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-baena.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-baena.jpg" alt="Turbas de Judíos Coliblancos y Colinegros en la Semana Santa de Baena" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Baena</span>
+              <span class="card-frase">El pueblo que reza a golpe de tambor.</span>
+              <span class="card-meta">Córdoba · Andalucía · ITI 2025</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="region-de-murcia" data-meses="3" data-titulo="Semana Santa de Cartagena" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-cartagena.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-cartagena.jpg" alt="Semana Santa de Cartagena" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Cartagena</span>
+              <span class="card-frase">Diez días de orden, luces y tradición militar en el Mediterráneo.</span>
+              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="region-de-murcia" data-meses="3" data-titulo="Semana Santa de Cieza" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-cieza.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-cieza.jpg" alt="El Tercio Romano de los Armaos en la Semana Santa de Cieza" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Cieza</span>
+              <span class="card-frase">Pasión en la calle, escultura levantina y el eco de los Armaos.</span>
+              <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="comunitat-valenciana" data-meses="3" data-titulo="Semana Santa de Crevillent" data-inicio="2027-03-20" data-fin="2027-03-28" data-fecha="Del 20 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-crevillent.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-crevillent.jpg" alt="Semana Santa de Crevillent" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Crevillent</span>
+              <span class="card-frase">El genio de Benlliure mecido por el canto polifónico.</span>
+              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-la-mancha" data-meses="3" data-titulo="Semana Santa de Cuenca" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-cuenca.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-cuenca.jpg" alt="Semana Santa de Cuenca" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Cuenca</span>
+              <span class="card-frase">Pasión vertical entre hoces, silencios y tambores roncos.</span>
+              <span class="card-meta">Cuenca · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="extremadura" data-meses="3" data-titulo="Semana Santa de Cáceres" data-inicio="2027-03-20" data-fin="2027-03-28" data-fecha="Del 20 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-caceres.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-caceres.jpg" alt="Procesión nocturna por las calles medievales de la Ciudad Monumental de Cáceres" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Cáceres</span>
+              <span class="card-frase">Piedra, silencio y cera en la penumbra.</span>
+              <span class="card-meta">Cáceres · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="galicia" data-meses="3" data-titulo="Semana Santa de Ferrol" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-ferrol.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-ferrol.jpg" alt="Procesión nocturna de Os Caladiños en las calles de A Magdalena de Ferrol" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Ferrol</span>
+              <span class="card-frase">Sobriedad, mar y silencio en las calles ilustradas.</span>
+              <span class="card-meta">A Coruña · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="andalucia" data-meses="3" data-titulo="Semana Santa de Granada" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-granada.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-granada.jpg" alt="Semana Santa de Granada" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Granada</span>
+              <span class="card-frase">Pasión entre el Albaicín, el Sacromonte y la Alhambra.</span>
+              <span class="card-meta">Granada · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="region-de-murcia" data-meses="3" data-titulo="Semana Santa de Jumilla" data-inicio="2027-03-20" data-fin="2027-03-28" data-fecha="Del 20 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-jumilla.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-jumilla.jpg" alt="Semana Santa de Jumilla" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Jumilla</span>
+              <span class="card-frase">Más de seiscientos años de fe entre túnicas y viñedos.</span>
+              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de León" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-leon.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-leon.jpg" alt="Semana Santa de León" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de León</span>
+              <span class="card-frase">El latido del tambor y el orgullo del papón.</span>
+              <span class="card-meta">León · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="region-de-murcia" data-meses="3" data-titulo="Semana Santa de Lorca" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-lorca.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-lorca.jpg" alt="Semana Santa de Lorca" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Lorca</span>
+              <span class="card-frase">Donde el bordado se hace piel y la historia galopa.</span>
+              <span class="card-meta">Murcia · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Medina de Rioseco" data-inicio="2027-03-20" data-fin="2027-03-28" data-fecha="Del 20 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-medina-de-rioseco.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-medina-de-rioseco.jpg" alt="Paso a hombros por las calles empinadas de Medina de Rioseco durante la Semana Santa" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Medina de Rioseco</span>
+              <span class="card-frase">Madera al hombro, silencio y emoción castellana.</span>
+              <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Medina del Campo" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-medina-del-campo.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-medina-del-campo.jpg" alt="Procesión nocturna en la Semana Santa de Medina del Campo con el Castillo de la Mota al fondo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Medina del Campo</span>
+              <span class="card-frase">Silencio castellano bajo cera y piedra antigua.</span>
+              <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="region-de-murcia" data-meses="3" data-titulo="Semana Santa de Murcia" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-murcia.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-murcia.jpg" alt="Semana Santa de Murcia" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Murcia</span>
+              <span class="card-frase">El genio de Salzillo esculpido en la tradición huertana.</span>
+              <span class="card-meta">Murcia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="andalucia" data-meses="3" data-titulo="Semana Santa de Málaga" data-inicio="2027-03-21" data-fin="2027-03-28">
+          <a href="semana-santa-malaga.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-malaga.jpg" alt="Semana Santa de Málaga" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Málaga</span>
+              <span class="card-frase">Fe, arte y emoción en cada trono.</span>
+              <span class="card-meta">Málaga · Marzo-Abril · Patrimonio Cultural</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="extremadura" data-meses="3" data-titulo="Semana Santa de Mérida" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-merida.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-merida.jpg" alt="Vía Crucis en el Anfiteatro Romano de Mérida durante la Semana Santa" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Mérida</span>
+              <span class="card-frase">La Pasión de Cristo sobre la piedra de Roma.</span>
+              <span class="card-meta">Badajoz · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="comunitat-valenciana" data-meses="3" data-titulo="Semana Santa de Orihuela" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-orihuela.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-orihuela.jpg" alt="Semana Santa de Orihuela" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Orihuela</span>
+              <span class="card-frase">Un museo en la calle bañado de incienso y fervor.</span>
+              <span class="card-meta">Alicante · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Palencia" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-palencia.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-palencia.jpg" alt="Semana Santa de Palencia" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Palencia</span>
+              <span class="card-frase">Silencio roto por el lamento del Tararú.</span>
+              <span class="card-meta">Palencia · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Salamanca" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-salamanca.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-salamanca.jpg" alt="Semana Santa de Salamanca" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Salamanca</span>
+              <span class="card-frase">Piedra viva, silencio estremecedor y pasión bajo el cielo charro.</span>
+              <span class="card-meta">Salamanca · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="andalucia" data-meses="3" data-titulo="Semana Santa de Sevilla" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-sevilla.html">
+            <div class="card-img-wrap">
+              <img src="images/sevilla-santa1.jpg" alt="Semana Santa de Sevilla" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Sevilla</span>
+              <span class="card-frase">Donde la fe se hace arte y el arte sale a la calle.</span>
+              <span class="card-meta">Sevilla · Marzo-Abril · Patrimonio UNESCO</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-la-mancha" data-meses="3" data-titulo="Semana Santa de Toledo" data-inicio="2027-03-21" data-fin="2027-03-28">
+          <a href="semana-santa-toledo.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-toledo.jpg" alt="Procesión nocturna bajo los cobertizos medievales de Toledo durante la Semana Santa" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Toledo</span>
+              <span class="card-frase">El silencio bajo los cobertizos.</span>
+              <span class="card-meta">Toledo · Castilla-La Mancha · ITI 2014</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Valladolid" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-valladolid.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-valladolid.jpg" alt="Semana Santa de Valladolid" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Valladolid</span>
+              <span class="card-frase">Un museo de madera policromada bajo el cielo de Castilla.</span>
+              <span class="card-meta">Valladolid · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="galicia" data-meses="3" data-titulo="Semana Santa de Viveiro" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-viveiro.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-viveiro.jpg" alt="Procesión de Os Caladiños en Viveiro con fieles portando velas en silencio por el casco histórico" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Viveiro</span>
+              <span class="card-frase">Tambores de pasión y silencio en A Mariña.</span>
+              <span class="card-meta">Lugo · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Zamora" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-zamora.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-zamora.jpg" alt="Cofrades de las Capas Pardas con linterna en las calles románicas de Zamora" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Zamora</span>
+              <span class="card-frase">Un museo románico donde el silencio, el frío y el canto desgarran el alma.</span>
+              <span class="card-meta">Zamora · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="aragon" data-meses="3" data-titulo="Semana Santa de Zaragoza" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-zaragoza.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-zaragoza.jpg" alt="Cofrades con bombos y tambores en la Semana Santa de Zaragoza" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Zaragoza</span>
+              <span class="card-frase">Cuatro mil metros de pasión a golpe de bombo y tambor.</span>
+              <span class="card-meta">Zaragoza · Marzo · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-y-leon" data-meses="3" data-titulo="Semana Santa de Ávila" data-inicio="2027-03-21" data-fin="2027-03-28" data-fecha="Del 21 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-avila.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-avila.jpg" alt="Semana Santa de Ávila" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa de Ávila</span>
+              <span class="card-frase">Piedra, silencio y fe al abrigo de la muralla medieval.</span>
+              <span class="card-meta">Ávila · Marzo-Abril · Fiesta de Interés Turístico Internacional</span>
+            </div>
+          </a>
+        </li>
+        <li class="fiesta-card" data-tipo="semana-santa" data-zona="castilla-la-mancha" data-meses="3" data-titulo="Semana Santa y Tamborada de Hellín" data-inicio="2027-03-19" data-fin="2027-03-28" data-fecha="Del 19 de marzo al 28 de marzo de 2027">
+          <a href="semana-santa-hellin.html">
+            <div class="card-img-wrap">
+              <img src="images/semana-santa-hellin.jpg" alt="Tamborada de Hellín" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="card-title">Semana Santa y Tamborada de Hellín</span>
+              <span class="card-frase">Donde la fe camina a hombros y el suelo retumba.</span>
+              <span class="card-meta">Hellín · Albacete · ITI + UNESCO</span>
+            </div>
+          </a>
+        </li>
       </ul>
+      <p class="sin-resultados" id="sin-resultados" hidden>
+        No hay ninguna fiesta que cumpla las tres condiciones a la vez.
+        Prueba a soltar alguna.
+      </p>
     </section>
 
   </main>
@@ -1297,6 +1266,143 @@
       </p>
     </div>
   </footer>
+
+
+  <script>
+  (function () {
+    'use strict';
+    var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio',
+                 'agosto','septiembre','octubre','noviembre','diciembre'];
+
+    var tarjetas = Array.prototype.slice.call(
+      document.querySelectorAll('.fiestas-grid .fiesta-card'));
+    var selTipo = document.getElementById('f-tipo');
+    var selMes  = document.getElementById('f-mes');
+    var selZona = document.getElementById('f-zona');
+    var cuenta  = document.getElementById('resultado-cuenta');
+    var vacio   = document.getElementById('sin-resultados');
+
+    /* ---- filtro ---- */
+    function filtrar(actualizarUrl) {
+      var tipo = selTipo.value, mes = selMes.value, zona = selZona.value;
+      var vistas = 0;
+      tarjetas.forEach(function (li) {
+        var meses = (li.getAttribute('data-meses') || '').split(',');
+        var ok = (!tipo || li.getAttribute('data-tipo') === tipo) &&
+                 (!zona || li.getAttribute('data-zona') === zona) &&
+                 (!mes  || meses.indexOf(mes) !== -1);
+        li.hidden = !ok;
+        if (ok) { vistas++; }
+      });
+
+      var partes = [];
+      if (tipo) { partes.push(selTipo.options[selTipo.selectedIndex].text.toLowerCase()); }
+      if (zona) { partes.push('en ' + selZona.options[selZona.selectedIndex].text); }
+      if (mes)  { partes.push('en ' + MESES[parseInt(mes, 10) - 1]); }
+      cuenta.textContent = vistas === 0
+        ? ''
+        : (vistas === 1 ? '1 fiesta' : vistas + ' fiestas') +
+          (partes.length ? ' · ' + partes.join(' ') : '');
+      vacio.hidden = vistas !== 0;
+
+      if (actualizarUrl && window.history && window.history.replaceState) {
+        var q = [];
+        if (tipo) { q.push('tipo=' + tipo); }
+        if (mes)  { q.push('mes=' + mes); }
+        if (zona) { q.push('zona=' + zona); }
+        window.history.replaceState(null, '',
+          window.location.pathname + (q.length ? '?' + q.join('&') : ''));
+      }
+    }
+
+    /* ---- estado inicial desde la url, para que las etiquetas de las
+           fichas puedan enlazar aqui: index.html?tipo=semana-santa ---- */
+    function ponerSiExiste(sel, valor) {
+      if (!valor) { return false; }
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === valor) { sel.selectedIndex = i; return true; }
+      }
+      return false;
+    }
+    var p = new URLSearchParams(window.location.search);
+    /* Los tres se evaluan SIEMPRE: con || el cortocircuito dejaba sin
+       rellenar los selects que vinieran despues del primero que acertara,
+       y entonces ?tipo=carnaval&zona=andalucia ignoraba la zona. */
+    var puestoTipo = ponerSiExiste(selTipo, p.get('tipo'));
+    var puestoMes  = ponerSiExiste(selMes,  p.get('mes'));
+    var puestoZona = ponerSiExiste(selZona, p.get('zona'));
+    var hayFiltro  = puestoTipo || puestoMes || puestoZona;
+
+    [selTipo, selMes, selZona].forEach(function (s) {
+      s.addEventListener('change', function () { filtrar(true); });
+    });
+    document.getElementById('f-reset').addEventListener('click', function () {
+      selTipo.selectedIndex = 0; selMes.selectedIndex = 0; selZona.selectedIndex = 0;
+      filtrar(true);
+    });
+    filtrar(false);
+    if (hayFiltro) {
+      document.getElementById('fiestas').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ---- proximas celebraciones: las escoge el navegador con su propio
+           reloj, asi la tira no se queda vieja sola ---- */
+    var hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    var proximas = tarjetas
+      .filter(function (li) { return li.getAttribute('data-fin'); })
+      .map(function (li) {
+        return {
+          li: li,
+          inicio: new Date(li.getAttribute('data-inicio') + 'T00:00:00'),
+          fin: new Date(li.getAttribute('data-fin') + 'T00:00:00')
+        };
+      })
+      .filter(function (o) { return o.fin >= hoy; })
+      .sort(function (a, b) { return a.inicio - b.inicio; })
+      .slice(0, 6);
+
+    /* El texto visible de la ficha es demasiado largo para una pildora
+       ("Octubre - diciembre de 2026 . XXIX edicion") y partia la tira en
+       dos lineas. Se arma una fecha corta desde las ISO. */
+    var ABREV = ['ene','feb','mar','abr','may','jun',
+                 'jul','ago','sep','oct','nov','dic'];
+    function fechaCorta(a, b) {
+      var ini = a.getDate() + ' ' + ABREV[a.getMonth()];
+      if (a.getTime() === b.getTime()) { return ini; }
+      if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) {
+        return a.getDate() + '–' + b.getDate() + ' ' + ABREV[b.getMonth()];
+      }
+      return ini + ' – ' + b.getDate() + ' ' + ABREV[b.getMonth()];
+    }
+
+    if (proximas.length >= 3) {
+      var tira = document.getElementById('proximas-tira');
+      proximas.forEach(function (o) {
+        var li = o.li;
+        var enCurso = o.inicio <= hoy;
+        var fecha = li.getAttribute('data-fecha') || '';
+        var el = document.createElement('li');
+        el.className = 'proxima-card';
+        var a = document.createElement('a');
+        a.href = li.querySelector('a').getAttribute('href');
+        var badge = document.createElement('span');
+        badge.className = 'proxima-badge' + (enCurso ? ' en-curso' : '');
+        badge.textContent = enCurso ? 'Se está celebrando' : fechaCorta(o.inicio, o.fin);
+        var tit = document.createElement('span');
+        tit.className = 'proxima-titulo';
+        tit.textContent = li.getAttribute('data-titulo');
+        var meta = document.createElement('span');
+        meta.className = 'proxima-meta';
+        meta.textContent = li.querySelector('.card-meta').textContent;
+        a.appendChild(badge); a.appendChild(tit); a.appendChild(meta);
+        el.appendChild(a);
+        tira.appendChild(el);
+      });
+      document.getElementById('calendario').hidden = false;
+    }
+  })();
+  </script>
 
 </body>
 </html>
