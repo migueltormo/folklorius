@@ -18,7 +18,8 @@
   --shadow-hover: 0 6px 24px rgba(0,0,0,0.14);
   --radius:       10px;
   --radius-sm:    6px;
-  --max-width:    900px;
+  --max-width:    900px;   /* leer: fichas y texto largo */
+  --max-wide:     1200px;  /* explorar: catálogo y filtros, solo en la home */
   --font-body:    'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
 }
@@ -499,8 +500,9 @@ dl.faq dd {
 .explorador-intro {
   font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 620px;
+  max-width: 64ch;
   margin: 0 auto 28px;
+  text-align: left;
 }
 .explorador-form {
   display: grid;
@@ -658,4 +660,32 @@ dl.faq dd {
   .explorador-form { grid-template-columns: 1fr; }
   .explorador-reset { width: 100%; }
   .proximas-cabecera { flex-direction: column; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DOS ANCHOS
+   900 para leer una ficha, 1200 para explorar el catálogo.
+   Solo afecta a la home (body.home); las 90 fichas no se tocan.
+   ══════════════════════════════════════════════════════════════ */
+.home .header-inner,
+.home .explorador,
+.home .proximas,
+.home .fiestas-section { max-width: var(--max-wide); }
+
+/* La portada sí se lee de un vistazo y aguanta el centrado;
+   los párrafos de varias líneas, no. */
+.home .proximas-tira { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* El titular y la entradilla se alinean con el borde del formulario:
+   con el bloque centrado, el margen izquierdo del párrafo no coincidía
+   con nada y se notaba. */
+.home .explorador { text-align: left; }
+.home .explorador-intro { margin: 0 0 28px; }
+
+/* «El catálogo» iba centrado y «Lo próximo» a la izquierda: dos titulares
+   de sección seguidos con alineaciones distintas. Se unifican. */
+.home .fiestas-section h2 { text-align: left; }
+
+@media (max-width: 680px) {
+  .home .explorador-intro { text-align: left; }
 }
