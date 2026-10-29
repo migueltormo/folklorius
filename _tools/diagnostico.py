@@ -484,8 +484,7 @@ def diag(path):
 
     # Anti-repetición de CIFRAS: el mismo número contado en dos bloques es el
     # caso típico de incoherencia (duración, número de pasos, de cofradías).
-    # Las frases repetidas no se miden aquí: dan falsos positivos con los
-    # nombres oficiales de las corporaciones y son trabajo de lectura.
+    # Las frases repetidas se miden más abajo, filtrando los nombres propios.
     bloques = re.split(r"(?is)<h2[^>]*>", c)
     titulos = ["cabecera"] + [visible_text(b.split("</h2>")[0]).strip()[:28]
                               for b in bloques[1:]]
@@ -499,6 +498,52 @@ def diag(path):
         if len(tits) > 1:
             add("ESTILO", "cifra «%s» repetida en %d bloques: %s"
                 % (clave, len(tits), " · ".join(sorted(tits))))
+
+    # Anti-repetición de FRASES: la misma secuencia de 7 palabras en dos
+    # bloques distintos. Es lo que el barrido de cifras no ve, porque son
+    # frases y no números, y es donde se escondían las cinco duplicaciones de
+    # Zaragoza (el bloque de fechas calcado en la FAQ, la tarjeta repitiendo
+    # ¿En qué consiste?, el listado repitiendo la tabla).
+    # Se descartan las secuencias que son nombre propio (tres o más palabras
+    # en mayúscula), porque las denominaciones oficiales de las corporaciones
+    # tienen que repetirse tal cual.
+    N = 8
+    pals = {}
+    for ti, b in zip(titulos, bloques):
+        if ti in pals:
+            continue
+        pals[ti] = re.findall(r"[\wÁÉÍÓÚÜÑáéíóúüñ']+", visible_text(b))
+
+    def ngr(ws):
+        return {tuple(w.lower() for w in ws[k:k + N]) for k in range(len(ws) - N + 1)
+                if sum(1 for p in ws[k:k + N] if p[:1].isupper()) < 3}
+
+    idx = {ti: ngr(ws) for ti, ws in pals.items()}
+    nombres = sorted(pals)
+    hall = []
+    for a in range(len(nombres)):
+        for b2 in range(a + 1, len(nombres)):
+            ta, tb = nombres[a], nombres[b2]
+            comun = idx[ta] & idx[tb]
+            if not comun:
+                continue
+            ws = pals[ta]
+            k = 0
+            while k <= len(ws) - N:
+                if tuple(w.lower() for w in ws[k:k + N]) in comun:
+                    fin = k + N
+                    # se alarga mientras el n-grama siguiente también sea común:
+                    # así una duplicación larga se informa una vez, no N veces
+                    while (fin - N + 1 <= len(ws) - N
+                           and tuple(w.lower() for w in ws[fin - N + 1:fin + 1]) in comun):
+                        fin += 1
+                    hall.append((fin - k, ta, tb, " ".join(ws[k:fin])))
+                    k = fin
+                else:
+                    k += 1
+    for largo, ta, tb, fr in sorted(hall, reverse=True)[:12]:
+        add("ESTILO", "frase de %d palabras repetida en %s y %s: «%s»"
+            % (largo, ta, tb, fr[:110]))
 
     return name, out
 
