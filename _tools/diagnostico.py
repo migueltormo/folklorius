@@ -100,7 +100,10 @@ ORDENES = [r"\bRespeta\b", r"\bRespete\b", r"\bMantén\b", r"\bMantenga\b", r"\b
            # prohibiciones impersonales: no son imperativos y se colaban
            r"\bno se toca", r"\bno se cruza", r"\btampoco se cruza", r"\btampoco se toca",
            r"\bno se pisa", r"\bno se entra", r"\bestá prohibido", r"\bno está permitido",
-           r"\bNo tocar", r"\bno interferir", r"\bes la norma\b", r"\bhay que respetar\b"]
+           r"\bNo tocar", r"\bno interferir", r"\bes la norma\b", r"\bhay que respetar\b",
+           # imperativos que se colaron en León y Cáceres pasando el filtro
+           r"\bAdapta\b", r"\bAsume\b", r"\bConsulta\b", r"\bLlega con\b",
+           r"\bSit[úu]ate\b", r"\bPrioriza\b", r"\bPlanifica\b", r"\bCalza\b"]
 
 # ---------------------------------------------------------------- diagnóstico
 
@@ -355,6 +358,92 @@ def diag(path):
             ctx = txt[max(0, m.start() - 55):m.end() + 55]
             add("LEXICO", "«%s» → …%s…" % (w, ctx))
 
+    # ---- 8. ESTILO — pasos 11 y 12 del protocolo.
+    # No cuenta para el total de avisos: son hallazgos para leer en contexto,
+    # no fallos automáticos. Así la calibración de Orihuela sigue siendo 0.
+    ciudad = re.sub(r"^(semana-santa|carnaval|moros-cristianos|fiesta)-", "",
+                    name.replace(".html", "")).replace("-", " ")
+
+    # La esencia: apertura y extensión
+    mh = re.search(r'(?is)<h2[^>]*>[^<]*esencia[^<]*</h2>(.*?)<h2', c)
+    if mh:
+        ese = visible_text(mh.group(1)).strip()
+        n_ese = len(ese.split())
+        add("INFO", "La esencia: %d palabras" % n_ese)
+        if not 60 <= n_ese <= 95:
+            add("ESTILO", "La esencia con %d palabras (norma 60-90)" % n_ese)
+        primera = re.split(r"(?<=[.!?])\s", ese)[0] if ese else ""
+        pl = strip_accents(primera.lower())
+        if ciudad and strip_accents(ciudad.lower()).split()[0] in pl:
+            add("ESTILO", "La esencia abre nombrando la ciudad: «%s»" % primera[:110])
+        for olor in ("azahar", "incienso", "cera", "polvora", "vino", "tierra mojada", "huele", "olor", "aroma"):
+            if olor in pl:
+                add("ESTILO", "La esencia abre con olor («%s»): «%s»" % (olor, primera[:100]))
+                break
+        for cli in ("te transporta", "retrocede siglos", "el tiempo se detiene",
+                    "viajar al pasado", "como si el tiempo"):
+            if cli in pl:
+                add("ESTILO", "La esencia abre con cliché temporal: «%s»" % primera[:100])
+                break
+
+    # Bloque ¿En qué consiste? — norma del 28-10-2026
+    iq = c.find('id="que-es"')
+    if iq < 0:
+        add("ESTILO", 'sin ancla id="que-es" en el h2 del bloque')
+    else:
+        fin = c.find("<h2", iq + 10)
+        nota = c.find('<p class="nota-grid">', iq)
+        if 0 < nota < fin:
+            fin = nota
+        blk = c[iq:fin]
+        nq = len(visible_text(blk).split())
+        npar = len(re.findall(r"<p\b", blk))
+        add("INFO", "¿En qué consiste?: %d palabras, %d párrafos" % (nq, npar))
+        if not 350 <= nq <= 470:
+            add("ESTILO", "¿En qué consiste? con %d palabras (norma 350-450)" % nq)
+        if npar != 4:
+            add("ESTILO", "¿En qué consiste? con %d párrafos (deben ser 4)" % npar)
+
+    # Patrones del humanizer que la lista de léxico no atrapa
+    ESTILO_PAT = [
+        (r"\bact[úu]a (?:como|de)\b", "copula avoidance"),
+        (r"\bse erige\b|\bconstituye un\b|\bfunciona como\b", "copula avoidance"),
+        (r"no es (?:solo |solamente |\w+ )?[^.]{3,70}?\bsino\b", "negativo paralelo X-no-Y"),
+        (r"\bno [a-záéíóúñ]+: [a-záéíóúñ]+", "negativo paralelo con dos puntos"),
+        (r", no (?:al lado|a su lado|su borde|el recinto|un espectáculo|el protagonista)\b", "X-no-Y de cierre"),
+        (r"\bning[úu]n otro\b|\bning[úu]na otra\b|\bno tiene (?:r[ée]plica|equivalente|paralelo)\b",
+         "exclusividad sin fuente"),
+        (r"\bsolo se entiende\b|\bsolo existe en\b|\b[úu]nico en el mundo\b|\b[úu]nica en el mundo\b",
+         "exclusividad sin fuente"),
+        (r"\b(?:marcando|destacando|reflejando|potenciando|inaugurando|subrayando|simbolizando)\b",
+         "gerundio de profundidad falsa"),
+        (r"\binmens[oa]\b|\bfen[óo]meno en s[íi]\b|\bmarca un hito\b|\btrasciende\b",
+         "inflación de importancia"),
+        (r"\bm[áa]s (?:antigua|solemne|impresionante|emblem[áa]tic[oa]s?|important[es]*|caracter[íi]stic[oa]s?) (?:de|del) (?:toda |la |España|Europa|Extremadura|Castilla)",
+         "superlativo territorial"),
+    ]
+    for pat, etiq in ESTILO_PAT:
+        for m in re.finditer(pat, txt, re.I):
+            add("ESTILO", "%s → …%s…" % (etiq, txt[max(0, m.start() - 50):m.end() + 50]))
+
+    # Anti-repetición de CIFRAS: el mismo número contado en dos bloques es el
+    # caso típico de incoherencia (duración, número de pasos, de cofradías).
+    # Las frases repetidas no se miden aquí: dan falsos positivos con los
+    # nombres oficiales de las corporaciones y son trabajo de lectura.
+    bloques = re.split(r"(?is)<h2[^>]*>", c)
+    titulos = ["cabecera"] + [visible_text(b.split("</h2>")[0]).strip()[:28]
+                              for b in bloques[1:]]
+    donde = {}
+    for ti, b in zip(titulos, bloques):
+        vb = visible_text(b)
+        for m in re.finditer(r"\b(\d{1,3}(?:\.\d{3})?)\s+(cofrad|hermandad|paso|procesi|d[íi]as?|bracero|papon|costaler|estacion|desfil)", vb, re.I):
+            clave = "%s %s" % (m.group(1), m.group(2).lower())
+            donde.setdefault(clave, set()).add(ti)
+    for clave, tits in sorted(donde.items()):
+        if len(tits) > 1:
+            add("ESTILO", "cifra «%s» repetida en %d bloques: %s"
+                % (clave, len(tits), " · ".join(sorted(tits))))
+
     return name, out
 
 
@@ -365,7 +454,8 @@ def main(paths):
         print("=" * 72)
         print(name)
         print("=" * 72)
-        orden = ["MARCADO", "INTEGRIDAD", "JSONLD", "FECHAS", "META", "BLOQUES", "LEXICO", "INFO"]
+        orden = ["MARCADO", "INTEGRIDAD", "JSONLD", "FECHAS", "META", "BLOQUES",
+                 "LEXICO", "ESTILO", "INFO"]
         for sev in orden:
             items = [m for s, m in out if s == sev]
             if not items:
@@ -373,8 +463,10 @@ def main(paths):
             print("\n[%s] %d" % (sev, len(items)))
             for i in items:
                 print("  - " + i)
-        problemas = [1 for s, _ in out if s not in ("INFO",)]
-        print("\n>>> %d avisos (sin contar INFO)\n" % len(problemas))
+        problemas = [1 for s, _ in out if s not in ("INFO", "ESTILO")]
+        estilo = [1 for s, _ in out if s == "ESTILO"]
+        print("\n>>> %d avisos (sin contar INFO) · %d hallazgos de ESTILO para leer en contexto\n"
+              % (len(problemas), len(estilo)))
 
 
 if __name__ == "__main__":
