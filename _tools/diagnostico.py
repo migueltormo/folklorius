@@ -73,7 +73,8 @@ MESES = {"enero":1,"febrero":2,"marzo":3,"abril":4,"mayo":5,"junio":6,"julio":7,
 DIAS = {"lunes":0,"martes":1,"miercoles":2,"jueves":3,"viernes":4,"sabado":5,"domingo":6}
 
 LITURGICAS = {
-    "viernes de dolores": -9, "sabado de pasion": -8, "domingo de ramos": -7,
+    "viernes de dolores": -9, "viernes de pasion": -9,
+    "sabado de pasion": -8, "domingo de ramos": -7,
     "lunes santo": -6, "martes santo": -5, "miercoles santo": -4,
     "jueves santo": -3, "viernes santo": -2, "sabado santo": -1,
     "sabado de gloria": -1, "domingo de resurreccion": 0, "domingo de pascua": 0,
