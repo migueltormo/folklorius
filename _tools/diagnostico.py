@@ -309,6 +309,42 @@ def diag(path):
         if q not in preg_body:
             add("BLOQUES", "pregunta del FAQPage ausente del cuerpo: %s" % q[:90])
 
+    # Las dos capas de la FAQ (cuerpo y FAQPage) tienen que dar la MISMA
+    # respuesta. En Zaragoza daban respuestas distintas en dos preguntas, y eso
+    # no lo veía nadie porque el JSON-LD no se lee en pantalla.
+    def norm(t):
+        t = visible_text(t).replace("«", '"').replace("»", '"')
+        return re.sub(r"\s+", " ", t).strip().strip('"').rstrip(".")
+    # Una capa puede estar resumida; lo que no puede es decir OTRA cosa. Se
+    # comparan los datos duros (cifras y nombres propios) y el tamaño.
+    def duros(t):
+        return set(re.findall(r"\d[\d.,:]*", t)) | {
+            w for w in re.findall(r"\b[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{3,}", t)
+            if w not in ("Procesión", "Semana", "Santa", "Santo", "Jueves",
+                         "Viernes", "Miércoles", "Martes", "Lunes", "Domingo",
+                         "Sábado", "Para", "Desde", "Todas", "Todos", "Cada")}
+    pares_body = re.findall(r"(?is)<dt\b[^>]*>(.*?)</dt>\s*<dd\b[^>]*>(.*?)</dd>", faq_blk)
+    resp_body = {norm(q): norm(a) for q, a in pares_body}
+    for d in jsons:
+        if "FAQPage" not in str(d.get("@type", "")):
+            continue
+        for q in d.get("mainEntity", []):
+            qn = norm(q.get("name", ""))
+            ld = norm(q.get("acceptedAnswer", {}).get("text", ""))
+            if qn not in resp_body:
+                continue
+            cu = resp_body[qn]
+            dif = duros(cu) ^ duros(ld)
+            corto = min(len(cu), len(ld)) / max(len(cu), len(ld), 1)
+            # Va a ESTILO y no a AVISO: una capa resumida es legítima y la
+            # referencia (Orihuela) las tiene. Lo que hay que leer en contexto
+            # es si la diferencia es un resumen o una respuesta distinta.
+            if dif:
+                add("ESTILO", "cuerpo y FAQPage no coinciden en «%s»: %s"
+                    % (qn[:50], ", ".join(sorted(dif))[:80]))
+            elif corto < 0.6:
+                add("ESTILO", "cuerpo y FAQPage de tamaño muy distinto en «%s»" % qn[:50])
+
     fest = find_block(c, "festero", "dl")
     if not fest:
         add("BLOQUES", "sin dl.festero")
@@ -432,6 +468,15 @@ def diag(path):
          "inflación de importancia"),
         (r"\bm[áa]s (?:antigua|solemne|impresionante|emblem[áa]tic[oa]s?|important[es]*|caracter[íi]stic[oa]s?) (?:de|del) (?:toda |la |España|Europa|Extremadura|Castilla)",
          "superlativo territorial"),
+        # Zaragoza traía estos y ninguna plantilla los veía.
+        (r"\buno de los \w+ m[áa]s\b|\buna de las \w+ m[áa]s\b",
+         "superlativo de folleto"),
+        (r"\bcentro absoluto\b|\bmomento cumbre\b|\bplena intensidad\b|\bcinematogr[áa]fic[oa]s?\b|\bpunto [áa]lgido\b",
+         "inflación de importancia"),
+        (r"\b(?:percusi[óo]n|emoci[óo]n|devoci[óo]n|tradici[óo]n|silencio) pur[oa]\b",
+         "lenguaje de folleto"),
+        (r"\bininterrumpid[oa]s? m[áa]s antigu[oa]\b|\bm[áa]s singulares? de\b",
+         "superlativo sin fuente"),
     ]
     for pat, etiq in ESTILO_PAT:
         for m in re.finditer(pat, txt, re.I):
