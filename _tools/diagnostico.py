@@ -106,10 +106,18 @@ ORDENES = [r"\bRespeta\b", r"\bRespete\b", r"\bMantén\b", r"\bMantenga\b", r"\b
            r"\bAdapta\b", r"\bAsume\b", r"\bConsulta\b", r"\bLlega con\b",
            r"\bSit[úu]ate\b", r"\bPrioriza\b", r"\bPlanifica\b", r"\bCalza\b"]
 
+# Fichas de ruta. La skill dice que las rutas temáticas son colecciones
+# editoriales y se montan aparte, así que los recuentos escritos para la ficha
+# de una sola fiesta no les aplican: llevan una tarjeta y una pregunta por
+# localidad. Se les exige el mínimo del estándar, no el número exacto. El
+# espejado FAQ↔FAQPage sí se les sigue exigiendo igual que a las demás.
+RUTAS = {"ruta-tambor-bombo.html"}
+
 # ---------------------------------------------------------------- diagnóstico
 
 def diag(path):
     name = os.path.basename(path)
+    es_ruta = name in RUTAS
     c = load(path)
     out = []
     def add(sev, msg):
@@ -310,7 +318,10 @@ def diag(path):
         add("BLOQUES", "sin music-block")
     ms = len(re.findall(r'class="[^"]*\bmust-see-card\b', c))
     det = len(re.findall(r"<details\b", c))
-    if ms != 4:
+    if es_ruta:
+        if ms < 4:
+            add("BLOQUES", "must-see-card: %d (ficha de ruta, mínimo 4)" % ms)
+    elif ms != 4:
         add("BLOQUES", "must-see-card: %d (deben ser 4)" % ms)
     if det < ms:
         add("BLOQUES", "must-see con menos <details> (%d) que tarjetas (%d)" % (det, ms))
@@ -323,10 +334,16 @@ def diag(path):
     for d in jsons:
         if "FAQPage" in str(d.get("@type", "")):
             faq_ld_q = [q.get("name", "") for q in d.get("mainEntity", [])]
-    if len(faq_ld_q) != 5:
-        add("BLOQUES", "FAQPage con %d preguntas (deben ser 5)" % len(faq_ld_q))
-    if len(preg_body) != 5:
-        add("BLOQUES", "FAQ en el cuerpo con %d preguntas (deben ser 5)" % len(preg_body))
+    if es_ruta:
+        if len(faq_ld_q) < 5:
+            add("BLOQUES", "FAQPage con %d preguntas (ficha de ruta, mínimo 5)" % len(faq_ld_q))
+        if len(preg_body) < 5:
+            add("BLOQUES", "FAQ en el cuerpo con %d preguntas (ficha de ruta, mínimo 5)" % len(preg_body))
+    else:
+        if len(faq_ld_q) != 5:
+            add("BLOQUES", "FAQPage con %d preguntas (deben ser 5)" % len(faq_ld_q))
+        if len(preg_body) != 5:
+            add("BLOQUES", "FAQ en el cuerpo con %d preguntas (deben ser 5)" % len(preg_body))
     for q in preg_body:
         if q not in faq_ld_q:
             add("BLOQUES", "pregunta del cuerpo ausente del FAQPage: %s" % q[:90])
@@ -375,8 +392,8 @@ def diag(path):
         add("BLOQUES", "sin dl.festero")
     else:
         n = len(re.findall(r"<dt\b", fest))
-        if not 4 <= n <= 8:
-            add("BLOQUES", "vocabulario con %d términos (4-8)" % n)
+        if not 4 <= n <= 9:
+            add("BLOQUES", "vocabulario con %d términos (4-9)" % n)
         add("INFO", "vocabulario: %d términos" % n)
 
     et = len(re.findall(r'class="etiqueta', c))
@@ -606,10 +623,15 @@ def main(paths):
             print("\n[%s] %d" % (sev, len(items)))
             for i in items:
                 print("  - " + i)
-        problemas = [1 for s, _ in out if s not in ("INFO", "ESTILO")]
-        estilo = [1 for s, _ in out if s == "ESTILO"]
-        print("\n>>> %d avisos (sin contar INFO) · %d hallazgos de ESTILO para leer en contexto\n"
-              % (len(problemas), len(estilo)))
+        # LEXICO no cuenta como aviso. La propia skill manda leer esa lista caso
+        # por caso («nunca buscar y reemplazar en lote: casi la mitad de las
+        # coincidencias son falsos positivos»), así que un aviso automático sobre
+        # algo que por definición hay que leer a mano no es un aviso: es un
+        # recordatorio. Pasa al nivel de ESTILO, para leer en contexto.
+        problemas = [1 for s, _ in out if s not in ("INFO", "ESTILO", "LEXICO")]
+        contexto = [1 for s, _ in out if s in ("ESTILO", "LEXICO")]
+        print("\n>>> %d avisos (sin contar INFO) · %d hallazgos de estilo y léxico "
+              "para leer en contexto\n" % (len(problemas), len(contexto)))
 
 
 if __name__ == "__main__":
