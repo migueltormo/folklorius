@@ -252,6 +252,16 @@ def diag(path):
             add("FECHAS", "«%s» pero el %s fue %s" % (m.group(0), f,
                 list(DIAS)[f.weekday()]))
 
+    # El año del H2 de «Fechas AAAA» contra el de startDate. Es la misma clase de
+    # error que el Hito 1: se actualiza la cabecera y se olvida el encabezado, y
+    # el lector se encuentra «Fechas 2026» sobre unas fechas de 2027. Pasó en
+    # Feria de Albacete, Ortigueira y Alcoi.
+    h2f = re.search(r"(?is)<h2[^>]*>\s*Fechas\s+(20\d{2})\s*</h2>", c)
+    if h2f and sd:
+        if h2f.group(1) != sd[0][:4]:
+            add("FECHAS", "el H2 dice «Fechas %s» y startDate es %s"
+                % (h2f.group(1), sd[0][:10]))
+
     # ---- 4. METADATOS
     t = re.search(r"(?is)<title>(.*?)</title>", c)
     if t:

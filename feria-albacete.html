@@ -79,6 +79,50 @@
     .relacionada-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--brand, #b34700); }
     .relacionada-card span { font-size: 0.8rem; color: var(--text-muted, #5a5a5a); }
 
+    .must-see-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+    }
+    .must-see-card {
+      background: var(--surface, #fafafa);
+      border: 1px solid var(--border, #e8ddd4);
+      border-radius: var(--radius, 10px);
+      padding: 18px;
+      transition: box-shadow 0.2s ease;
+    }
+    .must-see-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .must-see-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text, #2c2c2c);
+    }
+    .must-see-card .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--accent-light, #f5e6c8);
+      color: var(--brand, #b34700);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .must-see-card p { font-size: 0.9rem; line-height: 1.55; margin-bottom: 0; }
+    .must-see-card details { margin-top: 10px; }
+    .must-see-card details summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand, #b34700);
+      list-style: none;
+    }
+    .must-see-card details summary::after { content: " ↓"; font-size: 0.8rem; }
+    .must-see-card details[open] summary::after { content: " ↑"; }
+    .must-see-card details p { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted, #5a5a5a); }
+
   </style>
 
   <script type="application/ld+json">
@@ -283,7 +327,7 @@
       </p>
       <p class="nota-grid">📊 Según cifras difundidas por el Ayuntamiento de Albacete, la edición de 2023 superó los 3 millones de visitantes totales, con picos diarios de más de 430.000 personas en un solo día en las ediciones de 2024 y 2025 — las cifras más altas registradas hasta ahora por el consistorio.</p>
 
-      <h2 class="section-title">Fechas 2026</h2>
+      <h2 class="section-title">Fechas 2027</h2>
       <p>
         La Feria de Albacete se celebra del <strong>7 al 17 de septiembre de 2027</strong>, once días ininterrumpidos. A diferencia de otras ferias del calendario andaluz, estas fechas son fijas cada año: no dependen de la Semana Santa ni se ajustan a un fin de semana concreto.
       </p>
@@ -341,12 +385,49 @@
       </p>
 
       <h2 class="section-title">No te lo puedes perder</h2>
-      <ul>
-        <li>Pasear los anillos de La Sartén, un recinto ferial de piedra levantado en 1783 y trazado en anillos concéntricos.</li>
-        <li>Comer un Miguelito con sidra en el Templete, el ritual gastronómico más identificable de la fiesta.</li>
-        <li>La Ofrenda Floral, con miles de albaceteños vestidos de manchego desfilando ante la Virgen de los Llanos.</li>
-        <li>La apertura de la Puerta de Hierros a medianoche del día 7, el gesto que marca oficialmente el inicio de la feria.</li>
-      </ul>
+      <div class="must-see-grid">
+
+        <div class="must-see-card">
+          <h3>Los anillos de La Sartén</h3>
+          <span class="tag">Los once días · Recinto Ferial</span>
+          <p>Un edificio de piedra de 1783 trazado en anillos concéntricos, con soportales, columnas y patios interiores cubiertos de teja. Se recorre dando vueltas: cada anillo tiene su ambiente y se nota al pasar de uno a otro.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque la mayoría de las ferias levantan y desmontan su recinto cada año, y aquí la feria se celebra en el mismo edificio desde el siglo XVIII. El apodo viene de la forma vista desde el aire: los círculos más el largo paseo recto de acceso, que es el rabo de la sartén. Para entenderlo, hay que entrar por ese paseo y no por un lateral.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Un Miguelito en el Templete</h3>
+          <span class="tag">Los once días · El Templete</span>
+          <p>Hojaldre crujiente relleno de crema pastelera y espolvoreado de azúcar glas, creado en los años sesenta en La Roda. Se come de pie, con una botella de sidra o un café-orujo en la otra mano. Se consumen por decenas de miles cada edición.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el sitio forma parte del gesto tanto como el dulce: hacerlo en ese punto exacto del recinto es el ritual, y de pie, no sentado. Si se quiere salado, el bocadillo de chorimorci —chorizo y morcilla asados— es la comida rápida de la feria, y las berenjenas de Almagro con queso manchego son la tapa de cualquier barra del recinto.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>La Ofrenda Floral a la Virgen</h3>
+          <span class="tag">Primer domingo de feria · Recinto</span>
+          <p>Miles de albaceteños con traje manchego desfilan para ofrecer flores a la Virgen de los Llanos, que recibe desde el balcón de su capilla dentro del propio recinto. Es el acto que llena de traje regional un recinto que el resto de los días va de calle.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque el traje manchego sale a la calle en dos actos del año y este es uno: falda de rayas o paño oscuro, mandil bordado, pañuelo de pecho, medias de hilo y abarcas en las mujeres; faja, chaleco, pantalón de paño o pana y blusa en los hombres. El mejor ángulo está en el tramo previo a la capilla, donde el desfile se ordena antes de llegar.</p>
+          </details>
+        </div>
+
+        <div class="must-see-card">
+          <h3>Se abre la Puerta de Hierros</h3>
+          <span class="tag">Día 7 · A medianoche</span>
+          <p>La tarde del día 7 un desfile de peñas recorre la ciudad y acaba en el recinto, donde a medianoche el alcalde abre la Puerta de Hierros. Es gratuito y en la calle, y marca el arranque oficial de los once días.</p>
+          <details>
+            <summary>¿Por qué no perdértelo?</summary>
+            <p>Porque es el único momento del año en que esa puerta se abre con toda la ciudad mirando, y lo que entra detrás es una feria que no para hasta el día 17. Las peñas llegan desde el centro, así que quien quiera ver el desfile y la apertura seguidos hace bien en esperar en el paseo de acceso en lugar de dentro del recinto.</p>
+          </details>
+        </div>
+
+      </div>
 
       <h2 class="section-title">Qué puedes hacer si vas de visita, sin conocer a nadie</h2>
       <p>
