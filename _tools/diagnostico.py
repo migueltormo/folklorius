@@ -278,9 +278,14 @@ def diag(path):
     zonas["h1"] = visible_text(h1.group(1)) if h1 else ""
     foot = re.search(r"(?is)<footer.*?</footer>", c)
     zonas["footer"] = visible_text(foot.group(0)) if foot else ""
+    # Lo prohibido es el año DE LA EDICIÓN, que caduca. Los años históricos
+    # («ITI 2015», «UNESCO desde 2020», «BIC 2024») se quedan por norma, y son
+    # siempre anteriores al de la edición vigente.
     for z, v in zonas.items():
-        if re.search(r"\b(20\d{2})\b", v):
-            add("META", "año en %s: %s" % (z, v.strip()[:120]))
+        for a in re.findall(r"\b(20\d{2})\b", v):
+            if int(a) >= int(anio_ref):
+                add("META", "año de la edición (%s) en %s: %s" % (a, z, v.strip()[:110]))
+                break
 
     # ---- 5. BLOQUES
     av = find_block(c, "aviso-sensibilidad")
@@ -410,8 +415,25 @@ def diag(path):
             add("INTEGRIDAD", "imagen visible inexistente: %s" % s)
 
     # ---- 7. LÉXICO (solo se reporta, nunca se reemplaza en lote)
+    # Excepciones por homonimia: la palabra prohibida es la figurada, pero la
+    # misma raíz tiene usos normales en español que no son el patrón de IA.
+    # «encarnar un personaje» es lo que hace un figurante; «encarna la
+    # identidad» es la inflación que se prohíbe. Lo mismo con el Paso Encarnado
+    # de Lorca o Nuestra Señora de la Encarnación.
+    # «encarna» prohibido es el figurado («encarna la identidad»). No lo son:
+    # el Paso Encarnado de Lorca, Nuestra Señora de la Encarnación, ni
+    # «encarnar a» un personaje, que es lo que hace un figurante.
+    # «destila» prohibido es el figurado. Los «destilados» de la cuerva de
+    # Águilas son bebida.
+    FORMAS = {
+        "encarna": (r"\bencarna(?:n|ba|ban|ron|r|ndo)?\b"
+                    r"(?!\s+(?:a|al)\b|\s+(?:su|el|la|un|una)\s+"
+                    r"(?:personaje|papel|figura|pap))"),
+        "destila": r"\bdestila(?:n|ba|ban|ndo)?\b",
+    }
     for w in PROHIBIDO:
-        for m in re.finditer(re.escape(w), txt, re.I):
+        patron = FORMAS.get(w.lower()) or re.escape(w)
+        for m in re.finditer(patron, txt, re.I):
             ctx = txt[max(0, m.start() - 55):m.end() + 55]
             add("LEXICO", "«%s» → …%s…" % (w, ctx))
 
