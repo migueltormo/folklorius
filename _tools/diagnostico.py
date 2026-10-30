@@ -157,8 +157,18 @@ def diag(path):
         except ValueError:
             add("FECHAS", "startDate no parseable: %r" % s); continue
         anio_ed = anio_ed or f.year
+        # Una edición en curso tiene startDate en el pasado y es correcto: la
+        # norma dice que la edición vigente no cambia hasta el día siguiente de
+        # que termine. Solo avisamos si TAMBIÉN ha pasado el endDate.
         if f < hoy:
-            add("FECHAS", "startDate %s ya ha pasado" % s[:10])
+            fin = None
+            if ed:
+                try:
+                    fin = datetime.date.fromisoformat(ed[0][:10])
+                except ValueError:
+                    fin = None
+            if fin is None or fin < hoy:
+                add("FECHAS", "startDate %s ya ha pasado" % s[:10])
     add("INFO", "startDate %s · endDate %s" % (sd, ed))
 
     # rango visible en ficha-datos-clave vs JSON-LD
@@ -168,13 +178,19 @@ def diag(path):
         rango = re.findall(r"(\d{1,2})(?:\s+de\s+(\w+))?\s*(?:al|a|-|–)\s*(\d{1,2})\s+de\s+(\w+)(?:\s+de\s+(\d{4}))?", tv, re.I)
         add("INFO", "datos-clave visible: %s" % tv[:220])
         if sd and ed and rango:
+            # Una fiesta repartida en dos fines de semana («27-29 de agosto y
+            # 3-5 de septiembre») deja dos rangos visibles y un solo Festival
+            # que los abarca: el inicio es el del primer rango y el fin, el del
+            # último. Comparar solo el primero daba falso positivo.
             r = rango[0]
-            mes_fin = MESES.get(strip_accents(r[3].lower()))
+            rf = rango[-1]
+            mes_fin = MESES.get(strip_accents(rf[3].lower()))
             mes_ini = MESES.get(strip_accents((r[1] or r[3]).lower()))
             anio = int(r[4]) if r[4] else (anio_ed or hoy.year)
+            anio_fin = int(rf[4]) if rf[4] else anio
             try:
                 vi = datetime.date(anio, mes_ini, int(r[0]))
-                vf = datetime.date(anio, mes_fin, int(r[2]))
+                vf = datetime.date(anio_fin, mes_fin, int(rf[2]))
                 if str(vi) != sd[0][:10] or str(vf) != ed[0][:10]:
                     add("FECHAS", "rango visible %s→%s NO coincide con JSON-LD %s→%s"
                         % (vi, vf, sd[0][:10], ed[0][:10]))
@@ -192,10 +208,14 @@ def diag(path):
         correcta = pas + datetime.timedelta(days=off)
         for m in re.finditer(re.escape(etiqueta), plano):
             ven = plano[m.end():m.end() + 45]
-            mm = re.match(r"[^\d]{0,12}(\d{1,2})\s+de\s+([a-z]+)", ven)
-            if not mm:
-                pre = plano[max(0, m.start() - 45):m.start()]
-                mm = re.search(r"(\d{1,2})\s+de\s+([a-z]+)[^\d]{0,12}$", pre)
+            pre = plano[max(0, m.start() - 45):m.start()]
+            # Si la etiqueta va entre paréntesis, la fecha a la que se refiere
+            # es la de ANTES: «del 19 de marzo (Viernes de Dolores) al 28 de
+            # marzo». Mirar hacia delante ahí agarra la fecha del otro extremo.
+            entre_parentesis = pre.rstrip().endswith("(") and ven.lstrip().startswith(")")
+            adelante = re.match(r"[^\d]{0,12}(\d{1,2})\s+de\s+([a-z]+)", ven)
+            atras = re.search(r"(\d{1,2})\s+de\s+([a-z]+)[^\d]{0,12}$", pre)
+            mm = (atras or adelante) if entre_parentesis else (adelante or atras)
             if not mm:
                 continue
             mes = MESES.get(mm.group(2))
