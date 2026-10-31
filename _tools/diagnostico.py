@@ -179,6 +179,16 @@ def diag(path):
                 add("FECHAS", "startDate %s ya ha pasado" % s[:10])
     add("INFO", "startDate %s · endDate %s" % (sd, ed))
 
+    # Ficha sin startDate. La norma lo permite —sin fecha confirmada no se pone
+    # fecha, porque es peor una falsa que ninguna— pero entonces el script no
+    # tiene nada contra lo que comparar y el texto puede quedarse años en una
+    # edición pasada sin que salte nada. Pasó en siete fichas a la vez: varias
+    # decían «se celebra del 9 al 16 de mayo» de una edición ya terminada. No es
+    # un aviso, es un recordatorio de leer el cuerpo a mano.
+    if not sd:
+        add("ESTILO", "sin startDate: comprobar a mano que el cuerpo no presenta "
+                      "una edición pasada como si estuviera por venir")
+
     # rango visible en ficha-datos-clave vs JSON-LD
     dk = find_block(c, "ficha-datos-clave")
     if dk:
@@ -354,6 +364,14 @@ def diag(path):
             add("BLOQUES", "FAQPage con %d preguntas (deben ser 5)" % len(faq_ld_q))
         if len(preg_body) != 5:
             add("BLOQUES", "FAQ en el cuerpo con %d preguntas (deben ser 5)" % len(preg_body))
+    # Año en el enunciado de una FAQ. La norma dice que la fecha va en la
+    # respuesta, nunca en la pregunta: así la página compite por la pregunta
+    # perenne. El barrido del Hito 2 no lo cazó porque esa regla vive en la
+    # skill de ficha. Estaba en 31 fichas, varias con el año ya pasado.
+    for q in preg_body:
+        if re.search(r"\b20\d{2}\b", q):
+            add("BLOQUES", "año en el enunciado de la FAQ: %s" % q[:95])
+
     for q in preg_body:
         if q not in faq_ld_q:
             add("BLOQUES", "pregunta del cuerpo ausente del FAQPage: %s" % q[:90])
