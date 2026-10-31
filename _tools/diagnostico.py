@@ -179,6 +179,35 @@ def diag(path):
                 add("FECHAS", "startDate %s ya ha pasado" % s[:10])
     add("INFO", "startDate %s · endDate %s" % (sd, ed))
 
+    # El día de la semana con el que la ficha dice que arranca el ciclo, contra
+    # el día real del startDate. Cazaría el error del Entroido de Xinzo: la
+    # ficha escribía «El ciclo arranca el Domingo Fareleiro» y el startDate
+    # caía en sábado, porque alguien había desplazado 363 días en lugar de los
+    # 357 que separan la Pascua de 2026 de la de 2027. Con el rango visible y
+    # el JSON-LD de acuerdo entre sí, nada más lo detectaba.
+    if sd:
+        try:
+            ini = datetime.date.fromisoformat(sd[0][:10])
+        except ValueError:
+            ini = None
+        # Solo dentro de la sección de fechas, que es donde se define el rango.
+        # Fuera de ahí hay arranques legítimos de otros ciclos: Baena cuenta que
+        # «el ciclo [del tambor] se abre el Miércoles de Ceniza» y sigue por los
+        # viernes de Cuaresma, y eso no dice nada del startDate.
+        msec = re.search(r"(?is)<h2[^>]*>[^<]*(?:fechas|cu[áa]ndo se celebra)[^<]*</h2>(.*?)(?=<h2|\Z)", c)
+        if ini is not None and msec:
+            txt_f = visible_text(msec.group(1))
+            m = re.search(r"\b(?:el ciclo |la fiesta |todo )?"
+                          r"(?:arranca|comienza|empieza|abre|se abre|se inicia)\s+"
+                          r"(?:el|con el)\s+(lunes|martes|mi[eé]rcoles|jueves|viernes|s[áa]bado|domingo)\b",
+                          txt_f, re.I)
+            if m:
+                dicho = strip_accents(m.group(1).lower())
+                real = strip_accents(list(DIAS)[ini.weekday()].lower())
+                if dicho != real:
+                    add("FECHAS", "el texto dice que arranca en %s y startDate %s "
+                                  "es %s" % (m.group(1), sd[0][:10], real))
+
     # Ficha sin startDate. La norma lo permite —sin fecha confirmada no se pone
     # fecha, porque es peor una falsa que ninguna— pero entonces el script no
     # tiene nada contra lo que comparar y el texto puede quedarse años en una
